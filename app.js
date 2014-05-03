@@ -1,4 +1,4 @@
-Meteor.startup = function() {
+Meteor.startup(function() {
 	if(Meteor.isClient) {
 		console.log('Client: Meteor starting up.');
 	}
@@ -6,4 +6,4 @@ Meteor.startup = function() {
 	if(Meteor.isServer) {
 		console.log('Server: Meteor starting up.');
 	}
-};
+});

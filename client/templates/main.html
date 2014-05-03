@@ -1,2 +1,15 @@
 <template name="template_main">
+	<div class="container">
+		<div class="parentWrapper">
+			<header>
+				{{> yield region="header"}}
+			</header>
+			<section>
+				{{> yield region="content"}}
+			</section>
+			<footer>
+				{{> yield region="footer"}}
+			</footer>
+		</div>
+	</div>
 </template>
