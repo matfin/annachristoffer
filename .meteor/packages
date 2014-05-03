@@ -6,3 +6,9 @@
 standard-app-packages
 autopublish
 insecure
+less
+underscore
+iron-router
+modernizr-meteor
+lesshat
+normalize.css

@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "iron-router": {},
+    "modernizr-meteor": {},
+    "lesshat": {},
+    "normalize.css": {}
+  }
+}

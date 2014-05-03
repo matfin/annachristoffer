@@ -1,0 +1,38 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "iron-router": {},
+      "modernizr-meteor": {},
+      "lesshat": {},
+      "normalize.css": {}
+    },
+    "packages": {
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+      },
+      "modernizr-meteor": {
+        "git": "https://github.com/ckir/modernizr-meteor.git",
+        "tag": "v2.6.2",
+        "commit": "391ca2a3beff3cd2b0e1099cb2d744b5a2e8a73e"
+      },
+      "lesshat": {
+        "git": "https://github.com/QaDeS/meteor-lesshat",
+        "tag": "v0.0.1",
+        "commit": "61514ff932e1e9615f007c3fdff633a110bf8910"
+      },
+      "normalize.css": {
+        "git": "https://github.com/rithis/meteor-normalize.css",
+        "tag": "v2.0.1",
+        "commit": "671aba13223dd7d7ec1d26a6b2461943d7c4fa18"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+      }
+    }
+  }
+}
