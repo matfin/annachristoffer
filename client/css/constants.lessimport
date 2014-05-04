@@ -1,0 +1,11 @@
+// Fonts family
+@standardFontFamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Font sizes
+@baseFontSize: 16px;
+@largeFont: @baseFontSize * 2;
+@mediumFont: @baseFontSize * 1.5;
+@smallFont: @baseFontSize * 0.75;
+
+// Layout
+@maxWidth: 1600px;
