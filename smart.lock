@@ -5,7 +5,8 @@
       "iron-router": {},
       "modernizr-meteor": {},
       "lesshat": {},
-      "normalize.css": {}
+      "normalize.css": {},
+      "q": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/rithis/meteor-normalize.css",
         "tag": "v2.0.1",
         "commit": "671aba13223dd7d7ec1d26a6b2461943d7c4fa18"
+      },
+      "q": {
+        "git": "https://github.com/frozeman/q-meteor.git",
+        "tag": "v0.9.7",
+        "commit": "e5c10f087b76fda32ae6be4d8950ab2633c520a3"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

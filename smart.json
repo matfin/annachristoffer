@@ -3,6 +3,7 @@
     "iron-router": {},
     "modernizr-meteor": {},
     "lesshat": {},
-    "normalize.css": {}
+    "normalize.css": {},
+    "q": {}
   }
 }
