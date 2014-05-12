@@ -2,6 +2,7 @@ Router.onRun(function() {
 });
 
 Router.onBeforeAction(function() {
+	
 });
 
 Router.map(function() {
@@ -35,8 +36,6 @@ Router.map(function() {
 		template: 'template_main',
 		data: function() {
 			_category = this.params._category;
-
-			console.log('Filter', _category);
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},

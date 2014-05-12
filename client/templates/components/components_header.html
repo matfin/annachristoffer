@@ -1,3 +1,22 @@
 <template name="components_header">
-	Der header!
+	<h1>
+		Anna Claire Christoffer /
+	</h1>
+	<h2>
+		Conception Design /
+	</h2>
+	<h3>
+		Working in Hi-Res! Berlin
+	</h3>
+	<nav>
+		<ul>
+			{{#each navCategories}}
+				<li>
+					<a href="#" title="{{title}}">
+						{{title}}
+					</a>
+				</li>
+			{{/each}}
+		</ul>
+	</nav>
 </template>

@@ -9,6 +9,10 @@ body {
 	height: 100%;
 	font-family: @standardFontFamily;
 	font-size: @baseFontSize;
+
+	background: lightblue url('/images/backgrounds/list.jpg') no-repeat;
+	background-position: top center;
+	background-size: cover;
 }
 
 .container {
@@ -22,5 +26,22 @@ body {
 	width: 100%;
 	height: 100%;
 	max-width: @maxWidth;
-	background-color: lightblue;
 }
+
+h1, h2, h3, h4, h5 {
+	.resetMarginPadding
+}
+
+ul {
+	.resetMarginPadding
+}
+
+// .Ebene_1 {
+//   background-image: url("Ebene 1.png");
+//   position: absolute;
+//   left: -138px;
+//   top: -66px;
+//   width: 2259px;
+//   height: 3386px;
+//   z-index: 15;
+// }

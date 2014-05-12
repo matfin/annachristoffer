@@ -66,7 +66,6 @@ Api = {
 				/**
 				 *	After all attempts to source content fail, we reject the promise
 				 */
-				console.log('Failed!');
 				deferred.reject(error);
 			}
 		});

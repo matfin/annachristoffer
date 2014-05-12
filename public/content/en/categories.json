@@ -4,27 +4,32 @@
 		{
 			"id": 1,
 			"title": "Interaction",
-			"description": "Interaction"
+			"description": "Interaction",
+			"slug": "interaction"
 		},
 		{
 			"id": 2,
 			"title": "Books",
-			"description": "Books"
+			"description": "Books",
+			"slug": "books"
 		},
 		{
 			"id": 3,
 			"title": "Illustration",
-			"description": "Illustration"
+			"description": "Illustration",
+			"slug": "illustration"
 		},
 		{
 			"id": 4,
 			"title": "Icons",
-			"description": "Icons"
+			"description": "Icons",
+			"slug": "icons"
 		},
 		{
 			"id": 5,
 			"title": "Posters",
-			"description": "Posters"
+			"description": "Posters",
+			"slug": "posters"
 		}
 	]
 }
