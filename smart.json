@@ -4,6 +4,7 @@
     "modernizr-meteor": {},
     "lesshat": {},
     "normalize.css": {},
-    "q": {}
+    "q": {},
+    "moment": {}
   }
 }
