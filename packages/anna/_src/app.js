@@ -1,6 +1,6 @@
 App = {
 	baseUrl: 'http://localhost:3000',
-
+	connectionRetriesAllowed: 5,
 	language: moment.lang(),
 
 	models: {
