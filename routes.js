@@ -1,3 +1,10 @@
+Router.onRun(function() {
+});
+
+Router.onBeforeAction(function() {
+	console.log('Router onBeforeAction');
+});
+
 Router.map(function() {
 
 	/** 

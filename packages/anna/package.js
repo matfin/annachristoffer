@@ -4,11 +4,18 @@ Package.describe({
 
 Package.on_use(function(api) {
 
+	/**
+	 *	Including other Meteor packages
+	 */
+	api.use('q', 'client');
 	api.use('deps', 'client');
 	api.use('jquery', 'client');
 	api.use('underscore', 'client');
 	api.use('moment', 'client');
 
+	/**
+	 *	Adding source files for this package
+	 */
 	api.add_files([
 		'_src/app.js',
 		'_src/api.js',
@@ -16,6 +23,9 @@ Package.on_use(function(api) {
 		'_src/device.js'
 	], 'client');
 
+	/**
+	 *	Exporting package classes so they can be access from anywhere within the app.
+	 */
 	api.export('App');
 	api.export('Api');
 	api.export('Dependencies');
