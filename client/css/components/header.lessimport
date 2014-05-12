@@ -1,12 +1,13 @@
 header {
 
 	position: fixed;
-	top: @gridColumnWidth * 10;
-	right: @gridColumnWidth * 10;
+	top: @gridColumnWidth * 5;
+	right: @gridColumnWidth * 5;
 	width: @gridColumnWidth * 10;
 
 	text-align: center;
 	padding: @gridColumnWidth / 2;
+	padding-bottom: @gridColumnWidth;
 	.box-sizing(border-box);
 	background-color: @background;
 
