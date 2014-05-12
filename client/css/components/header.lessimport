@@ -1,0 +1,50 @@
+header {
+
+	position: fixed;
+	top: @gridColumnWidth * 10;
+	right: @gridColumnWidth * 10;
+	width: @gridColumnWidth * 10;
+
+	text-align: center;
+	padding: @gridColumnWidth / 2;
+	.box-sizing(border-box);
+	background-color: @background;
+
+
+	h1, h2, h3 {
+		font-size: @baseFontSize - 2;
+	}
+
+	h1, h3 {
+		font-weight: 400;
+	}
+
+	h2 {
+		font-weight: bold;
+	}
+
+	h3 {
+		margin-top: @gridColumnWidth / 2;
+	}
+
+	nav {
+		margin-top: @gridColumnWidth * 2;
+		ul {
+			li {
+				a {
+					display: inline-block;
+					width: 100%;
+					font-size: @gridColumnWidth - 2;
+					border-bottom: 1px solid @colourBlack;
+					padding-top: @gridColumnWidth * 1.25;
+					padding-bottom: @gridColumnWidth / 4;
+					line-height: @gridColumnWidth;
+					text-transform: lowercase;
+					&:hover {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}

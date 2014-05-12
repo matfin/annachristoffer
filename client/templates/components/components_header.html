@@ -1,15 +1,20 @@
 <template name="components_header">
 	<h1>
-		Anna Claire Christoffer /
+		Anna Claire Christoffer
 	</h1>
 	<h2>
-		Conception Design /
+		Conceptional Design
 	</h2>
 	<h3>
-		Working in Hi-Res! Berlin
+		working at <br /> Hi-Res! Berlin
 	</h3>
 	<nav>
 		<ul>
+			<li>
+				<a href="#" title="Projects">
+					Projects
+				</a>
+			</li>
 			{{#each navCategories}}
 				<li>
 					<a href="#" title="{{title}}">
@@ -17,6 +22,21 @@
 					</a>
 				</li>
 			{{/each}}
+			<li>
+				<a href="#" title="Work Experience">
+					Work Experience
+				</a>
+			</li>
+			<li>
+				<a href="#" title="About">
+					About
+				</a>
+			</li>
+			<li>
+				<a href="#" title="Contact">
+					Contact
+				</a>
+			</li>
 		</ul>
 	</nav>
 </template>
