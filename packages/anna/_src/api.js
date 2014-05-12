@@ -18,14 +18,6 @@ Api = {
 	connectionRetries: 0,
 
 	/**
-	 *	Q promise which either gets resolved or rejected below
-	 *
-	 *	@property deferred
-	 *	@type {Object}
-	 */
-	deferred: Q.defer(),
-
-	/**
 	 *	Method to fetch the content of the json files. Uses Q promises to return the data.
 	 *	
 	 *	@method fetch
@@ -33,7 +25,10 @@ Api = {
 	 *	@return Q.promise
 	 */
 	fetch: function(model) {
-		
+		console.log('Fetch: ', model, App.language);
+
+		var deferred = Q.defer();
+
 		/**
 		 *	assigning this to _self as it is used in anonymous functions below
 		 */
@@ -50,7 +45,7 @@ Api = {
 			/**
 			 *	Success: we resolve the promise
 			 */
-			_self.deferred.resolve(data);
+			deferred.resolve(data);
 
 		}).fail(function(error) {
 
@@ -72,13 +67,13 @@ Api = {
 				 *	After all attempts to source content fail, we reject the promise
 				 */
 				console.log('Failed!');
-				_self.deferred.reject(error);
+				deferred.reject(error);
 			}
 		});
 
 		/**
 		 *	Returning the promise either resolved or rejected.
 		 */
-		return this.deferred.promise;
+		return deferred.promise;
 	}	
 };
