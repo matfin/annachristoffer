@@ -1,0 +1,139 @@
+{ 
+	"name": "Projects",
+	"items": [
+		{
+			"slug": "master-of-art-thesis",
+			"title": "Master of Art / Thesis",
+			"description": "Three models of memory in their context of media&ndash;historical development",
+			"date_created": "2013-02-01",
+			"categories": [
+				{
+					"id": 1
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"slug": "master-of-art-project",
+			"title": "Master of Art / Project",
+			"description": "Carnival of the animals &ndash; A digital music book for children",
+			"date_created": "2013-02-01",
+			"categories": [
+				{
+					"id": 4
+				},
+				{
+					"id": 2
+				}
+			]
+
+		},
+		{
+			"slug": "poster-series",
+			"title": "Poster Series",
+			"description": "Probational lectures at the University of Bielefeld",
+			"date_created": "2012-07-01",
+			"categories": [
+				{
+					"id": 5
+				},
+				{
+					"id": 1
+				}
+			]
+		},
+		{
+			"slug": "book-design",
+			"title": "Book Design",
+			"description": "The story &ldquo; Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
+			"date_created": "2009-09-01",
+			"categories": [
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"slug": "typographical-staging",
+			"title": "typographical staging",
+			"description": "The Drama &ldquo;King Oedipus&rdquo; from Sophocles",
+			"date_created": "2010-04-01",
+			"categories": [
+				{
+					"id": 1
+				}
+			]
+		},
+		{
+			"slug": "digital-atlas",
+			"title": "Digital Atlas",
+			"description": "Wonderworld Calendar &ndash; A digital Atlas for children",
+			"date_created": "2012-01-01",
+			"categories": [
+				{
+					"id": 2
+				}
+			]
+		},
+		{
+			"slug": "poster-competition",
+			"title": "Poster Competition",
+			"description": "Resistance",
+			"date_created": "2010-05-01",
+			"categories": [
+				{
+					"id": 5
+				}
+			]
+		},
+		{
+			"slug": "book-design",
+			"title": "Book Design",
+			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
+			"date_created": "2009-08-01",
+			"categories": [
+				{
+					"id": 2
+				}
+			]
+		},
+		{
+			"slug": "cartographical-scale",
+			"title": "Cartographical Scale",
+			"description": "A map functions like a funnel. It concentrates information into a smaller manageable area depending on scale.",
+			"date_created": "2009-11-01",
+			"categories": [
+				{
+					"id": 1
+				}
+			]
+		},
+		{
+			"slug": "typographical-visualisation",
+			"title": "Typographical Visualisation",
+			"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
+			"date_created": "2010-04-01",
+			"categories": [
+				{
+					"id": 2
+				}
+			]
+		},
+		{
+			"slug": "illustrations",
+			"title": "Illustrations",
+			"description": "Sehen wir uns in Bielefeld",
+			"date_created": "2010-04-01",
+			"categories": [
+				{
+					"id": 3
+				}
+			]
+		}
+	]
+}

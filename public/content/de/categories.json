@@ -1,0 +1,30 @@
+{
+	"name": "Categories",
+	"items": [
+		{
+			"id": 1,
+			"title": "Interaktion",
+			"description": "Interaktion"
+		},
+		{
+			"id": 2,
+			"title": "Bücher",
+			"description": "Bücher"
+		},
+		{
+			"id": 3,
+			"title": "Abbildung",
+			"description": "Abbildung"
+		},
+		{
+			"id": 4,
+			"title": "Ikonen",
+			"description": "Ikonen"
+		},
+		{
+			"id": 5,
+			"title": "Poster",
+			"description": "Poster"
+		}
+	]
+}
