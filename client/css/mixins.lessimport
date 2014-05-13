@@ -1,5 +1,65 @@
-// Mixins
+/**
+ *	Useful mixins go in here.
+ */
+
+/**
+ *	Reset browser default padding and margin where normalize.css doesn't do this.
+ */
 .resetMarginPadding {
 	padding: 0;
 	margin: 0;
+}
+
+/**
+ *	Mixin to load background images based on screen parameters, 
+ *	in this case, the window size and pixel density.
+ */
+.backgroundImage(@img, @extension: 'jpg') {
+
+	// HD
+	@media @hd {
+		background-image: url('@{img}_hd.@{extension}');
+	}
+	@media @hd and @retina {
+		background-image: url('@{img}_hd@2x.@{extension}');
+	}
+
+	// Desktop
+	@media @desktop {
+		background-image: url('@{img}_d.@{extension}');
+	}
+	@media @desktop and @retina {
+		background-image: url('@{img}_d@2x.@{extension}');
+	}
+
+	// Laptop
+	@media @laptop {
+		background-image: url('@{img}_l.@{extension}');	
+	}
+	@media @laptop and @retina {
+		background-image: url('@{img}_l@2x.@{extension}');	
+	}
+
+	// Tablet
+	@media @tablet {
+		background-image: url('@{img}_t.@{extension}');
+	}
+	@media @tablet and @retina{
+		background-image: url('@{img}_t@2x.@{extension}');
+	}
+
+	// Mobile
+	@media @mobile {
+		background-image: url('@{img}_m.@{extension}');
+	}
+	@media @mobile and @retina {
+		background-image: url('@{img}_m@2x.@{extension}');
+	}
+
+	/*
+	 *	Common to all
+	 */
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }

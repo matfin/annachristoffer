@@ -11,9 +11,7 @@ body {
 	font-size: @baseFontSize;
 
 	&.list {
-		background: lightblue url('/images/backgrounds/list.jpg') no-repeat;
-		background-position: top center;
-		background-size: cover;
+		.backgroundImage('/images/backgrounds/list');
 	}
 }
 
