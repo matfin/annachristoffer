@@ -36,3 +36,13 @@ Template['components_header'].destroyed = function() {
 Template['components_header'].navCategories = function() {
 	return App.models.categories.find({}).fetch();
 };
+
+/**
+*	Template - components_header
+*	Populate content items from the content store.
+*	@method contentItems
+*	@return undefined
+*/
+Template['components_header'].contentItems = function() {
+	return App.models.content.find({}).fetch();
+};
