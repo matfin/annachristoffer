@@ -1,8 +1,8 @@
 header {
 
-	position: fixed;
+	position: absolute;
 	top: @gridColumnWidth * 5;
-	right: @gridColumnWidth * 5;
+	right: @gridColumnWidth * 1;
 	width: @gridColumnWidth * 10;
 
 	text-align: center;

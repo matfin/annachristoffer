@@ -10,6 +10,7 @@
 // Layout
 @gridColumnWidth: 16px;
 @maxWidth: @gridColumnWidth * 100;
+@minWidth: @gridColumnWidth * 64;
 
 // Colours 
 @colourWhite: #fff;

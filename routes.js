@@ -32,10 +32,12 @@ Router.map(function() {
 	 *	their category name.
 	 */ 
 	this.route('list', {
-		path: '/:_category?',
+		path: '/:_category_slug?',
 		template: 'template_main',
 		data: function() {
-			_category = this.params._category;
+			return {
+				_category_slug: this.params._category_slug
+			};
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},
