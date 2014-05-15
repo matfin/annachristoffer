@@ -27,7 +27,7 @@ body {
 	height: 100%;
 	text-align: left;
 	min-width: @minWidth;
-	max-width: @maxWidth;
+	// max-width: @maxWidth;
 	.display(flex);
 	.flex-direction(row-reverse);
 	.flex-wrap(nowrap);
@@ -44,6 +44,8 @@ body {
 }
 
 section {
+	position: relative;
+	margin-top: @gridColumnWidth * 10;
 }
 
 h1, h2, h3, h4, h5 {

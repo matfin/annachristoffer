@@ -78,7 +78,7 @@ var arrangeCards = Deps.autorun(function() {
 		_.each(cardFormation, function(num, index) {
 			for(var i = 0; i < num; i++) {
 				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 32) * i) + 'px';
-				$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 32) * index) + 'px';
+				$('.projectCard').get(cardIndex).style.right = ((cardSize.width + 32) * index) + 'px';
 				cardIndex++;
 			}
 		});

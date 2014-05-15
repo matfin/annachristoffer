@@ -1,16 +1,19 @@
 .projectCard {
 	z-index: 2;
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 0%;
+	right: 0%;
 	padding: @gridColumnWidth;
 	background-color: @background;
 	border: 1px solid @colourBlack;
-	width: (@gridColumnWidth * 17) - 6;
-	min-height: (@gridColumnWidth * 10);
+	// width: (@gridColumnWidth * 17) - 6;
+	// min-height: (@gridColumnWidth * 10);
+	width: @gridColumnWidth * 10.5;
+	min-height: @gridColumnWidth * 10.5;
 
-	.transition-property(top, left);
+	.transition-property(top, right);
 	.transition-duration(1s);
+	.transition-delay(500ms);
 
 	time, h2 {
 		font-weight: 500;
