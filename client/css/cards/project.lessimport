@@ -1,0 +1,30 @@
+.projectCard {
+	
+	margin: @gridColumnWidth * 2;
+	padding: @gridColumnWidth;
+	background-color: @background;
+	border: 1px solid @colourBlack;
+
+	width: (@gridColumnWidth * 17) - 6;
+	min-height: (@gridColumnWidth * 10);
+
+	time, h2 {
+		font-weight: 500;
+	}
+	h2 {
+		
+	}
+	p {
+		.resetMarginPadding;
+		margin-top: @gridColumnWidth;
+		font-style: italic;
+		font-size: @standardFont; 
+		&:before {
+			content: '\201C';
+		}
+
+		&:after {
+			content: '\201D';
+		}
+	}
+}

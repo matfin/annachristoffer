@@ -13,11 +13,11 @@ Router.map(function() {
 	 *	load the main list page of unfiltered projects.
 	 */
 	this.route('content', {
-		path: '/content/:_content?',
+		path: '/content/:_content_slug?',
 		template: 'template_main',
 		data: function() {
-			_content = this.params._content;
-			console.log('Content', _content);
+			_content_slug = this.params._content_slug;
+			console.log('Content', _content_slug);
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},
