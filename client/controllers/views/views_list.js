@@ -57,10 +57,23 @@ var arrangeCards = Deps.autorun(function() {
 	 */
 	Dependencies.viewportResizeDependency.depend();
 	var cardFormation = [2, 4, 3, 2];
-	var cardSize = {
-		width: $('.projectCard').outerWidth(),
-		height: $('.projectCard').outerHeight()
-	};
 
-	console.log(cardSize);
+	if($('.projectCard').length !== 0) {
+
+		var cardSize = {
+			width: $('.projectCard').outerWidth(),
+			height: $('.projectCard').outerHeight()
+		};
+		var cardIndex = 0;
+
+		_.each(cardFormation, function(num, index) {
+			console.log('Test: ', num, index, cardSize);
+			for(var i = 0; i < num; i++) {
+				console.log($('.projectCard').get(cardIndex));
+				$('.projectCard').get(cardIndex).style.top = ((cardSize.height * i) + 0) + 'px';
+				$('.projectCard').get(cardIndex).style.left = ((cardSize.width * index) + 0) + 'px';
+				cardIndex++;
+			}
+		});
+	}
 });
