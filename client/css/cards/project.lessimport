@@ -6,14 +6,12 @@
 	padding: @gridColumnWidth;
 	background-color: @background;
 	border: 1px solid @colourBlack;
-	// width: (@gridColumnWidth * 17) - 6;
-	// min-height: (@gridColumnWidth * 10);
-	width: @gridColumnWidth * 10.5;
-	min-height: @gridColumnWidth * 10.5;
+	width: @gridColumnWidth * 12;
+	min-height: @gridColumnWidth * 8;
 
 	.transition-property(top, right);
-	.transition-duration(1s);
-	.transition-delay(500ms);
+	.transition-duration(@transitionDuration * 2);
+	.transition-delay(@transitionDuration);
 
 	time, h2 {
 		font-weight: 500;
@@ -25,7 +23,7 @@
 		.resetMarginPadding;
 		margin-top: @gridColumnWidth;
 		font-style: italic;
-		font-size: @standardFont; 
+		font-size: @standardFont - 2; 
 		&:before {
 			content: '\201C';
 		}

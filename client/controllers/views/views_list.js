@@ -65,7 +65,25 @@ var arrangeCards = Deps.autorun(function() {
 	Dependencies.viewportResizeDependency.depend();
 	Dependencies.projectsLoadedDependency.depend();
 
-	var cardFormation = [2, 4, 3, 2];
+	// var cardFormation = [2, 4, 3, 2];
+	var cardFormation = [
+		{
+			paddingTop: 1,
+			numberToShow: 2
+		},
+		{
+			paddingTop: 0.5,
+			numberToShow: 3
+		},
+		{
+			paddingTop: 0,
+			numberToShow: 4
+		},
+		{
+			paddingTop: 0.5,
+			numberToShow: 2
+		}
+	];
 
 	if($('.projectCard').length !== 0) {
 
@@ -75,9 +93,9 @@ var arrangeCards = Deps.autorun(function() {
 		};
 		var cardIndex = 0;
 
-		_.each(cardFormation, function(num, index) {
-			for(var i = 0; i < num; i++) {
-				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 32) * i) + 'px';
+		_.each(cardFormation, function(item, index) {
+			for(var i = 0; i < item.numberToShow; i++) {
+				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
 				$('.projectCard').get(cardIndex).style.right = ((cardSize.width + 32) * index) + 'px';
 				cardIndex++;
 			}
