@@ -64,28 +64,59 @@ var arrangeCards = Deps.autorun(function() {
 	console.log('Running this?');
 	Dependencies.viewportResizeDependency.depend();
 	Dependencies.projectsLoadedDependency.depend();
+	var cardFormation = false;
 
-	// var cardFormation = [2, 4, 3, 2];
-	var cardFormation = [
-		{
-			paddingTop: 1,
-			numberToShow: 2
-		},
-		{
-			paddingTop: 0.5,
-			numberToShow: 3
-		},
-		{
-			paddingTop: 0,
-			numberToShow: 4
-		},
-		{
-			paddingTop: 0.5,
-			numberToShow: 2
-		}
-	];
+	if(Device.isDesktop) {
+		cardFormation = [
+			{
+				paddingTop: 1,
+				numberToShow: 2
+			},
+			{
+				paddingTop: 0.5,
+				numberToShow: 3
+			},
+			{
+				paddingTop: 0,
+				numberToShow: 4
+			},
+			{
+				paddingTop: 0.5,
+				numberToShow: 2
+			}
+		];
+	}
+	else if(Device.isLaptop) {
+		cardFormation = [
+			{
+				paddingTop: 0.5,
+				numberToShow: 2
+			},
+			{
+				paddingTop: 0.0,
+				numberToShow: 5
+			},
+			{
+				paddingTop: 0.5,
+				numberToShow: 4
+			},
+		];
+	}
+	else if(Device.isTablet) {
+		cardFormation = [
+			{
+				paddingTop: 0,
+				numberToShow: 6
+			},
+			{
+				paddingTop: 0.5,
+				numberToShow: 5
+			},
+		];
+	}
 
-	if($('.projectCard').length !== 0) {
+
+	if($('.projectCard').length !== 0 && cardFormation) {
 
 		var cardSize = {
 			width: $('.projectCard').outerWidth(),
