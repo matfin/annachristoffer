@@ -5,7 +5,11 @@
 *	@return undefined
 */
 Template['views_list'].created = function() {
-	
+	/**
+	 *	Let the template know how many projects we have 
+	 *	This is used to determine if all child templates 
+	 *	have loaded.
+	 */
 };
 
 /**
@@ -36,6 +40,7 @@ Template['views_list'].destroyed = function() {
 */
 Template['views_list'].projects = function() {
 	var category = App.models.categories.findOne({slug: this._category_slug});
+	var project;
 
 	if(typeof category !== 'undefined') {
 		return App.models.projects.find({ 'category_ids.id': category.id}).fetch();
@@ -52,10 +57,14 @@ Template['views_list'].projects = function() {
 */
 var arrangeCards = Deps.autorun(function() {
 	/**
-	 *	Each time this dependency is changed, 
+	 *	Each time these dependency is changed, 
 	 *	this function will be called.
 	 */
+
+	console.log('Running this?');
 	Dependencies.viewportResizeDependency.depend();
+	Dependencies.projectsLoadedDependency.depend();
+
 	var cardFormation = [2, 4, 3, 2];
 
 	if($('.projectCard').length !== 0) {
@@ -67,11 +76,9 @@ var arrangeCards = Deps.autorun(function() {
 		var cardIndex = 0;
 
 		_.each(cardFormation, function(num, index) {
-			console.log('Test: ', num, index, cardSize);
 			for(var i = 0; i < num; i++) {
-				console.log($('.projectCard').get(cardIndex));
-				$('.projectCard').get(cardIndex).style.top = ((cardSize.height * i) + 0) + 'px';
-				$('.projectCard').get(cardIndex).style.left = ((cardSize.width * index) + 0) + 'px';
+				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 32) * i) + 'px';
+				$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 32) * index) + 'px';
 				cardIndex++;
 			}
 		});

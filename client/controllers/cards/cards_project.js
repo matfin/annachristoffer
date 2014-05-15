@@ -15,7 +15,7 @@ Template['cards_project'].created = function() {
 *	@return undefined
 */
 Template['cards_project'].rendered = function() {
-	$('body').addClass('list');
+	Dependencies.projectsLoadedDependency.changed();
 };
 
 /**
@@ -25,7 +25,6 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
-	$('body').removeClass('list');
 };
 
 /**
