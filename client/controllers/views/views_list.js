@@ -90,7 +90,7 @@ var arrangeCards = Deps.autorun(function() {
 		cardFormation = [
 			{
 				paddingTop: 0.5,
-				numberToShow: 2
+				numberToShow: 3
 			},
 			{
 				paddingTop: 0.0,
@@ -98,7 +98,7 @@ var arrangeCards = Deps.autorun(function() {
 			},
 			{
 				paddingTop: 0.5,
-				numberToShow: 4
+				numberToShow: 3
 			},
 		];
 	}

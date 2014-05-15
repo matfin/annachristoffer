@@ -4,6 +4,7 @@
 			~"(-o-min-device-pixel-ratio: 3/2)",
 			~"(min-device-pixel-ratio: 1.5)";
 
+@hd:		~"only screen and (min-width: 1600px)";
 @desktop:	~"only screen and (min-width: 1280px)";
 @laptop:	~"only screen and (min-width: 1024px) and (max-width: 1280px)";
 @tablet:	~"only screen and (min-width: 640px) and (max-width: 1024px)";

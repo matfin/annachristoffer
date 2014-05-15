@@ -64,6 +64,11 @@ body {
 section {
 	position: relative;
 	margin-top: @gridColumnWidth * 10;
+	.transition-property(margin);
+	.transition-duration(@transitionDuration);
+	@media @hd {
+		margin-top: @gridColumnWidth * 20;
+	}
 }
 
 h1, h2, h3, h4, h5 {

@@ -10,8 +10,7 @@
 	min-height: @gridColumnWidth * 8;
 
 	.transition-property(top, right);
-	.transition-duration(@transitionDuration * 2);
-	.transition-delay(@transitionDuration);
+	.transition-duration(@transitionDuration);
 
 	time, h2 {
 		font-weight: 500;
