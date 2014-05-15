@@ -16,7 +16,9 @@
 // Colours 
 @colourWhite: #fff;
 @colourBlack: #000;
-@background: rgba(red(@colourWhite), green(@colourWhite), blue(@colourWhite), 0.5);
+@background: rgba(red(@colourWhite), green(@colourWhite), blue(@colourWhite), 0.75);
+@hoverColour: rgba(red(#f4e4df), green(#f4e4df), blue(#f4e4df), 0.90);
+// @hoverColour: #f4e4df;
 
 // Transitions and animations
 @transitionDuration: 400ms;

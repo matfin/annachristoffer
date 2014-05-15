@@ -3,19 +3,6 @@
 	"items": [
 		{
 			"id": 1,
-			"title": "Work Experience",
-			"slug": "work-experience",
-			"contents": [
-				{
-					"content": "Work experience item one"
-				},
-				{
-					"content": "Work experience item two"
-				}
-			]
-		},
-		{
-			"id": 2,
 			"title": "About",
 			"slug": "about",
 			"contents": [
@@ -28,7 +15,7 @@
 			]
 		},
 		{
-			"id": 3,
+			"id": 2,
 			"title": "Contact",
 			"slug": "contact",
 			"contents": [

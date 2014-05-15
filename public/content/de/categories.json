@@ -3,9 +3,9 @@
 	"items": [
 		{
 			"id": 1,
-			"title": "Interaktion",
-			"description": "Interaktion",
-			"slug": "interaktion"
+			"title": "Interaction",
+			"description": "Interaction",
+			"slug": "interaction"
 		},
 		{
 			"id": 2,
@@ -15,21 +15,27 @@
 		},
 		{
 			"id": 3,
-			"title": "Abbildung",
-			"description": "Abbildung",
-			"slug": "abbildung"
+			"title": "Illustration",
+			"description": "Illustration",
+			"slug": "illustration"
 		},
 		{
 			"id": 4,
-			"title": "Ikonen",
-			"description": "Ikonen",
-			"slug": "ikonen"
+			"title": "Icons",
+			"description": "icons",
+			"slug": "icons"
 		},
 		{
 			"id": 5,
 			"title": "Poster",
 			"description": "Poster",
 			"slug": "poster"
+		},
+		{
+			"id": 6,
+			"title": "Berufserfahrung",
+			"description": "Berufserfahrung",
+			"slug": "berufserfahrung"
 		}
 	]
 }

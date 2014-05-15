@@ -37,10 +37,12 @@ body {
 .wrap {
 	
 	&:first-child {
-		flex: 2;
+		position: relative;
+		flex: 1.5;
+		min-width: @gridColumnWidth * 13.5;
 	}
 	&:nth-child(2) {
-		flex: 8;
+		flex: 8.5;
 	}
 
 	@media @tablet {
@@ -67,7 +69,7 @@ section {
 	.transition-property(margin);
 	.transition-duration(@transitionDuration);
 	@media @hd {
-		margin-top: @gridColumnWidth * 20;
+		// margin-top: @gridColumnWidth * 20;
 	}
 }
 

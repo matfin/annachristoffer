@@ -3,10 +3,10 @@
 	position: absolute;
 	top: 0%;
 	right: 0%;
-	padding: @gridColumnWidth;
+	padding: @gridColumnWidth / 2;
 	background-color: @background;
 	border: 1px solid @colourBlack;
-	width: @gridColumnWidth * 12;
+	width: @gridColumnWidth * 14;
 	min-height: @gridColumnWidth * 8;
 
 	.transition-property(top, right);
@@ -14,21 +14,17 @@
 
 	time, h2 {
 		font-weight: 500;
-	}
-	h2 {
-		
+		letter-spacing: 1px;
 	}
 	p {
 		.resetMarginPadding;
 		margin-top: @gridColumnWidth;
 		font-style: italic;
-		font-size: @standardFont - 2; 
-		&:before {
-			content: '\201C';
-		}
+		font-size: @standardFont - 2;
+		letter-spacing: 1px; 
+	}
 
-		&:after {
-			content: '\201D';
-		}
+	&:hover {
+		background-color: @colourWhite;
 	}
 }

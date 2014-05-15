@@ -30,6 +30,12 @@
 			"title": "Posters",
 			"description": "Posters",
 			"slug": "posters"
+		},
+		{
+			"id": 6,
+			"title": "Work Experience",
+			"description": "Work Experience",
+			"slug": "work-experience"
 		}
 	]
 }
