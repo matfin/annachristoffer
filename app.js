@@ -3,6 +3,11 @@ Meteor.startup(function() {
 		console.log('Client: Meteor starting up.');
 
 		/**
+		 *	Setting the device parameters
+		 */
+		Device.reset();
+
+		/**
 		 *	Populating content
 		 */
 		Api.fetch('content').then(function(data) {

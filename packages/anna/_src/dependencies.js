@@ -5,5 +5,5 @@
  * @static
  */
 Dependencies = {
-
+	viewportResizeDependency: new Deps.Dependency
 };

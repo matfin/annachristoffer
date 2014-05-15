@@ -31,8 +31,8 @@ Template['views_list'].destroyed = function() {
 /**
 *	Template - views_list
 *	Helper function to populate categorised projects
-*	@method destroyed
-*	@return undefined
+*	@method projects
+*	@return {Object}	Meteor.Collection
 */
 Template['views_list'].projects = function() {
 	var category = App.models.categories.findOne({slug: this._category_slug});
@@ -43,5 +43,24 @@ Template['views_list'].projects = function() {
 	else {
 		return App.models.projects.find({}).fetch();
 	}
-	
 };
+
+/**
+*	Anonymous helper function to rearragne the project cards using DOM man
+*	@method arrangeCards
+*	@return undefined
+*/
+var arrangeCards = Deps.autorun(function() {
+	/**
+	 *	Each time this dependency is changed, 
+	 *	this function will be called.
+	 */
+	Dependencies.viewportResizeDependency.depend();
+	var cardFormation = [2, 4, 3, 2];
+	var cardSize = {
+		width: $('.projectCard').outerWidth(),
+		height: $('.projectCard').outerHeight()
+	};
+
+	console.log(cardSize);
+});

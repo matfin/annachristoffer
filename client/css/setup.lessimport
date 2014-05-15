@@ -26,6 +26,7 @@ body {
 	width: 100%;
 	height: 100%;
 	text-align: left;
+	min-width: @minWidth;
 	max-width: @maxWidth;
 	.display(flex);
 	.flex-direction(row-reverse);

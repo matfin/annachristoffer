@@ -1,6 +1,6 @@
 .projectCard {
+	z-index: 2;
 	
-	margin: @gridColumnWidth * 2;
 	padding: @gridColumnWidth;
 	background-color: @background;
 	border: 1px solid @colourBlack;
