@@ -19,7 +19,7 @@ Template['views_list'].created = function() {
 *	@return undefined
 */
 Template['views_list'].rendered = function() {
-	$('body').addClass('list');
+	$('.wrapper').addClass('list');
 };
 
 /**
@@ -29,7 +29,7 @@ Template['views_list'].rendered = function() {
 *	@return undefined
 */
 Template['views_list'].destroyed = function() {
-	$('body').removeClass('list');
+	$('.wrapper').removeClass('list');
 };
 
 /**
