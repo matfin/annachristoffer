@@ -9,8 +9,9 @@
 	width: @gridColumnWidth * 14;
 	min-height: @gridColumnWidth * 8;
 
-	.transition-property(top, right);
+	.transition-property(top, right, opacity);
 	.transition-duration(@transitionDuration);
+	.opacity(0.5);
 
 	time, h2 {
 		font-weight: 500;
@@ -24,7 +25,12 @@
 		letter-spacing: 1px; 
 	}
 
+	&.highlighted {
+		.opacity(1.0);
+	}
+
 	&:hover {
 		background-color: @colourWhite;
+		.opacity(1.0);
 	}
 }
