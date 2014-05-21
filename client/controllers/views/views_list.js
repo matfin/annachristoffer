@@ -61,7 +61,6 @@ var arrangeCards = Deps.autorun(function() {
 	 *	this function will be called.
 	 */
 
-	console.log('Running this?');
 	Dependencies.viewportResizeDependency.depend();
 	Dependencies.projectsLoadedDependency.depend();
 	var cardFormation = false;
@@ -122,14 +121,31 @@ var arrangeCards = Deps.autorun(function() {
 			width: $('.projectCard').outerWidth(),
 			height: $('.projectCard').outerHeight()
 		};
+
 		var cardIndex = 0;
+		var maxFormationHeight = 0;
 
 		_.each(cardFormation, function(item, index) {
+
+			var formationHeight = 0;
+
 			for(var i = 0; i < item.numberToShow; i++) {
+				
 				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
 				$('.projectCard').get(cardIndex).style.right = ((cardSize.width + 16) * index) + 'px';
+
+				formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
+
 				cardIndex++;
 			}
+
+			maxFormationHeight = (formationHeight > maxFormationHeight) ? formationHeight:maxFormationHeight;
+
+		});
+
+		// Setting the height of the content section
+		$('.content section').css({
+			'height': maxFormationHeight + (cardSize.height * 2) + 'px'
 		});
 	}
 });
