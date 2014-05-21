@@ -16,6 +16,7 @@ Template['cards_project'].created = function() {
 */
 Template['cards_project'].rendered = function() {
 	Dependencies.projectsLoadedDependency.changed();
+	console.log(this.data.highlighted);
 };
 
 /**
@@ -38,4 +39,26 @@ Template['cards_project'].destroyed = function() {
 Template['cards_project'].formattedDate = function(dateString, dateFormat) {
 	var m = moment(dateString);
 	return m.isValid() ? m.format(dateFormat):dateString; 
+};
+
+/**
+*	Template - cards_project
+*	Helper to return the category ids concatednated into a String
+*	@method categories
+*	@return {String} A comma separated string of category ids
+*/
+Template['cards_project'].categories = function() {
+	return _.map(this.category_ids, function(category_id){
+		return category_id.id;
+	}).join(',');
+};
+
+/**
+*	Template - cards_project
+*	Returns a boolean indicating if the card should be highlighted
+*	@method highlighted
+*	@return {String} 'highlighted' if highlighted is true, '' if not.
+*/
+Template['cards_project'].highlighted = function() {
+	return this.highlighted ? 'highlighted':'';
 };

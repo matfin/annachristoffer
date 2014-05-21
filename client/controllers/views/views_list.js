@@ -34,20 +34,34 @@ Template['views_list'].destroyed = function() {
 
 /**
 *	Template - views_list
-*	Helper function to populate categorised projects
+*	Helper function to populate all projects
 *	@method projects
 *	@return {Object}	Meteor.Collection
 */
 Template['views_list'].projects = function() {
 	var category = App.models.categories.findOne({slug: this._category_slug});
-	var project;
 
 	if(typeof category !== 'undefined') {
-		return App.models.projects.find({ 'category_ids.id': category.id}).fetch();
+		App.models.projects.update(
+			{'category_ids.id': category.id}, 
+			{$set: { highlighted: true }}, 
+			{multi: true}
+		);
+		App.models.projects.update(
+			{'category_ids.id': { $not: category.id}}, 
+			{$set: { highlighted: false }}, 
+			{multi: true}
+		);
 	}
 	else {
-		return App.models.projects.find({}).fetch();
+		App.models.projects.update(
+			{}, 
+			{$set: { highlighted: true }}, 
+			{multi: true}
+		);
 	}
+
+	return App.models.projects.find({}).fetch();
 };
 
 /**
