@@ -54,15 +54,15 @@ Router.map(function() {
 		path: '/project/:_project_slug',
 		template: 'template_main',
 		data: function() {
-			_project_slug = this.params._project_slug;
-
-			// console.log('Project', _project_slug);
+			return {
+				_project_slug: this.params._project_slug
+			}
 		},
+		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
 			'components_header': {to: 'header'},
 			'views_detail': {to: 'content'},
 			'components_footer': {to: 'footer'}
 		}
 	});
-
 });

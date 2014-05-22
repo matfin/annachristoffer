@@ -1,2 +1,7 @@
 <template name="views_detail">
+	{{#each projectData.contents}}
+		{{#if type "figcaption"}}
+			{{> cards_figcaption}}
+		{{/if}}
+	{{/each}}
 </template>
