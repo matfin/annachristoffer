@@ -56,7 +56,7 @@ Router.map(function() {
 		data: function() {
 			_project_slug = this.params._project_slug;
 
-			console.log('Project', _project_slug);
+			// console.log('Project', _project_slug);
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},
