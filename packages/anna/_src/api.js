@@ -39,7 +39,7 @@ Api = {
 		 */
 		$.ajax({
 			type: 'GET',
-			url: 'content/' + App.language + '/' + model + '.json',
+			url: '/content/' + App.language + '/' + model + '.json',
 			dataType: 'json'
 		}).done(function(data) {
 			/**

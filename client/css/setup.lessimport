@@ -15,11 +15,14 @@ body {
 .wrapper {
 	width: 100%;
 	min-height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	&.list {
 		background-image: url('/images/backgrounds/list_ratio_1.jpg');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+	}
+	&.detail {
+		background-image: url('/images/backgrounds/detail_ratio_1.jpg');
 	}
 }
 

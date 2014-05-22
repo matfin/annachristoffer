@@ -8,6 +8,7 @@ Device = {
 	windowWidth: false,
 	isRetina: false,
 	isDesktop: false,
+	isLaptop: false,
 	isTablet: false,
 	isMobile: false,
 	isTouchCapable: false,

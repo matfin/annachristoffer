@@ -51,7 +51,7 @@ Router.map(function() {
 	 *	slug name.
 	 */ 
 	this.route('detail', {
-		path: '/project/:_category/:_project_slug',
+		path: '/project/:_project_slug',
 		template: 'template_main',
 		data: function() {
 			_project_slug = this.params._project_slug;
