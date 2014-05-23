@@ -11,6 +11,8 @@ header {
 	.box-sizing(border-box);
 	background-color: @background;
 
+	.transition-property(top);
+	.transition-duration(@transitionDuration);
 
 	h1, h2, h3 {
 		font-size: @baseFontSize - 2;

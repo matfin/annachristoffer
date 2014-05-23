@@ -32,3 +32,7 @@ $(window).on('resize', _.debounce(function() {
 	Device.reset();
 	Dependencies.viewportResizeDependency.changed();
 }, 500));
+
+$(window).on('scroll', _.throttle(function() {
+	Dependencies.viewportScrollDependency.changed();
+}, 500));

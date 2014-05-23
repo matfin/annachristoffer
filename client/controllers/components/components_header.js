@@ -46,3 +46,19 @@ Template['components_header'].navCategories = function() {
 Template['components_header'].contentItems = function() {
 	return App.models.content.find({}).fetch();
 };
+
+/**
+*	Anonymous helper function to set the top position of the header menu on scroll
+*	@method positionHeader
+*	@return undefined
+*/
+var positionHeader = Deps.autorun(function() {
+
+	/**
+	 *	Run this function each time the viewportScrolledDependency is changed
+	 */
+	Dependencies.viewportScrollDependency.depend();
+	$('header').css({
+		'top': ($(window).scrollTop() + 160) + 'px'
+	});
+});

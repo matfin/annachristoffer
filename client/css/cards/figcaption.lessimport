@@ -17,5 +17,9 @@ figure.cards_figcaption {
 		p {
 			font-size: @baseFontSize - 1;
 		}
-	}	
+
+		&.empty {
+			background-color: transparent;
+		}
+	}
 }
