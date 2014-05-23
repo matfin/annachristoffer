@@ -1,10 +1,14 @@
 <template name="cards_figcaption">
-	<figure>
+	<figure class="cards_figcaption">
 		<img src="/images/projects/{{imgSource}}" width="100%" height="auto" alt="">
-		<figcaption>
-			<p>
-				Some content here
-			</p>
-		</figcaption>
+		{{#if hasCaptions}}
+			<figcaption>
+				{{#each captions}}
+					<p>
+						{{{content}}}
+					</p>
+				{{/each}}
+			</figcaption>
+		{{/if}}
 	</figure>
 </template>

@@ -71,5 +71,5 @@ Template['cards_figcaption'].imgSource = function() {
 *	@return {Boolean}
 */
 Template['cards_figcaption'].hasCaptions = function() {
-	
+	return this.captions && this.captions.length > 0;
 };

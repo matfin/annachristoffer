@@ -30,6 +30,14 @@ Template['views_list'].rendered = function() {
 */
 Template['views_list'].destroyed = function() {
 	$('.wrapper').removeClass('list');
+
+	/**
+	 *	Resetting the height of the content section 
+	 *	when this view has been destroyed
+	 */
+	$('.content section').css({
+		'height': 'auto'
+	});
 };
 
 /**
@@ -61,7 +69,7 @@ Template['views_list'].projects = function() {
 		);
 	}
 
-	return App.models.projects.find({}).fetch();
+	return App.models.projects.find({}, {sort: {highlighted: 1}}).fetch();
 };
 
 /**
