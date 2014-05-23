@@ -1,15 +1,21 @@
 figure.cards_figcaption {
+
 	.display(flex);
 	.flex-direction(row);
 	.align-items(flex-start);
+
 	margin-bottom: @gridColumnWidth * 2;
+
+	figcaption, img {
+		margin-left: @gridColumnWidth * 2;
+	}
+
 	img {
 		flex: 2;
 		margin-top: @gridColumnWidth;
 	}
 	figcaption {
 		flex: 1;
-		margin-left: @gridColumnWidth * 2;
 		margin-top: -@gridColumnWidth;
 		padding: @gridColumnWidth * 1.5 @gridColumnWidth * 2;
 		background-color: @colourWhite;
@@ -20,6 +26,32 @@ figure.cards_figcaption {
 
 		&.empty {
 			background-color: transparent;
+		}
+	}
+
+	// Rules for tablets
+	@media @tablet {
+		.flex-direction(column);
+		padding-left: @gridColumnWidth;
+		margin-bottom: 0;
+		figcaption, img {
+			margin: 0;
+			&.empty {
+				display: none;
+			}
+		}
+	}
+
+	// Rules for tablets
+	@media @mobile {
+		.flex-direction(column);
+		padding-left: @gridColumnWidth;
+		margin-bottom: 0;
+		figcaption, img {
+			margin: 0;
+			&.empty {
+				display: none;
+			}
 		}
 	}
 }
