@@ -45,7 +45,6 @@ figure.cards_figcaption {
 	// Rules for tablets
 	@media @mobile {
 		.flex-direction(column);
-		padding-left: @gridColumnWidth;
 		margin-bottom: 0;
 		figcaption, img {
 			margin: 0;

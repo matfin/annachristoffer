@@ -55,10 +55,13 @@ Template['components_header'].contentItems = function() {
 var positionHeader = Deps.autorun(function() {
 
 	/**
-	 *	Run this function each time the viewportScrolledDependency is changed
+	 *	Run this function each time the viewportScrolledDependency is changed.
+	 *	Do not do this for mobile devices.
 	 */
 	Dependencies.viewportScrollDependency.depend();
-	$('header').css({
-		'top': ($(window).scrollTop() + 160) + 'px'
-	});
+	if(!Device.isMobile) {
+		$('header').css({
+			'top': ($(window).scrollTop() + 160) + 'px'
+		});
+	}
 });

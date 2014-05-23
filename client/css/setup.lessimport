@@ -36,6 +36,10 @@ body {
 	.flex-direction(row-reverse);
 	.flex-wrap(nowrap);
 	.align-items(flex-start);
+
+	@media @mobile {
+		display: block;
+	}
 }
 
 .header {
@@ -43,6 +47,9 @@ body {
 	flex: 1.5;
 	min-width: @gridColumnWidth * 13.5;
 	height: 100%;
+	@media @mobile {
+		height: @gridColumnWidth * 3;
+	}
 }
 
 .content {
@@ -54,8 +61,11 @@ section {
 	margin-top: @gridColumnWidth * 10;
 	.transition-property(margin);
 	.transition-duration(@transitionDuration);
-	@media @hd {
-		// margin-top: @gridColumnWidth * 20;
+	@media @tablet {
+		margin-top: @gridColumnWidth * 5;
+	}
+	@media @mobile {
+		margin-top: 0;
 	}
 }
 
