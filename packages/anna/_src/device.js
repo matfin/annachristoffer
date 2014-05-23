@@ -7,6 +7,7 @@
 Device = {
 	windowWidth: false,
 	isRetina: false,
+	isHD: false,
 	isDesktop: false,
 	isLaptop: false,
 	isTablet: false,
@@ -17,8 +18,9 @@ Device = {
 
 		this.windowWidth = $(window).width();
 		this.isRetina = window.devicePixelRatio > 1;
-		this.isDesktop = this.windowWidth >= 1280;
-		this.isLaptop = this.windowWidth > 1024 && this.windowWidth < 1280;
+		this.isHD = this.windowWidth > 1600;
+		this.isDesktop = this.windowWidth > 1280 && this.windowWidth <= 1600;
+		this.isLaptop = this.windowWidth > 1024 && this.windowWidth <= 1280;
 		this.isTablet = this.windowWidth <= 1024 && this.windowWidth > 640;
 		this.isMobile = this.windowWidth <= 640;
 		this.isTouchCapable = 'ontouchstart' in document.documentElement;

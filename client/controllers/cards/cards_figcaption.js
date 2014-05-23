@@ -42,7 +42,10 @@ Template['cards_figcaption'].imgSource = function() {
 	var imgSource = '';
 
 	if(this && this.img) {
-		if(Device.isDesktop) {
+		if(Device.isHD) {
+			imgSource = this.img + '-hd';
+		}
+		else if(Device.isDesktop) {
 			imgSource = this.img + '-d';
 		}
 		else if(Device.isLaptop){
