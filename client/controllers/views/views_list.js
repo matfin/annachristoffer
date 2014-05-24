@@ -87,7 +87,7 @@ var arrangeCards = Deps.autorun(function() {
 	Dependencies.projectsLoadedDependency.depend();
 	var cardFormation = false;
 
-	if(Device.isDesktop) {
+	if(Device.isDesktop || Device.isHD) {
 		cardFormation = [
 			{
 				paddingTop: 1,
@@ -144,12 +144,12 @@ var arrangeCards = Deps.autorun(function() {
 		];
 	}
 
-	console.log('Card formation call', cardFormation);
-
 	if($('.projectCard').length !== 0 && cardFormation) {
 
+		var cardSizeWidth = ($('section').outerWidth() - 64) / cardFormation.length;
+
 		var cardSize = {
-			width: $('.projectCard').outerWidth(),
+			width: cardSizeWidth,
 			height: $('.projectCard').outerHeight()
 		};
 
@@ -164,6 +164,13 @@ var arrangeCards = Deps.autorun(function() {
 				
 				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
 				$('.projectCard').get(cardIndex).style.right = ((cardSize.width + 16) * index) + 'px';
+				
+				if(Device.isMobile) {
+					$('.projectCard').get(cardIndex).style.width = '100%';
+				}
+				else {
+					$('.projectCard').get(cardIndex).style.width = cardSizeWidth + 'px';
+				}
 
 				formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
 
