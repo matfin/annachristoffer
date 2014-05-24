@@ -2,7 +2,7 @@ Router.onRun(function() {
 });
 
 Router.onBeforeAction(function() {
-	
+	$('nav, section').removeClass('revealed');
 });
 
 Router.map(function() {
@@ -17,7 +17,6 @@ Router.map(function() {
 		template: 'template_main',
 		data: function() {
 			_content_slug = this.params._content_slug;
-			console.log('Content', _content_slug);
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},

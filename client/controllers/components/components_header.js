@@ -81,10 +81,10 @@ Template['components_header'].events = {
 			return;
 		}
 		else {
-			$(template.find('nav')).toggleClass('revealed');
+			$('nav, section').toggleClass('revealed');
 		}
 	},
 	'touchstart button': function(e, template) {
-		$(template.find('nav')).toggleClass('revealed');
+		$('nav, section').toggleClass('revealed');
 	}
 };

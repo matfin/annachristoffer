@@ -34,3 +34,14 @@
 		.opacity(1.0);
 	}
 }
+
+@media @mobile {
+	.projectCard {
+		position: relative;
+		display: block;
+		width: 100%;
+		.box-sizing(border-box);
+		border-left: 0;
+		border-right: 0;
+	}
+}
