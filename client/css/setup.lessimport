@@ -69,6 +69,18 @@ section {
 	}
 }
 
+button {
+	.resetButton;
+}
+
+a, button {
+	.transition-duration(@transitionDuration / 2);
+	.transition-property(scale);
+	&:active {
+		.scale(@scaleFactor);
+	}
+}
+
 h1, h2, h3, h4, h5, p {
 	.resetMarginPadding;
 	font-size: @baseFontSize;

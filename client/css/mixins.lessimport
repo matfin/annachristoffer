@@ -11,6 +11,21 @@
 }
 
 /**
+ *	Reset browser fedault styling for buttons
+ */
+.resetButton {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	background-color: transparent;
+	border: none;
+
+	&:active,
+	&:focus {
+		outline: none;
+	}
+}
+
+/**
  *	Mixin to load background images based on screen parameters, 
  *	in this case, the window size and pixel density.
  */

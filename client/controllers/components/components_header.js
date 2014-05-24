@@ -64,4 +64,27 @@ var positionHeader = Deps.autorun(function() {
 			'top': ($(window).scrollTop() + 160) + 'px'
 		});
 	}
+	else {
+		$('header').css({
+			'top': '0px'
+		});
+	}
 });
+
+/**
+ *	Events for this template
+ */
+Template['components_header'].events = {
+	'click button': function(e, template) {
+		if(Device.isTouchCapable) {
+			e.preventDefault();
+			return;
+		}
+		else {
+			$(template.find('nav')).toggleClass('revealed');
+		}
+	},
+	'touchstart button': function(e, template) {
+		$(template.find('nav')).toggleClass('revealed');
+	}
+};

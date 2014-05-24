@@ -11,8 +11,8 @@ header {
 	.box-sizing(border-box);
 	background-color: @background;
 
-	// .transition-property(top);
-	// .transition-duration(@transitionDuration);
+	.transition-property(top);
+	.transition-duration(@transitionDuration);
 
 	h1, h2, h3 {
 		font-size: @baseFontSize - 2;
@@ -28,6 +28,10 @@ header {
 
 	h3 {
 		margin-top: @gridColumnWidth / 2;
+	}
+
+	button {
+		display: none;
 	}
 
 	nav {
@@ -58,7 +62,6 @@ header {
 
 @media @mobile {
 	header {
-		// overflow: hidden;
 		z-index: 4;
 		.resetMarginPadding;
 		padding: @gridColumnWidth / 2;
@@ -67,7 +70,7 @@ header {
 		left: 0;
 		width: 100%;
 		height: @gridColumnWidth * 3;
-		background-color: @colourWhite;
+		background-color: @menuBackground;
 		h1, h2 {
 			text-align: left;
 			width: @gridColumnWidth * 15;
@@ -77,26 +80,40 @@ header {
 			display: none;
 		}
 
+		button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: @gridColumnWidth * 3;
+			padding-top: @gridColumnWidth * 1.25;
+			display: block;
+		}
+
 		nav {
 			z-index: 3;
 			.resetMarginPadding;
-			background-color: @colourWhite;
+			background-color: @menuBackground;
 			position: fixed;
 			top: @gridColumnWidth * 3;
-			left: 0;
-			width: 50%;
-			.transition-property(all);
-			.transition-duration(@transitionDuration * 2);
-			.transform(translateX(200%));
+			right: 0;
+			width: 100%;
+			padding-top: 16px;
+			.transition-property(tansform);
+			.transition-duration(@transitionDuration);
+			.transform(translateY(-200%));
 			&.revealed {
-				.transform(translateX(100%));
+				.transform(translateY(0%));
 			}
 
 			ul {
 				li {
 					a {
+						.resetMarginPadding;
 						border-bottom: 0;
-						border-top: 1px solid @colourBlack;
+						border-top: 1px solid lighten(@colourBlack, 60%);
+						width: 60%;
+						line-height: @gridColumnWidth * 2;
+						height: @gridColumnWidth * 2;
 					}
 				}
 				&:nth-child(2) {
