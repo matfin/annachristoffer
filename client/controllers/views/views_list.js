@@ -135,7 +135,16 @@ var arrangeCards = Deps.autorun(function() {
 			},
 		];
 	}
+	else {
+		cardFormation = [
+			{
+				paddingTop: 0,
+				numberToShow: 11
+			}
+		];
+	}
 
+	console.log('Card formation call', cardFormation);
 
 	if($('.projectCard').length !== 0 && cardFormation) {
 
