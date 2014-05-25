@@ -47,6 +47,8 @@ body {
 	flex: 1.5;
 	min-width: @gridColumnWidth * 13.5;
 	height: 100%;
+	padding: @gridColumnWidth;
+	.box-sizing(border-box);
 	@media @mobile {
 		height: @gridColumnWidth * 3;
 	}
@@ -58,11 +60,11 @@ body {
 
 section {
 	position: relative;
-	margin-top: @gridColumnWidth * 10;
+	margin-top: @gridColumnWidth * 5;
 	.transition-property(margin);
 	.transition-duration(@transitionDuration / 2);
 	@media @tablet {
-		margin-top: @gridColumnWidth * 5;
+		margin-top: @gridColumnWidth * 2.5;
 	}
 	@media @mobile {
 		margin-top: 0;

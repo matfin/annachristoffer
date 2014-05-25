@@ -146,7 +146,7 @@
 		{
 			"slug": "cartographical-scale",
 			"title": "Cartographical Scale",
-			"description": "A map functions like a funnel. It concentrates information into a smaller manageable area depending on scale.",
+			"description": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale.",
 			"date_created": "2009-11-01",
 			"category_ids": [
 				{

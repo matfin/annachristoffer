@@ -1,9 +1,6 @@
 header {
 
-	position: absolute;
-	top: @gridColumnWidth * 10;
-	left: (@gridColumnWidth * 1) + 2;
-	width: @gridColumnWidth * 10;
+	position: relative;
 
 	text-align: center;
 	padding: @gridColumnWidth / 2;

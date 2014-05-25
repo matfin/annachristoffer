@@ -90,8 +90,8 @@ var arrangeCards = Deps.autorun(function() {
 	if(Device.isHD) {
 		cardFormation = [
 			{
-				paddingTop: 2,
-				numberToShow: 1
+				paddingTop: 0,
+				numberToShow: 3
 			},
 			{
 				paddingTop: 0.5,
@@ -107,7 +107,7 @@ var arrangeCards = Deps.autorun(function() {
 			},
 			{
 				paddingTop: 1,
-				numberToShow: 3
+				numberToShow: 1
 			},
 		];
 	}
