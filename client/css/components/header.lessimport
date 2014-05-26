@@ -82,7 +82,7 @@ header {
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			height: @gridColumnWidth * 3;
+			height: @gridColumnWidth * 4;
 			background-color: @colourWhite;
 			.resetMarginPadding;
 			ul {
@@ -95,6 +95,26 @@ header {
 					a {
 						.resetMarginPadding;
 						border-bottom: none;
+						&:before {
+							font-family: 'anna';
+							font-size: @gridColumnWidth * 1.5;
+							width: 100%;
+							display: block;
+							height: @gridColumnWidth * 1.5;
+							margin-top: @gridColumnWidth;
+						}
+						&[title="Projects"]:before {
+							content: "\e600";
+						}
+						&[title="About"]:before {
+							content: "\e603";
+						}
+						&[title="Contact"]:before {
+							content: "\e604";
+						}
+						&:hover {
+							font-weight: normal;
+						}
 					}
 				}
 

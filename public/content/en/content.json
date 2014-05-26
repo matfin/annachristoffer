@@ -5,6 +5,7 @@
 			"id": 1,
 			"title": "About",
 			"slug": "about",
+			"class": "icon-info2",
 			"contents": [
 				{
 					"content": "About item one"
@@ -18,6 +19,7 @@
 			"id": 2,
 			"title": "Contact",
 			"slug": "contact",
+			"class": "icon-envelope",
 			"contents": [
 				{
 					"content": "Contact item one"

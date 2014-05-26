@@ -177,12 +177,6 @@ var arrangeCards = Deps.autorun(function() {
 
 		var cardSizeWidth = ($('section').outerWidth() - (cardFormation.length * 16)) / cardFormation.length;
 
-		console.log('cardSizeWidth: ', cardSizeWidth);
-
-		console.log('Section outerWidth: ', $('section').outerWidth());
-
-		console.log(cardFormation.length);
-
 		var cardSize = {
 			width: cardSizeWidth,
 			height: $('.projectCard').outerHeight()

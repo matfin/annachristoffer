@@ -16,7 +16,6 @@ Template['cards_project'].created = function() {
 */
 Template['cards_project'].rendered = function() {
 	Dependencies.projectsLoadedDependency.changed();
-	console.log(this.data.highlighted);
 };
 
 /**
