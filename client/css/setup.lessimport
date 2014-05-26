@@ -44,7 +44,7 @@ body {
 
 .header {
 	position: relative;
-	flex: 1.5;
+	.flex(1.5);
 	min-width: @gridColumnWidth * 13.5;
 	height: 100%;
 	padding: @gridColumnWidth;
@@ -55,7 +55,7 @@ body {
 }
 
 .content {
-	flex: 8.5;
+	.flex(8.5);
 }
 
 section {

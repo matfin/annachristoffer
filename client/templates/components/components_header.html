@@ -8,27 +8,23 @@
 	<h3>
 		working at <br /> Hi-Res! Berlin
 	</h3>
-	<button>
-		Menu
-	</button>
 	<nav>
 		<ul>
-			<li>
+			<li class="contentLink">
 				<a href="/" title="Projects">
 					Projects
 				</a>
 			</li>
 			{{#each navCategories}}
-				<li>
+				<li class="categoryLink">
 					<a href="{{pathFor 'list' _category_slug=this.slug}}" title="{{title}}">
 						{{title}}
 					</a>
 				</li>
 			{{/each}}
-		</ul>
-		<ul>
+
 			{{#each contentItems}}
-				<li>
+				<li class="contentLink">
 					<a href="{{pathFor 'content' _content_slug=this.slug}}" title="{{title}}">
 						{{title}}
 					</a>

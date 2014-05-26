@@ -75,16 +75,16 @@ var positionHeader = Deps.autorun(function() {
  *	Events for this template
  */
 Template['components_header'].events = {
-	'click button': function(e, template) {
-		if(Device.isTouchCapable) {
-			e.preventDefault();
-			return;
-		}
-		else {
-			$('nav, section').toggleClass('revealed');
-		}
-	},
-	'touchstart button': function(e, template) {
-		$('nav, section').toggleClass('revealed');
-	}
+	// 'click button': function(e, template) {
+	// 	if(Device.isTouchCapable) {
+	// 		e.preventDefault();
+	// 		return;
+	// 	}
+	// 	else {
+	// 		$('nav, section').toggleClass('revealed');
+	// 	}
+	// },
+	// 'touchstart button': function(e, template) {
+	// 	$('nav, section').toggleClass('revealed');
+	// }
 };
