@@ -8,48 +8,9 @@ Meteor.startup(function() {
 		Device.reset();
 
 		/**
-		 *	Populating content
+		 *	Loading localised content
 		 */
-		Api.fetch('content').then(function(data) {
-			_.each(data.items, function(item){
-				App.models.content.insert(item);
-			});
-		}).fail(function(error) {
-			console.log(error);
-		});
-
-		/**
-		 *	Populating projects
-		 */
-		Api.fetch('projects').then(function(data) {
-			_.each(data.items, function(item){
-				App.models.projects.insert(item);
-			});
-		}).fail(function(error) {
-			console.log(error);
-		});
-
-		/**
-		 *	Populating categories
-		 */
-		Api.fetch('categories').then(function(data) {
-			_.each(data.items, function(item){
-				App.models.categories.insert(item);
-			});
-		}).fail(function(error) {
-			console.log(error);
-		});
-
-		/**
-		 *	Populating formations
-		 */
-		Api.fetch('formations').then(function(data) {
-			_.each(data.items, function(item){
-				App.models.formations.insert(item);
-			});
-		}).fail(function(error) {
-			console.log(error);
-		});
+		Helpers.loadLocalisedContent();
 	}
 
 	if(Meteor.isServer) {
