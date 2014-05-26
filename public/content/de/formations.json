@@ -1,0 +1,90 @@
+{
+	"name": "Formations",
+	"items": [
+		{
+			"screen": "hd",
+			"cardFormation": [
+				{
+					"paddingTop": 0,
+					"numberToShow": 3
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 2
+				},
+				{
+					"paddingTop": 0,
+					"numberToShow": 3
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 2
+				},
+				{
+					"paddingTop": 1,
+					"numberToShow": 1
+				}
+			]
+		},
+		{
+			"screen": "desktop",
+			"cardFormation": [
+				{
+					"paddingTop": 1,
+					"numberToShow": 2
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 3
+				},
+				{
+					"paddingTop": 0,
+					"numberToShow": 4
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 2
+				}
+			]
+		},
+		{
+			"screen": "laptop",
+			"cardFormation": [
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 3
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 5
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 3
+				}
+			]
+		},
+		{
+			"screen": "tablet",
+			"cardFormation": [
+				{
+					"paddingTop": 0,
+					"numberToShow": 6
+				},
+				{
+					"paddingTop": 0.5,
+					"numberToShow": 5
+				}
+			]
+		},
+		{
+			"screen": "mobile",
+			"cardFormation": [
+				{
+					"paddingTop": 0,
+					"numberToShow": 11
+				}
+			]
+		}
+	]
+}

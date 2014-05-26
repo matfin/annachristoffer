@@ -39,6 +39,17 @@ Meteor.startup(function() {
 		}).fail(function(error) {
 			console.log(error);
 		});
+
+		/**
+		 *	Populating formations
+		 */
+		Api.fetch('formations').then(function(data) {
+			_.each(data.items, function(item){
+				App.models.formations.insert(item);
+			});
+		}).fail(function(error) {
+			console.log(error);
+		});
 	}
 
 	if(Meteor.isServer) {

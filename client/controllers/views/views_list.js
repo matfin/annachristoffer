@@ -85,95 +85,32 @@ var arrangeCards = Deps.autorun(function() {
 
 	Dependencies.viewportResizeDependency.depend();
 	Dependencies.projectsLoadedDependency.depend();
-	var cardFormation = false;
+	var formation = false;
 
 	if(Device.isHD) {
-		cardFormation = [
-			{
-				paddingTop: 0,
-				numberToShow: 3
-			},
-			{
-				paddingTop: 0.5,
-				numberToShow: 2
-			},
-			{
-				paddingTop: 0,
-				numberToShow: 3
-			},
-			{
-				paddingTop: 0.5,
-				numberToShow: 2
-			},
-			{
-				paddingTop: 1,
-				numberToShow: 1
-			},
-		];
+		formation = App.models.formations.findOne({"screen": "hd"});
 	}
 	else if(Device.isDesktop) {
-		cardFormation = [
-			{
-				paddingTop: 1,
-				numberToShow: 2
-			},
-			{
-				paddingTop: 0.5,
-				numberToShow: 3
-			},
-			{
-				paddingTop: 0,
-				numberToShow: 4
-			},
-			{
-				paddingTop: 0.5,
-				numberToShow: 2
-			}
-		];
+		formation = App.models.formations.findOne({"screen": "desktop"});
 	}
 	else if(Device.isLaptop) {
-		cardFormation = [
-			{
-				paddingTop: 0.5,
-				numberToShow: 3
-			},
-			{
-				paddingTop: 0.0,
-				numberToShow: 5
-			},
-			{
-				paddingTop: 0.5,
-				numberToShow: 3
-			},
-		];
+		formation = App.models.formations.findOne({"screen": "laptop"});
 	}
 	else if(Device.isTablet) {
-		cardFormation = [
-			{
-				paddingTop: 0,
-				numberToShow: 6
-			},
-			{
-				paddingTop: 0.5,
-				numberToShow: 5
-			},
-		];
+		formation = App.models.formations.findOne({"screen": "tablet"});
 	}
 	else {
-		cardFormation = [
-			{
-				paddingTop: 0,
-				numberToShow: 11
-			}
-		];
+		formation = App.models.formations.findOne({"screen": "mobile"});
 	}
 
-	if($('.projectCard').length !== 0 && cardFormation) {
+	if($('.projectCard').length !== 0 && formation) {
 
 		/**
  		 *	Setting the card width so they line up nicely
  		 *	from within the content section
 		 */
+
+		var cardFormation = formation.cardFormation;
 
 		var cardSizeWidth = ($('section').outerWidth() - (cardFormation.length * 16)) / cardFormation.length;
 

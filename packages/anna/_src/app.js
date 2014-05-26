@@ -59,6 +59,14 @@
 		 *	@property categories
 		 *	@type {Meteor.Collection}
 		 */
-		categories: new Meteor.Collection('categories', {connection: null})
+		categories: new Meteor.Collection('categories', {connection: null}),
+
+		/**
+		 *	Meteor Collection that we populate from the cardformations json
+		 *
+		 *	@property formations
+		 *	@type {Meteor.Collection}
+		 */
+		formations: new Meteor.Collection('formations', {connection: null})
 	}
 };
