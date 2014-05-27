@@ -39,32 +39,7 @@ Template['cards_figcaption'].imgSource = function() {
 	// Call this automatically on window resize
 	Dependencies.viewportResizeDependency.depend();
 
-	var imgSource = '';
-
-	if(this && this.img) {
-		if(Device.isHD) {
-			imgSource = this.img + '-hd';
-		}
-		else if(Device.isDesktop) {
-			imgSource = this.img + '-d';
-		}
-		else if(Device.isLaptop){
-			imgSource = this.img + '-l';
-		}
-		else if(Device.isTablet){
-			imgSource = this.img + '-t';
-		}
-		else if(Device.isMobile){
-			imgSource = this.img + '-m';
-		}
-
-		if(Device.isRetina) {
-			return imgSource + '@2x.jpg';
-		}
-		else {
-			return imgSource + '.jpg';
-		}
-	}
+	return Helpers.loadImageSource(this.img);
 };
 
 /**

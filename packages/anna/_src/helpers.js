@@ -52,5 +52,43 @@ Helpers = {
 				console.log(error);
 			});
 		});
+	},
+
+	/**
+	 *	Given various device parameters, such as screen pixel density and resolutuin,
+	 *	this helper function will determine the correct image to load given a path.
+	 *	
+	 *	@method reset
+	 *	@param {String}		the string for the image path
+	 *	@return {String}	the image path with file extension
+	 */
+	loadImageSource: function(img, extension) {
+		/**
+		 *	If the extension is not specified, use jpg as default
+		 */
+		if(typeof extension === 'undefined') {
+			extension = 'jpg';
+		}
+		var imgSource = '';
+
+		if(img && typeof img !== 'undefined') {
+
+			if(Device.isHD) {
+				imgSource = img + '-hd';
+			}
+			else if(Device.isDesktop) {
+				imgSource = img + '-d';
+			}
+			else {
+				imgSource = img;
+			}
+
+			if(Device.isRetina) {
+				return imgSource + '@2x.' + extension;
+			}
+			else {
+				return imgSource + '.' + extension;
+			}
+		}
 	}
 };
