@@ -82,7 +82,7 @@
 			"contents": [
 				{
 					"type": "figcaption",
-					"img": "digital-atlas/title",
+					"img": "digital-atlas/title/title",
 					"captions": [
 						{
 							"content": "The digital atlas “Wonder-WorldCalendar teaches the cartographic and cultural contents with a high- ly dynamic and visual method. The idea is based on the phenomenon of “cabinets of wonder” from the 16th and 17th century. At this time European discoverers collected during their expeditions va- rious exotic objects and on the turn to Europe re- placed the found pieces to a universal collection.The radical mixture of most diverse objects in one room created a spectacular view for the observer."
@@ -91,7 +91,7 @@
 				},
 				{
 					"type": "figcaption",
-					"img": "sample",
+					"img": "digital-atlas/winterroom/winterroom",
 					"captions": [
 						{
 							"content": "The picture presents an example of the “Wonder-WorldCalendar” during winter time. By starting the app the child views a virtual cabinet of wonder, which is filled with the most wonderous objects from the whole world. The range of objects is determined by the seasonal structures of the vibrant world, because every item symbolizes a traditional event, whereby it represents the cultural incidences of a country. The programming of the virtual cabinet is leaded by the calendric course of cultural celebrations. Depending on the contemporary appearence of the traditional events, the visibility of the itmes is limited in time. Therefore the child is daily confronted with new constellati- ons of foreign objects and this diversity arouses the curiosity of the recipient."
@@ -100,7 +100,7 @@
 				}, 
 				{
 					"type": "figcaption",
-					"img": "sample"
+					"img": "digital-atlas/springroom/springroom"
 				},
 				{
 					"type": "figcaption",
