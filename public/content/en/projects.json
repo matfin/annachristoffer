@@ -104,20 +104,20 @@
 				},
 				{
 					"type": "figcaption",
-					"img": "sample"
+					"img": "digital-atlas/summerroom/summerroom"
 				},
 				{
 					"type": "figcaption",
-					"img": "sample",
+					"img": "digital-atlas/map/map",
 					"captions": [
 						{
-							"content": "The picture presents an example of the &ldquo;Wonder-WorldCalendar&rdquo; during winter time. By starting the app the child views a virtual cabinet of wonder, which is filled with the most wonderous objects from the whole world. The range of objects is determined by the seasonal structures of the vibrant world, because every item symbolizes a traditional event, whereby it represents the cultural incidences of a country. The programming of the virtual cabinet is leaded by the calendric course of cultural celebrations. Depending on the contemporary appearence of the traditional events, the visibility of the itmes is limited in time. Therefore the child is daily confronted with new constellati- ons of foreign objects and this diversity arouses the curiosity of the recipient."
+							"content": "Content for the MAP needs to go here."
 						}
 					]
 				},
 				{
 					"type": "figcaption",
-					"img": "sample"
+					"img": "digital-atlas/info/info"
 				}
 			]
 		},
