@@ -27,3 +27,19 @@ Template['cards_slide'].rendered = function() {
 Template['cards_slide'].destroyed = function() {
 
 };
+
+
+/**
+*	Template - cards_slide
+*	Helper function to return the correctly sized image
+*	@method imgSource
+*	@return {String}
+*/
+Template['cards_slide'].imgSource = function() {
+
+	// Call this automatically on window resize
+	Dependencies.viewportResizeDependency.depend();
+
+	return Helpers.loadImageSource(this.img);
+};
+

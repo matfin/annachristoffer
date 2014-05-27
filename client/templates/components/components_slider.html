@@ -1,5 +1,9 @@
 <template name="components_slider">
-	{{#each slides}}
-		{{> cards_slide}}
-	{{/each}}
+	<div class="iosSlider">
+		<div class="slider">
+			{{#each slides}}
+				{{> cards_slide}}
+			{{/each}}
+		</div>
+	</div>
 </template>

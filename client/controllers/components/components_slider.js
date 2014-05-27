@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['components_slider'].created = function() {
-	console.log('Slider created!', this);
 };
 
 /**
@@ -15,7 +14,17 @@ Template['components_slider'].created = function() {
 *	@return undefined
 */
 Template['components_slider'].rendered = function() {
-
+	$('.iosSlider').iosSlider({
+		desktopClickDrag: true,
+		snapToChildren: true,
+		keyboardControls: true,
+		infiniteSlider: true,
+		responsiveSlideContainer: true,
+		responsiveSlides: true,
+		onSliderLoaded: function(args) {
+			console.log('Slider loaded: ',  args);
+		}
+	});
 };
 
 /**
