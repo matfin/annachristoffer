@@ -13,6 +13,16 @@
 				{
 					"id": 3
 				}
+			],
+			"contents": [
+				{
+					"type": "slider",
+					"slides": [
+						{
+							"img": ""
+						}
+					]
+				}
 			]
 		},
 		{
