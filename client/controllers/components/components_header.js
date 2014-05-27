@@ -58,6 +58,7 @@ var primeHeader = Deps.autorun(function() {
 	 *	Do not do this for mobile devices.
 	 */
 	Dependencies.viewportScrollDependency.depend();
+	Dependencies.viewportResizeDependency.depend();
 
 	if(!Device.isMobile) {
 		

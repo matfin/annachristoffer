@@ -69,7 +69,8 @@ Template['views_list'].projects = function() {
 		);
 	}
 
-	return App.models.projects.find({}, {sort: {highlighted: 1}}).fetch();
+	// return App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
+	return App.models.projects.find({}).fetch();
 };
 
 /**
@@ -129,7 +130,7 @@ var arrangeCards = Deps.autorun(function() {
 			for(var i = 0; i < item.numberToShow; i++) {
 				
 				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
-				$('.projectCard').get(cardIndex).style.right = ((cardSize.width + 16) * index) + 'px';
+				$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 16) * index) + 'px';
 				
 				if(Device.isMobile) {
 					$('.projectCard').get(cardIndex).style.width = '100%';
