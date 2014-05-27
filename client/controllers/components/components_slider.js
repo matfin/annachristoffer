@@ -22,7 +22,7 @@ Template['components_slider'].rendered = function() {
 		responsiveSlideContainer: true,
 		responsiveSlides: true,
 		onSliderLoaded: function(args) {
-			console.log('Slider loaded: ',  args);
+			Dependencies.sliderLoadedDependency.changed();
 		}
 	});
 };
@@ -36,3 +36,14 @@ Template['components_slider'].rendered = function() {
 Template['components_slider'].destroyed = function() {
 
 };
+
+var primeSlider = Deps.autorun(function() {
+
+	Dependencies.viewportResizeDependency.depend();
+	Dependencies.sliderLoadedDependency.depend();
+
+	$('.iosSlider').css({
+		'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px'
+	});
+
+});
