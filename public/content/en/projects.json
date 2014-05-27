@@ -52,6 +52,43 @@
 							"content": "During the discovery of music and animation, the child also has the opportunity to receive further information, by tapping on the coloured instruments. All information is set with the dynamical antiqua »Adobe Caslon Pro«. "
 						}
 					]
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/elephant/elephant",
+					"captions": [
+						{
+							"content": "Every music piece is illustrated by the shapes and forms of the instruments. The aim was to preserve an imaginative approach to classical music. The multimedia mixture of poetic music, abstract animation and fictional text enables an engaging learning experience."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/info/info"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music/music"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/lion/lion"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/hen/hen"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/fish/fish"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/turtle/turtle"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/swan/swan"
 				}
 			]
 		},
