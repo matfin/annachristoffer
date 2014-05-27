@@ -3,6 +3,14 @@
 		<img src="/images/projects/{{imgSource}}" width="100%" height="auto" alt="">
 		{{#if hasCaptions}}
 			<figcaption>
+				{{#if hasIntro}}
+					<h2>
+						{{{intro.title}}}
+					</h2>
+					<h3>
+						{{{intro.description}}}
+					</h3>
+				{{/if}}
 				{{#each captions}}
 					<p>
 						{{{content}}}

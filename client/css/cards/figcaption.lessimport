@@ -20,9 +20,24 @@ figure.cards_figcaption {
 		padding: @gridColumnWidth * 1.5 @gridColumnWidth * 2;
 		background-color: @colourWhite;
 
+		h2, h3 {
+			margin-bottom: @gridColumnWidth;
+		}
+
+		h3 {
+			&:before {
+				content: open-quote;
+			}
+			&:after {
+				content: close-quote;
+			}
+		}
+
 		p {
 			font-size: @baseFontSize - 1;
 			margin-bottom: @gridColumnWidth;
+			line-height: @gridColumnWidth * 1.5;
+			letter-spacing: 0.3px;
 		}
 
 		&.empty {

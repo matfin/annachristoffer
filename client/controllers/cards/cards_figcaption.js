@@ -44,10 +44,20 @@ Template['cards_figcaption'].imgSource = function() {
 
 /**
 *	Template - cards_figcaption
-*	Helper function to determine if the image has any captions
+*	Helper function to determine if there are any captions
 *	@method hasCaptions
 *	@return {Boolean}
 */
 Template['cards_figcaption'].hasCaptions = function() {
 	return this.captions && this.captions.length > 0;
+};
+
+/**
+*	Template - cards_figcaption
+*	Helper function to determine if there are any intros
+*	@method hasCaptions
+*	@return {Boolean}
+*/
+Template['cards_figcaption'].hasIntro = function() {
+	return this.intro;
 };
