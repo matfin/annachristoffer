@@ -63,7 +63,7 @@ var primeHeader = Deps.autorun(function() {
 	if(!Device.isMobile) {
 		
 		$('header').css({
-			'top': ($(window).scrollTop() + 160) + 'px'
+			'top': ($(window).scrollTop()) + 'px'
 		});
 
 	}
