@@ -22,6 +22,7 @@ figure.cards_figcaption {
 
 		p {
 			font-size: @baseFontSize - 1;
+			margin-bottom: @gridColumnWidth;
 		}
 
 		&.empty {

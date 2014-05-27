@@ -27,8 +27,33 @@
 				{
 					"id": 2
 				}
+			],
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/title/title",
+					"captions": [
+						{
+							"content": "The digital music book is inspired by Camille Saint-Saëns purely instrumental composition of »Carnival of the animals«. The music describes little humoristc tales with a variety of musical stylistics. The animations are created in AfterEffects."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/orchestra/orchestra",
+					"captions": [
+						{
+							"content": "The starting point of the application presents the original constellation of the chamber orchestra from »Carnival of the animals«. By tapping on the different musical items, the child has the possibility to receive a first impression of the instrumental sound. The whole visual concept of the music book is based on the constellation of instruments."
+						},
+						{
+							"content": "The illustrations of each music piece are dynamically constructed by the items of the chamber orchestra. Further on the coloured items elucidates the active instruments in each music piece."
+						},
+						{
+							"content": "During the discovery of music and animation, the child also has the opportunity to receive further information, by tapping on the coloured instruments. All information is set with the dynamical antiqua »Adobe Caslon Pro«. "
+						}
+					]
+				}
 			]
-
 		},
 		{
 			"slug": "poster-series",
