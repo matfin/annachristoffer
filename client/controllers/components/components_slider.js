@@ -43,7 +43,9 @@ var primeSlider = Deps.autorun(function() {
 	Dependencies.sliderLoadedDependency.depend();
 
 	$('.iosSlider').css({
-		'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px'
+		'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px',
+		'left': '16px',
+		'width': $('section').outerWidth() - 16 + 'px'
 	});
 
 });
