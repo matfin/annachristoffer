@@ -7,5 +7,5 @@
 Dependencies = {
 	viewportResizeDependency: new Deps.Dependency,
 	viewportScrollDependency: new Deps.Dependency,
-	projectsLoadedDependency: new Deps.Dependency
+	projectLoadedDependency: new Deps.Dependency
 };

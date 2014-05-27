@@ -69,8 +69,18 @@ Template['views_list'].projects = function() {
 		);
 	}
 
-	// return App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
-	return App.models.projects.find({}).fetch();
+	/**
+	 *	Fetch projects grouped bu highlighted and add an index for each one
+	 *	to ensure they appear in the correct formation.
+	 */
+	var projects = App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
+	_.each(projects, function(project, index) {
+		project.index = index + 1;
+	});
+
+	Dependencies.projectLoadedDependency.changed();
+
+	return projects;
 };
 
 /**
@@ -85,7 +95,7 @@ var arrangeCards = Deps.autorun(function() {
 	 */
 
 	Dependencies.viewportResizeDependency.depend();
-	Dependencies.projectsLoadedDependency.depend();
+	Dependencies.projectLoadedDependency.depend();
 	var formation = false;
 
 	if(Device.isHD) {
@@ -123,6 +133,9 @@ var arrangeCards = Deps.autorun(function() {
 		var cardIndex = 0;
 		var maxFormationHeight = 0;
 
+		/**
+		 *	Then place them in formation
+		 */
 		_.each(cardFormation, function(item, index) {
 
 			var formationHeight = 0;
@@ -130,10 +143,11 @@ var arrangeCards = Deps.autorun(function() {
 			for(var i = 0; i < item.numberToShow; i++) {
 				
 				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
-				$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 16) * index) + 'px';
+				$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 16) * index + 16) + 'px';
 				
 				if(Device.isMobile) {
 					$('.projectCard').get(cardIndex).style.width = '100%';
+					$('.projectCard').get(cardIndex).style.left = '0px';
 				}
 				else {
 					$('.projectCard').get(cardIndex).style.width = cardSizeWidth + 'px';
