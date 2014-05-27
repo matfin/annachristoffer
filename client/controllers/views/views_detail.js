@@ -28,6 +28,26 @@ Template['views_detail'].destroyed = function() {
 };
 
 /**
+ *	Template - views_detail
+ *	Helper function to determine if figcapion template should be loaded
+ *	@method isFigCaption
+ *	@return {Boolean}
+ */
+Template['views_detail'].isFigCaption = function() {
+	return this.type === 'figcaption';
+};
+
+/**
+ *	Template - views_detail
+ *	Helper function to determine if slider template should be loaded
+ *	@method isSlider
+ *	@return {Boolean}
+ */
+Template['views_detail'].isSlider = function() {
+	return this.type === 'slider';
+};
+
+/**
 *	Template - views_detail
 *	Helper function to return the template data
 *	@method projectData
