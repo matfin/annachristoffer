@@ -44,7 +44,7 @@ Template['components_header'].navCategories = function() {
 *	@return undefined
 */
 Template['components_header'].contentItems = function() {
-	return App.models.content.find({}).fetch();
+	return App.models.pages.find({}).fetch();
 };
 
 /**

@@ -11,11 +11,11 @@ figure.cards_figcaption {
 	}
 
 	img {
-		flex: 2;
+		.flex(2);
 		margin-top: @gridColumnWidth;
 	}
 	figcaption {
-		flex: 1;
+		.flex(1);
 		margin-top: -@gridColumnWidth;
 		padding: @gridColumnWidth * 1.5 @gridColumnWidth * 2;
 		background-color: @colourWhite;
@@ -56,6 +56,10 @@ figure.cards_figcaption {
 				display: none;
 			}
 		}
+		figcaption {
+			width: 100%;
+			box-sizing: border-box;
+		}
 	}
 
 	// Rules for tablets
@@ -67,6 +71,10 @@ figure.cards_figcaption {
 			&.empty {
 				display: none;
 			}
+		}
+		figcaption {
+			width: 100%;
+			box-sizing: border-box;
 		}
 	}
 }

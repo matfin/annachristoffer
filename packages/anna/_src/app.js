@@ -38,12 +38,12 @@
 	 */
 	models: {
 		/**
-		 *	Meteor Collection that we populate from the content json
+		 *	Meteor Collection that we populate from the pages json
 		 *
-		 *	@property content
+		 *	@property pages
 		 *	@type {Meteor.Collection}
 		 */
-		content: new Meteor.Collection('content', {connection: null}),
+		pages: new Meteor.Collection('pages', {connection: null}),
 		
 		/**
 		 *	Meteor Collection that we populate from the projects json

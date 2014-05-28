@@ -21,7 +21,7 @@ Helpers = {
 		 *	for each language.
 		 */
 		var contents = [
-			'content',
+			'pages',
 			'projects',
 			'categories',
 			'formations'
