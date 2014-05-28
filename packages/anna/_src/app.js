@@ -31,6 +31,15 @@
 	language: moment.lang(),
 
 	/**
+	 *	The current view the app is on. This will get set within the 
+	 *	created function of each view.
+	 *
+	 *	@property currentView
+	 *	@type {String}
+	 */
+	currentView: false,
+
+	/**
 	 *	Object containing a list of all Meteor Collections the app uses.
 	 *
 	 *	@property models

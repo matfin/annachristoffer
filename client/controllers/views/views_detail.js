@@ -5,6 +5,7 @@
 *	@return undefined
 */
 Template['views_detail'].created = function() {
+	App.currentView = 'detail';
 };
 
 /**
@@ -14,7 +15,7 @@ Template['views_detail'].created = function() {
 *	@return undefined
 */
 Template['views_detail'].rendered = function() {
-	$('.wrapper').addClass('detail');
+	$('body').addClass('detail');
 };
 
 /**
@@ -24,7 +25,7 @@ Template['views_detail'].rendered = function() {
 *	@return undefined
 */
 Template['views_detail'].destroyed = function() {
-	$('.wrapper').removeClass('detail');
+	$('body').removeClass('detail');
 };
 
 /**

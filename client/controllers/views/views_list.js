@@ -5,11 +5,7 @@
 *	@return undefined
 */
 Template['views_list'].created = function() {
-	/**
-	 *	Let the template know how many projects we have 
-	 *	This is used to determine if all child templates 
-	 *	have loaded.
-	 */
+	App.currentView = 'list';
 };
 
 /**
@@ -19,7 +15,7 @@ Template['views_list'].created = function() {
 *	@return undefined
 */
 Template['views_list'].rendered = function() {
-	$('.wrapper').addClass('list');
+	$('body').addClass('list');
 };
 
 /**
@@ -29,7 +25,7 @@ Template['views_list'].rendered = function() {
 *	@return undefined
 */
 Template['views_list'].destroyed = function() {
-	$('.wrapper').removeClass('list');
+	$('body').removeClass('list');
 
 	/**
 	 *	Resetting the height of the content section 
@@ -162,9 +158,9 @@ var arrangeCards = Deps.autorun(function() {
 
 		});
 
-		// Setting the height of the content section
-		$('.content section').css({
-			'height': maxFormationHeight + (cardSize.height * 2) + 'px'
+		// Setting the height of the content section, container and wrapper
+		$('body, .wrapper, .content section').css({
+			'min-height': maxFormationHeight + cardSize.height + 'px'
 		});
 	}
 });

@@ -75,10 +75,13 @@ var primeHeader = Deps.autorun(function() {
 	Dependencies.viewportScrollDependency.depend();
 	Dependencies.viewportResizeDependency.depend();
 
-	if(!Device.isMobile) {
+	/**
+	 *	For now, the side nav menu should only scroll on a detail page
+	 */
+	if(!Device.isMobile && App.currentView === 'detail') {
 		
 		$('header').css({
-			'top': ($(window).scrollTop()) + 'px'
+			'top': ($(window).scrollTop()) + 48 + 'px'
 		});
 
 	}
