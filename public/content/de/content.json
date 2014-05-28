@@ -1,0 +1,21 @@
+{
+	"name": "content",
+	"items": [
+		{
+			"messageCode": "title",
+			"content": "Anna Claire Christoffer"
+		},
+		{
+			"messageCode": "subtitle",
+			"content": "Konzeptionell Design"
+		},
+		{
+			"messageCode": "workingat",
+			"content": "arbeiten an <br /> Hi-Res! Berlin"
+		},
+		{
+			"messageCode": "projects",
+			"content": "Projekte"
+		}
+	]
+}

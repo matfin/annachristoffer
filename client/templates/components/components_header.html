@@ -1,18 +1,18 @@
 <template name="components_header">
 	<h1>
-		Anna Claire Christoffer
+		{{content.title}}
 	</h1>
 	<h2>
-		Conceptional Design
+		{{content.subtitle}}
 	</h2>
 	<h3>
-		working at <br /> Hi-Res! Berlin
+		{{{content.workingat}}}
 	</h3>
 	<nav>
 		<ul>
 			<li class="contentLink">
-				<a href="/" title="Projects">
-					Projects
+				<a href="/" title="{{content.projects}}">
+					{{content.projects}}
 				</a>
 			</li>
 			{{#each navCategories}}
@@ -23,7 +23,7 @@
 				</li>
 			{{/each}}
 
-			{{#each contentItems}}
+			{{#each pages}}
 				<li class="contentLink">
 					<a href="{{pathFor 'content' _content_slug=this.slug}}" title="{{title}}">
 						{{title}}

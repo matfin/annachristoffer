@@ -7,12 +7,12 @@
 Helpers = {
 
 	/**
-	 *	Method to load localised content which is called when the app is first run.
+	 *	Method to load localised data which is called when the app is first run.
 	 *	and when the user opts to switch langage. It is important to node that
-	 *	the app language parameter (EN|DE) is set within the App object and does not
+	 *	the app language parameter (en|de) is set within the App object and does not
 	 *	need to be passed in here as a parameter. 
 	 *	
-	 *	@method reset
+	 *	@method loadLocalisedContent
 	 *	@return undefined
 	 */
 	loadLocalisedContent: function() {
@@ -21,6 +21,7 @@ Helpers = {
 		 *	for each language.
 		 */
 		var contents = [
+			'content',
 			'pages',
 			'projects',
 			'categories',
@@ -58,7 +59,7 @@ Helpers = {
 	 *	Given various device parameters, such as screen pixel density and resolutuin,
 	 *	this helper function will determine the correct image to load given a path.
 	 *	
-	 *	@method reset
+	 *	@method loadImageSource
 	 *	@param {String}		the string for the image path
 	 *	@return {String}	the image path with file extension
 	 */
@@ -90,5 +91,17 @@ Helpers = {
 				return imgSource + '.' + extension;
 			}
 		}
+	},
+
+	/**
+	 *	Load localised content via message codes from the content collection
+	 *	
+	 *	@method loadMessageCode
+	 *	@param {String}		the string for the image path
+	 *	@return {String}	the image path with file extension
+	 */
+	loadMessageCode: function(messageCode) {
+		var message = App.models.content.findOne({"messageCode": messageCode});
+		return typeof message !== 'undefined' ? message.content:'NOT FOUND';
 	}
 };

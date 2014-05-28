@@ -29,9 +29,9 @@ Template['components_header'].destroyed = function() {
 
 /**
 *	Template - components_header
-*	Populate navigation items from the categories store
+*	Populate navigation items from the categories collection
 *	@method navCategories
-*	@return undefined
+*	@return Meteor.Collection
 */
 Template['components_header'].navCategories = function() {
 	return App.models.categories.find({}).fetch();
@@ -39,12 +39,27 @@ Template['components_header'].navCategories = function() {
 
 /**
 *	Template - components_header
-*	Populate content items from the content store.
-*	@method contentItems
-*	@return undefined
+*	Populate pages from the pages collection.
+*	@method pages
+*	@return Meteor.Collection
 */
-Template['components_header'].contentItems = function() {
+Template['components_header'].pages = function() {
 	return App.models.pages.find({}).fetch();
+};
+
+/**
+*	Template - components_header
+*	Populate page content items from the content collection.
+*	@method pages
+*	@return {Object}
+*/
+Template['components_header'].content = function() {
+	return {
+		title: Helpers.loadMessageCode('title'),
+		subtitle: Helpers.loadMessageCode('subtitle'),
+		workingat: Helpers.loadMessageCode('workingat'),
+		projects: Helpers.loadMessageCode('projects'),
+	}
 };
 
 /**
