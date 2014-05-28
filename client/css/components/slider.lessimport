@@ -5,6 +5,7 @@
 	left: 0;
 	overflow: hidden;
 	width: 100%;
+	margin-bottom: @gridColumnWidth * 2;
 	.transition-property(height, min-height);
 	.transition-duration(@transitionDuration);
 

@@ -36,10 +36,10 @@ Device = {
 /**
  *	Events to call changes on dependencies
  */
-$(window).on('resize', _.debounce(function() {
+$(window).on('resize', _.throttle(function() {
 	Device.reset();
 	Dependencies.viewportResizeDependency.changed();
-}, 500));
+}, 100));
 
 $(window).on('scroll', _.throttle(function() {
 	Dependencies.viewportScrollDependency.changed();

@@ -10,7 +10,7 @@
 	.box-sizing(border-box);
 	min-height: @gridColumnWidth * 9;
 
-	.transition-property(top, right, opacity);
+	.transition-property(top, left, opacity, width);
 	.transition-duration(@transitionDuration);
 	.opacity(0.5);
 

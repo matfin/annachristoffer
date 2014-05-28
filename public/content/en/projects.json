@@ -16,6 +16,19 @@
 			],
 			"contents": [
 				{
+					"type": "figcaption",
+					"img": "master-of-art-thesis/thesis-1/thesis-1",
+					"intro": {
+						"title": "Master of Art / Thesis",
+						"description": "Description for master of art thesis needed." 
+					},
+					"captions": [
+						{
+							"content": "Description needed here for this."
+						}
+					]
+				},
+				{
 					"type": "slider",
 					"slides": [
 						{
@@ -35,6 +48,15 @@
 						},
 						{
 							"img": "master-of-art-thesis/slide-6/slide-6"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-thesis/thesis-3/thesis-3",
+					"captions": [
+						{
+							"content": "Description needed here for this."
 						}
 					]
 				}
