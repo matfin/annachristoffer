@@ -49,9 +49,19 @@ figure.cards_figcaption {
 
 	// Rules for tablets
 	@media @tablet {
-		.flex-direction(column);
-		padding-left: @gridColumnWidth;
-		margin-bottom: @gridColumnWidth;
+	
+		margin-left: @gridColumnWidth;
+		display: block;
+
+		.imageContainer {
+			margin: 0;
+			width: 100%;
+		}
+
+		img {
+			display: block;
+		}
+
 		figcaption, img {
 			margin: 0;
 			&.empty {
@@ -64,13 +74,20 @@ figure.cards_figcaption {
 		}
 	}
 
-	// Rules for tablets
+	// Rules for mobile
 	@media @mobile {
-		.flex-direction(column);
-		margin-bottom: @gridColumnWidth;
-		&:last-child {
-			margin-bottom: 0;
+	
+		display: block;
+
+		.imageContainer {
+			margin: 0;
+			width: 100%;
 		}
+
+		img {
+			display: block;
+		}
+
 		figcaption, img {
 			margin: 0;
 			&.empty {
@@ -82,4 +99,5 @@ figure.cards_figcaption {
 			box-sizing: border-box;
 		}
 	}
+
 }
