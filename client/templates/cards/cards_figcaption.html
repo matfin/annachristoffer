@@ -1,6 +1,8 @@
 <template name="cards_figcaption">
 	<figure class="cards_figcaption">
-		<img src="/images/projects/{{imgSource}}" width="100%" height="auto" alt="">
+		<div class="imageContainer">
+			<img src="/images/projects/{{imgSource}}" alt="">
+		</div>
 		{{#if hasCaptions}}
 			<figcaption>
 				{{#if hasIntro}}

@@ -15,7 +15,7 @@ Template['cards_figcaption'].created = function() {
 *	@return undefined
 */
 Template['cards_figcaption'].rendered = function() {
-	
+	var template = this;
 };
 
 /**
@@ -44,6 +44,21 @@ Template['cards_figcaption'].imgSource = function() {
 
 /**
 *	Template - cards_figcaption
+*	Helper function to return the calculated pixel height of an image.
+*	This is to compensate for IE's poor support for the flex box model
+*	@method imgDimension
+*	@return {Object}
+*/
+Template['cards_figcaption'].imgDimension = function() {
+
+	// Call this automatically on window resize
+	Dependencies.viewportResizeDependency.depend();
+
+	console.log('I am an image dimension');
+};
+
+/**
+*	Template - cards_figcaption
 *	Helper function to determine if there are any captions
 *	@method hasCaptions
 *	@return {Boolean}
@@ -61,3 +76,11 @@ Template['cards_figcaption'].hasCaptions = function() {
 Template['cards_figcaption'].hasIntro = function() {
 	return this.intro;
 };
+
+// var setImageWidth = Deps.autorun(function() {
+
+// 	Dependencies.viewportResizeDependency.depend();
+
+	
+
+// });

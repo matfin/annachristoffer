@@ -15,7 +15,7 @@ Device = {
 	isTouchCapable: false,
 
 	/**
-	 *	Method to set various device parameters called when the app is first run.
+	 *	Function to set various device parameters called when the app is first run.
 	 *	
 	 *	@method reset
 	 *	@return undefined

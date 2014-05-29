@@ -6,14 +6,16 @@ figure.cards_figcaption {
 
 	margin-bottom: @gridColumnWidth * 2;
 
-	figcaption, img {
-		margin-left: @gridColumnWidth * 2;
+	.imageContainer {
+		.flex(2);
+		margin: @gridColumnWidth;
+		img {
+			margin-top: @gridColumnWidth;
+			width: 100%;
+			height: auto;
+		}	
 	}
 
-	img {
-		.flex(2);
-		margin-top: @gridColumnWidth;
-	}
 	figcaption {
 		.flex(1);
 		margin-top: -@gridColumnWidth;
