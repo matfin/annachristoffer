@@ -4,13 +4,12 @@ figure.cards_figcaption {
 	.flex-direction(row);
 	.align-items(flex-start);
 
-	margin-bottom: @gridColumnWidth * 2;
+	margin-bottom: -16px;
 
 	.imageContainer {
 		.flex(2);
 		margin: @gridColumnWidth;
 		img {
-			margin-top: @gridColumnWidth;
 			width: 100%;
 			height: auto;
 		}	
@@ -18,10 +17,9 @@ figure.cards_figcaption {
 
 	figcaption {
 		.flex(1);
-		margin-top: -@gridColumnWidth;
-		padding: @gridColumnWidth * 1.5 @gridColumnWidth * 2;
+		padding: @gridColumnWidth @gridColumnWidth * 2;
 		background-color: @colourWhite;
-
+		margin-top: -16px;
 		h2, h3 {
 			margin-bottom: @gridColumnWidth;
 		}
@@ -38,8 +36,11 @@ figure.cards_figcaption {
 		p {
 			font-size: @baseFontSize - 2;
 			margin-bottom: @gridColumnWidth;
-			line-height: (@gridColumnWidth * 1.5) - 2;
+			line-height: (@gridColumnWidth * 1.25);
 			letter-spacing: 0.3px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 
 		&.empty {
