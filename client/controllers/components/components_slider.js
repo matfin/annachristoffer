@@ -42,10 +42,16 @@ var primeSlider = Deps.autorun(function() {
 	Dependencies.viewportResizeDependency.depend();
 	Dependencies.sliderLoadedDependency.depend();
 
-	$('.iosSlider').css({
-		'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px',
-		'left': '16px',
-		'width': $('section').outerWidth() - 16 + 'px'
-	});
-
+	if(Device.isMobile) {
+		$('.iosSlider').css({
+			'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px',
+		});
+	}
+	else {
+		$('.iosSlider').css({
+			'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px',
+			'left': '16px',
+			'width': $('section').outerWidth() - 16 + 'px'
+		});
+	}
 });

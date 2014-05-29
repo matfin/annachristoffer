@@ -6,6 +6,9 @@ body.detail {
 			.align-items(flex-start);
 			header {
 				top: @gridColumnWidth * 3;
+				@media @mobile {
+					top: 0;
+				}
 			}
 			.content {
 				section {

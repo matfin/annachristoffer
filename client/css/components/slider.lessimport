@@ -5,7 +5,7 @@
 	left: 0;
 	overflow: hidden;
 	width: 100%;
-	margin-bottom: @gridColumnWidth * 2;
+	margin-bottom: @gridColumnWidth;
 	.transition-property(height, min-height);
 	.transition-duration(@transitionDuration);
 
@@ -14,7 +14,7 @@
 		height: 100%;
 	}
 
-	@media @mobile {
-		display: none;
-	}
+	// @media @mobile {
+	// 	display: none;
+	// }
 }
