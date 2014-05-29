@@ -10,32 +10,6 @@ body {
 	font-family: @standardFontFamily;
 	font-size: @baseFontSize;
 	text-align: center;
-
-	&.list {
-		.wrapper {
-			background-image: url('/images/backgrounds/list_ratio_1.jpg');
-			.container {
-				.align-items(center);
-			}
-		}
-	}
-	&.detail {
-		height: auto;
-		.wrapper {
-			background-image: url('/images/backgrounds/detail_ratio_1.jpg');
-			.container {
-				.align-items(flex-start);
-				header {
-					top: @gridColumnWidth * 3;
-				}
-				.content {
-					section {
-						padding-top: @gridColumnWidth * 5;
-					}
-				}
-			}
-		}
-	}
 }
 
 .wrapper {
@@ -82,16 +56,6 @@ section {
 	position: relative;
 	.transition-property(margin);
 	.transition-duration(@transitionDuration / 2);
-	@media @tablet {
-		margin-top: @gridColumnWidth * 2.5;
-	}
-	@media @mobile {
-		margin-top: 0;
-	}
-
-	&.revealed {
-		margin-top: (@gridColumnWidth * 10) + 3;
-	}
 }
 
 button {

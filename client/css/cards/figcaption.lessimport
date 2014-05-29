@@ -49,7 +49,7 @@ figure.cards_figcaption {
 	@media @tablet {
 		.flex-direction(column);
 		padding-left: @gridColumnWidth;
-		margin-bottom: 0;
+		margin-bottom: @gridColumnWidth;
 		figcaption, img {
 			margin: 0;
 			&.empty {
@@ -65,7 +65,10 @@ figure.cards_figcaption {
 	// Rules for tablets
 	@media @mobile {
 		.flex-direction(column);
-		margin-bottom: 0;
+		margin-bottom: @gridColumnWidth;
+		&:last-child {
+			margin-bottom: 0;
+		}
 		figcaption, img {
 			margin: 0;
 			&.empty {

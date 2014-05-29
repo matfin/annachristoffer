@@ -1,0 +1,17 @@
+body.list {
+	.wrapper {
+		background-image: url('/images/backgrounds/list_ratio_1.jpg');
+		.container {
+			.align-items(center);
+
+			.content {
+				section {
+					@media @mobile {
+						padding-top: 0px;
+						padding-bottom: 64px;
+					}
+				}
+			}
+		}
+	}
+}
