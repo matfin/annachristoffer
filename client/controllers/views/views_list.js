@@ -138,18 +138,21 @@ var arrangeCards = Deps.autorun(function() {
 
 			for(var i = 0; i < item.numberToShow; i++) {
 				
-				$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
-				$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 16) * index + 16) + 'px';
-				
 				if(Device.isMobile) {
 					$('.projectCard').get(cardIndex).style.width = '100%';
 					$('.projectCard').get(cardIndex).style.left = '0px';
+					$('.projectCard').get(cardIndex).style.top = '0px';
+					$('.projectCard').get(cardIndex).style.position = 'relative';
+					formationHeight =+ ((cardSize.height) * i);
 				}
 				else {
+					$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
+					$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 16) * index + 16) + 'px';
 					$('.projectCard').get(cardIndex).style.width = cardSizeWidth + 'px';
-				}
+					$('.projectCard').get(cardIndex).style.position = 'absolute';
+					formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
 
-				formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
+				}
 
 				cardIndex++;
 			}
