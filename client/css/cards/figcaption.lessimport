@@ -36,9 +36,9 @@ figure.cards_figcaption {
 		}
 
 		p {
-			font-size: @baseFontSize - 1;
+			font-size: @baseFontSize - 2;
 			margin-bottom: @gridColumnWidth;
-			line-height: @gridColumnWidth * 1.5;
+			line-height: (@gridColumnWidth * 1.5) - 2;
 			letter-spacing: 0.3px;
 		}
 
