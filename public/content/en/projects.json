@@ -166,7 +166,7 @@
 					},
 					"captions": [
 						{
-							"content": "Content is needed here."
+							"content": "A selection of applicants for the professorship in &ldquo;Illustration and Graphic Design&rdquo; had to present their didactical skills by presenting their own work in a probational lecture. Afterwards the students had the opportunity to evaluate the work and teaching of each candidate."
 						}
 					]
 				},
@@ -175,27 +175,17 @@
 					"img": "poster-series/02-probitional/2-probitional",
 					"captions": [
 						{
-							"content": "Content is needed here"
+							"content": "The illustrations for the poster are adapted from a sports book for indian club training. The intention was to create an ironical approach to the expecta- tions, how a qualified person for the professorship in Illustration needs to be."
 						}
 					]
 				},
 				{
 					"type": "figcaption",
-					"img": "poster-series/03-probitional/3-probitional",
-					"captions": [
-						{
-							"content": "Content is needed here"
-						}
-					]
+					"img": "poster-series/03-probitional/3-probitional"
 				},
 				{
 					"type": "figcaption",
-					"img": "poster-series/04-probitional/4-probitional",
-					"captions": [
-						{
-							"content": "Content is needed here"
-						}
-					]
+					"img": "poster-series/04-probitional/4-probitional"
 				}
 			]
 		},
