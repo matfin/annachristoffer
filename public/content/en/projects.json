@@ -155,6 +155,48 @@
 				{
 					"id": 1
 				}
+			], 
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "poster-series/01-probitional/1-probitional",
+					"intro": {
+						"title": "Poster Series",
+						"description": "Probational lectures at the University of Bielefeld." 
+					},
+					"captions": [
+						{
+							"content": "Content is needed here."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "poster-series/02-probitional/2-probitional",
+					"captions": [
+						{
+							"content": "Content is needed here"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "poster-series/03-probitional/3-probitional",
+					"captions": [
+						{
+							"content": "Content is needed here"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "poster-series/04-probitional/4-probitional",
+					"captions": [
+						{
+							"content": "Content is needed here"
+						}
+					]
+				}
 			]
 		},
 		{
