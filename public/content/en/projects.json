@@ -355,6 +355,57 @@
 				{
 					"id": 1
 				}
+			],
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/01-cartographic-yellow/01-cartographic-yellow",
+					"intro": {
+						"title": "Cartographical Scale",
+						"description": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale." 
+					},
+					"captions": [
+						{
+							"content": "Content is needed here."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/02-cartographic-yellow/02-cartographic-yellow",
+					"captions": [
+						{
+							"content": "Content needed here?"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/03-cartographic-maps/03-cartographic-maps",
+					"captions": [
+						{
+							"content": "Content needed here?"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/04-cartographic-round/04-cartographic-round",
+					"captions": [
+						{
+							"content": "Content needed here?"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/05-cartographic-blue/05-cartographic-blue",
+					"captions": [
+						{
+							"content": "Content needed here?"
+						}
+					]
+				}
 			]
 		},
 		{

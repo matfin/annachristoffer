@@ -76,11 +76,3 @@ Template['cards_figcaption'].hasCaptions = function() {
 Template['cards_figcaption'].hasIntro = function() {
 	return this.intro;
 };
-
-// var setImageWidth = Deps.autorun(function() {
-
-// 	Dependencies.viewportResizeDependency.depend();
-
-	
-
-// });
