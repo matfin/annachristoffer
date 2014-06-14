@@ -224,16 +224,18 @@
 					},
 					"captions": [
 						{
-							"content": "The aim was to develop a new modern look for the historical and famous story Alice’s Adventures in Wonderland. Vibrant colours and sparkling forms represent the crazy and miraculous world of Alice’s bizzare dream."
-						},
-						{
 							"content": "The front cover shows one of the most significant characters of Lewis Carroll’s tale: the white rabbit with the pocket-watch, who leads Alice to the magical Wonderland. As he accompanies her through out her crazy adventure, they encounter the many colourful characters as they go."
 						}
 					]
 				},
 				{
 					"type": "figcaption",
-					"img": "alice-adventures/alices-title-2/02-alices-title-2"
+					"img": "alice-adventures/alices-title-2/02-alices-title-2",
+					"captions": [
+						{
+							"content": "The aim was to develop a new modern look for the historical and famous story Alice’s Adventures in Wonderland. Vibrant colours and sparkling forms represent the crazy and miraculous world of Alice’s bizzare dream. The visual concept of the cover can be also find in the inside of the book. The simple black and white icons provide further visual clues for each chapter."
+						}
+					]
 				},
 				{
 					"type": "figcaption",
@@ -241,12 +243,7 @@
 				},
 				{
 					"type": "figcaption",
-					"img": "alice-adventures/alices-chapter-4/04-alices-chapter4",
-					"captions": [
-						{
-							"content": "The visual concept of the cover can be also find in the inside of the book. The simple black and white icons provide further visual clues for each chapter."
-						}
-					]
+					"img": "alice-adventures/alices-chapter-4/04-alices-chapter4"
 				},
 				{
 					"type": "figcaption",
@@ -412,6 +409,21 @@
 			"category_ids": [
 				{
 					"id": 5
+				}
+			],
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "resistance/0-resistance",
+					"intro": {
+						"title": "Poster Competition",
+						"description": "Promotion for Don't Panic &ndash; Resistance" 
+					},
+					"captions": [
+						{
+							"content": "The brief involved creating an image that captures the theme of &ldquo;resitance&rdquo;. The visual solution uses the juxtaposition of conformity vs. non-conformity. The book ends are a metaphor for traditional boundaries, which can be broken and challanged by radical thinking."
+						}
+					]	
 				}
 			]
 		},
