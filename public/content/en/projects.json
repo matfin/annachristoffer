@@ -20,12 +20,16 @@
 					"img": "master-of-art-thesis/thesis-1/thesis-1",
 					"intro": {
 						"title": "Master of Art / Thesis",
-						"description": "Description for master of art thesis needed." 
+						"description": "Three models of memory in their context of media&ndash;historical development." 
 					},
 					"captions": [
 						{
-							"content": "Description needed here for this."
+							"content": "Beginning with the natural processes of human memories, the thesis analyses the cultural development to the contemporary information age."
+						},
+						{
+							"content": "The first model was developed in the Renaissance and was speci- fied as an theatre of memory. The analog model is the precursor for nowadays structures of interactive user-experiences, because it is based on strong topographical and visual methods."
 						}
+						
 					]
 				},
 				{
@@ -53,7 +57,15 @@
 				},
 				{
 					"type": "figcaption",
-					"img": "master-of-art-thesis/thesis-3/thesis-3"
+					"img": "master-of-art-thesis/thesis-3/thesis-3",
+					"captions": [
+						{
+							"content": "The layout of the thesis presents also a topographical approach, while references and pictorial material are set according to the content of the main text."
+						},
+						{
+							"content": "The digital »Spatial-Data-Management-System« is the second memory model. It was developed in the Sixties by a team of scientests at Massachusetts Institute of Technology and presents the first steps of the computer technology."
+						}
+					]
 				}
 			]
 		},

@@ -9,10 +9,17 @@ figure.cards_figcaption {
 	.imageContainer {
 		.flex(2);
 		margin: @gridColumnWidth;
+		
 		img {
 			width: 100%;
 			height: auto;
 		}	
+	}
+
+	.iosSlider + & {
+		figcaption {
+			margin-top: (@gridColumnWidth * 4) + 4;
+		}
 	}
 
 	figcaption {
@@ -66,9 +73,16 @@ figure.cards_figcaption {
 				display: none;
 			}
 		}
+
 		figcaption {
 			width: 100%;
 			box-sizing: border-box;
+		}
+
+		.iosSlider + & {
+			figcaption {
+				margin-top: 0;
+			}
 		}
 	}
 
@@ -92,10 +106,16 @@ figure.cards_figcaption {
 				display: none;
 			}
 		}
+
 		figcaption {
 			width: 100%;
 			box-sizing: border-box;
 		}
-	}
 
+		.iosSlider + & {
+			figcaption {
+				margin-top: 0;
+			}
+		}
+	}
 }
