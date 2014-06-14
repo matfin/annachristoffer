@@ -348,13 +348,73 @@
 			]
 		},
 		{
-			"slug": "book-design",
+			"slug": "perfume-book-design",
 			"title": "Book Design",
 			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
 			"date_created": "2009-08-01",
 			"category_ids": [
 				{
 					"id": 2
+				}
+			],
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "perfume/0-perfume/0-perfume-bookdesign",
+					"intro": {
+						"title": "Book Design",
+						"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind" 
+					},
+					"captions": [
+						{
+							"content": "Content needed here?"
+						}
+					]	
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/1-perfume/1-perfume-bookdesign",
+					"captions": [
+						{
+							"content": "Content needed here."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/2-perfume/2-perfume-bookdesign",
+					"captions": [
+						{
+							"content": "Content needed here."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/3-perfume/3-perfume-bookdesign",
+					"captions": [
+						{
+							"content": "Content needed here."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/4-perfume/4-perfume-bookdesign",
+					"captions": [
+						{
+							"content": "Content needed here."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/5-perfume/5-perfume-bookdesign",
+					"captions": [
+						{
+							"content": "Content needed here."
+						}
+					]
 				}
 			]
 		},
@@ -374,11 +434,11 @@
 					"img": "cartographical-scale/01-cartographic-yellow/01-cartographic-yellow",
 					"intro": {
 						"title": "Cartographical Scale",
-						"description": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale." 
+						"description": "Cartographical Scale" 
 					},
 					"captions": [
 						{
-							"content": "Content is needed here."
+							"content": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale."
 						}
 					]
 				},
@@ -387,7 +447,7 @@
 					"img": "cartographical-scale/02-cartographic-yellow/02-cartographic-yellow",
 					"captions": [
 						{
-							"content": "Content needed here?"
+							"content": "The piece contains three main elements; the map in a perforated format, a demonstrative scale to illustrate how much the information in question is condensed, and instructions detailing the assembly of the funnel."
 						}
 					]
 				},
@@ -396,25 +456,20 @@
 					"img": "cartographical-scale/03-cartographic-maps/03-cartographic-maps",
 					"captions": [
 						{
-							"content": "Content needed here?"
+							"content": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales."
 						}
 					]
 				},
 				{
 					"type": "figcaption",
-					"img": "cartographical-scale/04-cartographic-round/04-cartographic-round",
-					"captions": [
-						{
-							"content": "Content needed here?"
-						}
-					]
+					"img": "cartographical-scale/04-cartographic-round/04-cartographic-round"
 				},
 				{
 					"type": "figcaption",
 					"img": "cartographical-scale/05-cartographic-blue/05-cartographic-blue",
 					"captions": [
 						{
-							"content": "Content needed here?"
+							"content": "The paper funnel is an informational design piece, demonstrating the function and purpose of map scale. A map functions like a funnel, concentrating information into a smaller, more managable area depending on scale."
 						}
 					]
 				}
