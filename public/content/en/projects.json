@@ -16,6 +16,10 @@
 			],
 			"contents": [
 				{
+					"type": "thumbnail",
+					"img": "thumbnails/missing"
+				},
+				{
 					"type": "figcaption",
 					"img": "master-of-art-thesis/thesis-1/thesis-1",
 					"intro": {
@@ -83,6 +87,10 @@
 				}
 			],
 			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/missing"
+				},
 				{
 					"type": "figcaption",
 					"img": "master-of-art-project/title/title",
@@ -170,6 +178,10 @@
 			], 
 			"contents": [
 				{
+					"type": "thumbnail",
+					"img": "thumbnails/probational-lectures"
+				},
+				{
 					"type": "figcaption",
 					"img": "poster-series/01-probitional/1-probitional",
 					"intro": {
@@ -215,6 +227,10 @@
 				}
 			],
 			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/missing"
+				},
 				{
 					"type": "figcaption",
 					"img": "alice-adventures/alices-title-1/01-alices-title-1",
@@ -270,6 +286,10 @@
 				}
 			],
 			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/oedipus"
+				},
 				{
 					"type": "figcaption",
 					"img": "oedipus/01-oedipus-title/oedipus-title",
@@ -342,6 +362,10 @@
 			],
 			"contents": [
 				{
+					"type": "thumbnail",
+					"img": "thumbnails/wonderworld-map"
+				},
+				{
 					"type": "figcaption",
 					"img": "digital-atlas/title/title",
 					"intro": {
@@ -413,6 +437,10 @@
 			],
 			"contents": [
 				{
+					"type": "thumbnail",
+					"img": "thumbnails/resistance"
+				},
+				{
 					"type": "figcaption",
 					"img": "resistance/0-resistance",
 					"intro": {
@@ -438,6 +466,10 @@
 				}
 			],
 			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/perfume"
+				},
 				{
 					"type": "figcaption",
 					"img": "perfume/0-perfume/0-perfume-bookdesign",
@@ -509,6 +541,10 @@
 				}
 			],
 			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/cartographic-yellow"
+				},
 				{
 					"type": "figcaption",
 					"img": "cartographical-scale/01-cartographic-yellow/01-cartographic-yellow",
