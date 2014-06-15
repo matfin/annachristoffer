@@ -15,7 +15,24 @@ Template['cards_project'].created = function() {
 *	@return undefined
 */
 Template['cards_project'].rendered = function() {
+
 	Dependencies.projectLoadedDependency.changed();
+	var template = this;
+	var count = App.models.projects.find({}).count();
+	var intervaltime = (Math.floor(Math.random() * count) + 1) * 500;
+
+	this.intervalFadeIn = Meteor.setTimeout(function() {
+		$(template.find('a')).css({
+			'color': 'red'
+		});
+	}, intervaltime);
+
+	this.intervalFadeOut = Meteor.setTimeout(function() {
+		$(template.find('a')).css({
+			'color': 'inherit'
+		});
+	}, intervaltime + 15000);
+
 };
 
 /**
@@ -25,6 +42,8 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
+	Meteor.clearInterval(this.intervalFadeIn);
+	Meteor.clearInterval(this.intervalFadeOut);
 };
 
 /**

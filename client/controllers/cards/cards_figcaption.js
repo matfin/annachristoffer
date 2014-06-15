@@ -53,8 +53,6 @@ Template['cards_figcaption'].imgDimension = function() {
 
 	// Call this automatically on window resize
 	Dependencies.viewportResizeDependency.depend();
-
-	console.log('I am an image dimension');
 };
 
 /**
