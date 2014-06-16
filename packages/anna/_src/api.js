@@ -27,7 +27,7 @@ Api = {
 	fetch: function(model) {
 		console.log('Fetch: ', model, App.language);
 
-		var deferred = Q.defer();
+		var deferred = Helpers.promise.defer();
 
 		/**
 		 *	assigning this to _self as it is used in anonymous functions below

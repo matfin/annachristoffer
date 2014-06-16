@@ -19,20 +19,52 @@ Template['cards_project'].rendered = function() {
 	Dependencies.projectLoadedDependency.changed();
 	var template = this;
 	var count = App.models.projects.find({}).count();
-	var intervaltime = (Math.floor(Math.random() * count) + 1) * 500;
+	var intervalTime = (Math.floor(Math.random() * count) + 1) * 500;
+	var element = $(template.find('a'));
+	var thumbnail = _.find(template.data.contents, function(item) {
+		return item.type === 'thumbnail';
+	});
 
-	this.intervalFadeIn = Meteor.setTimeout(function() {
-		$(template.find('a')).css({
-			'color': 'red'
+	/**
+	 *	Add the thumbnail and class if we have a thumbnail
+	 */
+
+	if(typeof thumbnail !== 'undefined' && typeof thumbnail.img !== 'undefined') {
+
+		(function(){
+
+			var deferred = Helpers.promise.defer();
+
+			Meteor.setTimeout(function(){
+
+				/**
+				 *	Fading in
+				 */
+				element.addClass('fadeIn');
+				element.css({
+					'background-image': 'url(images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true}) + ')'
+				});
+				
+				deferred.resolve();
+
+			}, intervalTime);
+
+			return deferred.promise;
+
+		})().then(function() {
+			Meteor.setTimeout(function() {
+
+				/**
+				 *	Fading out
+				 */
+				element.css({
+					'background-image': 'none'
+				});
+				element.removeClass('fadeIn');
+
+			}, 5000)
 		});
-	}, intervaltime);
-
-	this.intervalFadeOut = Meteor.setTimeout(function() {
-		$(template.find('a')).css({
-			'color': 'inherit'
-		});
-	}, intervaltime + 15000);
-
+	}
 };
 
 /**

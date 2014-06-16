@@ -61,20 +61,34 @@ Helpers = {
 	 *	
 	 *	@method loadImageSource
 	 *	@param {String}		the string for the image path
+	 *	@param {Object}		Options. Possible values are options.extension, options.isThumbnail
 	 *	@return {String}	the image path with file extension
 	 */
-	loadImageSource: function(img, extension) {
+	loadImageSource: function(img, options) {
 		/**
 		 *	If the extension is not specified, use jpg as default
 		 */
-		if(typeof extension === 'undefined') {
-			extension = 'jpg';
+
+		if(typeof options === 'undefined') {
+			options = {};
 		}
+
+		if(typeof options.extension === 'undefined') {
+			options.extension = 'jpg';
+		}
+
+		if(typeof options.isThumbnail === 'undefined') {
+			options.isThumbnail = false;
+		}
+
 		var imgSource = '';
 
 		if(img && typeof img !== 'undefined') {
 
-			if(Device.isHD) {
+			if(options.isThumbnail) {
+				imgSource = img;
+			}
+			else if(Device.isHD) {
 				imgSource = img + '-hd';
 			}
 			else if(Device.isDesktop) {
@@ -85,10 +99,10 @@ Helpers = {
 			}
 
 			if(Device.isRetina) {
-				return imgSource + '@2x.' + extension;
+				return imgSource + '@2x.' + options.extension;
 			}
 			else {
-				return imgSource + '.' + extension;
+				return imgSource + '.' + options.extension;
 			}
 		}
 	},
@@ -103,5 +117,12 @@ Helpers = {
 	loadMessageCode: function(messageCode) {
 		var message = App.models.content.findOne({"messageCode": messageCode});
 		return typeof message !== 'undefined' ? message.content:'NOT FOUND';
-	}
+	},
+
+	/**
+	 *	Globally accessible promise we can use from within our controllers
+ 	 *	
+ 	 *	@attribute	{Object}	The promise object from the Q package.
+	 */
+	promise: Q
 };
