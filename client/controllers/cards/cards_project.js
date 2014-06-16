@@ -62,7 +62,7 @@ Template['cards_project'].rendered = function() {
 				});
 				element.removeClass('fadeIn');
 
-			}, 5000)
+			}, 120000)
 		});
 	}
 };
