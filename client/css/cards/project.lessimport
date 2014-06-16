@@ -5,6 +5,8 @@
 	left: 0;
 	padding: @gridColumnWidth / 2;
 	background-color: @background;
+	background-size: cover;
+	background-position: center;
 	border: 1px solid @colourBlack;
 	width: @gridColumnWidth * 14;
 	.box-sizing(border-box);
@@ -26,13 +28,32 @@
 		letter-spacing: 1px; 
 	}
 
+	time,
+	h2,
+	p {
+		.transition-property(opacity);
+		.transition-duration(1000ms);
+	}
+
 	&.highlighted {
 		.opacity(1.0);
 	}
 
-	&:hover {
+	&:hover,
+	&.fadeIn {
+		.animation-delay(50ms);
+		.animation-direction(alternate);
+		.animation-duration(800ms);
+		.animation-name(tvflicker);
 		background-color: @colourWhite;
-		.opacity(1.0);
+	}
+
+	&.fadeIn {
+		time,
+		h2, 
+		p {
+			.opacity(0);
+		}
 	}
 }
 

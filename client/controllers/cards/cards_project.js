@@ -18,7 +18,7 @@ Template['cards_project'].rendered = function() {
 
 	Dependencies.projectLoadedDependency.changed();
 	var template = this;
-	var count = App.models.projects.find({}).count();
+	var count = App.models.projects.find({}).count() * 2;
 	var intervalTime = (Math.floor(Math.random() * count) + 1) * 500;
 	var element = $(template.find('a'));
 	var thumbnail = _.find(template.data.contents, function(item) {
@@ -31,39 +31,38 @@ Template['cards_project'].rendered = function() {
 
 	if(typeof thumbnail !== 'undefined' && typeof thumbnail.img !== 'undefined') {
 
-		// (function(){
+		(function(){
 
-		// 	var deferred = Helpers.promise.defer();
+			var deferred = Helpers.promise.defer();
 
-		// 	Meteor.setTimeout(function(){
+			Meteor.setTimeout(function(){
 
-		// 		/**
-		// 		 *	Fading in
-		// 		 */
-		// 		element.addClass('fadeIn');
-		// 		element.css({
-		// 			'background-image': 'url(images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true}) + ')'
-		// 		});
+				/**
+				 *	Fading in
+				 */
+				element.addClass('fadeIn');
+				element.css({
+					'background-image': 'url(images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true}) + ')'
+				});
 				
-		// 		deferred.resolve();
+				deferred.resolve();
 
-		// 	}, intervalTime);
+			}, intervalTime);
 
-		// 	return deferred.promise;
+			return deferred.promise;
 
-		// })().then(function() {
-		// 	Meteor.setTimeout(function() {
+		})().then(function() {
 
-		// 		/**
-		// 		 *	Fading out
-		// 		 */
-		// 		element.css({
-		// 			'background-image': 'none'
-		// 		});
-		// 		element.removeClass('fadeIn');
-
-		// 	}, 120000)
-		// });
+			element.on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+				/**
+				 *	Fading out
+				 */
+				element.css({
+					'background-image': 'none'
+				});
+				element.removeClass('fadeIn');
+			});
+		});
 	}
 };
 

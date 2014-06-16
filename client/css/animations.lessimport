@@ -1,0 +1,110 @@
+/**
+ *	TV Flicker animation
+ */
+@-webkit-keyframes tvflicker {
+	0% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	20% {
+		background-position-x: 5px;
+		background-position-y: 15px;
+	}
+
+	40% {
+		background-position-x: 5px;
+		background-position-y: -5px;
+	}
+
+	60% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	100% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+}
+
+@-moz-keyframes tvflicker {
+	0% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	20% {
+		background-position-x: 300px;
+		background-position-y: 15px;
+	}
+
+	40% {
+		background-position-x: 50px;
+		background-position-y: -50px;
+	}
+
+	60% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	100% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+}
+
+@-o-keyframes tvflicker {
+	0% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	20% {
+		background-position-x: 300px;
+		background-position-y: 15px;
+	}
+
+	40% {
+		background-position-x: 50px;
+		background-position-y: -50px;
+	}
+
+	60% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	100% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+}
+
+@keyframes tvflicker {
+	0% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	20% {
+		background-position-x: 300px;
+		background-position-y: 15px;
+	}
+
+	40% {
+		background-position-x: 50px;
+		background-position-y: -50px;
+	}
+
+	60% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	100% {
+		background-position-x: center;
+		background-position-y: center;
+	}
+}
