@@ -31,39 +31,39 @@ Template['cards_project'].rendered = function() {
 
 	if(typeof thumbnail !== 'undefined' && typeof thumbnail.img !== 'undefined') {
 
-		(function(){
+		// (function(){
 
-			var deferred = Helpers.promise.defer();
+		// 	var deferred = Helpers.promise.defer();
 
-			Meteor.setTimeout(function(){
+		// 	Meteor.setTimeout(function(){
 
-				/**
-				 *	Fading in
-				 */
-				element.addClass('fadeIn');
-				element.css({
-					'background-image': 'url(images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true}) + ')'
-				});
+		// 		/**
+		// 		 *	Fading in
+		// 		 */
+		// 		element.addClass('fadeIn');
+		// 		element.css({
+		// 			'background-image': 'url(images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true}) + ')'
+		// 		});
 				
-				deferred.resolve();
+		// 		deferred.resolve();
 
-			}, intervalTime);
+		// 	}, intervalTime);
 
-			return deferred.promise;
+		// 	return deferred.promise;
 
-		})().then(function() {
-			Meteor.setTimeout(function() {
+		// })().then(function() {
+		// 	Meteor.setTimeout(function() {
 
-				/**
-				 *	Fading out
-				 */
-				element.css({
-					'background-image': 'none'
-				});
-				element.removeClass('fadeIn');
+		// 		/**
+		// 		 *	Fading out
+		// 		 */
+		// 		element.css({
+		// 			'background-image': 'none'
+		// 		});
+		// 		element.removeClass('fadeIn');
 
-			}, 120000)
-		});
+		// 	}, 120000)
+		// });
 	}
 };
 

@@ -1,5 +1,6 @@
 // Fonts family
-@standardFontFamily: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+// @standardFontFamily: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@standardFontFamily: "jaf-facitweb";
 
 // Font sizes
 @baseFontSize: 16px;
