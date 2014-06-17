@@ -6,22 +6,10 @@
 		background-position-x: center;
 		background-position-y: center;
 	}
-
-	20% {
-		background-position-x: 5px;
-		background-position-y: 15px;
+	80% {
+		background-position-x: 200%;
+		background-position-y: 200%;
 	}
-
-	40% {
-		background-position-x: 5px;
-		background-position-y: -5px;
-	}
-
-	60% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-
 	100% {
 		background-position-x: center;
 		background-position-y: center;
@@ -33,22 +21,10 @@
 		background-position-x: center;
 		background-position-y: center;
 	}
-
-	20% {
-		background-position-x: 300px;
-		background-position-y: 15px;
+	80% {
+		background-position-x: 100%;
+		background-position-y: 100%;
 	}
-
-	40% {
-		background-position-x: 50px;
-		background-position-y: -50px;
-	}
-
-	60% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-
 	100% {
 		background-position-x: center;
 		background-position-y: center;
@@ -60,22 +36,10 @@
 		background-position-x: center;
 		background-position-y: center;
 	}
-
-	20% {
-		background-position-x: 300px;
-		background-position-y: 15px;
+	80% {
+		background-position-x: 100%;
+		background-position-y: 100%;
 	}
-
-	40% {
-		background-position-x: 50px;
-		background-position-y: -50px;
-	}
-
-	60% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-
 	100% {
 		background-position-x: center;
 		background-position-y: center;
@@ -87,22 +51,10 @@
 		background-position-x: center;
 		background-position-y: center;
 	}
-
-	20% {
-		background-position-x: 300px;
-		background-position-y: 15px;
+	80% {
+		background-position-x: 100%;
+		background-position-y: 100%;
 	}
-
-	40% {
-		background-position-x: 50px;
-		background-position-y: -50px;
-	}
-
-	60% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-
 	100% {
 		background-position-x: center;
 		background-position-y: center;

@@ -120,6 +120,30 @@ Helpers = {
 	},
 
 	/**
+	 *	Fetch cross browser transition end event name 
+	 *	@method transitionEndEventName
+	 *	@return {String} the correct transition end event name
+	 */
+	transitionEndEventName: function() {
+		var i, undefined;
+		var el = document.createElement('div');
+		var transitions = {
+			'transition': 'transitionend',
+			'OTransition': 'otransitionend',
+			'MozTransition': 'transitionend',
+			'WebkitTransition': 'webkitTransitionEnd'
+		};
+
+		for(i in transitions) {
+			if(transitions.hasOwnProperty(i) && el.style[i] !== 'undefined') {
+				return transitions[i];
+			}
+		}
+
+		return 'na';
+	},
+
+	/**
 	 *	Globally accessible promise we can use from within our controllers
  	 *	
  	 *	@attribute	{Object}	The promise object from the Q package.

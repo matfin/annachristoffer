@@ -1,5 +1,8 @@
 <template name="cards_project">
 	<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=this.slug}}" title="{{title}}" class="projectCard {{highlighted}}">
+		{{#if hasThumbnail}}
+			<img src="{{thumbnail}}" width="" height="" alt="" />
+		{{/if}}
 		<time datetime="{{date_created}}">{{formattedDate date_created "MM / YYYY"}}</time>
 		<h2>{{title}}</h2>
 		<p>{{{description}}}</p>

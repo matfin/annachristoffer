@@ -14,6 +14,10 @@
 @maxWidth: @gridColumnWidth * 100;
 @minWidth: @gridColumnWidth * 64;
 
+// Layers
+@primaryLayer: 2;
+@secondaryLayer: 1;
+
 // Colours 
 @colourWhite: #fff;
 @colourBlack: #000;

@@ -11,10 +11,20 @@
 	width: @gridColumnWidth * 14;
 	.box-sizing(border-box);
 	min-height: @gridColumnWidth * 9;
+	height: @gridColumnWidth * 9;
+	overflow: hidden;
 
 	.transition-property(top, left, opacity, width);
 	.transition-duration(@transitionDuration);
 	.opacity(0.5);
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: @secondaryLayer;
+		.opacity(0);
+	}
 
 	time, h2 {
 		font-weight: 500;
@@ -31,28 +41,27 @@
 	time,
 	h2,
 	p {
+		position: relative;
 		.transition-property(opacity);
-		.transition-duration(1000ms);
+		.transition-duration(@transitionDuration);
+		z-index: @primaryLayer;
 	}
 
 	&.highlighted {
 		.opacity(1.0);
 	}
 
-	&:hover,
-	&.fadeIn {
-		.animation-delay(50ms);
-		.animation-direction(alternate);
-		.animation-duration(800ms);
-		.animation-name(tvflicker);
-		background-color: @colourWhite;
-	}
-
-	&.fadeIn {
-		time,
+	&.animated {
+		time, 
 		h2, 
 		p {
-			.opacity(0);
+			opacity: 0.0;
+		}
+		img {
+			.opacity(1.0);
+			.transition-duration(@transitionDuration);
+			.transition-delay(@transitionDuration);
+			.transition-property(opacity);
 		}
 	}
 }

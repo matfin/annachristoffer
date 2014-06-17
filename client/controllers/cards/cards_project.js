@@ -21,49 +21,10 @@ Template['cards_project'].rendered = function() {
 	var count = App.models.projects.find({}).count() * 2;
 	var intervalTime = (Math.floor(Math.random() * count) + 1) * 500;
 	var element = $(template.find('a'));
-	var thumbnail = _.find(template.data.contents, function(item) {
-		return item.type === 'thumbnail';
-	});
 
-	/**
-	 *	Add the thumbnail and class if we have a thumbnail
-	 */
-
-	if(typeof thumbnail !== 'undefined' && typeof thumbnail.img !== 'undefined') {
-
-		(function(){
-
-			var deferred = Helpers.promise.defer();
-
-			Meteor.setTimeout(function(){
-
-				/**
-				 *	Fading in
-				 */
-				element.addClass('fadeIn');
-				element.css({
-					'background-image': 'url(images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true}) + ')'
-				});
-				
-				deferred.resolve();
-
-			}, intervalTime);
-
-			return deferred.promise;
-
-		})().then(function() {
-
-			element.on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
-				/**
-				 *	Fading out
-				 */
-				element.css({
-					'background-image': 'none'
-				});
-				element.removeClass('fadeIn');
-			});
-		});
-	}
+	Meteor.setTimeout(function() {
+		element.addClass('animated');
+	}, intervalTime);
 };
 
 /**
@@ -104,10 +65,61 @@ Template['cards_project'].categories = function() {
 
 /**
 *	Template - cards_project
+*	Determines if the project has a thumbnail image.
+*	@method hasThumbnail
+*	@return {Booleab} true if a thumbnail has been found, or false if not.	
+*/
+Template['cards_project'].hasThumbnail = function() {
+
+	var thumbnail = _.find(this.contents, function(item) {
+		return item.type === 'thumbnail';
+	});
+	
+	return (typeof thumbnail !== 'undefined' && typeof thumbnail.img !== 'undefined');
+	
+};
+
+/**
+*	Template - cards_project
+*	Returns the correct image path for use in the template, in this case the path for the thumbnail
+*	@method thumbnail
+*	@return {String}	The path for the thumbnail image.
+*/
+Template['cards_project'].thumbnail = function() {
+
+	var thumbnail = _.find(this.contents, function(item) {
+		return item.type === 'thumbnail';
+	});
+	
+	if(typeof thumbnail !== 'undefined' && typeof thumbnail.img !== 'undefined') {
+		return 'images/projects/' + Helpers.loadImageSource(thumbnail.img, {isThumbnail: true});
+	}
+	else {
+		return false;
+	}
+};
+
+/**
+*	Template - cards_project
 *	Returns a boolean indicating if the card should be highlighted
 *	@method highlighted
 *	@return {String} 'highlighted' if highlighted is true, '' if not.
 */
 Template['cards_project'].highlighted = function() {
 	return this.highlighted ? 'highlighted':'';
+};
+
+/**
+*	Template - cards_project
+*	Events for this template
+*/
+Template['cards_project'].events = {
+	
+	'transitionend time, p, h2': function(e, template) {
+		// $(template.find('a')).removeClass('animated');
+	},
+
+	'mouseover p': function(e, template) {
+		console.log('This is a test');
+	}
 };
