@@ -53,7 +53,8 @@
 		.opacity(1.0);
 	}
 
-	&.animated {
+	&.animated,
+	&:hover {
 		time, 
 		h2, 
 		p {
@@ -65,7 +66,7 @@
 			.transition-delay(@transitionDuration);
 			.transition-property(opacity);
 
-			.animation(badtv 100ms linear);
+			.animation(badtv 250ms linear);
 			.animation-delay(@transitionDuration * 2);
 		}
 	}
