@@ -24,6 +24,8 @@
 		left: 0;
 		z-index: @secondaryLayer;
 		.opacity(0);
+		width: auto;
+		height: 100%;
 	}
 
 	time, h2 {
@@ -62,6 +64,9 @@
 			.transition-duration(@transitionDuration);
 			.transition-delay(@transitionDuration);
 			.transition-property(opacity);
+
+			.animation(badtv 100ms linear);
+			.animation-delay(@transitionDuration * 2);
 		}
 	}
 }

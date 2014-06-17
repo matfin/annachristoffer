@@ -1,62 +1,32 @@
 /**
  *	TV Flicker animation
  */
-@-webkit-keyframes tvflicker {
-	0% {
-		background-position-x: center;
-		background-position-y: center;
+@-webkit-keyframes badtv {
+
+	25% {
+		.filter(saturate(10));
 	}
-	80% {
-		background-position-x: 200%;
-		background-position-y: 200%;
+
+	50% {
+		.filter(saturate(0));
+		.filter(hue-rotate(90deg));
 	}
+
+	75% {
+		.filter(hue-rotate(0deg));
+		.filter(invert(100%));
+	}
+
 	100% {
-		background-position-x: center;
-		background-position-y: center;
+		.filter(invert(0%));
 	}
 }
 
-@-moz-keyframes tvflicker {
-	0% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-	80% {
-		background-position-x: 100%;
-		background-position-y: 100%;
-	}
-	100% {
-		background-position-x: center;
-		background-position-y: center;
-	}
+@-moz-keyframes badtv {
 }
 
-@-o-keyframes tvflicker {
-	0% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-	80% {
-		background-position-x: 100%;
-		background-position-y: 100%;
-	}
-	100% {
-		background-position-x: center;
-		background-position-y: center;
-	}
+@-o-keyframes badtv {
 }
 
-@keyframes tvflicker {
-	0% {
-		background-position-x: center;
-		background-position-y: center;
-	}
-	80% {
-		background-position-x: 100%;
-		background-position-y: 100%;
-	}
-	100% {
-		background-position-x: center;
-		background-position-y: center;
-	}
+@keyframes badtv {
 }

@@ -119,7 +119,7 @@ Template['cards_project'].events = {
 		// $(template.find('a')).removeClass('animated');
 	},
 
-	'mouseover p': function(e, template) {
-		console.log('This is a test');
+	'animationed img': function() {
+		console.log('animation over!');
 	}
 };
