@@ -115,11 +115,24 @@ Template['cards_project'].highlighted = function() {
 */
 Template['cards_project'].events = {
 	
-	'transitionend time, p, h2': function(e, template) {
-		// $(template.find('a')).removeClass('animated');
+	/**
+	 *	Why do we need five of these? Because Meteor does not support 
+	 *	grouping them all together just yet.
+	 */
+	'webkitAnimationEnd img': function(e, template) {
+		$(template.find('a')).removeClass('animated');
 	},
-
-	'animationed img': function() {
-		console.log('animation over!');
+	'oanimationend img': function(e, template) {
+		$(template.find('a')).removeClass('animated');
+	},
+	'msAnimationEnd img': function(e, template) {
+		$(template.find('a')).removeClass('animated');
+	},
+	'mozAnimationEnd img': function(e, template) {
+		$(template.find('a')).removeClass('animated');
+	},
+	'animationend img': function(e, template) {
+		$(template.find('a')).removeClass('animated');
 	}
+
 };

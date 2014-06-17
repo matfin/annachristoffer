@@ -11,7 +11,7 @@
 	width: @gridColumnWidth * 14;
 	.box-sizing(border-box);
 	min-height: @gridColumnWidth * 9;
-	height: @gridColumnWidth * 9;
+	// height: @gridColumnWidth * 9;
 	overflow: hidden;
 
 	.transition-property(top, left, opacity, width);

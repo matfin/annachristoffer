@@ -1,8 +1,7 @@
 /**
- *	TV Flicker animation
+ *	Animation declarations go here
  */
-@-webkit-keyframes badtv {
-
+.badTvAnimation {
 	25% {
 		.filter(saturate(10));
 	}
@@ -19,14 +18,23 @@
 
 	100% {
 		.filter(invert(0%));
+		// Add this in so the animation end event fires in firefox (which doesn't support filters)
+		top: 0;	
 	}
 }
 
+/**
+ *	TV Flicker animation
+ */
+@-webkit-keyframes badtv {
+	.badTvAnimation;
+}
 @-moz-keyframes badtv {
+	.badTvAnimation;
 }
-
 @-o-keyframes badtv {
+	.badTvAnimation;
 }
-
 @keyframes badtv {
+	.badTvAnimation;
 }
