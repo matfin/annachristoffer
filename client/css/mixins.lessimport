@@ -33,34 +33,34 @@
 
 	// Desktop
 	@media @desktop {
-		background-image: url('@{img}_d.@{extension}');
+		background-image: url('@{img}-d.@{extension}');
 	}
 	@media @desktop and @retina {
-		background-image: url('@{img}_d@2x.@{extension}');
+		background-image: url('@{img}-d@2x.@{extension}');
 	}
 
 	// Laptop
 	@media @laptop {
-		background-image: url('@{img}_l.@{extension}');	
+		background-image: url('@{img}-d.@{extension}');	
 	}
 	@media @laptop and @retina {
-		background-image: url('@{img}_l@2x.@{extension}');	
+		background-image: url('@{img}-d@2x.@{extension}');	
 	}
 
 	// Tablet
 	@media @tablet {
-		background-image: url('@{img}_t.@{extension}');
+		background-image: url('@{img}-t.@{extension}');
 	}
 	@media @tablet and @retina{
-		background-image: url('@{img}_t@2x.@{extension}');
+		background-image: url('@{img}-t@2x.@{extension}');
 	}
 
 	// Mobile
 	@media @mobile {
-		background-image: url('@{img}_m.@{extension}');
+		background-image: url('@{img}-m.@{extension}');
 	}
 	@media @mobile and @retina {
-		background-image: url('@{img}_m@2x.@{extension}');
+		background-image: url('@{img}-m@2x.@{extension}');
 	}
 
 	/*

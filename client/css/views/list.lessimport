@@ -1,6 +1,6 @@
 body.list {
 	.wrapper {
-		background-image: url('/images/backgrounds/list_ratio_1.jpg');
+		.backgroundImage('/images/backgrounds/landing');
 		.container {
 			.align-items(center);
 

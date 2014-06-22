@@ -5,8 +5,8 @@
 			"screen": "hd",
 			"cardFormation": [
 				{
-					"paddingTop": 0,
-					"numberToShow": 3
+					"paddingTop": 1.0,
+					"numberToShow": 2
 				},
 				{
 					"paddingTop": 0.5,
@@ -18,7 +18,7 @@
 				},
 				{
 					"paddingTop": 0.5,
-					"numberToShow": 2
+					"numberToShow": 3
 				},
 				{
 					"paddingTop": 1,
@@ -35,7 +35,7 @@
 				},
 				{
 					"paddingTop": 0.5,
-					"numberToShow": 3
+					"numberToShow": 2
 				},
 				{
 					"paddingTop": 0,
@@ -43,7 +43,7 @@
 				},
 				{
 					"paddingTop": 0.5,
-					"numberToShow": 2
+					"numberToShow": 3
 				}
 			]
 		},
