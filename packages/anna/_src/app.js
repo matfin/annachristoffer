@@ -40,6 +40,13 @@
 	currentView: false,
 
 	/**
+	 *	The current projecrt card height
+	 *	@property cardSizeHeight
+	 *	@type {Number}
+	 */
+	cardSizeHeight: 0,
+
+	/**
 	 *	Object containing a list of all Meteor Collections the app uses.
 	 *
 	 *	@property models

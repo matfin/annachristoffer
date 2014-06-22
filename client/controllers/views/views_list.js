@@ -159,7 +159,7 @@ var arrangeCards = Deps.autorun(function() {
 
 		var cardSize = {
 			width: cardSizeWidth,
-			height: $('.projectCard').outerHeight()
+			height: App.cardSizeHeight
 		};
 
 		var cardIndex = 0;
