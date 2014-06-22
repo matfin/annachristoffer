@@ -22,26 +22,28 @@ Template['views_list'].rendered = function() {
 	 *	Anonymous function to fire off the card animation process
 	 *	only when all the cards have been rendered fully.
 	 */
-	(function() {
-		var deferred = Helpers.promise.defer();
+	if(!Device.isMobile) {
+		(function() {
+			var deferred = Helpers.promise.defer();
 
-		var interval = Meteor.setInterval(function() {
-			if($('.projectCard').length === App.models.projects.find({}).count()) {
-			 	deferred.resolve();
-			 	Meteor.clearInterval(interval);
-			 	return;
-			}
-		}, 500);
+			var interval = Meteor.setInterval(function() {
+				if($('.projectCard').length === App.models.projects.find({}).count()) {
+				 	deferred.resolve();
+				 	Meteor.clearInterval(interval);
+				 	return;
+				}
+			}, 500);
 
-		return deferred.promise;
+			return deferred.promise;
 
-	})().then(function() {
-		
-		Meteor.setInterval(function() {
-			Helpers.randomlySelectProjectCard().addClass('animated');
-		}, 2500);
+		})().then(function() {
+			
+			Meteor.setInterval(function() {
+				Helpers.randomlySelectProjectCard().addClass('animated');
+			}, 2500);
 
-	});
+		});
+	}
 };
 
 /**
@@ -173,17 +175,36 @@ var arrangeCards = Deps.autorun(function() {
 			for(var i = 0; i < item.numberToShow; i++) {
 				
 				if(Device.isMobile) {
-					$('.projectCard').get(cardIndex).style.width = '100%';
-					$('.projectCard').get(cardIndex).style.left = '0px';
-					$('.projectCard').get(cardIndex).style.top = '0px';
-					$('.projectCard').get(cardIndex).style.position = 'relative';
+
+					$('.projectCard').eq(cardIndex).transition({
+						x: 0,
+						y: 0
+					});
+
+					$('.projectCard').eq(cardIndex).css({
+						'width': '100%',
+						'left': '0px',
+						'top': '0px',
+						'position': 'relative'
+					});
+
 					formationHeight =+ ((cardSize.height) * i);
+
 				}
 				else {
-					$('.projectCard').get(cardIndex).style.top = ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop) + 'px';
-					$('.projectCard').get(cardIndex).style.left = ((cardSize.width + 16) * index + 16) + 'px';
-					$('.projectCard').get(cardIndex).style.width = cardSizeWidth + 'px';
-					$('.projectCard').get(cardIndex).style.position = 'absolute';
+					
+					/**
+					 *	Experimenting with CSS3 transitions.
+					 */
+					$('.projectCard').eq(cardIndex).css({
+						'width': cardSizeWidth + 'px',
+						'position': 'absolute'
+					});
+					$('.projectCard').eq(cardIndex).transition({
+						x: ((cardSize.width + 16) * index + 16),
+						y: ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop)
+					});
+
 					formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
 				}
 

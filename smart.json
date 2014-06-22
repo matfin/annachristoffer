@@ -5,6 +5,7 @@
     "lesshat": {},
     "normalize.css": {},
     "q": {},
-    "moment": {}
+    "moment": {},
+    "jquery.transit": {}
   }
 }

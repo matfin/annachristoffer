@@ -7,7 +7,8 @@
       "lesshat": {},
       "normalize.css": {},
       "q": {},
-      "moment": {}
+      "moment": {},
+      "jquery.transit": {}
     },
     "packages": {
       "iron-router": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "jquery.transit": {
+        "git": "https://github.com/noorderstorm/meteor-jquery-transit.git",
+        "tag": "v0.1.0",
+        "commit": "d3b8a4149ab40b14b125edd473c3850177895fb5"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
