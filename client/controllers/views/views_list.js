@@ -192,7 +192,6 @@ var arrangeCards = Deps.autorun(function() {
 
 				}
 				else {
-					
 					/**
 					 *	Experimenting with CSS3 transitions.
 					 */
@@ -216,8 +215,11 @@ var arrangeCards = Deps.autorun(function() {
 		});
 
 		// Setting the height of the content section, container and wrapper
-		$('body, .wrapper, .content section').css({
+		$('.wrapper, .content section').css({
 			'min-height': maxFormationHeight + cardSize.height + 'px'
 		});
+		$('body').css({
+			'min-height': maxFormationHeight + cardSize.height + 48 + 'px'
+		})
 	}
 });
