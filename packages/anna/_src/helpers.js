@@ -144,6 +144,25 @@ Helpers = {
 	},
 
 	/**
+	 *	Function to randomly select an element 
+	 *	@method randomlySelectProjectCard
+	 *	@param className {String}	the class name of the object
+	 *	@return {Object} the dom node for the project card object
+	 */
+
+	randomlySelectProjectCard: function(className) {
+		if(typeof className === 'undefined') {
+			className = '.projectCard';
+		}
+
+		var cardCount = App.models.projects.find({}).count(),
+			cardIndex = _.random(0, cardCount);
+
+		return $(className).eq(cardIndex);
+
+	},
+
+	/**
 	 *	Globally accessible promise we can use from within our controllers
  	 *	
  	 *	@attribute	{Object}	The promise object from the Q package.

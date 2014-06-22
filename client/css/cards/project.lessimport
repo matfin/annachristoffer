@@ -11,7 +11,6 @@
 	width: @gridColumnWidth * 14;
 	.box-sizing(border-box);
 	min-height: @gridColumnWidth * 9;
-	// height: @gridColumnWidth * 9;
 	overflow: hidden;
 
 	.transition-property(top, left, opacity, width);
@@ -19,13 +18,13 @@
 	.opacity(0.5);
 
 	img {
+		z-index: @secondaryLayer;
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: @secondaryLayer;
 		.opacity(0);
 		width: auto;
-		height: 100%;
+		height: 125%;
 	}
 
 	time, h2 {
@@ -68,6 +67,10 @@
 
 			.animation(badtv 250ms linear);
 			.animation-delay(@transitionDuration * 2);
+
+			&.interlace {
+				.opacity(0.3);
+			}
 		}
 	}
 }

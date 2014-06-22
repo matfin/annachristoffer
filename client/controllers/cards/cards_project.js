@@ -17,14 +17,7 @@ Template['cards_project'].created = function() {
 Template['cards_project'].rendered = function() {
 
 	Dependencies.projectLoadedDependency.changed();
-	var template = this;
-	var count = App.models.projects.find({}).count() * 2;
-	var intervalTime = (Math.floor(Math.random() * count) + 1) * 500;
-	var element = $(template.find('a'));
 
-	Meteor.setTimeout(function() {
-		element.addClass('animated');
-	}, intervalTime);
 };
 
 /**
@@ -34,8 +27,7 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
-	Meteor.clearInterval(this.intervalFadeIn);
-	Meteor.clearInterval(this.intervalFadeOut);
+	// Meteor.clearInterval(this.intervalFadeIn);
 };
 
 /**

@@ -16,6 +16,32 @@ Template['views_list'].created = function() {
 */
 Template['views_list'].rendered = function() {
 	$('body').addClass('list');
+	var template = this;
+
+	/**
+	 *	Anonymous function to fire off the card animation process
+	 *	only when all the cards have been rendered fully.
+	 */
+	(function() {
+		var deferred = Helpers.promise.defer();
+
+		var interval = Meteor.setInterval(function() {
+			if($('.projectCard').length === App.models.projects.find({}).count()) {
+			 	deferred.resolve();
+			 	Meteor.clearInterval(interval);
+			 	return;
+			}
+		}, 500);
+
+		return deferred.promise;
+
+	})().then(function() {
+		
+		Meteor.setInterval(function() {
+			Helpers.randomlySelectProjectCard().addClass('animated');
+		}, 1000);
+
+	});
 };
 
 /**
@@ -66,7 +92,7 @@ Template['views_list'].projects = function() {
 	}
 
 	/**
-	 *	Fetch projects grouped bu highlighted and add an index for each one
+	 *	Fetch projects grouped by highlighted and add an index for each one
 	 *	to ensure they appear in the correct formation.
 	 */
 	var projects = App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
@@ -78,6 +104,14 @@ Template['views_list'].projects = function() {
 
 	return projects;
 };
+
+/**
+
+	if($('.projectCard').length === App.models.projects.find({}).count()) {
+		console.log('All project cards loaded');
+		console.log(App.models.projects.find({}).count(), $('.projectCard').length);
+	}
+**/
 
 /**
 *	Anonymous helper function to rearragne the project cards using DOM man
@@ -151,7 +185,6 @@ var arrangeCards = Deps.autorun(function() {
 					$('.projectCard').get(cardIndex).style.width = cardSizeWidth + 'px';
 					$('.projectCard').get(cardIndex).style.position = 'absolute';
 					formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
-
 				}
 
 				cardIndex++;

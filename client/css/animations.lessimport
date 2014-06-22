@@ -3,7 +3,7 @@
  */
 .badTvAnimation {
 	25% {
-		.filter(saturate(10));
+		.filter(saturate(2));
 	}
 
 	50% {
