@@ -1,0 +1,5 @@
+<svg>
+	<filter id="f1">
+		<feColorMatrix type="hueRotate" values="270"/>
+	</filter>
+</svg>

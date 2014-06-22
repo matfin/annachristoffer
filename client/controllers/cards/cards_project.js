@@ -112,19 +112,29 @@ Template['cards_project'].events = {
 	 *	grouping them all together just yet.
 	 */
 	'webkitAnimationEnd img': function(e, template) {
-		$(template.find('a')).removeClass('animated');
+		Meteor.setTimeout(function() {
+			$(template.find('a')).removeClass('animated');
+		}, 2000);
 	},
 	'oanimationend img': function(e, template) {
-		$(template.find('a')).removeClass('animated');
+		Meteor.setTimeout(function() {
+			$(template.find('a')).removeClass('animated');
+		}, 2000);
 	},
 	'msAnimationEnd img': function(e, template) {
-		$(template.find('a')).removeClass('animated');
+		Meteor.setTimeout(function() {
+			$(template.find('a')).removeClass('animated');
+		}, 2000);
 	},
 	'mozAnimationEnd img': function(e, template) {
-		$(template.find('a')).removeClass('animated');
+		Meteor.setTimeout(function() {
+			$(template.find('a')).removeClass('animated');
+		}, 2000);
 	},
 	'animationend img': function(e, template) {
-		$(template.find('a')).removeClass('animated');
+		Meteor.setTimeout(function() {
+			$(template.find('a')).removeClass('animated');
+		}, 2000);
 	}
 
 };

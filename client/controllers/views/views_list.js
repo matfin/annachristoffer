@@ -39,7 +39,7 @@ Template['views_list'].rendered = function() {
 		
 		Meteor.setInterval(function() {
 			Helpers.randomlySelectProjectCard().addClass('animated');
-		}, 1000);
+		}, 2500);
 
 	});
 };
