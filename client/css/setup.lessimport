@@ -40,7 +40,8 @@ body {
 .header {
 	position: relative;
 	.flex(1.5);
-	min-width: @gridColumnWidth * 13.5;
+	width: @gridColumnWidth * 15;
+	max-width: @gridColumnWidth * 15;
 	padding: @gridColumnWidth;
 	.box-sizing(border-box);
 	@media @mobile {
@@ -63,8 +64,6 @@ button {
 }
 
 a, button {
-	.transition-duration(@transitionDuration * 4);
-	.transition-property(all);
 	&:active {
 		.scale(@scaleFactor);
 	}

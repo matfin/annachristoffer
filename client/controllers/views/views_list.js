@@ -22,7 +22,7 @@ Template['views_list'].rendered = function() {
 	 *	Anonymous function to fire off the card animation process
 	 *	only when all the cards have been rendered fully.
 	 */
-	if(!Device.isMobile) {
+	if(Device.isHD || Device.isDesktop || Device.isLaptop) {
 		(function() {
 			var deferred = Helpers.promise.defer();
 
@@ -37,10 +37,14 @@ Template['views_list'].rendered = function() {
 			return deferred.promise;
 
 		})().then(function() {
-			
-			Meteor.setInterval(function() {
-				Helpers.randomlySelectProjectCard().addClass('animated');
-			}, 2500);
+			/**
+			 *	Now that all the projects have loaded, 
+			 *	we can call changed on this dependency.
+			 */
+			Dependencies.projectLoadedDependency.changed();
+			// Meteor.setInterval(function() {
+			// 	Helpers.randomlySelectProjectCard().addClass('animated');
+			// }, 2500);
 
 		});
 	}

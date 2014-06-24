@@ -16,11 +16,12 @@ header {
 	}
 
 	h1, h3 {
-		font-weight: 400;
+		font-weight: 300;
 	}
 
 	h2 {
-		font-weight: bold;
+		font-weight: 400;
+		letter-spacing: 0.64px;
 	}
 
 	h3 {
@@ -38,6 +39,7 @@ header {
 				a {
 					display: inline-block;
 					width: 100%;
+					max-width: 160px;
 					font-size: @gridColumnWidth - 2;
 					border-bottom: 1px solid @colourBlack;
 					padding-top: @gridColumnWidth * 1.25;

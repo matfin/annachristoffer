@@ -51,7 +51,7 @@
 			"screen": "laptop",
 			"cardFormation": [
 				{
-					"paddingTop": 0.5,
+					"paddingTop": 1.0,
 					"numberToShow": 3
 				},
 				{
@@ -59,7 +59,7 @@
 					"numberToShow": 5
 				},
 				{
-					"paddingTop": 0.5,
+					"paddingTop": 1.0,
 					"numberToShow": 3
 				}
 			]

@@ -34,9 +34,9 @@
 	p {
 		.resetMarginPadding;
 		margin-top: @gridColumnWidth;
-		font-style: italic;
+		font-size: 14px;
 		font-size: @standardFont - 2;
-		letter-spacing: 1px; 
+		font-weight: 300;
 	}
 
 	time,
@@ -48,12 +48,24 @@
 		z-index: @primaryLayer;
 	}
 
+	time {
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	h2 {
+		font-style: italic;
+		font-weight: 100;
+		font-size: 22px;
+	}
+
 	&.highlighted {
 		.opacity(1.0);
 	}
 
 	&.animated,
-	&:hover {
+	//&:hover {
+	{
 		time, 
 		h2, 
 		p {

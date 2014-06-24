@@ -47,6 +47,13 @@
 	cardSizeHeight: 0,
 
 	/**
+	 *	Enabling or disabling landing page card animation
+	 *	@property animationRunning
+	 *	@type {Boolean}
+	 */
+	animationRunning: true,
+
+	/**
 	 *	Object containing a list of all Meteor Collections the app uses.
 	 *
 	 *	@property models
