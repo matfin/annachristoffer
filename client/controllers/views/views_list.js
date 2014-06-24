@@ -26,7 +26,7 @@ Template['views_list'].rendered = function() {
 		(function() {
 			var deferred = Helpers.promise.defer();
 
-			var interval = Meteor.setInterval(function() {
+			interval = Meteor.setInterval(function() {
 				if($('.projectCard').length === App.models.projects.find({}).count()) {
 				 	deferred.resolve();
 				 	Meteor.clearInterval(interval);
@@ -42,9 +42,9 @@ Template['views_list'].rendered = function() {
 			 *	we can call changed on this dependency.
 			 */
 			Dependencies.projectLoadedDependency.changed();
-			// Meteor.setInterval(function() {
-			// 	Helpers.randomlySelectProjectCard().addClass('animated');
-			// }, 2500);
+			template.animationCardRefreshInterval = Meteor.setInterval(function() {
+				Helpers.randomlySelectProjectCard().addClass('animated');
+			}, 2500);
 
 		});
 	}
@@ -66,6 +66,8 @@ Template['views_list'].destroyed = function() {
 	$('.content section').css({
 		'height': 'auto'
 	});
+
+	Meteor.clearInterval(this.animationCardRefreshInterval);
 };
 
 /**

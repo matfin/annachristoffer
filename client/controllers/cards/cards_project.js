@@ -15,7 +15,7 @@ Template['cards_project'].created = function() {
 *	@return undefined
 */
 Template['cards_project'].rendered = function() {
-	Dependencies.projectLoadedDependency.changed();
+	// Dependencies.projectLoadedDependency.changed();
 	/**
 	 *	Get the card size height, assigning the maximum height to the App attribute.
 	 */
@@ -31,7 +31,8 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
-	// Meteor.clearInterval(this.intervalFadeIn);
+	var template = this;
+	Meteor.clearTimeout(template.animationEndTimeout);
 };
 
 /**
@@ -116,27 +117,27 @@ Template['cards_project'].events = {
 	 *	grouping them all together just yet.
 	 */
 	'webkitAnimationEnd img': function(e, template) {
-		Meteor.setTimeout(function() {
+		template.animationEndTimeout = Meteor.setTimeout(function() {
 			$(template.find('a')).removeClass('animated');
 		}, 2000);
 	},
 	'oanimationend img': function(e, template) {
-		Meteor.setTimeout(function() {
+		template.animationEndTimeout = Meteor.setTimeout(function() {
 			$(template.find('a')).removeClass('animated');
 		}, 2000);
 	},
 	'msAnimationEnd img': function(e, template) {
-		Meteor.setTimeout(function() {
+		template.animationEndTimeout = Meteor.setTimeout(function() {
 			$(template.find('a')).removeClass('animated');
 		}, 2000);
 	},
 	'mozAnimationEnd img': function(e, template) {
-		Meteor.setTimeout(function() {
+		template.animationEndTimeout = Meteor.setTimeout(function() {
 			$(template.find('a')).removeClass('animated');
 		}, 2000);
 	},
 	'animationend img': function(e, template) {
-		Meteor.setTimeout(function() {
+		template.animationEndTimeout = Meteor.setTimeout(function() {
 			$(template.find('a')).removeClass('animated');
 		}, 2000);
 	}
