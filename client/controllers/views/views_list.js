@@ -177,11 +177,6 @@ var arrangeCards = function() {
 
 		var cardSizeWidth = ($('section').outerWidth() - (cardFormation.length * 16)) / cardFormation.length;
 
-		var cardSize = {
-			width: cardSizeWidth,
-			height: App.cardSizeHeight
-		};
-
 		var cardIndex = 0;
 		var maxFormationHeight = 0;
 
@@ -196,9 +191,9 @@ var arrangeCards = function() {
 				
 				if(Device.isMobile) {
 
-					$('.projectCard').eq(cardIndex).transition({
-						x: 0,
-						y: 0
+					$('.projectCard').eq(cardIndex).velocity({
+						translateX: 0,
+						translateY: 0
 					});
 
 					$('.projectCard').eq(cardIndex).css({
@@ -208,7 +203,7 @@ var arrangeCards = function() {
 						'position': 'relative'
 					});
 
-					formationHeight =+ ((cardSize.height) * i);
+					formationHeight =+ ((cardSizeHeight) * i);
 
 				}
 				else {
@@ -216,13 +211,19 @@ var arrangeCards = function() {
 					 *	Complete the transition using velocity.js
 					 */
 
+					var cardSizeHeight = $('.projectCard').eq(cardIndex).outerHeight(true);
+
 					$('.projectCard').eq(cardIndex).velocity({
 						width: cardSizeWidth + 'px',
-						translateX: ((cardSize.width + 16) * index + 16) + 'px',
-						translateY: ((cardSize.height) * i) + ((cardSize.height) * item.paddingTop)
+						translateX: ((cardSizeWidth + 16) * index + 16) + 'px',
+						translateY: ((cardSizeHeight + 16) * i) + ((cardSizeHeight) * item.paddingTop)
 					});
 
-					formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);
+					$('.projectCard').eq(cardIndex).css({
+						position: 'absolute'
+					});
+
+					formationHeight =+ ((cardSizeHeight + 16) * i) + ((cardSizeHeight + 16) * item.paddingTop);
 				}
 
 				cardIndex++;
@@ -234,10 +235,10 @@ var arrangeCards = function() {
 
 		// Setting the height of the content section, container and wrapper
 		$('.wrapper, .content section').css({
-			'min-height': maxFormationHeight + cardSize.height + 'px'
+			'min-height': maxFormationHeight + 160 + 'px'
 		});
 		$('body').css({
-			'min-height': maxFormationHeight + cardSize.height + 48 + 'px'
+			'min-height': maxFormationHeight + 160 + 48 + 'px'
 		})
 	}
 };

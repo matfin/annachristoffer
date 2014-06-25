@@ -40,13 +40,6 @@
 	currentView: false,
 
 	/**
-	 *	The current projecrt card height
-	 *	@property cardSizeHeight
-	 *	@type {Number}
-	 */
-	cardSizeHeight: 0,
-
-	/**
 	 *	Enabling or disabling landing page card animation
 	 *	@property animationRunning
 	 *	@type {Boolean}

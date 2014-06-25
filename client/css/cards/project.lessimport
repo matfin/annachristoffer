@@ -10,7 +10,8 @@
 	border: 1px solid @colourBlack;
 	width: @gridColumnWidth * 14;
 	.box-sizing(border-box);
-	min-height: @gridColumnWidth * 9;
+	min-height: @gridColumnWidth * 10;
+	height: @gridColumnWidth * 10;
 	overflow: hidden;
 
 	.transition-property(top, left, opacity, width);
