@@ -31,7 +31,7 @@ Template['cards_project'].rendered = function() {
 	 *	animated, it will call the funciton below and remove the animated
 	 *	state after 2.5 seconds.
 	 */
-	template.d = Deps.autorun(function(){
+	template.computation = Deps.autorun(function(){
 		Dependencies.projectCardAnimatedDependency.depend();
 		_.each($(template.find('a.animated')), function(node) {
 			template.cardFadeoutTimeout = Meteor.setTimeout(function() {
@@ -49,7 +49,7 @@ Template['cards_project'].rendered = function() {
 */
 Template['cards_project'].destroyed = function() {
 	clearTimeout(this.cardFadeoutTimeout);
-	delete this.d;
+	this.computation.stop();
 };
 
 /**
