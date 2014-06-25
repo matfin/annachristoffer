@@ -238,7 +238,7 @@ var arrangeCards = function() {
 			'min-height': maxFormationHeight + 160 + 'px'
 		});
 		$('body').css({
-			'min-height': maxFormationHeight + 160 + 48 + 'px'
+			'min-height': maxFormationHeight + 160 + 'px'
 		})
 	}
 };
