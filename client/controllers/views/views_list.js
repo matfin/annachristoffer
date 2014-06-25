@@ -213,15 +213,13 @@ var arrangeCards = function() {
 				}
 				else {
 					/**
-					 *	Experimenting with CSS3 transitions.
+					 *	Complete the transition using velocity.js
 					 */
-					$('.projectCard').eq(cardIndex).css({
-						'width': cardSizeWidth + 'px',
-						'position': 'absolute'
-					});
-					$('.projectCard').eq(cardIndex).transition({
-						x: ((cardSize.width + 16) * index + 16),
-						y: ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop)
+
+					$('.projectCard').eq(cardIndex).velocity({
+						width: cardSizeWidth + 'px',
+						translateX: ((cardSize.width + 16) * index + 16) + 'px',
+						translateY: ((cardSize.height) * i) + ((cardSize.height) * item.paddingTop)
 					});
 
 					formationHeight =+ ((cardSize.height + 16) * i) + ((cardSize.height + 16) * item.paddingTop);

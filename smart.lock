@@ -8,7 +8,7 @@
       "normalize.css": {},
       "q": {},
       "moment": {},
-      "jquery.transit": {}
+      "velocityjs": {}
     },
     "packages": {
       "iron-router": {
@@ -41,10 +41,10 @@
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
       },
-      "jquery.transit": {
-        "git": "https://github.com/noorderstorm/meteor-jquery-transit.git",
+      "velocityjs": {
+        "git": "https://github.com/Sewdn/meteor-velocityjs.git",
         "tag": "v0.1.0",
-        "commit": "d3b8a4149ab40b14b125edd473c3850177895fb5"
+        "commit": "d94afb23a188af9ae16adb70a09426563e4539c7"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

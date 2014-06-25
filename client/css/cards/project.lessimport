@@ -17,6 +17,9 @@
 	.transition-duration(@transitionDuration);
 	.opacity(0.5);
 
+	.translateX(0px);
+	.translateY(0px);
+
 	img {
 		z-index: @secondaryLayer;
 		position: absolute;
