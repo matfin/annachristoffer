@@ -22,6 +22,15 @@ Template['cards_project'].rendered = function() {
 	var template = this;
 	var templateCardHeight = $(template.find('.projectCard')).outerHeight(true);
 	App.cardSizeHeight = templateCardHeight > App.cardSizeHeight ? templateCardHeight:App.cardSizeHeight;
+	
+	template.d = Deps.autorun(function(){
+		Dependencies.projectCardAnimatedDependency.depend();
+		_.each($(template.find('a.animated')), function(node) {
+			template.cardFadeoutTimeout = Meteor.setTimeout(function() {
+				$(node).removeClass('animated');
+			}, 2500);
+		});
+	});
 };
 
 /**
@@ -31,8 +40,8 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
-	var template = this;
-	Meteor.clearTimeout(template.animationEndTimeout);
+	clearTimeout(this.cardFadeoutTimeout);
+	delete this.d;
 };
 
 /**
@@ -111,35 +120,4 @@ Template['cards_project'].highlighted = function() {
 *	Events for this template
 */
 Template['cards_project'].events = {
-	
-	/**
-	 *	Why do we need five of these? Because Meteor does not support 
-	 *	grouping them all together just yet.
-	 */
-	'webkitAnimationEnd img': function(e, template) {
-		template.animationEndTimeout = Meteor.setTimeout(function() {
-			$(template.find('a')).removeClass('animated');
-		}, 2000);
-	},
-	'oanimationend img': function(e, template) {
-		template.animationEndTimeout = Meteor.setTimeout(function() {
-			$(template.find('a')).removeClass('animated');
-		}, 2000);
-	},
-	'msAnimationEnd img': function(e, template) {
-		template.animationEndTimeout = Meteor.setTimeout(function() {
-			$(template.find('a')).removeClass('animated');
-		}, 2000);
-	},
-	'mozAnimationEnd img': function(e, template) {
-		template.animationEndTimeout = Meteor.setTimeout(function() {
-			$(template.find('a')).removeClass('animated');
-		}, 2000);
-	},
-	'animationend img': function(e, template) {
-		template.animationEndTimeout = Meteor.setTimeout(function() {
-			$(template.find('a')).removeClass('animated');
-		}, 2000);
-	}
-
 };

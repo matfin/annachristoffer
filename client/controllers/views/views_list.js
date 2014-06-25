@@ -42,8 +42,9 @@ Template['views_list'].rendered = function() {
 			 *	we can call changed on this dependency.
 			 */
 			Dependencies.projectLoadedDependency.changed();
-			template.animationCardRefreshInterval = Meteor.setInterval(function() {
+			template.cardAnimationIn = Meteor.setInterval(function() {
 				Helpers.randomlySelectProjectCard().addClass('animated');
+				Dependencies.projectCardAnimatedDependency.changed();
 			}, 2500);
 
 		});
@@ -67,7 +68,7 @@ Template['views_list'].destroyed = function() {
 		'height': 'auto'
 	});
 
-	Meteor.clearInterval(this.animationCardRefreshInterval);
+	Meteor.clearInterval(this.cardAnimationIn);
 };
 
 /**
