@@ -22,7 +22,15 @@ Template['cards_project'].rendered = function() {
 	var template = this;
 	var templateCardHeight = $(template.find('.projectCard')).outerHeight(true);
 	App.cardSizeHeight = templateCardHeight > App.cardSizeHeight ? templateCardHeight:App.cardSizeHeight;
-	
+	/**
+	 *	Here, each card is checked to see if it has been animated.
+	 *	The dependency contained within is automatically run when
+	 *	the parent template randomly selectcs a card and animates it
+	 *	by giving it the .animated class. 
+	 *	The template will check itself and if it is the one that has 
+	 *	animated, it will call the funciton below and remove the animated
+	 *	state after 2.5 seconds.
+	 */
 	template.d = Deps.autorun(function(){
 		Dependencies.projectCardAnimatedDependency.depend();
 		_.each($(template.find('a.animated')), function(node) {
