@@ -49,6 +49,16 @@ Template['views_list'].rendered = function() {
 
 		});
 	}
+
+	/**
+	 *	Kick off the arrangeCards Deps computation.
+	 */
+
+	this.arrangeCardsComputation = Deps.autorun(function() {
+		Dependencies.viewportResizeDependency.depend();
+		Dependencies.projectLoadedDependency.depend();
+		arrangeCards();
+	});
 };
 
 /**
@@ -69,6 +79,11 @@ Template['views_list'].destroyed = function() {
 	});
 
 	Meteor.clearInterval(this.cardAnimationIn);
+
+	/** 
+	 *	Stop the arrangeCards Deps computation
+	 */
+	this.arrangeCardsComputation.stop();
 };
 
 /**
@@ -127,14 +142,12 @@ Template['views_list'].projects = function() {
 *	@method arrangeCards
 *	@return undefined
 */
-var arrangeCards = Deps.autorun(function() {
+var arrangeCards = function() {
 	/**
 	 *	Each time these dependency is changed, 
 	 *	this function will be called.
 	 */
 
-	Dependencies.viewportResizeDependency.depend();
-	Dependencies.projectLoadedDependency.depend();
 	var formation = false;
 
 	if(Device.isHD) {
@@ -229,4 +242,4 @@ var arrangeCards = Deps.autorun(function() {
 			'min-height': maxFormationHeight + cardSize.height + 48 + 'px'
 		})
 	}
-});
+};
