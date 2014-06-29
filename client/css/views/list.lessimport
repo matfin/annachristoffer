@@ -1,6 +1,6 @@
 body.list {
 	.wrapper {
-		.backgroundImage('/images/backgrounds/wonderworld');
+		.backgroundImage('/images/backgrounds/landing');
 		.container {
 			.align-items(center);
 
