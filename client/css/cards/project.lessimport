@@ -14,8 +14,6 @@
 	height: @gridColumnWidth * 10;
 	overflow: hidden;
 
-	.transition-property(top, left, opacity, width);
-	.transition-duration(@transitionDuration);
 	.opacity(0.5);
 
 	.translateX(0px);
@@ -68,8 +66,7 @@
 	}
 
 	&.animated,
-	//&:hover {
-	{
+	&:hover {
 		time, 
 		h2, 
 		p {

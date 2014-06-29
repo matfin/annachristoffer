@@ -214,9 +214,9 @@ var arrangeCards = function() {
 					var cardSizeHeight = $('.projectCard').eq(cardIndex).outerHeight(true);
 
 					$('.projectCard').eq(cardIndex).velocity({
-						width: cardSizeWidth + 'px',
-						translateX: ((cardSizeWidth + 16) * index + 16) + 'px',
-						translateY: ((cardSizeHeight + 16) * i) + ((cardSizeHeight) * item.paddingTop)
+						width: Math.floor(cardSizeWidth) + 'px',
+						translateX: Math.floor(((cardSizeWidth + 16) * index + 16)) + 'px',
+						translateY: Math.floor(((cardSizeHeight + 16) * i) + ((cardSizeHeight) * item.paddingTop))
 					});
 
 					$('.projectCard').eq(cardIndex).css({

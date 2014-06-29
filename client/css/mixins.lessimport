@@ -62,11 +62,4 @@
 	@media @mobile and @retina {
 		background-image: url('@{img}-m@2x.@{extension}');
 	}
-
-	/*
-	 *	Common to all
-	 */
-	background-position: top center;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
