@@ -1,0 +1,38 @@
+/**
+ *	Different background images for projects set in here.
+ */
+body.master-of-art-project {
+	.wrapper {
+		.backgroundImage('images/backgrounds/master-of-art-project');
+	}
+}
+
+body.landing {
+	.wrapper {
+		.backgroundImage('images/backgrounds/landing');
+	}
+}
+
+body.oedipus {
+	.wrapper {
+		.backgroundImage('images/backgrounds/oedipus');
+	}
+}
+
+body.perfume {
+	.wrapper {
+		.backgroundImage('images/backgrounds/perfume');
+	}
+}
+
+body.perfumeleft {
+	.wrapper {
+		.backgroundImage('images/backgrounds/perfumeleft');
+	}
+}
+
+body.wonderworld {
+	.wrapper {
+		.backgroundImage('images/backgrounds/wonderworld');
+	}
+}

@@ -6,6 +6,7 @@
 			"title": "Master of Art / Thesis",
 			"description": "Three models of memory in their context of media&ndash;historical development",
 			"date_created": "2013-02-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 1
@@ -78,6 +79,7 @@
 			"title": "Master of Art / Project",
 			"description": "Carnival of the animals &ndash; A digital music book for children",
 			"date_created": "2013-02-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 4
@@ -168,6 +170,7 @@
 			"title": "Poster Series",
 			"description": "Probational lectures at the University of Bielefeld",
 			"date_created": "2012-07-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 5
@@ -218,6 +221,7 @@
 			"title": "Book Design",
 			"description": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
 			"date_created": "2009-09-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 2
@@ -280,6 +284,7 @@
 			"title": "Typographical Staging",
 			"description": "The Drama &ldquo;King Oedipus&rdquo; from Sophocles",
 			"date_created": "2010-04-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 1
@@ -355,6 +360,7 @@
 			"title": "Digital Atlas",
 			"description": "Wonderworld Calendar &ndash; A digital Atlas for children",
 			"date_created": "2012-01-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 2
@@ -430,6 +436,7 @@
 			"title": "Poster Competition",
 			"description": "Resistance",
 			"date_created": "2010-05-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 5
@@ -460,6 +467,7 @@
 			"title": "Book Design",
 			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
 			"date_created": "2009-08-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 2
@@ -535,6 +543,7 @@
 			"title": "Cartographical Scale",
 			"description": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
 			"date_created": "2009-11-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 1
@@ -596,6 +605,7 @@
 			"title": "Typographical Visualisation",
 			"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
 			"date_created": "2010-04-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 2
@@ -607,6 +617,7 @@
 			"title": "Illustrations",
 			"description": "Sehen wir uns in Bielefeld",
 			"date_created": "2010-04-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
 					"id": 3

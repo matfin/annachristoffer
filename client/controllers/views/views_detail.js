@@ -25,7 +25,7 @@ Template['views_detail'].rendered = function() {
 *	@return undefined
 */
 Template['views_detail'].destroyed = function() {
-	$('body').removeClass('detail');
+	$('body').removeClass();
 };
 
 /**
@@ -55,5 +55,9 @@ Template['views_detail'].isSlider = function() {
 *	@return {Object} the project data
 */
 Template['views_detail'].projectData = function() {
-	return App.models.projects.findOne({'slug': this._project_slug});
+	var project = App.models.projects.findOne({'slug': this._project_slug});
+	if(project && project.background) {
+		$('body').addClass(project.background);
+	}
+	return project;
 };
