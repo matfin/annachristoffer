@@ -31,6 +31,14 @@
  */
 .backgroundImage(@img, @extension: 'jpg') {
 
+	// HD
+	@media @hd {
+		background-image: url('@{img}-hd.@{extension}');
+	}
+	@media @hd and @retina {
+		background-image: url('@{img}-hd@2x.@{extension}');
+	}
+
 	// Desktop
 	@media @desktop {
 		background-image: url('@{img}-d.@{extension}');

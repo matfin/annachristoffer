@@ -6,7 +6,7 @@
 			"title": "Master of Art / Thesis",
 			"description": "Three models of memory in their context of media&ndash;historical development",
 			"date_created": "2013-02-01",
-			"background": "master-of-art-project",
+			"background": "oedipus",
 			"category_ids": [
 				{
 					"id": 1
@@ -221,7 +221,7 @@
 			"title": "Book Design",
 			"description": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
 			"date_created": "2009-09-01",
-			"background": "master-of-art-project",
+			"background": "wonderworld",
 			"category_ids": [
 				{
 					"id": 2
@@ -284,7 +284,7 @@
 			"title": "Typographical Staging",
 			"description": "The Drama &ldquo;King Oedipus&rdquo; from Sophocles",
 			"date_created": "2010-04-01",
-			"background": "master-of-art-project",
+			"background": "oedipus",
 			"category_ids": [
 				{
 					"id": 1
@@ -360,7 +360,7 @@
 			"title": "Digital Atlas",
 			"description": "Wonderworld Calendar &ndash; A digital Atlas for children",
 			"date_created": "2012-01-01",
-			"background": "master-of-art-project",
+			"background": "wonderworld",
 			"category_ids": [
 				{
 					"id": 2
@@ -467,7 +467,7 @@
 			"title": "Book Design",
 			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
 			"date_created": "2009-08-01",
-			"background": "master-of-art-project",
+			"background": "wonderworld",
 			"category_ids": [
 				{
 					"id": 2
