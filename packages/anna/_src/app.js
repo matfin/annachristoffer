@@ -47,6 +47,13 @@
 	animationRunning: true,
 
 	/**
+	 *	Throttle timeout - time to wait for throttled events to be called
+	 *	@property throttleTimeout
+	 *	@type {Number}
+	 */
+	animationRunning: 750,
+
+	/**
 	 *	Object containing a list of all Meteor Collections the app uses.
 	 *
 	 *	@property models

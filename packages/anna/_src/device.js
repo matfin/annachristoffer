@@ -39,8 +39,8 @@ Device = {
 $(window).on('resize', _.throttle(function() {
 	Device.reset();
 	Dependencies.viewportResizeDependency.changed();
-}, 100));
+}, App.throttleTimeout));
 
 $(window).on('scroll', _.throttle(function() {
 	Dependencies.viewportScrollDependency.changed();
-}, 500));
+}, App.throttleTimeout));
