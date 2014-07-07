@@ -1,5 +1,6 @@
 body.list {
 	.wrapper {
+		height: 100%;
 		.backgroundImage('/images/backgrounds/landing');
 		.container {
 			.align-items(center);

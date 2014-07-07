@@ -1,7 +1,5 @@
 body.detail {
-	height: auto;
 	.wrapper {
-		// background-image: url('/images/backgrounds/detail_ratio_1.jpg');
 		.container {
 			.align-items(flex-start);
 			header {
