@@ -37,13 +37,20 @@ body.wonderworld {
 	}
 }
 
+body.resistance {
+	.wrapper {
+		.backgroundImage('images/backgrounds/resistance');
+	}
+}
+
 body {
 	&.master-of-art-project,
 	&.landing,
 	&.oedipus,
 	&.perfume, 
 	&.perfumeleft,
-	&.wonderworld {
+	&.wonderworld,
+	&.resistance {
 		height: auto;
 	}
 }
