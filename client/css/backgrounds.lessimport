@@ -36,3 +36,14 @@ body.wonderworld {
 		.backgroundImage('images/backgrounds/wonderworld');
 	}
 }
+
+body {
+	&.master-of-art-project,
+	&.landing,
+	&.oedipus,
+	&.perfume, 
+	&.perfumeleft,
+	&.wonderworld {
+		height: auto;
+	}
+}

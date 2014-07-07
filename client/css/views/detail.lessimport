@@ -1,5 +1,6 @@
 body.detail {
 	.wrapper {
+		height: 100%;
 		.container {
 			.align-items(flex-start);
 			header {

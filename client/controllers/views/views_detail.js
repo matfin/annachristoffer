@@ -56,7 +56,7 @@ Template['views_detail'].isSlider = function() {
 */
 Template['views_detail'].projectData = function() {
 	var project = App.models.projects.findOne({'slug': this._project_slug});
-	if(project && project.background) {
+	if(project && project.background && project.contents) {
 		$('body').addClass(project.background);
 	}
 	return project;
