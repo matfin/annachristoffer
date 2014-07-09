@@ -15,6 +15,17 @@ Template['cards_figcaption'].created = function() {
 */
 Template['cards_figcaption'].rendered = function() {
 	var template = this;
+
+	if(typeof this.data.video_id !== 'undefined') {
+		this.computation = Deps.autorun(function() {
+			Dependencies.viewportResizeDependency.depend();
+			var iframe = $(template.find('iframe'));
+			var iframeWidth = iframe.outerWidth(true);
+			iframe.css({
+				'height': Math.round(iframeWidth * 0.75)
+			});
+		});
+	}
 };
 
 /**
@@ -24,7 +35,7 @@ Template['cards_figcaption'].rendered = function() {
 *	@return undefined
 */
 Template['cards_figcaption'].destroyed = function() {
-	
+	this.computation.stop();
 };
 
 /**
@@ -50,8 +61,6 @@ Template['cards_figcaption'].imgSource = function() {
 
 	return Helpers.loadImageSource(this.img);
 };
-
-
 
 /**
 *	Template - cards_figcaption

@@ -18,6 +18,8 @@ figure.cards_figcaption {
 		iframe {
 			width: 100%;
 			height: auto;
+			.transition-property(height);
+			.transition-duration(@transitionDuration);
 		}
 	}
 

@@ -51,7 +51,7 @@
 	 *	@property throttleTimeout
 	 *	@type {Number}
 	 */
-	animationRunning: 750,
+	throttleTimeout: 750,
 
 	/**
 	 *	Object containing a list of all Meteor Collections the app uses.
