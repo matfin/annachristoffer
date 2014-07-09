@@ -49,6 +49,16 @@ Template['views_detail'].isSlider = function() {
 };
 
 /**
+ *	Template - views_detail
+ *	Helper function to determine if the video template should be loaded
+ *	@method isVideo
+ *	@return {Boolean}
+ */
+Template['views_detail'].isVideo = function() {
+	return this.type === 'video';
+};
+
+/**
 *	Template - views_detail
 *	Helper function to return the template data
 *	@method projectData

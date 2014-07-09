@@ -94,6 +94,10 @@
 					"img": "thumbnails/carnival"
 				},
 				{
+					"type": "video",
+					"id": "97334135"
+				},
+				{
 					"type": "figcaption",
 					"img": "master-of-art-project/title/title",
 					"intro": {

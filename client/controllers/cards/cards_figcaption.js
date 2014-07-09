@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['cards_figcaption'].created = function() {
-
 };
 
 /**

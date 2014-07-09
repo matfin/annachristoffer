@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['cards_slide'].created = function() {
-	console.log('Cards slide created');
 };
 
 /**
