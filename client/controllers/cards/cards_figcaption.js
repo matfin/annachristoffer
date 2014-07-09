@@ -35,7 +35,9 @@ Template['cards_figcaption'].rendered = function() {
 *	@return undefined
 */
 Template['cards_figcaption'].destroyed = function() {
-	this.computation.stop();
+	if(typeof this.computation !== 'undefined') {
+		this.computation.stop();
+	}
 };
 
 /**
