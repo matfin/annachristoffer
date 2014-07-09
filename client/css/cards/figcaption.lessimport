@@ -6,7 +6,7 @@ figure.cards_figcaption {
 
 	margin-bottom: -16px;
 
-	.imageContainer {
+	.mediaContainer {
 		.flex(2);
 		margin: @gridColumnWidth;
 		
@@ -14,6 +14,11 @@ figure.cards_figcaption {
 			width: 100%;
 			height: auto;
 		}	
+
+		iframe {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.iosSlider + & {
@@ -58,7 +63,7 @@ figure.cards_figcaption {
 		margin-left: @gridColumnWidth;
 		display: block;
 
-		.imageContainer {
+		.mediaContainer {
 			margin: 0;
 			width: 100%;
 		}
@@ -91,7 +96,7 @@ figure.cards_figcaption {
 	
 		display: block;
 
-		.imageContainer {
+		.mediaContainer {
 			margin: 0;
 			width: 100%;
 		}

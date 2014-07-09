@@ -94,12 +94,8 @@
 					"img": "thumbnails/carnival"
 				},
 				{
-					"type": "video",
-					"id": "97334135"
-				},
-				{
 					"type": "figcaption",
-					"img": "master-of-art-project/title/title",
+					"video_id": "97334135",
 					"intro": {
 						"title": "Master of Art / Project",
 						"description": "Carnival of the animals &ndash; A digital music book for children" 

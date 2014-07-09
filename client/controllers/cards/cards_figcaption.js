@@ -29,6 +29,16 @@ Template['cards_figcaption'].destroyed = function() {
 
 /**
 *	Template - cards_figcaption
+*	Helper function to determine if a video is present
+*	@method isVideo
+*	@return {String}
+*/
+Template['cards_figcaption'].isVideo = function() {
+	return typeof this.video_id !== 'undefined';
+};
+
+/**
+*	Template - cards_figcaption
 *	Helper function to return the correctly sized image
 *	@method imgSource
 *	@return {String}
@@ -40,6 +50,8 @@ Template['cards_figcaption'].imgSource = function() {
 
 	return Helpers.loadImageSource(this.img);
 };
+
+
 
 /**
 *	Template - cards_figcaption
