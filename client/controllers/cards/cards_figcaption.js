@@ -96,3 +96,9 @@ Template['cards_figcaption'].hasCaptions = function() {
 Template['cards_figcaption'].hasIntro = function() {
 	return this.intro;
 };
+
+Template['cards_figcaption'].events = {
+	'click img': function(e, template) {
+		console.log('Clicked', template);
+	}
+}
