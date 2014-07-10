@@ -55,8 +55,35 @@ Helpers = {
 		});
 	},
 
+
 	/**
-	 *	Given various device parameters, such as screen pixel density and resolutuin,
+	 *	Function to return the correct path for videos given the device screen resolution.
+	 *	
+	 *	@method loadVideoSource
+	 *	@param {String}		the string for the video url
+	 *	@return {String}	the video path 
+	 */
+	loadVideoSource: function(video) {
+
+		var videoSource = '';
+
+		if(video && typeof video !== 'undefined') {
+			if(Device.isHD) {
+				videoSource = video + '-hd';
+			}
+			else if(Device.isDesktop || Device.isLaptop || Device.isTablet) {
+				videoSource = video + '-d';
+			}
+			else {
+				videoSource = video + '-m';
+			}
+		}
+
+		return videoSource;
+	},
+
+	/**
+	 *	Given various device parameters, such as screen pixel density and resolution,
 	 *	this helper function will determine the correct image to load given a path.
 	 *	
 	 *	@method loadImageSource

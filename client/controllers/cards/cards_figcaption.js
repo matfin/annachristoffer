@@ -19,11 +19,6 @@ Template['cards_figcaption'].rendered = function() {
 	if(typeof this.data.video_id !== 'undefined') {
 		this.computation = Deps.autorun(function() {
 			Dependencies.viewportResizeDependency.depend();
-			var iframe = $(template.find('iframe'));
-			var iframeWidth = iframe.outerWidth(true);
-			iframe.css({
-				'height': Math.round(iframeWidth * 0.75)
-			});
 		});
 	}
 };
@@ -47,7 +42,7 @@ Template['cards_figcaption'].destroyed = function() {
 *	@return {String}
 */
 Template['cards_figcaption'].isVideo = function() {
-	return typeof this.video_id !== 'undefined';
+	return typeof this.video !== 'undefined';
 };
 
 /**
@@ -62,6 +57,20 @@ Template['cards_figcaption'].imgSource = function() {
 	Dependencies.viewportResizeDependency.depend();
 
 	return Helpers.loadImageSource(this.img);
+};
+
+/**
+*	Template - cards_figcaption
+*	Helper function to return the correctly sized video
+*	@method videoSource
+*	@return {String}
+*/
+Template['cards_figcaption'].videoSource = function() {
+
+	// Call this automatically on window resize
+	Dependencies.viewportResizeDependency.depend();
+
+	return Helpers.loadVideoSource(this.video);
 };
 
 /**
@@ -98,7 +107,11 @@ Template['cards_figcaption'].hasIntro = function() {
 };
 
 Template['cards_figcaption'].events = {
-	'click img': function(e, template) {
-		console.log('Clicked', template);
+	'click video': function(e, template) {
+		var video = $(template.find('video'));
+
+		console.log(video);
+
+		video[0].play();
 	}
 }

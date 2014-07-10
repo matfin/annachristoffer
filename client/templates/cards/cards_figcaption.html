@@ -1,9 +1,14 @@
 <template name="cards_figcaption">
 	<figure class="cards_figcaption">
 		<div class="mediaContainer">
-			<img src="/images/projects/{{imgSource}}" alt="">
 			{{#if isVideo}}
-				<iframe src="//player.vimeo.com/video/{{video_id}}?title=0&amp;byline=0&amp;portrait=0" width="100%" height="{{iframeRatioHeight}}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<video width="100%" height="auto" poster="/images/projects/{{imgSource}}">
+					<source src="{{videoSource}}.mp4">
+					<source src="{{videoSource}}.webm">
+					<source src="{{videoSource}}.ogv">	
+				</video>
+			{{else}}
+				<img src="/images/projects/{{imgSource}}" alt="">
 			{{/if}}
 		</div>
 		{{#if hasCaptions}}
