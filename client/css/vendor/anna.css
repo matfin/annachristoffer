@@ -23,6 +23,15 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-rightArrow:before {
+	content: "\e607";
+}
+.icon-leftArrow:before {
+	content: "\e608";
+}
+.icon-play:before {
+	content: "\e606";
+}
 .icon-home:before {
 	content: "\e600";
 }
@@ -38,12 +47,6 @@
 .icon-user:before {
 	content: "\e605";
 }
-.icon-arrow-left5:before {
-	content: "\e618";
-}
-.icon-arrow-right5:before {
-	content: "\e61b";
-}
-.icon-info2:before {
+.icon-info:before {
 	content: "\e603";
 }

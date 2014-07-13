@@ -17,6 +17,26 @@
 		height: 100%;
 	}
 
+	> button {
+		position: absolute;
+		top: 42%;
+		font-size: @gridColumnWidth * 3;
+		color: @sliderPrimaryColour;
+		.transition-property(scale);
+		.transition-duration(@transitionDuration);
+		&:active {
+			.scale(0.8);
+		}
+
+		&.icon-leftArrow {
+			left: 0;
+		}
+
+		&.icon-rightArrow {
+			right: 0;
+		}
+	}
+
 	.sliderPositionIndicator {
 		position: absolute;
 		bottom: 0;
@@ -31,7 +51,7 @@
 			.transition-property('background-color');
 			.flex(1);
 			.opacity(0.5);
-			background-color: #ff3399;
+			background-color: @sliderPrimaryColour;
 			&:nth-child(2n) {
 				.opacity(0.4);
 			}

@@ -24,6 +24,8 @@ Template['components_slider'].rendered = function() {
 		infiniteSlider: false,
 		responsiveSlideContainer: true,
 		responsiveSlides: true,
+		navNextSelector: $('.icon-rightArrow'),
+		navPrevSelector: $('.icon-leftArrow'),
 		onSliderLoaded: function(args) {
 			Dependencies.sliderLoadedDependency.changed();
 		},
@@ -69,7 +71,7 @@ var primeSlider = Deps.autorun(function() {
  *	Events
  */
 Template['components_slider'].events = {
-	'click button': function(e, template) {
+	'click .sliderPositionIndicator > button': function(e, template) {
 		var slider = $('.iosSlider');
 		var index = $(e.target).index();
 		slider.iosSlider('goToSlide', index + 1);
