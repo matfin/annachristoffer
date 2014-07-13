@@ -1,0 +1,17 @@
+.controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: @gridColumnWidth * 2;
+	background-color: @colourWhite;
+	.display(flex);
+
+	button {
+		.flex(1);
+	}
+
+	.timeline {
+		flex: 10;
+	}
+}

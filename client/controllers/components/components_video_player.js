@@ -56,8 +56,8 @@ Template['components_video_player'].imgSource = function() {
 	return Helpers.loadImageSource(this.img);
 };
 
-Template['cards_figcaption'].events = {
-	'click video': function(e, template) {
+Template['components_video_player'].events = {
+	'click .playcontrol': function(e, template) {
 		var video = $(template.find('video'));
 
 		console.log(video);
