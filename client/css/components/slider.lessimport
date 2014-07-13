@@ -22,21 +22,24 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: @gridColumnWidth / 2;
+		height: (@gridColumnWidth / 2) - 1;
 		background-color: @colourWhite;
-
 		.display(flex);
 
 		button {
+			.transition-duration(@transitionDuration);
+			.transition-property('background-color');
 			.flex(1);
 			.opacity(0.5);
-			background-color: blue;
+			background-color: #ff3399;
 			&:nth-child(2n) {
-				background-color: red;
+				.opacity(0.4);
 			}
 
-			&.active {
-				background-color: green;
+			&.active,
+			&:active {
+				.scale(1);
+				.opacity(0.8);
 			}
 		}		
 	}

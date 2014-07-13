@@ -21,7 +21,7 @@ Template['components_slider'].rendered = function() {
 		desktopClickDrag: true,
 		snapToChildren: true,
 		keyboardControls: true,
-		infiniteSlider: true,
+		infiniteSlider: false,
 		responsiveSlideContainer: true,
 		responsiveSlides: true,
 		onSliderLoaded: function(args) {
