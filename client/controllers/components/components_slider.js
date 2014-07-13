@@ -32,6 +32,16 @@ Template['components_slider'].rendered = function() {
 		onSlideChange: function(args) {
 			$('button.active').removeClass('active');
 			$('.sliderPositionIndicator button').eq(args.targetSlideNumber - 1).addClass('active');
+
+			if(args.currentSlideNumber === args.data.numberOfSlides) {
+				$('button.icon-rightArrow').addClass('hidden');
+			}
+			else if(args.currentSlideNumber === 1) {
+				$('button.icon-leftArrow').addClass('hidden');
+			}
+			else {
+				$('button').removeClass('hidden');
+			}
 		}
 	});
 };
