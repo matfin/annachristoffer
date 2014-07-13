@@ -61,20 +61,6 @@ Template['cards_figcaption'].imgSource = function() {
 
 /**
 *	Template - cards_figcaption
-*	Helper function to return the correctly sized video
-*	@method videoSource
-*	@return {String}
-*/
-Template['cards_figcaption'].videoSource = function() {
-
-	// Call this automatically on window resize
-	Dependencies.viewportResizeDependency.depend();
-
-	return Helpers.loadVideoSource(this.video);
-};
-
-/**
-*	Template - cards_figcaption
 *	Helper function to return the calculated pixel height of an image.
 *	This is to compensate for IE's poor support for the flex box model
 *	@method imgDimension
@@ -105,13 +91,3 @@ Template['cards_figcaption'].hasCaptions = function() {
 Template['cards_figcaption'].hasIntro = function() {
 	return this.intro;
 };
-
-Template['cards_figcaption'].events = {
-	'click video': function(e, template) {
-		var video = $(template.find('video'));
-
-		console.log(video);
-
-		video[0].play();
-	}
-}

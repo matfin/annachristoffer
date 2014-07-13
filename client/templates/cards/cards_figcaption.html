@@ -2,11 +2,7 @@
 	<figure class="cards_figcaption">
 		<div class="mediaContainer">
 			{{#if isVideo}}
-				<video width="100%" height="auto" poster="/images/projects/{{imgSource}}">
-					<source src="{{videoSource}}.mp4">
-					<source src="{{videoSource}}.webm">
-					<source src="{{videoSource}}.ogv">	
-				</video>
+				{{> components_video_player}}
 			{{else}}
 				<img src="/images/projects/{{imgSource}}" alt="">
 			{{/if}}
