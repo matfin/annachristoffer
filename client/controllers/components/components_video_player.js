@@ -67,7 +67,7 @@ Template['components_video_player'].videoTime = function() {
 	/**
 	 *	This will be called when the browser has loaded the video
 	 */
-	Dependencies.videoLoadedDataDependency.depend();
+	Dependencies.videoEventDependency.depend();
 
 	var template = this,
 		formattedDuration = '0:00',
@@ -111,7 +111,7 @@ Template['components_video_player'].events = {
 	},
 
 	'loadeddata video': function(e, template) {
-		Dependencies.videoLoadedDataDependency.changed();
+		Dependencies.videoEventDependency.changed();
 	},
 
 	'timeupdate video': function(e, template) {

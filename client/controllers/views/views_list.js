@@ -96,21 +96,23 @@ Template['views_list'].projects = function() {
 	var category = App.models.categories.findOne({slug: this._category_slug});
 
 	if(typeof category !== 'undefined') {
+		console.log('Category specified');
 		App.models.projects.update(
 			{'category_ids.id': category.id}, 
-			{$set: { highlighted: true }}, 
+			{$set: { highlighted: true, colourHighlighted: true }}, 
 			{multi: true}
 		);
 		App.models.projects.update(
 			{'category_ids.id': { $not: category.id}}, 
-			{$set: { highlighted: false }}, 
+			{$set: { highlighted: false, colourHighlighted: false }}, 
 			{multi: true}
 		);
 	}
 	else {
+		console.log('No category specified');
 		App.models.projects.update(
 			{}, 
-			{$set: { highlighted: true }}, 
+			{$set: { highlighted: true, colourHighlighted: false }}, 
 			{multi: true}
 		);
 	}
@@ -128,14 +130,6 @@ Template['views_list'].projects = function() {
 
 	return projects;
 };
-
-/**
-
-	if($('.projectCard').length === App.models.projects.find({}).count()) {
-		console.log('All project cards loaded');
-		console.log(App.models.projects.find({}).count(), $('.projectCard').length);
-	}
-**/
 
 /**
 *	Anonymous helper function to rearragne the project cards using DOM man

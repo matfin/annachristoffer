@@ -61,8 +61,13 @@
 		font-size: 22px;
 	}
 
-	&.highlighted {
+	&.highlighted,
+	&.colourHighlighted {
 		.opacity(1.0);
+	}
+
+	&.colourHighlighted {
+		background-color: @highlightedBackground;
 	}
 
 	&.animated,

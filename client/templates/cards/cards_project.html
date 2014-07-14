@@ -1,5 +1,5 @@
 <template name="cards_project">
-	<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=this.slug}}" title="{{title}}" class="projectCard {{highlighted}}">
+	<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=this.slug}}" title="{{title}}" class="projectCard {{highlighted}} {{colourHighlighted}}">
 		{{#if hasThumbnail}}
 			<img src="{{thumbnail}}" width="" height="" alt="" />
 			<img class="interlace" src="images/effects/interlacing_effect.png" width="" height="" alt="" />

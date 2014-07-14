@@ -125,6 +125,16 @@ Template['cards_project'].highlighted = function() {
 
 /**
 *	Template - cards_project
+*	Returns a boolean indicating if the card should be highlighted with colour
+*	@method colourHighlighted
+*	@return {String} 'colourHighlighted' if colourHighlighted is true, '' if not.
+*/
+Template['cards_project'].colourHighlighted = function() {
+	return this.colourHighlighted ? 'colourHighlighted':'';
+};
+
+/**
+*	Template - cards_project
 *	Events for this template
 */
 Template['cards_project'].events = {
