@@ -25,6 +25,15 @@
 	}
 }
 
+.hexToRGBA(@hexColour, @alpha: 1) {
+	background: rgba(
+		red(@hexColour),
+		green(@hexColour),
+		blue(@hexColour),
+		@alpha
+	);
+}
+
 /**
  *	Mixin to load background images based on screen parameters, 
  *	in this case, the window size and pixel density.

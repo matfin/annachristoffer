@@ -1,17 +1,48 @@
+.timeline {
+	position: absolute;
+	bottom: @gridColumnWidth * 1.5;
+	width: 100%;
+	height: @gridColumnWidth / 2;
+	text-align: center;
+	.hexToRGBA(@sliderPrimaryColour, 0.4);
+
+	.loadingProgressIndicator { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: @gridColumnWidth / 2;
+		.hexToRGBA(@sliderPrimaryColour, 0.7);
+
+		.transition-property(width);
+		.transition-duration(@transitionDuration);
+	}
+
+	.loadingProgressIndicator {
+
+	}
+}
+
 .controls {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: @gridColumnWidth * 2;
+	height: @gridColumnWidth * 1.5;
 	background-color: @colourWhite;
 	.display(flex);
 
-	button {
-		.flex(1);
+	&.hidden {
+		display: none;
+		.opacity(0);
 	}
 
-	.timeline {
-		flex: 10;
+	button {
+		.flex(1);
+		background-color: lightblue;
+	}
+
+	time {
+		.flex(17);
 	}
 }

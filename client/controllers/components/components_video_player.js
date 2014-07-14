@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['components_video_player'].created = function() {
-	console.log(this);
 };
 
 /**
@@ -15,7 +14,8 @@ Template['components_video_player'].created = function() {
 *	@return undefined
 */
 Template['components_video_player'].rendered = function() {
-
+	var template = this;
+	this.video = $(template.find('video')).get(0);
 };
 
 /**
@@ -58,10 +58,10 @@ Template['components_video_player'].imgSource = function() {
 
 Template['components_video_player'].events = {
 	'click .playcontrol': function(e, template) {
-		var video = $(template.find('video'));
+		template.video.play();
+	},
 
-		console.log(video);
-
-		video[0].play();
+	'click .muteButton': function(e, template) {
+		template.video.muted = true;
 	}
 }
