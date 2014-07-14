@@ -48,6 +48,8 @@ header {
 					text-transform: lowercase;
 					&:hover {
 						font-weight: bold;
+						color: @sliderPrimaryColour;
+						border-bottom: 1px solid @sliderPrimaryColour;
 					}
 				}
 			}

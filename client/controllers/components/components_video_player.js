@@ -115,6 +115,6 @@ Template['components_video_player'].events = {
 	},
 
 	'timeupdate video': function(e, template) {
-		console.log('timeupdate video');
+		Dependencies.videoEventDependency.changed();
 	}
 }
