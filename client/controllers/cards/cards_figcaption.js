@@ -56,7 +56,12 @@ Template['cards_figcaption'].imgSource = function() {
 	// Call this automatically on window resize
 	Dependencies.viewportResizeDependency.depend();
 
-	return Helpers.loadImageSource(this.img);
+	var imgOptions = {}
+	if(typeof this.imgFileType !== 'undefined') {
+		imgOptions.extension = this.imgFileType;
+	}
+
+	return Helpers.loadImageSource(this.img, imgOptions);
 };
 
 /**

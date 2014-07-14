@@ -276,7 +276,8 @@
 				},
 				{
 					"type": "figcaption",
-					"img": "alice-adventures/alices-icons/07-alices-icons"
+					"img": "alice-adventures/alices-icons/07-alices-icons",
+					"imgFileType": "png"
 				}
 			]
 		},
