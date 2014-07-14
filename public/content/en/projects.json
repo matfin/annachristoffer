@@ -95,7 +95,7 @@
 				},
 				{
 					"type": "figcaption",
-					"video": "http://legacycv.mattfinucane.de/assets/videos/title",
+					"videoUrl": "http://legacycv.mattfinucane.de/assets/videos/title",
 					"img": "master-of-art-project/title/title",
 					"intro": {
 						"title": "Master of Art / Project",

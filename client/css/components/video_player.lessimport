@@ -40,6 +40,9 @@
 	button {
 		.flex(1);
 		background-color: lightblue;
+		&:active {
+			.scale(1);
+		}
 	}
 
 	time {

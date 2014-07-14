@@ -42,7 +42,7 @@ Template['cards_figcaption'].destroyed = function() {
 *	@return {String}
 */
 Template['cards_figcaption'].isVideo = function() {
-	return typeof this.video !== 'undefined';
+	return typeof this.videoUrl !== 'undefined';
 };
 
 /**

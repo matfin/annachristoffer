@@ -7,6 +7,24 @@
 Helpers = {
 
 	/**
+	 *	Passing initialised monent() library in here.
+	 */
+	moment: moment,
+
+	/**
+	 *	Method to return a nicely formatted String with the number of minutes
+	 *	and seconds given seconds.
+	 *	@method formattedDurationSeconds
+	 *	@param {Number}
+	 *	@return {String}
+	 */
+	formattedDurationSeconds: function(seconds) {
+		var minutes = Math.floor(seconds / 60),
+			seconds = Math.floor(seconds % 60);
+		return minutes + ':' + (seconds < 10 ? '0' + seconds : seconds);
+	},
+
+	/**
 	 *	Method to load localised data which is called when the app is first run.
 	 *	and when the user opts to switch langage. It is important to node that
 	 *	the app language parameter (en|de) is set within the App object and does not
