@@ -112,5 +112,9 @@ Template['components_video_player'].events = {
 
 	'loadeddata video': function(e, template) {
 		Dependencies.videoLoadedDataDependency.changed();
+	},
+
+	'timeupdate video': function(e, template) {
+		console.log('timeupdate video');
 	}
 }
