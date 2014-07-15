@@ -60,7 +60,7 @@ Template['components_video_player'].imgSource = function() {
 *	Template - components_video_player
 *	Helper function to return the video duration and elapsed time
 *	@method time
-*	@return {Object} containing the elapsed time and overall duration
+*	@return {Object} containing the elapsed time, overall duration and duration played as a percentage
 */
 Template['components_video_player'].videoTime = function() {
 
@@ -71,7 +71,8 @@ Template['components_video_player'].videoTime = function() {
 
 	var template = this,
 		formattedDuration = '0:00',
-		formattedCurrentTime = '0:00';
+		formattedCurrentTime = '0:00',
+		elapsedDurationPercentage = 0;
 
 	if(	typeof template.video !== 'undefined' 
 		&& typeof template.video.duration !== 'undefined' 
@@ -79,13 +80,34 @@ Template['components_video_player'].videoTime = function() {
 
 		formattedDuration = Helpers.formattedDurationSeconds(template.video.duration);
 		formattedCurrentTime = Helpers.formattedDurationSeconds(template.video.currentTime);
+		elapsedDurationPercentage = Math.floor((template.video.currentTime / template.video.duration) * 100);
 	}
 
 	return {
+		durationPercentage: elapsedDurationPercentage,
 		duration: formattedDuration,
 		currentTime: formattedCurrentTime
 	}
 };
+
+/**
+ *	Function updateVideoLoadProgress
+ *	Update a given dom element with a percentage value representing the video stream loaded
+ *	@param {Object} the template
+ *	@return undefined
+ */
+var updateVideoLoadProgress = function(template) {
+	if(template.video.buffered.length > 0) {
+		var bufferedStartTime = template.video.buffered.start(0),
+			bufferedEndTime = template.video.buffered.end(template.video.buffered.length - 1),
+			duration = template.video.duration,
+			bufferedPercentage = Math.floor((bufferedEndTime / duration) * 100);
+
+		$(template.find('.loadingProgressIndicator')).css({
+			'width': bufferedPercentage + '%'
+		})
+	}
+}
 
 /**
  *	Template - components_video_player
@@ -116,5 +138,13 @@ Template['components_video_player'].events = {
 
 	'timeupdate video': function(e, template) {
 		Dependencies.videoEventDependency.changed();
+	},
+
+	'durationchange video': function(e, template){
+	
+	},
+
+	'progress video': function(e, template) {
+		updateVideoLoadProgress(template);
 	}
 }

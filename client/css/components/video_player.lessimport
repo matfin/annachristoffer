@@ -6,20 +6,23 @@
 	text-align: center;
 	.hexToRGBA(@sliderPrimaryColour, 0.4);
 
-	.loadingProgressIndicator { 
+	.loadingProgressIndicator,
+	.videoTimelineIndicator { 
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 0;
 		height: @gridColumnWidth / 2;
-		.hexToRGBA(@sliderPrimaryColour, 0.7);
-
 		.transition-property(width);
-		.transition-duration(@transitionDuration);
+		.transition-duration(1s);
 	}
 
 	.loadingProgressIndicator {
+		.hexToRGBA(@sliderPrimaryColour, 0.7);		
+	}
 
+	.videoTimelineIndicator {
+		.hexToRGBA(#0033ff, 0.7);	
 	}
 }
 
