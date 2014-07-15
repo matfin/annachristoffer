@@ -189,6 +189,33 @@ Helpers = {
 	},
 
 	/**
+	 *	Helper to implement cross-browser fullscreen video
+	 *	@method videoRequestFullscreen
+	 *	@param {DomElement} the dom element for the video
+	 *	@return undefined
+	 */
+	videoRequestFullscreen: function(video) {
+		if(video.requestFullScreen) {
+			video.requestFullScreen();
+		}
+		else if(video.webkitRequestFullScreen) {
+			video.webkitRequestFullScreen();
+		}
+		else if(video.mozRequestFullScreen) {
+			video.mozRequestFullScreen();
+		}
+		else if(video.msRequestFullScreen) {
+			video.msRequestFullScreen();
+		}
+		else {
+			throw {
+				error: 'FullScreenException',
+				message: 'Cross browser fullscreen video failed.'
+			}
+		}
+	},
+
+	/**
 	 *	Function to randomly select an element 
 	 *	@method randomlySelectProjectCard
 	 *	@param className {String}	the class name of the object

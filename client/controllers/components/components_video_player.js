@@ -132,6 +132,11 @@ Template['components_video_player'].events = {
 		}
 	},
 
+	'click .fullscreenToggle': function(e, template) {
+		console.log('Go fullscreen');
+		Helpers.videoRequestFullscreen(template.video);
+	},
+
 	'loadeddata video': function(e, template) {
 		Dependencies.videoEventDependency.changed();
 	},
