@@ -54,7 +54,28 @@ VideoPlayer = {
 
 	pause: function() {
 		this._video.pause();
-	}
+	},
+
+	stop: function() {
+		this._video.stop();
+	},
+
+	toggleMute: function() {
+		if(this._video.muted) {
+			this._video.muted = false;
+		}
+		else {
+			this._video.muted = true;
+		}
+	},
+
+	paused: function() {
+		return this._video.paused;
+	},
+
+	goFullScreen: function() {
+		Helpers.videoRequestFullscreen(this._video);
+	},
 
 	/**
 	 *	Function to unload event listeners and clean up 
@@ -63,10 +84,11 @@ VideoPlayer = {
 	 *	@return undefined
 	 */
 	cleanup: function() {
+		var self = this;
 
 		_.each(this._events, function(e) {
-			self._video.off(e.type);
-		})
+			self._video.removeEventListener(e.type, e.callback);
+		});
 
 		this._events = [];
 		this._video = null;
@@ -94,11 +116,7 @@ VideoPlayer = {
 		else {
 			_.each(this._events, function(e) {
 
-				// self._video.on(callback.type, function() {
-				// 	callback.toCall();
-				// });
-
-				self._video.addEventListener(e.type, e.callback);
+				self._video.addEventListener(e.type, _.throttle(e.callback, 250));
 
 			});
 		}

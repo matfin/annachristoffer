@@ -11,6 +11,7 @@ Package.on_use(function(api) {
 	api.use('moment', 'client');
 	api.use('q', 'client');
 	api.use('underscore', 'client');
+	api.use('anna', 'client');
 
 
 	/**

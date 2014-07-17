@@ -48,7 +48,7 @@ Template['components_video_player'].rendered = function() {
 *	@return undefined
 */
 Template['components_video_player'].destroyed = function() {
-
+	VideoPlayer.cleanup();
 };
 
 /**
@@ -84,29 +84,23 @@ Template['components_video_player'].imgSource = function() {
  *	Events	
  */
 Template['components_video_player'].events = {
+
 	'click .playcontrol': function(e, template) {
 
-		VideoPlayer.playPauseToggle();
-
-		// if(template.video.paused) {
-		// 	template.video.play();
-		// }
-		// else {
-		// 	template.video.pause();
-		// }
+		if(VideoPlayer.paused()) {
+			VideoPlayer.play();
+		}
+		else {
+			VideoPlayer.pause();
+		}
 	},
 
 	'click .muteButton': function(e, template) {
-		if(template.video.muted) {
-			template.video.muted = false;
-		}
-		else {
-			template.video.muted = true;
-		}
+		VideoPlayer.toggleMute();
 	},
 
 	'click .fullscreenToggle': function(e, template) {
-		Helpers.videoRequestFullscreen(template.video);
+		VideoPlayer.goFullScreen();
 	}
 }
 
