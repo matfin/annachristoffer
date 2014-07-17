@@ -24,5 +24,5 @@ Package.on_use(function(api) {
 	/**
 	 *	Exporting the package itself
 	 */
-	api.export('VideoPlayer');
+	api.export('Video');
 });

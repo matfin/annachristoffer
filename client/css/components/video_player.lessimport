@@ -15,6 +15,7 @@
 		height: @gridColumnWidth / 2;
 		.transition-property(width);
 		.transition-duration(1s);
+		.transition-timing-function(linear);
 	}
 
 	.loadingProgressIndicator {
