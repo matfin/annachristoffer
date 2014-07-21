@@ -163,10 +163,22 @@ Video = {
 	percentLoaded: function() {
 		if(this.isLoaded() && this._video.buffered.length > 0) {
 			var bufferedStartTime = this._video.buffered.start(0),
-				bufferedEndTime = this._video.buffered.end(this._video.buffered.length - 1),
+				bufferedEndTime = this._video.buffered.end(0),
 				duration = this._video.duration;
 
-				return Math.floor((bufferedEndTime / duration) * 100);
+				console.log('Buffered start: ', bufferedStartTime);
+				console.log('Buffered end: ', bufferedEndTime);
+
+				if(bufferedEndTime < duration) {
+					return Math.floor((bufferedEndTime / duration) * 100);
+				}
+				else{
+					console.log('done!');
+
+					console.log('Buffered end time: ' + bufferedEndTime);
+
+					return 100;
+				}
 		}
 		else {
 			return 0;

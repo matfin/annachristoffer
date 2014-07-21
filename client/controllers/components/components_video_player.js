@@ -27,12 +27,14 @@ Template['components_video_player'].rendered = function() {
 			type: 'progress', 
 			callback: function() {
 				Dependencies.videoLoadedDependency.changed();
+				// console.log('Progress callback happening');
 			} 
 		},
 		{
 			type: 'timeupdate', 
 			callback: function() {
 				Dependencies.videoTimeDependency.changed();
+				// console.log('Timeupdate callback happening.');
 			} 
 		}
 	];
@@ -116,7 +118,6 @@ Template['components_video_player'].videoTime = function() {
 Template['components_video_player'].videoLoadedPercentage = function() {
 
 	Dependencies.videoLoadedDependency.depend();
-
 	return Video.percentLoaded();
 
 };
@@ -131,9 +132,11 @@ Template['components_video_player'].events = {
 
 		if(Video.paused()) {
 			Video.play();
+			$(template.find('.playcontrol')).html('&#x2590;&#x2590;');
 		}
 		else {
 			Video.pause();
+			$(template.find('.playcontrol')).html('&#x25ba;');
 		}
 	},
 
@@ -149,6 +152,42 @@ Template['components_video_player'].events = {
 
 	'click .fullscreenToggle': function(e, template) {
 		Video.goFullScreen();
+	},
+
+	'mousedown .scrub': function(e, template) {
+		$(e.currentTarget).data('canDrag', true);
+	},
+
+	'mouseup': function(e, template) {
+		$('.scrub').data('canDrag', false);
+	},
+
+	'mousemove': function(e, template) {
+
+		var scrub = $('.scrub');
+		var timeline = $('.timeline');
+		var position = scrub.position();
+
+		if(scrub.data('canDrag')) {
+
+			if(scrub.position().left < 0) {
+				scrub.css({
+					'left': 0
+				});
+				scrub.data('canDrag', false);
+			}
+			else if(scrub.position().left <= (timeline.outerWidth() - scrub.outerWidth())) {
+				scrub.css({
+					'left': e.pageX - (scrub.outerWidth(true) * 1.5)
+				});
+			}
+			else {
+				scrub.css({
+					'left': timeline.outerWidth() - scrub.outerWidth()
+				});
+				scrub.data('canDrag', false);
+			}
+		}
 	}
 }
 

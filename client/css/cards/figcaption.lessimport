@@ -12,7 +12,7 @@ figure.cards_figcaption {
 		position: relative;
 		.flex(2);
 		margin: @gridColumnWidth;
-		
+		.user-select(none);
 		img {
 			position: relative;
 			top: 0;

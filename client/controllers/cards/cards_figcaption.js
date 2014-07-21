@@ -96,3 +96,14 @@ Template['cards_figcaption'].hasCaptions = function() {
 Template['cards_figcaption'].hasIntro = function() {
 	return this.intro;
 };
+
+/**
+ *	Template - cards_figcaption
+ *	Events
+ */
+Template['cards_figcaption'].events = {
+
+	'mouseout .mediacontainer': function(e, template) {
+		$('.scrub').data('canDrag', false);
+	}
+}

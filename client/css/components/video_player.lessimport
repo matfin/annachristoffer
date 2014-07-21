@@ -23,7 +23,18 @@
 	}
 
 	.videoTimelineIndicator {
-		.hexToRGBA(#0033ff, 0.7);	
+		.hexToRGBA(#0033ff, 0.7);
+		display: none;	
+	}
+
+	i.scrub {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: @gridColumnWidth;
+		height: 100%;
+		background-color: black;
+		cursor: pointer;
 	}
 }
 
