@@ -201,6 +201,9 @@ Helpers = {
 		else if(video.webkitRequestFullScreen) {
 			video.webkitRequestFullScreen();
 		}
+		else if(video.webkitSupportsFullscreen) {
+			video.webkitEnterFullscreen();
+		}
 		else if(video.mozRequestFullScreen) {
 			video.mozRequestFullScreen();
 		}

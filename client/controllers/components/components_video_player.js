@@ -19,6 +19,11 @@ Template['components_video_player'].rendered = function() {
 
 	var events = [
 		{
+			type: 'loadedmetadata',
+			callback: function() {
+				
+			},
+
 			type: 'loadeddata', 
 			callback: function() {
 				Dependencies.videoLoadedDependency.changed();
@@ -39,6 +44,17 @@ Template['components_video_player'].rendered = function() {
 	];
 
 	Video.setup($(template.find('video')), events);
+
+	/**
+	 *	Set the video height according to the width - fix for iOS Safari
+	 */
+	(function() {
+		var video = $(template.find('video'));
+		var	width = video.outerWidth();
+		video.css({
+			height: width * 0.75
+		});
+	})();
 };
 
 /**
@@ -80,7 +96,7 @@ Template['components_video_player'].imgSource = function() {
 };
 
 /**
- *	Tenplate - components_video_player
+ *	Template - components_video_player
  *	Helper function to return video times (duration, currently playing etc)
  *	@method videoTime
  *	@return {Object}
@@ -134,9 +150,11 @@ Template['components_video_player'].events = {
 
 		if(Video.paused()) {
 			Video.play();
+			$(e.target).removeClass('icon-play').addClass('icon-pause');
 		}
 		else {
 			Video.pause();
+			$(e.target).removeClass('icon-pause').addClass('icon-play');
 		}
 	},
 
@@ -144,9 +162,11 @@ Template['components_video_player'].events = {
 
 		if(Video.muted()) {
 			Video.unmute();
+			$(e.target).removeClass('icon-unmute').addClass('icon-mute');
 		}
 		else {
-			Video.mute()
+			Video.mute();
+			$(e.target).removeClass('icon-mute').addClass('icon-unmute');
 		}
 	},
 

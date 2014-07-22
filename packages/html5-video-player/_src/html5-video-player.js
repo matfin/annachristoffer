@@ -157,6 +157,21 @@ Video = {
 	},
 
 	/**
+	 *	Function to return the video size
+	 *
+	 *	@method videoSize
+	 *	@return {Object} - an object containing the video size: {width: 640px, height: 480px}
+	 */
+	videoSize: function() {
+		if(this.isLoaded()) {
+			return {
+				width: this._video.videoWidth,
+				height: this._video.videoHeight
+			}
+		}
+	},
+
+	/**
 	 *	Function to return a percentage value of the video loaded 
 	 *
 	 *	@method percentLoaded
@@ -233,11 +248,15 @@ Video = {
 					self._video.addEventListener(e.type, function() {
 						_.throttle(e.callback(), 1000);
 						self._loaded = true;
+
+						// console.log('Event: ' + e.type);
 					});
 				}
 				else {
 					self._video.addEventListener(e.type, function() {
 						_.throttle(e.callback(), 1000);
+
+						// console.log('Event: ' + e.type);
 					});
 				}
 			});
