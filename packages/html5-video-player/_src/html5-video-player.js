@@ -150,7 +150,9 @@ Video = {
 		return {
 			formattedDuration: Helpers.formattedDurationSeconds(this._video.duration),
 			formattedCurrentTime: Helpers.formattedDurationSeconds(this._video.currentTime),
-			elapsedDurationPercentage: Math.floor((this._video.currentTime / this._video.duration) * 100)
+			currentTimeSeconds: Math.floor(this._video.currentTime),
+			elapsedDurationPercentage: Math.floor((this._video.currentTime / this._video.duration) * 100),
+			durationInSeconds: Math.floor(this._video.duration)
 		}
 	},
 
@@ -166,17 +168,10 @@ Video = {
 				bufferedEndTime = this._video.buffered.end(0),
 				duration = this._video.duration;
 
-				console.log('Buffered start: ', bufferedStartTime);
-				console.log('Buffered end: ', bufferedEndTime);
-
 				if(bufferedEndTime < duration) {
 					return Math.floor((bufferedEndTime / duration) * 100);
 				}
 				else{
-					console.log('done!');
-
-					console.log('Buffered end time: ' + bufferedEndTime);
-
 					return 100;
 				}
 		}
@@ -236,12 +231,14 @@ Video = {
 			_.each(this._events, function(e) {
 				if(e.type === 'loadeddata') {
 					self._video.addEventListener(e.type, function() {
-						_.throttle(e.callback, 1000);
+						_.throttle(e.callback(), 1000);
 						self._loaded = true;
 					});
 				}
 				else {
-					self._video.addEventListener(e.type, _.throttle(e.callback, 1000));
+					self._video.addEventListener(e.type, function() {
+						_.throttle(e.callback(), 1000);
+					});
 				}
 			});
 		}

@@ -10,6 +10,8 @@ Dependencies = {
 	projectLoadedDependency: new Deps.Dependency,
 	sliderLoadedDependency: new Deps.Dependency,
 	projectCardAnimatedDependency: new Deps.Dependency,
+	
 	videoTimeDependency: new Deps.Dependency,
-	videoLoadedDependency: new Deps.Dependency
+	videoLoadedDependency: new Deps.Dependency,
+	videoProgressDependency: new Deps.Dependency
 };

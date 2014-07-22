@@ -34,7 +34,6 @@ input[type="range"] {
         width: @gridColumnWidth;
         height: @gridColumnWidth * 0.75;
         border: none;
-        border-radius: @gridColumnWidth / 2;
         background-color: black;
     }
 
@@ -42,14 +41,12 @@ input[type="range"] {
         width: @gridColumnWidth;
         height: @gridColumnWidth * 0.75;
         border: none;
-        border-radius: @gridColumnWidth / 2;
         background-image: linear-gradient(to bottom, @colourBlack 0, @colourBlack 100%);
     }
 
     &::-ms-thumb {
         width: @gridColumnWidth;
         height: @gridColumnWidth * 0.75;
-        border-radius: @gridColumnWidth / 2;
         border: 0;
         background-image: linear-gradient(to bottom, @colourBlack 0, @colourBlack 100%);
     }

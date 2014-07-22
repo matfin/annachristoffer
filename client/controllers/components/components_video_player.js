@@ -21,20 +21,19 @@ Template['components_video_player'].rendered = function() {
 		{
 			type: 'loadeddata', 
 			callback: function() {
+				Dependencies.videoLoadedDependency.changed();
 			}
 		},
 		{
 			type: 'progress', 
 			callback: function() {
-				Dependencies.videoLoadedDependency.changed();
-				// console.log('Progress callback happening');
+				Dependencies.videoProgressDependency.changed();
 			} 
 		},
 		{
 			type: 'timeupdate', 
 			callback: function() {
 				Dependencies.videoTimeDependency.changed();
-				// console.log('Timeupdate callback happening.');
 			} 
 		}
 	];
@@ -89,6 +88,7 @@ Template['components_video_player'].imgSource = function() {
 Template['components_video_player'].videoTime = function() {
 
 	Dependencies.videoTimeDependency.depend();
+	Dependencies.videoLoadedDependency.depend();
 
 	if(Video.isLoaded()) {
 
@@ -97,7 +97,9 @@ Template['components_video_player'].videoTime = function() {
 		return {
 			currentTime: times.formattedCurrentTime,
 			duration: times.formattedDuration,
-			durationPercentage: times.elapsedDurationPercentage
+			currentTimeSeconds: times.currentTimeSeconds,
+			durationPercentage: times.elapsedDurationPercentage,
+			durationInSeconds: times.durationInSeconds
 		}
 	}
 	else {

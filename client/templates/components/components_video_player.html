@@ -5,7 +5,7 @@
 		<source src="{{videoSource}}.ogv">	
 	</video>
 	<div class="timeline">
-		<input type="range" min="0" max="177" id="videoProgress">
+		<input type="range" value="{{videoTime.currentTimeSeconds}}" min="0" max="{{videoTime.durationInSeconds}}" id="videoProgress">
 	</div>
 	<div class="controls">
 		<button class="playcontrol icon-play">

@@ -25,9 +25,9 @@
 	// 	.transition-timing-function(linear);
 	// }
 
-	.loadingProgressIndicator {
-		.hexToRGBA(@sliderPrimaryColour, 0.7);		
-	}
+	// .loadingProgressIndicator {
+	// 	.hexToRGBA(@sliderPrimaryColour, 0.7);		
+	// }
 }
 
 .controls {
@@ -55,8 +55,13 @@
 	button {
 		.flex(1);
 		background-color: transparent;
+		.transition-property(scale, color);
+		.transition-duration(@transitionDuration);
+		&:hover {
+			.drop-shadow(2px #fff);
+		}
 		&:active {
-			.scale(1);
+			.scale(@scaleFactor);
 		}
 		color: @videoControlsColour;
 	}
