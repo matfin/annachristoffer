@@ -244,7 +244,7 @@ Video = {
 		else {
 
 			_.each(this._events, function(e) {
-				if(e.type === 'loadeddata') {
+				if(e.type === 'loadeddata' || e.type === 'loadedmetadata') {
 					self._video.addEventListener(e.type, function() {
 						_.throttle(e.callback(), 1000);
 						self._loaded = true;

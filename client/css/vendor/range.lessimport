@@ -7,6 +7,7 @@ input[type="range"] {
     border: none;
     background-color: @videoControlsColour;
     outline: none;
+    .border-radius(0);
     .resetMarginPadding;
 
     &::-moz-range-track {

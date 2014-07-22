@@ -21,9 +21,10 @@ Template['components_video_player'].rendered = function() {
 		{
 			type: 'loadedmetadata',
 			callback: function() {
-				
-			},
-
+				Dependencies.videoLoadedDependency.changed();
+			}
+		},
+		{
 			type: 'loadeddata', 
 			callback: function() {
 				Dependencies.videoLoadedDependency.changed();
@@ -107,7 +108,7 @@ Template['components_video_player'].videoTime = function() {
 	Dependencies.videoLoadedDependency.depend();
 
 	if(Video.isLoaded()) {
-
+		
 		var times = Video.times();
 
 		return {
