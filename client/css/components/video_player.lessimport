@@ -2,39 +2,31 @@
 	position: absolute;
 	bottom: @gridColumnWidth * 1.5;
 	width: 100%;
-	height: @gridColumnWidth / 2;
+	height: @gridColumnWidth * 0.75;
 	text-align: center;
 	.hexToRGBA(@sliderPrimaryColour, 0.4);
 
-	.loadingProgressIndicator,
-	.videoTimelineIndicator { 
+	#videoProgress {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 0;
-		height: @gridColumnWidth / 2;
-		.transition-property(width);
-		.transition-duration(1s);
-		.transition-timing-function(linear);
+		width: 100%;
+		height: @gridColumnWidth * 0.75;
 	}
+
+	// .loadingProgressIndicator{ 
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 0;
+	// 	height: @gridColumnWidth;
+	// 	.transition-property(width);
+	// 	.transition-duration(1s);
+	// 	.transition-timing-function(linear);
+	// }
 
 	.loadingProgressIndicator {
 		.hexToRGBA(@sliderPrimaryColour, 0.7);		
-	}
-
-	.videoTimelineIndicator {
-		.hexToRGBA(#0033ff, 0.7);
-		display: none;	
-	}
-
-	i.scrub {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: @gridColumnWidth;
-		height: 100%;
-		background-color: black;
-		cursor: pointer;
 	}
 }
 
@@ -46,21 +38,34 @@
 	height: @gridColumnWidth * 1.5;
 	background-color: @colourWhite;
 	.display(flex);
+	.flex-direction(row);
+	.align-items(flex-start);
 
 	&.hidden {
 		display: none;
 		.opacity(0);
 	}
 
+	button,
+	time {
+		height: @gridColumnWidth * 1.5;
+		line-height: @gridColumnWidth * 1.5;
+	}
+
 	button {
 		.flex(1);
-		background-color: lightblue;
+		background-color: transparent;
 		&:active {
 			.scale(1);
 		}
+		color: @videoControlsColour;
 	}
 
 	time {
 		.flex(17);
+		.box-sizing(border-box);
+		line-height: @gridColumnWidth * 1.5;
+		font-size: @smallFont;
+		padding-left: @gridColumnWidth / 2;
 	}
 }

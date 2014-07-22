@@ -5,24 +5,17 @@
 		<source src="{{videoSource}}.ogv">	
 	</video>
 	<div class="timeline">
-		<div class="loadingProgressIndicator" style="width: {{videoLoadedPercentage}}%">
-		</div>
-		<div class="videoTimelineIndicator" style="width: {{videoTime.durationPercentage}}%">
-		</div>
-		<i class="scrub"></i>
+		<input type="range" min="0" max="177" id="videoProgress">
 	</div>
 	<div class="controls">
-		<button class="playcontrol">
-			&#x25ba;
+		<button class="playcontrol icon-play">
 		</button>
-		<button class="muteButton">
-			M
+		<button class="muteButton icon-mute">
 		</button>
 		<time duration="2M57S">
 			{{videoTime.currentTime}} / {{videoTime.duration}}
 		</time>
-		<button class="fullscreenToggle">
-			FS
+		<button class="fullscreenToggle icon-tv">
 		</button>
 	</div>
 </template>

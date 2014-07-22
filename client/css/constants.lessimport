@@ -27,6 +27,7 @@
 @menuBackground: rgba(red(@colourWhite), green(@colourWhite), blue(@colourWhite), 0.9);
 @hoverColour: rgba(red(#f4e4df), green(#f4e4df), blue(#f4e4df), 0.90);
 @sliderPrimaryColour: #ff3399;
+@videoControlsColour: #ff3399;
 
 // Transitions and animations
 @transitionDuration: 400ms;

@@ -29,9 +29,6 @@
 .icon-leftArrow:before {
 	content: "\e608";
 }
-.icon-play:before {
-	content: "\e606";
-}
 .icon-home:before {
 	content: "\e600";
 }
@@ -46,6 +43,24 @@
 }
 .icon-user:before {
 	content: "\e605";
+}
+.icon-tv:before {
+	content: "\e606";
+}
+.icon-expand:before {
+	content: "\e60d";
+}
+.icon-play:before {
+	content: "\e609";
+}
+.icon-pause:before {
+	content: "\e60a";
+}
+.icon-unmute:before {
+	content: "\e60b";
+}
+.icon-mute:before {
+	content: "\e60c";
 }
 .icon-info:before {
 	content: "\e603";

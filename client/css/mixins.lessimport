@@ -18,6 +18,7 @@
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	background-color: transparent;
 	border: none;
+	.resetMarginPadding;
 
 	&:active,
 	&:focus {
@@ -25,7 +26,12 @@
 	}
 }
 
-.hexToRGBA(@hexColour, @alpha: 1) {
+/**
+ *	Convert a Hex colour to an RGB colour with optional Alpga
+ *	@param hexColour - the three or six character hex code
+ *	@param alpha - the alpha value between 0.0 and 1.0;
+ */
+.hexToRGBA(@hexColour, @alpha: 1.0) {
 	background: rgba(
 		red(@hexColour),
 		green(@hexColour),
