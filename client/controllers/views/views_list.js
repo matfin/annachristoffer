@@ -96,7 +96,6 @@ Template['views_list'].projects = function() {
 	var category = App.models.categories.findOne({slug: this._category_slug});
 
 	if(typeof category !== 'undefined') {
-		console.log('Category specified');
 		App.models.projects.update(
 			{'category_ids.id': category.id}, 
 			{$set: { highlighted: true, colourHighlighted: true }}, 
@@ -109,7 +108,6 @@ Template['views_list'].projects = function() {
 		);
 	}
 	else {
-		console.log('No category specified');
 		App.models.projects.update(
 			{}, 
 			{$set: { highlighted: true, colourHighlighted: false }}, 

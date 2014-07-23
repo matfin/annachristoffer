@@ -45,6 +45,7 @@ Video = {
 	 *	@return undefined
 	 */
 	setup: function(video, events) {
+
 		if(typeof video !== 'undefined') {
 			this._video = video.get(0);
 			this._events = events;
@@ -106,6 +107,44 @@ Video = {
 	 */
 	unmute: function() {
 		this._video.muted = false;
+	},
+
+	/**
+	 *	Function which returns a promise when the video metadata has loaded
+	 *	
+	 *	@method verifyMetaDataLoaded
+	 *	@return {Object} - 	a resolved promise if the video metadata has loaded 
+	 *						within ten seconds, or a rejected promise.
+	 */
+	verifyMetaDataLoaded: function() {
+		var deferred = Helpers.promise.defer(),
+			self = this;
+
+		Meteor.setTimeout(function() {
+			deferred.reject();
+		}, 10000);
+
+		var checkInterval = Meteor.setInterval(function() {
+			/**
+			 *	Readystate 1 equates to the constant HAVE_METADATA.
+			 *	When we are happy it has loaded, we kill the interval.
+			 *
+			 *	For iOS devices, the readystate is always 0 so we need
+			 *	to resolve the promise if the canPlay event has fired.
+			 */
+			if(self._video.readyState !== 0) {
+				Meteor.clearInterval(checkInterval);
+				deferred.resolve();
+			};
+		}, 500);
+
+		self._video.addEventListener('loadstart', function() {
+			console.log('What happens?');
+			Meteor.clearInterval(checkInterval);
+			deferred.resolve();
+		});
+
+		return deferred.promise;
 	},
 
 	/**
@@ -242,23 +281,10 @@ Video = {
 			}
 		}
 		else {
-
 			_.each(this._events, function(e) {
-				if(e.type === 'loadeddata' || e.type === 'loadedmetadata') {
-					self._video.addEventListener(e.type, function() {
-						_.throttle(e.callback(), 1000);
-						self._loaded = true;
-
-						// console.log('Event: ' + e.type);
-					});
-				}
-				else {
-					self._video.addEventListener(e.type, function() {
-						_.throttle(e.callback(), 1000);
-
-						// console.log('Event: ' + e.type);
-					});
-				}
+				self._video.addEventListener(e.type, function(evt) {
+					_.throttle(e.callback(), 1000);
+				});
 			});
 		}
 	}

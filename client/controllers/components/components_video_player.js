@@ -19,18 +19,6 @@ Template['components_video_player'].rendered = function() {
 
 	var events = [
 		{
-			type: 'loadedmetadata',
-			callback: function() {
-				Dependencies.videoLoadedDependency.changed();
-			}
-		},
-		{
-			type: 'loadeddata', 
-			callback: function() {
-				Dependencies.videoLoadedDependency.changed();
-			}
-		},
-		{
 			type: 'progress', 
 			callback: function() {
 				Dependencies.videoProgressDependency.changed();
@@ -46,16 +34,26 @@ Template['components_video_player'].rendered = function() {
 
 	Video.setup($(template.find('video')), events);
 
+	Video.verifyMetaDataLoaded().then(function(){
+		console.log('Times', video.times());
+	}).fail(function(){
+		/* Measures to take when video did not load in ten seconds*/
+		console.log('No dice!');
+	});
+
 	/**
 	 *	Set the video height according to the width - fix for iOS Safari
 	 */
-	(function() {
-		var video = $(template.find('video'));
-		var	width = video.outerWidth();
-		video.css({
-			height: width * 0.75
-		});
-	})();
+	if(Device.isTablet || Device.isMobile) {
+
+		(function() {
+			var video = $(template.find('video'));
+			var	width = video.outerWidth();
+			video.css({
+				height: width * 0.75
+			});
+		})();
+	}
 };
 
 /**
