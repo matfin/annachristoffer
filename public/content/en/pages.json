@@ -9,7 +9,7 @@
 				{
 					"items": [
 						{
-							"type": "headingOne",
+							"type": "h1",
 							"content": "What is it about?"
 						},
 						{
@@ -19,6 +19,157 @@
 						{
 							"type": "paragraph",
 							"content": "During my Master I focused my research on the historical development of media technology. Researching the kind of ways we deliver information and how we expanded our original cognitive abilities with technological inventions. "
+						}
+					]
+				},
+				{
+					"items": [
+						{
+							"type": "h1",
+							"content": "Work experience"
+						},
+						{
+							"type": "date",
+							"comtent": {
+								"from": "2014-07-15"
+							}
+						}, 
+						{
+							"type": "h2",
+							"content": "Junior Art Director"
+						},
+						{
+							"type": "h3",
+							"content": "Digital Agency Hi-ReS!"
+						},
+						{
+							"type": "h4",
+							"content": "Berlin"
+						},
+						{
+							"type": "date",
+							"comtent": {
+								"from": "2013-07-01",
+								"to": "2014-07-14"
+							}
+						}, 
+						{
+							"type": "h2",
+							"content": "Design Trainee"
+						},
+						{
+							"type": "h3",
+							"content": "Digital Agency Hi-ReS!"
+						},
+						{
+							"type": "h4",
+							"content": "Berlin"
+						},
+						{
+							"type": "date",
+							"comtent": {
+								"from": "2010-10-01",
+								"to": "2012-01-31"
+							}
+						}, 
+						{
+							"type": "h2",
+							"content": "Freelance Designer"
+						},
+						{
+							"type": "h3",
+							"content": "Agency &lsquo;Medienfabrik&raquo;"
+						},
+						{
+							"type": "h4",
+							"content": "G&uumlaut;tersloh"
+						}
+					]
+				},
+				{
+					"items": [
+						{
+							"type": "h1",
+							"content": "Work experience"
+						},
+						{
+							"type": "date",
+							"comtent": {
+								"from": "2010-09-01",
+								"to": "2013-02-31"
+							}
+						}, 
+						{
+							"type": "h2",
+							"content": "Master of Art in Interdisciplinary Design"
+						},
+						{
+							"type": "h3",
+							"content": "University of Applied Science"
+						},
+						{
+							"type": "h4",
+							"content": "Bielefeld, Germany"
+						},
+						{
+							"type": "date",
+							"comtent": {
+								"from": "2009-08-01",
+								"to": "2010-07-31"
+							}
+						}, 
+						{
+							"type": "h2",
+							"content": "Bachelor of Art in Graphic Design"
+						},
+						{
+							"type": "h3",
+							"content": "Staffordshire University"
+						},
+						{
+							"type": "h4",
+							"content": "Stoke-on-Trent, England"
+						},
+						{
+							"type": "date",
+							"comtent": {
+								"from": "2006-09-01",
+								"to": "2009-07-31"
+							}
+						}, 
+						{
+							"type": "h2",
+							"content": "Diploma in Design"
+						},
+						{
+							"type": "h3",
+							"content": "University of Applied Science"
+						},
+						{
+							"type": "h4",
+							"content": "Bielefeld, Germany"
+						}
+					]
+				},
+				{
+					"items": [
+						{
+							"type": "h1",
+							"content": "Skills"
+						},
+						{
+							"type": "list",
+							"contents": [
+								{
+									"content": "Adobe Creative Suite"
+								},
+								{
+									"content": "Adobe After Effects"
+								},
+								{
+									"content": "Adobe Soundbooth"
+								}
+							]
 						}
 					]
 				}
