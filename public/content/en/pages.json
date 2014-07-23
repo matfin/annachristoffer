@@ -5,12 +5,22 @@
 			"id": 1,
 			"title": "About",
 			"slug": "about",
-			"contents": [
+			"sections": [
 				{
-					"content": "About item one"
-				},
-				{
-					"content": "About item two"
+					"items": [
+						{
+							"type": "headingOne",
+							"content": "What is it about?"
+						},
+						{
+							"type": "paragraph",
+							"content": "Through the development of technology Communication design evolved to a versatile and ecletic discipline. Nowadays classical print products existing next to digital platfroms and applications. Being aware of the new and challenging possibilites in the digital age I focused my interest on Interactive Information design with the ambition to create conceptional experiences in digital environments."
+						},
+						{
+							"type": "paragraph",
+							"content": "During my Master I focused my research on the historical development of media technology. Researching the kind of ways we deliver information and how we expanded our original cognitive abilities with technological inventions. "
+						}
+					]
 				}
 			]
 		}

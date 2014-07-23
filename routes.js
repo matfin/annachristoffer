@@ -16,7 +16,9 @@ Router.map(function() {
 		path: '/content/:_content_slug?',
 		template: 'template_main',
 		data: function() {
-			_content_slug = this.params._content_slug;
+			return {
+				_content_slug: this.params._content_slug
+			};
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},

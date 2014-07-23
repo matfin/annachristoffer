@@ -6,6 +6,8 @@
 */
 Template['views_content'].created = function() {
 	App.currentView = 'content';
+
+	console.log(this);
 };
 
 /**
