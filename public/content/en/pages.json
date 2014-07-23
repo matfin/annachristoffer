@@ -13,19 +13,6 @@
 					"content": "About item two"
 				}
 			]
-		},
-		{
-			"id": 2,
-			"title": "Contact",
-			"slug": "contact",
-			"contents": [
-				{
-					"content": "Contact item one"
-				},
-				{
-					"content": "Contact item two"
-				}
-			]
 		}
 	]
 }
