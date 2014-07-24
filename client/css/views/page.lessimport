@@ -1,0 +1,16 @@
+body.page {
+	.wrapper {
+		height: 100%;
+		.backgroundImage('/images/backgrounds/cv');
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-bottom: 75%;
+		.container {
+			.content {
+				section {
+					padding: @gridColumnWidth * 4 0;
+				}
+			}
+		}
+	}
+}
