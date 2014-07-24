@@ -22,7 +22,7 @@ Router.map(function() {
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},
-			'views_content': {to: 'content'},
+			'views_page': {to: 'content'},
 			'components_footer': {to: 'footer'}
 		}
 	});

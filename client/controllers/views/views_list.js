@@ -231,6 +231,6 @@ var arrangeCards = function() {
 		});
 		$('body').css({
 			'min-height': maxFormationHeight + 160 + 'px'
-		})
+		});
 	}
 };
