@@ -7,22 +7,24 @@
 			"slug": "about",
 			"sections": [
 				{
+					"order": 1,
 					"items": [
 						{
 							"type": "h1",
 							"content": "What is it about?"
 						},
 						{
-							"type": "paragraph",
+							"type": "p",
 							"content": "Through the development of technology Communication design evolved to a versatile and ecletic discipline. Nowadays classical print products existing next to digital platfroms and applications. Being aware of the new and challenging possibilites in the digital age I focused my interest on Interactive Information design with the ambition to create conceptional experiences in digital environments."
 						},
 						{
-							"type": "paragraph",
+							"type": "p",
 							"content": "During my Master I focused my research on the historical development of media technology. Researching the kind of ways we deliver information and how we expanded our original cognitive abilities with technological inventions. "
 						}
 					]
 				},
 				{
+					"order": 2,
 					"items": [
 						{
 							"type": "h1",
@@ -78,15 +80,16 @@
 						},
 						{
 							"type": "h3",
-							"content": "Agency &lsquo;Medienfabrik&raquo;"
+							"content": "Agency &ldquo;Medienfabrik&rdquo;"
 						},
 						{
 							"type": "h4",
-							"content": "G&uumlaut;tersloh"
+							"content": "G&uuml;tersloh"
 						}
 					]
 				},
 				{
+					"order": 3,
 					"items": [
 						{
 							"type": "h1",
@@ -113,7 +116,7 @@
 						},
 						{
 							"type": "date",
-							"comtent": {
+							"content": {
 								"from": "2009-08-01",
 								"to": "2010-07-31"
 							}
@@ -152,6 +155,7 @@
 					]
 				},
 				{
+					"order": 4,
 					"items": [
 						{
 							"type": "h1",

@@ -7,7 +7,11 @@ body.page {
 		padding-bottom: 75%;
 		.container {
 			.content {
+				text-align: center;
 				section {
+					margin: 0 auto;
+					text-align: left;
+					max-width: @gridColumnWidth * 51;
 					padding: @gridColumnWidth * 4 0;
 				}
 			}

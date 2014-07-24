@@ -1,3 +1,13 @@
 <template name="views_page">
-	content goes in here
+	{{#each pageData.sections}}
+		<section class="page-section">
+		{{#each items}}
+			{{>views_item}}
+		{{/each}}
+		</section>
+	{{/each}}
+</template>
+
+<template name="views_item">
+	{{{content}}}
 </template>
