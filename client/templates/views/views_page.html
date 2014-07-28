@@ -39,9 +39,22 @@
 </template>
 
 <template name="item_dateNode">
-
+	<time datetime="{{content.from}}">
+		{{formattedDate content.from "MM / YYYY"}}
+	</time>
+	{{#if exists content.to}}
+		<time datetime="{{content.to}}">
+			{{formattedDate content.to "MM / YYYY"}}
+		</time>
+	{{/if}}
 </template>
 
 <template name="item_listNode">
-
+	<ul>
+		{{#each contents}}
+			<li>
+				{{content}}
+			</li>
+		{{/each}}
+	</ul>
 </template>

@@ -65,3 +65,27 @@ Template['views_item'].dynamicTemplate = function() {
 Template['item_textNode'].isTag = function(tagName) {
 	return tagName === this.type;
 };
+
+/**
+ *	Template - item_dateNode
+ *	Helper to return a nicely formatted date using moment.js
+ *	@method formattedDate
+ *	@param {String}	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
+ *	@param {String} The formatting for the date to be displayed.
+ *	@return {String} the formatted date
+ */
+Template['item_dateNode'].formattedDate = function(dateString, dateFormat) {
+	var m = moment(dateString);
+	return m.isValid() ? m.format(dateFormat):dateString; 
+};
+
+/**
+ *	Template - item_dateNode
+ *	Helper function to determine if the date exists
+ *	@method exists
+ *	@param {Object} the date object
+ *	@return {Boolean} true if the date object is not null, undefined or empty
+ */
+Template['item_dateNode'].exists = function(date) {
+	return typeof date !== 'undefined' && date.length > 0;
+}

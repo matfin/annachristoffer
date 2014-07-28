@@ -58,7 +58,7 @@ Template['cards_project'].destroyed = function() {
 *	@method formattedDate
 *	@param {String}	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
 *	@param {String} The formatting for the date to be displayed.
-*	@return undefined
+*	@return {String} The formatted date
 */
 Template['cards_project'].formattedDate = function(dateString, dateFormat) {
 	var m = moment(dateString);
