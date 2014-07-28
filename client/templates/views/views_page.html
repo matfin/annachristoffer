@@ -9,5 +9,39 @@
 </template>
 
 <template name="views_item">
-	{{{content}}}
+	{{>dynamicTemplate}}
+</template>
+
+<template name="item_textNode">
+	{{#if isTag 'h1'}}
+		<h1>
+			{{{content}}}
+		</h1>
+	{{/if}}
+
+	{{#if isTag 'h2'}}
+		<h2>
+			{{{content}}}
+		</h2>
+	{{/if}}
+
+	{{#if isTag 'h3'}}
+		<h3>
+			{{{content}}}
+		</h3>
+	{{/if}}
+
+	{{#if isTag 'p'}}
+		<p>
+			{{{content}}}
+		</p>
+	{{/if}}
+</template>
+
+<template name="item_dateNode">
+
+</template>
+
+<template name="item_listNode">
+
 </template>

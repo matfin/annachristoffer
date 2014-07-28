@@ -40,38 +40,28 @@ Template['views_page'].pageData = function() {
 
 /**
  *	Template - views_item
- *	Helper function to return the correct content
- *	@method content
- *	@return {String} the content with the correct html tag
+ *	Helper function to return the correct template to load based on the content type
+ *	@method dynamicTemplate
+ *	@return {Object} the template needed to render the content
  */
-Template['views_item'].content = function() {
-	var self = this,
-	tags = {
-		singleNode: function() {
-			var node = document.createElement(self.type),
-				text = document.createTextNode(self.content);
-			node.appendChild(text);
-			console.log(node.textContent);
-			return node;
-		},
-		dateNode: function() {
-			var date = '';
-			return 'A date!';
-		},
-		listNode: function() {
-			var list = '';
-			return list;
-		}
-	};
-
+Template['views_item'].dynamicTemplate = function() {
 	switch(this.type) {
 		case 'date': 
-			return tags.dateNode();
-		case 'list': 
-			return tags.listNode();
+			return Template['item_dateNode'];
+		case 'list':
+			return Template['item_listNode'];
 		default: 
-			return tags.singleNode();
-			break;
+			return Template['item_textNode'];
 	}
+};
 
+/**
+ *	Template - item_textNode
+ *	Helper function to determine the tag of the current data item
+ *	@method isTag
+ *	@param {String} tagName
+ *	@return {Boolean} true if the tag matches
+ */
+Template['item_textNode'].isTag = function(tagName) {
+	return tagName === this.type;
 };
