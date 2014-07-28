@@ -11,7 +11,7 @@ body.page {
 				> section {
 					margin: 0 auto;
 					text-align: left;
-					max-width: @gridColumnWidth * 51;
+					max-width: @gridColumnWidth * 52;
 					padding: @gridColumnWidth * 4 0;
 				}
 			}

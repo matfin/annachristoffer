@@ -1,8 +1,11 @@
 .page-section {
+	display: inline;
+	float: left;
 	background-color: @background;
 	width: @gridColumnWidth * 25;
-	margin: @gridColumnWidth;
+	margin: @gridColumnWidth / 2;
 	padding: @gridColumnWidth;
+	.box-sizing(border-box);
 
 	h1 {
 		font-size: @baseFontSize;
@@ -24,5 +27,13 @@
 
 	p {
 		.standardParagraphText;
+	}
+
+	&:nth-child(odd) {
+		float: right;
+	}
+
+	&:nth-child(2) {
+		margin-top: @gridColumnWidth * 20;
 	}
 }
