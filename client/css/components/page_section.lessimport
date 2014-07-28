@@ -36,4 +36,19 @@
 	&:nth-child(2) {
 		margin-top: @gridColumnWidth * 20;
 	}
+
+	ul {
+		li {
+			display: inline;
+
+			&:after {
+				content: ",";
+			}
+			&:last-child {
+				&:after {
+					content: ".";
+				}
+			}
+		}
+	}
 }
