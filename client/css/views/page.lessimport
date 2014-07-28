@@ -8,7 +8,7 @@ body.page {
 		.container {
 			.content {
 				text-align: center;
-				section {
+				> section {
 					margin: 0 auto;
 					text-align: left;
 					max-width: @gridColumnWidth * 51;

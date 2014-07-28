@@ -1,0 +1,28 @@
+.page-section {
+	background-color: @background;
+	width: @gridColumnWidth * 25;
+	margin: @gridColumnWidth;
+	padding: @gridColumnWidth;
+
+	h1 {
+		font-size: @baseFontSize;
+		margin-bottom: @gridColumnWidth * 2;
+	}
+
+	h2 {
+		font-size: @mediumFont - 2;
+		font-style: italic;
+		font-weight: 100;
+		margin: (@gridColumnWidth / 2) 0;
+	}
+
+	h3 {
+		font-weight: 100;
+		font-size: @baseFontSize - 2;
+		margin-bottom: @gridColumnWidth * 2;
+	}
+
+	p {
+		.standardParagraphText;
+	}
+}

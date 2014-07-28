@@ -5,7 +5,7 @@
 *	@return undefined
 */
 Template['views_page'].created = function() {
-	App.currentView = 'content';
+	App.currentView = 'page';
 };
 
 /**

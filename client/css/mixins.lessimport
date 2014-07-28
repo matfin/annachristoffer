@@ -41,6 +41,16 @@
 }
 
 /**
+ *	Mixin to set the standardised paragraph text formatting site-wide.
+ */
+.standardParagraphText {
+	font-size: @baseFontSize - 2;
+	margin-bottom: @gridColumnWidth;
+	line-height: (@gridColumnWidth * 1.25);
+	letter-spacing: 0.3px;
+}
+
+/**
  *	Mixin to load background images based on screen parameters, 
  *	in this case, the window size and pixel density.
  */

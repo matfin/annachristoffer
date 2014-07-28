@@ -59,10 +59,7 @@ figure.cards_figcaption {
 		}
 
 		p {
-			font-size: @baseFontSize - 2;
-			margin-bottom: @gridColumnWidth;
-			line-height: (@gridColumnWidth * 1.25);
-			letter-spacing: 0.3px;
+			.standardParagraphText;
 		}
 
 		&.empty {
