@@ -36,7 +36,6 @@
 	p {
 		.resetMarginPadding;
 		margin-top: @gridColumnWidth;
-		font-size: 14px;
 		font-size: @standardFont - 2;
 		font-weight: 300;
 	}

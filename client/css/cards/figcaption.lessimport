@@ -21,17 +21,6 @@ figure.cards_figcaption {
 			height: auto;
 			z-index: @primaryLayer;
 		}	
-
-		iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: auto;
-			.transition-property(height);
-			.transition-duration(@transitionDuration);
-			z-index: @secondaryLayer;
-		}
 	}
 
 	.iosSlider + & {
