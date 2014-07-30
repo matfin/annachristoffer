@@ -9,8 +9,6 @@
 	overflow: hidden;
 	width: 100%;
 	margin-bottom: 0;
-	.transition-property(height, min-height);
-	.transition-duration(@transitionDuration);
 
 	.slider {
 		width: 100%;
@@ -19,16 +17,17 @@
 
 	> button {
 		position: absolute;
-		top: 42%;
+		top: 0;
+		width: @gridColumnWidth * 2;
+		height: 100%;
 		font-size: @gridColumnWidth * 3;
-		color: @sliderPrimaryColour;
-		.transition-property(scale, opacity, width, height, font-size);
+		color: fade(@sliderPrimaryColour, 40%);
+		.transition-property(scale, width, font-size);
 		.transition-duration(@transitionDuration);
-		.opacity(0.3);
-		
+
 		&:hover,
 		&:active {
-			.opacity(1.0);
+			color: fade(@sliderPrimaryColour, 100%);
 		}
 
 		&:active {
@@ -44,7 +43,7 @@
 		}
 
 		&.hidden {
-			.opacity(0.0);
+			color: fade(@sliderPrimaryColour, 0%);
 			width: 0;
 			height: 0;
 			font-size: 0;
@@ -64,16 +63,15 @@
 			.transition-duration(@transitionDuration);
 			.transition-property('background-color');
 			.flex(1);
-			.opacity(0.5);
-			background-color: @sliderPrimaryColour;
+			background-color: fade(@sliderPrimaryColour, 100%);
 			&:nth-child(2n) {
-				.opacity(0.4);
+				background-color: fade(@sliderPrimaryColour, 40%);
 			}
 
 			&.active,
 			&:active {
 				.scale(1);
-				.opacity(0.8);
+				background-color: fade(@sliderPrimaryColour, 80%);
 			}
 		}		
 	}

@@ -64,18 +64,12 @@ Template['components_slider'].destroyed = function() {
  *	@return undefined
  */
 var primeSliderSize = function() {
-	if(Device.isMobile) {
-		$('.iosSlider').css({
-			'min-height': $('.iosSlider').outerWidth() * 0.41338 + 'px',
-		});
-	}
-	else {
-		$('.iosSlider').css({
-			'width': $('.mediaContainer').outerWidth() + 'px',
-			'height': $('.mediaContainer').outerWidth() * 0.75 + 'px',
-			'min-height': $('.mediaContainer').outerWidth() * 0.75 + 'px'
-		});
-	}
+	
+	$('.iosSlider').css({
+		'width': $('.mediaContainer').outerWidth() + 'px',
+		'height': $('.mediaContainer').outerWidth() * 0.75 + 'px',
+		'min-height': $('.mediaContainer').outerWidth() * 0.75 + 'px'
+	});
 
 	$('.sliderPositionIndicator button').eq(0).addClass('active');
 };
