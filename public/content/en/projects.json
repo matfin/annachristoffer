@@ -95,6 +95,37 @@
 				},
 				{
 					"type": "figcaption",
+					"slides": [
+						{
+							"img": "master-of-art-project/chick-scribble/1-chick-scribble/1-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/2-chick-scribble/2-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/3-chick-scribble/3-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/4-chick-scribble/4-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/5-chick-scribble/5-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/6-chick-scribble/6-chick-scribble"
+						}
+					],
+					"captions": [
+						{
+							"content": "This is the first caption for this slider and will represent the first paragraph."
+						},
+						{
+							"content": "This is the second paragraph for this slider."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
 					"videoUrl": "http://legacycv.mattfinucane.de/assets/videos/title",
 					"img": "master-of-art-project/title/title",
 					"intro": {

@@ -22,10 +22,10 @@
 		top: 42%;
 		font-size: @gridColumnWidth * 3;
 		color: @sliderPrimaryColour;
-		.opacity(0.3);
 		.transition-property(scale, opacity, width, height, font-size);
 		.transition-duration(@transitionDuration);
-
+		.opacity(0.3);
+		
 		&:hover,
 		&:active {
 			.opacity(1.0);

@@ -38,7 +38,6 @@ Template['components_video_player'].rendered = function() {
 		console.log('Times', video.times());
 	}).fail(function(){
 		/* Measures to take when video did not load in ten seconds*/
-		console.log('No dice!');
 	});
 
 	/**

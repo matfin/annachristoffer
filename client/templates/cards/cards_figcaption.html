@@ -1,10 +1,14 @@
 <template name="cards_figcaption">
 	<figure class="cards_figcaption">
 		<div class="mediaContainer">
-			{{#if isVideo}}
-				{{> components_video_player}}
+			{{#if isSlider}}
+				{{> components_slider}}
 			{{else}}
-				<img src="/images/projects/{{imgSource}}" alt="">
+				{{#if isVideo}}
+					{{> components_video_player}}
+				{{else}}
+					<img src="/images/projects/{{imgSource}}" alt="">
+				{{/if}}
 			{{/if}}
 		</div>
 		{{#if hasCaptions}}
