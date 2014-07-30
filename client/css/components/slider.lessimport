@@ -18,7 +18,7 @@
 	> button {
 		position: absolute;
 		top: 0;
-		width: @gridColumnWidth * 2;
+		width: @gridColumnWidth * 3;
 		height: 100%;
 		font-size: @gridColumnWidth * 3;
 		color: fade(@sliderPrimaryColour, 40%);
@@ -63,9 +63,9 @@
 			.transition-duration(@transitionDuration);
 			.transition-property('background-color');
 			.flex(1);
-			background-color: fade(@sliderPrimaryColour, 100%);
-			&:nth-child(2n) {
-				background-color: fade(@sliderPrimaryColour, 40%);
+			background-color: fade(@sliderPrimaryColour, 40%);
+			&:nth-child(odd) {
+				background-color: fade(@sliderPrimaryColour, 30%);
 			}
 
 			&.active,
