@@ -38,7 +38,7 @@
 					]
 				},
 				{
-					"type": "slider",
+					"type": "figcaption",
 					"slides": [
 						{
 							"img": "master-of-art-thesis/slide-1/slide-1"
@@ -92,37 +92,6 @@
 				{
 					"type": "thumbnail",
 					"img": "thumbnails/carnival"
-				},
-				{
-					"type": "figcaption",
-					"slides": [
-						{
-							"img": "master-of-art-project/chick-scribble/1-chick-scribble/1-chick-scribble"
-						},
-						{
-							"img": "master-of-art-project/chick-scribble/2-chick-scribble/2-chick-scribble"
-						},
-						{
-							"img": "master-of-art-project/chick-scribble/3-chick-scribble/3-chick-scribble"
-						},
-						{
-							"img": "master-of-art-project/chick-scribble/4-chick-scribble/4-chick-scribble"
-						},
-						{
-							"img": "master-of-art-project/chick-scribble/5-chick-scribble/5-chick-scribble"
-						},
-						{
-							"img": "master-of-art-project/chick-scribble/6-chick-scribble/6-chick-scribble"
-						}
-					],
-					"captions": [
-						{
-							"content": "This is the first caption for this slider and will represent the first paragraph."
-						},
-						{
-							"content": "This is the second paragraph for this slider."
-						}
-					]
 				},
 				{
 					"type": "figcaption",
@@ -194,6 +163,37 @@
 				{
 					"type": "figcaption",
 					"img": "master-of-art-project/swan/swan"
+				},
+				{
+					"type": "figcaption",
+					"slides": [
+						{
+							"img": "master-of-art-project/chick-scribble/1-chick-scribble/1-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/2-chick-scribble/2-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/3-chick-scribble/3-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/4-chick-scribble/4-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/5-chick-scribble/5-chick-scribble"
+						},
+						{
+							"img": "master-of-art-project/chick-scribble/6-chick-scribble/6-chick-scribble"
+						}
+					],
+					"captions": [
+						{
+							"content": "This is the first caption for this slider and will represent the first paragraph."
+						},
+						{
+							"content": "This is the second paragraph for this slider."
+						}
+					]
 				}
 			]
 		},
@@ -459,6 +459,37 @@
 					"captions": [
 						{
 							"content": "The user also can navigate freely between the different virtual places: cabinet of wonder, archive and an interent-based collectors’ fair. Additionally the cartographic material represents the current location of celebration activities."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"captions": [
+						{
+							"content": "This is the first paragraph."
+						},
+						{
+							"content": "This is the second paragraph."
+						}
+					],
+					"slides": [
+						{
+							"img": "digital-atlas/wireframes/_1/1-wonder-scribbles"
+						},
+						{
+							"img": "digital-atlas/wireframes/_2/2-wonder-scribbles"
+						},
+						{
+							"img": "digital-atlas/wireframes/_3/3-wonder-scribbles"
+						},
+						{
+							"img": "digital-atlas/wireframes/_4/4-wonder-scribbles"
+						},
+						{
+							"img": "digital-atlas/wireframes/_5/5-wonder-scribbles"
+						},
+						{
+							"img": "digital-atlas/wireframes/_6/6-wonder-scribbles"
 						}
 					]
 				}
