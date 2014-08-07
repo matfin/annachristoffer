@@ -34,10 +34,11 @@ Template['components_video_player'].rendered = function() {
 
 	Video.setup($(template.find('video')), events);
 
-	Video.verifyMetaDataLoaded().then(function(){
-		console.log('Times', video.times());
-	}).fail(function(){
+	Video.checkMetaDataLoaded().then(function(message) {
+		console.log('Times', template);
+	}).fail(function(message) {
 		/* Measures to take when video did not load in ten seconds*/
+		console.log('Video failed to load!', message);
 	});
 
 	/**

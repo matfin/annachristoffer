@@ -116,12 +116,12 @@ Video = {
 	 *	@return {Object} - 	a resolved promise if the video metadata has loaded 
 	 *						within ten seconds, or a rejected promise.
 	 */
-	verifyMetaDataLoaded: function() {
+	checkMetaDataLoaded: function() {
 		var deferred = Helpers.promise.defer(),
 			self = this;
 
 		Meteor.setTimeout(function() {
-			deferred.reject();
+			deferred.reject('A problem!');
 		}, 10000);
 
 		var checkInterval = Meteor.setInterval(function() {
@@ -132,14 +132,15 @@ Video = {
 			 *	For iOS devices, the readystate is always 0 so we need
 			 *	to resolve the promise if the canPlay event has fired.
 			 */
+			console.log('Checking...');
 			if(self._video.readyState !== 0) {
 				Meteor.clearInterval(checkInterval);
 				deferred.resolve();
 			};
+
 		}, 500);
 
 		self._video.addEventListener('loadstart', function() {
-			console.log('What happens?');
 			Meteor.clearInterval(checkInterval);
 			deferred.resolve();
 		});
