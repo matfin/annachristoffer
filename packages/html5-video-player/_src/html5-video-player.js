@@ -60,34 +60,11 @@ Video = {
 			this._video = video.get(0);
 			this._events = events;
 
-			/**
-			 *	Checking data loaded
-			 */
-			this.checkLoadedData().then(function(message) {
-				console.log(message);
-			}).fail(function(message){
-				console.log(message);
+			this.checkNetworkState().then(function(status) {
+				console.log('Video status: ', status);
+			}).fail(function(status) { 
+				console.log('Video status: ', status);
 			});
-
-			/**
-			 *	Checking metadata loaded
-			 */
-			this.checkLoadedMetaData().then(function(message) {
-				console.log(message);
-			}).fail(function() {
-				console.log(message);
-			});
-
-			/**
-			 *	Checking video can play
-			 */
-		 	this.checkVideoCanPlay().then(function(message) {
-		 		console.log('It can play: ', message);
-		 	}).fail(function(message) {
-		 		console.log('It cannot play: ', message);
-		 	});
-
-
 
 			// this._primeEventListeners();
 		}
@@ -150,13 +127,15 @@ Video = {
 	},
 
 	/**
-	 *	Function which returns a promise when the video metadata has loaded
+	 *	Function which returns a promise when the video readyState is
+	 *	NETWORK_LOADED (3)
 	 *	
-	 *	@method checkLoadedMetaData
-	 *	@return {Object} - 	a resolved promise if the video metadata has loaded 
-	 *						within ten seconds, or a rejected promise.
+	 *	@method checkReadyState
+	 *	@return {Object} - 	a resolved promise if the video readyState 
+	 *						has reached 3 within ten seconds, or a 
+	 *						rejected promise.
 	 */
-	checkLoadedMetaData: function() {
+	checkReadyState: function() {
 		var deferred = Q.defer(),
 			self = this;
 
@@ -189,29 +168,42 @@ Video = {
 		return deferred.promise;
 	},
 
-	checkLoadedData: function() {
+	/**
+	 *	Function which returns a promise when the video networkState is
+	 *	HAVE_METADATA (1) - Duration and dimensions are available
+	 *	is available, so playback could start
+	 *	
+	 *	@method checkNetworkState
+	 *	@return {Object} - 	a resolved promise if the video networkState 
+	 *						has reached 1 within ten seconds, or a 
+	 *						rejected promise.
+	 */
+	checkNetworkState: function() {
 		var deferred = Q.defer(),
 			self = this;
 
 		var checkInterval = Meteor.setInterval(function() {
-			
-			if(self._video.readyState !== 0) {
+			/**
+			 *	readyState 1 equates to HAVE_METADATA
+			 */
+			if(self._video.networkState !== 0) {
 				Meteor.clearInterval(checkInterval);
-				Meteor.clearTimeout(checkTimeout);
-
+				Meteor.clearTimeout
 				deferred.resolve({
 					status: true,
-					message: 'The data was loaded'
+					message: 'networkState: ' + self._video.networkState
 				});
-			}
+			};
+
 		}, 1000);
 
 		var checkTimeout = Meteor.setTimeout(function() {
 			Meteor.clearInterval(checkInterval);
-			
+			Meteor.clearTimeout(checkTimeout);
+
 			deferred.reject({
 				status: false,
-				message: 'The data was not loaded'
+				message: 'networkState: ' + self._video.networkState
 			});
 		}, 10000);
 
@@ -222,11 +214,7 @@ Video = {
 		var deferred = Q.defer(),
 			self = this;
 
-		console.log('Checking to see if we can play this video');
-
 		var checkInterval = Meteor.setInterval(function() {
-
-			console.log('Checking.....');
 
 			if(self._canPlay) {
 				Meteor.clearInterval(checkInterval);
@@ -253,6 +241,8 @@ Video = {
 
 		return deferred.promise;
 	},
+
+
 
 	/**
 	 *	Function to return the pause state of the video
