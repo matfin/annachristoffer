@@ -282,10 +282,13 @@ Video = {
 			}
 		}
 		else {
-			_.each(this._events, function(e) {
-				self._video.addEventListener(e.type, function(evt) {
-					_.throttle(e.callback(), 1000);
-				});
+			_.each(this._events, function(controllerEvent) {
+				/**
+				 *	Add the event listener defined in controllerEvent.type and execute the callback function
+				 *	defined in controllerEvent.callback. The leading and trailing options, set to false, will
+				 *	ensure the function only gets called when necessary, and not by default.
+				 */
+				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, 3000, {trailing: false, leading: false}));
 			});
 		}
 	}

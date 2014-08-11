@@ -21,13 +21,15 @@ Template['components_video_player'].rendered = function() {
 		{
 			type: 'progress', 
 			callback: function() {
-				Dependencies.videoProgressDependency.changed();
+				console.log('progress callback');
+				// Dependencies.videoProgressDependency.changed();
 			} 
 		},
 		{
 			type: 'timeupdate', 
 			callback: function() {
-				Dependencies.videoTimeDependency.changed();
+				console.log('timeupdate callback');
+				// Dependencies.videoTimeDependency.changed();
 			} 
 		}
 	];
@@ -35,10 +37,10 @@ Template['components_video_player'].rendered = function() {
 	Video.setup($(template.find('video')), events);
 
 	Video.checkMetaDataLoaded().then(function(message) {
-		console.log('Times', template);
+		
 	}).fail(function(message) {
 		/* Measures to take when video did not load in ten seconds*/
-		console.log('Video failed to load!', message);
+		
 	});
 
 	/**
