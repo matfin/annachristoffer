@@ -56,24 +56,42 @@ Video = {
 	 */
 	setup: function(video, events) {
 
+		var self = this,
+			deferred = Q.defer();
+
 		if(typeof video !== 'undefined') {
 			this._video = video.get(0);
 			this._events = events;
 
 			this.checkNetworkState().then(function(status) {
-				console.log('Video status: ', status);
-			}).fail(function(status) { 
-				console.log('Video status: ', status);
-			});
+				/** 
+				 *	Success, so we can set up event listeners
+				 *	to control video playback
+				 */
+				self._primeEventListeners();
+				deferred.resolve({
+					status: 'ok',
+					message: 'Video set up complete.'
+				});
 
-			// this._primeEventListeners();
+				/** 
+				 *	Fail
+				 */
+			}).fail(function(status) { 
+				deferred.reject({
+					status: 'fail',
+					message: 'Video could not be set up'
+				})
+			});
 		}
 		else {
-			throw {
-				error: 'Cannot set up video player',
-				detail: 'VideoPlayer.setup() must take a video {Html Dom node object} as a parameter: ' + ' You passed in ' + (typeof video)
-			}
+			deferred.reject({
+				status: 'fail',
+				message: 'It seems the argument passed in for the video did not work.'
+			});
 		}
+
+		return deferred.promise;
 	},
 
 	/**
