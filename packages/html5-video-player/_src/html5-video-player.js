@@ -194,6 +194,7 @@ Video = {
 			self = this;
 
 		var checkInterval = Meteor.setInterval(function() {
+			
 			if(self._video.readyState !== 0) {
 				Meteor.clearInterval(checkInterval);
 				Meteor.clearTimeout(checkTimeout);
@@ -246,8 +247,7 @@ Video = {
 			});
 		}, 10000);
 
-		self._video.addEventListener('canplay', function() {
-			console.log('Can this be seen?');
+		self._video.addEventListener('canplaythrough', function() {
 			self._canPlay = true;
 		});
 
