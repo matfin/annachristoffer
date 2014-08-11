@@ -22,26 +22,19 @@ Template['components_video_player'].rendered = function() {
 			type: 'progress', 
 			callback: function() {
 				console.log('progress callback');
-				// Dependencies.videoProgressDependency.changed();
+				Dependencies.videoProgressDependency.changed();
 			} 
 		},
 		{
 			type: 'timeupdate', 
 			callback: function() {
 				console.log('timeupdate callback');
-				// Dependencies.videoTimeDependency.changed();
+				Dependencies.videoTimeDependency.changed();
 			} 
 		}
 	];
 
 	Video.setup($(template.find('video')), events);
-
-	Video.checkMetaDataLoaded().then(function(message) {
-		
-	}).fail(function(message) {
-		/* Measures to take when video did not load in ten seconds*/
-		
-	});
 
 	/**
 	 *	Set the video height according to the width - fix for iOS Safari

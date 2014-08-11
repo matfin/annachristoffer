@@ -37,6 +37,16 @@ Video = {
 	_loaded: false,
 
 	/**
+	 *	Video canPlay state
+	 *	
+	 *	@property _canPlay
+	 *	@private
+	 *	@type {Boolean}
+	 *	@default false
+	 */
+	_canPlay: false,
+
+	/**
 	 *	Function to prime the video player
 	 *	
 	 *	@method setup
@@ -49,7 +59,37 @@ Video = {
 		if(typeof video !== 'undefined') {
 			this._video = video.get(0);
 			this._events = events;
-			this._primeEventListeners();
+
+			/**
+			 *	Checking data loaded
+			 */
+			this.checkLoadedData().then(function(message) {
+				console.log(message);
+			}).fail(function(message){
+				console.log(message);
+			});
+
+			/**
+			 *	Checking metadata loaded
+			 */
+			this.checkLoadedMetaData().then(function(message) {
+				console.log(message);
+			}).fail(function() {
+				console.log(message);
+			});
+
+			/**
+			 *	Checking video can play
+			 */
+		 	this.checkVideoCanPlay().then(function(message) {
+		 		console.log('It can play: ', message);
+		 	}).fail(function(message) {
+		 		console.log('It cannot play: ', message);
+		 	});
+
+
+
+			// this._primeEventListeners();
 		}
 		else {
 			throw {
@@ -112,37 +152,103 @@ Video = {
 	/**
 	 *	Function which returns a promise when the video metadata has loaded
 	 *	
-	 *	@method verifyMetaDataLoaded
+	 *	@method checkLoadedMetaData
 	 *	@return {Object} - 	a resolved promise if the video metadata has loaded 
 	 *						within ten seconds, or a rejected promise.
 	 */
-	checkMetaDataLoaded: function() {
-		var deferred = Helpers.promise.defer(),
+	checkLoadedMetaData: function() {
+		var deferred = Q.defer(),
 			self = this;
-
-		Meteor.setTimeout(function() {
-			deferred.reject('A problem!');
-		}, 10000);
 
 		var checkInterval = Meteor.setInterval(function() {
 			/**
 			 *	Readystate 1 equates to the constant HAVE_METADATA.
 			 *	When we are happy it has loaded, we kill the interval.
-			 *
-			 *	For iOS devices, the readystate is always 0 so we need
-			 *	to resolve the promise if the canPlay event has fired.
 			 */
-			console.log('Checking...');
 			if(self._video.readyState !== 0) {
 				Meteor.clearInterval(checkInterval);
-				deferred.resolve();
+				Meteor.clearTimeout
+				deferred.resolve({
+					status: true,
+					message: 'The metadata was loaded'
+				});
 			};
 
+		}, 1000);
+
+		var checkTimeout = Meteor.setTimeout(function() {
+			Meteor.clearInterval(checkInterval);
+			Meteor.clearTimeout(checkTimeout);
+
+			deferred.reject({
+				status: false,
+				message: 'The metadata was not loaded'
+			});
+		}, 10000);
+
+		return deferred.promise;
+	},
+
+	checkLoadedData: function() {
+		var deferred = Q.defer(),
+			self = this;
+
+		var checkInterval = Meteor.setInterval(function() {
+			if(self._video.readyState !== 0) {
+				Meteor.clearInterval(checkInterval);
+				Meteor.clearTimeout(checkTimeout);
+
+				deferred.resolve({
+					status: true,
+					message: 'The data was loaded'
+				});
+			}
+		}, 1000);
+
+		var checkTimeout = Meteor.setTimeout(function() {
+			Meteor.clearInterval(checkInterval);
+			
+			deferred.reject({
+				status: false,
+				message: 'The data was not loaded'
+			});
+		}, 10000);
+
+		return deferred.promise;
+	},
+
+	checkVideoCanPlay: function() {
+		var deferred = Q.defer(),
+			self = this;
+
+		console.log('Checking to see if we can play this video');
+
+		var checkInterval = Meteor.setInterval(function() {
+
+			console.log('Checking.....');
+
+			if(self._canPlay) {
+				Meteor.clearInterval(checkInterval);
+				Meteor.clearInterval(checkTimeout);
+
+				deferred.resolve({
+					status: true,
+					message: 'The video can play'
+				});
+			}
 		}, 500);
 
-		self._video.addEventListener('loadstart', function() {
+		var checkTimeout = Meteor.setTimeout(function() {
 			Meteor.clearInterval(checkInterval);
-			deferred.resolve();
+			deferred.reject({
+				status: false,
+				message: 'The video cannot play'
+			});
+		}, 10000);
+
+		self._video.addEventListener('canplay', function() {
+			console.log('Can this be seen?');
+			self._canPlay = true;
 		});
 
 		return deferred.promise;
