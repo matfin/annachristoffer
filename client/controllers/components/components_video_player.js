@@ -21,14 +21,12 @@ Template['components_video_player'].rendered = function() {
 		{
 			type: 'progress', 
 			callback: function() {
-				console.log('progress callback');
 				Dependencies.videoProgressDependency.changed();
 			} 
 		},
 		{
 			type: 'timeupdate', 
 			callback: function() {
-				console.log('timeupdate callback');
 				Dependencies.videoTimeDependency.changed();
 			} 
 		}
