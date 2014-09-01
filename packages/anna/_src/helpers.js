@@ -7,7 +7,7 @@
 Helpers = {
 
 	/**
-	 *	Passing initialised monent() library in here.
+	 *	Passing initialised moment() library in here.
 	 */
 	moment: moment,
 

@@ -28,7 +28,7 @@
 	 *	@property language
 	 *	@type {String}
 	 */
-	language: moment.lang(),
+	language: moment.locale(),
 
 	/**
 	 *	The current view the app is on. This will get set within the 

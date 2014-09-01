@@ -63,30 +63,27 @@ Video = {
 			this._video = video.get(0);
 			this._events = events;
 
-			this.checkNetworkState().then(function(status) {
-				/** 
-				 *	Success, so we can set up event listeners
-				 *	to control video playback
-				 */
-				self._primeEventListeners();
-				deferred.resolve({
-					status: 'ok',
-					message: 'Video set up complete.'
-				});
+			this.checkNetworkState().then(function(network_state_success) {
+				self.checkReadyState().then(function(ready_state_success) {
+					/**
+				 	 *	Success, so we can set up event listeners
+				 	 *	to control video playback
+				 	 */ 
+					// self._primeEventListeners();
 
-				/** 
-				 *	Fail
-				 */
-			}).fail(function(status) { 
-				deferred.reject({
-					status: 'fail',
-					message: 'Video could not be set up'
-				})
+					deferred.resolve({
+						status: 'ok',
+						networkState: network_state_success,
+						readyState: ready_state_success
+					});
+				});
+			}).fail(function(error) {
+				deferred.reject(error);
 			});
 		}
 		else {
 			deferred.reject({
-				status: 'fail',
+				status: 'error',
 				message: 'It seems the argument passed in for the video did not work.'
 			});
 		}
@@ -166,19 +163,19 @@ Video = {
 				Meteor.clearInterval(checkInterval);
 				Meteor.clearTimeout
 				deferred.resolve({
-					status: true,
+					status: 'ok',
 					message: 'The metadata was loaded'
 				});
 			};
 
-		}, 1000);
+		}, 500);
 
 		var checkTimeout = Meteor.setTimeout(function() {
 			Meteor.clearInterval(checkInterval);
 			Meteor.clearTimeout(checkTimeout);
 
 			deferred.reject({
-				status: false,
+				status: 'error',
 				message: 'The metadata was not loaded'
 			});
 		}, 10000);
@@ -188,42 +185,31 @@ Video = {
 
 	/**
 	 *	Function which returns a promise when the video networkState is
-	 *	HAVE_METADATA (1) - Duration and dimensions are available
-	 *	is available, so playback could start
-	 *	
+	 *	not 3 [NETWORK_NO_SOURCE]	
+	 *
 	 *	@method checkNetworkState
 	 *	@return {Object} - 	a resolved promise if the video networkState 
-	 *						has reached 1 within ten seconds, or a 
+	 *						has not reached 1 within ten seconds, or a 
 	 *						rejected promise.
 	 */
 	checkNetworkState: function() {
 		var deferred = Q.defer(),
 			self = this;
 
-		var checkInterval = Meteor.setInterval(function() {
-			/**
-			 *	readyState 1 equates to HAVE_METADATA
-			 */
-			if(self._video.networkState !== 0) {
-				Meteor.clearInterval(checkInterval);
-				Meteor.clearTimeout
-				deferred.resolve({
-					status: true,
-					message: 'networkState: ' + self._video.networkState
+		Meteor.setTimeout(function() {
+			if(self._video.networkState === 3) {
+				deferred.reject({
+					status: 'ok',
+					message: 'Media source not found: ' + self._video.src
 				});
-			};
-
+			}
+			else {
+				deferred.resolve({
+					status: 'error',
+					message: 'Media loaded from: ' + self._video.src
+				});
+			}
 		}, 1000);
-
-		var checkTimeout = Meteor.setTimeout(function() {
-			Meteor.clearInterval(checkInterval);
-			Meteor.clearTimeout(checkTimeout);
-
-			deferred.reject({
-				status: false,
-				message: 'networkState: ' + self._video.networkState
-			});
-		}, 10000);
 
 		return deferred.promise;
 	},
@@ -239,7 +225,7 @@ Video = {
 				Meteor.clearInterval(checkTimeout);
 
 				deferred.resolve({
-					status: true,
+					status: 'ok',
 					message: 'The video can play'
 				});
 			}
@@ -248,7 +234,7 @@ Video = {
 		var checkTimeout = Meteor.setTimeout(function() {
 			Meteor.clearInterval(checkInterval);
 			deferred.reject({
-				status: false,
+				status: 'error',
 				message: 'The video cannot play'
 			});
 		}, 10000);
