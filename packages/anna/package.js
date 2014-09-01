@@ -7,7 +7,7 @@ Package.on_use(function(api) {
 	/**
 	 *	Including other Meteor packages
 	 */
-	api.use('q', 'client');
+	api.use('mrt:q', 'client');
 	api.use('deps', 'client');
 	api.use('jquery', 'client');
 	api.use('underscore', 'client');

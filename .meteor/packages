@@ -8,7 +8,6 @@ less
 underscore
 cmather:iron-router@0.8.2
 mrt:modernizr-meteor@2.6.2
-mrt:lesshat@0.0.1
 mrt:normalize.css@2.0.1
 anna
 moment
@@ -16,3 +15,7 @@ ios-slider
 sewdn:velocityjs@0.8.0
 html5-video-player
 spiderable
+mrt:moment
+mrt:lesshat
+mrt:q
+
