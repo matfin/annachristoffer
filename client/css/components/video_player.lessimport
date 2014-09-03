@@ -1,76 +1,53 @@
-.timeline {
+.player-hud {
 	position: absolute;
-	bottom: @gridColumnWidth * 1.5;
+	bottom: 5px;
+	left: 0px;
 	width: 100%;
-	height: @gridColumnWidth * 0.75;
-	text-align: center;
-	.hexToRGBA(@sliderPrimaryColour, 0.4);
-
-	#videoProgress {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: @gridColumnWidth * 0.75;
-	}
-
-	// .loadingProgressIndicator{ 
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	width: 0;
-	// 	height: @gridColumnWidth;
-	// 	.transition-property(width);
-	// 	.transition-duration(1s);
-	// 	.transition-timing-function(linear);
-	// }
-
-	// .loadingProgressIndicator {
-	// 	.hexToRGBA(@sliderPrimaryColour, 0.7);		
-	// }
-}
-
-.controls {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: @gridColumnWidth * 1.5;
-	background-color: @colourWhite;
+	height: @gridColumnWidth * 1.25;
+	background-color: @videoHudColour;
 	.display(flex);
-	.flex-direction(row);
-	.align-items(flex-start);
 
-	&.hidden {
-		display: none;
-		.opacity(0);
-	}
-
-	button,
-	time {
-		height: @gridColumnWidth * 1.5;
-		line-height: @gridColumnWidth * 1.5;
-	}
-
-	button {
+	.playcontrol,
+	.icon-fullscreen {
 		.flex(1);
-		background-color: transparent;
-		.transition-property(scale, color);
-		.transition-duration(@transitionDuration);
-		&:hover {
-			.drop-shadow(2px #fff);
-		}
-		&:active {
-			.scale(@scaleFactor);
-		}
 		color: @videoControlsColour;
+		font-size: @gridColumnWidth * 0.75;
 	}
 
-	time {
-		.flex(17);
-		.box-sizing(border-box);
-		line-height: @gridColumnWidth * 1.5;
-		font-size: @smallFont;
-		padding-left: @gridColumnWidth / 2;
+	.icon-fullscreen {
+		font-weight: @fontWeightHeavy;
+	}
+
+	.timeline-container {
+		.flex(14);
+		position: relative;
+
+		.progress-bar-container {
+			position: absolute;
+			top: (@gridColumnWidth / 2);
+			left: 0px;
+			width: 100%;
+			height: @gridColumnWidth / 4;
+			background-color: @colourWhite;
+		}
+
+		.progress-bar {
+			position: relative; 
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: @gridColumnWidth / 4;
+			background-color: #ffa3d1;
+		}
+
+		.timeline-indicator {
+			position: absolute;
+			top: 5px;
+			left: 0px;
+			width: 2px;
+			height: 10px;
+			background-color: @videoControlsColour;
+			z-index: @primaryLayer;
+		}
 	}
 }

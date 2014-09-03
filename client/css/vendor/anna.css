@@ -23,11 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+
 .icon-rightArrow:before {
 	content: "\e607";
 }
 .icon-leftArrow:before {
 	content: "\e608";
+}
+.icon-large-play:before {
+	content: "\e60e";
+}
+.icon-fullscreen:before {
+	content: "\e60f";
 }
 .icon-home:before {
 	content: "\e600";

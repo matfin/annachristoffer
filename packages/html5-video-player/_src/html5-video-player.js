@@ -56,10 +56,12 @@ Video = {
 	 */
 	setup: function(video, events) {
 
+		console.log(video);
+
 		var self = this,
 			deferred = Q.defer();
 
-		if(typeof video !== 'undefined') {
+		if(typeof video !== 'undefined' && video.length > 0) {
 			this._video = video.get(0);
 			this._events = events;
 
@@ -69,7 +71,7 @@ Video = {
 				 	 *	Success, so we can set up event listeners
 				 	 *	to control video playback
 				 	 */ 
-					// self._primeEventListeners();
+					self._primeEventListeners();
 
 					deferred.resolve({
 						status: 'ok',

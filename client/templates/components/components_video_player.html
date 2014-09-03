@@ -4,18 +4,21 @@
 		<source src="{{videoSource}}.webm">
 		<source src="{{videoSource}}.ogv">	
 	</video>
-	<div class="timeline">
-		<input type="range" value="{{videoTime.currentTimeSeconds}}" min="0" max="{{videoTime.durationInSeconds}}" id="videoProgress">
-	</div>
-	<div class="controls">
+
+	<div class="player-hud">
 		<button class="playcontrol icon-play">
 		</button>
-		<button class="muteButton icon-mute">
-		</button>
-		<time duration="2M57S">
-			{{videoTime.currentTime}} / {{videoTime.duration}}
-		</time>
-		<button class="fullscreenToggle icon-tv">
+
+		<div class="timeline-container">
+			<i class="timeline-indicator">
+			</i>
+			<div class="progress-bar-container">
+				<div class="progress-bar">
+				</div>
+			</div>
+		</div>
+
+		<button class="fullscreen-toggle icon-fullscreen">
 		</button>
 	</div>
 </template>
