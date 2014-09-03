@@ -121,17 +121,30 @@ Template['components_video_player'].videoTime = function() {
 };
 
 /**
- *	Tenplate - components_video_player
+ *	Template - components_video_player
  *	Helper function to return the percentage of the video that has loaded
  *	@method videoLoadedPercentage
  *	@return {Number}
  */
 Template['components_video_player'].videoLoadedPercentage = function() {
 
-	console.log('Video loaded from controller: ', Video.percentLoaded());
-
+	Dependencies.videoLoadedDependency.depend();
 	return Video.percentLoaded();
 
+};
+
+/**
+ *	Function to calculate percentage based on timeline click
+ *	to know where to place the timeline indicator.
+ *	@method getTimelineOffsetPercentage
+ *	@param {Object} clickEvent - the click event
+ *	@param {Object} template - the current template
+ *	@return {Number} - percentage value of X coordinate clicked on timeline
+ */
+var getTimelineOffsetPercentage = function(clickEvent, template) {
+	var timelineContainerWidth = $(template.find('.timeline-container')).outerWidth();
+	
+	return (clickEvent.offsetX / timelineContainerWidth) * 100;
 };
 
 /**
@@ -162,6 +175,13 @@ Template['components_video_player'].events = {
 			Video.mute();
 			$(e.target).removeClass('icon-mute').addClass('icon-unmute');
 		}
+	},
+
+	'click .timeline-container': function(e, template) {
+
+		$(template.find('.timeline-indicator')).css({
+			'left': getTimelineOffsetPercentage(e, template) + '%'
+		});
 	},
 
 	'click .fullscreen-toggle': function(e, template) {

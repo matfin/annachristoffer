@@ -292,7 +292,7 @@ Video = {
 			formattedDuration: Helpers.formattedDurationSeconds(this._video.duration),
 			formattedCurrentTime: Helpers.formattedDurationSeconds(this._video.currentTime),
 			currentTimeSeconds: Math.floor(this._video.currentTime),
-			elapsedDurationPercentage: Math.floor((this._video.currentTime / this._video.duration) * 100),
+			elapsedDurationPercentage: (this._video.currentTime / this._video.duration) * 100,
 			durationInSeconds: Math.floor(this._video.duration)
 		}
 	},
@@ -389,7 +389,7 @@ Video = {
 				 *	defined in controllerEvent.callback. The leading and trailing options, set to false, will
 				 *	ensure the function only gets called when necessary, and not by default.
 				 */
-				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, 3000, {trailing: false, leading: false}));
+				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, 500, {trailing: false, leading: false}));
 			});
 		}
 	}

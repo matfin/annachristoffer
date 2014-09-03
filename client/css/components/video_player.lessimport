@@ -51,9 +51,12 @@
 			background-color: @videoControlsColour;
 			z-index: @primaryLayer;
 
-			.transition-property(left);
-			.transition-duration(@transitionDuration * 10);
-			.transition-timing-function(linear);
+			&.playing {
+				.transition-property(left);
+				.transition-duration(@transitionDuration * 10);
+				.transition-timing-function(linear);
+			}
+			
 		}
 	}
 }
