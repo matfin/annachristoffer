@@ -21,7 +21,7 @@ Template['components_video_player'].rendered = function() {
 		{
 			type: 'progress', 
 			callback: function() {
-				Dependencies.videoProgressDependency.changed();
+				Dependencies.videoLoadedDependency.changed();
 			} 
 		},
 		{
@@ -131,7 +131,8 @@ Template['components_video_player'].videoTime = function() {
  */
 Template['components_video_player'].videoLoadedPercentage = function() {
 
-	Dependencies.videoLoadedDependency.depend();
+	console.log('Video loaded from controller: ', Video.percentLoaded());
+
 	return Video.percentLoaded();
 
 };

@@ -35,9 +35,11 @@
 			position: relative; 
 			top: 0px;
 			left: 0px;
-			width: 100px;
 			height: @gridColumnWidth / 4;
 			background-color: #ffa3d1;
+
+			.transition-property(width);
+			.transition-duration(@transitionDuration);
 		}
 
 		.timeline-indicator {

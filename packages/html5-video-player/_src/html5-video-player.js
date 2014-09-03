@@ -56,8 +56,6 @@ Video = {
 	 */
 	setup: function(video, events) {
 
-		console.log(video);
-
 		var self = this,
 			deferred = Q.defer();
 
@@ -72,6 +70,7 @@ Video = {
 				 	 *	to control video playback
 				 	 */ 
 					self._primeEventListeners();
+					self._loaded = true;
 
 					deferred.resolve({
 						status: 'ok',
