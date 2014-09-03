@@ -100,7 +100,6 @@ Template['components_video_player'].imgSource = function() {
 Template['components_video_player'].videoTime = function() {
 
 	Dependencies.videoTimeDependency.depend();
-	Dependencies.videoLoadedDependency.depend();
 
 	if(Video.isLoaded()) {
 		
@@ -116,8 +115,6 @@ Template['components_video_player'].videoTime = function() {
 	}
 	else {
 		return {
-			currentTime: '0:00',
-			duration: 'TBC',
 			durationPercentage: 0
 		}
 	}
@@ -167,7 +164,7 @@ Template['components_video_player'].events = {
 		}
 	},
 
-	'click .fullscreenToggle': function(e, template) {
+	'click .fullscreen-toggle': function(e, template) {
 		Video.goFullScreen();
 	}	
 }
