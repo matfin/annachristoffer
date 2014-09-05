@@ -5,7 +5,7 @@
 			"screen": "hd",
 			"cardFormation": [
 				{
-					"paddingTop": 1.0,
+					"paddingTop": 1,
 					"numberToShow": 2
 				},
 				{
@@ -14,15 +14,11 @@
 				},
 				{
 					"paddingTop": 0,
-					"numberToShow": 3
+					"numberToShow": 4
 				},
 				{
 					"paddingTop": 0.5,
 					"numberToShow": 3
-				},
-				{
-					"paddingTop": 1,
-					"numberToShow": 1
 				}
 			]
 		},

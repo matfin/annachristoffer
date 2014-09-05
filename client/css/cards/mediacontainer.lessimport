@@ -17,4 +17,6 @@
 .fullSlider {
 	position: relative;
 	margin: @gridColumnWidth;
+	margin-right: 0;
+	margin-bottom: @gridColumnWidth * 2;
 }
