@@ -133,10 +133,10 @@ Helpers = {
 			if(options.isThumbnail) {
 				imgSource = img;
 			}
-			else if(Device.isHD) {
+			else if(Device.isHD || Device.isDesktop) {
 				imgSource = img + '-hd';
 			}
-			else if(Device.isDesktop) {
+			else if(Device.isLaptop || Device.isTablet) {
 				imgSource = img + '-d';
 			}
 			else {

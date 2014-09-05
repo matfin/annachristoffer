@@ -3,8 +3,10 @@
 		{{#if isFigCaption}}
 			{{> cards_figcaption}}
 		{{/if}}
-		{{#if isSlider}}
-			{{> components_slider}}
+		{{#if isFullSlider}}
+			<div class="fullSlider">
+				{{> components_slider}}
+			</div>
 		{{/if}}
 		{{#if isVideo}}
 			{{> cards_video}}

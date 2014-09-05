@@ -15,7 +15,8 @@ Template['components_slider'].created = function() {
 */
 Template['components_slider'].rendered = function() {
 
-	var template = this;
+	var template = this,
+		isFullSlider = this.data.type === 'fullslider';
 
 	$('.iosSlider').iosSlider({
 		desktopClickDrag: true,
@@ -27,7 +28,7 @@ Template['components_slider'].rendered = function() {
 		navNextSelector: $('.icon-rightArrow'),
 		navPrevSelector: $('.icon-leftArrow'),
 		onSliderLoaded: function(args) {
-			_.throttle(primeSliderSize(), 100);
+			_.throttle(primeSliderSize(isFullSlider), 100);
 		},
 		onSlideChange: function(args) {
 			$('button.active').removeClass('active');
@@ -44,7 +45,7 @@ Template['components_slider'].rendered = function() {
 			}
 		},
 		onSliderResize: function() {
-			_.throttle(primeSliderSize(), 100);
+			_.throttle(primeSliderSize(isFullSlider), 100);
 		}
 	});
 };
@@ -61,14 +62,32 @@ Template['components_slider'].destroyed = function() {
 /**
  *	Template - components_slider
  *	@method primeSliderSize
+ *	@param {String} type - 
  *	@return undefined
  */
-var primeSliderSize = function() {
-	
+var primeSliderSize = function(full) {
+
+	if(typeof full === 'undefined') {
+		full = false;
+	}
+
+	var width, height, minHeight;
+
+	if(full) {
+		width = $('.fullSlider').outerWidth();
+		height = minHeight = $('.fullSlider').outerWidth() * 0.4;
+	}
+	else {
+		width = $('.mediaContainer').outerWidth();
+		height = minHeight = $('.mediaContainer').outerWidth() * 0.75;
+	}
+
+	console.log(width, height, minHeight);
+
 	$('.iosSlider').css({
-		'width': $('.mediaContainer').outerWidth() + 'px',
-		'height': $('.mediaContainer').outerWidth() * 0.75 + 'px',
-		'min-height': $('.mediaContainer').outerWidth() * 0.75 + 'px'
+		'width': width,
+		'height': height,
+		'min-height': minHeight
 	});
 
 	$('.sliderPositionIndicator button').eq(0).addClass('active');

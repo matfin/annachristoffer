@@ -1,0 +1,20 @@
+.mediaContainer {
+	position: relative;
+	.flex(2);
+	margin: @gridColumnWidth;
+	.user-select(none);
+
+	> img {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		z-index: @primaryLayer;
+	}	
+}
+
+.fullSlider {
+	position: relative;
+	margin: @gridColumnWidth;
+}

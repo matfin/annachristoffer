@@ -5,24 +5,7 @@ figure.cards_figcaption {
 	.align-items(flex-start);
 
 	position: relative;
-
 	margin-bottom: -16px;
-
-	.mediaContainer {
-		position: relative;
-		.flex(2);
-		margin: @gridColumnWidth;
-		.user-select(none);
-
-		> img {
-			position: relative;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: auto;
-			z-index: @primaryLayer;
-		}	
-	}
 
 	figcaption {
 		.flex(1);

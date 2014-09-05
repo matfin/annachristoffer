@@ -1,7 +1,7 @@
 <template name="cards_figcaption">
 	<figure class="cards_figcaption">
 		<div class="mediaContainer">
-			{{#if isSlider}}
+			{{#if isSlider}}	
 				{{> components_slider}}
 			{{else}}
 				{{#if isVideo}}
@@ -23,9 +23,6 @@
 						{{{content}}}
 					</p>
 				{{/each}}
-			</figcaption>
-		{{else}}
-			<figcaption class="empty">
 			</figcaption>
 		{{/if}}
 	</figure>
