@@ -6,6 +6,16 @@
 	height: @gridColumnWidth * 1.25;
 	background-color: @videoHudColour;
 	.display(flex);
+	.opacity(1.0);
+
+	.transition-duration(@transitionDuration);
+	.transition-property(opacity);
+
+	&.hidden {
+		.opacity(0.0);
+	}
+
+
 
 	.playcontrol,
 	.icon-fullscreen {

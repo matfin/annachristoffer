@@ -19,16 +19,25 @@ Template['components_video_player'].rendered = function() {
 
 	var events = [
 		{
-			type: 'progress', 
+			type: 'progress',
+			interval: 1000, 
 			callback: function() {
 				Dependencies.videoLoadedDependency.changed();
 			} 
 		},
 		{
 			type: 'timeupdate', 
+			interval: 500,
 			callback: function() {
 				Dependencies.videoTimeDependency.changed();
 			} 
+		},
+		{
+			type: 'ended',
+			interval: 1000,
+			callback: function() {
+				console.log('The video has ended');
+			}
 		}
 	];
 
@@ -39,7 +48,7 @@ Template['components_video_player'].rendered = function() {
 	});
 
 	/**
-	 *	Set the video height according to the width - fix for iOS Safari
+	 *	Set the video height according to the width - fix for iOS Safari.
 	 */
 	if(Device.isTablet || Device.isMobile) {
 
@@ -153,6 +162,20 @@ var getTimelineOffsetPercentage = function(clickEvent, template) {
  */
 Template['components_video_player'].events = {
 
+	'mouseover, mousemove': _.throttle(function(e, template) {
+
+		var playerHud = $(template.find('.player-hud'));
+		playerHud.removeClass('hidden');
+
+	}, 500),
+
+	'mouseout': _.debounce(function(e, template) {
+
+		var playerHud = $(template.find('.player-hud'));
+		playerHud.addClass('hidden');
+		console.log('Out of the video');
+	}, 1000),
+
 	'click .playcontrol': function(e, template) {
 
 		if(Video.paused()) {
@@ -178,6 +201,12 @@ Template['components_video_player'].events = {
 	},
 
 	'click .timeline-container': function(e, template) {
+		
+		var timelineOffsetPercentage = getTimelineOffsetPercentage(e, template),
+			totalVideoDuration = Video.times().durationInSeconds,
+			skipToTime = Math.round(totalVideoDuration * (timelineOffsetPercentage / 100));
+
+		Video.seekTo(skipToTime);
 
 		$(template.find('.timeline-indicator')).css({
 			'left': getTimelineOffsetPercentage(e, template) + '%'

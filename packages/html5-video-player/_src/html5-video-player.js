@@ -103,6 +103,17 @@ Video = {
 	},
 
 	/**
+	 *	Function to seek to a time in the video
+	 *
+	 *	@method seekTo
+	 *	@param {Number} seekToTime
+	 *	@return undefined
+	 */
+	seekTo: function(seekToTime) {
+		this._video.currentTime = seekToTime;
+	},
+
+	/**
 	 *	Function to pause the video
 	 *
 	 *	@method pause
@@ -383,13 +394,15 @@ Video = {
 			}
 		}
 		else {
+
 			_.each(this._events, function(controllerEvent) {
 				/**
 				 *	Add the event listener defined in controllerEvent.type and execute the callback function
 				 *	defined in controllerEvent.callback. The leading and trailing options, set to false, will
 				 *	ensure the function only gets called when necessary, and not by default.
 				 */
-				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, 500, {trailing: false, leading: false}));
+
+				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, controllerEvent.interval, {trailing: false, leading: false}));
 			});
 		}
 	}
