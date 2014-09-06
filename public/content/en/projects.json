@@ -12,7 +12,7 @@
 					"id": 1
 				},
 				{
-					"id": 3
+					"id": 2
 				}
 			],
 			"contents": [
@@ -82,10 +82,10 @@
 			"background": "master-of-art-project",
 			"category_ids": [
 				{
-					"id": 4
+					"id": 1
 				},
 				{
-					"id": 2
+					"id": 3
 				}
 			],
 			"contents": [
@@ -205,10 +205,10 @@
 			"background": "master-of-art-project",
 			"category_ids": [
 				{
-					"id": 5
+					"id": 3
 				},
 				{
-					"id": 1
+					"id": 5
 				}
 			], 
 			"contents": [
@@ -260,6 +260,9 @@
 				},
 				{
 					"id": 3
+				},
+				{
+					"id": 4
 				}
 			],
 			"contents": [
@@ -320,7 +323,7 @@
 			"background": "oedipus",
 			"category_ids": [
 				{
-					"id": 1
+					"id": 2
 				}
 			],
 			"contents": [
@@ -396,7 +399,10 @@
 			"background": "wonderworld",
 			"category_ids": [
 				{
-					"id": 2
+					"id": 1
+				},
+				{
+					"id": 4
 				}
 			],
 			"contents": [
@@ -503,6 +509,9 @@
 			"background": "resistance",
 			"category_ids": [
 				{
+					"id": 3
+				},
+				{
 					"id": 5
 				}
 			],
@@ -527,14 +536,20 @@
 			]
 		},
 		{
-			"slug": "perfume-book-design",
-			"title": "Book Design",
+			"slug": "perfume-cover-design",
+			"title": "Cover Design",
 			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
 			"date_created": "2009-08-01",
 			"background": "wonderworld",
 			"category_ids": [
 				{
 					"id": 2
+				},
+				{
+					"id": 3
+				},
+				{
+					"id": 4
 				}
 			],
 			"contents": [
@@ -672,7 +687,7 @@
 			"background": "master-of-art-project",
 			"category_ids": [
 				{
-					"id": 2
+					"id": 5
 				}
 			]
 		},
