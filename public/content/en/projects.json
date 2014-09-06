@@ -12,7 +12,7 @@
 					"id": 1
 				},
 				{
-					"id": 3
+					"id": 2
 				}
 			],
 			"contents": [
@@ -38,7 +38,7 @@
 					]
 				},
 				{
-					"type": "figcaption",
+					"type": "fullslider",
 					"slides": [
 						{
 							"img": "master-of-art-thesis/slide-1/slide-1"
@@ -82,10 +82,10 @@
 			"background": "master-of-art-project",
 			"category_ids": [
 				{
-					"id": 4
+					"id": 1
 				},
 				{
-					"id": 2
+					"id": 3
 				}
 			],
 			"contents": [
@@ -205,10 +205,10 @@
 			"background": "master-of-art-project",
 			"category_ids": [
 				{
-					"id": 5
+					"id": 3
 				},
 				{
-					"id": 1
+					"id": 5
 				}
 			], 
 			"contents": [
@@ -260,6 +260,9 @@
 				},
 				{
 					"id": 3
+				},
+				{
+					"id": 4
 				}
 			],
 			"contents": [
@@ -320,7 +323,7 @@
 			"background": "oedipus",
 			"category_ids": [
 				{
-					"id": 1
+					"id": 2
 				}
 			],
 			"contents": [
@@ -396,7 +399,10 @@
 			"background": "wonderworld",
 			"category_ids": [
 				{
-					"id": 2
+					"id": 1
+				},
+				{
+					"id": 4
 				}
 			],
 			"contents": [
@@ -503,6 +509,9 @@
 			"background": "resistance",
 			"category_ids": [
 				{
+					"id": 3
+				},
+				{
 					"id": 5
 				}
 			],
@@ -527,14 +536,20 @@
 			]
 		},
 		{
-			"slug": "perfume-book-design",
-			"title": "Book Design",
+			"slug": "perfume-cover-design",
+			"title": "Cover Design",
 			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
 			"date_created": "2009-08-01",
 			"background": "wonderworld",
 			"category_ids": [
 				{
 					"id": 2
+				},
+				{
+					"id": 3
+				},
+				{
+					"id": 4
 				}
 			],
 			"contents": [
@@ -669,10 +684,25 @@
 			"title": "Typographical Visualisation",
 			"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
 			"date_created": "2010-04-01",
-			"background": "master-of-art-project",
+			"background": "typographical-visualisation",
 			"category_ids": [
 				{
-					"id": 2
+					"id": 5
+				}
+			],
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "typographical-visualisation/01-typographical-visualisation/01-typographical-visualisation",
+					"intro": {
+						"title": "Typographical Visualisation",
+						"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;"
+					},
+					"captions": [
+						{
+							"content": "Content is needed here"
+						}
+					]
 				}
 			]
 		},
@@ -681,11 +711,13 @@
 			"title": "Illustrations",
 			"description": "Sehen wir uns in Bielefeld",
 			"date_created": "2010-04-01",
-			"background": "master-of-art-project",
+			"background": "illustrations",
 			"category_ids": [
 				{
 					"id": 3
 				}
+			],
+			"contents": [
 			]
 		}
 	]

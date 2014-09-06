@@ -9,6 +9,9 @@
 @standardFont: @baseFontSize;
 @smallFont: @baseFontSize * 0.75;
 
+// Font weights
+@fontWeightHeavy: 600;
+
 // Layout
 @gridColumnWidth: 16px;
 @maxWidth: @gridColumnWidth * 100;
@@ -28,6 +31,7 @@
 @hoverColour: rgba(red(#f4e4df), green(#f4e4df), blue(#f4e4df), 0.90);
 @sliderPrimaryColour: #ff3399;
 @videoControlsColour: #ff3399;
+@videoHudColour: #fed5ea;
 
 // Transitions and animations
 @transitionDuration: 400ms;

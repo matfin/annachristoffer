@@ -19,16 +19,25 @@ Template['components_video_player'].rendered = function() {
 
 	var events = [
 		{
-			type: 'progress', 
+			type: 'progress',
+			interval: 1000, 
 			callback: function() {
-				Dependencies.videoProgressDependency.changed();
+				Dependencies.videoLoadedDependency.changed();
 			} 
 		},
 		{
 			type: 'timeupdate', 
+			interval: 500,
 			callback: function() {
 				Dependencies.videoTimeDependency.changed();
 			} 
+		},
+		{
+			type: 'ended',
+			interval: 1000,
+			callback: function() {
+				console.log('The video has ended');
+			}
 		}
 	];
 
@@ -39,7 +48,7 @@ Template['components_video_player'].rendered = function() {
 	});
 
 	/**
-	 *	Set the video height according to the width - fix for iOS Safari
+	 *	Set the video height according to the width - fix for iOS Safari.
 	 */
 	if(Device.isTablet || Device.isMobile) {
 
@@ -100,7 +109,6 @@ Template['components_video_player'].imgSource = function() {
 Template['components_video_player'].videoTime = function() {
 
 	Dependencies.videoTimeDependency.depend();
-	Dependencies.videoLoadedDependency.depend();
 
 	if(Video.isLoaded()) {
 		
@@ -116,15 +124,13 @@ Template['components_video_player'].videoTime = function() {
 	}
 	else {
 		return {
-			currentTime: '0:00',
-			duration: 'TBC',
 			durationPercentage: 0
 		}
 	}
 };
 
 /**
- *	Tenplate - components_video_player
+ *	Template - components_video_player
  *	Helper function to return the percentage of the video that has loaded
  *	@method videoLoadedPercentage
  *	@return {Number}
@@ -137,10 +143,38 @@ Template['components_video_player'].videoLoadedPercentage = function() {
 };
 
 /**
+ *	Function to calculate percentage based on timeline click
+ *	to know where to place the timeline indicator.
+ *	@method getTimelineOffsetPercentage
+ *	@param {Object} clickEvent - the click event
+ *	@param {Object} template - the current template
+ *	@return {Number} - percentage value of X coordinate clicked on timeline
+ */
+var getTimelineOffsetPercentage = function(clickEvent, template) {
+	var timelineContainerWidth = $(template.find('.timeline-container')).outerWidth();
+	
+	return (clickEvent.offsetX / timelineContainerWidth) * 100;
+};
+
+/**
  *	Template - components_video_player
  *	Events	
  */
 Template['components_video_player'].events = {
+
+	'mouseover, mousemove': _.throttle(function(e, template) {
+
+		var playerHud = $(template.find('.player-hud'));
+		playerHud.removeClass('hidden');
+
+	}, 500),
+
+	'mouseout': _.debounce(function(e, template) {
+
+		var playerHud = $(template.find('.player-hud'));
+		playerHud.addClass('hidden');
+		console.log('Out of the video');
+	}, 1000),
 
 	'click .playcontrol': function(e, template) {
 
@@ -166,7 +200,20 @@ Template['components_video_player'].events = {
 		}
 	},
 
-	'click .fullscreenToggle': function(e, template) {
+	'click .timeline-container': function(e, template) {
+		
+		var timelineOffsetPercentage = getTimelineOffsetPercentage(e, template),
+			totalVideoDuration = Video.times().durationInSeconds,
+			skipToTime = Math.round(totalVideoDuration * (timelineOffsetPercentage / 100));
+
+		Video.seekTo(skipToTime);
+
+		$(template.find('.timeline-indicator')).css({
+			'left': getTimelineOffsetPercentage(e, template) + '%'
+		});
+	},
+
+	'click .fullscreen-toggle': function(e, template) {
 		Video.goFullScreen();
 	}	
 }

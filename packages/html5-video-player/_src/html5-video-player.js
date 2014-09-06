@@ -59,7 +59,7 @@ Video = {
 		var self = this,
 			deferred = Q.defer();
 
-		if(typeof video !== 'undefined') {
+		if(typeof video !== 'undefined' && video.length > 0) {
 			this._video = video.get(0);
 			this._events = events;
 
@@ -69,7 +69,8 @@ Video = {
 				 	 *	Success, so we can set up event listeners
 				 	 *	to control video playback
 				 	 */ 
-					// self._primeEventListeners();
+					self._primeEventListeners();
+					self._loaded = true;
 
 					deferred.resolve({
 						status: 'ok',
@@ -99,6 +100,17 @@ Video = {
 	 */
 	play: function() {
 		this._video.play();
+	},
+
+	/**
+	 *	Function to seek to a time in the video
+	 *
+	 *	@method seekTo
+	 *	@param {Number} seekToTime
+	 *	@return undefined
+	 */
+	seekTo: function(seekToTime) {
+		this._video.currentTime = seekToTime;
 	},
 
 	/**
@@ -291,7 +303,7 @@ Video = {
 			formattedDuration: Helpers.formattedDurationSeconds(this._video.duration),
 			formattedCurrentTime: Helpers.formattedDurationSeconds(this._video.currentTime),
 			currentTimeSeconds: Math.floor(this._video.currentTime),
-			elapsedDurationPercentage: Math.floor((this._video.currentTime / this._video.duration) * 100),
+			elapsedDurationPercentage: (this._video.currentTime / this._video.duration) * 100,
 			durationInSeconds: Math.floor(this._video.duration)
 		}
 	},
@@ -382,13 +394,15 @@ Video = {
 			}
 		}
 		else {
+
 			_.each(this._events, function(controllerEvent) {
 				/**
 				 *	Add the event listener defined in controllerEvent.type and execute the callback function
 				 *	defined in controllerEvent.callback. The leading and trailing options, set to false, will
 				 *	ensure the function only gets called when necessary, and not by default.
 				 */
-				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, 3000, {trailing: false, leading: false}));
+
+				self._video.addEventListener(controllerEvent.type, _.throttle(controllerEvent.callback, controllerEvent.interval, {trailing: false, leading: false}));
 			});
 		}
 	}

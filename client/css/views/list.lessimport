@@ -2,14 +2,16 @@ body.list {
 	.wrapper {
 		height: 100%;
 		.backgroundImage('/images/backgrounds/landing');
-		.container {
-			.align-items(center);
-
+		.container {	
+			.header {
+				padding-top: @gridColumnWidth * 4;
+			}
 			.content {
+				padding-top: @gridColumnWidth * 4;
 				section {
 					@media @mobile {
 						padding-top: 0px;
-						padding-bottom: 64px;
+						padding-bottom: @gridColumnWidth * 4;
 					}
 				}
 			}

@@ -40,12 +40,12 @@ Template['views_detail'].isFigCaption = function() {
 
 /**
  *	Template - views_detail
- *	Helper function to determine if slider template should be loaded
- *	@method isSlider
+ *	Helper function to determine if full slider template should be loaded
+ *	@method isFullSlider
  *	@return {Boolean}
  */
-Template['views_detail'].isSlider = function() {
-	return this.type === 'slider';
+Template['views_detail'].isFullSlider = function() {
+	return this.type === 'fullslider';
 };
 
 /**

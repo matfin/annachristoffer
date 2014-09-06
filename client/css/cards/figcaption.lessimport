@@ -6,29 +6,10 @@ figure.cards_figcaption {
 
 	position: relative;
 
-	margin-bottom: -16px;
-
-	.mediaContainer {
-		position: relative;
-		.flex(2);
-		margin: @gridColumnWidth;
-		.user-select(none);
-
-		> img {
-			position: relative;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: auto;
-			z-index: @primaryLayer;
-		}	
-	}
-
 	figcaption {
 		.flex(1);
 		padding: @gridColumnWidth @gridColumnWidth * 2;
 		background-color: @colourWhite;
-		margin-top: -16px;
 		h2, h3 {
 			margin-bottom: @gridColumnWidth;
 		}
