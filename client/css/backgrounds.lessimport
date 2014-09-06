@@ -1,6 +1,13 @@
 /**
  *	Different background images for projects set in here.
  */
+
+body.master-of-art-thesis {
+	.wrapper {
+		.backgroundImage('images/backgrounds/resistance');
+	}
+}
+
 body.master-of-art-project {
 	.wrapper {
 		.backgroundImage('images/backgrounds/master-of-art-project');
@@ -57,17 +64,18 @@ body.illustrations {
 
 body {
 	&.master-of-art-project,
+	&.master-of-art-thesis,
 	&.landing,
 	&.oedipus,
 	&.perfume, 
 	&.perfumeleft,
-	&.wonderworld {
+	&.wonderworld,
+	&.typographical-visualisation {
 		height: auto;
 	}
 
 	&.resistance,
-	&.illustrations,
-	&.typographical-visualisation {
+	&.illustrations{
 		height: 100%;
 	}
 }

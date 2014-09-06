@@ -6,7 +6,7 @@
 			"title": "Master of Art / Thesis",
 			"description": "Three models of memory in their context of media&ndash;historical development",
 			"date_created": "2013-02-01",
-			"background": "resistance",
+			"background": "master-of-art-thesis",
 			"category_ids": [
 				{
 					"id": 1
@@ -336,58 +336,33 @@
 					"img": "oedipus/01-oedipus-title/oedipus-title",
 					"intro": {
 						"title": "Typographical Staging",
-						"description": "Content ?" 
+						"description": "Typographical Staging" 
 					},
 					"captions": [
 						{
-							"content": "Content needed here."
+							"content": "The tragedy of King Oedipus is staged in a book with subjective  typographical treatment. Phrase by phrase and word by word King Oedipus develops towards his doom, typographical drawn by the merciless fall into the book bind."
 						}
 					]
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/02-oedipus-beginning/oedipus-beginning",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "oedipus/02-oedipus-beginning/oedipus-beginning"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/03-oedipus-1/oedipus-beginning-1",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "oedipus/03-oedipus-1/oedipus-beginning-1"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/04-oedipus-2/oedipus-beginning-2",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "oedipus/04-oedipus-2/oedipus-beginning-2"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/05-oedipus-3/oedipus-beginning-3",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "oedipus/05-oedipus-3/oedipus-beginning-3"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/06-oedipus-4/oedipus-beginning-4",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "oedipus/06-oedipus-4/oedipus-beginning-4"
 				}
 			]
 		},
@@ -700,9 +675,13 @@
 					},
 					"captions": [
 						{
-							"content": "Content is needed here"
+							"content": "Fading Memories is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society."
 						}
 					]
+				},
+				{
+					"type": "figcaption",
+					"img": "typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation"
 				}
 			]
 		},
