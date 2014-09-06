@@ -5,13 +5,11 @@ figure.cards_figcaption {
 	.align-items(flex-start);
 
 	position: relative;
-	margin-bottom: -16px;
 
 	figcaption {
 		.flex(1);
 		padding: @gridColumnWidth @gridColumnWidth * 2;
 		background-color: @colourWhite;
-		margin-top: -16px;
 		h2, h3 {
 			margin-bottom: @gridColumnWidth;
 		}

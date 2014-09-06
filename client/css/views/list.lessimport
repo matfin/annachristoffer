@@ -3,7 +3,7 @@ body.list {
 		height: 100%;
 		.backgroundImage('/images/backgrounds/landing');
 		.container {
-			.align-items(center);
+			// .align-items(center);
 
 			.content {
 				section {

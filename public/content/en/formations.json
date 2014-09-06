@@ -5,8 +5,8 @@
 			"screen": "hd",
 			"cardFormation": [
 				{
-					"paddingTop": 1,
-					"numberToShow": 2
+					"paddingTop": 0,
+					"numberToShow": 3
 				},
 				{
 					"paddingTop": 0.5,
@@ -14,7 +14,7 @@
 				},
 				{
 					"paddingTop": 0,
-					"numberToShow": 4
+					"numberToShow": 3
 				},
 				{
 					"paddingTop": 0.5,
@@ -26,8 +26,8 @@
 			"screen": "desktop",
 			"cardFormation": [
 				{
-					"paddingTop": 1,
-					"numberToShow": 2
+					"paddingTop": 0,
+					"numberToShow": 3
 				},
 				{
 					"paddingTop": 0.5,
@@ -35,7 +35,7 @@
 				},
 				{
 					"paddingTop": 0,
-					"numberToShow": 4
+					"numberToShow": 3
 				},
 				{
 					"paddingTop": 0.5,
@@ -47,15 +47,15 @@
 			"screen": "laptop",
 			"cardFormation": [
 				{
-					"paddingTop": 1.0,
-					"numberToShow": 3
+					"paddingTop": 0.5,
+					"numberToShow": 4
+				},
+				{
+					"paddingTop": 0.0,
+					"numberToShow": 4
 				},
 				{
 					"paddingTop": 0.5,
-					"numberToShow": 5
-				},
-				{
-					"paddingTop": 1.0,
 					"numberToShow": 3
 				}
 			]

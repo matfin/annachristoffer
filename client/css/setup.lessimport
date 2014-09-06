@@ -28,7 +28,7 @@ body {
 	text-align: left;
 	max-width: @gridColumnWidth * 80;
 	margin: 0px auto;
-	
+	padding-top: @gridColumnWidth * 4;
 	.display(flex);
 	.flex-direction(row-reverse);
 	.flex-wrap(nowrap);
@@ -44,7 +44,7 @@ body {
 	width: @gridColumnWidth * 15;
 	max-width: @gridColumnWidth * 15;
 	min-width: @gridColumnWidth * 12;
-	padding: @gridColumnWidth;
+	padding: 0 @gridColumnWidth;
 	.box-sizing(border-box);
 	@media @mobile {
 		height: @gridColumnWidth * 3;
