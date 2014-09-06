@@ -684,10 +684,25 @@
 			"title": "Typographical Visualisation",
 			"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
 			"date_created": "2010-04-01",
-			"background": "master-of-art-project",
+			"background": "typographical-visualisation",
 			"category_ids": [
 				{
 					"id": 5
+				}
+			],
+			"contents": [
+				{
+					"type": "figcaption",
+					"img": "typographical-visualisation/01-typographical-visualisation/01-typographical-visualisation",
+					"intro": {
+						"title": "Typographical Visualisation",
+						"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;"
+					},
+					"captions": [
+						{
+							"content": "Content is needed here"
+						}
+					]
 				}
 			]
 		},
@@ -696,11 +711,13 @@
 			"title": "Illustrations",
 			"description": "Sehen wir uns in Bielefeld",
 			"date_created": "2010-04-01",
-			"background": "master-of-art-project",
+			"background": "illustrations",
 			"category_ids": [
 				{
 					"id": 3
 				}
+			],
+			"contents": [
 			]
 		}
 	]

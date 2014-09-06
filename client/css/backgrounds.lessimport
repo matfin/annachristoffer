@@ -43,14 +43,31 @@ body.resistance {
 	}
 }
 
+body.typographical-visualisation {
+	.wrapper {
+		.backgroundImage('images/backgrounds/resistance');
+	}
+}
+
+body.illustrations {
+	.wrapper {
+		.backgroundImage('images/backgrounds/resistance');
+	}
+}
+
 body {
 	&.master-of-art-project,
 	&.landing,
 	&.oedipus,
 	&.perfume, 
 	&.perfumeleft,
-	&.wonderworld,
-	&.resistance {
+	&.wonderworld {
 		height: auto;
+	}
+
+	&.resistance,
+	&.illustrations,
+	&.typographical-visualisation {
+		height: 100%;
 	}
 }
