@@ -4,7 +4,7 @@ body.detail {
 		.container {
 			.align-items(flex-start);
 			header {
-				top: @gridColumnWidth * 3;
+				top: @gridColumnWidth * 4;
 				@media @mobile {
 					top: 0;
 				}

@@ -39,7 +39,7 @@ body.wonderworld {
 
 body.resistance {
 	.wrapper {
-		.backgroundImage('images/backgrounds/resistance');
+		.backgroundImage('images/backgrounds/oedipus');
 	}
 }
 

@@ -82,8 +82,6 @@ var primeSliderSize = function(full) {
 		height = minHeight = $('.mediaContainer').outerWidth() * 0.75;
 	}
 
-	console.log(width, height, minHeight);
-
 	$('.iosSlider').css({
 		'width': width,
 		'height': height,

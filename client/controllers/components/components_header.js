@@ -81,7 +81,7 @@ var primeHeader = Deps.autorun(function() {
 	if(!Device.isMobile && (App.currentView === 'detail' || App.currentView === 'page')) {
 		
 		$('header').css({
-			'top': ($(window).scrollTop()) + 48 + 'px'
+			'top': ($(window).scrollTop()) + 64 + 'px'
 		});
 
 	}
