@@ -541,45 +541,25 @@
 					},
 					"captions": [
 						{
-							"content": "Content needed here?"
+							"content": "The main theme for the book cover is the ambiguity of Jean-Baptiste Grenouille&#39;s gift. He is able to create the most beautiful perfume of the world, but his dream costs human blood and death. The ambiguity is visualised by a colourful field of flowers which hides the terrible truth:the shape of a dead woman&#39;s body."
 						}
 					]	
 				},
 				{
 					"type": "figcaption",
-					"img": "perfume/1-perfume/1-perfume-bookdesign",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "perfume/1-perfume/1-perfume-bookdesign"
 				},
 				{
 					"type": "figcaption",
-					"img": "perfume/2-perfume/2-perfume-bookdesign",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "perfume/2-perfume/2-perfume-bookdesign"
 				},
 				{
 					"type": "figcaption",
-					"img": "perfume/3-perfume/3-perfume-bookdesign",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "perfume/3-perfume/3-perfume-bookdesign"
 				},
 				{
 					"type": "figcaption",
-					"img": "perfume/4-perfume/4-perfume-bookdesign",
-					"captions": [
-						{
-							"content": "Content needed here."
-						}
-					]
+					"img": "perfume/4-perfume/4-perfume-bookdesign"
 				},
 				{
 					"type": "figcaption",
