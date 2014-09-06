@@ -162,8 +162,14 @@ var getTimelineOffsetPercentage = function(clickEvent, template) {
  */
 Template['components_video_player'].events = {
 
-	'mouseout .mediaContainer': function(e, template) {
-		console.log('Mouse out of video player');
+	'mouseenter .videoContainer': _.throttle(function(e, template) {
+		var playerHud = $(template.find('.player-hud'));
+		playerHud.removeClass('hidden');
+	}, 200),
+
+	'mouseleave .videoContainer': function(e, template) {
+		var playerHud = $(template.find('.player-hud'));
+		playerHud.addClass('hidden');
 	},
 
 	'click .playcontrol': function(e, template) {

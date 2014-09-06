@@ -1,24 +1,26 @@
 <template name="components_video_player">
-	<video width="100%" height="{{renderedVideoSize.height}}" poster="/images/projects/{{imgSource}}" preload="metadata">
-		<source src="{{videoSource}}.mp4">
-		<source src="{{videoSource}}.webm">
-		<source src="{{videoSource}}.ogv">	
-	</video>
+	<div class="videoContainer">
+		<video width="100%" height="{{renderedVideoSize.height}}" poster="/images/projects/{{imgSource}}" preload="metadata">
+			<source src="{{videoSource}}.mp4">
+			<source src="{{videoSource}}.webm">
+			<source src="{{videoSource}}.ogv">	
+		</video>
 
-	<div class="player-hud">
-		<button class="playcontrol icon-play">
-		</button>
+		<div class="player-hud">
+			<button class="playcontrol icon-play">
+			</button>
 
-		<div class="timeline-container">
-			<i class="timeline-indicator" style="left: {{videoTime.durationPercentage}}%;">
-			</i>
-			<div class="progress-bar-container">
-				<div class="progress-bar" style="width: {{videoLoadedPercentage}}%;">
+			<div class="timeline-container">
+				<i class="timeline-indicator" style="left: {{videoTime.durationPercentage}}%;">
+				</i>
+				<div class="progress-bar-container">
+					<div class="progress-bar" style="width: {{videoLoadedPercentage}}%;">
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<button class="fullscreen-toggle icon-fullscreen">
-		</button>
+			<button class="fullscreen-toggle icon-fullscreen">
+			</button>
+		</div>
 	</div>
 </template>
