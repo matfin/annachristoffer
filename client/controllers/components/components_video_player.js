@@ -163,13 +163,17 @@ var getTimelineOffsetPercentage = function(clickEvent, template) {
 Template['components_video_player'].events = {
 
 	'mouseenter .videoContainer': _.throttle(function(e, template) {
-		var playerHud = $(template.find('.player-hud'));
+		var playerHud = $(template.find('.player-hud')),
+			playButton = $(template.find('.playbutton'));
 		playerHud.removeClass('hidden');
+		playButton.removeClass('hidden');
 	}, 200),
 
 	'mouseleave .videoContainer': function(e, template) {
-		var playerHud = $(template.find('.player-hud'));
+		var playerHud = $(template.find('.player-hud')),
+			playButton = $(template.find('.playbutton'));
 		playerHud.addClass('hidden');
+		playButton.addClass('hidden');
 	},
 
 	'click .playcontrol': function(e, template) {

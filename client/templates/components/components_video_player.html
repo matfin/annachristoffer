@@ -1,5 +1,10 @@
 <template name="components_video_player">
 	<div class="videoContainer">
+
+		<button class="playbutton">
+			<i class="icon-large-play"></i>
+		</button>
+
 		<video width="100%" height="{{renderedVideoSize.height}}" poster="/images/projects/{{imgSource}}" preload="metadata">
 			<source src="{{videoSource}}.mp4">
 			<source src="{{videoSource}}.webm">

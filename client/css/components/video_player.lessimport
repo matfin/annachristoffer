@@ -1,3 +1,23 @@
+.videoContainer {
+	text-align: center;
+
+	.playbutton {
+		position: absolute;
+		top: 40%;
+		left: 0;
+		width: 100%;
+		color: @videoControlsColour;
+		font-size: @gridColumnWidth * 5;
+
+		.transition-duration(@transitionDuration);
+		.transition-property(opacity);
+
+		&.hidden {
+			.opacity(0.0);
+		}
+	}
+}
+
 .player-hud {
 	position: absolute;
 	bottom: 5px;
