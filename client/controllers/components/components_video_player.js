@@ -156,6 +156,8 @@ var getTimelineOffsetPercentage = function(clickEvent, template) {
 	return (clickEvent.offsetX / timelineContainerWidth) * 100;
 };
 
+// 1261695519. 
+
 /**
  *	Template - components_video_player
  *	Events	
@@ -180,11 +182,11 @@ Template['components_video_player'].events = {
 
 		if(Video.paused()) {
 			Video.play();
-			$(e.target).removeClass('icon-play').addClass('icon-pause');
+			$('i', template.findAll('.playcontrol')).removeClass('icon-play').addClass('icon-pause');
 		}
 		else {
 			Video.pause();
-			$(e.target).removeClass('icon-pause').addClass('icon-play');
+			$('i', template.findAll('.playcontrol')).removeClass('icon-pause').addClass('icon-play');
 		}
 	},
 
