@@ -18,30 +18,30 @@ Template['components_slider'].rendered = function() {
 	var template = this,
 		isFullSlider = this.data.type === 'fullslider';
 
-	$('.iosSlider').iosSlider({
+	$(template.find('.iosSlider')).iosSlider({
 		desktopClickDrag: true,
 		snapToChildren: true,
 		keyboardControls: true,
 		infiniteSlider: false,
 		responsiveSlideContainer: true,
 		responsiveSlides: true,
-		navNextSelector: $('.icon-rightArrow'),
-		navPrevSelector: $('.icon-leftArrow'),
+		navNextSelector: $(template.find('.icon-rightArrow')),
+		navPrevSelector: $(template.find('.icon-leftArrow')),
 		onSliderLoaded: function(args) {
-			_.throttle(primeSliderSize(isFullSlider), 100);
+			_.throttle(primeSliderSize(isFullSlider, template), 100);
 		},
 		onSlideChange: function(args) {
-			$('button.active').removeClass('active');
-			$('.sliderPositionIndicator button').eq(args.targetSlideNumber - 1).addClass('active');
+			$(template.find('button.active')).removeClass('active');
+			$(template.find('.sliderPositionIndicator button')).eq(args.targetSlideNumber - 1).addClass('active');
 
 			if(args.currentSlideNumber === args.data.numberOfSlides) {
-				$('button.icon-rightArrow').addClass('hidden');
+				$(template.find('button.icon-rightArrow')).addClass('hidden');
 			}
 			else if(args.currentSlideNumber === 1) {
-				$('button.icon-leftArrow').addClass('hidden');
+				$(template.find('button.icon-leftArrow')).addClass('hidden');
 			}
 			else {
-				$('button').removeClass('hidden');
+				$(template.find('button')).removeClass('hidden');
 			}
 		},
 		onSliderResize: function() {
@@ -62,10 +62,11 @@ Template['components_slider'].destroyed = function() {
 /**
  *	Template - components_slider
  *	@method primeSliderSize
- *	@param {String} type - 
+ *	@param {String} type - the slider type
+ *	@param {Object} template - the current template
  *	@return undefined
  */
-var primeSliderSize = function(full) {
+var primeSliderSize = function(full, template) {
 
 	if(typeof full === 'undefined') {
 		full = false;
@@ -82,13 +83,13 @@ var primeSliderSize = function(full) {
 		height = minHeight = $('.mediaContainer').outerWidth() * 0.75;
 	}
 
-	$('.iosSlider').css({
+	$(template.find('.iosSlider')).css({
 		'width': width,
 		'height': height,
 		'min-height': minHeight
 	});
 
-	$('.sliderPositionIndicator button').eq(0).addClass('active');
+	$(template.find('.sliderPositionIndicator button')).eq(0).addClass('active');
 };
 
 /**
@@ -97,7 +98,7 @@ var primeSliderSize = function(full) {
  */
 Template['components_slider'].events = {
 	'click .sliderPositionIndicator > button': function(e, template) {
-		var slider = $('.iosSlider');
+		var slider = $(template.find('.iosSlider'));
 		var index = $(e.target).index();
 		slider.iosSlider('goToSlide', index + 1);
 	}
