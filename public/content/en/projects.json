@@ -389,7 +389,7 @@
 			"contents": [
 				{
 					"type": "thumbnail",
-					"img": "thumbnails/wonderworld-map"
+					"img": "thumbnails/wonderworld"
 				},
 				{
 					"type": "figcaption",
@@ -653,6 +653,10 @@
 			],
 			"contents": [
 				{
+					"type": "thumbnail",
+					"img": "thumbnails/typographical-visualisation"
+				},
+				{
 					"type": "figcaption",
 					"img": "typographical-visualisation/01-typographical-visualisation/01-typographical-visualisation",
 					"intro": {
@@ -683,6 +687,10 @@
 				}
 			],
 			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/character-design"
+				},
 				{
 					"type": "figcaption",
 					"img": "master-of-art-project/music-characters/1-lion-illu/lion-illu",
