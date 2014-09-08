@@ -672,17 +672,68 @@
 			]
 		},
 		{
-			"slug": "illustrations",
-			"title": "Illustrations",
-			"description": "Sehen wir uns in Bielefeld",
-			"date_created": "2010-04-01",
-			"background": "illustrations",
+			"slug": "character-design",
+			"title": "Character Design",
+			"description": "Carnival of the animals - A digital music book for children",
+			"date_created": "2013-02-01",
+			"background": "character-design",
 			"category_ids": [
 				{
 					"id": 3
 				}
 			],
 			"contents": [
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/1-lion-illu/lion-illu",
+					"intro": {
+						"title": "Character Design",
+						"description": "Carnival of the animals - A digital music book for children" 
+					},
+					"captions": [
+						{
+							"content": "This is a placeholder"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/2-turtle-illu/turtle-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/3-chick-illu/chick-illu",
+					"captions": [
+						{
+							"content": "Placeholder hen text."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/4-fish-illu/fish-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/5-hermoines-illu/hermoines-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/6-kuckkuck-illu/kuckkuck-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/7-ozean-illu/ozean-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/8-vogelhaus-illu/kuckkuck-illu",
+					"captions": [
+						{
+							"content": "Placeholder text here"
+						}
+					]
+				}
 			]
 		}
 	]

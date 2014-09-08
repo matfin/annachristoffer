@@ -56,7 +56,7 @@ body.typographical-visualisation {
 	}
 }
 
-body.illustrations {
+body.character-design {
 	.wrapper {
 		.backgroundImage('images/backgrounds/resistance');
 	}
@@ -70,12 +70,12 @@ body {
 	&.perfume, 
 	&.perfumeleft,
 	&.wonderworld,
-	&.typographical-visualisation {
+	&.typographical-visualisation,
+	&.character-design {
 		height: auto;
 	}
 
-	&.resistance,
-	&.illustrations{
+	&.resistance{
 		height: 100%;
 	}
 }
