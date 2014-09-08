@@ -10,6 +10,7 @@ cmather:iron-core@0.2.0
 cmather:iron-dynamic-template@0.2.1
 cmather:iron-layout@0.2.0
 cmather:iron-router@0.8.2
+coffeescript@1.0.2
 ctl-helper@1.0.2
 ctl@1.0.0
 deps@1.0.1
@@ -21,11 +22,16 @@ html5-video-player@0.0.0
 htmljs@1.0.0
 id-map@1.0.0
 ios-slider@0.0.0
+iron:core@0.3.2
+iron:dynamic-template@0.3.0
+iron:layout@0.3.0
+iron:router@0.9.1
 jquery@1.0.0
 json@1.0.0
 less@1.0.6
 livedata@1.0.7
 logging@1.0.2
+manuelschoebel:ms-seo@0.3.0
 meteor@1.0.2
 minifiers@1.0.2
 minimongo@1.0.1
