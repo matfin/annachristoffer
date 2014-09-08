@@ -142,6 +142,40 @@
 				},
 				{
 					"type": "figcaption",
+					"slides": [
+						{
+							"img": "master-of-art-project/elephant-scribble/1-elephant-scribble/1-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/2-elephant-scribble/2-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/3-elephant-scribble/3-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/4-elephant-scribble/4-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/5-elephant-scribble/5-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/6-elephant-scribble/6-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/7-elephant-scribble/7-elephant-scribble"
+						},
+						{
+							"img": "master-of-art-project/elephant-scribble/8-elephant-scribble/8-elephant-scribble"
+						}
+					],
+					"captions": [
+						{
+							"content": "Placeholder text."
+						}
+					]
+				},
+				{
+					"type": "figcaption",
 					"img": "master-of-art-project/lion/lion",
 					"captions": [
 						{
