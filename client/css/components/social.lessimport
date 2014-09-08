@@ -1,0 +1,19 @@
+.social {
+
+	padding-top: @gridColumnWidth * 1.25;
+	ul {
+		.display(flex);
+		li {
+			.flex(1);
+			padding: 0 @gridColumnWidth * 0.75;
+			button {
+				border-bottom: 1px solid @colourBlack;
+				width: 100%;
+				&:hover {
+					color: @sliderPrimaryColour;
+					border-bottom: 1px solid @sliderPrimaryColour;
+				}
+			}
+		}
+	}
+}

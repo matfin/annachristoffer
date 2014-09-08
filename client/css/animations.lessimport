@@ -13,13 +13,31 @@
 
 	75% {
 		.filter(hue-rotate(0deg));
-		.filter(invert(100%));
+		.filter(invert(40%));
 	}
 
 	100% {
 		.filter(invert(0%));
 		// Add this in so the animation end event fires in firefox (which doesn't support filters)
 		top: 0;	
+	}
+}
+
+.socialButtonAnimation {
+	0% {
+		background-color: @colourBlack;
+	}
+	20% {
+		background-color: lighten(@colourBlack, 50%);
+	}
+	40% {
+		background-color: lighten(@colourBlack, 40%);
+	}
+	60% {
+		background-color: @colourBlack;
+	}
+	100% {
+		background-color: @colourBlack;
 	}
 }
 
@@ -37,4 +55,20 @@
 }
 @keyframes badtv {
 	.badTvAnimation;
+}
+
+/**
+ *	Social button animation
+ */
+@-webkit-keyframes social-button {
+	.socialButtonAnimation;
+}
+@-moz-keyframes social-button {
+	.socialButtonAnimation;
+}
+@-o-keyframes social-button {
+	.socialButtonAnimation;
+}
+@keyframes social-button {
+	.socialButtonAnimation;
 }

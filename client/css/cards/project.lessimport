@@ -82,8 +82,8 @@
 			.transition-delay(@transitionDuration);
 			.transition-property(opacity);
 
-			.animation(badtv 250ms linear);
-			.animation-delay(@transitionDuration * 2);
+			.animation(badtv 400ms linear);
+			.animation-delay(@transitionDuration * 3);
 
 			&.interlace {
 				.opacity(0.3);

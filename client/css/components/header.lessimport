@@ -28,9 +28,9 @@ header {
 		margin-top: @gridColumnWidth / 2;
 	}
 
-	button {
-		display: none;
-	}
+	// button {
+	// 	display: none;
+	// }
 
 	nav {
 		margin-top: @gridColumnWidth / 2;

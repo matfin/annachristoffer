@@ -15,7 +15,6 @@ Template['cards_project'].created = function() {
 *	@return undefined
 */
 Template['cards_project'].rendered = function() {
-	// Dependencies.projectLoadedDependency.changed();
 	/**
 	 *	Get the card size height, assigning the maximum height to the App attribute.
 	 */
