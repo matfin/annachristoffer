@@ -52,6 +52,8 @@
 		.flex(14);
 		position: relative;
 
+		cursor: pointer;
+
 		.progress-bar-container {
 			position: absolute;
 			top: (@gridColumnWidth / 2);

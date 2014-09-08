@@ -23,7 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-
+.icon-xing:before {
+	content: "\e610";
+}
 .icon-rightArrow:before {
 	content: "\e607";
 }
@@ -51,24 +53,21 @@
 .icon-user:before {
 	content: "\e605";
 }
-.icon-tv:before {
-	content: "\e606";
-}
-.icon-expand:before {
-	content: "\e60d";
-}
-.icon-play:before {
+.icon-play<div><br></div>:before {
 	content: "\e609";
 }
 .icon-pause:before {
 	content: "\e60a";
 }
-.icon-unmute:before {
+.icon-twitter:before {
+	content: "\e606";
+}
+.icon-facebook:before {
 	content: "\e60b";
 }
-.icon-mute:before {
-	content: "\e60c";
+.icon-pinterest:before {
+	content: "\e611";
 }
-.icon-info:before {
-	content: "\e603";
+.icon-linkedin:before {
+	content: "\e60c";
 }
