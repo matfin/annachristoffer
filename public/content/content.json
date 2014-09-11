@@ -3,15 +3,24 @@
 	"items": [
 		{
 			"messageCode": "title",
-			"content": "Anna Claire Christoffer"
+			"content": {
+				"en": "Anna Claire Christoffer",
+				"de": "Anna Claire Christoffer"
+			}
 		},
 		{
 			"messageCode": "subtitle",
-			"content": "Conceptional Design"
+			"content": {
+				"en": "Conceptional Design",
+				"de": "Conzeptionel Design"
+			} 
 		},
 		{
 			"messageCode": "projects",
-			"content": "Projects"
+			"content": {
+				"en": "Projects",
+				"de": "Projekten"
+			}
 		}
 	]
 }

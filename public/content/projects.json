@@ -2,9 +2,18 @@
 	"name": "Projects",
 	"items": [
 		{
-			"slug": "master-of-art-thesis",
-			"title": "Master of Art / Thesis",
-			"description": "Three models of memory in their context of media&ndash;historical development",
+			"slug": {
+				"en": "master-of-art-thesis",
+				"de": "master-of-art-thesis"
+			},
+			"title": {
+				"en": "Master of Art / Thesis",
+				"de": "Master of Art / Thesis"
+			},
+			"description": {
+				"en": "Three models of memory in their context of media&ndash;historical development",
+				"de": "DE content needed"
+			},
 			"date_created": "2013-02-01",
 			"background": "master-of-art-thesis",
 			"category_ids": [
@@ -24,15 +33,27 @@
 					"type": "figcaption",
 					"img": "master-of-art-thesis/thesis-3/thesis-3",
 					"intro": {
-						"title": "Master of Art / Thesis",
-						"description": "Three models of memory in their context of media&ndash;historical development." 
+						"title": {
+							"en": "Master of Art / Thesis",
+							"de": "[DE]Master of Art / Thesis"
+						},
+						"description": {
+							"en": "Three models of memory in their context of media&ndash;historical development.",
+							"de": "DE content needed here" 
+						}
 					},
 					"captions": [
 						{
-							"content": "Beginning with the natural processes of human memories, the thesis analyses the cultural development to the contemporary information age."
+							"content": {
+								"en": "Beginning with the natural processes of human memories, the thesis analyses the cultural development to the contemporary information age.",
+								"de": "DE content needed here"
+							}
 						},
 						{
-							"content": "The first model was developed in the Renaissance and was specified as an theatre of memory. The analog model is the precursor for nowadays structures of interactive user-experiences, because it is based on strong topographical and visual methods."
+							"content": {
+								"en": "The first model was developed in the Renaissance and was specified as an theatre of memory. The analog model is the precursor for nowadays structures of interactive user-experiences, because it is based on strong topographical and visual methods.",
+								"de": "DE content needed here"
+							}
 						}
 						
 					]
@@ -42,7 +63,10 @@
 					"img": "master-of-art-thesis/thesis-1/thesis-1",
 					"captions": [
 						{
-							"content": "The digital »Spatial-Data-Management-System« is the second memory model. It was developed in the Sixties by a team of scientests at Massachusetts Institute of Technology and presents the first steps of the computer technology."
+							"content": {
+								"en": "The digital »Spatial-Data-Management-System« is the second memory model. It was developed in the Sixties by a team of scientests at Massachusetts Institute of Technology and presents the first steps of the computer technology.",
+								"de": "DE content needed here."
+							}
 						}
 					]
 				},
@@ -74,16 +98,28 @@
 					"img": "master-of-art-thesis/thesis-5/thesis-5",
 					"captions": [
 						{
-							"content": "The layout of the thesis presents also a topographical approach, while references and pictorial material are set according to the content of the main text."
+							"content": {
+								"en": "The layout of the thesis presents also a topographical approach, while references and pictorial material are set according to the content of the main text.",
+								"de": "DE content needed here."
+							}
 						}
 					]
 				}
 			]
 		},
 		{
-			"slug": "master-of-art-project",
-			"title": "Master of Art / Project",
-			"description": "Carnival of the animals &ndash; A digital music book for children",
+			"slug": {
+				"en": "master-of-art-project",
+				"de": "master-of-art-project"
+			},
+			"title": {
+				"en": "Master of Art / Project",
+				"de": "[DE]Master of Art / Project"
+			},
+			"description": {
+				"en": "Carnival of the animals &ndash; A digital music book for children",
+				"de": "DE content needed here"
+			}
 			"date_created": "2013-02-01",
 			"background": "master-of-art-project",
 			"category_ids": [
@@ -104,12 +140,21 @@
 					"videoUrl": "http://media.annachristoffer.com/title",
 					"img": "master-of-art-project/title/title",
 					"intro": {
-						"title": "Master of Art / Project",
-						"description": "Carnival of the animals &ndash; A digital music book for children" 
+						"title": {
+							"en": "Master of Art / Project",
+							"de": "[DE]Master of Art / Project"
+						},
+						"description": {
+							"en": "Carnival of the animals &ndash; A digital music book for children",
+							"de": "DE content needed here"
+						}
 					},
 					"captions": [
 						{
-							"content": "The digital music book is inspired by Camille Saint-Saëns purely instrumental composition of »Carnival of the animals«. The music describes little humoristc tales with a variety of musical stylistics. The animations are created in AfterEffects."
+							"content": {
+								"en": "The digital music book is inspired by Camille Saint-Saëns purely instrumental composition of »Carnival of the animals«. The music describes little humoristc tales with a variety of musical stylistics. The animations are created in AfterEffects.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -118,7 +163,10 @@
 					"img": "master-of-art-project/orchestra/orchestra",
 					"captions": [
 						{
-							"content": "The starting point of the application presents the original constellation of the chamber orchestra from »Carnival of the animals«. By tapping on the different musical items, the child has the possibility to receive a first impression of the instrumental sound. The whole visual concept of the music book is based on the constellation of instruments."
+							"content": {
+								"en": "The starting point of the application presents the original constellation of the chamber orchestra from »Carnival of the animals«. By tapping on the different musical items, the child has the possibility to receive a first impression of the instrumental sound. The whole visual concept of the music book is based on the constellation of instruments.",
+								"de": "DE content needed here."
+							}
 						}
 					]
 				},
@@ -127,7 +175,10 @@
 					"img": "master-of-art-project/elephant/elephant",
 					"captions": [
 						{
-							"content": "The illustrations of each music piece are dynamically constructed by the items of the chamber orchestra. Further on the coloured items elucidates the active instruments in each music piece."
+							"content": {
+								"en": "The illustrations of each music piece are dynamically constructed by the items of the chamber orchestra. Further on the coloured items elucidates the active instruments in each music piece.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -136,7 +187,10 @@
 					"img": "master-of-art-project/info/info",
 					"captions": [
 						{
-							"content": "During the discovery of music and animation, the child also has the opportunity to receive further information, by tapping on the coloured instruments. All information is set with the dynamical antiqua &ldquo;Adobe Caslon Pro&rdquo;."
+							"content": {
+								"en": "During the discovery of music and animation, the child also has the opportunity to receive further information, by tapping on the coloured instruments. All information is set with the dynamical antiqua &ldquo;Adobe Caslon Pro&rdquo;.",
+								"de": "DE content needed here."
+							}
 						}
 					]
 				},
@@ -170,7 +224,10 @@
 					],
 					"captions": [
 						{
-							"content": "Placeholder text."
+							"content": {
+								"en": "Placeholder text.",
+								"de": "Placeholder text."
+							}
 						}
 					]
 				},
@@ -179,7 +236,10 @@
 					"img": "master-of-art-project/lion/lion",
 					"captions": [
 						{
-							"content": "Every music piece is illustrated by the shapes and forms of the instruments. The aim was to preserve an imaginative approach to classical music. The multimedia mixture of poetic music, abstract animation and fictional text enables an engaging learning experience."
+							"content": {
+								"en": "Every music piece is illustrated by the shapes and forms of the instruments. The aim was to preserve an imaginative approach to classical music. The multimedia mixture of poetic music, abstract animation and fictional text enables an engaging learning experience.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -188,7 +248,10 @@
 					"img": "master-of-art-project/hen/hen",
 					"captions": [
 						{
-							"content": "The high sharp sounds of the violins imitate the screeching and squawking in a chicken pen."
+							"content": {
+								"en": "The high sharp sounds of the violins imitate the screeching and squawking in a chicken pen.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -228,19 +291,34 @@
 					],
 					"captions": [
 						{
-							"content": "This is the first caption for this slider and will represent the first paragraph."
+							"content": {
+								"en": "This is the first caption for this slider and will represent the first paragraph.",
+								"de": "DE content needed here"
+							}
 						},
 						{
-							"content": "This is the second paragraph for this slider."
+							"content": {
+								"en": "This is the second paragraph for this slider.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				}
 			]
 		},
 		{
-			"slug": "poster-series",
-			"title": "Poster Series",
-			"description": "Probational lectures at the University of Bielefeld",
+			"slug": {
+				"en": "poster-series",
+				"de": "poster-series"
+			},
+			"title": {
+				"en": "Poster Series",
+				"de": "[DE]Poster Series"
+			},
+			"description": {
+				"en": "Probational lectures at the University of Bielefeld",
+				"de": "[DE]Probational lectures at the University of Bielefeld"
+			},
 			"date_created": "2012-07-01",
 			"background": "master-of-art-project",
 			"category_ids": [
@@ -260,12 +338,21 @@
 					"type": "figcaption",
 					"img": "poster-series/01-probitional/1-probitional",
 					"intro": {
-						"title": "Poster Series",
-						"description": "Probational lectures at the University of Bielefeld." 
+						"title": {
+							"en": "Poster Series",
+							"de": "[DE]Poster Series"
+						},
+						"description": {
+							"en": "Probational lectures at the University of Bielefeld.",
+							"de": "[DE]Probational lectures at the University of Bielefeld." 
+						}
 					},
 					"captions": [
 						{
-							"content": "A selection of applicants for the professorship in &ldquo;Illustration and Graphic Design&rdquo; had to present their didactical skills by presenting their own work in a probational lecture. Afterwards the students had the opportunity to evaluate the work and teaching of each candidate."
+							"content": {
+								"en": "A selection of applicants for the professorship in &ldquo;Illustration and Graphic Design&rdquo; had to present their didactical skills by presenting their own work in a probational lecture. Afterwards the students had the opportunity to evaluate the work and teaching of each candidate.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -274,7 +361,10 @@
 					"img": "poster-series/02-probitional/2-probitional",
 					"captions": [
 						{
-							"content": "The illustrations for the poster are adapted from a sports book for indian club training. The intention was to create an ironical approach to the expecta- tions, how a qualified person for the professorship in Illustration needs to be."
+							"content": {
+								"en": "The illustrations for the poster are adapted from a sports book for indian club training. The intention was to create an ironical approach to the expecta- tions, how a qualified person for the professorship in Illustration needs to be.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -289,9 +379,18 @@
 			]
 		},
 		{
-			"slug": "book-design",
-			"title": "Book Design",
-			"description": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
+			"slug": {
+				"en": "book-design",
+				"de": "book-design"
+			},
+			"title": {
+				"en": "Book Design",
+				"de": "[DE]Book Design"
+			},
+			"description": {
+				"en": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
+				"de": "[DE]The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
+			},
 			"date_created": "2009-09-01",
 			"background": "wonderworld",
 			"category_ids": [
@@ -314,12 +413,21 @@
 					"type": "figcaption",
 					"img": "alice-adventures/alices-title-1/01-alices-title-1",
 					"intro": {
-						"title": "Poster Series",
-						"description": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol" 
+						"title": {
+							"en": "Poster Series",
+							"de": "[DE]Poster Series"
+						},
+						"description": {
+							"en": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
+							"de": "[DE]The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol" 
+						}
 					},
 					"captions": [
 						{
-							"content": "The front cover shows one of the most significant characters of Lewis Carroll’s tale: the white rabbit with the pocket-watch, who leads Alice to the magical Wonderland. As he accompanies her through out her crazy adventure, they encounter the many colourful characters as they go."
+							"content": {
+								"en": "The front cover shows one of the most significant characters of Lewis Carroll’s tale: the white rabbit with the pocket-watch, who leads Alice to the magical Wonderland. As he accompanies her through out her crazy adventure, they encounter the many colourful characters as they go.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -328,7 +436,10 @@
 					"img": "alice-adventures/alices-title-2/02-alices-title-2",
 					"captions": [
 						{
-							"content": "The aim was to develop a new modern look for the historical and famous story Alice’s Adventures in Wonderland. Vibrant colours and sparkling forms represent the crazy and miraculous world of Alice’s bizzare dream. The visual concept of the cover can be also find in the inside of the book. The simple black and white icons provide further visual clues for each chapter."
+							"content": {
+								"en": "The aim was to develop a new modern look for the historical and famous story Alice’s Adventures in Wonderland. Vibrant colours and sparkling forms represent the crazy and miraculous world of Alice’s bizzare dream. The visual concept of the cover can be also find in the inside of the book. The simple black and white icons provide further visual clues for each chapter.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -356,9 +467,18 @@
 			]
 		},
 		{
-			"slug": "typographical-staging",
-			"title": "Typographical Staging",
-			"description": "The Drama &ldquo;King Oedipus&rdquo; from Sophocles",
+			"slug": {
+				"en": "typographical-staging",
+				"de": "typographical-staging"
+			},
+			"title": {
+				"en": "Typographical Staging",
+				"de": "[DE]Typographical Staging"
+			},
+			"description": {
+				"en": "The Drama &ldquo;King Oedipus&rdquo; from Sophocles",
+				"de": "[DE]The Drama &ldquo;King Oedipus&rdquo; from Sophocles"
+			},
 			"date_created": "2010-04-01",
 			"background": "oedipus",
 			"category_ids": [
@@ -375,12 +495,21 @@
 					"type": "figcaption",
 					"img": "oedipus/01-oedipus-title/oedipus-title",
 					"intro": {
-						"title": "Typographical Staging",
-						"description": "Typographical Staging" 
+						"title": {
+							"en": "Typographical Staging",
+							"de": "[DE]Typographical Staging"
+						},
+						"description": {
+							"en": "Typographical Staging",
+							"de": "[DE]Typographical Staging"
+						} 
 					},
 					"captions": [
 						{
-							"content": "The tragedy of King Oedipus is staged in a book with subjective  typographical treatment. Phrase by phrase and word by word King Oedipus develops towards his doom, typographical drawn by the merciless fall into the book bind."
+							"content": {
+								"en": "The tragedy of King Oedipus is staged in a book with subjective  typographical treatment. Phrase by phrase and word by word King Oedipus develops towards his doom, typographical drawn by the merciless fall into the book bind.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -407,9 +536,18 @@
 			]
 		},
 		{
-			"slug": "digital-atlas",
-			"title": "Digital Atlas",
-			"description": "Wonderworld Calendar &ndash; A digital Atlas for children",
+			"slug":{
+				"en": "digital-atlas",
+				"de": "digital-atlas"
+			},
+			"title": {
+				"en": "Digital Atlas",
+				"de": "[DE]Digital Atlas"
+			},
+			"description": {
+				"en": "Wonderworld Calendar &ndash; A digital Atlas for children",
+				"de": "[DE]Wonderworld Calendar &ndash; A digital Atlas for children"
+			},
 			"date_created": "2012-01-01",
 			"background": "wonderworld",
 			"category_ids": [
@@ -429,12 +567,21 @@
 					"type": "figcaption",
 					"img": "digital-atlas/title/title",
 					"intro": {
-						"title": "Digital Atlas",
-						"description": "Wonderworld Calendar &ndash; A digital Atlas for children" 
+						"title": {
+							"en": "Digital Atlas",
+							"de": "[DE]Digital Atlas"
+						},
+						"description": {
+							"en": "Wonderworld Calendar &ndash; A digital Atlas for children",
+							"de": "[DE]Wonderworld Calendar &ndash; A digital Atlas for children" 
+						}
 					},
 					"captions": [
 						{
-							"content": "The digital atlas teaches the cartographic and cultural contents with a highly dynamic and visual method. The idea is based on the phenomenon of “cabinets of wonder” from the 16th and 17th century. At this time European discoverers collected during their expeditions various exotic objects and on the turn to Europe replaced the found pieces to a universal collection."
+							"content": {
+								"en": "The digital atlas teaches the cartographic and cultural contents with a highly dynamic and visual method. The idea is based on the phenomenon of “cabinets of wonder” from the 16th and 17th century. At this time European discoverers collected during their expeditions various exotic objects and on the turn to Europe replaced the found pieces to a universal collection.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -443,7 +590,10 @@
 					"img": "digital-atlas/winterroom/winterroom",
 					"captions": [
 						{
-							"content": "The picture presents an example of the “WonderWorldCalendar” during winter time. By starting the app the child views a virtual cabinet of wonder, which is filled with the most wonderous objects from the whole world. The range of objects is determined by the seasonal structures of the vibrant world, because every item symbolizes a traditional event, whereby it represents the cultural incidences of a country."
+							"content": {
+								"en": "The picture presents an example of the “WonderWorldCalendar” during winter time. By starting the app the child views a virtual cabinet of wonder, which is filled with the most wonderous objects from the whole world. The range of objects is determined by the seasonal structures of the vibrant world, because every item symbolizes a traditional event, whereby it represents the cultural incidences of a country.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				}, 
@@ -452,7 +602,10 @@
 					"img": "digital-atlas/springroom/springroom",
 					"captions": [
 						{
-							"content": "The programming of the virtual cabinet is leaded by the calendric course of cultural celebrations. Depending on the contemporary appearence of the traditional events, the visibility of the itmes is limited in time. Therefore the child is daily confronted with new constellations of foreign objects and this diversity arouses the curiosity of the recipient."
+							"content": {
+								"en": "The programming of the virtual cabinet is leaded by the calendric course of cultural celebrations. Depending on the contemporary appearence of the traditional events, the visibility of the itmes is limited in time. Therefore the child is daily confronted with new constellations of foreign objects and this diversity arouses the curiosity of the recipient.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -461,7 +614,10 @@
 					"img": "digital-atlas/summerroom/summerroom",
 					"captions": [
 						{
-							"content": "The radical mixture of most diverse objects in one room created a spectacular view for the observer."
+							"content": {
+								"en": "The radical mixture of most diverse objects in one room created a spectacular view for the observer.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -470,7 +626,10 @@
 					"img": "digital-atlas/map/map",
 					"captions": [
 						{
-							"content": "Every object refers the child to detailed information about the cultural event and a menu leads the child through the content. The different menu links provide information about the country, a cartographic material and a tablet of content."
+							"content": {
+								"en": "Every object refers the child to detailed information about the cultural event and a menu leads the child through the content. The different menu links provide information about the country, a cartographic material and a tablet of content.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -479,7 +638,10 @@
 					"img": "digital-atlas/info/info",
 					"captions": [
 						{
-							"content": "The user also can navigate freely between the different virtual places: cabinet of wonder, archive and an interent-based collectors’ fair. Additionally the cartographic material represents the current location of celebration activities."
+							"content": {
+								"en": "The user also can navigate freely between the different virtual places: cabinet of wonder, archive and an interent-based collectors’ fair. Additionally the cartographic material represents the current location of celebration activities.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -487,10 +649,16 @@
 					"type": "figcaption",
 					"captions": [
 						{
-							"content": "This is the first paragraph."
+							"content": {
+								"en": "This is the first paragraph.",
+								"de": "DE content needed here"
+							}
 						},
 						{
-							"content": "This is the second paragraph."
+							"content": {
+								"en": "This is the second paragraph.",
+								"de": "DE content needed here"
+							}
 						}
 					],
 					"slides": [
@@ -517,9 +685,18 @@
 			]
 		},
 		{
-			"slug": "poster-competition",
-			"title": "Poster Competition",
-			"description": "Resistance",
+			"slug": {
+				"en": "poster-competition",
+				"de": "poster-competition",
+			},
+			"title": {
+				"en": "Poster Competition",
+				"de": "[DE]Poster competition"
+			},
+			"description": {
+				"en": "Resistance",
+				"de": "Resistance",
+			},
 			"date_created": "2010-05-01",
 			"background": "resistance",
 			"category_ids": [
@@ -539,21 +716,39 @@
 					"type": "figcaption",
 					"img": "resistance/0-resistance",
 					"intro": {
-						"title": "Poster Competition",
-						"description": "Promotion for Don't Panic &ndash; Resistance" 
+						"title": {
+							"en": "Poster Competition",
+							"de": "[DE]Poster Competition"
+						},
+						"description": {
+							"en": "Promotion for Don't Panic &ndash; Resistance",
+							"de": "[DE]Promotion for Don't Panic &ndash; Resistance" 
+						}
 					},
 					"captions": [
 						{
-							"content": "The brief involved creating an image that captures the theme of &ldquo;resitance&rdquo;. The visual solution uses the juxtaposition of conformity vs. non-conformity. The book ends are a metaphor for traditional boundaries, which can be broken and challanged by radical thinking."
+							"content": {
+								"en": "The brief involved creating an image that captures the theme of &ldquo;resitance&rdquo;. The visual solution uses the juxtaposition of conformity vs. non-conformity. The book ends are a metaphor for traditional boundaries, which can be broken and challanged by radical thinking.",
+								"de": "DE content needed here"
+							}
 						}
 					]	
 				}
 			]
 		},
 		{
-			"slug": "perfume-cover-design",
-			"title": "Cover Design",
-			"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
+			"slug": {
+				"en": "perfume-cover-design",
+				"de": "perfume-cover-design"
+			},
+			"title": {
+				"en": "Cover Design",
+				"de": "[DE] Cover Design"
+			},
+			"description": {
+				"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
+				"de": "[DE] description needed here"
+			},
 			"date_created": "2009-08-01",
 			"background": "wonderworld",
 			"category_ids": [
@@ -576,12 +771,21 @@
 					"type": "figcaption",
 					"img": "perfume/0-perfume/0-perfume-bookdesign",
 					"intro": {
-						"title": "Book Design",
-						"description": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind" 
+						"title": {
+							"en": "Book Design",
+							"de": "[DE]Book Design"
+						},
+						"description": {
+							"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
+							"de": "[DE]Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind"
+						} 
 					},
 					"captions": [
 						{
-							"content": "The main theme for the book cover is the ambiguity of Jean-Baptiste Grenouille&#39;s gift. He is able to create the most beautiful perfume of the world, but his dream costs human blood and death. The ambiguity is visualised by a colourful field of flowers which hides the terrible truth:the shape of a dead woman&#39;s body."
+							"content": {
+								"en": "The main theme for the book cover is the ambiguity of Jean-Baptiste Grenouille&#39;s gift. He is able to create the most beautiful perfume of the world, but his dream costs human blood and death. The ambiguity is visualised by a colourful field of flowers which hides the terrible truth:the shape of a dead woman&#39;s body.",
+								"de": "DE content needed here"
+							}
 						}
 					]	
 				},
@@ -606,16 +810,28 @@
 					"img": "perfume/5-perfume/5-perfume-bookdesign",
 					"captions": [
 						{
-							"content": "Content needed here."
+							"content": {
+								"en": "Content needed here.",
+								"de": "DE content needed here."
+							}
 						}
 					]
 				}
 			]
 		},
 		{
-			"slug": "cartographical-scale",
-			"title": "Cartographical Scale",
-			"description": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
+			"slug": {
+				"en": "cartographical-scale",
+				"de": "cartographical-scale"
+			},
+			"title": {
+				"en": "Cartographical Scale",
+				"de": "[DE]Cartographical Scale"
+			},
+			"description": {
+				"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
+				"de": "DE description needed here"
+			},
 			"date_created": "2009-11-01",
 			"background": "master-of-art-project",
 			"category_ids": [
@@ -632,12 +848,21 @@
 					"type": "figcaption",
 					"img": "cartographical-scale/01-cartographic-yellow/01-cartographic-yellow",
 					"intro": {
-						"title": "Cartographical Scale",
-						"description": "Cartographical Scale" 
+						"title": {
+							"en": "Cartographical Scale",
+							"de": "[DE]Cartographical Scale"
+						},
+						"description": {
+							"en": "Cartographical Scale",
+							"de": "[DE]Cartographical Scale" 
+						}
 					},
 					"captions": [
 						{
-							"content": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale."
+							"content": {
+								"en": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -646,7 +871,10 @@
 					"img": "cartographical-scale/02-cartographic-yellow/02-cartographic-yellow",
 					"captions": [
 						{
-							"content": "The piece contains three main elements; the map in a perforated format, a demonstrative scale to illustrate how much the information in question is condensed, and instructions detailing the assembly of the funnel."
+							"content": {
+								"en": "The piece contains three main elements; the map in a perforated format, a demonstrative scale to illustrate how much the information in question is condensed, and instructions detailing the assembly of the funnel.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -655,7 +883,10 @@
 					"img": "cartographical-scale/03-cartographic-maps/03-cartographic-maps",
 					"captions": [
 						{
-							"content": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales."
+							"content": {
+								"en": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -668,16 +899,28 @@
 					"img": "cartographical-scale/05-cartographic-blue/05-cartographic-blue",
 					"captions": [
 						{
-							"content": "The paper funnel is an informational design piece, demonstrating the function and purpose of map scale. A map functions like a funnel, concentrating information into a smaller, more managable area depending on scale."
+							"content": {
+								"en": "The paper funnel is an informational design piece, demonstrating the function and purpose of map scale. A map functions like a funnel, concentrating information into a smaller, more managable area depending on scale.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				}
 			]
 		},
 		{
-			"slug": "typographical-visualisation",
-			"title": "Typographical Visualisation",
-			"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
+			"slug": {
+				"en": "typographical-visualisation",
+				"de": "typographical-visualisation"
+			},
+			"title": {
+				"en": "Typographical Visualisation",
+				"de": "[DE]Typographical Visualisation"
+			},
+			"description": {
+				"en": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
+				"de": "DE description needed here"
+			},
 			"date_created": "2010-04-01",
 			"background": "typographical-visualisation",
 			"category_ids": [
@@ -694,12 +937,21 @@
 					"type": "figcaption",
 					"img": "typographical-visualisation/01-typographical-visualisation/01-typographical-visualisation",
 					"intro": {
-						"title": "Typographical Visualisation",
-						"description": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;"
+						"title": {
+							"en": "Typographical Visualisation",
+							"de": "[DE]Typographical Visualisation"
+						},
+						"description": {
+							"en": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
+							"de": "[DE]Expression of the feelings of an old woman &ldquo;I am still here&rdquo;"
+						}
 					},
 					"captions": [
 						{
-							"content": "Fading Memories is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society."
+							"content": {
+								"en": "Fading Memories is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society.",
+								"de": "DE content needed here"
+							}
 						}
 					]
 				},
@@ -710,9 +962,18 @@
 			]
 		},
 		{
-			"slug": "character-design",
-			"title": "Character Design",
-			"description": "Carnival of the animals - A digital music book for children",
+			"slug": {
+				"en": "character-design",
+				"de": "character-design"
+			},
+			"title": {
+				"en": "Character Design",
+				"de": "[DE]Character Design"
+			},
+			"description": {
+				"en": "Carnival of the animals - A digital music book for children",
+				"de": "[DE]Carnival of the animals - A digital music book for children"
+			},
 			"date_created": "2013-02-01",
 			"background": "master-of-art-project",
 			"category_ids": [
@@ -729,12 +990,21 @@
 					"type": "figcaption",
 					"img": "master-of-art-project/music-characters/1-lion-illu/lion-illu",
 					"intro": {
-						"title": "Character Design",
-						"description": "Carnival of the animals - A digital music book for children" 
+						"title": {
+							"en": "Character Design",
+							"de": "[DE]Character Design"
+						},
+						"description": {
+							"en": "Carnival of the animals - A digital music book for children",
+							"de": "[DE]Carnival of the animals - A digital music book for children" 
+						}
 					},
 					"captions": [
 						{
-							"content": "This is a placeholder"
+							"content": {
+								"en": "This is a placeholder",
+								"de": "[DE]This is a placeholder"
+							}
 						}
 					]
 				},
@@ -747,7 +1017,10 @@
 					"img": "master-of-art-project/music-characters/3-chick-illu/chick-illu",
 					"captions": [
 						{
-							"content": "Placeholder hen text."
+							"content": {
+								"en": "Placeholder hen text.",
+								"de": "[DE]Placeholder hen text."
+							}
 						}
 					]
 				},
@@ -772,7 +1045,10 @@
 					"img": "master-of-art-project/music-characters/8-vogelhaus-illu/kuckkuck-illu",
 					"captions": [
 						{
-							"content": "Placeholder text here"
+							"content": {
+								"en": "Placeholder text here",
+								"de": "[DE]Placeholder text here"
+							}
 						}
 					]
 				}
