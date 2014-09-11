@@ -1,7 +1,8 @@
 {
 	"name": "Formations",
 	"items": [
-		{
+		{	
+			"id": 1,
 			"screen": "hd",
 			"cardFormation": [
 				{
@@ -22,7 +23,8 @@
 				}
 			]
 		},
-		{
+		{	
+			"id": 2,
 			"screen": "desktop",
 			"cardFormation": [
 				{
@@ -43,7 +45,8 @@
 				}
 			]
 		},
-		{
+		{	
+			"id": 3,
 			"screen": "laptop",
 			"cardFormation": [
 				{
@@ -60,7 +63,8 @@
 				}
 			]
 		},
-		{
+		{	
+			"id": 4,
 			"screen": "tablet",
 			"cardFormation": [
 				{
@@ -73,7 +77,8 @@
 				}
 			]
 		},
-		{
+		{	
+			"id": 5,
 			"screen": "mobile",
 			"cardFormation": [
 				{

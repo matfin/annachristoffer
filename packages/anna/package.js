@@ -12,12 +12,14 @@ Package.onUse(function(api) {
 	/**
 	 *	Including other Meteor packages
 	 */
-	api.use('mrt:q', ['client', 'server']);
-	api.use('deps', 'client');
-	api.use('jquery', 'client');
-	api.use('underscore', 'client');
-	api.use('mrt:moment', 'client');
-	api.use('mongo', ['client', 'server']);
+	api.use('mrt:q', 		['client', 'server']);
+	api.use('underscore', 	['client', 'server']);
+	api.use('mongo', 		['client', 'server']);
+
+	api.use('deps', 		'client');
+	api.use('jquery', 		'client');
+	api.use('mrt:moment', 	'client');
+	
 
 	/**
 	 *	Adding source files for this package (client)

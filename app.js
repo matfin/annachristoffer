@@ -10,17 +10,13 @@ Meteor.startup(function() {
 		 *	Loading localised content
 		 */
 		// Helpers.loadLocalisedContent();
+
+		console.log(Server);
 	}
 
 	if(Meteor.isServer) {
 		console.log('Server: Meteor starting up.');
 
-		var te = Server.httpFetch(Server.baseURL + '/content/en/content.json');
-	
-		te.then(function(success) {
-			console.log('Success: ', success);
-		}).fail(function(error) {
-			console.log('Error: ', error);
-		})
+		Server.updateCollections();
 	}
 });

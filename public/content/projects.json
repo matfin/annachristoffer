@@ -2,6 +2,7 @@
 	"name": "Projects",
 	"items": [
 		{
+			"id": 1,
 			"slug": {
 				"en": "master-of-art-thesis",
 				"de": "master-of-art-thesis"
@@ -108,6 +109,7 @@
 			]
 		},
 		{
+			"id": 2,
 			"slug": {
 				"en": "master-of-art-project",
 				"de": "master-of-art-project"
@@ -307,6 +309,7 @@
 			]
 		},
 		{
+			"id": 3,
 			"slug": {
 				"en": "poster-series",
 				"de": "poster-series"
@@ -379,6 +382,7 @@
 			]
 		},
 		{
+			"id": 4,
 			"slug": {
 				"en": "book-design",
 				"de": "book-design"
@@ -467,6 +471,7 @@
 			]
 		},
 		{
+			"id": 5,
 			"slug": {
 				"en": "typographical-staging",
 				"de": "typographical-staging"
@@ -536,6 +541,7 @@
 			]
 		},
 		{
+			"id": 6,
 			"slug":{
 				"en": "digital-atlas",
 				"de": "digital-atlas"
@@ -685,6 +691,7 @@
 			]
 		},
 		{
+			"id": 7,
 			"slug": {
 				"en": "poster-competition",
 				"de": "poster-competition",
@@ -737,6 +744,7 @@
 			]
 		},
 		{
+			"id": 8,
 			"slug": {
 				"en": "perfume-cover-design",
 				"de": "perfume-cover-design"
@@ -820,6 +828,7 @@
 			]
 		},
 		{
+			"id": 9,
 			"slug": {
 				"en": "cartographical-scale",
 				"de": "cartographical-scale"
@@ -909,6 +918,7 @@
 			]
 		},
 		{
+			"id": 10,
 			"slug": {
 				"en": "typographical-visualisation",
 				"de": "typographical-visualisation"
@@ -962,6 +972,7 @@
 			]
 		},
 		{
+			"id": 11,
 			"slug": {
 				"en": "character-design",
 				"de": "character-design"
