@@ -54,50 +54,50 @@
 	throttleTimeout: 750,
 
 	/**
-	 *	Object containing a list of all Meteor Collections the app uses.
+	 *	Object containing a list of all Mongo Collections the app uses.
 	 *
 	 *	@property models
 	 *	@type {Object}
 	 */
 	models: {
 		/**
-		 *	Meteor Collection that we populate from the content json
+		 *	Mongo Collection that we populate from the content json
 		 *
 		 *	@property content
-		 *	@type {Meteor.Collection}
+		 *	@type {Mongo.Collection}
 		 */
-		content: new Meteor.Collection('content', {connection: null}),
+		content: new Mongo.Collection('content', null),
 
 		/**
-		 *	Meteor Collection that we populate from the pages json
+		 *	Mongo Collection that we populate from the pages json
 		 *
 		 *	@property pages
-		 *	@type {Meteor.Collection}
+		 *	@type {Mongo.Collection}
 		 */
-		pages: new Meteor.Collection('pages', {connection: null}),
+		pages: new Mongo.Collection('pages', null),
 		
 		/**
-		 *	Meteor Collection that we populate from the projects json
+		 *	Mongo Collection that we populate from the projects json
 		 *
 		 *	@property projects
-		 *	@type {Meteor.Collection}
+		 *	@type {Mongo.Collection}
 		 */
-		projects: new Meteor.Collection('projects', {connection: null}),
+		projects: new Mongo.Collection('projects', null),
 		
 		/**
-		 *	Meteor Collection that we populate from the categories json
+		 *	Mongo Collection that we populate from the categories json
 		 *
 		 *	@property categories
-		 *	@type {Meteor.Collection}
+		 *	@type {Mongo.Collection}
 		 */
-		categories: new Meteor.Collection('categories', {connection: null}),
+		categories: new Mongo.Collection('categories', null),
 
 		/**
-		 *	Meteor Collection that we populate from the cardformations json
+		 *	Mongo Collection that we populate from the cardformations json
 		 *
 		 *	@property formations
-		 *	@type {Meteor.Collection}
+		 *	@type {Mongo.Collection}
 		 */
-		formations: new Meteor.Collection('formations', {connection: null})
+		formations: new Mongo.Collection('formations', null)
 	}
 };

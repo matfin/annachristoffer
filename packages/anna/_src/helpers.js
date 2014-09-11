@@ -55,6 +55,15 @@ Helpers = {
 		_.each(contents, function(contentItem) {
 
 			/**
+			 *	If App.models[contentItem] is not defined
+			 *	then log and error and exit
+			 */
+			if(typeof App.models[contentItem] === 'undefined') {
+				console.log('Collection for ', contentItem, ' is not set up. Exiting;');
+				return;
+			}
+
+			/**
 			 *	Clear out old content that may already exist
 			 */
 		    App.models[contentItem].remove({});
@@ -160,6 +169,12 @@ Helpers = {
 	 *	@return {String}	the image path with file extension
 	 */
 	loadMessageCode: function(messageCode) {
+
+		if(typeof App.models.content === 'undefined') {
+			console.log('Content collection not ready. Exiting.');
+			return;
+		}
+
 		var message = App.models.content.findOne({"messageCode": messageCode});
 		return typeof message !== 'undefined' ? message.content:'NOT FOUND';
 	},

@@ -1,6 +1,5 @@
 Meteor.startup(function() {
 	if(Meteor.isClient) {
-		console.log('Client: Meteor starting up.');
 
 		/**
 		 *	Setting the device parameters
@@ -10,10 +9,18 @@ Meteor.startup(function() {
 		/**
 		 *	Loading localised content
 		 */
-		Helpers.loadLocalisedContent();
+		// Helpers.loadLocalisedContent();
 	}
 
 	if(Meteor.isServer) {
 		console.log('Server: Meteor starting up.');
+
+		var te = Server.httpFetch(Server.baseURL + '/content/en/content.json');
+	
+		te.then(function(success) {
+			console.log('Success: ', success);
+		}).fail(function(error) {
+			console.log('Error: ', error);
+		})
 	}
 });

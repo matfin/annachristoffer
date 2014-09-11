@@ -1,14 +1,20 @@
 Package.describe({
-	summary: 'A custom built HTML5 video player for this project'
+	summary: 'A custom built HTML5 video player for this project',
+	version: '1.0.0',
+	name: 'html5-video-player'
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+
+	/**
+	 *	Meteor version this package is compatible from
+	 */
 
 	/**
 	 *	Including other packages
 	 */
 	api.use('jquery', 'client');
-	api.use('moment', 'client');
+	api.use('mrt:moment', 'client');
 	api.use('mrt:q', 'client');
 	api.use('underscore', 'client');
 	api.use('anna', 'client');
@@ -17,7 +23,7 @@ Package.on_use(function(api) {
 	/**
 	 *	Adding package source files
 	 */
-	api.add_files([
+	api.addFiles([
 		'_src/html5-video-player.js'
 	]);
 
@@ -25,4 +31,5 @@ Package.on_use(function(api) {
 	 *	Exporting the package itself
 	 */
 	api.export('Video');
+	
 });

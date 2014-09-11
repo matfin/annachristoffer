@@ -31,7 +31,7 @@ Template['components_header'].destroyed = function() {
 *	Template - components_header
 *	Populate navigation items from the categories collection
 *	@method navCategories
-*	@return Meteor.Collection
+*	@return {Object} - fetched categories result set
 */
 Template['components_header'].navCategories = function() {
 	return App.models.categories.find({}).fetch();
@@ -41,7 +41,7 @@ Template['components_header'].navCategories = function() {
 *	Template - components_header
 *	Populate pages from the pages collection.
 *	@method pages
-*	@return Meteor.Collection
+*	@return {Object} - fetched categories result set
 */
 Template['components_header'].pages = function() {
 	return App.models.pages.find({}).fetch();

@@ -4,19 +4,16 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-less
 underscore
-mrt:modernizr-meteor@2.6.2
 mrt:normalize.css@2.0.1
-anna
-moment
 ios-slider
 sewdn:velocityjs@0.8.0
-html5-video-player
-spiderable
-mrt:moment
-mrt:lesshat
 mrt:q
-manuelschoebel:ms-seo
 iron:router
+less
+anna
+html5-video-player
+mrt:moment
+jquery
+http
 

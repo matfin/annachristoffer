@@ -1,28 +1,41 @@
 Package.describe({
-	summary: 'App, device and dendencies that will assist in setting up the app.'
+	summary: 'App, device and dendencies that will assist in setting up the app.',
+	version: '1.0.0'
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+
+	/**
+	 *	Meteor version this package is compatible from
+	 */
 
 	/**
 	 *	Including other Meteor packages
 	 */
-	api.use('mrt:q', 'client');
+	api.use('mrt:q', ['client', 'server']);
 	api.use('deps', 'client');
 	api.use('jquery', 'client');
 	api.use('underscore', 'client');
-	api.use('moment', 'client');
+	api.use('mrt:moment', 'client');
+	api.use('mongo', ['client', 'server']);
 
 	/**
-	 *	Adding source files for this package
+	 *	Adding source files for this package (client)
 	 */
-	api.add_files([
+	api.addFiles([
 		'_src/app.js',
 		'_src/api.js',
 		'_src/dependencies.js',
 		'_src/device.js',
 		'_src/helpers.js'
 	], 'client');
+
+	/**
+	 *	Adding source files for this package (server)
+	 */
+	api.addFiles([
+		'_src/collections.js'
+	], 'server');
 
 	/**
 	 *	Exporting package classes so they can be access from anywhere within the app.
@@ -32,5 +45,6 @@ Package.on_use(function(api) {
 	api.export('Dependencies');
 	api.export('Device');
 	api.export('Helpers');
+	api.export('Server');
 
 });

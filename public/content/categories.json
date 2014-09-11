@@ -1,0 +1,80 @@
+{
+	"name": "Categories",
+	"items": [
+		{
+			"id": 1,
+			"title": {
+				"en": "Interaction",
+				"de": "Interaktion"
+			},
+			"description": { 
+				"en": "Interaction",
+				"de": "Interaktion"
+			},
+			"slug": {
+				"en": "interaction",
+				"de": "interaktion"
+			}
+		},
+		{
+			"id": 2,
+			"title": {
+				"en": "Books",
+				"de": "Buche"
+			},
+			"description": { 
+				"en": "Books",
+				"de": "Buche"
+			},
+			"slug": {
+				"en": "books",
+				"de": "buche"
+			}
+		},
+		{
+			"id": 3,
+			"title": {
+				"en": "Illustration",
+				"de": "Illustration"
+			},
+			"description": { 
+				"en": "Illustration",
+				"de": "Illustration"
+			},
+			"slug": {
+				"en": "illustration",
+				"de": "illustration"
+			}
+		},
+		{
+			"id": 4,
+			"title": {
+				"en": "Icons",
+				"de": "Ikonen"
+			},
+			"description": { 
+				"en": "Icons",
+				"de": "Ikonen"
+			},
+			"slug": {
+				"en": "icons",
+				"de": "ikonen"
+			}
+		},
+		{
+			"id": 5,
+			"title": {
+				"en": "Posters",
+				"de": "Poster"
+			},
+			"description": { 
+				"en": "Posters",
+				"de": "Poster"
+			},
+			"slug": {
+				"en": "posters",
+				"de": "poster",
+			}
+		}
+	]
+}

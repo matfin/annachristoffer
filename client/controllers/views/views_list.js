@@ -90,43 +90,45 @@ Template['views_list'].destroyed = function() {
 *	Template - views_list
 *	Helper function to populate all projects
 *	@method projects
-*	@return {Object}	Meteor.Collection
+*	@return {Object}	Mongo collection result set
 */
 Template['views_list'].projects = function() {
 	var category = App.models.categories.findOne({slug: this._category_slug});
 
-	if(typeof category !== 'undefined') {
-		App.models.projects.update(
-			{'category_ids.id': category.id}, 
-			{$set: { highlighted: true, colourHighlighted: true }}, 
-			{multi: true}
-		);
-		App.models.projects.update(
-			{'category_ids.id': { $not: category.id}}, 
-			{$set: { highlighted: false, colourHighlighted: false }}, 
-			{multi: true}
-		);
-	}
-	else {
-		App.models.projects.update(
-			{}, 
-			{$set: { highlighted: true, colourHighlighted: false }}, 
-			{multi: true}
-		);
-	}
+	// if(typeof category !== 'undefined') {
+	// 	App.models.projects.update(
+	// 		{'category_ids.id': category.id}, 
+	// 		{$set: { highlighted: true, colourHighlighted: true }}, 
+	// 		{multi: true}
+	// 	);
+	// 	App.models.projects.update(
+	// 		{'category_ids.id': { $not: category.id}}, 
+	// 		{$set: { highlighted: false, colourHighlighted: false }}, 
+	// 		{multi: true}
+	// 	);
+	// }
+	// else {
+	// 	App.models.projects.update(
+	// 		{}, 
+	// 		{$set: { highlighted: true, colourHighlighted: false }}, 
+	// 		{multi: true}
+	// 	);
+	// }
 
 	/**
 	 *	Fetch projects grouped by highlighted and add an index for each one
 	 *	to ensure they appear in the correct formation.
 	 */
-	var projects = App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
-	_.each(projects, function(project, index) {
-		project.index = index + 1;
-	});
+	// var projects = App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
+	// _.each(projects, function(project, index) {
+	// 	project.index = index + 1;
+	// });
 
 	Dependencies.projectLoadedDependency.changed();
 
-	return projects;
+	// return projects;
+
+	return
 };
 
 /**

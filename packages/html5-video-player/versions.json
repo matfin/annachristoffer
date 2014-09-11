@@ -2,27 +2,95 @@
   "dependencies": [
     [
       "anna",
-      "0.0.0"
+      "1.0.0"
+    ],
+    [
+      "application-configuration",
+      "1.0.1"
+    ],
+    [
+      "binary-heap",
+      "1.0.0"
+    ],
+    [
+      "callback-hook",
+      "1.0.0"
+    ],
+    [
+      "check",
+      "1.0.0"
+    ],
+    [
+      "ddp",
+      "1.0.8"
     ],
     [
       "deps",
+      "1.0.3"
+    ],
+    [
+      "ejson",
       "1.0.1"
+    ],
+    [
+      "follower-livedata",
+      "1.0.1"
+    ],
+    [
+      "geojson-utils",
+      "1.0.0"
+    ],
+    [
+      "id-map",
+      "1.0.0"
     ],
     [
       "jquery",
       "1.0.0"
     ],
     [
-      "meteor",
+      "json",
+      "1.0.0"
+    ],
+    [
+      "logging",
       "1.0.2"
     ],
     [
-      "moment",
-      "0.0.0"
+      "meteor",
+      "1.0.3"
+    ],
+    [
+      "minimongo",
+      "1.0.2"
+    ],
+    [
+      "mongo",
+      "1.0.4"
+    ],
+    [
+      "mrt:moment",
+      "2.8.1"
     ],
     [
       "mrt:q",
       "1.0.1"
+    ],
+    [
+      "ordered-dict",
+      "1.0.0"
+    ],
+    [
+      "random",
+      "1.0.0"
+    ],
+    [
+      "retry",
+      "1.0.0"
+    ],
+    [
+      "tracker",
+      "1.0.2"
     ],
     [
       "underscore",
@@ -30,6 +98,6 @@
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.26",
+  "toolVersion": "meteor-tool@1.0.28",
   "format": "1.0"
 }
