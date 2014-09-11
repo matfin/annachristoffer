@@ -14,7 +14,7 @@ Server = {
 	 *	@type {Object}
 	 */
 	Collections: {
-		staticContent: 	new Mongo.Collection('content'),
+		staticContent: 	new Mongo.Collection('staticContent'),
 		pages: 			new Mongo.Collection('pages'),
 		projects: 		new Mongo.Collection('projects'),
 		categories: 	new Mongo.Collection('categories'),
@@ -39,33 +39,39 @@ Server = {
 
 		var deferred = Q.defer(),
 			self = this,
-			url = '';
+			url = '',
+			collectionsUpdated = 0;
 
 		_.each(this.Collections, function(collection) {
 			
 			url = self.baseURL + '/content/' + collection._name + '.json';
-
-			console.log(url);
+			console.log('Updating collection with url: ' + url);
 
 			self.httpFetch(url).then(function(result) {
 
-				_.each(result.data, function(item) {
-					console.log(item);
+				var jsonData = EJSON.parse(result.data);				
+
+				_.each(jsonData.items, function(item) {
+					// console.log('Item id: ', item.id);
 				});
 
-				return deferred.resolve({
-					status: 'ok',
-					message: 'Collection updated: ' + collection._name
-				});
+				collectionsUpdated++;
+
+				if(collectionsUpdated === _.size(self.Collections)) {
+					console.log('Done!');
+					return deferred.resolve({
+						status: 'ok',
+						message: 'Collections updated'
+					});
+				}
 
 			}).fail(function(error) {
-				return deferred.rejected({
+				return deferred.reject({
 					status: 'error',
 					message: 'Could not update collection: ' + collection._name,
 					data: error
 				});
 			});
-
 		});
 
 		return deferred.promise;
@@ -96,7 +102,7 @@ Server = {
 				else {
 					deferred.resolve({
 						status: 'ok',
-						data: result
+						data: result.content
 					})
 				}
 			}

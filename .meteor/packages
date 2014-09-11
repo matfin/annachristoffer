@@ -16,4 +16,5 @@ html5-video-player
 mrt:moment
 jquery
 http
+ejson
 

@@ -121,7 +121,7 @@
 			"description": {
 				"en": "Carnival of the animals &ndash; A digital music book for children",
 				"de": "DE content needed here"
-			}
+			},
 			"date_created": "2013-02-01",
 			"background": "master-of-art-project",
 			"category_ids": [
@@ -393,7 +393,7 @@
 			},
 			"description": {
 				"en": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
-				"de": "[DE]The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
+				"de": "[DE]The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol"
 			},
 			"date_created": "2009-09-01",
 			"background": "wonderworld",
@@ -694,7 +694,7 @@
 			"id": 7,
 			"slug": {
 				"en": "poster-competition",
-				"de": "poster-competition",
+				"de": "poster-competition"
 			},
 			"title": {
 				"en": "Poster Competition",
@@ -702,7 +702,7 @@
 			},
 			"description": {
 				"en": "Resistance",
-				"de": "Resistance",
+				"de": "Resistance"
 			},
 			"date_created": "2010-05-01",
 			"background": "resistance",
