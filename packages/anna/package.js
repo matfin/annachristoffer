@@ -26,7 +26,6 @@ Package.onUse(function(api) {
 	 */
 	api.addFiles([
 		'_src/app.js',
-		'_src/api.js',
 		'_src/dependencies.js',
 		'_src/device.js',
 		'_src/helpers.js'
@@ -36,7 +35,7 @@ Package.onUse(function(api) {
 	 *	Adding source files for this package (server)
 	 */
 	api.addFiles([
-		'_src/collections.js'
+		'_src/server.js'
 	], 'server');
 
 	/**

@@ -11,15 +11,12 @@ Meteor.startup(function() {
 		 */
 		// Helpers.loadLocalisedContent();
 
-		console.log(Server);
 	}
 
 	if(Meteor.isServer) {
 		console.log('Server: Meteor starting up.');
-
-
-		Server.updateCollections().then(function(result){
-			console.log('Success updating collections: ', result);
+		Server.updateAndPublishCollections().then(function(result){
+			console.log('Success updating collections');
 		}).fail(function(error) {
 			console.log('Error updating collections: ', error);
 		});

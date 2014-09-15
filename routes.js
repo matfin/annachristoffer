@@ -16,6 +16,11 @@ Router.map(function() {
 		path: '/content/:_page_slug?',
 		template: 'template_main',
 		data: function() {
+
+			Meteor.subscribe('pages');
+
+			console.log(App.models.pages.find({}).fetch());
+
 			return {
 				_page_slug: this.params._page_slug
 			};

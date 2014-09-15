@@ -63,10 +63,10 @@
 		/**
 		 *	Mongo Collection that we populate from the content json
 		 *
-		 *	@property content
+		 *	@property staticContent
 		 *	@type {Mongo.Collection}
 		 */
-		content: new Mongo.Collection('content', null),
+		staticContent: new Mongo.Collection('content'),
 
 		/**
 		 *	Mongo Collection that we populate from the pages json
@@ -74,7 +74,7 @@
 		 *	@property pages
 		 *	@type {Mongo.Collection}
 		 */
-		pages: new Mongo.Collection('pages', null),
+		pages: new Mongo.Collection('pages'),
 		
 		/**
 		 *	Mongo Collection that we populate from the projects json
@@ -82,7 +82,7 @@
 		 *	@property projects
 		 *	@type {Mongo.Collection}
 		 */
-		projects: new Mongo.Collection('projects', null),
+		projects: new Mongo.Collection('projects'),
 		
 		/**
 		 *	Mongo Collection that we populate from the categories json
@@ -90,7 +90,7 @@
 		 *	@property categories
 		 *	@type {Mongo.Collection}
 		 */
-		categories: new Mongo.Collection('categories', null),
+		categories: new Mongo.Collection('categories'),
 
 		/**
 		 *	Mongo Collection that we populate from the cardformations json
@@ -98,6 +98,6 @@
 		 *	@property formations
 		 *	@type {Mongo.Collection}
 		 */
-		formations: new Mongo.Collection('formations', null)
+		formations: new Mongo.Collection('formations')
 	}
 };

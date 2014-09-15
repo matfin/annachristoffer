@@ -7,22 +7,6 @@
  */
 Server = {
 
-	Fiber: Npm.require('fibers'),
-
-	/**
-	 *	Collections to be populated with content
-	 *	
-	 *	@property Collections
-	 *	@type {Object}
-	 */
-	Collections: {
-		staticContent: 	new Mongo.Collection('staticContent'),
-		pages: 			new Mongo.Collection('pages'),
-		projects: 		new Mongo.Collection('projects'),
-		categories: 	new Mongo.Collection('categories'),
-		formations: 	new Mongo.Collection('formations')	
-	},
-
 	/**
 	 *	Server side base url for making HTTP calls
 	 *	
@@ -32,12 +16,60 @@ Server = {
 	baseURL: 'http://localhost:3000',
 
 	/**
+	 *	dataSources to be populated with content
+	 *	
+	 *	@property dataSources
+	 *	@type {Object}
+	 */
+	dataSources: {	
+		staticContent: {
+			collection: new Mongo.Collection('staticContent'),
+			url: '/content/staticContent.json',
+			publishBy: function() {
+				return Server.dataSources.staticContent.collection.find({})
+			} 
+		},
+		pages: {
+			collection: new Mongo.Collection('pages'),
+			url: '/content/pages.json',
+			publishBy: function(slug, lang) {
+				var query = {};
+				query['slug.' + lang] = slug;
+				return Server.dataSources.pages.collection.find(query);
+			} 
+		},
+		projects: {
+			collection: new Mongo.Collection('projects'),
+			url: '/content/projects.json',
+			publishBy: function(slug, lang) {
+				var query = {};
+				query['slug.' + lang] = slug;
+				return Server.dataSources.projects.collection.find(query);
+			} 
+		},
+		categories: {
+			collection: new Mongo.Collection('categories'),
+			url: '/content/categories.json',
+			publishBy: function() {
+				return Server.dataSources.categories.find({});
+			} 
+		},
+		formations: {
+			collection: new Mongo.Collection('formations'),
+			url: '/content/formations.json',
+			publishBy: function() {
+				return Server.dataSources.formations.collection.find({});
+			} 
+		}
+	},
+
+	/**
 	 *	Function to update all server side collections
 	 *
 	 *	@method updateCollections()
 	 *	@return {Object} - a resolved or rejected promise
 	 */
-	updateCollections: function() {
+	updateAndPublishCollections: function() {
 
 		var deferred = Q.defer(),
 			self = this,
@@ -47,23 +79,17 @@ Server = {
 		 *	Loop through each collection, fetching its data from the json 
 		 *	endpoint.
 		 */
-		_.each(self.Collections, function(collection) {
+		_.each(self.dataSources, function(dataSource) {
 			
 			/**
 			 *	Clear out old collection data
 			 */
-			collection.remove({});
-
-			/**
-			 *	URL endpoint containing json data. Note the name of the collection
-			 *	is also the name of the json file. They need to match.
-			 */
-			var url = self.baseURL + '/content/' + collection._name + '.json';
+			dataSource.collection.remove({});
 
 			/**
 			 *	Make Meteor HTTP Get using the function below.
 			 */
-			self.httpFetch(url, function(err, res) {
+			self.httpFetch(dataSource.url, function(err, res) {
 				
 				if(err) {
 					/**
@@ -71,7 +97,7 @@ Server = {
 					 */
 					deferred.reject({
 						status: 'error',
-						message: 'Error fetching content for url ' + url,
+						message: 'Error fetching content for url ' + dataSource.url,
 						data: err
 					});
 				}
@@ -86,14 +112,20 @@ Server = {
 					 *	Pick out and insert each item into its collection
 					 */
 					_.each(data.items, function(item) {
-						collection.insert(item);
+						dataSource.collection.insert(item);
 					});
+
+					/**
+					 *	After updating the collections with content we
+					 *	will need to publish them.
+					 */
+					Meteor.publish(dataSource.collection._name, dataSource.publishBy);
 
 					collectionsUpdated++;
 
 				}
 
-				if(collectionsUpdated === _.size(self.Collections)) {
+				if(collectionsUpdated === _.size(self.dataSources)) {
 
 					/**
 					 *	When we have updated all collections, resovle the promise
@@ -102,7 +134,7 @@ Server = {
 						status: 'ok',
 						message: 'All collections updated',
 						data: {
-							collections: self.Collections,
+							collections: self.dataSource,
 							count: collectionsUpdated
 						}
 					});
@@ -129,7 +161,7 @@ Server = {
 	httpFetch: function(url, cb) {
 
 		var res = HTTP.get(
-			url, 
+			this.baseURL + url, 
 			function(error, result) {
 				cb(error, result);
 			}
