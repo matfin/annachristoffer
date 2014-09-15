@@ -53,11 +53,15 @@ Template['components_header'].pages = function() {
 *	@return {Object}
 */
 Template['components_header'].staticContent = function() {
-	return {
-		heading: App.models.staticContent.findOne({slug: 'title'}),
+	var content = {
+		// mainHeading: App.models.staticContent.findOne({slug: 'subtitle'}).content,
+		// subtitle: App.models.staticContent.findOne({slug: 'subtitle'}).content,
+		// projects: 
+		mainHeading: App.models.staticContent.findOne({slug: 'title'}),
 		subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
 		projects: App.models.staticContent.findOne({slug: 'projects'})
-	}
+	};
+	return content;
 };
 
 /**

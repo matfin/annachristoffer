@@ -9,6 +9,7 @@ Router.onBeforeAction(function() {
 	 */
 	Meteor.subscribe('categories');
 	Meteor.subscribe('staticContent');
+	Meteor.subscribe('pages');
 });
 
 Router.map(function() {
@@ -42,10 +43,11 @@ Router.map(function() {
 	this.route('list', {
 		path: '/:_category_slug?',
 		template: 'template_main',
+		waitOn: function() {
+			return Meteor.subscribe('projects');
+		},
 		data: function() {
-			return {
-				_category_slug: this.params._category_slug
-			};
+			return App.models.projects.find({});
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},

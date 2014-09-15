@@ -1,6 +1,6 @@
 <template name="components_header">
 	<h1>
-		{{loadMessageCode staticContent.heading.content}}
+		{{loadMessageCode staticContent.mainHeading.content}}
 	</h1>
 	<h2>
 		{{loadMessageCode staticContent.subtitle.content}}
@@ -14,7 +14,7 @@
 			</li>
 			{{#each navCategories}}
 				<li class="categoryLink">
-					<a href="{{pathFor 'list' _category_slug=this.slug}}" title="{{loadMessageCode title}}">
+					<a href="{{pathFor 'list'}}" title="{{loadMessageCode title}}">
 						{{loadMessageCode title}}
 					</a>
 				</li>
@@ -22,7 +22,7 @@
 
 			{{#each pages}}
 				<li class="contentLink">
-					<a href="{{pathFor 'content' _page_slug=slug}}" title="{{loadMessageCode title}}">
+					<a href="{{pathFor 'content'}}" title="{{loadMessageCode title}}">
 						{{loadMessageCode title}}
 					</a>
 				</li>
