@@ -7,6 +7,8 @@
  */
 Server = {
 
+	Fiber: Npm.require('fibers'),
+
 	/**
 	 *	Collections to be populated with content
 	 *	
@@ -39,40 +41,79 @@ Server = {
 
 		var deferred = Q.defer(),
 			self = this,
-			url = '',
 			collectionsUpdated = 0;
 
-		_.each(this.Collections, function(collection) {
+		/**
+		 *	Loop through each collection, fetching its data from the json 
+		 *	endpoint.
+		 */
+		_.each(self.Collections, function(collection) {
 			
-			url = self.baseURL + '/content/' + collection._name + '.json';
-			console.log('Updating collection with url: ' + url);
+			/**
+			 *	Clear out old collection data
+			 */
+			collection.remove({});
 
-			self.httpFetch(url).then(function(result) {
+			/**
+			 *	URL endpoint containing json data. Note the name of the collection
+			 *	is also the name of the json file. They need to match.
+			 */
+			var url = self.baseURL + '/content/' + collection._name + '.json';
 
-				var jsonData = EJSON.parse(result.data);				
-
-				_.each(jsonData.items, function(item) {
-					// console.log('Item id: ', item.id);
-				});
-
-				collectionsUpdated++;
-
-				if(collectionsUpdated === _.size(self.Collections)) {
-					console.log('Done!');
-					return deferred.resolve({
-						status: 'ok',
-						message: 'Collections updated'
+			/**
+			 *	Make Meteor HTTP Get using the function below.
+			 */
+			self.httpFetch(url, function(err, res) {
+				
+				if(err) {
+					/**
+					 *	Reject promise if there was an error
+					 */
+					deferred.reject({
+						status: 'error',
+						message: 'Error fetching content for url ' + url,
+						data: err
 					});
 				}
+				else {
+					/**
+					 *	Populate fetched data from json endpoint
+					 */
+					var jsonData = res.content;
+						data = EJSON.parse(res.content);
 
-			}).fail(function(error) {
-				return deferred.reject({
-					status: 'error',
-					message: 'Could not update collection: ' + collection._name,
-					data: error
-				});
+					/**
+					 *	Pick out and insert each item into its collection
+					 */
+					_.each(data.items, function(item) {
+						collection.insert(item);
+					});
+
+					collectionsUpdated++;
+
+				}
+
+				if(collectionsUpdated === _.size(self.Collections)) {
+
+					/**
+					 *	When we have updated all collections, resovle the promise
+					 */
+					deferred.resolve({
+						status: 'ok',
+						message: 'All collections updated',
+						data: {
+							collections: self.Collections,
+							count: collectionsUpdated
+						}
+					});
+				}
 			});
+			
 		});
+
+		/**
+		 *	Return the promise
+		 */
 
 		return deferred.promise;
 	},
@@ -82,32 +123,16 @@ Server = {
 	 *
 	 *	@method httpFetch()
 	 *	@param	{String} url
-	 *	@return {Object} - A resolved promise if the data was
-	 *					   received or a rejected promise.
+	 *	@param 	{Function} cb - Callback in the event of an error
+	 *	@return undefined
 	 */
-	httpFetch: function(url) {
+	httpFetch: function(url, cb) {
 
-		var deferred = Q.defer();
-
-		HTTP.call(
-			'GET',
-			url,
+		var res = HTTP.get(
+			url, 
 			function(error, result) {
-				if(error) {
-					deferred.reject({
-						status: 'error',
-						data: error
-					});
-				}
-				else {
-					deferred.resolve({
-						status: 'ok',
-						data: result.content
-					})
-				}
+				cb(error, result);
 			}
-
 		);
-		return deferred.promise;
 	}
 };

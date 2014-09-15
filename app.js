@@ -17,6 +17,7 @@ Meteor.startup(function() {
 	if(Meteor.isServer) {
 		console.log('Server: Meteor starting up.');
 
+
 		Server.updateCollections().then(function(result){
 			console.log('Success updating collections: ', result);
 		}).fail(function(error) {
