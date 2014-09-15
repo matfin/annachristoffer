@@ -15,12 +15,12 @@
 			<figcaption>
 				{{#if hasIntro}}
 					<h2>
-						{{{intro.description}}}
+						{{{loadMessageCode intro.description}}}
 					</h2>
 				{{/if}}
 				{{#each captions}}
 					<p>
-						{{{content}}}
+						{{{loadMessageCode content}}}
 					</p>
 				{{/each}}
 			</figcaption>

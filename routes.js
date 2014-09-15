@@ -44,10 +44,10 @@ Router.map(function() {
 		path: '/:_category_slug?',
 		template: 'template_main',
 		waitOn: function() {
-			return Meteor.subscribe('projects');
+			return [Meteor.subscribe('projects'), Meteor.subscribe('formations')];
 		},
 		data: function() {
-			return App.models.projects.find({});
+			return App.models.projects.find({}).fetch();
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},
@@ -63,10 +63,11 @@ Router.map(function() {
 	this.route('detail', {
 		path: '/project/:_project_slug',
 		template: 'template_main',
+		waitOn: function() {
+			return Meteor.subscribe('projects', this.params._project_slug, App.language)
+		},
 		data: function() {
-			return {
-				_project_slug: this.params._project_slug
-			}
+			return App.models.projects.findOne({});
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {

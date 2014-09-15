@@ -15,6 +15,11 @@ Template['views_detail'].created = function() {
 *	@return undefined
 */
 Template['views_detail'].rendered = function() {
+
+	if(this.data && this.data.background && this.data.contents) {
+		$('body').addClass(this.background);
+	}
+
 	$('body').addClass('detail');
 };
 
@@ -56,18 +61,4 @@ Template['views_detail'].isFullSlider = function() {
  */
 Template['views_detail'].isVideo = function() {
 	return this.type === 'video';
-};
-
-/**
-*	Template - views_detail
-*	Helper function to return the template data
-*	@method projectData
-*	@return {Object} the project data
-*/
-Template['views_detail'].projectData = function() {
-	var project = App.models.projects.findOne({'slug': this._project_slug});
-	if(project && project.background && project.contents) {
-		$('body').addClass(project.background);
-	}
-	return project;
 };
