@@ -1,5 +1,5 @@
 <template name="views_page">
-	{{#each pageData.sections}}
+	{{#each sections}}
 		<section class="page-section">
 		{{#each items}}
 			{{>views_item}}
@@ -15,25 +15,25 @@
 <template name="item_textNode">
 	{{#if isTag 'h1'}}
 		<h1>
-			{{{content}}}
+			{{{loadMessageCode content}}}
 		</h1>
 	{{/if}}
 
 	{{#if isTag 'h2'}}
 		<h2>
-			{{{content}}}
+			{{{loadMessageCode content}}}
 		</h2>
 	{{/if}}
 
 	{{#if isTag 'h3'}}
 		<h3>
-			{{{content}}}
+			{{{loadMessageCode content}}}
 		</h3>
 	{{/if}}
 
 	{{#if isTag 'p'}}
 		<p>
-			{{{content}}}
+			{{{loadMessageCode content}}}
 		</p>
 	{{/if}}
 </template>

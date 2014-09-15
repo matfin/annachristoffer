@@ -5,12 +5,7 @@
  * @static
  */
 Helpers = {
-
-	/**
-	 *	Passing initialised moment() library in here.
-	 */
-	moment: moment,
-
+	
 	/**
 	 *	Method to return a nicely formatted String with the number of minutes
 	 *	and seconds given seconds.
@@ -23,65 +18,6 @@ Helpers = {
 			seconds = Math.floor(seconds % 60);
 		return minutes + ':' + (seconds < 10 ? '0' + seconds : seconds);
 	},
-
-	/**
-	 *	Method to load localised data which is called when the app is first run.
-	 *	and when the user opts to switch langage. It is important to node that
-	 *	the app language parameter (en|de) is set within the App object and does not
-	 *	need to be passed in here as a parameter. 
-	 *	
-	 *	@method loadLocalisedContent
-	 *	@return undefined
-	 */
-	loadLocalisedContent: function() {
-		/**
-		 *	Each of these corresponds to the json files we have stored 
-		 *	for each language.
-		 */
-		var contents = [
-			'content',
-			'pages',
-			'projects',
-			'categories',
-			'formations'
-		];
-
-		/**
-		 *	Loop through these and load the content for each, 
-		 *	making sure to clear out old content. This is useful
-		 *	for easily switching language within the app.
-		 */
-
-		_.each(contents, function(contentItem) {
-
-			/**
-			 *	If App.models[contentItem] is not defined
-			 *	then log and error and exit
-			 */
-			if(typeof App.models[contentItem] === 'undefined') {
-				console.log('Collection for ', contentItem, ' is not set up. Exiting;');
-				return;
-			}
-
-			/**
-			 *	Clear out old content that may already exist
-			 */
-		    App.models[contentItem].remove({});
-
-		    /**
-		     *	Then populate from the local json files.
-		     */
-
-			Api.fetch(contentItem).then(function(data) {
-				_.each(data.items, function(item){
-					App.models[contentItem].insert(item);
-				});
-			}).fail(function(error) {
-				console.log(error);
-			});
-		});
-	},
-
 
 	/**
 	 *	Function to return the correct path for videos given the device screen resolution.
@@ -171,7 +107,7 @@ Helpers = {
 	loadMessageCode: function(messageCode) {
 
 		if(typeof App.models.content === 'undefined') {
-			console.log('Content collection not ready. Exiting.');
+			// console.log('Content collection not ready. Exiting.');
 			return;
 		}
 

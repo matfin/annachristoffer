@@ -3,6 +3,12 @@ Router.onRun(function() {
 
 Router.onBeforeAction(function() {
 	$('nav, section').removeClass('revealed');
+
+	/**
+	 *	Subscribe to simple content published from the server
+	 */
+	Meteor.subscribe('categories');
+	Meteor.subscribe('staticContent');
 });
 
 Router.map(function() {
@@ -14,17 +20,13 @@ Router.map(function() {
 	 */
 	this.route('content', {
 		path: '/content/:_page_slug?',
-		template: 'template_main',
-		data: function() {
-
-			Meteor.subscribe('pages');
-
-			console.log(App.models.pages.find({}).fetch());
-
-			return {
-				_page_slug: this.params._page_slug
-			};
+		waitOn: function() {
+			return Meteor.subscribe('pages', this.params._page_slug, App.language);
 		},
+		data: function() {
+			return App.models.pages.findOne({});
+		},
+		template: 'template_main',
 		yieldTemplates: {
 			'components_header': {to: 'header'},
 			'views_page': {to: 'content'},

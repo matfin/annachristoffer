@@ -1,29 +1,29 @@
 <template name="components_header">
 	<h1>
-		{{content.title}}
+		{{loadMessageCode staticContent.heading.content}}
 	</h1>
 	<h2>
-		{{content.subtitle}}
+		{{loadMessageCode staticContent.subtitle.content}}
 	</h2>
 	<nav>
 		<ul>
 			<li class="contentLink">
-				<a href="/" title="{{content.projects}}">
-					{{content.projects}}
+				<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+					{{loadMessageCode staticContent.projects.content}}
 				</a>
 			</li>
 			{{#each navCategories}}
 				<li class="categoryLink">
-					<a href="{{pathFor 'list' _category_slug=this.slug}}" title="{{title}}">
-						{{title}}
+					<a href="{{pathFor 'list' _category_slug=this.slug}}" title="{{loadMessageCode title}}">
+						{{loadMessageCode title}}
 					</a>
 				</li>
 			{{/each}}
 
 			{{#each pages}}
 				<li class="contentLink">
-					<a href="{{pathFor 'content' _page_slug=this.slug}}" title="{{title}}">
-						{{title}}
+					<a href="{{pathFor 'content' _page_slug=slug}}" title="{{loadMessageCode title}}">
+						{{loadMessageCode title}}
 					</a>
 				</li>
 			{{/each}}

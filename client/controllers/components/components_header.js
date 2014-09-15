@@ -14,7 +14,6 @@ Template['components_header'].created = function() {
 *	@return undefined
 */
 Template['components_header'].rendered = function() {
-
 };
 
 /**
@@ -53,12 +52,11 @@ Template['components_header'].pages = function() {
 *	@method pages
 *	@return {Object}
 */
-Template['components_header'].content = function() {
+Template['components_header'].staticContent = function() {
 	return {
-		title: Helpers.loadMessageCode('title'),
-		subtitle: Helpers.loadMessageCode('subtitle'),
-		workingat: Helpers.loadMessageCode('workingat'),
-		projects: Helpers.loadMessageCode('projects'),
+		heading: App.models.staticContent.findOne({slug: 'title'}),
+		subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
+		projects: App.models.staticContent.findOne({slug: 'projects'})
 	}
 };
 

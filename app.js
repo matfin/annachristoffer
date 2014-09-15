@@ -6,11 +6,6 @@ Meteor.startup(function() {
 		 */
 		Device.reset();
 
-		/**
-		 *	Loading localised content
-		 */
-		// Helpers.loadLocalisedContent();
-
 	}
 
 	if(Meteor.isServer) {

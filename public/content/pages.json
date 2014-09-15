@@ -240,13 +240,22 @@
 							"type": "list",
 							"contents": [
 								{
-									"content": "Adobe Creative Suite"
+									"content": {
+										"en": "Adobe Creative Suite",
+										"de": "Adobe Creative Suite"
+									}
 								},
 								{
-									"content": "Adobe After Effects"
+									"content": {
+										"en": "Adobe After Effects",
+										"de": "Adobe After Effects"
+									}
 								},
 								{
-									"content": "Adobe Soundbooth"
+									"content": {
+										"en": "Adobe Soundbooth",
+										"de": "Adobe Soundbooth"
+									}
 								}
 							]
 						}

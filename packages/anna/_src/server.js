@@ -26,7 +26,7 @@ Server = {
 			collection: new Mongo.Collection('staticContent'),
 			url: '/content/staticContent.json',
 			publishBy: function() {
-				return Server.dataSources.staticContent.collection.find({})
+				return Server.dataSources.staticContent.collection.find({});
 			} 
 		},
 		pages: {
@@ -42,16 +42,21 @@ Server = {
 			collection: new Mongo.Collection('projects'),
 			url: '/content/projects.json',
 			publishBy: function(slug, lang) {
-				var query = {};
-				query['slug.' + lang] = slug;
-				return Server.dataSources.projects.collection.find(query);
+				if(typeof slug === 'undefined' || typeof lang === 'undefined'){
+					return Server.dataSources.projects.collection.find({});
+				}
+				else {
+					var query = {};
+					query['slug.' + lang] = slug;
+					return Server.dataSources.projects.collection.find(query);
+				}
 			} 
 		},
 		categories: {
 			collection: new Mongo.Collection('categories'),
 			url: '/content/categories.json',
 			publishBy: function() {
-				return Server.dataSources.categories.find({});
+				return Server.dataSources.categories.collection.find({});
 			} 
 		},
 		formations: {

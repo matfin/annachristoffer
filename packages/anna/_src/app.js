@@ -66,7 +66,7 @@
 		 *	@property staticContent
 		 *	@type {Mongo.Collection}
 		 */
-		staticContent: new Mongo.Collection('content'),
+		staticContent: new Mongo.Collection('staticContent'),
 
 		/**
 		 *	Mongo Collection that we populate from the pages json

@@ -19,6 +19,7 @@ Package.onUse(function(api) {
 	api.use('deps', 		'client');
 	api.use('jquery', 		'client');
 	api.use('mrt:moment', 	'client');
+	api.use('ui',			'client');
 	
 
 	/**
@@ -28,7 +29,8 @@ Package.onUse(function(api) {
 		'_src/app.js',
 		'_src/dependencies.js',
 		'_src/device.js',
-		'_src/helpers.js'
+		'_src/helpers.js',
+		'_src/ui_helpers.js'
 	], 'client');
 
 	/**

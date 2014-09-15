@@ -29,16 +29,6 @@ Template['views_page'].destroyed = function() {
 };
 
 /**
- *	Template - views_page
- *	Helper function to return the page data
- *	@method pageData
- *	@return {Object} - the page data 
- */
-Template['views_page'].pageData = function() {
-	return App.models.pages.findOne({'slug': this._page_slug});
-};
-
-/**
  *	Template - views_item
  *	Helper function to return the correct template to load based on the content type
  *	@method dynamicTemplate
