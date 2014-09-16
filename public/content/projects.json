@@ -5,7 +5,7 @@
 			"id": 1,
 			"slug": {
 				"en": "master-of-art-thesis",
-				"de": "meister-kunst-thesis"
+				"de": "master-of-art-thesis"
 			},
 			"title": {
 				"en": "Master of Art / Thesis",
@@ -116,11 +116,11 @@
 			},
 			"title": {
 				"en": "Master of Art / Project",
-				"de": "[DE]Master of Art / Project"
+				"de": "Master of Art / Project"
 			},
 			"description": {
 				"en": "Carnival of the animals &ndash; A digital music book for children",
-				"de": "DE content needed here"
+				"de": "Digitales Musikbuch f&uuml;r Kinder &ldquo;Karneval der Tiere&rdquo;"
 			},
 			"date_created": "2013-02-01",
 			"background": "master-of-art-project",
@@ -144,18 +144,18 @@
 					"intro": {
 						"title": {
 							"en": "Master of Art / Project",
-							"de": "[DE]Master of Art / Project"
+							"de": "Master of Art / Project"
 						},
 						"description": {
 							"en": "Carnival of the animals &ndash; A digital music book for children",
-							"de": "DE content needed here"
+							"de": "Digitales Musikbuch f&uuml;r Kinder &ldquo;Karneval der Tiere&rdquo;"
 						}
 					},
 					"captions": [
 						{
 							"content": {
-								"en": "The digital music book is inspired by Camille Saint-Saëns purely instrumental composition of »Carnival of the animals«. The music describes little humoristc tales with a variety of musical stylistics. The animations are created in AfterEffects.",
-								"de": "DE content needed here"
+								"en": "The digital music book is inspired by Camille Saint-Saëns purely instrumental composition of &ldquo;Carnival of the animals&rdquo;. The music describes little humoristc tales with a variety of musical stylistics. The animations are created in AfterEffects.",
+								"de": "Im Laufe meiner Untersuchung von digitalem und analogem Informationsdesign entwickelte sich die Idee, die kleine Musikgeschichte &ldquo;Karneval der Tiere - Die große zoologische Fantasie&rdquo; in Form einer digitalen Musikapplikation f&uuml;r Kinder zu gestalten. Die Animationen sind mit AfterEffects erstellt worden."
 							}
 						}
 					]
@@ -166,8 +166,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The starting point of the application presents the original constellation of the chamber orchestra from »Carnival of the animals«. By tapping on the different musical items, the child has the possibility to receive a first impression of the instrumental sound. The whole visual concept of the music book is based on the constellation of instruments.",
-								"de": "DE content needed here."
+								"en": "The starting point of the application presents the original constellation of the chamber orchestra from &ldquo;Carnival of the animals&rdquo;. By tapping on the different musical items, the child has the possibility to receive a first impression of the instrumental sound. The whole visual concept of the music book is based on the constellation of instruments.",
+								"de": "Die Ausgangslage der Musikapplikation bildet das Musikensemble von &rdquo;Karneval der Tiere&ldquo;. Die einzelnen Instrumente werden mittels Antippen kennengelernt, wodurch das Kind einen ersten klanglichen Eindruck vom Instrument bekommt."
 							}
 						}
 					]
@@ -179,7 +179,7 @@
 						{
 							"content": {
 								"en": "The illustrations of each music piece are dynamically constructed by the items of the chamber orchestra. Further on the coloured items elucidates the active instruments in each music piece.",
-								"de": "DE content needed here"
+								"de": "Die Illustrationen für die Musikst&uuml;cke setzen sich aus den Umrisslinien der einzelnen Musikinstrumenten zusammen. Zusätzlich werden nur diejenigen farblich markiert, die im jeweiligen Musikst&uuml;ck zu hören sind. Zum Beispiel beim Musikst&uuml;ck &ldquo;Der Elefant&rdquo; begleitet das Klavier die tiefen Klänge des Kontrabasses."
 							}
 						}
 					]
@@ -191,7 +191,7 @@
 						{
 							"content": {
 								"en": "During the discovery of music and animation, the child also has the opportunity to receive further information, by tapping on the coloured instruments. All information is set with the dynamical antiqua &ldquo;Adobe Caslon Pro&rdquo;.",
-								"de": "DE content needed here."
+								"de": "Nachdem Musikst&uuml;ck kann das Kind auf Informationen der farblich markierten Instrumente zugreifen. Zum einen wird auf der Informationsebene das Instrument mittels Texte und Tonaufnahmen detaillierter beschrieben und zum anderen werden die bezeichnenden musikalischen Stilistik des Musikst&uuml;cks vorgestellt."
 							}
 						}
 					]
@@ -227,8 +227,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "Placeholder text.",
-								"de": "Placeholder text."
+								"en": "Especially at the beginning of the project the main work progess was based on sketching roughly Layouts and Storyboards. The handwritten approach helped to figure out the main structure of the App and it also enabled to meditate changes dynamically.",
+								"de": "Zu Anfang des Projekts wurden &uuml;berwiegend Storyboards und Layoutskizzen entworfen. Die handschriftliche Anskizzierung half inhaltliche Strukturen zu festigen und sowohl auch dynamisch weiterzuentwickeln."
 							}
 						}
 					]
@@ -240,7 +240,7 @@
 						{
 							"content": {
 								"en": "Every music piece is illustrated by the shapes and forms of the instruments. The aim was to preserve an imaginative approach to classical music. The multimedia mixture of poetic music, abstract animation and fictional text enables an engaging learning experience.",
-								"de": "DE content needed here"
+								"de": "Alle Musikst&uuml;cke sind illustriert mit den Umrisslinien der einzelnen Instrumente der Musikgeschichte. Der französische Komponist Camille Saint-Saëns kreierte mit seiner musikalischen Tiergeschichte ein humoristisches Maskenspiel der Musik. Die traditionellen Rhythmen wie Walzer, Marsch und Cancan präsentieren sich in bizarren Tiergestalten."
 							}
 						}
 					]
@@ -252,7 +252,7 @@
 						{
 							"content": {
 								"en": "The high sharp sounds of the violins imitate the screeching and squawking in a chicken pen.",
-								"de": "DE content needed here"
+								"de": "Die Abbildungen der Instrumente beginnen im Takt der Musik sich im Bildraum zu bewegen und visualisieren in ihrer Konstellation das Thema des Musikst&uuml;cks. Die Instrumente, welche im St&uuml;ck zum Tragen kommen, zeichnen sich farblich sowie klanglich vom Rest des Kammerorchesters ab."
 							}
 						}
 					]
@@ -294,14 +294,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "This is the first caption for this slider and will represent the first paragraph.",
-								"de": "DE content needed here"
-							}
-						},
-						{
-							"content": {
-								"en": "This is the second paragraph for this slider.",
-								"de": "DE content needed here"
+								"en": "Beside the variety of drafts for the Information architecture of the App, storyboards been developed for each music piece of &ldquo;Carnival of the Animals&rdquo;.",
+								"de": "Neben der Ausarbeitung der Informationsarchitektur wurden f&uuml;r die einzelnen Musikst&uuml;cke Storyboards entwickelt."
 							}
 						}
 					]

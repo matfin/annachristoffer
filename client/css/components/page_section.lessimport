@@ -39,16 +39,7 @@
 
 	ul {
 		li {
-			display: inline;
-
-			&:after {
-				content: ",";
-			}
-			&:last-child {
-				&:after {
-					content: ".";
-				}
-			}
+			display: block;
 		}
 	}
 }
