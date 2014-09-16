@@ -13,7 +13,7 @@
 			},
 			"description": {
 				"en": "Three models of memory in their context of media&ndash;historical development",
-				"de": "DE content needed"
+				"de": "Drei Gedächtnismodelle im Kontext mediengeschichtlicher Entwicklung"
 			},
 			"date_created": "2013-02-01",
 			"background": "master-of-art-thesis",
@@ -40,23 +40,16 @@
 						},
 						"description": {
 							"en": "Three models of memory in their context of media&ndash;historical development.",
-							"de": "DE content needed here" 
+							"de": "Drei Gedächtnismodelle im Kontext mediengeschichtlicher Entwicklung" 
 						}
 					},
 					"captions": [
 						{
 							"content": {
-								"en": "Beginning with the natural processes of human memories, the thesis analyses the cultural development to the contemporary information age.",
-								"de": "DE content needed here"
-							}
-						},
-						{
-							"content": {
-								"en": "The first model was developed in the Renaissance and was specified as an theatre of memory. The analog model is the precursor for nowadays structures of interactive user-experiences, because it is based on strong topographical and visual methods.",
-								"de": "DE content needed here"
+								"en": "Beginning with the natural processes of human memories, the thesis analyses the cultural development to the contemporary information age. Researching the kind of ways human kind deliver information and how the original cognitive abilities been expanded with technological inventions. All three models presenting mnemonic strategies, using strong topographical and visual methods.",
+								"de": "Ausgehend von den nat&uuml;rlichen Gedächtnisprozessen des Menschen wurde die kulturelle Entwicklung zum heutigen Informationszeitalter, anhand von drei medientechnologischen Gedächtnismodellen untersucht. In allen drei Beispielen kommen insbesondere mnemotechnische Strategien zum Einsatz."
 							}
 						}
-						
 					]
 				},
 				{
@@ -65,8 +58,14 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The digital »Spatial-Data-Management-System« is the second memory model. It was developed in the Sixties by a team of scientests at Massachusetts Institute of Technology and presents the first steps of the computer technology.",
-								"de": "DE content needed here."
+								"en": "The first model was developed in the Renaissance and was specified as an theatre of memory. The analog model is the precursor for nowadays structures of interactive user-experiences, because it is based on strong topographical and visual methods.",
+								"de": "Zuerst stand ein analoges Modell aus der Renaissance in der Betrachtung, da es als Vorreiter für die heutigen grafischen Benutzeroberflächen von Computersystemen fungierte. Es konstituiert sich auf eine der ältesten Formen der Gedächtniskunst, indem ein topografisches Ordnungsschema mit festgelegten Fixpunkten dem denkenden Menschen als mentale Orientierung zur Einprägung von Informationen dient. In solch einem konstruierten Gedächtnisraum können Informationen, die es zu memorieren und archivieren gilt, verortet werden und jederzeit abgerufen werden."
+							}
+						},
+						{
+							"content": {
+								"en": "The digital &ldquo;Spatial-Data-Management-System&rdquo; is the second memory model. It was developed in the Sixties by a team of scientests at Massachusetts Institute of Technology and presents the first steps of the computer technology.",
+								"de": "Als zweites Modell wurde das digitale &ldquo;Spatial-Data-Management-System&rdquo; untersucht, welches von Wissenschaftlern des MIT&#39;s in den 6oer Jahren entwickelt wurde. Die interdisziplinäre Gruppe von Architekten und Ingenieuren nahm es sich zur Aufgabe, ein dynamisches interaktives Informationssystem zu entwickeln, welches die menschliche Sensibilität der räumlichen Strukturierung und Gedankenprozesse berücksichtigt."
 							}
 						}
 					]
@@ -100,8 +99,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The layout of the thesis presents also a topographical approach, while references and pictorial material are set according to the content of the main text.",
-								"de": "DE content needed here."
+								"en": "The layout of the thesis also presents a topographical approach, while references and pictorial material are set according to the content of the main text.",
+								"de": "F&uuml;r den Layoutsatz der theoretischen Ausarbeitung wurde ein topografisches System angewandt, indem sich die Quellenangaben und Bildmaterial entsprechend ihrer inhaltlichen Bez&uuml;ge zum Haupttext anordnen."
 							}
 						}
 					]
@@ -379,15 +378,15 @@
 			"id": 4,
 			"slug": {
 				"en": "book-design",
-				"de": "book-design"
+				"de": "buchgestaltung"
 			},
 			"title": {
 				"en": "Book Design",
-				"de": "[DE]Book Design"
+				"de": "Buchgestaltung"
 			},
 			"description": {
 				"en": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
-				"de": "[DE]The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol"
+				"de": "Die Geschichte &ldquo;Alices Adventures in Wonderland&rdquo; von Lewis Carrol"
 			},
 			"date_created": "2009-09-01",
 			"background": "wonderworld",
@@ -412,19 +411,19 @@
 					"img": "alice-adventures/alices-title-1/01-alices-title-1",
 					"intro": {
 						"title": {
-							"en": "Poster Series",
-							"de": "[DE]Poster Series"
+							"en": "Book Design",
+							"de": "Buchgestaltung"
 						},
 						"description": {
 							"en": "The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol",
-							"de": "[DE]The story &ldquo;Alices Adventures in Wonderland&rdquo; written by Lewis Carrol" 
+							"de": "Die Geschichte &ldquo;Alices Adventures in Wonderland&rdquo; von Lewis Carrol"
 						}
 					},
 					"captions": [
 						{
 							"content": {
 								"en": "The front cover shows one of the most significant characters of Lewis Carroll’s tale: the white rabbit with the pocket-watch, who leads Alice to the magical Wonderland. As he accompanies her through out her crazy adventure, they encounter the many colourful characters as they go.",
-								"de": "DE content needed here"
+								"de": "Die Buchcovers präsentiert eines der bedeutendsten Charaktere in Lewis Carrolls Märchen: das weiße Kaninchen mit der Taschenuhr. Das ungewöhnliche Kaninchen f&uuml;hrt Alice in das traumhafte Wunderland und begleitet das Mädchen auf ihren Weg, wobei sie viele weitere neue schillernde Persönlichkeiten treffen."
 							}
 						}
 					]
@@ -436,7 +435,7 @@
 						{
 							"content": {
 								"en": "The aim was to develop a new modern look for the historical and famous story Alice’s Adventures in Wonderland. Vibrant colours and sparkling forms represent the crazy and miraculous world of Alice’s bizzare dream. The visual concept of the cover can be also find in the inside of the book. The simple black and white icons provide further visual clues for each chapter.",
-								"de": "DE content needed here"
+								"de": "Das Konzept des Buchumschlags wird auf die einzelnen Kapitel des Buches adaptiert. Die simplen schwarz-weiß Bilder veranschaulichen einen visuellen Eindruck für jedes Kapitel der Geschichte und die Schrift &ldquo;Scala Sans Pro&rdquo; verleiht dem Kinderbuch-Klassiker Modernität."
 							}
 						}
 					]
@@ -739,11 +738,11 @@
 			},
 			"title": {
 				"en": "Cover Design",
-				"de": "[DE] Cover Design"
+				"de": "Cover Design"
 			},
 			"description": {
 				"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
-				"de": "[DE] description needed here"
+				"de": "&ldquo;Das Perf&uuml;m&rdquo; von Patrick S&uuml;skind"
 			},
 			"date_created": "2009-08-01",
 			"background": "wonderworld",
@@ -768,19 +767,19 @@
 					"img": "perfume/0-perfume/0-perfume-bookdesign",
 					"intro": {
 						"title": {
-							"en": "Book Design",
-							"de": "[DE]Book Design"
+							"en": "Cover Design",
+							"de": "Cover Design"
 						},
 						"description": {
 							"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
-							"de": "[DE]Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind"
+							"de": "&ldquo;Das Perf&uuml;m&rdquo; von Patrick S&uuml;skind"
 						} 
 					},
 					"captions": [
 						{
 							"content": {
 								"en": "The main theme for the book cover is the ambiguity of Jean-Baptiste Grenouille&#39;s gift. He is able to create the most beautiful perfume of the world, but his dream costs human blood and death. The ambiguity is visualised by a colourful field of flowers which hides the terrible truth:the shape of a dead woman&#39;s body.",
-								"de": "DE content needed here"
+								"de": "Der wesentliche Kontext des Buchumschlages ist die Ambiguität von Jean-Baptiste Grenouilles Gabe. Der sonderbare junge Mann ist fähig das atemberaubendste Perf&uuml;m der Welt zu kreieren, aber f&uuml;r seinen Lebenstraum muss er unzählige Morde an blutjungen Frauen begehen. Diese Zweideutigkeit ist visualisiert in der Darstellung eines farbenprächtigen Blumenfeldes, welches jedoch die grausame Wahrheit verbirgt: der Umriss eines toten Frauenkörpers."
 							}
 						}
 					]	
@@ -807,8 +806,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "Content needed here.",
-								"de": "DE content needed here."
+								"en": "The book concept was created for a Penguin book design competition.",
+								"de": "Konzept und Gestaltung wurde im Rahmen eines Design-Wettbewerbs vom englischen Verlaghaus &ldquo;Penguin Books&rdquo; erarbeitet."
 							}
 						}
 					]
@@ -819,15 +818,15 @@
 			"id": 9,
 			"slug": {
 				"en": "cartographical-scale",
-				"de": "cartographical-scale"
+				"de": "kartografische-maßeinheiten"
 			},
 			"title": {
 				"en": "Cartographical Scale",
-				"de": "[DE]Cartographical Scale"
+				"de": "Kartografische Maßeinheiten"
 			},
 			"description": {
 				"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
-				"de": "DE description needed here"
+				"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
 			},
 			"date_created": "2009-11-01",
 			"background": "master-of-art-project",
@@ -847,18 +846,18 @@
 					"intro": {
 						"title": {
 							"en": "Cartographical Scale",
-							"de": "[DE]Cartographical Scale"
+							"de": "Kartografische Maßeinheiten"
 						},
 						"description": {
-							"en": "Cartographical Scale",
-							"de": "[DE]Cartographical Scale" 
+							"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
+							"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
 						}
 					},
 					"captions": [
 						{
 							"content": {
 								"en": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale.",
-								"de": "DE content needed here"
+								"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
 							}
 						}
 					]
@@ -870,7 +869,7 @@
 						{
 							"content": {
 								"en": "The piece contains three main elements; the map in a perforated format, a demonstrative scale to illustrate how much the information in question is condensed, and instructions detailing the assembly of the funnel.",
-								"de": "DE content needed here"
+								"de": "Das Informationsblatt beinhaltet drei wesentliche Elemente: eine Straßenkarte mit perforierten Umriss, der Maßstab der Karte und eine Gebrauchsanleitung für die Zusammensetzung der Straßenkarte zu einem Papierfilter."
 							}
 						}
 					]
@@ -881,8 +880,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales.",
-								"de": "DE content needed here"
+								"en": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales. The street card is produced in an A5 format, the world map in an A3 format and the celestial chart in an A0 format.",
+								"de": "Die drei unterschiedlichen kartografischen Beispiele – Straßenkarte, Weltkarte und Sternkarte – veranschaulichen deutlich in Breite und Größe die voneinander abweichenden Maßstäbe der spezifischen Dokumente. Die Straßenkarte ist im A5-Format, die Weltkarte im A3-Format und die Sternkarte in A0-Format angelegt."
 							}
 						}
 					]
@@ -898,7 +897,7 @@
 						{
 							"content": {
 								"en": "The paper funnel is an informational design piece, demonstrating the function and purpose of map scale. A map functions like a funnel, concentrating information into a smaller, more managable area depending on scale.",
-								"de": "DE content needed here"
+								"de": "Das Filtermodell aus Papier ist ein informatives und lehrendes Medium. Es demonstriert Funktion und Zweck der Maßeinheiten von Landkarten. Die Bildentwicklung in der Kartografie unterliegt einem Abstraktionsprozess. Es konzentriert Informationen in eine &uuml;berschaubare reduzierte Form, abhängig von einem Maßstab."
 							}
 						}
 					]

@@ -133,6 +133,25 @@ Template['cards_project'].colourHighlighted = function() {
 };
 
 /**
+ *	Template - components_header
+ *	Helper functions for this template
+ */
+Template['cards_project'].helpers({
+
+	/**
+	 *	Function to populate translated slug to be used in
+	 *	the iron-router pathFor function
+	 */
+	translatedSlug: function() {
+		var data = Template.currentData(),
+			slug = data.slug;
+
+		return UI._globalHelpers.loadMessageCode(slug);
+	}
+
+});
+
+/**
 *	Template - cards_project
 *	Events for this template
 */
