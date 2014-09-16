@@ -305,15 +305,15 @@
 			"id": 3,
 			"slug": {
 				"en": "poster-series",
-				"de": "poster-series"
+				"de": "poster-serie"
 			},
 			"title": {
 				"en": "Poster Series",
-				"de": "[DE]Poster Series"
+				"de": "Poster Serie"
 			},
 			"description": {
 				"en": "Probational lectures at the University of Bielefeld",
-				"de": "[DE]Probational lectures at the University of Bielefeld"
+				"de": "Plakatgestaltung f&uuml;r Professurbewerbung"
 			},
 			"date_created": "2012-07-01",
 			"background": "master-of-art-project",
@@ -336,18 +336,18 @@
 					"intro": {
 						"title": {
 							"en": "Poster Series",
-							"de": "[DE]Poster Series"
+							"de": "Poster Serie"
 						},
 						"description": {
-							"en": "Probational lectures at the University of Bielefeld.",
-							"de": "[DE]Probational lectures at the University of Bielefeld." 
+							"en": "Probational lectures at the University of Bielefeld",
+							"de": "Plakatgestaltung f&uuml;r Professurbewerbung"
 						}
 					},
 					"captions": [
 						{
 							"content": {
 								"en": "A selection of applicants for the professorship in &ldquo;Illustration and Graphic Design&rdquo; had to present their didactical skills by presenting their own work in a probational lecture. Afterwards the students had the opportunity to evaluate the work and teaching of each candidate.",
-								"de": "DE content needed here"
+								"de": "In dieser, von der Fachhochschule initiierten Veranstaltung, mussten Anwärter der Professurstelle f&uuml;r &ldquo;Zeichnerische Darstellung und Illustration&rdquo; in Probevorlesungen vor den Studenten und der Belegschaft ihr Wissen und Können unter Beweis stellen."
 							}
 						}
 					]
@@ -358,8 +358,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The illustrations for the poster are adapted from a sports book for indian club training. The intention was to create an ironical approach to the expecta- tions, how a qualified person for the professorship in Illustration needs to be.",
-								"de": "DE content needed here"
+								"en": "The illustrations for the poster are adapted from a sports book for Indian club training. The intention was to create an ironical approach to the expecta- tions, how a qualified person for the professorship in Illustration needs to be.",
+								"de": "Die didaktischen Illustrationen stammen urspr&uuml;nglich aus einer Sportanleitung f&uuml;r indische Keulen&uuml;bungen. Diese lehrbuchhaften Anweisungen aus dem 19. Jahrhundert wurden für die Plakatserie der Probevorlesungen auf ironische Weise adaptiert, da die Bewerber ihre eigenen didaktischen sowie k&uuml;nstlerischen Fähigkeiten präsentieren m&uuml;ssen, welches jedoch &uuml;ber konforme Lehrbuch-Mentalität hinausgehen sollte."
 							}
 						}
 					]
@@ -681,15 +681,15 @@
 			"id": 7,
 			"slug": {
 				"en": "poster-competition",
-				"de": "poster-competition"
+				"de": "poster-wettbewerb"
 			},
 			"title": {
 				"en": "Poster Competition",
-				"de": "[DE]Poster competition"
+				"de": "Poster Wettbewerb"
 			},
 			"description": {
-				"en": "Resistance",
-				"de": "Resistance"
+				"en": "Promotion for Don't Panic &ndash; Resistance",
+				"de": "Posterkampagne &ldquo;Resistance&rdquo;" 
 			},
 			"date_created": "2010-05-01",
 			"background": "resistance",
@@ -711,19 +711,23 @@
 					"img": "resistance/0-resistance",
 					"intro": {
 						"title": {
-							"en": "Poster Competition",
-							"de": "[DE]Poster Competition"
+							"en": "Resistance",
+							"de": "Resistance"
 						},
 						"description": {
 							"en": "Promotion for Don't Panic &ndash; Resistance",
-							"de": "[DE]Promotion for Don't Panic &ndash; Resistance" 
+							"de": "Posterkampagne &ldquo;Resistance&rdquo;" 
 						}
 					},
 					"captions": [
 						{
 							"content": {
 								"en": "The brief involved creating an image that captures the theme of &ldquo;resitance&rdquo;. The visual solution uses the juxtaposition of conformity vs. non-conformity. The book ends are a metaphor for traditional boundaries, which can be broken and challanged by radical thinking.",
-								"de": "DE content needed here"
+								"de": "Die Aufgabe war es eine Bildsprache zu entwickeln, welche den Gehalt von Widerstand verbildlicht. Die visuelle Lösung zeigt eine Gegen&uuml;berstellung von F&uuml;gsamkeit und Gegenwehr. Die Buchst&uuml;tzen sind eine Metapher f&uuml;r traditionelle Ordnung und Halt, welche jedoch gebrochen werden können durch rebellierendes, innovatives Denken."
+							},
+							"content": {
+								"en": "DON&#39;T PANIC is a online magazine for designers and artists. It mainly publishes information about cultural and musical events - offering a platform for social discussion.",
+								"de": "DON&#39;T PANIC ist ein interaktives Onlinemagazin für Designer und K&uuml;nstler. Es veröffentlicht Informationen &uuml;ber kulturelle Ereignisse, musikalische Events und kontemporäre k&uuml;nstlerische Strömungen. Hinzukommend bietet DON&#39;T PANIC eine Plattform f&uuml;r sozial kritische Diskussionen an."
 							}
 						}
 					]	
@@ -908,15 +912,15 @@
 			"id": 10,
 			"slug": {
 				"en": "typographical-visualisation",
-				"de": "typographical-visualisation"
+				"de": "typografische-visualisierung"
 			},
 			"title": {
 				"en": "Typographical Visualisation",
-				"de": "[DE]Typographical Visualisation"
+				"de": "Typografische Visualisierung"
 			},
 			"description": {
-				"en": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
-				"de": "DE description needed here"
+				"en": "Expression of the feelings of an old woman.",
+				"de": "Eine expressive Visualisierung der Worte einer alten Frau."
 			},
 			"date_created": "2010-04-01",
 			"background": "typographical-visualisation",
@@ -936,18 +940,22 @@
 					"intro": {
 						"title": {
 							"en": "Typographical Visualisation",
-							"de": "[DE]Typographical Visualisation"
+							"de": "Typografische Visualisierung"
 						},
 						"description": {
-							"en": "Expression of the feelings of an old woman &ldquo;I am still here&rdquo;",
-							"de": "[DE]Expression of the feelings of an old woman &ldquo;I am still here&rdquo;"
+							"en": "Expression of the feelings of an old woman.",
+							"de": "Eine expressive Visualisierung der Worte einer alten Frau."
 						}
 					},
 					"captions": [
 						{
 							"content": {
-								"en": "Fading Memories is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society.",
-								"de": "DE content needed here"
+								"en": "&ldquo;Fading Memories&rdquo; is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society.",
+								"de": "&ldquo;Fading Memories&rdquo; ist ein typografisches Projekt, welches inspiriert wurde von einer Konversation zwischen einer alten Frau und einem jungen Mann an der Bushaltestelle. Die Typografie demonstriert die wahren Gef&uuml;hle hinter dem eigentlich gesagten. Eine alte und senile Dame vernachlässigt von den Menschen. Als solche, bekommt sie ihr soziales Defizit in ihrem alltäglichen Leben zu spüren und ist sich darüber bewusst, dass sie nur noch eine verblassende Figur der Gesellschaft ist."
+							},
+							"content": {
+								"en": "During studies, the brief &ldquo;Let&#39;s Talk Type&rdquo; was set by the English agency &ldquo;The Chase&rdquo;.",
+								"de": "&ldquo;Let&#39;s Talk Type&rdquo; werde im Rahmen eines Semesterprojekts erabreitet in Zusammenarbeit mit der englischen Agentur &ldquo;The Chase&rdquo;."
 							}
 						}
 					]
@@ -990,7 +998,7 @@
 					"intro": {
 						"title": {
 							"en": "Character Design",
-							"de": "[DE]Character Design"
+							"de": "Character Design"
 						},
 						"description": {
 							"en": "Carnival of the animals - A digital music book for children",
