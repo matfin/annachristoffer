@@ -538,15 +538,15 @@
 			"id": 6,
 			"slug":{
 				"en": "digital-atlas",
-				"de": "digital-atlas"
+				"de": "digitaler-atlas"
 			},
 			"title": {
 				"en": "Digital Atlas",
-				"de": "[DE]Digital Atlas"
+				"de": "Digitaler Atlas"
 			},
 			"description": {
 				"en": "Wonderworld Calendar &ndash; A digital Atlas for children",
-				"de": "[DE]Wonderworld Calendar &ndash; A digital Atlas for children"
+				"de": "WunderWelt Kalender &ndash; ein digitaler Atlas f&uuml; Kinder"
 			},
 			"date_created": "2012-01-01",
 			"background": "wonderworld",
@@ -569,18 +569,18 @@
 					"intro": {
 						"title": {
 							"en": "Digital Atlas",
-							"de": "[DE]Digital Atlas"
+							"de": "Digitaler Atlas"
 						},
 						"description": {
-							"en": "Wonderworld Calendar &ndash; A digital Atlas for children",
-							"de": "[DE]Wonderworld Calendar &ndash; A digital Atlas for children" 
+							"en": "Concept of the User Experience",
+							"de": "Konzeption des interaktiven Erlebnisses"
 						}
 					},
 					"captions": [
 						{
 							"content": {
 								"en": "The digital atlas teaches the cartographic and cultural contents with a highly dynamic and visual method. The idea is based on the phenomenon of “cabinets of wonder” from the 16th and 17th century. At this time European discoverers collected during their expeditions various exotic objects and on the turn to Europe replaced the found pieces to a universal collection.",
-								"de": "DE content needed here"
+								"de": "&ldquo;WonderWorldCalendar&rdquo; ist ein dynamischer Wissensatlas, welches sich nach den zeitlichen Strukturen unserer Welt orientiert. Mit der Applikation entdeckt das Kind die unterschiedlichsten Traditionen der Menschheit und erschließt sich auf diesem Wege die Welt. Die drei folgenden Bildbeispiele veranschaulichen wie die Wunderkammer zur Winter-, Fr&uuml;hlings- und Sommerzeit aussehen könnte."
 							}
 						}
 					]
@@ -591,8 +591,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The picture presents an example of the “WonderWorldCalendar” during winter time. By starting the app the child views a virtual cabinet of wonder, which is filled with the most wonderous objects from the whole world. The range of objects is determined by the seasonal structures of the vibrant world, because every item symbolizes a traditional event, whereby it represents the cultural incidences of a country.",
-								"de": "DE content needed here"
+								"en": "The picture presents an example of the &ldquo;WonderWorldCalendar&rdquo; during winter time. By starting the app the child views a virtual cabinet of wonder, which is filled with the most wonderous objects from the whole world. The range of objects is determined by the seasonal structures of the vibrant world, because every item symbolizes a traditional event, whereby it represents the cultural incidences of a country.",
+								"de": "Beim öffnen der Applikation gelangt das Kind in die Wunderkammer, ein mystischer Raum, welches gef&uuml;llt ist mit den wundersamsten Objekten aus aller Welt. Die einzelnen Objekte repräsentieren die kulturellen Begebenheiten eines Landes. Jeder Gegenstand steht stellvertretend für ein traditionelles Ereignis."
 							}
 						}
 					]
@@ -603,8 +603,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "The programming of the virtual cabinet is leaded by the calendric course of cultural celebrations. Depending on the contemporary appearence of the traditional events, the visibility of the itmes is limited in time. Therefore the child is daily confronted with new constellations of foreign objects and this diversity arouses the curiosity of the recipient.",
-								"de": "DE content needed here"
+								"en": "The programming of the virtual cabinet is lead by the calendric course of cultural celebrations. Depending on the contemporary appearence of the traditional events, the visibility of the itmes is limited in time. Therefore the child is daily confronted with new constellations of foreign objects and this diversity arouses the curiosity of the recipient.",
+								"de": "Beim öffnen der Applikation gelangt das Kind in die Wunderkammer, ein mystischer Raum, welches gefüllt ist mit den wundersamsten Objekten aus aller Welt. Die einzelnen Objekte repräsentieren die kulturellen Begebenheiten eines Landes. Jeder Gegenstand steht stellvertretend für ein traditionelles Ereignis."
 							}
 						}
 					]
@@ -616,7 +616,7 @@
 						{
 							"content": {
 								"en": "The radical mixture of most diverse objects in one room created a spectacular view for the observer.",
-								"de": "DE content needed here"
+								"de": "Aufgrund der kalendarischen Zeitfilterung der Applikation werden nur die Feste angezeigt, die gegenwärtig weltweit aktuell stattfinden. Dementsprechend verändert sich die Wunderkammer jeden Tag und bietet dem Kind ein abwechslungsreiches Lernerlebnis."
 							}
 						}
 					]
@@ -628,7 +628,7 @@
 						{
 							"content": {
 								"en": "Every object refers the child to detailed information about the cultural event and a menu leads the child through the content. The different menu links provide information about the country, a cartographic material and a tablet of content.",
-								"de": "DE content needed here"
+								"de": "Das Kind gelangt zur Informationsebene, indem es das Objekt aus der Wunderkammer auswählt. Die Inhalte sind &uuml;ber eine Men&uuml;leiste in verschiedene Bereiche und Kategorien gegliedert. Eine Weltkarte zeigt dem Nutzer alle Orte an, in denen die ausgewählte Festlichkeit aktuell stattfindet."
 							}
 						}
 					]
@@ -640,7 +640,7 @@
 						{
 							"content": {
 								"en": "The user also can navigate freely between the different virtual places: cabinet of wonder, archive and an interent-based collectors’ fair. Additionally the cartographic material represents the current location of celebration activities.",
-								"de": "DE content needed here"
+								"de": "Beim auswählen einer spezifischen Region erhält das Kind detailliertere Informationen wie das Fest im jeweiligen Land zelebriert wird."
 							}
 						}
 					]
@@ -650,14 +650,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "This is the first paragraph.",
-								"de": "DE content needed here"
-							}
-						},
-						{
-							"content": {
-								"en": "This is the second paragraph.",
-								"de": "DE content needed here"
+								"en": "The sketching of mind-maps helped to figure out the main parts of the Information architecture of the App and it lead to concrete layouts.",
+								"de": "Die Erstellung von skizzenhaften mind-maps half die wesentlichesten Aspkete der Informationsarchitektur auszuloten und darrauffolgend in konkrete Layouts zusammenzustellen."
 							}
 						}
 					],
