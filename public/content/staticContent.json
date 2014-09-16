@@ -14,7 +14,7 @@
 			"slug": "subtitle",
 			"content": {
 				"en": "Conceptional Design",
-				"de": "Conzeptionel Design"
+				"de": "Konzeptionelle Gestaltung"
 			} 
 		},
 		{
@@ -22,7 +22,7 @@
 			"slug": "projects",
 			"content": {
 				"en": "Projects",
-				"de": "Projekten"
+				"de": "Projekte"
 			}
 		}
 	]

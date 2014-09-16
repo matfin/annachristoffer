@@ -20,15 +20,15 @@
 			"id": 2,
 			"title": {
 				"en": "Books",
-				"de": "Buche"
+				"de": "Buch"
 			},
 			"description": { 
 				"en": "Books",
-				"de": "Buche"
+				"de": "Buch"
 			},
 			"slug": {
 				"en": "books",
-				"de": "buche"
+				"de": "buch"
 			}
 		},
 		{
@@ -50,15 +50,15 @@
 			"id": 4,
 			"title": {
 				"en": "Icons",
-				"de": "Ikonen"
+				"de": "Icons"
 			},
 			"description": { 
 				"en": "Icons",
-				"de": "Ikonen"
+				"de": "Icons"
 			},
 			"slug": {
 				"en": "icons",
-				"de": "ikonen"
+				"de": "icons"
 			}
 		},
 		{
