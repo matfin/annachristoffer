@@ -65,6 +65,25 @@ Template['components_header'].staticContent = function() {
 };
 
 /**
+ *	Template - components_header
+ *	Helper functions for this template
+ */
+Template['components_header'].helpers({
+
+	/**
+	 *	Function to populate translated slug to be used in
+	 *	the iron-router pathFor function
+	 */
+	translatedSlug: function() {
+		var data = Template.currentData(),
+			slug = data.slug;
+
+		return UI._globalHelpers.loadMessageCode(slug);
+	}
+
+});
+
+/**
 *	Anonymous helper function to set the top position of the header menu on scroll
 *	@method positionHeader
 *	@return undefined

@@ -14,7 +14,7 @@
 			</li>
 			{{#each navCategories}}
 				<li class="categoryLink">
-					<a href="{{pathFor 'list'}}" title="{{loadMessageCode title}}">
+					<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 						{{loadMessageCode title}}
 					</a>
 				</li>
@@ -22,7 +22,7 @@
 
 			{{#each pages}}
 				<li class="contentLink">
-					<a href="{{pathFor 'content'}}" title="{{loadMessageCode title}}">
+					<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 						{{loadMessageCode title}}
 					</a>
 				</li>

@@ -9,6 +9,9 @@
  *	@return {String} - The string message fetched by index from the message object
  */
 UI.registerHelper('loadMessageCode', function(message) {
+
+	Dependencies.languageChangedDependency.depend();
+
 	if(typeof message === 'undefined') {
 		return 'Content not found';
 	}
