@@ -973,11 +973,11 @@
 			},
 			"title": {
 				"en": "Character Design",
-				"de": "[DE]Character Design"
+				"de": "Character Design"
 			},
 			"description": {
 				"en": "Carnival of the animals - A digital music book for children",
-				"de": "[DE]Carnival of the animals - A digital music book for children"
+				"de": "Karneval der Tiere - Ein digitales Musikbuch f&uuml;r Kinder"
 			},
 			"date_created": "2013-02-01",
 			"background": "master-of-art-project",
@@ -1001,14 +1001,14 @@
 						},
 						"description": {
 							"en": "Carnival of the animals - A digital music book for children",
-							"de": "[DE]Carnival of the animals - A digital music book for children" 
+							"de": "Karneval der Tiere - Ein digitales Musikbuch f&uuml;r Kinder" 
 						}
 					},
 					"captions": [
 						{
 							"content": {
-								"en": "This is a placeholder",
-								"de": "[DE]This is a placeholder"
+								"en": "The design concept was developed for a digital music book. The aim was to approach an innovative visual appearance for the famous music play &ldquo;Carnival of the animals&rdquo;. Additionally the brief involved the ambition to integrate on the one hand the music instruments and on the other hand the narrative content of each music piece.",
+								"de": "Das Gestaltungskonzept wurde im Rahmen der Entwicklung eines digitalen Musikbuchs konzipiert. Die Idee beinhaltete der ber&uuml;hmten Musikgeschichte: &ldquo;Karneval der Tiere&rdquo; ein innovatives Erscheinungsbild zu verleihen, welches zum einen die Formen der unterschiedlichen Instrumente des Kammerorchesters miteinbezieht und zum anderen die inhaltlichen Themen der einzelnen Musikst&uuml;cke präsentiert."
 							}
 						}
 					]
@@ -1023,8 +1023,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "Placeholder hen text.",
-								"de": "[DE]Placeholder hen text."
+								"en": "The solution was to create the illustrations with the outlines oft the music instruments. Saint-Saëns wrote the music for a private audience of music professionals. Therefore he created very freely and he chosen for his humoristic music play a little ensemble, in the capacity of a chamber orchestra. Therefore the intention was to limited also the visual stylistics for the design concept. So in fact each music piece was just illustrated by the visual outlines of Saint-Saëns ensemble.",
+								"de": "Saint-Saëns schrieb die Musik f&uuml;r einen privaten Kreis von Freunden und Musikkennern. Dementsprechend komponierte er ungezwungen und wählte f&uuml;r seine humoristische Musikgeschichte ein kleines privates Musikensemble, im Format eines Kammerorchesters. Im Sinne dieser gestalterischen Reduktion des Komponisten wurden die visuellen Lösungen generiert. F&uuml;r jedes Musikst&uuml;ck wurde ausschließlich aus den Repertoire der einzelnen Instrumente des Kammerorchesters eine Form- und Farbkomposition skizziert."
 							}
 						}
 					]
@@ -1051,8 +1051,8 @@
 					"captions": [
 						{
 							"content": {
-								"en": "Placeholder text here",
-								"de": "[DE]Placeholder text here"
+								"en": "The combination of narrative instrumental music and abstract visualistion enhances especially the imagnitive approach to the musical content.",
+								"de": "Die Kombination von erzählerischer Instrumentalmusik und abstrakter Bildsprache unterst&uuml;tzt einen imaginären Zugang zur Materie."
 							}
 						}
 					]
