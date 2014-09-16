@@ -468,15 +468,15 @@
 			"id": 5,
 			"slug": {
 				"en": "typographical-staging",
-				"de": "typographical-staging"
+				"de": "typografische-inszenierung"
 			},
 			"title": {
 				"en": "Typographical Staging",
-				"de": "[DE]Typographical Staging"
+				"de": "Typografische Inszenierung"
 			},
 			"description": {
-				"en": "The Drama &ldquo;King Oedipus&rdquo; from Sophocles",
-				"de": "[DE]The Drama &ldquo;King Oedipus&rdquo; from Sophocles"
+				"en": "A typographical staging of the Drama &ldquo;King Oedipus&rdquo; from Sophocles",
+				"de": "Eine typografische Inszenierung des Dramas &ldquo;König Ödipus&rdquo; von Sophokles"
 			},
 			"date_created": "2010-04-01",
 			"background": "oedipus",
@@ -496,18 +496,18 @@
 					"intro": {
 						"title": {
 							"en": "Typographical Staging",
-							"de": "[DE]Typographical Staging"
+							"de": "Typografische Inszenierung"
 						},
 						"description": {
-							"en": "Typographical Staging",
-							"de": "[DE]Typographical Staging"
+							"en": "A typographical staging of the Drama &ldquo;King Oedipus&rdquo; from Sophocles",
+							"de": "Eine typografische Inszenierung des Dramas &ldquo;König Ödipus&rdquo; von Sophokles"
 						} 
 					},
 					"captions": [
 						{
 							"content": {
-								"en": "The tragedy of King Oedipus is staged in a book with subjective  typographical treatment. Phrase by phrase and word by word King Oedipus develops towards his doom, typographical drawn by the merciless fall into the book bind.",
-								"de": "DE content needed here"
+								"en": "The tragedy of King Oedipus is staged in a book with subjective typographical treatment. Phrase by phrase and word by word King Oedipus develops towards his doom, typographical drawn by the merciless fall into the book bind.",
+								"de": "Wie kann ein Drama in den Rahmenbedingungen eines Buches inszeniert werden? Hierbei wird die Begebenheit des Mediums genutzt, indem sich ein schwarzer Abgrund im Bund des Buches auftut. Zu Anfang der Handlung zeigt sich dem Betrachter ein konventioneller Dramensatz. Mit der zunhemenden Verzweiflung des Königs im Angesicht seines unausweichlichen Schicksals, reißt sich der Abgrund des Buchbundes immer weiter auf, bis am Ende der gesamte Textinhalt verschlungen wird."
 							}
 						}
 					]
