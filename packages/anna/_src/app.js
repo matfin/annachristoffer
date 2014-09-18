@@ -14,15 +14,6 @@
 	baseUrl: 'http://localhost:3000',
 
 	/**
-	 *	Set the number of times the Api package can attempt to 
-	 *	fetch json data.
-	 *
-	 *	@property connectionRetriesAllowed
-	 *	@type {Number}
-	 */
-	connectionRetriesAllowed: 5,
-
-	/**
 	 *	Determining the browser language using moment.js and setting it.
 	 *
 	 *	@property language

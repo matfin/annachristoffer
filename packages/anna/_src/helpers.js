@@ -98,48 +98,6 @@ Helpers = {
 	},
 
 	/**
-	 *	Load localised content via message codes from the content collection
-	 *	
-	 *	@method loadMessageCode
-	 *	@param {String}		the string for the image path
-	 *	@return {String}	the image path with file extension
-	 */
-	loadMessageCode: function(messageCode) {
-
-		if(typeof App.models.content === 'undefined') {
-			// console.log('Content collection not ready. Exiting.');
-			return;
-		}
-
-		var message = App.models.content.findOne({"messageCode": messageCode});
-		return typeof message !== 'undefined' ? message.content:'NOT FOUND';
-	},
-
-	/**
-	 *	Fetch cross browser transition end event name 
-	 *	@method transitionEndEventName
-	 *	@return {String} the correct transition end event name
-	 */
-	transitionEndEventName: function() {
-		var i, undefined;
-		var el = document.createElement('div');
-		var transitions = {
-			'transition': 'transitionend',
-			'OTransition': 'otransitionend',
-			'MozTransition': 'transitionend',
-			'WebkitTransition': 'webkitTransitionEnd'
-		};
-
-		for(i in transitions) {
-			if(transitions.hasOwnProperty(i) && el.style[i] !== 'undefined') {
-				return transitions[i];
-			}
-		}
-
-		return 'na';
-	},
-
-	/**
 	 *	Helper to implement cross-browser fullscreen video
 	 *	@method videoRequestFullscreen
 	 *	@param {DomElement} the dom element for the video
@@ -186,12 +144,5 @@ Helpers = {
 
 		return $(className).eq(cardIndex);
 
-	},
-
-	/**
-	 *	Globally accessible promise we can use from within our controllers
- 	 *	
- 	 *	@attribute	{Object}	The promise object from the Q package.
-	 */
-	promise: Q
+	}
 };

@@ -24,7 +24,7 @@ Template['views_list'].rendered = function() {
 	 */
 	if(Device.isHD || Device.isDesktop || Device.isLaptop) {
 		(function() {
-			var deferred = Helpers.promise.defer();
+			var deferred = Q.defer();
 
 			interval = Meteor.setInterval(function() {
 				if($('.projectCard').length === App.models.projects.find({}).count()) {
