@@ -27,7 +27,7 @@ Template['views_list'].rendered = function() {
 			var deferred = Q.defer();
 
 			interval = Meteor.setInterval(function() {
-				if($('.projectCard').length === App.models.projects.find({}).count()) {
+				if(template.$('.projectCard').length === App.models.projects.find({}).count()) {
 				 	deferred.resolve();
 				 	Meteor.clearInterval(interval);
 				 	return;
@@ -45,7 +45,7 @@ Template['views_list'].rendered = function() {
 			template.cardAnimationIn = Meteor.setInterval(function() {
 				Helpers.randomlySelectProjectCard().addClass('animated');
 				Dependencies.projectCardAnimatedDependency.changed();
-			}, 2500);
+			}, 4000);
 
 		});
 	}
@@ -84,51 +84,6 @@ Template['views_list'].destroyed = function() {
 	 *	Stop the arrangeCards Deps computation
 	 */
 	this.arrangeCardsComputation.stop();
-};
-
-/**
-*	Template - views_list
-*	Helper function to populate all projects
-*	@method projects
-*	@return {Object}	Mongo collection result set
-*/
-Template['views_list'].projects = function() {
-	var category = App.models.categories.findOne({slug: this._category_slug});
-
-	// if(typeof category !== 'undefined') {
-	// 	App.models.projects.update(
-	// 		{'category_ids.id': category.id}, 
-	// 		{$set: { highlighted: true, colourHighlighted: true }}, 
-	// 		{multi: true}
-	// 	);
-	// 	App.models.projects.update(
-	// 		{'category_ids.id': { $not: category.id}}, 
-	// 		{$set: { highlighted: false, colourHighlighted: false }}, 
-	// 		{multi: true}
-	// 	);
-	// }
-	// else {
-	// 	App.models.projects.update(
-	// 		{}, 
-	// 		{$set: { highlighted: true, colourHighlighted: false }}, 
-	// 		{multi: true}
-	// 	);
-	// }
-
-	/**
-	 *	Fetch projects grouped by highlighted and add an index for each one
-	 *	to ensure they appear in the correct formation.
-	 */
-	// var projects = App.models.projects.find({}, {sort: {highlighted: -1}}).fetch();
-	// _.each(projects, function(project, index) {
-	// 	project.index = index + 1;
-	// });
-
-	Dependencies.projectLoadedDependency.changed();
-
-	// return projects;
-
-	return
 };
 
 /**

@@ -65,6 +65,10 @@
 		.opacity(1.0);
 	}
 
+	&.matt {
+		color: red !important;
+	}
+
 	&.colourHighlighted {
 		background-color: @highlightedBackground;
 	}

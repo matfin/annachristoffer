@@ -43,11 +43,38 @@ Router.map(function() {
 	this.route('list', {
 		path: '/:_category_slug?',
 		template: 'template_main',
+		action: function() {
+			if(this.ready()) {
+				this.render();
+			}
+		},
 		waitOn: function() {
-			return [Meteor.subscribe('projects'), Meteor.subscribe('formations')];
+			return [
+				Meteor.subscribe('projects'), 
+				Meteor.subscribe('formations'),
+				Meteor.subscribe('categories')
+			];
 		},
 		data: function() {
-			return App.models.projects.find({}).fetch();
+
+			if(this.params._category_slug) {
+				/**
+				 * Building up the query given the category slug and the language
+				 */
+				var query = {};
+				query['slug.' + App.language] = this.params._category_slug;
+				
+				/**
+				 *	Grab the category given the query
+				 */
+				var category = App.models.categories.findOne(query);
+
+				return App.models.projects.find({}).fetch();
+
+			}
+			else {
+				return App.models.projects.find({}).fetch();
+			}
 		},
 		yieldTemplates: {
 			'components_header': {to: 'header'},
