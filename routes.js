@@ -63,6 +63,11 @@ Router.map(function() {
 	this.route('detail', {
 		path: '/project/:_project_slug',
 		template: 'template_main',
+		action: function() {
+			if(this.ready()) {
+				this.render();
+			}
+		},
 		waitOn: function() {
 			return Meteor.subscribe('projects', this.params._project_slug, App.language)
 		},
