@@ -24,7 +24,15 @@ Router.map(function() {
 		waitOn: function() {
 			return Meteor.subscribe('pages', this.params._page_slug, App.language);
 		},
+		action: function() {
+			if(this.ready()) {
+				this.render();
+			}
+		},
 		data: function() {
+			if(!this.ready()) {
+				return;
+			}
 			return App.models.pages.findOne({});
 		},
 		template: 'template_main',
@@ -57,6 +65,10 @@ Router.map(function() {
 		},
 		data: function() {
 
+			if(!this.ready()) {
+				return;
+			}
+
 			if(this.params._category_slug) {
 				/**
 				 * Building up the query given the category slug and the language
@@ -68,6 +80,8 @@ Router.map(function() {
 				 *	Grab the category given the query
 				 */
 				var category = App.models.categories.findOne(query);
+
+				console.log(category);
 
 				return App.models.projects.find({}).fetch();
 
@@ -99,6 +113,9 @@ Router.map(function() {
 			return Meteor.subscribe('projects', this.params._project_slug, App.language)
 		},
 		data: function() {
+			if(!this.ready()) {
+				return;
+			}
 			return App.models.projects.findOne({});
 		},
 		notFoundTemplate: 'template_notfound',

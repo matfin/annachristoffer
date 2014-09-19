@@ -54,9 +54,6 @@ Template['components_header'].pages = function() {
 */
 Template['components_header'].staticContent = function() {
 	var content = {
-		// mainHeading: App.models.staticContent.findOne({slug: 'subtitle'}).content,
-		// subtitle: App.models.staticContent.findOne({slug: 'subtitle'}).content,
-		// projects: 
 		mainHeading: App.models.staticContent.findOne({slug: 'title'}),
 		subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
 		projects: App.models.staticContent.findOne({slug: 'projects'})
@@ -88,7 +85,7 @@ Template['components_header'].helpers({
 *	@method positionHeader
 *	@return undefined
 */
-var primeHeader = Deps.autorun(function() {
+var primeHeader = Tracker.autorun(function() {
 	/**
 	 *	Run this function each time the viewportScrolledDependency is changed.
 	 *	Do not do this for mobile devices.

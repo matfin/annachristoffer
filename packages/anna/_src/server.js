@@ -26,37 +26,59 @@ Server = {
 			collection: new Mongo.Collection('staticContent'),
 			url: '/content/staticContent.json',
 			publishBy: function() {
-				return Server.dataSources.staticContent.collection.find({});
+				return Server.dataSources.staticContent.collection.find();
 			} 
 		},
 		pages: {
 			collection: new Mongo.Collection('pages'),
 			url: '/content/pages.json',
 			publishBy: function(slug, lang) {
+
 				var query = {};
-				query['slug.' + lang] = slug;
+
+				if(typeof slug !== 'undefined' && typeof lang !== 'undefined') {
+					query['slug.' + lang] = slug;
+				}
+				else {
+					query = {};
+				}
+
 				return Server.dataSources.pages.collection.find(query);
+
 			} 
 		},
 		projects: {
 			collection: new Mongo.Collection('projects'),
 			url: '/content/projects.json',
 			publishBy: function(slug, lang) {
-				if(typeof slug === 'undefined' || typeof lang === 'undefined'){
-					return Server.dataSources.projects.collection.find({});
+
+				var query = {};
+
+				if(typeof slug !== 'undefined' && typeof lang !== 'undefined'){
+					query['slug.' + lang] = slug;
 				}
 				else {
 					var query = {};
-					query['slug.' + lang] = slug;
-					return Server.dataSources.projects.collection.find(query);
 				}
+
+				return Server.dataSources.projects.collection.find(query);
 			} 
 		},
 		categories: {
 			collection: new Mongo.Collection('categories'),
 			url: '/content/categories.json',
-			publishBy: function() {
-				return Server.dataSources.categories.collection.find({});
+			publishBy: function(slug, lang) {
+
+				var query = {};
+
+				if(typeof slug !== 'undefined' && typeof lang !== 'undefined') {
+					query['slug.' + lang] = slug;
+				}
+				else {
+					query = {};
+				}
+
+				return Server.dataSources.categories.collection.find(query);
 			} 
 		},
 		formations: {

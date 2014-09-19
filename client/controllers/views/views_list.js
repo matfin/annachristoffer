@@ -51,10 +51,10 @@ Template['views_list'].rendered = function() {
 	}
 
 	/**
-	 *	Kick off the arrangeCards Deps computation.
+	 *	Kick off the arrangeCards Tracker computation.
 	 */
 
-	this.arrangeCardsComputation = Deps.autorun(function() {
+	this.arrangeCardsComputation = Tracker.autorun(function() {
 		Dependencies.viewportResizeDependency.depend();
 		Dependencies.projectLoadedDependency.depend();
 		arrangeCards();

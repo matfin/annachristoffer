@@ -17,7 +17,7 @@ Template['cards_figcaption'].rendered = function() {
 	var template = this;
 
 	if(typeof this.data.video_id !== 'undefined') {
-		this.computation = Deps.autorun(function() {
+		this.computation = Tracker.autorun(function() {
 			Dependencies.viewportResizeDependency.depend();
 		});
 	}

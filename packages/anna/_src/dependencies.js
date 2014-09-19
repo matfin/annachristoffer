@@ -5,15 +5,15 @@
  * @static
  */
 Dependencies = {
-	viewportResizeDependency: new Deps.Dependency,
-	viewportScrollDependency: new Deps.Dependency,
-	projectLoadedDependency: new Deps.Dependency,
-	sliderLoadedDependency: new Deps.Dependency,
+	viewportResizeDependency: new Tracker.Dependency,
+	viewportScrollDependency: new Tracker.Dependency,
+	projectLoadedDependency: new Tracker.Dependency,
+	sliderLoadedDependency: new Tracker.Dependency,
 
-	projectCardAnimatedDependency: new Deps.Dependency,
-	videoTimeDependency: new Deps.Dependency,
-	videoLoadedDependency: new Deps.Dependency,
-	videoProgressDependency: new Deps.Dependency,
+	projectCardAnimatedDependency: new Tracker.Dependency,
+	videoTimeDependency: new Tracker.Dependency,
+	videoLoadedDependency: new Tracker.Dependency,
+	videoProgressDependency: new Tracker.Dependency,
 
-	languageChangedDependency: new Deps.Dependency
+	languageChangedDependency: new Tracker.Dependency
 };
