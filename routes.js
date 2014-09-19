@@ -79,11 +79,11 @@ Router.map(function() {
 				/**
 				 *	Grab the category given the query
 				 */
-				var category = App.models.categories.findOne(query);
+				var category = App.models.categories.findOne(query),
+					categorisedProjects = App.models.projects.find({'category_ids.id': category.id}).fetch(),
+					uncategorisedProjects = App.models.projects.find({'category_ids.id': {$ne: category.id}}).fetch();
 
-				console.log(category);
-
-				return App.models.projects.find({}).fetch();
+				return categorisedProjects.concat(uncategorisedProjects);
 
 			}
 			else {
