@@ -16,39 +16,6 @@ Template['views_list'].created = function() {
 */
 Template['views_list'].rendered = function() {
 	$('body').addClass('list');
-	var template = this;
-
-	/**
-	 *	Anonymous function to fire off the card animation process
-	 *	only when all the cards have been rendered fully.
-	 */
-	if(Device.isHD || Device.isDesktop || Device.isLaptop) {
-		(function() {
-			var deferred = Q.defer();
-
-			interval = Meteor.setInterval(function() {
-				if(template.$('.projectCard').length === App.models.projects.find({}).count()) {
-				 	deferred.resolve();
-				 	Meteor.clearInterval(interval);
-				 	return;
-				}
-			}, 500);
-
-			return deferred.promise;
-
-		})().then(function() {
-			/**
-			 *	Now that all the projects have loaded, 
-			 *	we can call changed on this dependency.
-			 */
-			Dependencies.projectLoadedDependency.changed();
-			template.cardAnimationIn = Meteor.setInterval(function() {
-				Helpers.randomlySelectProjectCard().addClass('animated');
-				Dependencies.projectCardAnimatedDependency.changed();
-			}, 4000);
-
-		});
-	}
 
 	/**
 	 *	Kick off the arrangeCards Tracker computation.
@@ -77,9 +44,7 @@ Template['views_list'].destroyed = function() {
 	$('.content section').css({
 		'height': 'auto'
 	});
-
-	Meteor.clearInterval(this.cardAnimationIn);
-
+	
 	/** 
 	 *	Stop the arrangeCards Deps computation
 	 */

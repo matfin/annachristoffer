@@ -73,26 +73,8 @@
 		background-color: @highlightedBackground;
 	}
 
-	&.animated,
 	&:hover {
-		time, 
-		h2, 
-		p {
-			opacity: 0.0;
-		}
-		img {
-			.opacity(1.0);
-			.transition-duration(@transitionDuration);
-			.transition-delay(@transitionDuration);
-			.transition-property(opacity);
-
-			.animation(badtv 400ms linear);
-			.animation-delay(@transitionDuration * 3);
-
-			&.interlace {
-				.opacity(0.3);
-			}
-		}
+		
 	}
 }
 
