@@ -21,4 +21,12 @@ body.list {
 ul.projectGroup {
 	display: inline;
 	float: left;
+
+	li {
+		display: block;
+		width: 100%;
+		float: left;
+		.box-sizing(border-box);
+		padding: @gridColumnWidth / 2;
+	}
 }

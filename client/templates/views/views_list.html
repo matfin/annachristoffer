@@ -3,7 +3,9 @@
 	{{#each groupedProjectCards}}
 		<ul class="projectGroup" style="width: {{groupWidth}}%; padding-top: {{paddingTop}}px">
 			{{#each projects}}
-				{{> cards_project}}
+				<li>
+					{{> cards_project}}
+				</li>
 			{{/each}}
 		</ul>
 	{{/each}}

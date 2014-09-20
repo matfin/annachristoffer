@@ -16,16 +16,6 @@ Template['views_list'].created = function() {
 */
 Template['views_list'].rendered = function() {
 	$('body').addClass('list');
-
-	/**
-	 *	Kick off the arrangeCards Tracker computation.
-	 */
-
-	this.arrangeCardsComputation = Tracker.autorun(function() {
-		Dependencies.viewportResizeDependency.depend();
-		Dependencies.projectLoadedDependency.depend();
-		//arrangeCards();
-	});
 };
 
 /**
@@ -44,11 +34,6 @@ Template['views_list'].destroyed = function() {
 	$('.content section').css({
 		'height': 'auto'
 	});
-
-	/** 
-	 *	Stop the arrangeCards Deps computation
-	 */
-	this.arrangeCardsComputation.stop();
 };
 
 /**
@@ -58,6 +43,9 @@ Template['views_list'].destroyed = function() {
  *	@return {object} - groups containing project cards
  */
 Template['views_list'].groupedProjectCards = function() {
+
+	Dependencies.viewportResizeDependency.depend();
+
 	/**
 	 * Grab the correct formation
 	 */
@@ -87,12 +75,9 @@ Template['views_list'].groupedProjectCards = function() {
 		
 		groups.push({
 			paddingTop: item.paddingTop * 176,
-			groupWidth: Math.floor(100 / formation.cardFormation.length),
+			groupWidth: 100 / formation.cardFormation.length,
 			projects: projects.slice(projectsAdded, (projectsAdded + item.numberToShow))
 		});
-
-		console.log(projectsAdded, projectsAdded + item.numberToShow);
-		console.log(projects.slice(projectsAdded, projectsAdded + item.numberToShow))
 
 		projectsAdded += item.numberToShow;
 
@@ -100,16 +85,4 @@ Template['views_list'].groupedProjectCards = function() {
 
 	return groups;
 
-};
-
-/**
-*	Anonymous helper function to rearragne the project cards using DOM man
-*	@method arrangeCards
-*	@return undefined
-*/
-var arrangeCards = function() {
-	/**
-	 *	Each time these dependency is changed, 
-	 *	this function will be called.
-	 */
 };
