@@ -2,64 +2,49 @@
  *	Different background images for projects set in here.
  */
 
+body {
+	background-size: cover;
+	background-position: top;
+}
+
 body.master-of-art-thesis {
-	.wrapper {
-		.backgroundImage('images/backgrounds/resistance');
-	}
+	.backgroundImage('images/backgrounds/resistance');
 }
 
 body.master-of-art-project {
-	.wrapper {
-		.backgroundImage('images/backgrounds/master-of-art-project');
-	}
+	.backgroundImage('images/backgrounds/master-of-art-project');
 }
 
 body.landing {
-	.wrapper {
-		.backgroundImage('images/backgrounds/landing');
-	}
+	.backgroundImage('images/backgrounds/landing');
 }
 
 body.oedipus {
-	.wrapper {
-		.backgroundImage('images/backgrounds/oedipus');
-	}
+	.backgroundImage('images/backgrounds/oedipus');
 }
 
 body.perfume {
-	.wrapper {
-		.backgroundImage('images/backgrounds/perfume');
-	}
+	.backgroundImage('images/backgrounds/perfume');
 }
 
 body.perfumeleft {
-	.wrapper {
-		.backgroundImage('images/backgrounds/perfumeleft');
-	}
+	.backgroundImage('images/backgrounds/perfumeleft');
 }
 
 body.wonderworld {
-	.wrapper {
-		.backgroundImage('images/backgrounds/wonderworld');
-	}
+	.backgroundImage('images/backgrounds/wonderworld');
 }
 
 body.resistance {
-	.wrapper {
-		.backgroundImage('images/backgrounds/oedipus');
-	}
+	.backgroundImage('images/backgrounds/oedipus');
 }
 
 body.typographical-visualisation {
-	.wrapper {
-		.backgroundImage('images/backgrounds/resistance');
-	}
+	.backgroundImage('images/backgrounds/resistance');
 }
 
 body.character-design {
-	.wrapper {
-		.backgroundImage('images/backgrounds/resistance');
-	}
+	.backgroundImage('images/backgrounds/resistance');
 }
 
 body {

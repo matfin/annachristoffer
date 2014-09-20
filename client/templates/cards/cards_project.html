@@ -1,10 +1,20 @@
 <template name="cards_project">
 	<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=translatedSlug}}" title="{{loadMessageCode title}}" class="projectCard {{highlighted}} {{colourHighlighted}}">
-		{{#if hasThumbnail}}
-			<img src="{{thumbnail}}" width="" height="" alt="" />
-		{{/if}}
-		<time datetime="{{date_created}}">{{formattedDate date_created "MM / YYYY"}}</time>
-		<h2>{{loadMessageCode title}}</h2>
-		<p>{{{loadMessageCode description}}}</p>
+		<div class="flip-content">
+			<div class="flip-front">
+				<time datetime="{{date_created}}">
+					{{formattedDate date_created "MM / YYYY"}}
+				</time>
+				<h2>
+					{{loadMessageCode title}}
+				</h2>
+				<p>
+					{{{loadMessageCode description}}}
+				</p>
+			</div>
+			<div class="flip-rear">
+				<img src="{{thumbnail}}" />
+			</div>
+		</div>
 	</a>
 </template>

@@ -24,7 +24,7 @@ Template['views_list'].rendered = function() {
 	this.arrangeCardsComputation = Tracker.autorun(function() {
 		Dependencies.viewportResizeDependency.depend();
 		Dependencies.projectLoadedDependency.depend();
-		arrangeCards();
+		//arrangeCards();
 	});
 };
 
@@ -44,7 +44,7 @@ Template['views_list'].destroyed = function() {
 	$('.content section').css({
 		'height': 'auto'
 	});
-	
+
 	/** 
 	 *	Stop the arrangeCards Deps computation
 	 */
@@ -52,17 +52,18 @@ Template['views_list'].destroyed = function() {
 };
 
 /**
-*	Anonymous helper function to rearragne the project cards using DOM man
-*	@method arrangeCards
-*	@return undefined
-*/
-var arrangeCards = function() {
+ *	Template - views_list
+ *	Function to group project cards according to formations
+ *	@method groupedProjectCards
+ *	@return {object} - groups containing project cards
+ */
+Template['views_list'].groupedProjectCards = function() {
 	/**
-	 *	Each time these dependency is changed, 
-	 *	this function will be called.
+	 * Grab the correct formation
 	 */
-
-	var formation = false;
+	var formation,
+		groups = [],
+		projects = App.models.projects.find({}).fetch();
 
 	if(Device.isHD) {
 		formation = App.models.formations.findOne({"screen": "hd"});
@@ -80,79 +81,35 @@ var arrangeCards = function() {
 		formation = App.models.formations.findOne({"screen": "mobile"});
 	}
 
-	if($('.projectCard').length !== 0 && formation) {
+	var projectsAdded = 0;
 
-		/**
- 		 *	Setting the card width so they line up nicely
- 		 *	from within the content section
-		 */
-
-		var cardFormation = formation.cardFormation;
-
-		var cardSizeWidth = ($('section').outerWidth() - (cardFormation.length * 16)) / cardFormation.length;
-
-		var cardIndex = 0;
-		var maxFormationHeight = 0;
-
-		/**
-		 *	Then place them in formation
-		 */
-		_.each(cardFormation, function(item, index) {
-
-			var formationHeight = 0;
-
-			for(var i = 0; i < item.numberToShow; i++) {
-				
-				if(Device.isMobile) {
-
-					$('.projectCard').eq(cardIndex).velocity({
-						translateX: 0,
-						translateY: 0
-					});
-
-					$('.projectCard').eq(cardIndex).css({
-						'width': '100%',
-						'left': '0px',
-						'top': '0px',
-						'position': 'relative'
-					});
-
-					formationHeight =+ ((cardSizeHeight) * i);
-
-				}
-				else {
-					/**
-					 *	Complete the transition using velocity.js
-					 */
-
-					var cardSizeHeight = $('.projectCard').eq(cardIndex).outerHeight(true);
-
-					$('.projectCard').eq(cardIndex).velocity({
-						width: Math.floor(cardSizeWidth) + 'px',
-						translateX: Math.floor(((cardSizeWidth + 16) * index + 16)) + 'px',
-						translateY: Math.floor(((cardSizeHeight + 16) * i) + ((cardSizeHeight) * item.paddingTop))
-					});
-
-					$('.projectCard').eq(cardIndex).css({
-						position: 'absolute'
-					});
-
-					formationHeight =+ ((cardSizeHeight + 16) * i) + ((cardSizeHeight + 16) * item.paddingTop);
-				}
-
-				cardIndex++;
-			}
-
-			maxFormationHeight = (formationHeight > maxFormationHeight) ? formationHeight:maxFormationHeight;
-
+	_.each(formation.cardFormation, function(item, index) {
+		
+		groups.push({
+			paddingTop: item.paddingTop * 176,
+			groupWidth: Math.floor(100 / formation.cardFormation.length),
+			projects: projects.slice(projectsAdded, (projectsAdded + item.numberToShow))
 		});
 
-		// Setting the height of the content section, container and wrapper
-		$('.wrapper, .content section').css({
-			'min-height': maxFormationHeight + 160 + 'px'
-		});
-		$('body').css({
-			'min-height': maxFormationHeight + 160 + 'px'
-		});
-	}
+		console.log(projectsAdded, projectsAdded + item.numberToShow);
+		console.log(projects.slice(projectsAdded, projectsAdded + item.numberToShow))
+
+		projectsAdded += item.numberToShow;
+
+	});
+
+	return groups;
+
+};
+
+/**
+*	Anonymous helper function to rearragne the project cards using DOM man
+*	@method arrangeCards
+*	@return undefined
+*/
+var arrangeCards = function() {
+	/**
+	 *	Each time these dependency is changed, 
+	 *	this function will be called.
+	 */
 };

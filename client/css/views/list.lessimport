@@ -1,7 +1,6 @@
 body.list {
+	.backgroundImage('/images/backgrounds/landing');
 	.wrapper {
-		height: 100%;
-		.backgroundImage('/images/backgrounds/landing');
 		.container {	
 			.header {
 				padding-top: @gridColumnWidth * 4;
@@ -17,4 +16,9 @@ body.list {
 			}
 		}
 	}
+}
+
+ul.projectGroup {
+	display: inline;
+	float: left;
 }

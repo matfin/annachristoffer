@@ -1,5 +1,11 @@
 <template name="views_list">
-	{{#each this}}
-		{{> cards_project}}
+
+	{{#each groupedProjectCards}}
+		<ul class="projectGroup" style="width: {{groupWidth}}%; padding-top: {{paddingTop}}px">
+			{{#each projects}}
+				{{> cards_project}}
+			{{/each}}
+		</ul>
 	{{/each}}
+	
 </template>
