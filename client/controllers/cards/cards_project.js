@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['cards_project'].created = function() {
-	
 };
 
 /**
@@ -100,7 +99,11 @@ Template['cards_project'].thumbnail = function() {
 *	@return {String} 'highlighted' if highlighted is true, '' if not.
 */
 Template['cards_project'].highlighted = function() {
-	return this.highlighted ? 'highlighted':'';
+	var selected_category_id = Blaze._parentData(2).category_id,
+		isHighlighted = _.find(this.category_ids, function(category_id){
+			return category_id.id === selected_category_id;
+		});
+	return isHighlighted ? 'highlighted':'';
 };
 
 /**

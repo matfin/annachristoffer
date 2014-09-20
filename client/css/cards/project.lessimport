@@ -6,6 +6,8 @@
 	min-height: @gridColumnWidth * 11;
 	width: 100%;
 
+	.opacity(0.5);
+
 	/**
 	 *	Flipping
 	 */
@@ -24,7 +26,9 @@
 		}
 		.flip-rear {
 			.transform(rotateY(180deg));
-			overflow: hidden;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
 		}
 
 		.flip-front,
@@ -33,7 +37,6 @@
 			.box-sizing(border-box);
 			min-height: @gridColumnWidth * 10;
 			height: @gridColumnWidth * 10;
-			.opacity(0.5);
 			
 			border: 1px solid @colourBlack;
 			background-color: @background;

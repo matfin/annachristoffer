@@ -84,7 +84,8 @@ Router.map(function() {
 					uncategorisedProjects = App.models.projects.find({'category_ids.id': {$ne: category.id}}).fetch();
 
 				return {
-					projects: categorisedProjects.concat(uncategorisedProjects)
+					projects: categorisedProjects.concat(uncategorisedProjects),
+					category_id: category.id
 				}
 
 			}
