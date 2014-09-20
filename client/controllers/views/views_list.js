@@ -51,7 +51,7 @@ Template['views_list'].groupedProjectCards = function() {
 	 */
 	var formation,
 		groups = [],
-		projects = App.models.projects.find({}).fetch();
+		projects = this.projects || [];
 
 	if(Device.isHD) {
 		formation = App.models.formations.findOne({"screen": "hd"});

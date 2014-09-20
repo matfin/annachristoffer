@@ -83,11 +83,15 @@ Router.map(function() {
 					categorisedProjects = App.models.projects.find({'category_ids.id': category.id}).fetch(),
 					uncategorisedProjects = App.models.projects.find({'category_ids.id': {$ne: category.id}}).fetch();
 
-				return categorisedProjects.concat(uncategorisedProjects);
+				return {
+					projects: categorisedProjects.concat(uncategorisedProjects)
+				}
 
 			}
 			else {
-				return App.models.projects.find({}).fetch();
+				return {
+					projects: App.models.projects.find({}).fetch()
+				}
 			}
 		},
 		yieldTemplates: {
