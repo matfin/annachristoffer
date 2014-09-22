@@ -5,6 +5,7 @@
 *	@return undefined
 */
 Template['cards_project'].created = function() {
+	console.log('Created cards project');
 };
 
 /**
@@ -29,6 +30,7 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
+	console.log('Destroyed cards project');
 };
 
 /**

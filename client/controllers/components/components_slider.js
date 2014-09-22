@@ -18,30 +18,30 @@ Template['components_slider'].rendered = function() {
 	var template = this,
 		isFullSlider = this.data.type === 'fullslider';
 
-	$(template.find('.iosSlider')).iosSlider({
+	this.$('.iosSlider').iosSlider({
 		desktopClickDrag: true,
 		snapToChildren: true,
 		keyboardControls: true,
 		infiniteSlider: false,
 		responsiveSlideContainer: true,
 		responsiveSlides: true,
-		navNextSelector: $(template.find('.icon-rightArrow')),
-		navPrevSelector: $(template.find('.icon-leftArrow')),
+		navNextSelector: this.$('.icon-rightArrow'),
+		navPrevSelector: this.$('.icon-leftArrow'),
 		onSliderLoaded: function(args) {
 			_.throttle(primeSliderSize(isFullSlider, template), 100);
 		},
 		onSlideChange: function(args) {
-			$(template.find('button.active')).removeClass('active');
-			$(template.find('.sliderPositionIndicator button')).eq(args.targetSlideNumber - 1).addClass('active');
+			template.$('button.active').removeClass('active');
+			template.$('.sliderPositionIndicator button').eq(args.targetSlideNumber - 1).addClass('active');
 
 			if(args.currentSlideNumber === args.data.numberOfSlides) {
-				$(template.find('button.icon-rightArrow')).addClass('hidden');
+				template.$('button.icon-rightArrow').addClass('hidden');
 			}
 			else if(args.currentSlideNumber === 1) {
-				$(template.find('button.icon-leftArrow')).addClass('hidden');
+				template.$('button.icon-leftArrow').addClass('hidden');
 			}
 			else {
-				$(template.find('button')).removeClass('hidden');
+				template.$('button').removeClass('hidden');
 			}
 		},
 		onSliderResize: function() {
@@ -83,13 +83,13 @@ var primeSliderSize = function(full, template) {
 		height = minHeight = $('.mediaContainer').outerWidth() * 0.75;
 	}
 
-	$(template.find('.iosSlider')).css({
+	template.$('.iosSlider').css({
 		'width': width,
 		'height': height,
 		'min-height': minHeight
 	});
 
-	$(template.find('.sliderPositionIndicator button')).eq(0).addClass('active');
+	template.$('.sliderPositionIndicator button').eq(0).addClass('active');
 };
 
 /**
