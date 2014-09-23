@@ -83,13 +83,13 @@ var primeSliderSize = function(full, template) {
 		height = minHeight = $('.mediaContainer').outerWidth() * 0.75;
 	}
 
-	template.$('.iosSlider').css({
+	$('.iosSlider').css({
 		'width': width,
 		'height': height,
 		'min-height': minHeight
 	});
 
-	template.$('.sliderPositionIndicator button').eq(0).addClass('active');
+	$('.sliderPositionIndicator button').eq(0).addClass('active');
 };
 
 /**

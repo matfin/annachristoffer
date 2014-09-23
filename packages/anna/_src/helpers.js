@@ -125,24 +125,5 @@ Helpers = {
 				message: 'Cross browser fullscreen video failed.'
 			}
 		}
-	},
-
-	/**
-	 *	Function to randomly select an element 
-	 *	@method randomlySelectProjectCard
-	 *	@param className {String}	the class name of the object
-	 *	@return {Object} the dom node for the project card object
-	 */
-
-	randomlySelectProjectCard: function(className) {
-		if(typeof className === 'undefined') {
-			className = '.projectCard';
-		}
-
-		var cardCount = App.models.projects.find({}).count(),
-			cardIndex = _.random(0, cardCount);
-
-		return $(className).eq(cardIndex);
-
 	}
 };

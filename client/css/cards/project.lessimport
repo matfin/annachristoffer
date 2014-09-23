@@ -6,7 +6,9 @@
 	min-height: @gridColumnWidth * 11;
 	width: 100%;
 
-	.opacity(0.5);
+	.transition-duration(@transitionDuration * 3);
+	.transition-property(opacity);
+	.opacity(0.2);
 
 	/**
 	 *	Flipping
@@ -82,13 +84,21 @@
 		font-size: 22px;
 	}
 
-	&.highlighted,
-	&.colourHighlighted {
-		.opacity(1.0);
+	&.rendered {
+		.opacity(0.8);
 	}
 
-	&.colourHighlighted {
-		background-color: @highlightedBackground;
+	&.faded {
+		.opacity(0.4);
+	}
+
+	&:hover,
+	&.colourhighlighted {
+		.opacity(1.0);
+		.flip-front, 
+		.flip-rear {
+			background-color: @highlightedBackground;
+		}
 	}
 
 	&:hover {

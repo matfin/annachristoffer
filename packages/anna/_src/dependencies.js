@@ -10,7 +10,6 @@ Dependencies = {
 	projectLoadedDependency: new Tracker.Dependency,
 	sliderLoadedDependency: new Tracker.Dependency,
 
-	projectCardAnimatedDependency: new Tracker.Dependency,
 	videoTimeDependency: new Tracker.Dependency,
 	videoLoadedDependency: new Tracker.Dependency,
 	videoProgressDependency: new Tracker.Dependency,

@@ -31,11 +31,12 @@
 	currentView: false,
 
 	/**
-	 *	Enabling or disabling landing page card animation
-	 *	@property animationRunning
-	 *	@type {Boolean}
+	 *	The current category id of the category being viewed.
+	 *
+	 *	@property currentCategoryId
+	 *	@type {Stting}
 	 */
-	animationRunning: true,
+	currentCategoryId: false,
 
 	/**
 	 *	Throttle timeout - time to wait for throttled events to be called

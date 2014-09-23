@@ -4,3 +4,4 @@ packages/lesshat
 packages/modernizr-meteor
 packages/normalize.css
 video/
+.meteor/cordova-plugins

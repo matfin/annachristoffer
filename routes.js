@@ -83,6 +83,11 @@ Router.map(function() {
 					categorisedProjects = App.models.projects.find({'category_ids.id': category.id}).fetch(),
 					uncategorisedProjects = App.models.projects.find({'category_ids.id': {$ne: category.id}}).fetch();
 
+				/**
+				 *	Set the App level currentCategoryId
+				 */
+				App.currentCategoryId = category.id;
+
 				return {
 					projects: categorisedProjects.concat(uncategorisedProjects),
 					category_id: category.id
@@ -90,6 +95,11 @@ Router.map(function() {
 
 			}
 			else {
+				/**
+				 *	Clear the App level currentCategoryId
+				 */ 
+				App.currentCategoryId = false;
+				
 				return {
 					projects: App.models.projects.find({}).fetch()
 				}

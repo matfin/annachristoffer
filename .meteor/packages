@@ -5,7 +5,6 @@
 
 standard-app-packages
 underscore
-mrt:normalize.css@2.0.1
 ios-slider
 sewdn:velocityjs@0.8.0
 mrt:q
@@ -17,4 +16,5 @@ mrt:moment
 jquery
 http
 ejson
+mrt:normalize.css
 

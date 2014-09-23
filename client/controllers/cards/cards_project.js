@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['cards_project'].created = function() {
-	console.log('Created cards project');
 };
 
 /**
@@ -15,12 +14,14 @@ Template['cards_project'].created = function() {
 *	@return undefined
 */
 Template['cards_project'].rendered = function() {
-	/**
-	 *	Get the card size height, assigning the maximum height to the App attribute.
-	 */
-	var template = this;
-	var templateCardHeight = $(template.find('.projectCard')).outerHeight(true);
-	App.cardSizeHeight = templateCardHeight > App.cardSizeHeight ? templateCardHeight:App.cardSizeHeight;
+	
+	var template = this,
+		placementIndex = this.$('.projectCard').parent().index();
+
+	Meteor.setTimeout(function() {
+		template.$('.projectCard').addClass('rendered');
+	}, 200 * (placementIndex + 1));
+	
 };
 
 /**
@@ -30,7 +31,9 @@ Template['cards_project'].rendered = function() {
 *	@return undefined
 */
 Template['cards_project'].destroyed = function() {
-	console.log('Destroyed cards project');
+	this.$('.projectCard').removeClass('rendered');
+	this.$('.projectCard').removeClass('faded');
+	this.$('.projectCard').removeClass('highlighted');
 };
 
 /**
@@ -97,25 +100,21 @@ Template['cards_project'].thumbnail = function() {
 /**
 *	Template - cards_project
 *	Returns a boolean indicating if the card should be highlighted
-*	@method highlighted
-*	@return {String} 'highlighted' if highlighted is true, '' if not.
-*/
-Template['cards_project'].highlighted = function() {
-	var selected_category_id = Blaze._parentData(2).category_id,
-		isHighlighted = _.find(this.category_ids, function(category_id){
-			return category_id.id === selected_category_id;
-		});
-	return isHighlighted ? 'highlighted':'';
-};
-
-/**
-*	Template - cards_project
-*	Returns a boolean indicating if the card should be highlighted with colour
 *	@method colourHighlighted
-*	@return {String} 'colourHighlighted' if colourHighlighted is true, '' if not.
+*	@return {String} 'colourhighlighted' if highlighted is true, '' if not.
 */
 Template['cards_project'].colourHighlighted = function() {
-	return this.colourHighlighted ? 'colourHighlighted':'';
+
+	/**
+	 * Card highlight and fade effect only if a category is specified.
+	 */
+	if(App.currentCategoryId) {
+		var isHighlighted = _.find(this.category_ids, function(category_id){
+			return category_id.id === App.currentCategoryId;
+		});
+		return isHighlighted ? 'colourhighlighted':'faded';
+	}
+	else return '';
 };
 
 /**
