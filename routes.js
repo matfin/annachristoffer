@@ -80,8 +80,8 @@ Router.map(function() {
 				 *	Grab the category given the query
 				 */
 				var category = App.models.categories.findOne(query),
-					categorisedProjects = App.models.projects.find({'category_ids.id': category.id}).fetch(),
-					uncategorisedProjects = App.models.projects.find({'category_ids.id': {$ne: category.id}}).fetch();
+					categorisedProjects = App.models.projects.find({'category_ids.id': category.id}, {sort: {id: 1}}).fetch(),
+					uncategorisedProjects = App.models.projects.find({'category_ids.id': {$ne: category.id}}, {sort: {id: 1}}).fetch();
 
 				/**
 				 *	Set the App level currentCategoryId
@@ -101,7 +101,7 @@ Router.map(function() {
 				App.currentCategoryId = false;
 				
 				return {
-					projects: App.models.projects.find({}).fetch()
+					projects: App.models.projects.find({}, {sort: {id: 1}}).fetch()
 				}
 			}
 		},

@@ -37,6 +37,7 @@ minifiers@1.1.0
 minimongo@1.0.3
 mobile-status-bar@1.0.0
 mongo@1.0.5
+mrt:modernizr-meteor@2.6.2
 mrt:moment@2.8.1
 mrt:normalize.css@2.0.1
 mrt:q@1.0.1
