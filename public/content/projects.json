@@ -830,7 +830,7 @@
 			},
 			"description": {
 				"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
-				"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
+				"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von seiner Maßeinheit."
 			},
 			"date_created": "2009-11-01",
 			"background": "master-of-art-project",

@@ -20,6 +20,27 @@ Helpers = {
 	},
 
 	/**
+	 *	Function to change the language for all content on the site by 
+	 *	loading new message codes.
+	 *	
+	 *	@function switchLanguage
+	 *	@param {string}		the 2 digit language code (en|de)
+	 *	@return undefined
+	 */
+	switchLanguage: function(languageCode) {
+		/**
+		 *	Set the app language code
+		 *	
+		 *	Fire off the changed event for this dependency,
+		 *	which will then call the UI Helper function named
+		 *	loadMessageCode(). This will re-render all text 
+		 *	content on the site in the chosen language.
+		 */
+		App.language = languageCode;
+		Dependencies.languageChangedDependency.changed();
+	},
+
+	/**
 	 *	Function to return the correct path for videos given the device screen resolution.
 	 *	
 	 *	@method loadVideoSource
