@@ -41,7 +41,7 @@ Template['components_video_player'].rendered = function() {
 		}
 	];
 
-	Video.setup($(template.find('video')), events).then(function() {
+	Video.setup(this.$('video'), events).then(function() {
 		console.log('Video player reports all is good.');
 	}).fail(function() {
 		console.log('No luck setting this video up.');
@@ -69,6 +69,7 @@ Template['components_video_player'].rendered = function() {
  *	@return undefined
  */
 Template['components_video_player'].destroyed = function() {
+	console.log('Video killed');
 	Video.cleanup();
 };
 
@@ -110,7 +111,7 @@ Template['components_video_player'].videoTime = function() {
 
 	Dependencies.videoTimeDependency.depend();
 
-	if(Video.isLoaded()) {
+	if(Video.isLoaded() && Video.isActive()) {
 		
 		var times = Video.times();
 

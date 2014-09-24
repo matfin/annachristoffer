@@ -21,6 +21,10 @@ Template['cards_figcaption'].rendered = function() {
 			Dependencies.viewportResizeDependency.depend();
 		});
 	}
+
+	Meteor.setTimeout(function() {
+		template.$('figure').addClass('rendered');
+	}, 300)
 };
 
 /**
@@ -33,6 +37,8 @@ Template['cards_figcaption'].destroyed = function() {
 	if(typeof this.computation !== 'undefined') {
 		this.computation.stop();
 	}
+
+	this.$('figure').remove();
 };
 
 /**

@@ -37,6 +37,15 @@ Video = {
 	_loaded: false,
 
 	/**
+	 *	Video is active and being used
+	 *	@property _active
+	 *	@private
+	 *	@type {Boolean}
+	 *	@default false
+ 	 */
+ 	_active: false,
+
+	/**
 	 *	Video canPlay state
 	 *	
 	 *	@property _canPlay
@@ -62,6 +71,7 @@ Video = {
 		if(typeof video !== 'undefined' && video.length > 0) {
 			this._video = video.get(0);
 			this._events = events;
+			this._active = true;
 
 			this.checkNetworkState().then(function(network_state_success) {
 				self.checkReadyState().then(function(ready_state_success) {
@@ -291,6 +301,16 @@ Video = {
 	},
 
 	/**
+	 *	Function to return the active state of the video
+	 *	
+	 *	@method isActive
+	 *	@return {Boolean}
+	 */
+	isActive: function() {
+		return this._active;
+	},
+
+	/**
 	 *	Function to return formatted times and percentage of video played
 	 *
 	 *	@method times
@@ -299,6 +319,7 @@ Video = {
 	 *	the percentage of the video that has been played.
 	 */
 	times: function() {
+
 		return {
 			formattedDuration: Helpers.formattedDurationSeconds(this._video.duration),
 			formattedCurrentTime: Helpers.formattedDurationSeconds(this._video.currentTime),
@@ -372,7 +393,8 @@ Video = {
 
 		this._events = [];
 		this._video = null;
-
+		this._active = false;
+		this._loaded = false;
 	},
 
 	/**
