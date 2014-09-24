@@ -1,19 +1,27 @@
 .social {
 
 	padding-top: @gridColumnWidth * 1.25;
-	ul {
-		.display(flex);
-		li {
-			.flex(1);
-			padding: 0 @gridColumnWidth * 0.75;
-			button {
-				border-bottom: 1px solid @colourBlack;
-				width: 100%;
-				&:hover {
-					color: @sliderPrimaryColour;
-					border-bottom: 1px solid @sliderPrimaryColour;
-				}
-			}
+
+	button {
+
+		margin: 0px auto;
+		width: 0%;
+		height: @gridColumnWidth * 1.25;
+		line-height: @gridColumnWidth * 1.25;
+		overflow-x: hidden;
+		color: black;
+
+		.resetButton;
+		.box-sizing(border-box);
+		.transition-property(width);
+		.transition-duration(@transitionDuration);
+
+		&:hover {
+			color: @sliderPrimaryColour;
+		}
+		&:first-child {
+			width: 25%;
 		}
 	}
+
 }
