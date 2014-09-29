@@ -51,6 +51,22 @@
 }
 
 /**
+ *	Font formatting for dates and times
+ */
+.date {
+	font-size: @standardFont - 2;
+	font-weight: 300;
+}
+
+/**
+ *	Standard sub text
+ */
+.sub {
+	font-size: @standardFont - 2;
+	font-weight: 300;
+}
+
+/**
  *	Mixin to load background images based on screen parameters, 
  *	in this case, the window size and pixel density.
  */

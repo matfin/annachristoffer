@@ -55,12 +55,15 @@
 	}
 
 	h3 {
-		font-weight: 100;
-		font-size: @baseFontSize - 2;
+		.sub;
 	}
 
 	p {
 		.standardParagraphText;
+	}
+
+	time {
+		.date;
 	}
 
 	&:first-child {
@@ -70,6 +73,10 @@
 
 	&:nth-child(2) {
 		margin-top: (@gridColumnWidth * 8) + 10;
+	}
+
+	&:last-child {
+		margin-left: @gridColumnWidth;
 	}
 
 	ul {
