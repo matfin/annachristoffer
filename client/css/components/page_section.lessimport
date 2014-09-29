@@ -3,8 +3,44 @@
 	float: left;
 	background-color: @background;
 	width: @gridColumnWidth * 25;
-	padding: @gridColumnWidth;
 	.box-sizing(border-box);
+
+	div {
+		padding: @gridColumnWidth;
+		border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+
+		&:first-child {
+			border: 0;
+		}
+
+		&:nth-child(even) {
+			background-color: rgba(
+				red(#de79df),
+				green(#de79df),
+				blue(#de79df),
+				0.06
+			);
+			border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+ 		}
+	}
+
+	&:nth-child(3) {
+
+		div {
+
+			border-right: none;
+			border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+
+			&:first-child {
+				border: 0;
+			}
+
+			&:nth-child(even) {
+				border-right: none;
+				border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+	 		}
+	 	}
+	}
 
 	h1 {
 		font-size: @baseFontSize;
@@ -21,7 +57,6 @@
 	h3 {
 		font-weight: 100;
 		font-size: @baseFontSize - 2;
-		margin-bottom: @gridColumnWidth * 2;
 	}
 
 	p {
@@ -34,7 +69,7 @@
 	}
 
 	&:nth-child(2) {
-		margin-top: (@gridColumnWidth * 10) + 20;
+		margin-top: (@gridColumnWidth * 8) + 10;
 	}
 
 	ul {
