@@ -14,244 +14,262 @@
 			"sections": [
 				{
 					"order": 1,
-					"items": [
+					"groups": [
 						{
-							"type": "h1",
-							"content": {
-								"en": "What is it about?",
-								"de": "&uuml;ber Deise Seite"
-							}
-						},
-						{
-							"type": "p",
-							"content": {
-								"en": "Through the development of technology Communication design evolved to a versatile and ecletic discipline. Nowadays classical print products existing next to digital platfroms and applications. Being aware of the new and challenging possibilites in the digital age I focused my interest on Interactive Information design with the ambition to create conceptional experiences in digital environments.",
-								"de": "Durch die Entwicklung der Technik Kommunikationsdesign zu einem vielseitigen und ecletic Disziplin entwickelt. Heutzutage klassischen Printprodukten bestehende neben digitalen platfroms und Anwendungen. Dass er über die neue und herausfordernde Möglichkeiten im digitalen Zeitalter Ich konzentrierte mich auf mein Interesse Interaktive Informationsdesign mit der Ehrgeiz, konzeptionelle Erfahrungen in der digitalen Umgebungen zu schaffen."
-							}
-						}
+							"items": [
+								{
+									"type": "h1",
+									"content": {
+										"en": "My Profile",
+										"de": "Mein Profil"
+									}
+								},
+								{
+									"type": "p",
+									"content": {
+										"en": "Through the development of technology communication design evolved to a versatile discipline. Nowadays, classical print products existing next to digital platforms. Being aware of the new and challenging possibilites in the digital age I focused my interest on conceptual design with the ambition to create exceptional experiences in digital environments.",
+										"de": "Durch die Entwicklung der Technik Kommunikationsdesign zu einem vielseitigen und ecletic Disziplin entwickelt. Heutzutage klassischen Printprodukten bestehende neben digitalen platfroms und Anwendungen. Dass er über die neue und herausfordernde Möglichkeiten im digitalen Zeitalter Ich konzentrierte mich auf mein Interesse Interaktive Informationsdesign mit der Ehrgeiz, konzeptionelle Erfahrungen in der digitalen Umgebungen zu schaffen."
+									}
+								},
+								{
+									"type": "h1",
+									"content": {
+										"en": "About this website",
+										"de": "&Uuml;ber diese Website"
+									}
+								},
+								{
+									"type": "p",
+									"content": {
+										"en": "Developed by <a href=\"http://www.mattfinucane.com\" title=\"Matt Finucane\">Matt Finucane</a> and designed by Anna Christoffer. Feel free and <a href=\"mailto:mail@annachristoffer.com\" title=\"Email me\">mail@annachristoffer.com</a>.",
+										"de": "DE: Developed by...."
+									}
+								}
+							]
+						}	
 					]
 				},
 				{
 					"order": 2,
-					"items": [
+					"groups": [
 						{
-							"type": "h1",
-							"content": {
-								"en": "Work experience",
-								"de": "[DE]Work experience"
-							}
+							"items": [
+								{
+									"type": "h1",
+									"content": {
+										"en": "Work experience",
+										"de": "[DE]Work experience"
+									}
+								}
+							]
 						},
 						{
-							"type": "date",
-							"content": {
-								"from": "2014-07-15"
-							}
-						}, 
-						{
-							"type": "h2",
-							"content": {
-								"en": "Junior Art Director",
-								"de": "[DE]Junior Art Director"
-							}
+							"items": [
+								{
+									"type": "date",
+									"content": {
+										"from": "2014-07-15"
+									}
+								},
+								{
+									"type": "h2",
+									"content": {
+										"en": "Junior Art Director",
+										"de": "[DE]Junior Art Director"
+									}
+								},
+								{
+									"type": "h3",
+									"content": {
+										"en": "Digital Agency Hi-ReS!",
+										"de": "Digital Agency Hi-ReS!"
+									}
+								}, 
+								{
+									"type": "h4",
+									"content": {
+										"en": "Berlin",
+										"de": "Berlin"
+									}
+								}
+							]
 						},
 						{
-							"type": "h3",
-							"content": {
-								"en": "Digital Agency Hi-ReS!",
-								"de": "Digital Agency Hi-ReS!"
-							}
+							"items": [
+								{
+									"type": "date",
+									"content": {
+										"from": "2013-07-01",
+										"to": "2014-07-14"
+									}
+								}, 
+								{
+									"type": "h2",
+									"content": {
+										"en": "Design Trainee",
+										"de": "Design Trainee"
+									}
+								},
+								{
+									"type": "h3",
+									"content": {
+										"en": "Digital Agency Hi-ReS!",
+										"de": "Digital Agency Hi-ReS!"
+									}
+								},
+								{
+									"type": "h4",
+									"content": {
+										"en": "Berlin",
+										"de": "Berlin"
+									}
+								}
+							]
 						},
 						{
-							"type": "h4",
-							"content": {
-								"en": "Berlin",
-								"de": "Berlin"
-							}
-						},
-						{
-							"type": "date",
-							"content": {
-								"from": "2013-07-01",
-								"to": "2014-07-14"
-							}
-						}, 
-						{
-							"type": "h2",
-							"content": {
-								"en": "Design Trainee",
-								"de": "Design Trainee"
-							}
-						},
-						{
-							"type": "h3",
-							"content": {
-								"en": "Digital Agency Hi-ReS!",
-								"de": "Digital Agency Hi-ReS!"
-							}
-						},
-						{
-							"type": "h4",
-							"content": {
-								"en": "Berlin",
-								"de": "Berlin"
-							}
-						},
-						{
-							"type": "date",
-							"content": {
-								"from": "2010-10-01",
-								"to": "2012-01-31"
-							}
-						}, 
-						{
-							"type": "h2",
-							"content": {
-								"en": "Freelance Designer",
-								"de": "Freelance Designer"
-							}
-						},
-						{
-							"type": "h3",
-							"content": {
-								"en": "Agency &ldquo;Medienfabrik&rdquo;",
-								"de": "Agency &ldquo;Medienfabrik&rdquo;"
-							}
-						},
-						{
-							"type": "h4",
-							"content": {
-								"en": "G&uuml;tersloh",
-								"de": "G&uuml;tersloh"
-							}
+							"items": [
+								{
+									"type": "date",
+									"content": {
+										"from": "2010-10-01",
+										"to": "2012-01-31"
+									}
+								}, 
+								{
+									"type": "h2",
+									"content": {
+										"en": "Freelance Designer",
+										"de": "Freelance Designer"
+									}
+								},
+								{
+									"type": "h3",
+									"content": {
+										"en": "Agency &ldquo;Medienfabrik&rdquo;",
+										"de": "Agency &ldquo;Medienfabrik&rdquo;"
+									}
+								},
+								{
+									"type": "h4",
+									"content": {
+										"en": "G&uuml;tersloh",
+										"de": "G&uuml;tersloh"
+									}
+								}
+							]
 						}
 					]
 				},
 				{
 					"order": 3,
-					"items": [
+					"groups": [
 						{
-							"type": "h1",
-							"content": {
-								"en": "Education",
-								"de": "Edukation"
-							}
-						},
-						{
-							"type": "date",
-							"content": {
-								"from": "2010-09-01",
-								"to": "2013-02-28"
-							}
-						}, 
-						{
-							"type": "h2",
-							"content": {
-								"en": "Master of Art in Interdisciplinary Design",
-								"de": "[DE]Master of Art in Interdisciplinary Design"
-							}
-						},
-						{
-							"type": "h3",
-							"content": {
-								"en": "University of Applied Science",
-								"de": "[DE]University of Applied Science"
-							}
-						},
-						{
-							"type": "h4",
-							"content": {
-								"en": "Bielefeld, Germany",
-								"de": "Bielefeld, Germany"
-							}
-						},
-						{
-							"type": "date",
-							"content": {
-								"from": "2009-08-01",
-								"to": "2010-07-31"
-							}
-						}, 
-						{
-							"type": "h2",
-							"content": {
-								"en": "Bachelor of Art in Graphic Design",
-								"de": "[DE]Bachelor of Art in Graphic Design"
-							}
-						},
-						{
-							"type": "h3",
-							"content": {
-								"en": "Staffordshire University",
-								"de": "Staffordshire University"
-							}
-						},
-						{
-							"type": "h4",
-							"content": {
-								"en": "Stoke-on-Trent, England",
-								"de": "Stoke-on-Trent, England"
-							}
-						},
-						{
-							"type": "date",
-							"content": {
-								"from": "2006-09-01",
-								"to": "2009-07-31"
-							}
-						}, 
-						{
-							"type": "h2",
-							"content": {
-								"en": "Diploma in Design",
-								"de": "[DE]Diploma in Design"
-							}
-						},
-						{
-							"type": "h3",
-							"content": {
-								"en": "University of Applied Science",
-								"de": "[DE]University of Applied Science"
-							}
-						},
-						{
-							"type": "h4",
-							"content": {
-								"en": "Bielefeld, Germany",
-								"de": "Bielefeld, Germany"
-							}
-						}
-					]
-				},
-				{
-					"order": 4,
-					"items": [
-						{
-							"type": "h1",
-							"content": "Skills"
-						},
-						{
-							"type": "list",
-							"contents": [
+							"items": [
 								{
+									"type": "h1",
 									"content": {
-										"en": "Adobe Creative Suite",
-										"de": "Adobe Creative Suite"
-									}
-								},
-								{
-									"content": {
-										"en": "Adobe After Effects",
-										"de": "Adobe After Effects"
-									}
-								},
-								{
-									"content": {
-										"en": "Adobe Soundbooth",
-										"de": "Adobe Soundbooth"
+										"en": "Education",
+										"de": "Edukation"
 									}
 								}
 							]
-						}
+						},
+						{
+							"items": [
+								{
+									"type": "date",
+									"content": {
+										"from": "2010-09-01",
+										"to": "2013-02-28"
+									}
+								}, 
+								{
+									"type": "h2",
+									"content": {
+										"en": "Master of Art in Interdisciplinary Design",
+										"de": "[DE]Master of Art in Interdisciplinary Design"
+									}
+								},
+								{
+									"type": "h3",
+									"content": {
+										"en": "University of Applied Science",
+										"de": "[DE]University of Applied Science"
+									}
+								},
+								{
+									"type": "h4",
+									"content": {
+										"en": "Bielefeld, Germany",
+										"de": "Bielefeld, Germany"
+									}
+								}
+							]
+						},
+						{
+							"items": [
+								{
+									"type": "date",
+									"content": {
+										"from": "2009-08-01",
+										"to": "2010-07-31"
+									}
+								}, 
+								{
+									"type": "h2",
+									"content": {
+										"en": "Bachelor of Art in Graphic Design",
+										"de": "[DE]Bachelor of Art in Graphic Design"
+									}
+								},
+								{
+									"type": "h3",
+									"content": {
+										"en": "Staffordshire University",
+										"de": "Staffordshire University"
+									}
+								},
+								{
+									"type": "h4",
+									"content": {
+										"en": "Stoke-on-Trent, England",
+										"de": "Stoke-on-Trent, England"
+									}
+								}
+							]
+						}, 
+						{
+							"items": [
+								{
+									"type": "date",
+									"content": {
+										"from": "2006-09-01",
+										"to": "2009-07-31"
+									}
+								}, 
+								{
+									"type": "h2",
+									"content": {
+										"en": "Diploma in Design",
+										"de": "[DE]Diploma in Design"
+									}
+								},
+								{
+									"type": "h3",
+									"content": {
+										"en": "University of Applied Science",
+										"de": "[DE]University of Applied Science"
+									}
+								},
+								{
+									"type": "h4",
+									"content": {
+										"en": "Bielefeld, Germany",
+										"de": "Bielefeld, Germany"
+									}
+								}
+							]
+						}			
 					]
 				}
 			]

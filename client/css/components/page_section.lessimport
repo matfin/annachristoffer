@@ -3,13 +3,12 @@
 	float: left;
 	background-color: @background;
 	width: @gridColumnWidth * 25;
-	margin: @gridColumnWidth / 2;
 	padding: @gridColumnWidth;
 	.box-sizing(border-box);
 
 	h1 {
 		font-size: @baseFontSize;
-		margin-bottom: @gridColumnWidth * 2;
+		margin-bottom: @gridColumnWidth;
 	}
 
 	h2 {
@@ -29,12 +28,13 @@
 		.standardParagraphText;
 	}
 
-	&:nth-child(odd) {
+	&:first-child {
 		float: right;
+		margin-bottom: @gridColumnWidth;
 	}
 
 	&:nth-child(2) {
-		margin-top: @gridColumnWidth * 20;
+		margin-top: (@gridColumnWidth * 10) + 20;
 	}
 
 	ul {

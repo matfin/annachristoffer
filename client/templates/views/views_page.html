@@ -1,8 +1,12 @@
 <template name="views_page">
 	{{#each sections}}
 		<section class="page-section">
-		{{#each items}}
-			{{>views_item}}
+		{{#each groups}}
+			<div>
+				{{#each items}}
+					{{>views_item}}
+				{{/each}}
+			</div>
 		{{/each}}
 		</section>
 	{{/each}}
