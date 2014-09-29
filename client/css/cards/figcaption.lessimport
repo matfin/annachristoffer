@@ -72,37 +72,4 @@ figure.cards_figcaption {
 			}
 		}
 	}
-
-	// Rules for mobile
-	@media @mobile {
-	
-		display: block;
-
-		.mediaContainer {
-			margin: 0;
-			width: 100%;
-		}
-
-		img {
-			display: block;
-		}
-
-		figcaption, img {
-			margin: 0;
-			&.empty {
-				display: none;
-			}
-		}
-
-		figcaption {
-			width: 100%;
-			box-sizing: border-box;
-		}
-
-		.iosSlider + & {
-			figcaption {
-				margin-top: 0;
-			}
-		}
-	}
 }
