@@ -1,0 +1,72 @@
+<template name="header">
+	{{#if deviceParameters.isMobile}}
+		{{> components_mobile_header}}
+	{{else}}
+		{{> components_header}}
+	{{/if}}
+</template>
+
+<template name="components_mobile_header">
+	<div class="mobile-header">
+		<header>
+			<button id="header_reveal">
+				<i class="icon-fullscreen"></i>
+			</button>
+			<nav>
+				<ul>
+					{{#each navCategories}}
+						<li>
+							<a href="" title="{{loadMessageCode title}}">
+								{{loadMessageCode title}}
+							</a>
+						</li>
+					{{/each}}
+				</ul>
+				<button class="switch-language" data-language="en">
+					EN
+				</button>
+				<button class="switch-language" data-language="de">
+					DE
+				</button>
+			</nav>
+		</header>
+	</div>
+</template>
+
+<template name="components_header">
+	<div class="header">
+		<header>
+			<h1>
+				{{loadMessageCode staticContent.mainHeading.content}}
+			</h1>
+			<h2>
+				{{loadMessageCode staticContent.subtitle.content}}
+			</h2>
+			<nav>
+				<ul>
+					<li class="contentLink">
+						<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+							{{loadMessageCode staticContent.projects.content}}
+						</a>
+					</li>
+					{{#each navCategories}}
+						<li class="categoryLink">
+							<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+								{{loadMessageCode title}}
+							</a>
+						</li>
+					{{/each}}
+
+					{{#each pages}}
+						<li class="contentLink">
+							<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+								{{{loadMessageCode title}}}
+							</a>
+						</li>
+					{{/each}}
+				</ul>
+			</nav>
+			{{> components_social}}
+		</header>
+	</div>
+</template>

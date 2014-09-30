@@ -23,7 +23,7 @@ Template['components_header'].rendered = function() {
 *	@return undefined
 */
 Template['components_header'].destroyed = function() {
-
+	console.log('components_header destroyed');
 };
 
 /**

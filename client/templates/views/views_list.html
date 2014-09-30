@@ -4,10 +4,14 @@
 		<ul class="projectGroup" style="width: {{groupWidth}}%; padding-top: {{paddingTop}}px">
 			{{#each projects}}
 				<li>
-					{{> cards_project}}
+					{{#if deviceParameters.isMobile}}
+						
+					{{else}}
+						{{> cards_project}}
+					{{/if}}
 				</li>
 			{{/each}}
 		</ul>
-	{{/each}}
-	
+	{{/each}}	
+
 </template>

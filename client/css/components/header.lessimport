@@ -1,57 +1,58 @@
-header {
+.header {
+	header {
+		position: relative;
+		top: (@gridColumnWidth / 2) - 2;
+		text-align: center;
+		padding: @gridColumnWidth / 2;
+		padding-bottom: @gridColumnWidth;
+		.box-sizing(border-box);
+		background-color: @background;
 
-	position: relative;
-	top: (@gridColumnWidth / 2) - 2;
-	text-align: center;
-	padding: @gridColumnWidth / 2;
-	padding-bottom: @gridColumnWidth;
-	.box-sizing(border-box);
-	background-color: @background;
+		.transition-property(top);
+		.transition-duration(@transitionDuration);
 
-	.transition-property(top);
-	.transition-duration(@transitionDuration);
+		h1, h2, h3 {
+			font-size: @baseFontSize - 2;
+		}
 
-	h1, h2, h3 {
-		font-size: @baseFontSize - 2;
-	}
+		h1, h3 {
+			font-weight: 300;
+		}
 
-	h1, h3 {
-		font-weight: 300;
-	}
+		h2 {
+			font-weight: 400;
+			letter-spacing: 0.64px;
+		}
 
-	h2 {
-		font-weight: 400;
-		letter-spacing: 0.64px;
-	}
+		h3 {
+			margin-top: @gridColumnWidth / 2;
+		}
 
-	h3 {
-		margin-top: @gridColumnWidth / 2;
-	}
-
-	nav {
-		margin-top: @gridColumnWidth / 2;
-		ul {
-			li {
-				a {
-					display: inline-block;
-					width: 100%;
-					max-width: 160px;
-					font-size: @gridColumnWidth - 2;
-					border-bottom: 1px solid @colourBlack;
-					padding-top: @gridColumnWidth * 1.25;
-					padding-bottom: @gridColumnWidth / 4;
-					line-height: @gridColumnWidth;
-					text-transform: lowercase;
-					&:hover {
-						font-weight: bold;
-						color: @sliderPrimaryColour;
-						border-bottom: 1px solid @sliderPrimaryColour;
+		nav {
+			margin-top: @gridColumnWidth / 2;
+			ul {
+				li {
+					a {
+						display: inline-block;
+						width: 100%;
+						max-width: 160px;
+						font-size: @gridColumnWidth - 2;
+						border-bottom: 1px solid @colourBlack;
+						padding-top: @gridColumnWidth * 1.25;
+						padding-bottom: @gridColumnWidth / 4;
+						line-height: @gridColumnWidth;
+						text-transform: lowercase;
+						&:hover {
+							font-weight: bold;
+							color: @sliderPrimaryColour;
+							border-bottom: 1px solid @sliderPrimaryColour;
+						}
 					}
 				}
-			}
 
-			&:nth-child(2) {
-				margin-top: @gridColumnWidth;
+				&:nth-child(2) {
+					margin-top: @gridColumnWidth;
+				}
 			}
 		}
 	}

@@ -37,9 +37,9 @@ Router.map(function() {
 		},
 		template: 'template_main',
 		yieldTemplates: {
-			'components_header': {to: 'header'},
+			'header': {to: 'header'},
 			'views_page': {to: 'content'},
-			'components_footer': {to: 'footer'}
+			'footer': {to: 'footer'}
 		}
 	});
 
@@ -106,9 +106,9 @@ Router.map(function() {
 			}
 		},
 		yieldTemplates: {
-			'components_header': {to: 'header'},
+			'header': {to: 'header'},
 			'views_list': {to: 'content'},
-			'components_footer': {to: 'footer'}
+			'footer': {to: 'footer'}
 		}
 	});
 
@@ -135,9 +135,9 @@ Router.map(function() {
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
-			'components_header': {to: 'header'},
+			'header': {to: 'header'},
 			'views_detail': {to: 'content'},
-			'components_footer': {to: 'footer'}
+			'footer': {to: 'footer'}
 		}
 	});
 });

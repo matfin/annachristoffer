@@ -5,7 +5,7 @@
 /**
  *	Method to load content by given language
  *
- *	@param {Object} message - the message object containing the mesages in different langyages
+ *	@param {Object} message - the message object containing the mesages in different languages
  *	@return {String} - The string message fetched by index from the message object
  */
 UI.registerHelper('loadMessageCode', function(message) {
@@ -25,4 +25,20 @@ UI.registerHelper('loadMessageCode', function(message) {
 		console.log('Content not found for: ', message);
 		return 'Content not found';
 	}
+});
+
+/**
+ *	Method to return device specific parameters for use directly inside templates.
+ *
+ *	@return {Object} Device - listing the properties of the current device
+ */
+UI.registerHelper('deviceParameters', function() {
+
+	/**
+	 *	This depends on the viewport resize dependency being changed.
+	 */
+	Dependencies.viewportResizeDependency.depend();
+
+	return Device;
+
 });
