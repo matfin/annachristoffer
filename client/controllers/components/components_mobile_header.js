@@ -35,3 +35,21 @@ Template['components_mobile_header'].destroyed = function() {
 Template['components_mobile_header'].navCategories = function() {
 	return App.models.categories.find({}).fetch();
 };
+
+/**
+ *	Template - components_mobile_header
+ *	events
+ */
+Template['components_mobile_header'].events = {
+	'touch #header_reveal, click #header_reveal': function(e, template) {
+
+		var nav = template.$('nav');
+
+		if(nav.hasClass('revealed')) {
+			nav.removeClass('revealed');
+		}
+		else {
+			nav.addClass('revealed');
+		}
+	}
+};

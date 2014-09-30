@@ -67,22 +67,22 @@
 
 	header {
 		display: block;
-		background-color: @colourWhite;
-		border-bottom: 4px solid #f3c5f3;
 	}
 
 	button#header_reveal {
+		z-index: @primaryLayer;
 		display: block;
+		position: relative;
 		width: 100%;
 		text-align: center;
 		height: @gridColumnWidth * 3;
 		border-bottom: 4px solid #f3c5f3;
 
 		background-color: rgba(
-			red(#feecfb),
-			green(#feecfb),
-			blue(#feecfb),
-			0.3
+			red(@colourWhite),
+			green(@colourWhite),
+			blue(@colourWhite),
+			0.5
 		);
 
 		i {
@@ -92,6 +92,18 @@
 	}
 
 	nav {
+		z-index: @secondaryLayer;
+		position: relative;
+		.transform(translateY(-120%));
+		.transition-property(transform);
+		.transition-duration(@transitionDuration);
+
+		&.revealed {
+			.transform(translateY(0%));
+		}
+
+		border-bottom: 4px solid #f3c5f3;
+		background-color: @colourWhite;
 		a {
 			display: block;
 			width: 100%;
