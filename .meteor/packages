@@ -12,10 +12,10 @@ iron:router
 less
 anna
 html5-video-player
-mrt:moment
 jquery
 http
 ejson
 mrt:normalize.css
 mrt:modernizr-meteor
+jeeeyul:moment-with-langs
 
