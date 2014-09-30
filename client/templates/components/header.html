@@ -16,7 +16,7 @@
 				<ul>
 					{{#each navCategories}}
 						<li>
-							<a href="#" title="{{loadMessageCode title}}">
+							<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 								{{loadMessageCode title}}
 							</a>
 						</li>

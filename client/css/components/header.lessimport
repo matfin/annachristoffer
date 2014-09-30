@@ -59,6 +59,7 @@
 }
 
 .mobile-header {
+	z-index: @primaryLayer;
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -79,9 +80,9 @@
 		border-bottom: 4px solid #f3c5f3;
 
 		background-color: rgba(
-			red(@colourWhite),
-			green(@colourWhite),
-			blue(@colourWhite),
+			red(#feecfb),
+			green(#feecfb),
+			blue(#feecfb),
 			0.5
 		);
 

@@ -38,6 +38,25 @@ Template['components_mobile_header'].navCategories = function() {
 
 /**
  *	Template - components_mobile_header
+ *	Helper functions for this template
+ */
+Template['components_mobile_header'].helpers({
+
+	/**
+	 *	Function to populate translated slug to be used in
+	 *	the iron-router pathFor function
+	 */
+	translatedSlug: function() {
+		var data = Template.currentData(),
+			slug = data.slug;
+
+		return UI._globalHelpers.loadMessageCode(slug);
+	}
+
+});
+
+/**
+ *	Template - components_mobile_header
  *	events
  */
 Template['components_mobile_header'].events = {
