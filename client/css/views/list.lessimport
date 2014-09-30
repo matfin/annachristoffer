@@ -1,5 +1,5 @@
 body.list {
-	.backgroundImage('/images/backgrounds/landing');
+	.backgroundImage('/images/backgrounds/master-of-art-project');
 	.wrapper {
 		.container {	
 			.header {

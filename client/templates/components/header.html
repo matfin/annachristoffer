@@ -16,18 +16,24 @@
 				<ul>
 					{{#each navCategories}}
 						<li>
-							<a href="" title="{{loadMessageCode title}}">
+							<a href="#" title="{{loadMessageCode title}}">
 								{{loadMessageCode title}}
 							</a>
 						</li>
 					{{/each}}
 				</ul>
-				<button class="switch-language" data-language="en">
-					EN
-				</button>
-				<button class="switch-language" data-language="de">
-					DE
-				</button>
+				<ul class="language-buttons">
+					<li>
+						<button class="switch-language" data-language="en">
+							EN
+						</button>
+					</li>
+					<li>
+						<button class="switch-language" data-language="de">
+							DE
+						</button>
+					</li>
+				</ul>
 			</nav>
 		</header>
 	</div>
