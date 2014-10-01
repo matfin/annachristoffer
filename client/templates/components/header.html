@@ -9,32 +9,50 @@
 <template name="components_mobile_header">
 	<div class="mobile-header">
 		<header>
-			<button id="header_reveal">
-				<i class="icon-menu"></i>
-			</button>
-			<nav>
-				<ul>
-					{{#each navCategories}}
+			<nav class="header-buttons">
+				<button id="header_reveal">
+					<i class="icon-menu"></i>
+				</button>
+			</nav>
+			
+			<div class="slide-out">
+				<nav>
+					<ul>
 						<li>
-							<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
-								{{loadMessageCode title}}
+							<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+								{{loadMessageCode staticContent.projects.content}}
 							</a>
 						</li>
-					{{/each}}
-				</ul>
-				<ul class="language-buttons">
-					<li>
-						<button class="switch-language" data-language="en">
-							EN
-						</button>
-					</li>
-					<li>
-						<button class="switch-language" data-language="de">
-							DE
-						</button>
-					</li>
-				</ul>
-			</nav>
+						{{#each navCategories}}
+							<li>
+								<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+									{{loadMessageCode title}}
+								</a>
+							</li>
+						{{/each}}
+
+						{{#each pages}}
+							<li class="contentLink">
+								<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+									{{{loadMessageCode title}}}
+								</a>
+							</li>
+						{{/each}}
+					</ul>
+					<ul class="language-buttons">
+						<li>
+							<button class="switch-language" data-language="en">
+								EN
+							</button>
+						</li>
+						<li>
+							<button class="switch-language" data-language="de">
+								DE
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 	</div>
 </template>

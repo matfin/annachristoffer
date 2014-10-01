@@ -37,6 +37,31 @@ Template['components_mobile_header'].navCategories = function() {
 };
 
 /**
+*	Template - components_header
+*	Populate page content items from the content collection.
+*	@method pages
+*	@return {Object}
+*/
+Template['components_mobile_header'].staticContent = function() {
+	var content = {
+		mainHeading: App.models.staticContent.findOne({slug: 'title'}),
+		subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
+		projects: App.models.staticContent.findOne({slug: 'projects'})
+	};
+	return content;
+};
+
+/**
+*	Template - components_header
+*	Populate pages from the pages collection.
+*	@method pages
+*	@return {Object} - fetched categories result set
+*/
+Template['components_mobile_header'].pages = function() {
+	return App.models.pages.find({}).fetch();
+};
+
+/**
  *	Template - components_mobile_header
  *	Helper functions for this template
  */
@@ -62,13 +87,16 @@ Template['components_mobile_header'].helpers({
 Template['components_mobile_header'].events = {
 	'touch #header_reveal, click #header_reveal': function(e, template) {
 
-		var nav = template.$('nav');
+		var slideout = template.$('.slide-out'),
+			button = template.$('#header_reveal');
 
-		if(nav.hasClass('revealed')) {
-			nav.removeClass('revealed');
+		if(slideout.hasClass('revealed')) {
+			slideout.removeClass('revealed');
+			button.removeClass('revealed');
 		}
 		else {
-			nav.addClass('revealed');
+			slideout.addClass('revealed');
+			button.addClass('revealed');
 		}
 	}
 };
