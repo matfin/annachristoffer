@@ -32,6 +32,8 @@
 @sliderPrimaryColour: #ff3399;
 @videoControlsColour: #ff3399;
 @videoHudColour: #fed5ea;
+@mobilePrimary: #dd79de;
+@mobileSecondary: #f3c5f3;
 
 // Transitions and animations
 @transitionDuration: 400ms;
