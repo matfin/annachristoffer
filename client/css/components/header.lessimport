@@ -63,7 +63,8 @@
 	header {
 		nav.header-buttons {
 			z-index: @primaryLayer;
-			position: fixed;
+			// position: fixed;
+			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -83,28 +84,42 @@
 				font-size: @baseFontSize * 1.5;
 			}
 
-			.transition-property(transform);
+			.transition-property(transform, background-color);
 			.transition-duration(@transitionDuration / 2);
 
 			&.revealed {
 				.transform(translateX(80%));
+
+				background-color: rgba(
+					red(#feecfb),
+					green(#feecfb),
+					blue(#feecfb),
+					0.9
+				);
 			}
 		}
 
 		.slide-out {
 			z-index: @primaryLayer;
-			position: fixed;
+			// position: fixed;
+			position: absolute;
 			top: 0;
 			left: 0;
 			width: 80%;
 			height: 100%;
 			
 			.transform(translateX(-100%));
-			.transition-property(transform);
+			.transition-property(transform, background-color);
 			.transition-duration(@transitionDuration / 2);
 
 			&.revealed {
 				.transform(translateX(0%));
+				background-color: rgba(
+					red(#feecfb),
+					green(#feecfb),
+					blue(#feecfb),
+					0.9
+				);
 			}
 
 			background-color: rgba(
