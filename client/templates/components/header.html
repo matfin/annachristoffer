@@ -7,6 +7,58 @@
 </template>
 
 <template name="components_mobile_header">
+	
+	<!-- These remain persistent -->
+	<div class="header_buttons">
+		<button id="header_reveal">
+			<i class="icon-menu">
+			</i>
+		</button>
+	</div>
+	<!-- This gets revealed -->
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+						{{loadMessageCode staticContent.projects.content}}
+					</a>
+				</li>
+				<!-- Categories -->
+				{{#each navCategories}}
+					<li>
+						<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+							{{loadMessageCode title}}
+						</a>
+					</li>
+				{{/each}}
+
+				<!-- Pages -->
+				{{#each pages}}
+					<li class="contentLink">
+						<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+							{{{loadMessageCode title}}}
+						</a>
+					</li>
+				{{/each}}
+
+				<!-- Language select buttons -->
+				<li class="language-select">
+					<button class="switch-language" data-language="en">
+						EN
+					</button>
+					<button class="switch-language" data-language="de">
+						DE
+					</button>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	
+</template>
+
+<!--
+<template name="components_mobile_header">
 	<div class="mobile-header">
 		<header>
 			<nav class="header-buttons">
@@ -52,6 +104,7 @@
 		</header>
 	</div>
 </template>
+-->
 
 <template name="components_header">
 	<div class="header">

@@ -85,29 +85,28 @@ Template['components_mobile_header'].helpers({
  *	events
  */
 Template['components_mobile_header'].events = {
-	'touch #header_reveal, click #header_reveal': function(e, template) {
+	'touchstart #header_reveal, click #header_reveal': function(e, template) {
 
-		var headerButtons = template.$('.header-buttons'),
-			slideOut = template.$('.slide-out');
+		var headerButtons = template.$('.header_buttons'),
+			header = template.$('header');
 
-		if(slideOut.hasClass('revealed')) {
+		if(header.hasClass('revealed')) {
 			headerButtons.removeClass('revealed');
-			slideOut.removeClass('revealed');
+			header.removeClass('revealed');
 		}
 		else {
-			slideOut.addClass('revealed');
+			header.addClass('revealed');
 			headerButtons.addClass('revealed');
 		}
 	},
-	'touch a, click a':  function(e, template) {
-		var headerButtons = template.$('.header-buttons'),
-			slideOut = template.$('.slide-out');
+	'click a':  function(e, template) {
+		var headerButtons = template.$('.header_buttons'),
+			header = template.$('header');
 		/**
 		 *	Get rid of the menu
 		 */
-		console.log('Working?');
 		headerButtons.removeClass('revealed');
-		slideOut.removeClass('revealed');
-		return true;
+		header.removeClass('revealed');
+		// return true;
 	}
 };

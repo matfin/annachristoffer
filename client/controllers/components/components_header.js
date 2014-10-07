@@ -105,9 +105,9 @@ var primeHeader = Tracker.autorun(function() {
 	}
 	else {
 
-		$('header').css({
-			'top': '0px'
-		});
+		// $('header').css({
+		// 	'top': '0px'
+		// });
 
 	}
 });
