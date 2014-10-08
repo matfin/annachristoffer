@@ -156,6 +156,12 @@ header.mobile_header {
 					0.38
 				);
 
+				h1 {
+					width: 100%;
+					text-align: center;
+					color: @mobilePrimary;
+				}
+
 				button, a {
 					color: @mobilePrimary;
 				}
