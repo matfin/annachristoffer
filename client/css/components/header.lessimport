@@ -76,6 +76,13 @@ header.mobile_header {
 		0.5
 	);
 
+	border-bottom: 2px solid rgba(
+		red(@mobilePrimary),
+		green(@mobilePrimary),
+		blue(@mobilePrimary),
+		0.38
+	);
+
 	.transform(translateX(0%));
 
 	button {
@@ -91,7 +98,7 @@ header.mobile_header {
 			red(#feecfb),
 			green(#feecfb),
 			blue(#feecfb),
-			0.9
+			0.8
 		);
 	}
 }
@@ -119,7 +126,7 @@ header.mobile_header {
 			red(#feecfb),
 			green(#feecfb),
 			blue(#feecfb),
-			0.9
+			0.8
 		);
 	}
 
@@ -140,28 +147,52 @@ header.mobile_header {
 				.display(flex);
 				.align-items(center);
 
-				border-bottom: 3px solid rgba(
+				border-bottom: 2px solid rgba(
 					red(@mobilePrimary),
 					green(@mobilePrimary),
 					blue(@mobilePrimary),
 					0.38
 				);
 
-				a {
-					margin: auto;	
+				button, a {
 					color: @mobilePrimary;
-					width: 50%;
+				}
+
+				a {
+					margin: auto;
+					width: 100%;
 					text-align: center;
 				}
 
 				button {
-					display: inline;
-					float: left;
+					position: absolute;
 					width: 50%;
+					height: 100%;
+					top: 0;
+					&:first-child {
+						left: 0;
+					}
+					&:last-child {
+						right: 0;
+					}
+					&.selected {
+						background-color: rgba(
+							red(@mobilePrimary),
+							green(@mobilePrimary),
+							blue(@mobilePrimary),
+							0.1
+						);
+					}
+				}
+
+				&:first-child {
+					max-height: @gridColumnWidth * 3;
 				}
 
 				&:last-child {
 					border-bottom: none;
+					max-height: @gridColumnWidth * 3;
+					position: relative;
 				}
 			}
 		}

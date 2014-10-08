@@ -85,7 +85,7 @@ Template['components_mobile_header'].helpers({
  *	events
  */
 Template['components_mobile_header'].events = {
-	'touchstart #header_reveal, click #header_reveal': function(e, template) {
+	'click #header_reveal': function(e, template) {
 
 		var headerButtons = template.$('.header_buttons'),
 			header = template.$('header');
@@ -102,11 +102,8 @@ Template['components_mobile_header'].events = {
 	'click a':  function(e, template) {
 		var headerButtons = template.$('.header_buttons'),
 			header = template.$('header');
-		/**
-		 *	Get rid of the menu
-		 */
+		
 		headerButtons.removeClass('revealed');
 		header.removeClass('revealed');
-		// return true;
 	}
 };
