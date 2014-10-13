@@ -79,6 +79,11 @@ figure.cards_figcaption {
 	display: block;
 	width: 100%;
 	background-color: @colourWhite;
+	margin-bottom: @gridColumnWidth * 2;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 
 	figcaption {
