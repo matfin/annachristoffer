@@ -1,15 +1,16 @@
 <template name="views_detail">
 	{{#each this.contents}}
 		{{#if isFigCaption}}
-			{{> cards_figcaption}}
+			{{> figcaption}}
 		{{/if}}
 		{{#if isFullSlider}}
-			<div class="fullSlider">
-				{{> components_slider}}
-			</div>
-		{{/if}}
-		{{#if isVideo}}
-			{{> cards_video}}
+			{{#if deviceParameters.isMobile}}
+				<div class="fullSlider mobile">
+					{{> components_slider}}
+				</div>
+			{{else}}
+				{{> components_video_player}}
+			{{/if}}
 		{{/if}}
 	{{/each}}
 </template>

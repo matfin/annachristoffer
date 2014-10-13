@@ -20,4 +20,22 @@
 	margin: @gridColumnWidth;
 	margin-right: 0;
 	margin-bottom: @gridColumnWidth * 2;
+
+	&.mobile {
+		margin: 0;
+	}
+}
+
+.mobileMediaContainer {
+	display: block;
+	width: 100%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.iosSlider {
+		height: @gridColumnWidth * 15;
+	}
 }

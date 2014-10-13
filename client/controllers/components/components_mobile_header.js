@@ -23,7 +23,6 @@ Template['components_mobile_header'].rendered = function() {
 *	@return undefined
 */
 Template['components_mobile_header'].destroyed = function() {
-	console.log('components_mobile_header destroyed');
 };
 
 /**

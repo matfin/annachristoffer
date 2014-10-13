@@ -73,3 +73,18 @@ figure.cards_figcaption {
 		}
 	}
 }
+
+.cards_mobile_figcaption {
+
+	display: block;
+	width: 100%;
+	background-color: @colourWhite;
+
+
+	figcaption {
+		width: 100%;
+		display: block;
+		.box-sizing(border-box);
+		padding: @gridColumnWidth / 2;
+	}
+}

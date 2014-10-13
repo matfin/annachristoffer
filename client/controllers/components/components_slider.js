@@ -72,15 +72,24 @@ var primeSliderSize = function(full, template) {
 		full = false;
 	}
 
-	var width, height, minHeight;
+	var width, height, minHeight, container;
+
+	//container = $('.mediaContainer') || $('.mobileMediaContainer');
+
+	if($('.mediaContainer').length > 0) {
+		container = $('.mediaContainer');
+	}
+	else {
+		container = $('.mobileMediaContainer');
+	}
 
 	if(full) {
 		width = $('.fullSlider').outerWidth();
 		height = minHeight = $('.fullSlider').outerWidth() * 0.4;
 	}
 	else {
-		width = $('.mediaContainer').outerWidth();
-		height = minHeight = $('.mediaContainer').outerWidth() * 0.75;
+		width = container.outerWidth();
+		height = minHeight = container.outerWidth() * 0.75;
 	}
 
 	$('.iosSlider').css({
