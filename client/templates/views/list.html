@@ -1,0 +1,23 @@
+<template name="list">
+	{{#if deviceParameters.isMobile}}
+		{{> views_mobile_list}}
+	{{else}}
+		{{> views_list}}
+	{{/if}}
+</template>
+
+<template name="views_mobile_list">
+	Mobile!
+</template>
+
+<template name="views_list">
+	{{#each groupedProjectCards}}
+		<ul class="projectGroup" style="width: {{groupWidth}}%; padding-top: {{paddingTop}}px">
+			{{#each projects}}
+				<li>
+					{{> cards_project}}
+				</li>
+			{{/each}}
+		</ul>
+	{{/each}}	
+</template>

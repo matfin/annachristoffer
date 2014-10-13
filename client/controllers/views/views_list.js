@@ -84,5 +84,4 @@ Template['views_list'].groupedProjectCards = function() {
 	});
 
 	return groups;
-
 };

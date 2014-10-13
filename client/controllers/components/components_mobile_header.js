@@ -85,7 +85,7 @@ Template['components_mobile_header'].helpers({
  *	events
  */
 Template['components_mobile_header'].events = {
-	'touchstart #header_reveal': function(e, template) {
+	'touchstart #header_reveal, click #header_reveal': function(e, template) {
 
 		var headerButtons = template.$('.header_buttons'),
 			header = template.$('header');

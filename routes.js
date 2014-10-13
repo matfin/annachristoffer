@@ -107,7 +107,7 @@ Router.map(function() {
 		},
 		yieldTemplates: {
 			'header': {to: 'header'},
-			'views_list': {to: 'content'},
+			'list': {to: 'content'},
 			'footer': {to: 'footer'}
 		}
 	});
