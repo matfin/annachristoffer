@@ -7,10 +7,14 @@ body.list {
 			}
 			.content {
 				padding-top: @gridColumnWidth * 4;
+
+				&.mobile {
+					padding-top: @gridColumnWidth * 3;
+				}
+
 				section {
 					@media @mobile {
 						padding-top: 0px;
-						padding-bottom: @gridColumnWidth * 4;
 					}
 				}
 			}

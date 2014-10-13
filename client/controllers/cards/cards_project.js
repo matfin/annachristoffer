@@ -51,7 +51,7 @@ Template['cards_project'].formattedDate = function(dateString, dateFormat) {
 
 /**
 *	Template - cards_project
-*	Helper to return the category ids concatednated into a String
+*	Helper to return the category ids concatenated into a String
 *	@method categories
 *	@return {String} A comma separated string of category ids
 */
@@ -118,7 +118,7 @@ Template['cards_project'].colourHighlighted = function() {
 };
 
 /**
- *	Template - components_header
+ *	Template - cards_project_mobile
  *	Helper functions for this template
  */
 Template['cards_project'].helpers({

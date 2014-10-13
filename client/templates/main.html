@@ -33,14 +33,26 @@
 <template name="template_main">
 	<div class="wrapper">
 		<div class="container">
-			
+			<!-- Begin: Header -->
 			{{> yield region="header"}}
-			
-			<div class="content">
-				<section>
-					{{> yield region="content"}}
-				</section>
-			</div>
+			<!-- End: Header -->
+
+			<!-- Begin: Content -->
+			{{#if deviceParameters.isMobile}}
+				<div class="content mobile">
+					<section>
+						{{> yield region="content"}}
+					</section>
+				</div>
+			{{else}}
+				<div class="content">
+					<section>
+						{{> yield region="content"}}
+					</section>
+				</div>
+			{{/if}}
+			<!-- End: Content -->
+
 		</div>
 	</div>
 </template>

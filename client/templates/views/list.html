@@ -7,7 +7,9 @@
 </template>
 
 <template name="views_mobile_list">
-	Mobile!
+	{{#each projects}}
+		{{> project}}
+	{{/each}}
 </template>
 
 <template name="views_list">
@@ -15,7 +17,7 @@
 		<ul class="projectGroup" style="width: {{groupWidth}}%; padding-top: {{paddingTop}}px">
 			{{#each projects}}
 				<li>
-					{{> cards_project}}
+					{{> project}}
 				</li>
 			{{/each}}
 		</ul>

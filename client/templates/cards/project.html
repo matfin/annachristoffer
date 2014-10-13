@@ -1,3 +1,26 @@
+<template name="project">
+	{{#if deviceParameters.isMobile}}
+		{{> cards_mobile_project}}
+	{{else}}
+		{{> cards_project}}
+	{{/if}}
+</template>
+
+<template name="cards_mobile_project">
+	<div class="mobileProjectCard">
+		
+		<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+			<h2>
+				{{loadMessageCode title}}
+			</h2>
+			<div style="background-image: url({{thumbnail}})">
+
+			</div>
+		</a>
+		
+	</div>
+</template>
+
 <template name="cards_project">
 	<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=translatedSlug}}" title="{{loadMessageCode title}}" class="projectCard {{colourHighlighted}}">
 		<div class="flip-content">
