@@ -40,7 +40,6 @@
 			min-height: @gridColumnWidth * 10;
 			height: @gridColumnWidth * 10;
 			
-			border: 1px solid @colourBlack;
 			background-color: @background;
 			width: @gridColumnWidth * 14;
 
@@ -63,7 +62,7 @@
 		.resetMarginPadding;
 		margin-top: @gridColumnWidth;
 		font-size: @standardFont - 2;
-		font-weight: 300;
+		font-weight: @fontWeightLight;
 	}
 
 	time,

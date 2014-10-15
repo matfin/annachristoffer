@@ -11,6 +11,7 @@
 
 // Font weights
 @fontWeightHeavy: 600;
+@fontWeightLight: 300;
 
 // Layout
 @gridColumnWidth: 16px;

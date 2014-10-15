@@ -42,6 +42,7 @@
 						padding-bottom: @gridColumnWidth / 4;
 						line-height: @gridColumnWidth;
 						text-transform: lowercase;
+						font-weight: @fontWeightLight;
 						&:hover {
 							font-weight: bold;
 							color: @sliderPrimaryColour;

@@ -28,6 +28,19 @@ UI.registerHelper('loadMessageCode', function(message) {
 });
 
 /**
+ *	Helper to return a nicely formatted date using moment.js
+ *	
+ *	@method formattedDate
+ *	@param {String}	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
+ *	@param {String} The formatting for the date to be displayed.
+ *	@return {String} The formatted date
+ */
+UI.registerHelper('formattedDate', function(dateString, dateFormat) {
+	var m = moment(dateString);
+	return m.isValid() ? m.format(dateFormat):dateString; 
+});
+
+/**
  *	Method to return device specific parameters for use directly inside templates.
  *
  *	@return {Object} Device - listing the properties of the current device
