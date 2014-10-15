@@ -3,14 +3,21 @@
 		{{#if isFigCaption}}
 			{{> figcaption}}
 		{{/if}}
+
 		{{#if isFullSlider}}
 			{{#if deviceParameters.isMobile}}
 				<div class="fullSlider mobile">
 					{{> components_slider}}
-				</div>
+				</div>	
 			{{else}}
-				{{> components_video_player}}
+				<div class="fullSlider">
+					{{> components_slider}}
+				</div>	
 			{{/if}}
+		{{/if}}
+
+		{{#if isVideo}}
+			{{> components_video_player}}
 		{{/if}}
 	{{/each}}
 </template>
