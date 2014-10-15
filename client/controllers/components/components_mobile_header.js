@@ -26,45 +26,36 @@ Template['components_mobile_header'].destroyed = function() {
 };
 
 /**
-*	Template - components_mobile_header
-*	Populate navigation items from the categories collection
-*	@method navCategories
-*	@return {Object} - fetched categories result set
-*/
-Template['components_mobile_header'].navCategories = function() {
-	return App.models.categories.find({}).fetch();
-};
-
-/**
-*	Template - components_header
-*	Populate page content items from the content collection.
-*	@method pages
-*	@return {Object}
-*/
-Template['components_mobile_header'].staticContent = function() {
-	var content = {
-		mainHeading: App.models.staticContent.findOne({slug: 'title'}),
-		subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
-		projects: App.models.staticContent.findOne({slug: 'projects'})
-	};
-	return content;
-};
-
-/**
-*	Template - components_header
-*	Populate pages from the pages collection.
-*	@method pages
-*	@return {Object} - fetched categories result set
-*/
-Template['components_mobile_header'].pages = function() {
-	return App.models.pages.find({}).fetch();
-};
-
-/**
  *	Template - components_mobile_header
  *	Helper functions for this template
  */
 Template['components_mobile_header'].helpers({
+
+	/**
+	 *	Populate navigation items from the categories collection
+	 */
+	navCategories: function() {
+		return App.models.categories.find({}).fetch();
+	},
+
+	/**
+	 *	Populate page content items from the content collection.
+	 */
+	staticContent: function() {
+		var content = {
+			mainHeading: App.models.staticContent.findOne({slug: 'title'}),
+			subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
+			projects: App.models.staticContent.findOne({slug: 'projects'})
+		};
+		return content;
+	},
+
+	/**
+	 *	Populate pages from the pages collection.
+	 */
+	pages: function() {
+		return App.models.pages.find({}).fetch();
+	},
 
 	/**
 	 *	Function to populate translated slug to be used in

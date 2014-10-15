@@ -26,30 +26,31 @@ Template['components_mobile_video_player'].destroyed = function() {
 };
 
 /**
- *	Template - components_mobile_video_player
- *	Helper function to return the correctly sized video
- *	@method videoSource
- *	@return {String}
+ *	Template - views_list
+ *	Helper functions for this template
  */
-Template['components_mobile_video_player'].videoSource = function() {
-	return Helpers.loadVideoSource(this.videoUrl);
-};
+Template['components_mobile_video_player'].helpers({
 
-/**
- *	Template - components_mobile_video_player
- *	Helper function to return the correctly sized image
- *	@method imgSource
- *	@return {String}
- */
-Template['components_mobile_video_player'].imgSource = function() {
-	return Helpers.loadImageSource(this.img);
-};
+	/**
+	 *	Helper function to return the correctly sized video	
+	 */
+	videoSource: function() {
+		return Helpers.loadVideoSource(this.videoUrl);
+	},
+
+	/**
+	 *	Helper function to return the correctly sized image
+	 */
+	imgSource: function() {
+		return Helpers.loadImageSource(this.img);
+	}
+
+});
 
 /**
  *	Template - components_video_player
  *	Events	
  */
 Template['components_mobile_video_player'].events = {
-	
 }
 

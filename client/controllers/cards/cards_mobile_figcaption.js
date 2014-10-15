@@ -27,57 +27,49 @@ Template['cards_mobile_figcaption'].destroyed = function() {
 
 /**
  *	Template - cards_mobile_figcaption
- *	Helper function to determine if a video is present
- *	@method isVideo
- *	@return {Boolean}
+ *	Helper functions for this template
  */
-Template['cards_mobile_figcaption'].isVideo = function() {
-	return typeof this.videoUrl !== 'undefined';
-};
+Template['cards_mobile_figcaption'].helpers({
 
-/**
- *	Template - cards_mobile_figcaption
- *	Helper function to determine if a slider is present
- *	@method isSlider
- *	@return {Boolean}
- */
-Template['cards_mobile_figcaption'].isSlider = function() {
-	return typeof this.slides !== 'undefined';
-};
+	/**
+	 *	Helper function to determine if a video is present
+	 */
+	isVideo: function() {
+		return typeof this.videoUrl !== 'undefined';
+	},
 
+	/**
+	 *	Helper function to determine if a slider is present
+	 */
+	isSlider: function() {
+		return typeof this.slides !== 'undefined';
+	},
 
-/**
- *	Template - cards_mobile_figcaption
- *	Helper function to return the correctly sized image
- *	@method imgSource
- *	@return {String}
- */
-Template['cards_mobile_figcaption'].imgSource = function() {
+	/**
+	 *	Helper function to return the correctly sized image
+	 */
+	imgSource: function() {
 
-	var imgOptions = {}
-	if(typeof this.imgFileType !== 'undefined') {
-		imgOptions.extension = this.imgFileType;
+		var imgOptions = {}
+		if(typeof this.imgFileType !== 'undefined') {
+			imgOptions.extension = this.imgFileType;
+		}
+
+		return Helpers.loadImageSource(this.img, imgOptions);
+	},
+
+	/**
+	 *	Helper function to determine if there are any captions
+	 */
+	hasCaptions: function() {
+		return this.captions && this.captions.length > 0;
+	},
+
+	/**
+	 *	Helper function to determine if there are any intros
+	 */
+	hasIntro: function() {
+		return this.intro;
 	}
 
-	return Helpers.loadImageSource(this.img, imgOptions);
-};
-
-/**
- *	Template - cards_mobile_figcaption
- *	Helper function to determine if there are any captions
- *	@method hasCaptions
- *	@return {Boolean}
- */
-Template['cards_mobile_figcaption'].hasCaptions = function() {
-	return this.captions && this.captions.length > 0;
-};
-
-/**
- *	Template - cards_mobilefigcaption
- *	Helper function to determine if there are any intros
- *	@method hasCaptions
- *	@return {Boolean}
- */
-Template['cards_mobile_figcaption'].hasIntro = function() {
-	return this.intro;
-};
+});

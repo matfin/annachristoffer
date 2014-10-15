@@ -30,52 +30,52 @@ Template['views_page'].destroyed = function() {
 
 /**
  *	Template - views_item
- *	Helper function to return the correct template to load based on the content type
- *	@method dynamicTemplate
- *	@return {Object} the template needed to render the content
+ *	Helper functions for this template
  */
-Template['views_item'].dynamicTemplate = function() {
-	switch(this.type) {
-		case 'date': 
-			return Template['item_dateNode'];
-		case 'list':
-			return Template['item_listNode'];
-		default: 
-			return Template['item_textNode'];
+Template['views_item'].helpers({
+
+	/**
+	 *	Helper function to return the correct template to load based on the content type
+	 */ 
+	dynamicTemplate: function() {
+		switch(this.type) {
+			case 'date': 
+				return Template['item_dateNode'];
+			case 'list':
+				return Template['item_listNode'];
+			default: 
+				return Template['item_textNode'];
+		}
 	}
-};
+
+});
 
 /**
  *	Template - item_textNode
- *	Helper function to determine the tag of the current data item
- *	@method isTag
- *	@param {String} tagName
- *	@return {Boolean} true if the tag matches
+ *	Helper functions for this template
  */
-Template['item_textNode'].isTag = function(tagName) {
-	return tagName === this.type;
-};
+Template['item_textNode'].helpers({
+
+	/**
+	 *	Helper function to determine the tag of the current data item
+	 */
+	isTag: function(tagName) {
+		return tagName === this.type;
+	}
+
+});
 
 /**
  *	Template - item_dateNode
- *	Helper to return a nicely formatted date using moment.js
- *	@method formattedDate
- *	@param {String}	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
- *	@param {String} The formatting for the date to be displayed.
- *	@return {String} the formatted date
+ *	Helper functions for this template
  */
-Template['item_dateNode'].formattedDate = function(dateString, dateFormat) {
-	var m = moment(dateString);
-	return m.isValid() ? m.format(dateFormat):dateString; 
-};
+Template['item_dateNode'].helpers({
 
-/**
- *	Template - item_dateNode
- *	Helper function to determine if the date exists
- *	@method exists
- *	@param {Object} the date object
- *	@return {Boolean} true if the date object is not null, undefined or empty
- */
-Template['item_dateNode'].exists = function(date) {
-	return typeof date !== 'undefined' && date.length > 0;
-}
+	/**
+	 *	Helper function to determine if the date exists
+	 */
+	exists: function(date) {
+		return typeof date !== 'undefined' && date.length > 0;
+	}
+
+});

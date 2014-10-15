@@ -75,77 +75,69 @@ Template['components_video_player'].destroyed = function() {
 
 /**
  *	Template - components_video_player
- *	Helper function to return the correctly sized video
- *	@method videoSource
- *	@return {String}
+ *	Helper functions for this template
  */
-Template['components_video_player'].videoSource = function() {
+Template['components_video_player'].helpers({
 
-	// Call this automatically on window resize
-	Dependencies.viewportResizeDependency.depend();
+	/**
+	 *	Helper function to return the correctly sized video
+	 */
+	videoSource: function() {
 
-	return Helpers.loadVideoSource(this.videoUrl);
-};
+		// Call this automatically on window resize
+		Dependencies.viewportResizeDependency.depend();
+		return Helpers.loadVideoSource(this.videoUrl);
+	},
 
-/**
- *	Template - components_video_player
- *	Helper function to return the correctly sized image
- *	@method imgSource
- *	@return {String}
- */
-Template['components_video_player'].imgSource = function() {
+	/**
+	 *	Helper function to return the correctly sized image
+	 */
+	imgSource: function() {
 
-	// Call this automatically on window resize
-	Dependencies.viewportResizeDependency.depend();
+		// Call this automatically on window resize
+		Dependencies.viewportResizeDependency.depend();
+		return Helpers.loadImageSource(this.img);
+	},
 
-	return Helpers.loadImageSource(this.img);
-};
+	/**
+	 *	Helper function to return video times (duration, currently playing etc)
+	 */
+	videoTime: function() {
 
-/**
- *	Template - components_video_player
- *	Helper function to return video times (duration, currently playing etc)
- *	@method videoTime
- *	@return {Object}
- */
-Template['components_video_player'].videoTime = function() {
+		Dependencies.videoTimeDependency.depend();
 
-	Dependencies.videoTimeDependency.depend();
+		if(Video.isLoaded() && Video.isActive()) {
+			
+			var times = Video.times();
 
-	if(Video.isLoaded() && Video.isActive()) {
-		
-		var times = Video.times();
-
-		return {
-			currentTime: times.formattedCurrentTime,
-			duration: times.formattedDuration,
-			currentTimeSeconds: times.currentTimeSeconds,
-			durationPercentage: times.elapsedDurationPercentage,
-			durationInSeconds: times.durationInSeconds
+			return {
+				currentTime: times.formattedCurrentTime,
+				duration: times.formattedDuration,
+				currentTimeSeconds: times.currentTimeSeconds,
+				durationPercentage: times.elapsedDurationPercentage,
+				durationInSeconds: times.durationInSeconds
+			}
 		}
-	}
-	else {
-		return {
-			durationPercentage: 0
+		else {
+			return {
+				durationPercentage: 0
+			}
 		}
+	},
+
+	/**
+	 *	Helper function to return the percentage of the video that has loaded
+	 */
+	videoLoadedPercentage: function() {
+		Dependencies.videoLoadedDependency.depend();
+		return Video.percentLoaded();
 	}
-};
+
+});
+
 
 /**
- *	Template - components_video_player
- *	Helper function to return the percentage of the video that has loaded
- *	@method videoLoadedPercentage
- *	@return {Number}
- */
-Template['components_video_player'].videoLoadedPercentage = function() {
-
-	Dependencies.videoLoadedDependency.depend();
-	return Video.percentLoaded();
-
-};
-
-/**
- *	Function to calculate percentage based on timeline click
- *	to know where to place the timeline indicator.
+ *	
  *	@method getTimelineOffsetPercentage
  *	@param {Object} clickEvent - the click event
  *	@param {Object} template - the current template
@@ -156,8 +148,6 @@ var getTimelineOffsetPercentage = function(clickEvent, template) {
 	
 	return (clickEvent.offsetX / timelineContainerWidth) * 100;
 };
-
-// 1261695519. 
 
 /**
  *	Template - components_video_player
