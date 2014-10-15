@@ -5,3 +5,4 @@ packages/modernizr-meteor
 packages/normalize.css
 video/
 .meteor/cordova-plugins
+.meteor/platforms
