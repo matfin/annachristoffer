@@ -91,5 +91,9 @@ figure.cards_figcaption {
 		display: block;
 		.box-sizing(border-box);
 		padding: @gridColumnWidth / 2;
+
+		p {
+			.standardParagraphText;
+		}
 	}
 }
