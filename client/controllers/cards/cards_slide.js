@@ -27,18 +27,22 @@ Template['cards_slide'].destroyed = function() {
 
 };
 
-
 /**
-*	Template - cards_slide
-*	Helper function to return the correctly sized image
-*	@method imgSource
-*	@return {String}
-*/
-Template['cards_slide'].imgSource = function() {
+ *	Template - cards_slide
+ *	Helper functions for this template
+ */
+Template['cards_slide'].helpers({
 
-	// Call this automatically on window resize
-	Dependencies.viewportResizeDependency.depend();
+	/**
+	 *	Helper function to return the correctly sized image
+	 */
+	imgSource: function() {
 
-	return Helpers.loadImageSource(this.img);
-};
+		// Call this automatically on window resize
+		Dependencies.viewportResizeDependency.depend();
+
+		return Helpers.loadImageSource(this.img);
+	}
+
+});
 

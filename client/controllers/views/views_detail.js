@@ -35,30 +35,29 @@ Template['views_detail'].destroyed = function() {
 
 /**
  *	Template - views_detail
- *	Helper function to determine if figcapion template should be loaded
- *	@method isFigCaption
- *	@return {Boolean}
+ *	Helper functions for this template
  */
-Template['views_detail'].isFigCaption = function() {
-	return this.type === 'figcaption';
-};
+Template['views_detail'].helpers({
 
-/**
- *	Template - views_detail
- *	Helper function to determine if full slider template should be loaded
- *	@method isFullSlider
- *	@return {Boolean}
- */
-Template['views_detail'].isFullSlider = function() {
-	return this.type === 'fullslider';
-};
+	/**
+	 *	Helper function to determine if figcapion template should be loaded
+	 */
+	isFigCaption: function() {
+		return this.type === 'figcaption';
+	},
 
-/**
- *	Template - views_detail
- *	Helper function to determine if the video template should be loaded
- *	@method isVideo
- *	@return {Boolean}
- */
-Template['views_detail'].isVideo = function() {
-	return this.type === 'video';
-};
+	/**
+	 *	Helper function to determine if full slider template should be loaded	
+	 */
+	isFullSlider: function() {
+		return this.type === 'fullslider';
+	},
+
+	/**
+	 *	Helper function to determine if the video template should be loaded
+	 */
+	isVideo: function() {
+		return this.type === 'video';
+	}
+
+});

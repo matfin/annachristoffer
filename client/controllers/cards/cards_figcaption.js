@@ -43,79 +43,6 @@ Template['cards_figcaption'].destroyed = function() {
 
 /**
  *	Template - cards_figcaption
- *	Helper function to determine if a video is present
- *	@method isVideo
- *	@return {Boolean}
- */
-Template['cards_figcaption'].isVideo = function() {
-	return typeof this.videoUrl !== 'undefined';
-};
-
-/**
- *	Template - cards_figcaption
- *	Helper function to determine if a slider is present
- *	@method isSlider
- *	@return {Boolean}
- */
-Template['cards_figcaption'].isSlider = function() {
-	return typeof this.slides !== 'undefined';
-};
-
-
-/**
- *	Template - cards_figcaption
- *	Helper function to return the correctly sized image
- *	@method imgSource
- *	@return {String}
- */
-Template['cards_figcaption'].imgSource = function() {
-
-	// Call this automatically on window resize
-	Dependencies.viewportResizeDependency.depend();
-
-	var imgOptions = {}
-	if(typeof this.imgFileType !== 'undefined') {
-		imgOptions.extension = this.imgFileType;
-	}
-
-	return Helpers.loadImageSource(this.img, imgOptions);
-};
-
-/**
- *	Template - cards_figcaption
- *	Helper function to return the calculated pixel height of an image.
- *	This is to compensate for IE's poor support for the flex box model
- *	@method imgDimension
- *	@return {Object}
- */
-Template['cards_figcaption'].imgDimension = function() {
-
-	// Call this automatically on window resize
-	Dependencies.viewportResizeDependency.depend();
-};
-
-/**
- *	Template - cards_figcaption
- *	Helper function to determine if there are any captions
- *	@method hasCaptions
- *	@return {Boolean}
- */
-Template['cards_figcaption'].hasCaptions = function() {
-	return this.captions && this.captions.length > 0;
-};
-
-/**
- *	Template - cards_figcaption
- *	Helper function to determine if there are any intros
- *	@method hasCaptions
- *	@return {Boolean}
- */
-Template['cards_figcaption'].hasIntro = function() {
-	return this.intro;
-};
-
-/**
- *	Template - cards_figcaption
  *	Events
  */
 Template['cards_figcaption'].events = {
@@ -124,3 +51,63 @@ Template['cards_figcaption'].events = {
 		$('.scrub').data('canDrag', false);
 	}
 }
+
+/**
+ *	Template - cards_figcaption
+ *	Helper functions for this template
+ */
+Template['cards_figcaption'].helpers({
+
+	/**
+	 *	Helper function to determine if a video is present
+	 */
+	isVideo: function() {
+		return typeof this.videoUrl !== 'undefined';
+	},
+
+	/**
+	 *	Helper function to determine if a slider is present
+	 */
+	isSlider: function() {
+		return typeof this.slides !== 'undefined';
+	},
+
+	/**
+	 *	Helper function to return the correctly sized image
+	 */
+	imgSource: function() {
+
+		// Call this automatically on window resize
+		Dependencies.viewportResizeDependency.depend();
+
+		var imgOptions = {}
+		if(typeof this.imgFileType !== 'undefined') {
+			imgOptions.extension = this.imgFileType;
+		}
+
+		return Helpers.loadImageSource(this.img, imgOptions);
+	},
+
+	/**
+	 *	Helper function to return the calculated pixel height of an image.
+	 */
+	imgDimension: function() {
+		// Call this automatically on window resize
+		Dependencies.viewportResizeDependency.depend();
+	},
+
+	/**
+	 *	Helper function to determine if there are any captions
+	 */
+	hasCaptions: function() {
+		return this.captions && this.captions.length > 0;
+	},
+
+	/**
+	 *	Helper function to determine if there are any intros
+	 */
+	hasIntro: function() {
+		return this.intro;
+	}
+
+});
