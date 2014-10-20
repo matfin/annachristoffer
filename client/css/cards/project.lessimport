@@ -78,7 +78,7 @@
 
 	h2 {
 		font-style: italic;
-		font-weight: 100;
+		// font-weight: 100;
 		font-size: @mediumFont - 2;
 	}
 
