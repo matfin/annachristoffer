@@ -22,8 +22,10 @@ Template['cards_figcaption'].rendered = function() {
 		});
 	}
 
-	Meteor.setTimeout(function() {
-		template.$('figure').addClass('rendered');
+	Meteor.setTimeout(function() {	
+		if(typeof template.$('figure') !== 'undefined' && template.$('figure').length > 0) {
+			template.$('figure').addClass('rendered');
+		}
 	}, 300)
 };
 

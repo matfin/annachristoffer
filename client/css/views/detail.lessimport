@@ -1,5 +1,6 @@
 body.detail {
 	.wrapper {
+		.backgroundImage('/images/backgrounds/master-of-art-project');
 		height: 100%;
 		.container {
 			.align-items(flex-start);

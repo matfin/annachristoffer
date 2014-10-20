@@ -464,77 +464,101 @@
 			]
 		},
 		{
-			"id": 5,
+			"id": 6,
 			"slug": {
-				"en": "typographical-staging",
-				"de": "typografische-inszenierung"
+				"en": "character-design",
+				"de": "character-design"
 			},
 			"title": {
-				"en": "Typographical Staging",
-				"de": "Typografische Inszenierung"
+				"en": "Character Design",
+				"de": "Character Design"
 			},
 			"description": {
-				"en": "A typographical staging of the Drama &ldquo;King Oedipus&rdquo; from Sophocles",
-				"de": "Eine typografische Inszenierung des Dramas &ldquo;König Ödipus&rdquo; von Sophokles"
+				"en": "Carnival of the animals - A digital music book for children",
+				"de": "Karneval der Tiere - Ein digitales Musikbuch f&uuml;r Kinder"
 			},
-			"date_created": "2010-04-01",
-			"background": "oedipus",
+			"date_created": "2013-02-01",
+			"background": "master-of-art-project",
 			"category_ids": [
 				{
-					"id": 2
+					"id": 3
 				}
 			],
 			"contents": [
 				{
 					"type": "thumbnail",
-					"img": "thumbnails/oedipus"
+					"img": "thumbnails/character-design"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/01-oedipus-title/oedipus-title",
+					"img": "master-of-art-project/music-characters/1-lion-illu/lion-illu",
 					"intro": {
 						"title": {
-							"en": "Typographical Staging",
-							"de": "Typografische Inszenierung"
+							"en": "Character Design",
+							"de": "Character Design"
 						},
 						"description": {
-							"en": "A typographical staging of the Drama &ldquo;King Oedipus&rdquo; from Sophocles",
-							"de": "Eine typografische Inszenierung des Dramas &ldquo;König Ödipus&rdquo; von Sophokles"
-						} 
+							"en": "Carnival of the animals - A digital music book for children",
+							"de": "Karneval der Tiere - Ein digitales Musikbuch f&uuml;r Kinder" 
+						}
 					},
 					"captions": [
 						{
 							"content": {
-								"en": "The tragedy of King Oedipus is staged in a book with subjective typographical treatment. Phrase by phrase and word by word King Oedipus develops towards his doom, typographical drawn by the merciless fall into the book bind.",
-								"de": "Wie kann ein Drama in den Rahmenbedingungen eines Buches inszeniert werden? Hierbei wird die Begebenheit des Mediums genutzt, indem sich ein schwarzer Abgrund im Bund des Buches auftut. Zu Anfang der Handlung zeigt sich dem Betrachter ein konventioneller Dramensatz. Mit der zunhemenden Verzweiflung des Königs im Angesicht seines unausweichlichen Schicksals, reißt sich der Abgrund des Buchbundes immer weiter auf, bis am Ende der gesamte Textinhalt verschlungen wird."
+								"en": "The design concept was developed for a digital music book. The aim was to approach an innovative visual appearance for the famous music play &ldquo;Carnival of the animals&rdquo;. Additionally the brief involved the ambition to integrate on the one hand the music instruments and on the other hand the narrative content of each music piece.",
+								"de": "Das Gestaltungskonzept wurde im Rahmen der Entwicklung eines digitalen Musikbuchs konzipiert. Die Idee beinhaltete der ber&uuml;hmten Musikgeschichte: &ldquo;Karneval der Tiere&rdquo; ein innovatives Erscheinungsbild zu verleihen, welches zum einen die Formen der unterschiedlichen Instrumente des Kammerorchesters miteinbezieht und zum anderen die inhaltlichen Themen der einzelnen Musikst&uuml;cke präsentiert."
 							}
 						}
 					]
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/02-oedipus-beginning/oedipus-beginning"
+					"img": "master-of-art-project/music-characters/2-turtle-illu/turtle-illu"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/03-oedipus-1/oedipus-beginning-1"
+					"img": "master-of-art-project/music-characters/3-chick-illu/chick-illu",
+					"captions": [
+						{
+							"content": {
+								"en": "The solution was to create the illustrations with the outlines oft the music instruments. Saint-Saëns wrote the music for a private audience of music professionals. Therefore he created very freely and he chosen for his humoristic music play a little ensemble, in the capacity of a chamber orchestra. Therefore the intention was to limited also the visual stylistics for the design concept. So in fact each music piece was just illustrated by the visual outlines of Saint-Saëns ensemble.",
+								"de": "Saint-Saëns schrieb die Musik f&uuml;r einen privaten Kreis von Freunden und Musikkennern. Dementsprechend komponierte er ungezwungen und wählte f&uuml;r seine humoristische Musikgeschichte ein kleines privates Musikensemble, im Format eines Kammerorchesters. Im Sinne dieser gestalterischen Reduktion des Komponisten wurden die visuellen Lösungen generiert. F&uuml;r jedes Musikst&uuml;ck wurde ausschließlich aus den Repertoire der einzelnen Instrumente des Kammerorchesters eine Form- und Farbkomposition skizziert."
+							}
+						}
+					]
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/04-oedipus-2/oedipus-beginning-2"
+					"img": "master-of-art-project/music-characters/4-fish-illu/fish-illu"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/05-oedipus-3/oedipus-beginning-3"
+					"img": "master-of-art-project/music-characters/5-hermoines-illu/hermoines-illu"
 				},
 				{
 					"type": "figcaption",
-					"img": "oedipus/06-oedipus-4/oedipus-beginning-4"
+					"img": "master-of-art-project/music-characters/6-kuckkuck-illu/kuckkuck-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/7-ozean-illu/ozean-illu"
+				},
+				{
+					"type": "figcaption",
+					"img": "master-of-art-project/music-characters/8-vogelhaus-illu/kuckkuck-illu",
+					"captions": [
+						{
+							"content": {
+								"en": "The combination of narrative instrumental music and abstract visualistion enhances especially the imagnitive approach to the musical content.",
+								"de": "Die Kombination von erzählerischer Instrumentalmusik und abstrakter Bildsprache unterst&uuml;tzt einen imaginären Zugang zur Materie."
+							}
+						}
+					]
 				}
 			]
 		},
 		{
-			"id": 6,
+			"id": 10,
 			"slug":{
 				"en": "digital-atlas",
 				"de": "digitaler-atlas"
@@ -909,7 +933,7 @@
 			]
 		},
 		{
-			"id": 10,
+			"id": 11,
 			"slug": {
 				"en": "typographical-visualisation",
 				"de": "typografische-visualisierung"
@@ -963,100 +987,6 @@
 				{
 					"type": "figcaption",
 					"img": "typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation"
-				}
-			]
-		},
-		{
-			"id": 11,
-			"slug": {
-				"en": "character-design",
-				"de": "character-design"
-			},
-			"title": {
-				"en": "Character Design",
-				"de": "Character Design"
-			},
-			"description": {
-				"en": "Carnival of the animals - A digital music book for children",
-				"de": "Karneval der Tiere - Ein digitales Musikbuch f&uuml;r Kinder"
-			},
-			"date_created": "2013-02-01",
-			"background": "master-of-art-project",
-			"category_ids": [
-				{
-					"id": 3
-				}
-			],
-			"contents": [
-				{
-					"type": "thumbnail",
-					"img": "thumbnails/character-design"
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/1-lion-illu/lion-illu",
-					"intro": {
-						"title": {
-							"en": "Character Design",
-							"de": "Character Design"
-						},
-						"description": {
-							"en": "Carnival of the animals - A digital music book for children",
-							"de": "Karneval der Tiere - Ein digitales Musikbuch f&uuml;r Kinder" 
-						}
-					},
-					"captions": [
-						{
-							"content": {
-								"en": "The design concept was developed for a digital music book. The aim was to approach an innovative visual appearance for the famous music play &ldquo;Carnival of the animals&rdquo;. Additionally the brief involved the ambition to integrate on the one hand the music instruments and on the other hand the narrative content of each music piece.",
-								"de": "Das Gestaltungskonzept wurde im Rahmen der Entwicklung eines digitalen Musikbuchs konzipiert. Die Idee beinhaltete der ber&uuml;hmten Musikgeschichte: &ldquo;Karneval der Tiere&rdquo; ein innovatives Erscheinungsbild zu verleihen, welches zum einen die Formen der unterschiedlichen Instrumente des Kammerorchesters miteinbezieht und zum anderen die inhaltlichen Themen der einzelnen Musikst&uuml;cke präsentiert."
-							}
-						}
-					]
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/2-turtle-illu/turtle-illu"
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/3-chick-illu/chick-illu",
-					"captions": [
-						{
-							"content": {
-								"en": "The solution was to create the illustrations with the outlines oft the music instruments. Saint-Saëns wrote the music for a private audience of music professionals. Therefore he created very freely and he chosen for his humoristic music play a little ensemble, in the capacity of a chamber orchestra. Therefore the intention was to limited also the visual stylistics for the design concept. So in fact each music piece was just illustrated by the visual outlines of Saint-Saëns ensemble.",
-								"de": "Saint-Saëns schrieb die Musik f&uuml;r einen privaten Kreis von Freunden und Musikkennern. Dementsprechend komponierte er ungezwungen und wählte f&uuml;r seine humoristische Musikgeschichte ein kleines privates Musikensemble, im Format eines Kammerorchesters. Im Sinne dieser gestalterischen Reduktion des Komponisten wurden die visuellen Lösungen generiert. F&uuml;r jedes Musikst&uuml;ck wurde ausschließlich aus den Repertoire der einzelnen Instrumente des Kammerorchesters eine Form- und Farbkomposition skizziert."
-							}
-						}
-					]
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/4-fish-illu/fish-illu"
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/5-hermoines-illu/hermoines-illu"
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/6-kuckkuck-illu/kuckkuck-illu"
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/7-ozean-illu/ozean-illu"
-				},
-				{
-					"type": "figcaption",
-					"img": "master-of-art-project/music-characters/8-vogelhaus-illu/kuckkuck-illu",
-					"captions": [
-						{
-							"content": {
-								"en": "The combination of narrative instrumental music and abstract visualistion enhances especially the imagnitive approach to the musical content.",
-								"de": "Die Kombination von erzählerischer Instrumentalmusik und abstrakter Bildsprache unterst&uuml;tzt einen imaginären Zugang zur Materie."
-							}
-						}
-					]
 				}
 			]
 		}
