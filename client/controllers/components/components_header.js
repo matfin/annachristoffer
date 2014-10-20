@@ -87,10 +87,12 @@ var primeHeader = Tracker.autorun(function() {
 	/**
 	 *	For now, the side nav menu should only scroll on a detail page
 	 */
-	if(!Device.isMobile && (App.currentView === 'detail' || App.currentView === 'page')) {
+	if(App.currentView === 'detail' || App.currentView === 'page') {
 		
+		var top = ($(window).scrollTop()) + 64;
+
 		$('header').css({
-			'top': ($(window).scrollTop()) + 64 + 'px'
+			'top': (top < 64 ? 64:top) + 'px'
 		});
 
 	}

@@ -1,8 +1,8 @@
 .header {
 	header {
 		position: relative;
-		top: (@gridColumnWidth / 2) - 2;
 		text-align: center;
+		top: @gridColumnWidth * 4;
 		padding: @gridColumnWidth / 2;
 		padding-bottom: @gridColumnWidth;
 		.box-sizing(border-box);

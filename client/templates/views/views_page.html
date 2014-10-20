@@ -1,15 +1,45 @@
 <template name="views_page">
-	{{#each sections}}
-		<section class="page-section">
-		{{#each groups}}
-			<div>
-				{{#each items}}
-					{{>views_item}}
+
+	<div class="page-column-left">
+		<section class="page-section experience">
+			<ul>
+				{{#each getSectionGroupsByName "experience"}}
+					<li>
+						{{#each items}}
+							{{> views_item}}
+						{{/each}}
+					</li>
 				{{/each}}
-			</div>
-		{{/each}}
+			</ul>
 		</section>
-	{{/each}}
+	</div>
+
+	<div class="page-column-right">
+		<section class="page-section profile">
+			<ul>
+				{{#each getSectionGroupsByName "profile"}}
+					<li>
+						{{#each items}}
+							{{> views_item}}
+						{{/each}}
+					</li>
+				{{/each}}
+			</ul>
+		</section>
+
+		<section class="page-section education">
+			<ul>
+				{{#each getSectionGroupsByName "education"}}
+					<li>
+						{{#each items}}
+							{{> views_item}}
+						{{/each}}
+					</li>
+				{{/each}}
+			</ul>
+		</section>
+	</div>
+
 </template>
 
 <template name="views_item">
@@ -43,14 +73,16 @@
 </template>
 
 <template name="item_dateNode">
-	<time datetime="{{content.from}}">
-		{{formattedDate content.from "MMMM YYYY"}}
-	</time>
-	{{#if exists content.to}}
-		<time datetime="{{content.to}}">
-			&ndash; {{formattedDate content.to "MMMM YYYY"}} /
+	<h4>
+		<time datetime="{{content.from}}">
+			{{formattedDate content.from "MMMM YYYY"}}
 		</time>
-	{{/if}}
+		{{#if exists content.to}}
+			<time datetime="{{content.to}}">
+				&ndash; {{formattedDate content.to "MMMM YYYY"}} /
+			</time>
+		{{/if}}
+	</h4>
 </template>
 
 <template name="item_listNode">

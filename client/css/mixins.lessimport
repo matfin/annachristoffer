@@ -45,7 +45,7 @@
  */
 .standardParagraphText {
 	font-size: @baseFontSize - 2;
-	margin-bottom: @gridColumnWidth;
+	// margin-bottom: @gridColumnWidth;
 	line-height: (@gridColumnWidth * 1.25);
 	letter-spacing: 0.3px;
 	font-weight: @fontWeightLight;
@@ -111,5 +111,5 @@
 	}
 	@media @mobile and @retina {
 		background-image: url('@{img}-m@2x.@{extension}');
-	}
+	} 
 }

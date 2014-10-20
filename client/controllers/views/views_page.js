@@ -1,29 +1,48 @@
 /**
-*	Template - views_page
-*	Callback called automatically when the template instance is created.
-*	@method created
-*	@return undefined
-*/
+ *	Template - views_page
+ *	Callback called automatically when the template instance is created.
+ *	@method created
+ *	@return undefined
+ */
 Template['views_page'].created = function() {
 	App.currentView = 'page';
 };
 
 /**
-*	Template - views_page
-*	Callback called automatically when the template instance is created.
-*	@method rendered
-*	@return undefined
-*/
+ *	Template - views_page
+ *	Callback called automatically when the template instance is created.
+ *	@method rendered
+ *	@return undefined
+ */
 Template['views_page'].rendered = function() {
 	$('body').addClass('page');
 };
 
 /**
-*	Template - views_page
-*	Callback called automatically when the template instance is created.
-*	@method destroyed
-*	@return undefined
-*/
+ *	Template - views_item
+ *	Helper functions for this template
+ */
+Template['views_page'].helpers({
+
+	/**
+ 	 *	Helper function to fetch content section by name
+ 	 */
+ 	getSectionGroupsByName: function(sectionName) {
+ 		if(this.sections && typeof this.sections !== 'undefined') {
+ 			return _.findWhere(this.sections, {name: sectionName}).groups;
+ 		}
+
+ 		return;
+ 	}
+
+});
+
+/**
+ *	Template - views_page
+ *	Callback called automatically when the template instance is created.
+ *	@method destroyed
+ *	@return undefined
+ */
 Template['views_page'].destroyed = function() {
 	$('body').removeClass();
 };
@@ -47,7 +66,6 @@ Template['views_item'].helpers({
 				return Template['item_textNode'];
 		}
 	}
-
 });
 
 /**

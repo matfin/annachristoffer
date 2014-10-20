@@ -70,7 +70,22 @@ Router.map(function() {
 			}
 
 			if(this.params._category_slug) {
+				/**
+				 * Building up the query given the category slug and the language
+				 */
+				var query = {};
+				query['slug.' + App.language] = this.params._category_slug;
 				
+				/**
+				 *	Grab the category given the query
+				 */
+				var category = App.models.categories.findOne(query);
+
+				/**
+				 *	Set the App level currentCategoryId
+				 */
+				App.currentCategoryId = category.id;
+
 				return {
 					projects: App.models.projects.find({}, {sort: {id: 1}}).fetch(),
 					category_id: category.id

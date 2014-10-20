@@ -1,45 +1,85 @@
-.page-section {
-	display: inline;
-	float: left;
-	background-color: @background;
-	width: @gridColumnWidth * 25;
+.page-column-left {
+	.flex(1.6);
 	.box-sizing(border-box);
+	padding-left: @gridColumnWidth;
 
-	div {
-		padding: @gridColumnWidth;
-		border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+	.display(flex);
+	.flex-direction(row);
+	.align-items(center);
+}
 
-		&:first-child {
-			border: 0;
-		}
+.page-column-right {
+	.flex(2);
+	.box-sizing(border-box);
+	padding-left: @gridColumnWidth;
+}
 
-		&:nth-child(even) {
-			background-color: rgba(
-				red(#de79df),
-				green(#de79df),
-				blue(#de79df),
-				0.06
-			);
-			border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
- 		}
-	}
+.page-section {
+	display: block;
+	max-width: @gridColumnWidth * 28.5;
+	width: 100%;
+	margin-bottom: @gridColumnWidth;
 
-	&:nth-child(3) {
-
-		div {
-
-			border-right: none;
-			border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+	ul {
+		display: block;
+		width: 100%;
+		li {
+			display: block;
+			padding: @gridColumnWidth / 2 0;
+			background-color: @background;
 
 			&:first-child {
-				border: 0;
+				padding-top: @gridColumnWidth;
 			}
 
-			&:nth-child(even) {
-				border-right: none;
-				border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
-	 		}
-	 	}
+			&:last-child {
+				padding-bottom: @gridColumnWidth;
+			}
+		}
+	}
+
+	&.profile {
+		float: right;
+	}
+
+	&.education {
+		float: left;
+	}
+
+	&.experience {
+		float: left;
+	}
+
+	&.experience {
+		// li {
+		// 	border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+
+		// 	&:first-child {
+		// 		border-right: none;
+		// 		margin-right: @gridColumnWidth / 2;
+		// 	}
+		// 	&:nth-child(even) {
+		// 		border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+		// 	}
+		// }
+	}
+
+	&.education {
+		// li {
+		// 	border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+
+		// 	&:first-child {
+		// 		border-left: none;
+		// 		margin-left: @gridColumnWidth / 2;
+		// 	}
+		// 	&:nth-child(even) {
+		// 		border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+		// 	}
+		// }
+	}
+
+	h1, h2, h3, h4, p {
+		padding: 0 @gridColumnWidth;
 	}
 
 	h1 {
@@ -50,7 +90,8 @@
 		font-size: @mediumFont - 2;
 		font-style: italic;
 		font-weight: 100;
-		margin: (@gridColumnWidth / 2) 0;
+		margin: @gridColumnWidth / 2 0;
+		line-height: (@gridColumnWidth * 1.5) + 1;
 	}
 
 	h3 {
@@ -59,24 +100,10 @@
 
 	p {
 		.standardParagraphText;
-		margin-top: @gridColumnWidth;
 	}
 
 	time {
 		.date;
-	}
-
-	&:first-child {
-		float: right;
-		margin-bottom: @gridColumnWidth;
-	}
-
-	&:nth-child(2) {
-		margin-top: (@gridColumnWidth * 8) + 10;
-	}
-
-	&:last-child {
-		margin-left: @gridColumnWidth;
 	}
 
 	a {
@@ -86,10 +113,64 @@
 			border-color: @sliderPrimaryColour;
 		}
 	}
-
-	ul {
-		li {
-			display: block;
-		}
-	}
 }
+
+
+// .page-section {
+// 	display: inline;
+// 	float: left;
+// 	background-color: @background;
+// 	width: @gridColumnWidth * 25;
+// 	.box-sizing(border-box);
+
+// 	div {
+// 		padding: @gridColumnWidth;
+// 		border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+
+// 		&:first-child {
+// 			border: 0;
+// 		}
+
+// 		&:nth-child(even) {
+// 			background-color: rgba(
+// 				red(#de79df),
+// 				green(#de79df),
+// 				blue(#de79df),
+// 				0.06
+// 			);
+// 			border-right: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+//  		}
+// 	}
+
+// 	&:nth-child(3) {
+
+// 		div {
+
+// 			border-right: none;
+// 			border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 40%);
+
+// 			&:first-child {
+// 				border: 0;
+// 			}
+
+// 			&:nth-child(even) {
+// 				border-right: none;
+// 				border-left: @gridColumnWidth / 2 solid fade(@sliderPrimaryColour, 30%);
+// 	 		}
+// 	 	}
+// 	}
+
+
+
+// 	&:first-child {
+// 		float: right;
+// 		margin-bottom: @gridColumnWidth;
+// 	}
+
+// 	&:nth-child(2) {
+// 		margin-top: (@gridColumnWidth * 8) + 10;
+// 	}
+
+// 	&:last-child {
+// 		margin-left: @gridColumnWidth;
+// 	}

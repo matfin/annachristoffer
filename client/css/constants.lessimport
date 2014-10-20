@@ -26,7 +26,7 @@
 // Colours 
 @colourWhite: #fff;
 @colourBlack: #000;
-@background: rgba(red(@colourWhite), green(@colourWhite), blue(@colourWhite), 0.75);
+@background: rgba(red(@colourWhite), green(@colourWhite), blue(@colourWhite), 0.9);
 @highlightedBackground: rgba(red(#fee7f9), green(#fee7f9), blue(#fee7f9), 0.75);
 @menuBackground: rgba(red(@colourWhite), green(@colourWhite), blue(@colourWhite), 0.9);
 @hoverColour: rgba(red(#f4e4df), green(#f4e4df), blue(#f4e4df), 0.90);
