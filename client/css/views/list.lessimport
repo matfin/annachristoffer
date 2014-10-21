@@ -1,6 +1,5 @@
 body.list {
 	.wrapper {
-		.backgroundImage('/images/backgrounds/master-of-art-project');
 		.container {	
 			.header {
 				padding-top: @gridColumnWidth * 4;

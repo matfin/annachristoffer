@@ -15,11 +15,6 @@ Template['views_detail'].created = function() {
 *	@return undefined
 */
 Template['views_detail'].rendered = function() {
-
-	if(this.data && this.data.background && this.data.contents) {
-		$('body').addClass(this.data.background);
-	}
-
 	$('body').addClass('detail');
 };
 

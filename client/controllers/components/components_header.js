@@ -63,6 +63,9 @@ Template['components_header'].helpers({
 	 *	the iron-router pathFor function
 	 */
 	translatedSlug: function() {
+
+		Dependencies.languageChangedDependency.depend();
+
 		var data = Template.currentData(),
 			slug = data.slug;
 
