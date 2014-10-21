@@ -43,7 +43,9 @@
 						line-height: @gridColumnWidth;
 						text-transform: lowercase;
 						font-weight: @fontWeightLight;
-						&:hover {
+						&:hover,
+						&[data-is-current-category="true"]
+						 {
 							font-weight: bold;
 							color: @sliderPrimaryColour;
 							border-bottom: 1px solid @sliderPrimaryColour;

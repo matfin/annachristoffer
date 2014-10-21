@@ -28,6 +28,17 @@ UI.registerHelper('loadMessageCode', function(message) {
 });
 
 /**
+ *	Helper function to determine if a given category id is the current one
+ *
+ *	@function isCurrentCategory
+ *	@param {Number}	category_id - the given category ID
+ *	@return {Boolean} - true if there is a match or false 
+ */
+UI.registerHelper('isCurrentCategory', function(category_id) {
+	return App.currentCategoryId && App.currentCategoryId === category_id;
+});
+
+/**
  *	Helper to return a nicely formatted date using moment.js
  *	
  *	@method formattedDate
