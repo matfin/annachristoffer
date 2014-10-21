@@ -85,7 +85,7 @@ var primeSliderSize = function(full, template) {
 
 	if(full) {
 		width = $('.fullSlider').outerWidth();
-		height = minHeight = $('.fullSlider').outerWidth() * 0.4;
+		height = minHeight = $('.fullSlider').outerWidth() * (5 / 12);
 	}
 	else {
 		width = container.outerWidth();
