@@ -1,5 +1,8 @@
 figure.cards_figcaption {
 
+	background-color: @background;
+	margin-bottom: @gridColumnWidth;
+
 	.display(flex);
 	.flex-direction(row);
 	.align-items(flex-start);
@@ -15,8 +18,9 @@ figure.cards_figcaption {
 
 	figcaption {
 		.flex(1);
-		padding: @gridColumnWidth @gridColumnWidth * 2;
-		background-color: @colourWhite;
+		padding: @gridColumnWidth;
+		padding-left: 0;
+
 		h2, h3 {
 			margin-bottom: @gridColumnWidth;
 		}

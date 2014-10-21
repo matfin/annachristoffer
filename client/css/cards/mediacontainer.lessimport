@@ -2,7 +2,6 @@
 	position: relative;
 	.flex(2);
 	margin: @gridColumnWidth;
-	margin-top: 0;
 	.user-select(none);
 
 	> img {

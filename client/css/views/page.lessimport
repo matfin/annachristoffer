@@ -1,6 +1,5 @@
 body.page {
 	.wrapper {
-		.backgroundImage('/images/backgrounds/cv');
 		height: 100%;
 		background-repeat: no-repeat;
 		background-size: cover;

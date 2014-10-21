@@ -19,7 +19,7 @@ body {
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
-	.backgroundImage('/images/backgrounds/master-of-art-project');
+	.backgroundImage('/images/backgrounds/wonderworld');
 }
 
 .container {
