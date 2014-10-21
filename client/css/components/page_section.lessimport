@@ -94,9 +94,25 @@
 
 	a {
 		border-bottom: 1px dashed black;
+		.transition-property(color);
+		.transition-duration(@transitionDuration / 2);
+
 		&:hover {
 			color: @sliderPrimaryColour;
 			border-color: @sliderPrimaryColour;
+		}
+
+		&.work-social {
+			display: inline-block;
+			margin: @gridColumnWidth;
+			margin-right: 0;
+			margin-top: 0;
+			border-bottom: none;
+
+			i.icon-xing {
+				font-size: @mediumFont - 3;
+				padding-left: 2px;
+			}
 		}
 	}
 }

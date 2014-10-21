@@ -43,6 +43,9 @@
 						line-height: @gridColumnWidth;
 						text-transform: lowercase;
 						font-weight: @fontWeightLight;
+						.transition-property(color);
+						.transition-duration(@transitionDuration / 2);
+
 						&:hover,
 						&[data-is-current-category="true"]
 						 {
