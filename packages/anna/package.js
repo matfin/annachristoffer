@@ -20,6 +20,7 @@ Package.onUse(function(api) {
 	api.use('jquery', 		'client');
 	api.use('mrt:moment', 	'client');
 	api.use('ui',			'client');
+	api.use('amplify',		'client');
 	
 
 	/**

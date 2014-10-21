@@ -35,8 +35,12 @@ Helpers = {
 		 *	which will then call the UI Helper function named
 		 *	loadMessageCode(). This will re-render all text 
 		 *	content on the site in the chosen language.
+		 *	
+		 *	We also persist the language selection by storing
+		 *	it in our local storage using amplify.
 		 */
 		App.language = languageCode;
+		amplify.store('language', languageCode);
 		Dependencies.languageChangedDependency.changed();
 	},
 

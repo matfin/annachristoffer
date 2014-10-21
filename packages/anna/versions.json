@@ -1,6 +1,10 @@
 {
   "dependencies": [
     [
+      "amplify",
+      "1.0.0"
+    ],
+    [
       "application-configuration",
       "1.0.3"
     ],

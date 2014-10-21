@@ -1,6 +1,10 @@
 {
   "dependencies": [
     [
+      "amplify",
+      "1.0.0"
+    ],
+    [
       "anna",
       "1.0.0"
     ],
