@@ -23,7 +23,7 @@ Template['components_header'].rendered = function() {
 *	@return undefined
 */
 Template['components_header'].destroyed = function() {
-	primeHeader.stop();	
+	// primeHeader.stop();	
 };
 
 /**
