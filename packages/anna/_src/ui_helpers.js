@@ -12,8 +12,10 @@ UI.registerHelper('loadMessageCode', function(message) {
 
 	Dependencies.languageChangedDependency.depend();
 
+	console.log(message, typeof message, ' test');
+
 	if(typeof message === 'undefined') {
-		return 'Content not found';
+		return 'Content not found. This is undefined';
 	}
 	else if(typeof message === 'string') {
 		return message;
