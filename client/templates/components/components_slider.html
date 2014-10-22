@@ -1,18 +1,9 @@
 <template name="components_slider">
-	<div class="iosSlider">
-		<div class="slider">
-			{{#each slides}}
-				{{> cards_slide}}
-			{{/each}}
-		</div>
-		<button class="icon-leftArrow hidden">
-		</button>
-		<button class="icon-rightArrow">
-		</button>
-		<div class="sliderPositionIndicator">
-			{{#each slides}}
-				<button></button>
-			{{/each}}
-		</div>
+
+	<div class="slider">
+		{{#each slides}}
+			{{> cards_slide}}
+		{{/each}}
 	</div>
+
 </template>

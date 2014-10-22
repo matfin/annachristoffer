@@ -1,75 +1,8 @@
-.iosSlider {
-	.resetMarginPadding;
-
-	position: relative;
-	top: 0;
-	left: 0;
-	overflow: hidden;
+.slider {
+	display: inline-block;
 	width: 100%;
 
-	.slider {
-		width: 100%;
-		height: 100%;
-	}
-
-	> button {
-		position: absolute;
-		top: 0;
-		width: @gridColumnWidth * 3;
-		height: 100%;
-		font-size: @gridColumnWidth * 3;
-		color: fade(@sliderPrimaryColour, 40%);
-		.transition-property(scale, width, font-size);
-		.transition-duration(@transitionDuration);
-
-		&:hover,
-		&:active {
-			color: fade(@sliderPrimaryColour, 100%);
-		}
-
-		&:active {
-			.scale(0.8);
-		}
-
-		&.icon-leftArrow {
-			left: 0;
-		}
-
-		&.icon-rightArrow {
-			right: 0;
-		}
-
-		&.hidden {
-			color: fade(@sliderPrimaryColour, 0%);
-			width: 0;
-			height: 0;
-			font-size: 0;
-		}
-	}
-
-	.sliderPositionIndicator {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: (@gridColumnWidth / 2) - 2;
-		background-color: @colourWhite;
-		.display(flex);
-
-		button {
-			.transition-duration(@transitionDuration);
-			.transition-property('background-color');
-			.flex(1);
-			background-color: fade(@sliderPrimaryColour, 40%);
-			&:nth-child(odd) {
-				background-color: fade(@sliderPrimaryColour, 30%);
-			}
-
-			&.active,
-			&:active {
-				.scale(1);
-				background-color: fade(@sliderPrimaryColour, 80%);
-			}
-		}		
-	}
+	.transition-property(height);
+	.transition-duration(@transitionDuration);
 }
+

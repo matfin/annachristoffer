@@ -3,6 +3,7 @@
 	.flex(2);
 	margin: @gridColumnWidth;
 	.user-select(none);
+	overflow: hidden;
 
 	> img {
 		position: relative;
@@ -12,15 +13,6 @@
 		height: auto;
 		z-index: @primaryLayer;
 	}	
-}
-
-.fullSlider {
-	position: relative;
-	margin: @gridColumnWidth 0;
-
-	&.mobile {
-		margin: 0;
-	}
 }
 
 .mobileMediaContainer {

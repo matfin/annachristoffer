@@ -42,13 +42,6 @@ Template['views_detail'].helpers({
 	},
 
 	/**
-	 *	Helper function to determine if full slider template should be loaded	
-	 */
-	isFullSlider: function() {
-		return this.type === 'fullslider';
-	},
-
-	/**
 	 *	Helper function to determine if the video template should be loaded
 	 */
 	isVideo: function() {

@@ -71,7 +71,7 @@
 					]
 				},
 				{
-					"type": "fullslider",
+					"type": "figcaption",
 					"slides": [
 						{
 							"img": "master-of-art-thesis/slide-1/slide-1"
