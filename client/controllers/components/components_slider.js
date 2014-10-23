@@ -6,8 +6,6 @@
 */
 Template['components_slider'].created = function() {
 
-	console.log(this);
-
 };
 
 /**
@@ -48,6 +46,14 @@ Template['components_slider'].helpers({
 		Dependencies.viewportResizeDependency.depend();
 
 		return Helpers.loadImageSource(img);
+	},
+
+	/**
+	 *	Helper to get the width of the slider based on the number 
+	 *	of slides
+	 */
+	sliderWidth: function() {
+		return this.slides.length * 100;
 	}
 
 });
@@ -58,4 +64,17 @@ Template['components_slider'].helpers({
  */
 Template['components_slider'].events = {
 	
+	'dragstart .slider': function(e, template) {
+		template.$(e.currentTarget).on('mousemove', function(evt) {
+			console.log('drag me!');
+		});
+	},
+
+	'dragend .slider, mouseout .slider, mouseup .slider': function(e, template) {
+		template.$(e.currentTarget).off('mousemove');
+	},
+
+	'dragstart img': function(e, template) {
+		e.preventDefault();
+	}
 }

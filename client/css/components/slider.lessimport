@@ -3,9 +3,7 @@
 	.flex-direction(row);
 	.align-items(flex-start);
 
-	.transition-property(height);
+	.transition-property(transform);
 	.transition-duration(@transitionDuration);
-	
-	width: 600%;
 }
 
