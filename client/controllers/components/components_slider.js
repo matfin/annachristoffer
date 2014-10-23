@@ -5,7 +5,7 @@
 *	@return undefined
 */
 Template['components_slider'].created = function() {
-
+	this.data.sliderOffset = 0;
 };
 
 /**
@@ -65,9 +65,18 @@ Template['components_slider'].helpers({
 Template['components_slider'].events = {
 	
 	'dragstart .slider': function(e, template) {
-		template.$(e.currentTarget).on('mousemove', function(evt) {
-			console.log('drag me!');
-		});
+
+		var startX = e.originalEvent.offsetX;
+
+		template.$(e.currentTarget).on('mousemove', _.throttle(function(evt) {
+
+			var diff = template.data.sliderOffset - (startX - evt.offsetX);
+			
+			template.data.sliderOffset = diff;
+
+			this.style.transform = 'translate3d(' + diff + 'px, 0px, 0px)';
+			
+		}, 5));
 	},
 
 	'dragend .slider, mouseout .slider, mouseup .slider': function(e, template) {
