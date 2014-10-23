@@ -39,6 +39,17 @@ UI.registerHelper('isCurrentCategory', function(category_id) {
 });
 
 /**
+ *	Helper function to determine if the given language is active
+ *
+ *	@function isCurrentLanguage
+ *	@param {String} languageCode - the 2 digit language code
+ *	@return {Boolean} - true if the language code matches or false
+ */
+UI.registerHelper('isCurrentLanguage', function(languageCode) {
+	return App.language === languageCode;
+});
+
+/**
  *	Helper to return a nicely formatted date using moment.js
  *	
  *	@method formattedDate

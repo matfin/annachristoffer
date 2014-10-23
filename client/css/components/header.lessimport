@@ -3,13 +3,44 @@
 	.transition-property(top);
 	.transition-duration(@transitionDuration);
 
-	height: auto;
+	.language-select {
+		.display(flex);
+		.flex-direction(row); 
+		background-color: @background;
+		margin: @gridColumnWidth / 2 0;
+
+		button {
+			.flex(1);
+			padding: @gridColumnWidth / 2 0;
+
+			span {
+				.box-sizing(border-box);
+				height: @gridColumnWidth * 1.0;
+				line-height: @gridColumnWidth * 1.0;
+				font-weight: @fontWeightLight;
+				font-size: @gridColumnWidth - 2;
+			}
+			
+			&:hover{
+				font-weight: bold;
+				color: @sliderPrimaryColour;
+			}
+
+			&[data-selected="true"] {
+				background-color: rgba(
+	 				red(@pageBackground),
+	 				green(@pageBackground),
+	 				blue(@pageBackground),
+	 				0.1
+ 				);
+			}
+		}
+	}
 
 	header {
 		position: relative;
 		text-align: center;
 		padding: @gridColumnWidth / 2;
-		padding-bottom: @gridColumnWidth;
 		.box-sizing(border-box);
 		background-color: @background;
 

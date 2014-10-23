@@ -1,6 +1,6 @@
 .social {
 
-	padding-top: @gridColumnWidth * 1.25;
+	padding-top: @gridColumnWidth;
 
 	button {
 

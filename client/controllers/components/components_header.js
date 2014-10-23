@@ -75,10 +75,20 @@ Template['components_header'].helpers({
 });
 
 /**
-*	Anonymous helper function to set the top position of the header menu on scroll
-*	@method positionHeader
-*	@return undefined
-*/
+ *	Template - components_header 
+ *	events
+ */
+Template['components_header'].events = {
+	'click .language-select button': function(e, template) {
+		Helpers.switchLanguage(e.currentTarget.dataset.language);
+	}
+};
+
+/**
+ *	Anonymous helper function to set the top position of the header menu on scroll
+ *	@method positionHeader
+ *	@return undefined
+ */
 var primeHeader = Tracker.autorun(function() {
 	/**
 	 *	Run this function each time the viewportScrolledDependency is changed.
@@ -97,13 +107,6 @@ var primeHeader = Tracker.autorun(function() {
 		$('.header').css({
 			'top': (top < 64 ? 64:top) + 'px'
 		});
-
-	}
-	else {
-
-		// $('header').css({
-		// 	'top': '0px'
-		// });
 
 	}
 });
