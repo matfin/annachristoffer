@@ -2,6 +2,9 @@
 	top: @gridColumnWidth * 4;
 	.transition-property(top);
 	.transition-duration(@transitionDuration);
+
+	height: auto;
+
 	header {
 		position: relative;
 		text-align: center;
