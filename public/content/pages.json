@@ -95,15 +95,8 @@
 								{
 									"type": "h3",
 									"content": {
-										"en": "Digital Agency Hi-ReS!",
-										"de": "Digital Agency Hi-ReS!"
-									}
-								}, 
-								{
-									"type": "h4",
-									"content": {
-										"en": "Berlin",
-										"de": "Berlin"
+										"en": "Digital Agency: Hi-ReS! Berlin",
+										"de": "Digital Agency: Hi-ReS! Berlin"
 									}
 								}
 							]
@@ -127,15 +120,8 @@
 								{
 									"type": "h3",
 									"content": {
-										"en": "Digital Agency Hi-ReS!",
-										"de": "Digital Agency Hi-ReS!"
-									}
-								},
-								{
-									"type": "h4",
-									"content": {
-										"en": "Berlin",
-										"de": "Berlin"
+										"en": "Digital Agency: Hi-ReS! Berlin",
+										"de": "Digital Agency: Hi-ReS! Berlin"
 									}
 								}
 							]
@@ -159,15 +145,8 @@
 								{
 									"type": "h3",
 									"content": {
-										"en": "Agency &ldquo;Medienfabrik&rdquo;",
-										"de": "Agency &ldquo;Medienfabrik&rdquo;"
-									}
-								},
-								{
-									"type": "h4",
-									"content": {
-										"en": "G&uuml;tersloh",
-										"de": "G&uuml;tersloh"
+										"en": "Agency: Medienfabrik G&uuml;tersloh",
+										"de": "Agency: Medienfabrik G&uuml;tersloh"
 									}
 								}
 							]
@@ -211,13 +190,6 @@
 										"en": "University of Applied Science",
 										"de": "Fachhochschule Bielefeld"
 									}
-								},
-								{
-									"type": "h4",
-									"content": {
-										"en": "Bielefeld, Germany",
-										"de": "Bielefeld, Germany"
-									}
 								}
 							]
 						},
@@ -243,13 +215,6 @@
 										"en": "Staffordshire University",
 										"de": "Staffordshire University"
 									}
-								},
-								{
-									"type": "h4",
-									"content": {
-										"en": "Stoke-on-Trent, England",
-										"de": "Stoke-on-Trent, England"
-									}
 								}
 							]
 						}, 
@@ -274,13 +239,6 @@
 									"content": {
 										"en": "University of Applied Science",
 										"de": "Fachhochschule Bielefeld"
-									}
-								},
-								{
-									"type": "h4",
-									"content": {
-										"en": "Bielefeld, Germany",
-										"de": "Bielefeld, Germany"
 									}
 								}
 							]

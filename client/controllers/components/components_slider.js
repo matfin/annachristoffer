@@ -74,7 +74,7 @@ Template['components_slider'].events = {
 			
 			template.data.sliderOffset = diff;
 
-			this.style.transform = 'translate3d(' + diff + 'px, 0px, 0px)';
+			this.style['transform'] = 'translate3d(' + diff + 'px, 0px, 0px)';
 			
 		}, 5));
 	},
