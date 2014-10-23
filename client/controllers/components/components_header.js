@@ -94,7 +94,7 @@ var primeHeader = Tracker.autorun(function() {
 		
 		var top = ($(window).scrollTop()) + 64;
 
-		$('header').css({
+		$('header', '.header').css({
 			'top': (top < 64 ? 64:top) + 'px'
 		});
 

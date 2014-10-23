@@ -5,6 +5,9 @@
 *	@return undefined
 */
 Template['components_slider'].created = function() {
+
+	console.log(this);
+
 };
 
 /**
@@ -19,12 +22,6 @@ Template['components_slider'].rendered = function() {
 	 * Setting the slider height according to the slide height
 	 */
 
-	console.log(this.$('.slide').outerHeight());
-
-	this.$('.slider').css({
-		height: this.$('.slide').outerHeight(true)
-	});
-
 };
 
 /**
@@ -35,6 +32,25 @@ Template['components_slider'].rendered = function() {
 */
 Template['components_slider'].destroyed = function() {
 };
+
+/**
+ *	Template - components_slider
+ *	Helper functions for this template
+ */
+Template['components_slider'].helpers({
+
+	/**
+	 *	Helper function to return the correctly sized image
+	 */
+	imgSource: function(img) {
+
+		// Call this automatically on window resize
+		Dependencies.viewportResizeDependency.depend();
+
+		return Helpers.loadImageSource(img);
+	}
+
+});
 
 /**
  *	Tenplate - components_slider

@@ -54,6 +54,7 @@ UI.registerHelper('formattedDate', function(dateString, dateFormat) {
 /**
  *	Method to return device specific parameters for use directly inside templates.
  *
+ *	@method deviceParameters
  *	@return {Object} Device - listing the properties of the current device
  */
 UI.registerHelper('deviceParameters', function() {
@@ -65,4 +66,18 @@ UI.registerHelper('deviceParameters', function() {
 
 	return Device;
 
+});
+
+/**
+ *	Method to return the correctly sized image given a path
+ *	This works according to the device parameters ie: Screen size and density
+ *
+ *	@method imageSource
+ *	@param  {String} 
+ *	@return {String} imagePath - the given image path
+ */
+UI.registerHelper('imageSource', function() {
+	/**
+	 *	TODO: Flesh this out when we can pass objects into templates.
+	 */
 });
