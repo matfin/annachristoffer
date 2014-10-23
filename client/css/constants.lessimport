@@ -11,6 +11,7 @@
 
 // Font weights
 @fontWeightHeavy: 600;
+@fontWeightNormal: 400;
 @fontWeightLight: 300;
 
 // Layout
