@@ -111,11 +111,11 @@
 			"id": 2,
 			"slug": {
 				"en": "master-of-art-project",
-				"de": "master-of-art-project"
+				"de": "master-of-art-projekt"
 			},
 			"title": {
 				"en": "Master of Art / Project",
-				"de": "Master of Art / Project"
+				"de": "Master of Art / Projekt"
 			},
 			"description": {
 				"en": "Carnival of the animals &ndash; A digital music book for children",
@@ -569,7 +569,7 @@
 			},
 			"description": {
 				"en": "Wonderworld Calendar &ndash; A digital Atlas for children",
-				"de": "WunderWelt Kalender &ndash; ein digitaler Atlas f&uuml; Kinder"
+				"de": "WunderWelt Kalender &ndash; ein digitaler Atlas f&uuml;r Kinder"
 			},
 			"date_created": "2012-01-01",
 			"background": "wonderworld",
