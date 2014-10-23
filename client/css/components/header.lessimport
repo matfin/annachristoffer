@@ -1,15 +1,14 @@
 .header {
+	top: @gridColumnWidth * 4;
+	.transition-property(top);
+	.transition-duration(@transitionDuration);
 	header {
 		position: relative;
 		text-align: center;
-		top: @gridColumnWidth * 4;
 		padding: @gridColumnWidth / 2;
 		padding-bottom: @gridColumnWidth;
 		.box-sizing(border-box);
 		background-color: @background;
-
-		.transition-property(top);
-		.transition-duration(@transitionDuration);
 
 		h1, h2, h3 {
 			font-size: @baseFontSize - 2;

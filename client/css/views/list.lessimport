@@ -1,9 +1,6 @@
 body.list {
 	.wrapper {
 		.container {	
-			.header {
-				padding-top: @gridColumnWidth * 4;
-			}
 			.content {
 				padding-top: @gridColumnWidth * 4;
 

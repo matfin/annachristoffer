@@ -3,12 +3,6 @@ body.detail {
 		height: 100%;
 		.container {
 			.align-items(flex-start);
-			header {
-				top: @gridColumnWidth * 4;
-				@media @mobile {
-					top: 0;
-				}
-			}
 			.content {
 				section {
 					padding: @gridColumnWidth * 4 0;
