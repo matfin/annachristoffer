@@ -74,13 +74,18 @@ Template['components_slider'].events = {
 			
 			template.data.sliderOffset = diff;
 
-			this.style['transform'] = 'translate3d(' + diff + 'px, 0px, 0px)';
+			$(this).velocity({
+				translateX: diff + 'px'
+			}, {
+				duration: 0
+			});
 			
 		}, 5));
 	},
 
 	'dragend .slider, mouseout .slider, mouseup .slider': function(e, template) {
 		template.$(e.currentTarget).off('mousemove');
+		console.log('Drop');
 	},
 
 	'dragstart img': function(e, template) {

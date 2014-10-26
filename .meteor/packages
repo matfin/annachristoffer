@@ -5,7 +5,6 @@
 
 standard-app-packages
 underscore
-ios-slider
 sewdn:velocityjs@0.8.0
 mrt:q
 iron:router
@@ -20,4 +19,4 @@ mrt:modernizr-meteor
 jeeeyul:moment-with-langs
 meteorhacks:kadira
 amplify
-
+percolate:velocityjs
