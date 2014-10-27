@@ -1,11 +1,12 @@
 <template name="components_slider">
-
-	<div class="slider" style="width: {{sliderWidth}}%">
-		{{#each slides}}
-			<div class="slide">
-				<img src="/images/projects/{{imgSource img}}">
-			</div>
-		{{/each}}
+	<div class="sliderContainer">
+		<div class="slider" style="width: {{sliderWidth}}%">
+			{{#each slides}}
+				<div class="slide">
+					<img src="/images/projects/{{imgSource img}}">
+				</div>
+			{{/each}}
+		</div>
 	</div>
 
 </template>

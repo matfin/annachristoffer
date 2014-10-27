@@ -11,9 +11,17 @@ function SliderElement(domNode) {
 	 *	The html dom element for the slider	
 	 *
 	 *	@property node
-	 *	@type object
+	 *	@type {object}
 	 */
-	this.node = domNode;
+	this.container = domNode;
+
+	/**
+	 *	The slider that needs to be scrolled
+	 *	
+	 *	@property slider
+	 *	@type {object}
+	 */
+	this.slider = {};
 
 	/**
 	 *	Used to calculate the movement of the mouse along the x 
@@ -25,7 +33,52 @@ function SliderElement(domNode) {
 	 */
 	this.dx = 0;
 
-	this.setupEvents();
+	/**
+	 *	Determine whether to start dragging the slider with this.
+	 *
+	 *	@property mousedown
+	 *	@type {number}
+	 *	@default 0
+	 */
+	this.mousedown = 0;
+
+	/**
+	 *	The slides contained within the slider
+	 *
+	 *	@property slides
+	 *	@type {Object}
+	 */
+	this.slides = {};
+
+	/**
+	 *	The slider width, determined by the slider container width
+	 *	
+	 *	@property sliderWidth
+	 *	@type {number}
+	 *	@default 0
+	 */
+	this.sliderWidth = 0;
+
+	/**
+	 *	Finally, initialise the slider.
+	 */
+	this.init();
+};
+
+SliderElement.prototype.init = function() {
+
+	/**
+	 *	Setting up
+	 */
+	this.slider = this.container.getElementsByClassName('slider')[0];
+	this.slides = this.container.getElementsByClassName('slide');
+	this.sliderWidth = this.container.offsetWidth;
+
+	/**
+	 *	Finally, set up the events
+ 	 */
+ 	this.setupEvents();
+
 };
 
 /**
@@ -36,38 +89,64 @@ function SliderElement(domNode) {
  */
 SliderElement.prototype.setupEvents = function() {
 
-	console.log('Setting up events');
-
 	/**
 	 *	Reference 'this' inside function scope by assigning it to self.
 	 */
-
 	var self = this;
-
-	console.log(this.node);
 
 	/**
 	 *	Prevent dragging of images by default
 	 */
-	this.node.addEventListener('dragstart', function(e) {
+	this.slider.addEventListener('dragstart', function(e) {
 		e.preventDefault();
 	});
 
 	/**
 	 *	Then add the other events
 	 */
-	this.node.addEventListener('mousedown', function() {
-		console.log('Mouse is down!');
+	this.slider.addEventListener('mousedown', function(e) {
+		/**
+		 *	Set mousedown state
+		 */
+		self.mousedown = e.offsetX;
 	});
 
-	this.node.addEventListener('mousemove', function() {
-		console.log('Mouse is moving!');
+	this.slider.addEventListener('mousemove', _.throttle(function(e) {
+		self.dx = 0 + (self.mousedown - e.offsetX);
+		self.move();
+	}, 250));
+
+	/**
+	 *	Reset mousedown state
+	 */
+	this.slider.addEventListener('mouseup', function() {
+		self.mousedown = false;
 	});
 
-	this.node.addEventListener('mouseup', function() {
-		console.log('Mouse is up!');
+	this.slider.addEventListener('mouseout', function() {
+		self.mousedown = false;
 	});
 
+};
+
+SliderElement.prototype.move = function() {
+	//Put a nice fast translate 
+};
+
+/**
+ *	Method to request animation tick for the slider using
+ *	
+ *	@method requestAnimationTick
+ *	@param {function} callback - the callback to execute 
+ */
+SliderElement.prototype.requestAnimationTick = function(callback) {
+
+	return	window.requestAnimationFrame(callback)			||
+			window.webkitRequestAnimationFrame(callback)	||
+			window.mozRequestAnimationFrame(callback)		||
+			function(callback) {
+				window.setTimeout(callback, 1000 / 60);
+			};
 };
 
 

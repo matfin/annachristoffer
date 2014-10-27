@@ -15,7 +15,7 @@ Template['components_slider'].created = function() {
 */
 Template['components_slider'].rendered = function() {
 
-	Slider.setup($('.slider'));
+	Slider.setup($('.sliderContainer'));
 
 };
 
