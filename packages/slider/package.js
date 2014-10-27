@@ -7,6 +7,11 @@ Package.describe({
 Package.onUse(function(api) {	
 
 	/**
+	 *	Package dependencies
+	 */
+	api.use('underscore', 'client');
+
+	/**
 	 *	Adding source files for this package (client)
 	 */
 	api.addFiles([

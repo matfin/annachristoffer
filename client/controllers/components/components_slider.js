@@ -15,9 +15,7 @@ Template['components_slider'].created = function() {
 */
 Template['components_slider'].rendered = function() {
 
-	/**
-	 * Setting the slider height according to the slide height
-	 */
+	Slider.setup($('.slider'));
 
 };
 
@@ -63,34 +61,4 @@ Template['components_slider'].helpers({
  */
 Template['components_slider'].events = {
 	
-	// 'mousedown .slider': function(e, template) {
-
-	// 	var startX = e.originalEvent.layerX;
-
-	// 	template.$(e.currentTarget).on('mousemove', _.throttle(function(evt) {
-
-	// 		console.log(startX, template.data.sliderOffset, evt.originalEvent.layerX);
-
-	// 		var diff = template.data.sliderOffset - (startX - evt.originalEvent.layerX);
-			
-	// 		template.data.sliderOffset = diff;
-
-
-	// 		$(this).velocity({
-	// 			'translateX': diff + 'px'
-	// 		}, {
-	// 			duration: 0,
-	// 			easing: 'none'
-	// 		});
-			
-	// 	}, 10));
-	// },
-
-	// 'mouseout .slider, mouseup .slider': function(e, template) {
-	// 	template.$(e.currentTarget).off('mousemove');
-	// },
-
-	// 'dragstart img': function(e, template) {
-	// 	e.preventDefault();
-	// }
 }
