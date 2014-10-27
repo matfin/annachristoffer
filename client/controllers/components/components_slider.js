@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['components_slider'].created = function() {
-	this.data.sliderOffset = 0;
 };
 
 /**
@@ -64,31 +63,34 @@ Template['components_slider'].helpers({
  */
 Template['components_slider'].events = {
 	
-	'dragstart .slider': function(e, template) {
+	// 'mousedown .slider': function(e, template) {
 
-		var startX = e.originalEvent.offsetX;
+	// 	var startX = e.originalEvent.layerX;
 
-		template.$(e.currentTarget).on('mousemove', _.throttle(function(evt) {
+	// 	template.$(e.currentTarget).on('mousemove', _.throttle(function(evt) {
 
-			var diff = template.data.sliderOffset - (startX - evt.offsetX);
+	// 		console.log(startX, template.data.sliderOffset, evt.originalEvent.layerX);
+
+	// 		var diff = template.data.sliderOffset - (startX - evt.originalEvent.layerX);
 			
-			template.data.sliderOffset = diff;
+	// 		template.data.sliderOffset = diff;
 
-			$(this).velocity({
-				translateX: diff + 'px'
-			}, {
-				duration: 0
-			});
+
+	// 		$(this).velocity({
+	// 			'translateX': diff + 'px'
+	// 		}, {
+	// 			duration: 0,
+	// 			easing: 'none'
+	// 		});
 			
-		}, 5));
-	},
+	// 	}, 10));
+	// },
 
-	'dragend .slider, mouseout .slider, mouseup .slider': function(e, template) {
-		template.$(e.currentTarget).off('mousemove');
-		console.log('Drop');
-	},
+	// 'mouseout .slider, mouseup .slider': function(e, template) {
+	// 	template.$(e.currentTarget).off('mousemove');
+	// },
 
-	'dragstart img': function(e, template) {
-		e.preventDefault();
-	}
+	// 'dragstart img': function(e, template) {
+	// 	e.preventDefault();
+	// }
 }
