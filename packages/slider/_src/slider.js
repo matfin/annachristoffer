@@ -34,6 +34,15 @@ function SliderElement(domNode) {
 	this.dx = 0;
 
 	/**
+	 *	Used to store the current translated X coordinate of the slider
+	 *
+	 *	@property sliderX
+	 *	@type {number}
+	 *	@default {0}
+	 */
+	this.sliderX = 0;
+
+	/**
 	 *	Determine whether to start dragging the slider with this.
 	 *
 	 *	@property mousedown
@@ -58,6 +67,14 @@ function SliderElement(domNode) {
 	 *	@default 0
 	 */
 	this.sliderWidth = 0;
+
+	/**
+	 *	The id associated with the repaint of the slider 
+	 *	
+	 *	@property animationFrameId
+	 *	@type {number}
+	 */
+	this.animationFrameId;
 
 	/**
 	 *	Finally, initialise the slider.
@@ -97,53 +114,95 @@ SliderElement.prototype.setupEvents = function() {
 	/**
 	 *	Prevent dragging of images by default
 	 */
-	this.slider.addEventListener('dragstart', function(e) {
+	this.container.addEventListener('dragstart', function(e) {
 		e.preventDefault();
 	});
 
 	/**
 	 *	Then add the other events
 	 */
-	this.slider.addEventListener('mousedown', function(e) {
+	this.container.addEventListener('mousedown', function(e) {
 		/**
-		 *	Set mousedown state
+		 *	Set mousedown state and call the slider update function
+		 *	to trigger a repaint on window repaint
 		 */
-		self.mousedown = e.offsetX;
+		self.update();
+		self.mousedown = e.pageX;
 	});
 
-	this.slider.addEventListener('mousemove', _.throttle(function(e) {
-		self.dx = 0 + (self.mousedown - e.offsetX);
-		self.move();
-	}, 250));
+	this.container.addEventListener('mousemove', function(e) {
+
+		/**
+		 *	Update the coordinates for the mouse direction.
+		 *	This will be used to determine the translation
+		 *	for the slider repaint function.
+		 */
+		if(self.mousedown) {
+			self.dx = 0 - (self.mousedown - e.pageX);
+		}
+	});
 
 	/**
 	 *	Reset mousedown state
 	 */
-	this.slider.addEventListener('mouseup', function() {
+	this.container.addEventListener('mouseup', function(e) {
+		/**
+		 *	Cancel the repaint of the slider and reset mouse diff
+		 *	but first update the sliderX coordinates.
+		 */
+		self.sliderX = self.dx;
 		self.mousedown = false;
+		self.cancelUpdate();
 	});
 
-	this.slider.addEventListener('mouseout', function() {
+	this.container.addEventListener('mouseout', function(e) {
+		/**
+		 *	Stop bubbling
+		 */
+		e.stopPropagation();
+		/**
+		 *	Cancel the repaint of the slider and reset mouse diff
+		 */
+		self.sliderX = self.dx;
 		self.mousedown = false;
+		self.cancelUpdate();
 	});
 
 };
 
-SliderElement.prototype.move = function() {
-	//Put a nice fast translate 
+/**
+ *	Function to repaint the slider when needed	
+ *
+ *	@method update
+ *	@return undefined
+ */
+SliderElement.prototype.update = function() {
+	this.animationFrameId = this.requestAnimationFrame(this.update.bind(this));
+	this.slider.style.transform = 'translate3d(' + (this.sliderX + this.dx) + 'px,0,0)';
+};
+
+/**
+ *	Function to cancel repainting of the slider
+ */
+SliderElement.prototype.cancelUpdate = function() {
+	window.cancelAnimationFrame(this.animationFrameId);
+	this.animationFrameId = 0;
 };
 
 /**
  *	Method to request animation tick for the slider using
  *	
- *	@method requestAnimationTick
+ *	@method requestAnimationFrame
  *	@param {function} callback - the callback to execute 
+ *	@return {object} the callback executed on window repaint
  */
-SliderElement.prototype.requestAnimationTick = function(callback) {
+SliderElement.prototype.requestAnimationFrame = function(callback) {
 
 	return	window.requestAnimationFrame(callback)			||
 			window.webkitRequestAnimationFrame(callback)	||
 			window.mozRequestAnimationFrame(callback)		||
+			window.oRequestAnimationFrame(callback)			||
+			window.msRequestAnimationFrame(callback)		||
 			function(callback) {
 				window.setTimeout(callback, 1000 / 60);
 			};
