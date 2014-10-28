@@ -126,8 +126,11 @@ SliderElement.prototype.setupEvents = function() {
 		 *	Set mousedown state and call the slider update function
 		 *	to trigger a repaint on window repaint
 		 */
+		self.dx = 0;
 		self.update();
 		self.mousedown = e.pageX;
+
+		console.log('sliderx: ', self.sliderX, self.dx);
 	});
 
 	this.container.addEventListener('mousemove', function(e) {
@@ -150,9 +153,9 @@ SliderElement.prototype.setupEvents = function() {
 		 *	Cancel the repaint of the slider and reset mouse diff
 		 *	but first update the sliderX coordinates.
 		 */
-		self.sliderX = self.dx;
 		self.mousedown = false;
 		self.cancelUpdate();
+		self.sliderX += self.dx;
 	});
 
 	this.container.addEventListener('mouseout', function(e) {
@@ -163,9 +166,10 @@ SliderElement.prototype.setupEvents = function() {
 		/**
 		 *	Cancel the repaint of the slider and reset mouse diff
 		 */
-		self.sliderX = self.dx;
 		self.mousedown = false;
 		self.cancelUpdate();
+		self.sliderX += self.dx;
+		self.dx = 0;
 	});
 
 };
@@ -177,8 +181,15 @@ SliderElement.prototype.setupEvents = function() {
  *	@return undefined
  */
 SliderElement.prototype.update = function() {
+
+	/**
+	 *	By calling this binding, this function will continuously run
+	 *	each time an animation frame is requested, effectively giving 
+	 *	us a nicely timed loop so we can update the UI for the slider.
+	 */
 	this.animationFrameId = this.requestAnimationFrame(this.update.bind(this));
-	this.slider.style.transform = 'translate3d(' + (this.sliderX + this.dx) + 'px,0,0)';
+	var translateX = (this.sliderX + this.dx);
+	this.slider.style.transform = 'translate3d(' + translateX + 'px,0,0)';
 };
 
 /**
