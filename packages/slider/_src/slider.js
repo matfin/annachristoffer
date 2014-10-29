@@ -156,11 +156,7 @@ SliderElement.prototype.setupEvents = function() {
 		self.dx = 0;
 	});
 
-	this.container.addEventListener('mouseout', function(e) {
-		/**
-		 *	Stop bubbling
-		 */
-		e.stopPropagation();
+	this.container.addEventListener('mouseleave', function(e) {
 		/**
 		 *	Cancel the repaint of the slider and reset mouse diff
 		 */
@@ -191,7 +187,7 @@ SliderElement.prototype.update = function() {
 	 */
 	this.animationFrameId = this.requestAnimationFrame(this.update.bind(this));
 	var translateX = (this.sliderX + this.dx);
-	this.slider.style.transform = 'translate3d(' + translateX + 'px,0,0)';
+	this.slider.style.transform = this.slider.style.webkitTransform = 'translate3d(' + translateX + 'px,0,0)';
 };
 
 /**
@@ -243,15 +239,20 @@ Slider = {
 	 *	Function to set up the slider elements with
 	 *
 	 *	@method setup
-	 *	@param {object} sliders - slider dom elements obtained from a selector
+	 *	@param {string} sliderSelectorContainer - A string representing the selector for the slider container(s)
 	 *	@return undefined
 	 */
-	setup: function(sliders) {
+	setup: function(sliderContainerSelector) {
 
-		var self = this;
-		
-		_.each(sliders, function(sliderItem) {
-			self.addSlide(sliderItem)
+		var self = this,
+			sliderContainers = document.querySelectorAll(sliderContainerSelector);
+
+		/**
+		 *	Use Array.prototype foreach call passing in the sliderContainers,
+		 *	looping through and matching all items in the above query.
+		 */
+		[].forEach.call(sliderContainers, function(sliderContainer) {
+			self.addSlide(sliderContainer);
 		});
 	},	
 
