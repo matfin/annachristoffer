@@ -126,7 +126,6 @@ SliderElement.prototype.setupEvents = function() {
 		 *	Set mousedown state and call the slider update function
 		 *	to trigger a repaint on window repaint
 		 */
-		self.dx = 0;
 		self.update();
 		self.mousedown = e.pageX;
 	});
@@ -154,6 +153,7 @@ SliderElement.prototype.setupEvents = function() {
 		self.mousedown = false;
 		self.cancelUpdate();
 		self.sliderX += self.dx;
+		self.dx = 0;
 	});
 
 	this.container.addEventListener('mouseout', function(e) {
