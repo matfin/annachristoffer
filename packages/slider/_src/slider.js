@@ -115,11 +115,9 @@ SliderElement.prototype.setupEvents = function() {
 	 *	Prevent dragging of images by default
 	 */
 	this.container.addEventListener('dragstart', function(e) {
-		console.log('Event: dragstart');
 		self.onDragStart(e)
 	});
 	this.container.addEventListener('touchdragstart', function(e) {
-		console.log('Event: touchdragstart');
 		self.onDragStart(e);
 	});
 
@@ -127,11 +125,9 @@ SliderElement.prototype.setupEvents = function() {
 	 *	Adding mousedown and touchstart events
 	 */
 	this.container.addEventListener('mousedown', function(e) {
-		console.log('Event: mousedown');
 		self.onDown(e);
 	});
 	this.container.addEventListener('touchstart', function(e) {
-		console.log('Event: touchstart');
 		self.onDown(e);
 	});
 
@@ -139,12 +135,10 @@ SliderElement.prototype.setupEvents = function() {
 	 *	Adding mousemove and touchmove events
 	 */
 	this.container.addEventListener('mousemove', function(e) {
-		console.log('Event: mousemove');
-
 		self.onMove(e);
 	});
 	this.container.addEventListener('touchmove', function(e) {
-		console.log('Event: touchmove');
+		e.preventDefault();
 		self.onMove(e);
 	});
 
@@ -152,11 +146,9 @@ SliderElement.prototype.setupEvents = function() {
 	 *	Adding mouseup and touchend events
 	 */
 	this.container.addEventListener('mouseup', function(e) {
-		console.log('Event: mouseup');
 		self.onUp(e);
 	});
 	this.container.addEventListener('touchend', function(e) {
-		console.log('Event: touchend');
 		self.onUp(e);
 	});
 
@@ -169,7 +161,6 @@ SliderElement.prototype.setupEvents = function() {
 	this.container.addEventListener('touchleave', function(e) {
 		self.onLeave(e);
 	});
-
 
 };
 
@@ -202,7 +193,7 @@ SliderElement.prototype.onDown = function(e) {
 	 */
 
 	this.update();
-	this.mousedown = e.pageX;
+	this.mousedown = e.pageX || e.touches[0].pageX;
 };
 
 /**
@@ -222,7 +213,8 @@ SliderElement.prototype.onMove = function(e) {
 	 */
 
 	if(this.mousedown) {
-		this.dx = 0 - (this.mousedown - e.pageX);
+		var xCoord = e.pageX || e.touches[0].pageX;
+		this.dx = 0 - (this.mousedown - xCoord);
 	}
 };
 
@@ -286,7 +278,26 @@ SliderElement.prototype.update = function() {
 };
 
 /**
+ *	Debug helper function
+ *
+ *	@method debug
+ *	@param {string} message - the debug message to render
+ *	@return undefined
+ */
+SliderElement.prototype.debug = function(message) {
+	var debug = document.querySelector('.debug');
+	if(debug.firstChild) {
+		debug.removeChild(debug.firstChild);
+	}
+
+	debug.appendChild(document.createTextNode(message));
+};
+
+/**
  *	Function to cancel repainting of the slider
+ *	
+ *	@method cancelUpdate
+ *	@return undefined
  */
 SliderElement.prototype.cancelUpdate = function() {
 	window.cancelAnimationFrame(this.animationFrameId);
