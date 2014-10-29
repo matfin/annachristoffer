@@ -1,4 +1,5 @@
 Router.onRun(function() {
+	this.next();
 });
 
 Router.onBeforeAction(function() {
@@ -10,6 +11,7 @@ Router.onBeforeAction(function() {
 	Meteor.subscribe('categories');
 	Meteor.subscribe('staticContent');
 	Meteor.subscribe('pages');
+	this.next();
 });
 
 Router.map(function() {
@@ -28,6 +30,9 @@ Router.map(function() {
 			if(this.ready()) {
 				this.render();
 			}
+			else {
+				this.next();
+			}
 		},
 		data: function() {
 			if(!this.ready()) {
@@ -36,6 +41,7 @@ Router.map(function() {
 			return App.models.pages.findOne({});
 		},
 		template: 'template_main',
+		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
 			'header': {to: 'header'},
 			'views_page': {to: 'content'},
@@ -54,6 +60,9 @@ Router.map(function() {
 		action: function() {
 			if(this.ready()) {
 				this.render();
+			}
+			else {
+				this.next();
 			}
 		},
 		waitOn: function() {
@@ -103,6 +112,7 @@ Router.map(function() {
 				}
 			}
 		},
+		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
 			'header': {to: 'header'},
 			'list': {to: 'content'},
@@ -120,6 +130,9 @@ Router.map(function() {
 		action: function() {
 			if(this.ready()) {
 				this.render();
+			}
+			else {
+				this.next();
 			}
 		},
 		waitOn: function() {
