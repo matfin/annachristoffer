@@ -129,8 +129,6 @@ SliderElement.prototype.setupEvents = function() {
 		self.dx = 0;
 		self.update();
 		self.mousedown = e.pageX;
-
-		console.log('sliderx: ', self.sliderX, self.dx);
 	});
 
 	this.container.addEventListener('mousemove', function(e) {
@@ -173,6 +171,10 @@ SliderElement.prototype.setupEvents = function() {
 	});
 
 };
+
+/**
+ *	Function for cross browser translation
+ */
 
 /**
  *	Function to repaint the slider when needed	
