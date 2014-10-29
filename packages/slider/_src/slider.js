@@ -115,57 +115,152 @@ SliderElement.prototype.setupEvents = function() {
 	 *	Prevent dragging of images by default
 	 */
 	this.container.addEventListener('dragstart', function(e) {
-		e.preventDefault();
+		console.log('Event: dragstart');
+		self.onDragStart(e)
+	});
+	this.container.addEventListener('touchdragstart', function(e) {
+		console.log('Event: touchdragstart');
+		self.onDragStart(e);
 	});
 
 	/**
-	 *	Then add the other events
+	 *	Adding mousedown and touchstart events
 	 */
 	this.container.addEventListener('mousedown', function(e) {
-		/**
-		 *	Set mousedown state and call the slider update function
-		 *	to trigger a repaint on window repaint
-		 */
-		self.update();
-		self.mousedown = e.pageX;
+		console.log('Event: mousedown');
+		self.onDown(e);
 	});
-
-	this.container.addEventListener('mousemove', function(e) {
-
-		/**
-		 *	Update the coordinates for the mouse direction.
-		 *	This will be used to determine the translation
-		 *	for the slider repaint function.
-		 */
-		if(self.mousedown) {
-			self.dx = 0 - (self.mousedown - e.pageX);
-		}
+	this.container.addEventListener('touchstart', function(e) {
+		console.log('Event: touchstart');
+		self.onDown(e);
 	});
 
 	/**
-	 *	Reset mousedown state
+	 *	Adding mousemove and touchmove events
+	 */
+	this.container.addEventListener('mousemove', function(e) {
+		console.log('Event: mousemove');
+
+		self.onMove(e);
+	});
+	this.container.addEventListener('touchmove', function(e) {
+		console.log('Event: touchmove');
+		self.onMove(e);
+	});
+
+	/**
+	 *	Adding mouseup and touchend events
 	 */
 	this.container.addEventListener('mouseup', function(e) {
-		/**
-		 *	Cancel the repaint of the slider and reset mouse diff
-		 *	but first update the sliderX coordinates.
-		 */
-		self.mousedown = false;
-		self.cancelUpdate();
-		self.sliderX += self.dx;
-		self.dx = 0;
+		console.log('Event: mouseup');
+		self.onUp(e);
+	});
+	this.container.addEventListener('touchend', function(e) {
+		console.log('Event: touchend');
+		self.onUp(e);
 	});
 
+	/**
+	 *	Adding mouseleave and touchleave events
+	 */
 	this.container.addEventListener('mouseleave', function(e) {
-		/**
-		 *	Cancel the repaint of the slider and reset mouse diff
-		 */
-		self.mousedown = false;
-		self.cancelUpdate();
-		self.sliderX += self.dx;
-		self.dx = 0;
+		self.onLeave(e);
+	});
+	this.container.addEventListener('touchleave', function(e) {
+		self.onLeave(e);
 	});
 
+
+};
+
+/**
+ *	Function to call on dragstart events for mouse and touch based devices
+ *
+ *	@method onDragStart
+ *	@param {object} e - the event
+ *	@return undefined
+ */
+SliderElement.prototype.onDragStart = function(e) {
+	/**
+	 *	Called on events 'touchdragstart' and 'dragstart'
+	 */
+	e.preventDefault();
+};
+
+/**
+ *	Function to call on mousedown and touchstart events for mouse and touch based devices
+ *
+ *	@method onDown
+ *	@param {object} e - the event
+ *	@return undefined
+ */
+SliderElement.prototype.onDown = function(e) {
+	/**
+	 *	Called on events 'touchstart' and 'mousedown'.
+	 *	Set mousedown state and call the slider update function
+	 *	to trigger a repaint on window repaint
+	 */
+
+	this.update();
+	this.mousedown = e.pageX;
+};
+
+/**
+ *	Function to call on mousemove and touchmove events for mouse and touch based devices
+ *
+ *	@method onMove
+ *	@param {object} e - the event
+ *	@return undefined
+ */
+SliderElement.prototype.onMove = function(e) {
+	/**
+	 *	Called on events 'touchmove' and 'mousemove'.
+	 *
+	 *	Update the coordinates for the mouse direction.
+	 *	This will be used to determine the translation
+	 *	for the slider repaint function.
+	 */
+
+	if(this.mousedown) {
+		this.dx = 0 - (this.mousedown - e.pageX);
+	}
+};
+
+/**
+ *	Function to call on mouseup and touchend events for mouse and touch based devices
+ *
+ *	@method onUp
+ *	@param {object} e - the event
+ *	@return undefined
+ */
+SliderElement.prototype.onUp = function(e) {
+	/**
+	 *	Called on events 'touchend' and 'mouseup'.
+	 *	Cancel the repaint of the slider and reset mouse diff
+	 *	but first update the sliderX coordinates.
+	 */
+	this.mousedown = false;
+	this.cancelUpdate();
+	this.sliderX += this.dx;
+	this.dx = 0;
+};
+
+/**
+ *	Function to call on mouseleave and touchleave events for mouse and touch based devices
+ *
+ *	@method onLeave
+ *	@param {object} e - the event
+ *	@return undefined
+ */
+SliderElement.prototype.onLeave = function(e) {
+	/**
+	 *	Called on events 'touchleave' and 'mouseleave'.
+	 *	Cancel the repaint of the slider and reset mouse diff
+	 */
+	this.mousedown = false;
+	this.cancelUpdate();
+	this.sliderX += this.dx;
+	this.dx = 0;
 };
 
 /**
