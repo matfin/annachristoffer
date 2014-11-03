@@ -3,7 +3,7 @@
 	.flex-direction(row);
 	.align-items(flex-start);
 	position: relative;
-	pointer-events: none;
+	//pointer-events: none;
 
 	.transform(translate3d(0px, 0px, 0px));
 	.transform-style(preserve-3d);

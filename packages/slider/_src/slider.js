@@ -69,6 +69,15 @@ function SliderElement(domNode) {
 	this.sliderWidth = 0;
 
 	/**
+	 *	The events we need to attach to the slider, for mouse and touch events
+	 *
+	 *	@property events
+	 *	@type {Object}
+	 *	@default {}
+	 */
+	this.events = {};
+
+	/**
 	 *	The id associated with the repaint of the slider 
 	 *	
 	 *	@property animationFrameId
@@ -91,6 +100,52 @@ SliderElement.prototype.init = function() {
 	this.slides = this.container.getElementsByClassName('slide');
 	this.sliderWidth = this.container.offsetWidth;
 
+	/** 
+	 *	The events added now which need to be set up later
+	 */
+	this.events = [
+		{
+			listeners: {
+				mouse: 'dragstart',
+				touch: 'touchdragstart'
+			},
+			attachTo: this.container,
+			functionCall: this.onDragStart
+		},
+		{
+			listeners: {
+				mouse: 'mousedown',
+				touch: 'touchstart'
+			},
+			attachTo: this.container,
+			functionCall: this.onDown
+		},
+		{
+			listeners: {
+				mouse: 'mousemove',
+				touch: 'touchmove'
+			},
+			attachTo: this.container,
+			functionCall: this.onMove
+		},
+		{
+			listeners: {
+				mouse: 'mouseup',
+				touch: 'touchend'
+			},
+			attachTo: this.container,
+			functionCall: this.onUp
+		},
+		{
+			listeners: {
+				mouse: 'mouseleave',
+				touch: 'touchleave'
+			},
+			attachTo: this.container,
+			functionCall: this.onLeave
+		},
+	];
+
 	/**
 	 *	Finally, set up the events
  	 */
@@ -112,56 +167,24 @@ SliderElement.prototype.setupEvents = function() {
 	var self = this;
 
 	/**
-	 *	Prevent dragging of images by default
+	 *	Loop through each event and set it up
 	 */
-	this.container.addEventListener('dragstart', function(e) {
-		self.onDragStart(e)
-	});
-	this.container.addEventListener('touchdragstart', function(e) {
-		self.onDragStart(e);
-	});
+	[].forEach.call(this.events, function(eventObject) {
 
-	/**
-	 *	Adding mousedown and touchstart events
-	 */
-	this.container.addEventListener('mousedown', function(e) {
-		self.onDown(e);
-	});
-	this.container.addEventListener('touchstart', function(e) {
-		self.onDown(e);
-	});
+		/** 
+		 *	Attach mouse events if this is not a touch device,
+		 *	or add touch events. Note that we bind the current
+		 *	instance of the sliderElement to the function call,
+		 *	or we would be passing in the element in question.
+		 */
+		if(!self.isTouchCapable()) {
+			eventObject.attachTo.addEventListener(eventObject.listeners.mouse, eventObject.functionCall.bind(self), false);
+		}
+		else {
+			eventObject.attachTo.addEventListener(eventObject.listeners.touch, eventObject.functionCall.bind(self), false);
+		}
 
-	/**
-	 *	Adding mousemove and touchmove events
-	 */
-	this.container.addEventListener('mousemove', function(e) {
-		self.onMove(e);
 	});
-	this.container.addEventListener('touchmove', function(e) {
-		e.preventDefault();
-		self.onMove(e);
-	});
-
-	/**
-	 *	Adding mouseup and touchend events
-	 */
-	this.container.addEventListener('mouseup', function(e) {
-		self.onUp(e);
-	});
-	this.container.addEventListener('touchend', function(e) {
-		self.onUp(e);
-	});
-
-	/**
-	 *	Adding mouseleave and touchleave events
-	 */
-	this.container.addEventListener('mouseleave', function(e) {
-		self.onLeave(e);
-	});
-	this.container.addEventListener('touchleave', function(e) {
-		self.onLeave(e);
-	});
-
 };
 
 /**
@@ -212,6 +235,8 @@ SliderElement.prototype.onMove = function(e) {
 	 *	for the slider repaint function.
 	 */
 
+	e.preventDefault();
+
 	if(this.mousedown) {
 		var xCoord = e.pageX || e.touches[0].pageX;
 		this.dx = 0 - (this.mousedown - xCoord);
@@ -256,8 +281,17 @@ SliderElement.prototype.onLeave = function(e) {
 };
 
 /**
- *	Function for cross browser translation
+ *	Function to detect touch or mouse based devices
+ *	
+ *	@method isTouchCapable
+ *	@return {boolean} true if this is a touch device or false if not
+ *	
+ *	@TODO: 	Dealing with hybrid devices, like the lenovo touch which
+ *			has both a touchscreen and mouse.
  */
+SliderElement.prototype.isTouchCapable = function() {
+	return 'ontouchstart' in document.documentElement;
+};
 
 /**
  *	Function to repaint the slider when needed	
