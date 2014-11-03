@@ -86,6 +86,15 @@ function SliderElement(domNode) {
 	this.animationFrameId;
 
 	/**
+	 *	Custom event for when the slider is dropped,
+	 *	normally triggered when it is no longer scrolling.
+	 *
+	 *	@property dropEvent
+	 *	@type {Event}
+	 */
+	this.dropEvent;
+
+	/**
 	 *	Finally, initialise the slider.
 	 */
 	this.init();
@@ -99,6 +108,11 @@ SliderElement.prototype.init = function() {
 	this.slider = this.container.getElementsByClassName('slider')[0];
 	this.slides = this.container.getElementsByClassName('slide');
 	this.sliderWidth = this.container.offsetWidth;
+
+	/**
+	 *	Adding custom events
+	 */
+	this.dropEvent = new Event('sliderdrop');
 
 	/** 
 	 *	The events added now which need to be set up later
@@ -144,6 +158,14 @@ SliderElement.prototype.init = function() {
 			attachTo: this.container,
 			functionCall: this.onLeave
 		},
+		{
+			listeners: {
+				mouse: 'sliderdrop',
+				touch: 'sliderdrop'
+			},
+			attachTo: this.container,
+			functionCall: this.onSliderDrop
+		}
 	];
 
 	/**
@@ -260,6 +282,11 @@ SliderElement.prototype.onUp = function(e) {
 	this.cancelUpdate();
 	this.sliderX += this.dx;
 	this.dx = 0;
+
+	/**
+	 *	Finally, trigger the sliderdrop event
+	 */
+	this.container.dispatchEvent(this.dropEvent);
 };
 
 /**
@@ -278,6 +305,25 @@ SliderElement.prototype.onLeave = function(e) {
 	this.cancelUpdate();
 	this.sliderX += this.dx;
 	this.dx = 0;
+
+	/**
+	 *	Finally, trigger the sliderdrop event
+	 */
+	this.container.dispatchEvent(this.dropEvent);
+};
+
+/**
+ *	Function to call when the slider has been dropped, as in, 
+ *	when the mouse or touch leaves the slider area and it is 
+ *	no longer scrolling.
+ *
+ *	@method onSliderDrop
+ *	@return undefined
+ */
+SliderElement.prototype.onSliderDrop = function() {
+
+	console.log('The slider was dropped!');
+
 };
 
 /**
