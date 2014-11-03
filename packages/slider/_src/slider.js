@@ -89,10 +89,21 @@ function SliderElement(domNode) {
 	 *	Custom event for when the slider is dropped,
 	 *	normally triggered when it is no longer scrolling.
 	 *
-	 *	@property dropEvent
-	 *	@type {Event}
+	 *	@property customEvents
+	 *	@type {Object}
+	 *	@default {}
 	 */
-	this.dropEvent;
+	this.customEvents;
+
+	/**
+	 *	Custom options for the slider
+	 *
+	 *	@property options
+	 *	@type {Object}
+	 *	@default {}
+	 *	@TODO: Allow these to be passed in externally
+	 */
+	this.options;
 
 	/**
 	 *	Finally, initialise the slider.
@@ -108,11 +119,20 @@ SliderElement.prototype.init = function() {
 	this.slider = this.container.getElementsByClassName('slider')[0];
 	this.slides = this.container.getElementsByClassName('slide');
 	this.sliderWidth = this.container.offsetWidth;
-
+	
 	/**
 	 *	Adding custom events
 	 */
-	this.dropEvent = new Event('sliderdrop');
+	this.customEvents = {
+		sliderdrop: new Event('sliderdrop')
+	};
+
+	/**
+	 *	And slider options
+	 */
+	this.options = {
+		snapToNearest: true
+	};
 
 	/** 
 	 *	The events added now which need to be set up later
@@ -286,7 +306,7 @@ SliderElement.prototype.onUp = function(e) {
 	/**
 	 *	Finally, trigger the sliderdrop event
 	 */
-	this.container.dispatchEvent(this.dropEvent);
+	this.container.dispatchEvent(this.customEvents.sliderdrop);
 };
 
 /**
@@ -309,7 +329,7 @@ SliderElement.prototype.onLeave = function(e) {
 	/**
 	 *	Finally, trigger the sliderdrop event
 	 */
-	this.container.dispatchEvent(this.dropEvent);
+	this.container.dispatchEvent(this.customEvents.sliderdrop);
 };
 
 /**
@@ -321,8 +341,25 @@ SliderElement.prototype.onLeave = function(e) {
  *	@return undefined
  */
 SliderElement.prototype.onSliderDrop = function() {
+	/**
+	 *	Snap the slider back into position
+	 */
+	if(this.options.snapToNearest) {
+		this.snapOnDrop();
+	}
+};
 
-	console.log('The slider was dropped!');
+/**
+ *	Function to snap the slider into place when it has been dropped
+ *	
+ *	@method snapOnDrop
+ *	@return undefined
+ */
+SliderElement.prototype.snapOnDrop = function() {
+
+	var goForward = (0 - this.sliderX) % this.sliderWidth > (this.sliderWidth / 2);
+
+	console.log(goForward ? 'Go forward':'Go back');
 
 };
 
