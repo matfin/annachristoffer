@@ -360,6 +360,7 @@ SliderElement.prototype.snapOnDrop = function() {
 	var goForward = (0 - this.sliderX) % this.sliderWidth > (this.sliderWidth / 2);
 
 	console.log(goForward ? 'Go forward':'Go back');
+	console.log(this.sliderWidth, this.sliderX);
 
 };
 
@@ -391,6 +392,24 @@ SliderElement.prototype.update = function() {
 	 */
 	this.animationFrameId = this.requestAnimationFrame(this.update.bind(this));
 	var translateX = (this.sliderX + this.dx);
+	this.transform(translateX);
+};
+
+/**
+ *	Function to apply CSS transforms for the slider
+ *
+ *	@method transform
+ *	@param {number} translateX - the CSS transform translateX property
+ */
+SliderElement.prototype.transform = function(translateX) {
+	if(typeof translateX !== 'number') {
+		throw {
+			error: 'Not a number',
+			message: 'translateX parameter needs to be a number. You passed in: ' + (typeof translateX)
+		}
+		return;
+	}
+
 	this.slider.style.transform = this.slider.style.webkitTransform = 'translate3d(' + translateX + 'px,0,0)';
 };
 
@@ -438,6 +457,33 @@ SliderElement.prototype.requestAnimationFrame = function(callback) {
 			function(callback) {
 				window.setTimeout(callback, 1000 / 60);
 			};
+};
+
+/**
+ *	Method to move the slider on its own without interaction
+ *	
+ *	@method translateTo
+ *	@param {number} x - the X coordinate to move to
+ *	@param {callback} callback - optional callback to execute when the slider has reached its intended point
+ *	@param {object} options - optional parameters to pass in, such as speed of movement
+ *	@return undefined
+ */
+SliderElement.prototype.translateTo = function(x, callback, options) {
+
+	if(x === this.sliderX) {
+		this.cancelUpdate();
+		return;
+	}
+	else if(x < this.sliderX) {
+		this.sliderX--;
+	}
+	else if(x > this.sliderX) {
+		this.sliderX++;
+	}
+
+	this.transform(this.sliderX);
+
+	this.animationFrameId = this.requestAnimationFrame(this.translateTo.bind(this, x, callback, options));
 };
 
 
