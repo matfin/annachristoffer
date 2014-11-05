@@ -464,21 +464,41 @@ SliderElement.prototype.requestAnimationFrame = function(callback) {
  *	
  *	@method translateTo
  *	@param {number} x - the X coordinate to move to
- *	@param {callback} callback - optional callback to execute when the slider has reached its intended point
  *	@param {object} options - optional parameters to pass in, such as speed of movement
+ *	@param {callback} callback - optional callback to execute when the slider has reached its intended point
  *	@return undefined
  */
-SliderElement.prototype.translateTo = function(x, callback, options) {
+SliderElement.prototype.translateTo = function(x, options, callback) {
+
+	/** 
+	 *	Checking optional options parameters
+	 */
+	var speed = 1;
+
+	if(typeof options === 'object') {
+		if(typeof options.speed === 'number') speed = options.speed;
+	}
 
 	if(x === this.sliderX) {
+		/**
+		 *	If we have reached the point we wanted to get to,
+		 *	then cancel the update and execute the optional 
+		 *	callback
+		 */
 		this.cancelUpdate();
 		return;
 	}
 	else if(x < this.sliderX) {
-		this.sliderX--;
+		for(var i = 0; i < (1 * speed); i++) {
+			if(x === this.sliderX) break;
+			this.sliderX--;
+		}
 	}
 	else if(x > this.sliderX) {
-		this.sliderX++;
+		for(var i = 0; i < (1 * speed); i++) {
+			if(x === this.sliderX) break;
+			this.sliderX++;
+		}
 	}
 
 	this.transform(this.sliderX);
