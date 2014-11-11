@@ -86,6 +86,23 @@ function SliderElement(domNode) {
 	this.animationFrameId;
 
 	/**
+	 *	Grouped ids associated with multiple repaints on the slider
+	 *
+	 *	@property animationFrameIds
+	 *	@type {array}
+	 */
+	this.animationFrameIds = [];
+
+	/**
+	 *	Callback timeout to be used by functions spawned multiple times 
+	 *	and that have callbacks that only need to be called once.
+	 *	
+	 *	@property callbackTimeout
+	 *	@type {number}
+	 */
+	this.callbackTimeout;
+
+	/**
 	 *	Custom event for when the slider is dropped,
 	 *	normally triggered when it is no longer scrolling.
 	 *
@@ -104,6 +121,14 @@ function SliderElement(domNode) {
 	 *	@TODO: Allow these to be passed in externally
 	 */
 	this.options;
+
+	/**
+	 *	Current slider speed when it is snapping back to a position
+	 *
+	 *	@property {number} currentSpeed
+	 *	@default 0
+	 */
+	this.currentSpeed = 0;
 
 	/**
 	 *	Finally, initialise the slider.
@@ -131,7 +156,8 @@ SliderElement.prototype.init = function() {
 	 *	And slider options
 	 */
 	this.options = {
-		snapToNearest: true
+		snapToNearest: true,
+		snapSpeedMillis: 400
 	};
 
 	/** 
@@ -256,7 +282,7 @@ SliderElement.prototype.onDown = function(e) {
 	 *	Set mousedown state and call the slider update function
 	 *	to trigger a repaint on window repaint
 	 */
-
+	this.cancelUpdate();
 	this.update();
 	this.mousedown = e.pageX || e.touches[0].pageX;
 };
@@ -361,6 +387,10 @@ SliderElement.prototype.snapOnDrop = function() {
 
 	console.log(goForward ? 'Go forward':'Go back');
 	console.log(this.sliderWidth, this.sliderX);
+
+	this.translateTo(0, {speed: 60}, function() {
+		console.log('Done! ' + new Date().getTime());
+	});
 
 };
 
@@ -468,44 +498,60 @@ SliderElement.prototype.requestAnimationFrame = function(callback) {
  *	@param {callback} callback - optional callback to execute when the slider has reached its intended point
  *	@return undefined
  */
+
 SliderElement.prototype.translateTo = function(x, options, callback) {
 
-	/** 
-	 *	Checking optional options parameters
+	/**
+	 *	To give the impression of speed, we are spawning this function x number of times 
+	 *	so that the transform X of the slider is called per requestedAnimationframe.
+	 *	Example: If options.speed is set to 60, then this function will request a tick 
+	 *	60 times, for silky smooth animation.
 	 */
-	var speed = 1;
-
-	if(typeof options === 'object') {
-		if(typeof options.speed === 'number') speed = options.speed;
+	if(typeof options !== 'undefined' && typeof options.speed === 'number' && this.currentSpeed < options.speed) {
+		this.animationFrameIds[this.currentSpeed] = (this.requestAnimationFrame(this.translateTo.bind(this, x, options, callback)));
+		this.currentSpeed++;
 	}
+
+	/**
+	 *	We need the callback to be run only once when the animation is complete,
+	 *	so clear the timeout by default when this is called.
+	 */
+	clearTimeout(this.callbackTimeout);
 
 	if(x === this.sliderX) {
 		/**
 		 *	If we have reached the point we wanted to get to,
 		 *	then cancel the update and execute the optional 
-		 *	callback
+		 *	callback after 100ms in the timeout
 		 */
-		this.cancelUpdate();
+		this.killAnimations();
+		this.currentSpeed = 0;
+		if(typeof callback === 'function') {
+			this.callbackTimeout = setTimeout(callback, 100);
+		}
 		return;
 	}
-	else if(x < this.sliderX) {
-		for(var i = 0; i < (1 * speed); i++) {
-			if(x === this.sliderX) break;
-			this.sliderX--;
-		}
+	if(x < this.sliderX) {
+		this.sliderX--;
+		this.transform(this.sliderX);
 	}
-	else if(x > this.sliderX) {
-		for(var i = 0; i < (1 * speed); i++) {
-			if(x === this.sliderX) break;
-			this.sliderX++;
-		}
+	else {
+		this.sliderX++;
+		this.transform(this.sliderX);
 	}
 
-	this.transform(this.sliderX);
+	/**
+	 *	Call a bind to this function at least once so it is run per RAF 'tick'
+	 */
+	this.requestAnimationFrame(this.translateTo.bind(this, x, options, callback));
 
-	this.animationFrameId = this.requestAnimationFrame(this.translateTo.bind(this, x, callback, options));
 };
 
+SliderElement.prototype.killAnimations = function() {
+	[].forEach.call(this.animationFrameIds, function(animationFrameId) {
+		window.cancelAnimationFrame(animationFrameId);
+	});
+};
 
 /** 
  *	The slider class, which acts upon one or more slider elements
