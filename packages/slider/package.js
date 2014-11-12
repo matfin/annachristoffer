@@ -10,6 +10,7 @@ Package.onUse(function(api) {
 	 *	Adding source files for this package (client)
 	 */
 	api.addFiles([
+		'_src/customEvent.js',
 		'_src/slider.js'
 	], 'client');
 

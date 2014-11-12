@@ -103,8 +103,7 @@ function SliderElement(domNode) {
 	this.callbackTimeout;
 
 	/**
-	 *	Custom event for when the slider is dropped,
-	 *	normally triggered when it is no longer scrolling.
+	 *	Custom events: ie; for when the slider is dropped
 	 *
 	 *	@property customEvents
 	 *	@type {Object}
@@ -149,7 +148,7 @@ SliderElement.prototype.init = function() {
 	 *	Adding custom events
 	 */
 	this.customEvents = {
-		sliderdrop: new Event('sliderdrop')
+		sliderdrop: new CustomEvent('sliderdrop',{})
 	};
 
 	/**
@@ -333,6 +332,7 @@ SliderElement.prototype.onUp = function(e) {
 	 *	Finally, trigger the sliderdrop event
 	 */
 	this.container.dispatchEvent(this.customEvents.sliderdrop);
+
 };
 
 /**
