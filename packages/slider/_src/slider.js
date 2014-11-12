@@ -393,7 +393,7 @@ SliderElement.prototype.onSliderDrop = function(e) {
 	 */
 	var movement = (function(dx) {
 		var amount = e.dx < 0 ? 0 - e.dx:e.dx,
-			threshholdCrossed = amount % this.sliderWidth > (this.sliderWidth / 2),
+			threshholdCrossed = amount % this.sliderWidth > (this.sliderWidth / 4),
 			direction = e.dx < 0 ? 'left':'right';
 		return {
 			amount: amount,
@@ -413,21 +413,18 @@ SliderElement.prototype.onSliderDrop = function(e) {
 		if(movement.threshholdCrossed) {
 			switch(movement.direction) {
 				case 'left': 
-					destinationSlide--;
+					if(destinationSlide < (this.slides.length - 1)) destinationSlide++;
 					break;
 				case 'right': 
-					destinationSlide++;
+					if(destinationSlide > 0) destinationSlide--;
 					break;
 			}
 		}
 		
-		translateTo = (destinationSlide * this.sliderWidth);
-
-		console.log(this.sliderX, destinationSlide, this.sliderWidth);
+		translateTo = 0 - (destinationSlide * this.sliderWidth);
 		
 		this.translateTo(translateTo, {speed: 60}, (function() {
 			this.currentSlide =+ destinationSlide;
-			console.log(this.currentSlide);
 		}).bind(this));
 	}
 };
@@ -449,6 +446,7 @@ SliderElement.prototype.isTouchCapable = function() {
  *	Function to repaint the slider when needed	
  *
  *	@method update
+ *	@param  {number} movementMultiplier - how many pixels to move per mouse pixel moved
  *	@return undefined
  */
 SliderElement.prototype.update = function() {
