@@ -130,6 +130,14 @@ function SliderElement(domNode) {
 	this.currentSpeed = 0;
 
 	/**
+	 *	The current slide the slider is on
+	 *
+	 *	@property {number} currentSlide
+	 *	@default 0
+	 */
+	this.currentSlide = 0;
+
+	/**
 	 *	Finally, initialise the slider.
 	 */
 	this.init();
@@ -326,6 +334,7 @@ SliderElement.prototype.onUp = function(e) {
 	this.mousedown = false;
 	this.cancelUpdate();
 	this.sliderX += this.dx;
+	this.customEvents.sliderdrop.dx = this.dx;
 	this.dx = 0;
 
 	/**
@@ -350,6 +359,7 @@ SliderElement.prototype.onLeave = function(e) {
 	this.mousedown = false;
 	this.cancelUpdate();
 	this.sliderX += this.dx;
+	this.customEvents.sliderdrop.dx = this.dx;
 	this.dx = 0;
 
 	/**
@@ -364,34 +374,62 @@ SliderElement.prototype.onLeave = function(e) {
  *	no longer scrolling.
  *
  *	@method onSliderDrop
+ *	@param {object} - custom event parameter containing the drop X coordinate {e.dx}
  *	@return undefined
  */
-SliderElement.prototype.onSliderDrop = function() {
+SliderElement.prototype.onSliderDrop = function(e) {
+
+	/**
+	 *	Function carrying out calculations helping to decide whether to 
+	 *	move the slider and if so, in which direction.
+	 *
+	 *	If it has moved more than 50% in any direction, then the threshhold 
+	 *	has been met and we should move to the nexr/prev slide.
+	 *
+	 *	If the direction the slider was pulled was negative, then move it to 
+	 *	the left, ot move it to the right, if the threshhold has been met.
+	 *
+	 *	This is a self-executing function, whose values are assigned to movement.
+	 */
+	var movement = (function(dx) {
+		var amount = e.dx < 0 ? 0 - e.dx:e.dx,
+			threshholdCrossed = amount % this.sliderWidth > (this.sliderWidth / 2),
+			direction = e.dx < 0 ? 'left':'right';
+		return {
+			amount: amount,
+			threshholdCrossed: threshholdCrossed,
+			direction: direction
+		}
+	}).bind(this)();
+
 	/**
 	 *	Snap the slider back into position
 	 */
 	if(this.options.snapToNearest) {
-		this.snapOnDrop();
+
+		var destinationSlide = this.currentSlide,
+			translateTo = 0;
+
+		if(movement.threshholdCrossed) {
+			switch(movement.direction) {
+				case 'left': 
+					destinationSlide--;
+					break;
+				case 'right': 
+					destinationSlide++;
+					break;
+			}
+		}
+		
+		translateTo = (destinationSlide * this.sliderWidth);
+
+		console.log(this.sliderX, destinationSlide, this.sliderWidth);
+		
+		this.translateTo(translateTo, {speed: 60}, (function() {
+			this.currentSlide =+ destinationSlide;
+			console.log(this.currentSlide);
+		}).bind(this));
 	}
-};
-
-/**
- *	Function to snap the slider into place when it has been dropped
- *	
- *	@method snapOnDrop
- *	@return undefined
- */
-SliderElement.prototype.snapOnDrop = function() {
-
-	var goForward = (0 - this.sliderX) % this.sliderWidth > (this.sliderWidth / 2);
-
-	console.log(goForward ? 'Go forward':'Go back');
-	console.log(this.sliderWidth, this.sliderX);
-
-	this.translateTo(0, {speed: 60}, function() {
-		console.log('Done! ' + new Date().getTime());
-	});
-
 };
 
 /**
