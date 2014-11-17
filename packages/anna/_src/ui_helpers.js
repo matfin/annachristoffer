@@ -80,6 +80,8 @@ UI.registerHelper('isCurrentLanguage', function(languageCode) {
  *	@return {String} The formatted date
  */
 UI.registerHelper('formattedDate', function(dateString, dateFormat) {
+	Dependencies.languageChangedDependency.depend();
+	moment.locale(App.language);
 	var m = moment(dateString);
 	return m.isValid() ? m.format(dateFormat):dateString; 
 });
