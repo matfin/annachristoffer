@@ -81,7 +81,7 @@ Template['components_header'].events = {
 	'click .language-select button': function(e, template) {
 
 		Helpers.switchLanguage($(e.currentTarget).data('language'));
-		$(e.currentTarget).data('selected', true);
+		// $(e.currentTarget).data('selected', true);
 	}
 };
 

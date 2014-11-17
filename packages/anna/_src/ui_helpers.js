@@ -67,6 +67,7 @@ UI.registerHelper('isLandingPage', function() {
  *	@return {Boolean} - true if the language code matches or false
  */
 UI.registerHelper('isCurrentLanguage', function(languageCode) {
+	Dependencies.languageChangedDependency.depend();
 	return App.language === languageCode;
 });
 
