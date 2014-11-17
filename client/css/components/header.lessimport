@@ -84,7 +84,9 @@
 						.transition-duration(@transitionDuration / 2);
 
 						&:hover,
-						&[data-is-current-category="true"]
+						&[data-is-current-category="true"],
+						&[data-is-current-page="true"],
+						&[data-is-landing-page="true"]
 						 {
 							font-weight: bold;
 							color: @sliderPrimaryColour;

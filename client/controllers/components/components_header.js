@@ -23,7 +23,6 @@ Template['components_header'].rendered = function() {
 *	@return undefined
 */
 Template['components_header'].destroyed = function() {
-	// primeHeader.stop();	
 };
 
 /**
@@ -102,7 +101,7 @@ var primeHeader = Tracker.autorun(function() {
 	/**
 	 *	For now, the side nav menu should only scroll on a detail page
 	 */
-	if(App.currentView === 'detail' || App.currentView === 'page') {
+	if(App.currentView.type === 'project' || App.currentView.type === 'page') {
 		
 		var top = ($(window).scrollTop()) + 64;
 

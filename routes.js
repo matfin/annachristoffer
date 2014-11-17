@@ -4,6 +4,8 @@ Router.onRun(function() {
 
 Router.onBeforeAction(function() {
 	$('nav, section').removeClass('revealed');
+	App.currentView.type = false;
+	App.currentView.id = false;
 
 	/**
 	 *	Subscribe to simple content published from the server
@@ -27,7 +29,8 @@ Router.map(function() {
 			return Meteor.subscribe('pages', this.params._page_slug, App.language);
 		},
 		action: function() {
-			if(this.ready()) {
+
+			if(this.ready()) { 
 				this.render();
 			}
 			else {
@@ -38,7 +41,10 @@ Router.map(function() {
 			if(!this.ready()) {
 				return;
 			}
-			return App.models.pages.findOne({});
+			var page = App.models.pages.findOne({});
+			App.currentView.type = 'page';
+			App.currentView.id = page.id;
+			return page;
 		},
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
@@ -93,7 +99,8 @@ Router.map(function() {
 				/**
 				 *	Set the App level currentCategoryId
 				 */
-				App.currentCategoryId = category.id;
+				App.currentView.type = 'list';
+				App.currentView.id = category.id;
 
 				return {
 					projects: App.models.projects.find({}, {sort: {id: 1}}).fetch(),
@@ -105,7 +112,7 @@ Router.map(function() {
 				/**
 				 *	Clear the App level currentCategoryId
 				 */ 
-				App.currentCategoryId = false;
+				App.currentView.type = 'list';
 				
 				return {
 					projects: App.models.projects.find({}, {sort: {id: 1}}).fetch()

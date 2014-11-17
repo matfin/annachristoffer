@@ -84,9 +84,9 @@ Template['cards_project'].helpers({
 		/**
 		 * Card highlight and fade effect only if a category is specified.
 		 */
-		if(App.currentCategoryId) {
+		if(App.currentView.id) {
 			var isHighlighted = _.find(this.category_ids, function(category_id){
-				return category_id.id === App.currentCategoryId;
+				return category_id.id === App.currentView.id;
 			});
 			return isHighlighted ? 'colourhighlighted':'faded';
 		}

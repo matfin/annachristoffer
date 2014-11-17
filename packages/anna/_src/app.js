@@ -28,7 +28,10 @@
 	 *	@property currentView
 	 *	@type {String}
 	 */
-	currentView: false,
+	currentView: {
+		type: false,
+		id: false
+	},
 
 	/**
 	 *	The current category id of the category being viewed.

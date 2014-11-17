@@ -35,7 +35,28 @@ UI.registerHelper('loadMessageCode', function(message) {
  *	@return {Boolean} - true if there is a match or false 
  */
 UI.registerHelper('isCurrentCategory', function(category_id) {
-	return App.currentCategoryId && App.currentCategoryId === category_id;
+	return App.currentView.type === 'list' && App.currentView.id === category_id;
+});
+
+/**
+ *	Helper function to determine if a given page id is the current one
+ *
+ *	@function isCurrentPage
+ *	@param {Number} page_id - the given page ID
+ *	@return {Boolean} - true if there is a page match or false
+ */
+UI.registerHelper('isCurrentPage', function(page_id) {
+	return App.currentView.type === 'page' && App.currentView.id === page_id;
+});
+
+/**
+ *	Helper function to determine if on the landing page
+ *
+ *	@function isLandingPage
+ *	@return {Boolean} - true if on the landing page or false
+ */
+UI.registerHelper('isLandingPage', function() {
+	return App.currentView.type === 'list' && App.currentView.id === false;
 });
 
 /**

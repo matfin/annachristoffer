@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['views_list'].created = function() {
-	App.currentView = 'list';
 };
 
 /**

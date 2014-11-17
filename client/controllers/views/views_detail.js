@@ -5,7 +5,7 @@
 *	@return undefined
 */
 Template['views_detail'].created = function() {
-	App.currentView = 'detail';
+	App.currentView.type = 'project';
 };
 
 /**

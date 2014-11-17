@@ -5,7 +5,7 @@
 *	@return undefined
 */
 Template['views_mobile_list'].created = function() {
-	App.currentView = 'list';
+	App.currentView.type = 'list';
 };
 
 /**
