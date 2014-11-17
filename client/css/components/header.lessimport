@@ -88,7 +88,6 @@
 						&[data-is-current-page="true"],
 						&[data-is-landing-page="true"]
 						 {
-							font-weight: bold;
 							color: @sliderPrimaryColour;
 							border-bottom: 1px solid @sliderPrimaryColour;
 						}
