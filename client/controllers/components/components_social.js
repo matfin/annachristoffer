@@ -37,7 +37,7 @@ Template['components_social'].events = {
 
 		if(this.opened) {
 			template.$('button:not(:first-child)').css({
-				width: '0%'
+				width: 0
 			});
 			this.opened = false;
 		}

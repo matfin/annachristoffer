@@ -14,7 +14,7 @@
  *	Reset browser fedault styling for buttons
  */
 .resetButton {
-	-webkit-appearance: none;
+	.appearance(none);
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	background-color: transparent;
 	border: none;
