@@ -138,6 +138,14 @@ function SliderElement(domNode) {
 	this.currentSlide = 0;
 
 	/**
+	 *	Slider is animating
+	 *
+	 *	@property {boolean} isAnimating
+	 *	@default false
+	 */
+	this.isAnimating = false;
+
+	/**
 	 *	Finally, initialise the slider.
 	 */
 	this.init();
@@ -287,8 +295,11 @@ SliderElement.prototype.onDown = function(e) {
 	/**
 	 *	Called on events 'touchstart' and 'mousedown'.
 	 *	Set mousedown state and call the slider update function
-	 *	to trigger a repaint on window repaint
+	 *	to trigger a repaint on window repaint.
+	 *
+	 *	Important: Remember to kill all actively running animations
 	 */
+	this.killAnimations();
 	this.cancelUpdate();
 	this.update();
 	this.mousedown = e.pageX || e.touches[0].pageX;
@@ -403,9 +414,10 @@ SliderElement.prototype.onSliderDrop = function(e) {
 	}).bind(this)();
 
 	/**
-	 *	Snap the slider back into position
+	 *	Snap the slider back into position only if this has been specified 
+	 *	as an option and the slider is not already in an animating state.
 	 */
-	if(this.options.snapToNearest) {
+	if(this.options.snapToNearest && !this.isAnimating) {
 
 		var destinationSlide = this.currentSlide,
 			translateTo = 0;
@@ -422,8 +434,10 @@ SliderElement.prototype.onSliderDrop = function(e) {
 		}
 		
 		translateTo = 0 - (destinationSlide * this.sliderWidth);
-		
-		this.translateTo(translateTo, {speed: 60}, (function() {
+
+		this.isAnimating = true;
+
+		this.translateTo(translateTo, {speed: 50}, (function() {
 			this.currentSlide =+ destinationSlide;
 		}).bind(this));
 	}
@@ -455,6 +469,7 @@ SliderElement.prototype.update = function() {
 	 *	By calling this binding, this function will continuously run
 	 *	each time an animation frame is requested, effectively giving 
 	 *	us a nicely timed loop so we can update the UI for the slider.
+	 *
 	 */
 	this.animationFrameId = this.requestAnimationFrame(this.update.bind(this));
 	var translateX = (this.sliderX + this.dx);
@@ -507,7 +522,7 @@ SliderElement.prototype.cancelUpdate = function() {
 };
 
 /**
- *	Method to request animation tick for the slider using
+ *	Method to request animation tick for the slider (cross-browser)
  *	
  *	@method requestAnimationFrame
  *	@param {function} callback - the callback to execute 
@@ -562,9 +577,13 @@ SliderElement.prototype.translateTo = function(x, options, callback) {
 		 */
 		this.killAnimations();
 		this.currentSpeed = 0;
-		if(typeof callback === 'function') {
-			this.callbackTimeout = setTimeout(callback, 100);
-		}
+		this.callbackTimeout = setTimeout(function(){
+			if(typeof callback === 'function') {
+				callback();
+			}
+			this.isAnimating = false;
+		}.bind(this), 5);
+
 		return;
 	}
 	if(x < this.sliderX) {
@@ -580,13 +599,14 @@ SliderElement.prototype.translateTo = function(x, options, callback) {
 	 *	Call a bind to this function at least once so it is run per RAF 'tick'
 	 */
 	this.requestAnimationFrame(this.translateTo.bind(this, x, options, callback));
-
 };
 
 SliderElement.prototype.killAnimations = function() {
 	[].forEach.call(this.animationFrameIds, function(animationFrameId) {
 		window.cancelAnimationFrame(animationFrameId);
 	});
+	this.animationFrameIds = [];
+	clearTimeout(this.callbackTimeout);
 };
 
 /** 
