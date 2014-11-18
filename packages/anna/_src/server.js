@@ -10,8 +10,8 @@ Server = {
 	/**
 	 *	Server side base url for making HTTP calls
 	 *	
-	 *	@property baseURL
-	 *	@type {String}
+	 *	@property 	baseURL
+	 *	@type 		{String}
 	 */
 	baseURL: 'http://localhost:3000',
 

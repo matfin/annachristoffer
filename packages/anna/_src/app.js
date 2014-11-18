@@ -14,6 +14,14 @@
 	baseUrl: 'http://localhost:3000',
 
 	/**
+	 *	Languages for content this app has
+	 *
+	 *	@property 	languages
+	 *	@type 		{Array}
+	 */
+	languages: ['en', 'de'],
+
+	/**
 	 *	Determining the browser language using moment.js and setting it.
 	 *
 	 *	@property language

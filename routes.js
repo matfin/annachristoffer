@@ -41,7 +41,28 @@ Router.map(function() {
 			if(!this.ready()) {
 				return;
 			}
-			var page = App.models.pages.findOne({});
+
+			var page = App.models.pages.findOne({}),
+				alternateLanguages = _.filter(App.languages, function(language) {
+					return language !== App.language;
+				});
+
+			/**
+			 *	If we cannot find the page based on the current slug, then run another
+			 *	query to fetch the page in a different language. 
+			 *
+			 *	This fixes a bug that arises when the user changes the language and 
+			 *	refreshes the page. We check the slugs of the page in different languages
+			 *	and load it.
+			 */
+			if(typeof page === 'undefined') {
+				_.each(alternateLanguages, function(language) {
+					var query = {};
+					query['slug.' + language] = this.params._page_slug; 
+					return page = App.models.pages.findOne(query) !== 'undefined';
+				}.bind(this));
+			}
+			
 			App.currentView.type = 'page';
 			App.currentView.id = page.id;
 			return page;
@@ -88,13 +109,34 @@ Router.map(function() {
 				/**
 				 * Building up the query given the category slug and the language
 				 */
-				var query = {};
+				var query = {},
+					alternateLanguages = _.filter(App.languages, function(language) {
+						return language !== App.language;
+					});
+
 				query['slug.' + App.language] = this.params._category_slug;
 				
 				/**
 				 *	Grab the category given the query
 				 */
 				var category = App.models.categories.findOne(query);
+
+				/**
+				 *	If we cannot find the category based on the current slug, then run another
+				 *	query to fetch the category in a different language. 
+				 *
+				 *	This fixes a bug that arises when the user changes the language and 
+				 *	refreshes the page. We check the slugs of the page in different languages
+				 *	and load it.
+				 */
+				if(typeof category === 'undefined') {
+					_.each(alternateLanguages, function(language) {
+						var query = {};
+						query['slug.' + language] = this.params._category_slug; 
+						category = App.models.categories.findOne(query);
+						if(typeof category !== 'undefined') return category;
+					}.bind(this));
+				}
 
 				/**
 				 *	Set the App level currentCategoryId
