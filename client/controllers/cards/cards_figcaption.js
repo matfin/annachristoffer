@@ -17,16 +17,16 @@ Template['cards_figcaption'].rendered = function() {
 	var template = this;
 
 	if(typeof this.data.video_id !== 'undefined') {
-		this.computation = Tracker.autorun(function() {
+		this.autorun(function() {
 			Dependencies.viewportResizeDependency.depend();
 		});
 	}
 
 	Meteor.setTimeout(function() {	
-		if(typeof template.$('figure') !== 'undefined' && template.$('figure').length > 0) {
-			template.$('figure').addClass('rendered');
+		if(typeof $('figure.cards_figcaption') !== 'undefined' && $('figure.cards_figcaption').length > 0) {
+			$('figure.cards_figcaption').addClass('rendered');
 		}
-	}, 300)
+	}, 300);
 };
 
 /**
@@ -36,11 +36,6 @@ Template['cards_figcaption'].rendered = function() {
  *	@return undefined
  */
 Template['cards_figcaption'].destroyed = function() {
-	if(typeof this.computation !== 'undefined') {
-		this.computation.stop();
-	}
-
-	this.$('figure').remove();
 };
 
 /**
