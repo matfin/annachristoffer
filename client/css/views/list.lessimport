@@ -2,16 +2,13 @@ body.list {
 	.wrapper {
 		.container {	
 			.content {
-				padding-top: @gridColumnWidth * 4;
-
-				&.mobile {
-					padding-top: @gridColumnWidth * 3;
+				> section {
+					padding: @gridColumnWidth * 4 0;
 				}
-
-				section {
-					@media @mobile {
-						padding-top: 0px;
-					}
+			}
+			.content-mobile {
+				> section {
+					padding: @gridColumnWidth * 3 0;
 				}
 			}
 		}

@@ -1,5 +1,39 @@
-<template name="views_page">
+<template name="page">
+	{{#if deviceParameters.isMobile}}
+		{{> views_mobile_page}}
+	{{else}}
+		{{> views_page}}
+	{{/if}}	
+</template>
 
+<template name="views_mobile_page">
+	<section class="mobile-page-section">
+		{{#each getSectionGroupsByName "profile"}}
+			{{#each items}}
+				{{> views_item}}
+			{{/each}}
+		{{/each}}
+	</section>
+
+	<section class="mobile-page-section">
+		{{#each getSectionGroupsByName "experience"}}
+			{{#each items}}
+				{{> views_item}}
+			{{/each}}
+		{{/each}}
+	</section>
+
+	<section class="mobile-page-section">
+		{{#each getSectionGroupsByName "education"}}
+			{{#each items}}
+				{{> views_item}}
+			{{/each}}
+		{{/each}}
+	</section>
+
+</template>
+
+<template name="views_page">
 	<div class="page-column-left">
 		<section class="page-section experience">
 			<ul>
@@ -25,10 +59,10 @@
 					</li>
 				{{/each}}
 			</ul>
-			<a class="work-social" href="https://www.xing.com/profile/Anna_Christoffer" title="Anna Christoffer Xing">
+			<a class="work-social" target="_blank" href="https://www.xing.com/profile/Anna_Christoffer" title="Anna Christoffer Xing">
 				<i class="icon-xing"></i>
 			</a>
-			<a class="work-social" href="http://de.linkedin.com/pub/anna-christoffer/a7/30/707/" title="Anna Christoffer LinkedIn">
+			<a class="work-social" target="_blank" href="http://de.linkedin.com/pub/anna-christoffer/a7/30/707/" title="Anna Christoffer LinkedIn">
 				<i class="icon-linkedin"></i>
 			</a>
 		</section>
@@ -45,7 +79,6 @@
 			</ul>
 		</section>
 	</div>
-
 </template>
 
 <template name="views_item">

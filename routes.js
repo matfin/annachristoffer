@@ -71,7 +71,7 @@ Router.map(function() {
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
 			'header': {to: 'header'},
-			'views_page': {to: 'content'},
+			'page': {to: 'content'},
 			'footer': {to: 'footer'}
 		}
 	});

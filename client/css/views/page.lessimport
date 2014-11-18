@@ -9,6 +9,17 @@ body.page {
 					.display(flex);
 				}
 			}
+			.content-mobile {
+				> section {
+					padding: @gridColumnWidth * 3 0;
+				}
+			}
 		}
+	}
+}
+
+.content.mobile {
+	section {
+		display: block;
 	}
 }
