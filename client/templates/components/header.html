@@ -7,6 +7,25 @@
 </template>
 
 <template name="components_mobile_header">
+
+	<header class="mobile_header">
+		<button id="back">
+			<i class="icon-leftArrow">
+			</i>
+		</button>
+		<h1>
+			{{loadMessageCode staticContent.mainHeading.content}}
+		</h1>
+		<button id="menu_reveal">
+			<i class="icon-menu">
+			</i>
+		</button>
+	</header>
+
+</template>
+
+<!--
+<template name="components_mobile_header">
 	<div class="header_buttons">
 		<button id="header_reveal">
 			<i class="icon-menu">
@@ -26,16 +45,6 @@
 						{{loadMessageCode staticContent.projects.content}}
 					</a>
 				</li>
-				<!-- Categories -->
-				{{#each navCategories}}
-					<li>
-						<a href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
-							{{loadMessageCode title}}
-						</a>
-					</li>
-				{{/each}}
-
-				<!-- Pages -->
 				{{#each pages}}
 					<li class="contentLink">
 						<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
@@ -44,7 +53,6 @@
 					</li>
 				{{/each}}
 
-				<!-- Language select buttons -->
 				<li class="language-select">
 					<button class="switch-language" data-language="en">
 						EN
@@ -58,7 +66,7 @@
 	</header>
 	
 </template>
-
+-->
 <template name="components_header">
 	<div class="header">
 		<header>

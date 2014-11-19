@@ -102,6 +102,38 @@
 	}
 }
 
+.mobile_header {
+	z-index: @primaryLayer;
+	position: fixed;
+	width: 100%;
+	height: @gridColumnWidth * 3;
+	background-color: rgba(
+		red(#feecfb),
+		green(#feecfb),
+		blue(#feecfb),
+		0.8
+	);
+	.display(flex);
+	.flex-direction(row);
+
+	h1 {
+		.flex(6);
+		text-align: center;
+		height: 48px;
+		line-height: 48px;
+		color: @mobilePrimary;
+	}
+
+	button {
+		.flex(1.5);
+		height: @gridColumnWidth * 3;
+		color: @mobilePrimary;
+		font-size: @baseFontSize * 1.2;
+	} 
+
+}
+
+/*
 .header_buttons,
 header.mobile_header {
 	.transition-duration(@transitionDuration);
@@ -146,7 +178,9 @@ header.mobile_header {
 		);
 	}
 }
+*/
 
+/*
 header.mobile_header {
 	position: fixed;
 	z-index: @primaryLayer;
@@ -250,3 +284,4 @@ header.mobile_header {
 		}
 	}
 }
+*/
