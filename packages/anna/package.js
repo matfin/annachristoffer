@@ -19,9 +19,9 @@ Package.onUse(function(api) {
 
 	api.use('deps', 		'client');
 	api.use('jquery', 		'client');
-	api.use('mrt:moment', 	'client');
 	api.use('ui',			'client');
 	api.use('amplify',		'client');
+	api.use('jeeeyul:moment-with-langs', 'client');
 	
 
 	/**

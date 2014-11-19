@@ -105,11 +105,18 @@ Router.map(function() {
 				return;
 			}
 
+			var data = {
+				projects: App.models.projects.find({}, {sort: {id: 1}}).fetch()
+			};
+						
+			App.currentView.type = 'list';
+
 			if(this.params._category_slug) {
 				/**
 				 * Building up the query given the category slug and the language
 				 */
 				var query = {},
+					category,
 					alternateLanguages = _.filter(App.languages, function(language) {
 						return language !== App.language;
 					});
@@ -119,7 +126,7 @@ Router.map(function() {
 				/**
 				 *	Grab the category given the query
 				 */
-				var category = App.models.categories.findOne(query);
+				category = App.models.categories.findOne(query);
 
 				/**
 				 *	If we cannot find the category based on the current slug, then run another
@@ -141,25 +148,17 @@ Router.map(function() {
 				/**
 				 *	Set the App level currentCategoryId
 				 */
-				App.currentView.type = 'list';
 				App.currentView.id = category.id;
-
-				return {
-					projects: App.models.projects.find({}, {sort: {id: 1}}).fetch(),
-					category_id: category.id
-				}
-
+				data.category_id = category.id;
 			}
 			else {
 				/**
 				 *	Clear the App level currentCategoryId
 				 */ 
-				App.currentView.type = 'list';
-				
-				return {
-					projects: App.models.projects.find({}, {sort: {id: 1}}).fetch()
-				}
+				App.currentView.id = false;
 			}
+
+			return data;
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {

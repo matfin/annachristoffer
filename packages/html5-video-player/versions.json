@@ -61,6 +61,10 @@
       "1.0.1"
     ],
     [
+      "jeeeyul:moment-with-langs",
+      "2.8.3"
+    ],
+    [
       "jquery",
       "1.0.1"
     ],
