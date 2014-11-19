@@ -11,15 +11,49 @@ body.page {
 			}
 			.content-mobile {
 				> section {
-					padding: @gridColumnWidth * 3 0;
+					padding: @gridColumnWidth * 3 0 0 0;
 				}
 			}
 		}
 	}
 }
 
-.content.mobile {
-	section {
+.content-mobile {
+
+	section.mobile-page-section {
 		display: block;
+		padding: @gridColumnWidth;
+		background-color: @background;
+
+		h1,p {
+			margin-bottom: @gridColumnWidth;
+			font-size: @baseFontSize;
+		}
+
+		h2 {
+			font-size: @mediumFont - 2;
+			font-style: italic;
+			font-weight: 100;
+		}
+
+		h3 {
+			.sub;
+			margin-bottom: @gridColumnWidth;
+		}
+
+		p {
+			.standardParagraphText;
+		}
+
+		time {
+			.date;
+		}
+
+		a {
+			// border-bottom: 1px dashed black;
+			background-color: @mobileSecondary;
+			border-radius: @gridColumnWidth / 2;
+			padding: 0 @gridColumnWidth / 2;
+		}
 	}
 }
