@@ -82,13 +82,13 @@ Template['components_mobile_header'].helpers({
  *	events
  */
 Template['components_mobile_header'].events = {
-	'click #menu_reveal': function(e, template) {
+	'touchstart #menu_reveal': function(e, template) {
 		template.$('nav').toggleClass('revealed');
 	},
-	'click .switch-language':  function(e, template) {
+	'touchstart .switch-language':  function(e, template) {
 		Helpers.switchLanguage($(e.currentTarget).data('language'));
 	},
-	'click #back': function(e, template) {
+	'touchstart #back': function(e, template) {
 		if(App.currentView.type === 'project' || App.currentView.type === 'page') {
 			Router.go('list');
 		}

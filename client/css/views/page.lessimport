@@ -50,10 +50,7 @@ body.page {
 		}
 
 		a {
-			// border-bottom: 1px dashed black;
-			background-color: @mobileSecondary;
-			border-radius: @gridColumnWidth / 2;
-			padding: 0 @gridColumnWidth / 2;
+			border-bottom: 1px dashed black;
 		}
 	}
 }
