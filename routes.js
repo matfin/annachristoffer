@@ -16,6 +16,10 @@ Router.onBeforeAction(function() {
 	this.next();
 });
 
+Router.onAfterAction(function() {
+	//TODO
+});
+
 Router.map(function() {
 
 	/** 

@@ -27,9 +27,7 @@
 	 *	@property language
 	 *	@type {String}
 	 */
-	// language: (typeof amplify.store('language') !== 'undefined') ? amplify.store('language'):moment.locale(),
-	language: moment().locale(),
-
+	language: (typeof amplify.store('language') !== 'undefined') ? amplify.store('language'):moment.locale(),
 
 	/**
 	 *	The current view the app is on. This will get set within the 

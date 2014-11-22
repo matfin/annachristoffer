@@ -131,6 +131,8 @@
 		font-size: @baseFontSize * 1.2;
 
 		&#back {
+			.transition-property(opacity);
+			.transition-duration(@transitionDuration * 2);
 			.opacity(0);
 
 			&.show {
@@ -149,12 +151,6 @@
 		.transition-property(transform);
 		.transition-duration(@transitionDuration);
 
-		// background-color: rgba(
-		// 	red(#feecfb),
-		// 	green(#feecfb),
-		// 	blue(#feecfb),
-		// 	0.9
-		// );
 		background-color: #fff;
 
 		&.revealed {

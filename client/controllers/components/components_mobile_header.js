@@ -14,6 +14,13 @@ Template['components_mobile_header'].created = function() {
 *	@return undefined
 */
 Template['components_mobile_header'].rendered = function() {
+	if(App.currentView.type === 'project' || App.currentView.type === 'page') {
+		console.log('Show the back button');
+		this.$('#back').addClass('show');
+	}
+	else {
+		this.$('#back').removeClass();
+	}
 };
 
 /**
@@ -80,5 +87,12 @@ Template['components_mobile_header'].events = {
 	},
 	'click .switch-language':  function(e, template) {
 		Helpers.switchLanguage($(e.currentTarget).data('language'));
+	},
+	'click #back': function(e, template) {
+		if(App.currentView.type === 'project' || App.currentView.type === 'page') {
+			Router.go('list');
+		}
+		e.preventDefault();
+		return false;
 	}
 };
