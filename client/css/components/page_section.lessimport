@@ -113,6 +113,11 @@
 				font-size: @mediumFont - 3;
 				padding-left: 2px;
 			}
+			i.icon-dots {
+				font-size: @mediumFont + 3;
+				position: relative;
+				top: 2px;
+			}
 		}
 	}
 }
