@@ -13,6 +13,7 @@
 @fontWeightHeavy: 600;
 @fontWeightNormal: 400;
 @fontWeightLight: 300;
+@fontWeightLightest: 100;
 
 // Layout
 @gridColumnWidth: 16px;

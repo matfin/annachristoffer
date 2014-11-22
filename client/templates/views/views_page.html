@@ -9,25 +9,48 @@
 <template name="views_mobile_page">
 	<section class="mobile-page-section">
 		{{#each getSectionGroupsByName "profile"}}
-			{{#each items}}
-				{{> views_item}}
-			{{/each}}
+			<div>
+				{{#each items}}
+					{{> views_item}}
+				{{/each}}
+			</div>
 		{{/each}}
+		<ul class="work-social-links">
+			<li>
+				<a class="work-social" target="_blank" href="https://www.xing.com/profile/Anna_Christoffer" title="Anna Christoffer Xing">
+					<i class="icon-xing"></i>
+				</a>
+			</li>
+			<li>
+				<a class="work-social" target="_blank" href="http://de.linkedin.com/pub/anna-christoffer/a7/30/707/" title="Anna Christoffer LinkedIn">
+					<i class="icon-linkedin"></i>
+				</a>
+			</li>
+			<li>
+				<a class="work-social" target="_blank" href="http://thedots.co.uk/anna" title="Anna Christoffer The Dots">
+					<i class="icon-menu"></i>
+				</a>
+			</li>
+		</ul>
 	</section>
 
 	<section class="mobile-page-section">
 		{{#each getSectionGroupsByName "experience"}}
-			{{#each items}}
-				{{> views_item}}
-			{{/each}}
+			<div>
+				{{#each items}}
+					{{> views_item}}
+				{{/each}}
+			</div>
 		{{/each}}
 	</section>
 
 	<section class="mobile-page-section">
 		{{#each getSectionGroupsByName "education"}}
-			{{#each items}}
-				{{> views_item}}
-			{{/each}}
+			<div>
+				{{#each items}}
+					{{> views_item}}
+				{{/each}}
+			</div>
 		{{/each}}
 	</section>
 

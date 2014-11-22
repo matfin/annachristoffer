@@ -24,25 +24,55 @@ body.page {
 		display: block;
 		padding: @gridColumnWidth;
 		background-color: @background;
+		margin-bottom: @gridColumnWidth;
+
+		div {
+			margin-bottom: @gridColumnWidth / 2;
+			&:last-child {
+				margin-bottom: 0;
+				h3 {
+					margin-bottom: @gridColumnWidth / 2;
+				}
+			}
+		}
+
+		ul {
+			.display(flex);
+			.flex-direction(row);
+			margin-top: @gridColumnWidth * 1.5;
+			li {
+				.flex(1);
+				text-align: center;
+				a {
+					text-decoration: none;
+					border-bottom: 0;
+				}
+			}
+		}
 
 		h1,p {
-			margin-bottom: @gridColumnWidth;
 			font-size: @baseFontSize;
+		}
+
+		h1 { 
+			margin-bottom: 0;
 		}
 
 		h2 {
 			font-size: @mediumFont - 2;
 			font-style: italic;
 			font-weight: 100;
+			letter-spacing: -0.5px;
 		}
 
 		h3 {
 			.sub;
-			margin-bottom: @gridColumnWidth;
+			margin-bottom: @gridColumnWidth * 1.5;
 		}
 
 		p {
 			.standardParagraphText;
+			margin-bottom: @gridColumnWidth;
 		}
 
 		time {
