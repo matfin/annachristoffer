@@ -115,6 +115,7 @@
 	);
 	.display(flex);
 	.flex-direction(row);
+	.align-items(center);
 
 	h1 {
 		.flex(6);
@@ -126,10 +127,15 @@
 	}
 
 	> button {
-		.flex(1.5);
+		.flex(2);
+		min-width: @gridColumnWidth * 3;
 		height: @gridColumnWidth * 3;
 		color: @mobilePrimary;
 		font-size: @baseFontSize * 1.2;
+
+		&#menu_reveal {
+			font-size: @baseFontSize;
+		}
 
 		&#back {
 			.transition-property(opacity);
@@ -185,9 +191,6 @@
 					&:first-child {
 						border-right: 1px solid @mobilePrimary;
 					}
-					&:last-child {
-						// border-left: 0.5px solid @mobilePrimary;
-					}
 					&[data-selected="true"] {
 						background-color: rgba(
 							red(#dd79de),
@@ -201,6 +204,7 @@
 				&:last-child {
 					.display(flex);
 					.flex-direction(row);
+					.align-items(center);
 					border-bottom: 1px solid @mobilePrimary;
 				}
 			}
