@@ -14,59 +14,40 @@
 			</i>
 		</button>
 		<h1>
-			{{loadMessageCode staticContent.mainHeading.content}}
+			{{{loadMessageCode staticContent.mainHeading.content}}}
 		</h1>
 		<button id="menu_reveal">
 			<i class="icon-menu">
 			</i>
 		</button>
-	</header>
-
-</template>
-
-<!--
-<template name="components_mobile_header">
-	<div class="header_buttons">
-		<button id="header_reveal">
-			<i class="icon-menu">
-			</i>
-		</button>
-	</div>
-	<header class="mobile_header">
 		<nav>
 			<ul>
 				<li>
-					<h1>
-						{{loadMessageCode staticContent.mainHeading.content}}
-					</h1>
-				</li>
-				<li>
-					<a data-is-current-category="{{isCurrentCategory id}}" href="/" title="{{loadMessageCode staticContent.projects.content}}">
-						{{loadMessageCode staticContent.projects.content}}
+					<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+						{{{loadMessageCode staticContent.projects.content}}}
 					</a>
 				</li>
 				{{#each pages}}
-					<li class="contentLink">
+					<li>
 						<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 							{{{loadMessageCode title}}}
 						</a>
 					</li>
 				{{/each}}
-
-				<li class="language-select">
-					<button class="switch-language" data-language="en">
+				<li>
+					<button class="switch-language" data-language="en" data-selected="{{isCurrentLanguage 'en'}}">
 						EN
 					</button>
-					<button class="switch-language" data-language="de">
+					<button class="switch-language" data-language="de" data-selected="{{isCurrentLanguage 'de'}}">
 						DE
 					</button>
 				</li>
 			</ul>
 		</nav>
 	</header>
-	
+
 </template>
--->
+
 <template name="components_header">
 	<div class="header">
 		<header>

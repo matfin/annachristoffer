@@ -75,25 +75,10 @@ Template['components_mobile_header'].helpers({
  *	events
  */
 Template['components_mobile_header'].events = {
-	'touchstart #header_reveal, click #header_reveal': function(e, template) {
-
-		var headerButtons = template.$('.header_buttons'),
-			header = template.$('header');
-
-		if(header.hasClass('revealed')) {
-			headerButtons.removeClass('revealed');
-			header.removeClass('revealed');
-		}
-		else {
-			header.addClass('revealed');
-			headerButtons.addClass('revealed');
-		}
+	'click #menu_reveal': function(e, template) {
+		template.$('nav').toggleClass('revealed');
 	},
-	'click a':  function(e, template) {
-		var headerButtons = template.$('.header_buttons'),
-			header = template.$('header');
-		
-		headerButtons.removeClass('revealed');
-		header.removeClass('revealed');
+	'click .switch-language':  function(e, template) {
+		Helpers.switchLanguage($(e.currentTarget).data('language'));
 	}
 };
