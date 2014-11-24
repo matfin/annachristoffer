@@ -86,12 +86,13 @@ function SliderElement(domNode) {
 	this.animationFrameId;
 
 	/**
-	 *	Grouped ids associated with multiple repaints on the slider
+	 *	Slider animation transition duration
 	 *
-	 *	@property animationFrameIds
-	 *	@type {array}
+	 *	@property transitionDuration
+	 *	@type {number}
+	 *	@default 350
 	 */
-	this.animationFrameIds = [];
+	this.transitionDuration = 350;
 
 	/**
 	 *	Callback timeout to be used by functions spawned multiple times 
@@ -299,7 +300,6 @@ SliderElement.prototype.onDown = function(e) {
 	 *
 	 *	Important: Remember to kill all actively running animations
 	 */
-	this.killAnimations();
 	this.cancelUpdate();
 	this.update();
 	this.mousedown = e.pageX || e.touches[0].pageX;
@@ -419,29 +419,58 @@ SliderElement.prototype.onSliderDrop = function(e) {
 	 */
 	if(this.options.snapToNearest && !this.isAnimating) {
 
-		var destinationSlide = this.currentSlide,
-			translateTo = 0;
+		var translateTo = 0;
 
+		/**
+		 *	Determining which slide we need to move to
+		 */
 		if(movement.threshholdCrossed) {
 			switch(movement.direction) {
 				case 'left': 
-					if(destinationSlide < (this.slides.length - 1)) destinationSlide++;
+					if(this.currentSlide < (this.slides.length - 1)) this.currentSlide++;
 					break;
 				case 'right': 
-					if(destinationSlide > 0) destinationSlide--;
+					if(this.currentSlide > 0) this.currentSlide--;
 					break;
 			}
 		}
-		
-		translateTo = 0 - (destinationSlide * this.sliderWidth);
+		translateTo = 0 - (this.currentSlide * this.sliderWidth);
 
+		/**
+		 *	Setting the slider transition duration property using CSS before we animate the 
+		 *	3D translate X coordinate.
+		 */
 		this.isAnimating = true;
+		this.toggleSmoothAnimation(true);
 
-		this.translateTo(translateTo, {speed: 50}, (function() {
-			this.currentSlide =+ destinationSlide;
-		}).bind(this));
+		this.transform(translateTo, function(x) {
+			callbackTimeout = setTimeout(function() {
+				this.sliderX = x;
+				this.isAnimating = false;
+				this.toggleSmoothAnimation(false);
+			}.bind(this), this.transitionDuration);
+			
+		}.bind(this));
 	}
 };
+
+/**
+ *	Function to toggle CSS smooth transition on or off 
+ *	
+ *	@method toggleSmoothAnimation
+ *	@param {boolean} on - whether to apply or remove this property
+ *	@return undefined - returns nothing
+ */
+SliderElement.prototype.toggleSmoothAnimation = function(on) {
+	if(on) {
+		this.slider.style.transitionDuration = this.transitionDuration + 'ms';
+		this.slider.style.transitionProperty = 'transform';
+	}
+	else {
+		this.slider.style.transitionDuration = 'initial';
+		this.slider.style.transitionProperty = 'initial';
+	}
+}
 
 /**
  *	Function to detect touch or mouse based devices
@@ -481,8 +510,9 @@ SliderElement.prototype.update = function() {
  *
  *	@method transform
  *	@param {number} translateX - the CSS transform translateX property
+ *	@param {function} callback - optional callback to execute when done
  */
-SliderElement.prototype.transform = function(translateX) {
+SliderElement.prototype.transform = function(translateX, callback) {
 	if(typeof translateX !== 'number') {
 		throw {
 			error: 'Not a number',
@@ -492,6 +522,10 @@ SliderElement.prototype.transform = function(translateX) {
 	}
 
 	this.slider.style.transform = this.slider.style.webkitTransform = 'translate3d(' + translateX + 'px,0,0)';
+
+	if(typeof callback !== 'undefined') {
+		callback(translateX);
+	}
 };
 
 /**
@@ -538,75 +572,6 @@ SliderElement.prototype.requestAnimationFrame = function(callback) {
 			function(callback) {
 				window.setTimeout(callback, 1000 / 60);
 			};
-};
-
-/**
- *	Method to move the slider on its own without interaction
- *	
- *	@method translateTo
- *	@param {number} x - the X coordinate to move to
- *	@param {object} options - optional parameters to pass in, such as speed of movement
- *	@param {callback} callback - optional callback to execute when the slider has reached its intended point
- *	@return undefined
- */
-
-SliderElement.prototype.translateTo = function(x, options, callback) {
-
-	/**
-	 *	To give the impression of speed, we are spawning this function x number of times 
-	 *	so that the transform X of the slider is called per requestedAnimationframe.
-	 *	Example: If options.speed is set to 60, then this function will request a tick 
-	 *	60 times, for silky smooth animation.
-	 */
-	if(typeof options !== 'undefined' && typeof options.speed === 'number' && this.currentSpeed < options.speed) {
-		this.animationFrameIds[this.currentSpeed] = (this.requestAnimationFrame(this.translateTo.bind(this, x, options, callback)));
-		this.currentSpeed++;
-	}
-
-	/**
-	 *	We need the callback to be run only once when the animation is complete,
-	 *	so clear the timeout by default when this is called.
-	 */
-	clearTimeout(this.callbackTimeout);
-
-	if(x === this.sliderX) {
-		/**
-		 *	If we have reached the point we wanted to get to,
-		 *	then cancel the update and execute the optional 
-		 *	callback after 100ms in the timeout
-		 */
-		this.killAnimations();
-		this.currentSpeed = 0;
-		this.callbackTimeout = setTimeout(function(){
-			if(typeof callback === 'function') {
-				callback();
-			}
-			this.isAnimating = false;
-		}.bind(this), 5);
-
-		return;
-	}
-	if(x < this.sliderX) {
-		this.sliderX--;
-		this.transform(this.sliderX);
-	}
-	else {
-		this.sliderX++;
-		this.transform(this.sliderX);
-	}
-
-	/**
-	 *	Call a bind to this function at least once so it is run per RAF 'tick'
-	 */
-	this.requestAnimationFrame(this.translateTo.bind(this, x, options, callback));
-};
-
-SliderElement.prototype.killAnimations = function() {
-	[].forEach.call(this.animationFrameIds, function(animationFrameId) {
-		window.cancelAnimationFrame(animationFrameId);
-	});
-	this.animationFrameIds = [];
-	clearTimeout(this.callbackTimeout);
 };
 
 /** 
