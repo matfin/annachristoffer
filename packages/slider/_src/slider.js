@@ -227,6 +227,14 @@ SliderElement.prototype.init = function() {
 			},
 			attachTo: this.container,
 			functionCall: this.onSliderDrop
+		},
+		{
+			listeners: {
+				'mouse': 'resize',
+				'touch': 'resize'
+			},
+			attachTo: window,
+			functionCall: this.onWindowResize
 		}
 	];
 
@@ -236,6 +244,29 @@ SliderElement.prototype.init = function() {
  	this.setupEvents();
 
 };
+
+/**
+ *	Method to handle a window resize event, which will ultimately
+ *	have an effect on slider calculations
+ *
+ *	@method onResize
+ *	@return undefined - returns nothing
+ */
+SliderElement.prototype.onWindowResize = function() {
+
+	/**
+	 *	Clear any queued timeouts 
+	 */
+	clearTimeout(this.callbackTimeout);
+
+	/**
+	 *	Then run this bound and throttled function
+	 *	which resets the slider
+	 */
+	this.callbackTimeout = setTimeout(function(){
+		this.sliderWidth = this.container.offsetWidth;
+	}.bind(this), 500);
+}
 
 /**
  *	Method to set up the events for the SliderElement
