@@ -15,7 +15,6 @@ Template['components_mobile_header'].created = function() {
 */
 Template['components_mobile_header'].rendered = function() {
 	if(App.currentView.type === 'project' || App.currentView.type === 'page') {
-		console.log('Show the back button');
 		this.$('#back').addClass('show');
 	}
 	else {
@@ -75,6 +74,19 @@ Template['components_mobile_header'].helpers({
 		return UI._globalHelpers.loadMessageCode(slug);
 	}
 
+});
+
+/**
+ *	Hide the nav when the user scrolls on the screen
+ */
+var hideOnScroll = Tracker.autorun(function() {
+	/**
+	 *	Viewport scroll dependency should close the header,
+	 *	make this a dependent function.
+	 */
+	Dependencies.viewportScrollDependency.depend();
+
+	$('nav', 'header').removeClass('revealed');
 });
 
 /**
