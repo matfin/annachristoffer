@@ -165,7 +165,8 @@ SliderElement.prototype.init = function() {
 	 *	Adding custom events
 	 */
 	this.customEvents = {
-		sliderdrop: new CustomEvent('sliderdrop',{})
+		sliderdrop: new CustomEvent('sliderdrop', {}),
+		boundsreached: new CustomEvent('sliderboundsreached', {})
 	};
 
 	/**
@@ -480,17 +481,29 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
 
 	/**
 	 *	Set slider animating state to true and add CSS animation
-	 *	properties to the slider
+	 *	properties to the slider.
+	 *	We also reset the properties on the boundsReached event,
+	 *	only needing it when we hit the beginning or end of the 
+	 *	slider.
 	 */
 	this.isAnimating = true;
 	this.toggleSmoothAnimation(true);
+	var sliderBounds = {};
 
 	/**
 	 *	If the slideNumber is greater than the number of slides
 	 *	or less than zero, apply these constraints
 	 */
-	if(slideNumber >= (this.slides.length)) slideNumber = this.slides.length - 1;
-	if(slideNumber < 0) slideNumber = 0;
+	if(slideNumber >= (this.slides.length)) {
+		slideNumber = this.slides.length - 1;
+		sliderBounds.direction = 'right';
+		sliderBounds.slideNumber = slideNumber;
+	}
+	if(slideNumber < 0) {
+		slideNumber = 0;
+		sliderBounds.direction = 'left';
+		sliderBounds.slideNumber = slideNumber;
+	} 
 
 	/**
 	 *	Setting the slider translateX destination
@@ -507,6 +520,15 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
 			this.isAnimating = false;
 			this.toggleSmoothAnimation(false);
 			this.currentSlide = slideNumber;
+
+			/**
+			 *	If we hit either end of the slider, dispatch the event
+			 */
+			if(typeof sliderBounds.direction !== 'undefined') {
+				this.customEvents.boundsreached.data = sliderBounds;
+				this.container.dispatchEvent(this.customEvents.boundsreached);
+			}
+
 		}.bind(this));
 	}.bind(this));
 };
