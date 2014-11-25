@@ -450,7 +450,7 @@ SliderElement.prototype.onSliderDrop = function(e) {
 	 */
 	if(this.options.snapToNearest && !this.isAnimating) {
 
-		var translateTo = 0;
+		var slideNumber = this.currentSlide;
 
 		/**
 		 *	Determining which slide we need to move to
@@ -458,31 +458,57 @@ SliderElement.prototype.onSliderDrop = function(e) {
 		if(movement.threshholdCrossed) {
 			switch(movement.direction) {
 				case 'left': 
-					if(this.currentSlide < (this.slides.length - 1)) this.currentSlide++;
+					slideNumber++;
 					break;
 				case 'right': 
-					if(this.currentSlide > 0) this.currentSlide--;
+					slideNumber--;
 					break;
 			}
 		}
-		translateTo = 0 - (this.currentSlide * this.sliderWidth);
-
-		/**
-		 *	Setting the slider transition duration property using CSS before we animate the 
-		 *	3D translate X coordinate.
-		 */
-		this.isAnimating = true;
-		this.toggleSmoothAnimation(true);
-
-		this.transform(translateTo, function(x) {
-			callbackTimeout = setTimeout(function() {
-				this.sliderX = x;
-				this.isAnimating = false;
-				this.toggleSmoothAnimation(false);
-			}.bind(this), this.transitionDuration);
-			
-		}.bind(this));
+		this.goToSlide(slideNumber);
 	}
+};
+
+/**
+ *	Function to move to a numbered slide
+ *
+ *	@method goToSlide
+ *	@param {number} slideNumber - the slide number to go to
+ *	@return undefined - returns nothing
+ */
+SliderElement.prototype.goToSlide = function(slideNumber) {
+
+	/**
+	 *	Set slider animating state to true and add CSS animation
+	 *	properties to the slider
+	 */
+	this.isAnimating = true;
+	this.toggleSmoothAnimation(true);
+
+	/**
+	 *	If the slideNumber is greater than the number of slides
+	 *	or less than zero, apply these constraints
+	 */
+	if(slideNumber >= (this.slides.length)) slideNumber = this.slides.length - 1;
+	if(slideNumber < 0) slideNumber = 0;
+
+	/**
+	 *	Setting the slider translateX destination
+	 */
+	var translateToX = 0 - (slideNumber * this.sliderWidth);
+
+	/**
+	 *	Then calling the transform function, resetting states with a callback
+	 *	once the animation has completed.
+	 */
+	this.transform(translateToX, function(x) {
+		callbackTimeout = setTimeout(function() {
+			this.sliderX = x;
+			this.isAnimating = false;
+			this.toggleSmoothAnimation(false);
+			this.currentSlide = slideNumber;
+		}.bind(this));
+	}.bind(this));
 };
 
 /**
