@@ -8,9 +8,15 @@
 			{{/each}}
 		</div>
 	</div>
+	<button class="go left" data-direction="previous">
+		<i class="icon-leftArrow"></i>
+	</button>
+	<button class="go right" data-direction="next">
+		<i class="icon-rightArrow"></i>
+	</button>
 	<div class="sliderIndicator">
 		{{#each slides}}
-			<button></button>
+			<button class="slideButton"></button>
 		{{/each}}
 	</div>
 </template>

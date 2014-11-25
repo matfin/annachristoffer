@@ -9,10 +9,27 @@
 	.backface-visibility(hidden);
 }
 
-.sliderIndicator {
+button.go {
 	position: absolute;
-	bottom: 0;
-	left: 0;
+	top: -@gridColumnWidth / 2;
+	width: @gridColumnWidth * 4;
+	height: 100%;
+
+	i {
+		font-size: @largeFont * 1.5;
+		color: @sliderPrimaryColour;
+	}
+
+	&.left {
+		left: 0;
+	}
+
+	&.right {
+		right: 0;
+	}
+}
+
+.sliderIndicator {
 	width: 100%;
 	height: @gridColumnWidth / 2;
 	background-color: @colourWhite;

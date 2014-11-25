@@ -473,6 +473,26 @@ SliderElement.prototype.onSliderDrop = function(e) {
 };
 
 /**
+ *	Method to push the slider to the next/prev slide
+ *	
+ *	@method go
+ *	@param {string} direction - can be either 'next' or 'previous'
+ *	@return undefined
+ */
+SliderElement.prototype.go = function(direction) {
+	switch(direction) {
+		case 'next': {
+			this.goToSlide(this.currentSlide + 1);
+			break;
+		}
+		case 'previous': {
+			this.goToSlide(this.currentSlide - 1);
+			break;
+		}
+	}
+};
+
+/**
  *	Function to move to a numbered slide
  *
  *	@method goToSlide

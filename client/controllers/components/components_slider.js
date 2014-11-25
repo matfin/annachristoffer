@@ -24,7 +24,7 @@ Template['components_slider'].rendered = function() {
 	/**
 	 *	Set the currently active slide
 	 */
-	this.$('button', '.sliderIndicator').eq(0).addClass('active');
+	this.$('button.slideButton').eq(0).addClass('active');
 
 };
 
@@ -71,13 +71,14 @@ Template['components_slider'].helpers({
  */
 Template['components_slider'].events = {
 
-	'click .sliderIndicator button': function(e, template) {
-		
+	'click button.slideButton': function(e, template) {
 		/**
 		 *	Grab the button and its index
 		 */		
 		var button = $(e.currentTarget),
 			index = button.index();
+
+		console.log(index);
 
 		/**
 		 *	Then go to the slide based on the index
@@ -86,12 +87,24 @@ Template['components_slider'].events = {
 
 	},
 
+	'click button.go': function(e, template) {
+		/**
+		 *	Grab the direction from the buttons data 
+		 *	value
+		 */
+		var direction = $(e.currentTarget).data('direction');
+
+		/**
+		 *	Then push the slider in the correct direction
+		 */
+		template.slider.go(direction);
+
+	},
+
 	'sliderboundsreached .sliderContainer': function(e) {
 		
 	},
 	'slidecomplete .sliderContainer': function(e, template) {
-
-		console.log('Complete');
 
 		/**
 		 *	Grab the newly active slide number
@@ -101,12 +114,12 @@ Template['components_slider'].events = {
 		/**
 		 *	Remove active state from all indicators
 		 */
-		template.$('button', '.sliderIndicator').removeClass('active');
+		template.$('button.slideButton', '.sliderIndicator').removeClass('active');
 
 		/**
 		 *	Then apply to the correctly indexed element
 		 */
-		template.$('button', '.sliderIndicator').eq(slideNumber).addClass('active');
+		template.$('button.slideButton', '.sliderIndicator').eq(slideNumber).addClass('active');
 
 	}
 }
