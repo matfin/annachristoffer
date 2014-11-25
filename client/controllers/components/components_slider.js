@@ -90,6 +90,9 @@ Template['components_slider'].events = {
 		
 	},
 	'slidecomplete .sliderContainer': function(e, template) {
+
+		console.log('Complete');
+
 		/**
 		 *	Grab the newly active slide number
 		 */

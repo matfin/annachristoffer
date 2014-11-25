@@ -92,7 +92,7 @@ function SliderElement(domNode) {
 	 *	@type {number}
 	 *	@default 350
 	 */
-	this.transitionDuration = 3500;
+	this.transitionDuration = 350;
 
 	/**
 	 *	Callback timeout to be used by functions spawned multiple times 
@@ -517,7 +517,7 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
 	 *	once the animation has completed.
 	 */
 	this.transform(translateToX, function(x) {
-		callbackTimeout = setTimeout(function() {
+		this.callbackTimeout = setTimeout(function() {
 			this.sliderX = x;
 			this.isAnimating = false;
 			this.toggleSmoothAnimation(false);
@@ -540,7 +540,7 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
 
 			this.container.dispatchEvent(this.customEvents.slidecomplete);
 
-		}.bind(this));
+		}.bind(this), this.transitionDuration);
 	}.bind(this));
 };
 
@@ -552,6 +552,7 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
  *	@return undefined - returns nothing
  */
 SliderElement.prototype.toggleSmoothAnimation = function(on) {
+
 	if(on) {
 		this.slider.style.transitionDuration = this.transitionDuration + 'ms';
 		this.slider.style.transitionProperty = 'transform';

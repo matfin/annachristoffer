@@ -15,6 +15,7 @@
 	left: 0;
 	width: 100%;
 	height: @gridColumnWidth / 2;
+	background-color: @colourWhite;
 	.display(flex);
 	.flex-direction(row);
 
