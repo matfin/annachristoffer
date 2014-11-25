@@ -92,7 +92,7 @@ function SliderElement(domNode) {
 	 *	@type {number}
 	 *	@default 350
 	 */
-	this.transitionDuration = 350;
+	this.transitionDuration = 3500;
 
 	/**
 	 *	Callback timeout to be used by functions spawned multiple times 
@@ -267,6 +267,7 @@ SliderElement.prototype.onWindowResize = function() {
 	 */
 	this.callbackTimeout = setTimeout(function(){
 		this.sliderWidth = this.container.offsetWidth;
+		this.goToSlide(this.currentSlide);
 	}.bind(this), 500);
 }
 
@@ -437,7 +438,7 @@ SliderElement.prototype.onSliderDrop = function(e) {
 	 */
 	var movement = (function(dx) {
 		var amount = e.dx < 0 ? 0 - e.dx:e.dx,
-			threshholdCrossed = amount % this.sliderWidth > (this.sliderWidth / 4),
+			threshholdCrossed = amount % this.sliderWidth > (this.sliderWidth / 6),
 			direction = e.dx < 0 ? 'left':'right';
 		return {
 			amount: amount,
@@ -681,13 +682,13 @@ Slider = {
 	sliderElements: [],
 
 	/**
-	 *	Function to set up the slider elements with
+	 *	Function to set up all slider elements on a page.
 	 *
-	 *	@method setup
+	 *	@method setupAll
 	 *	@param {string} sliderSelectorContainer - A string representing the selector for the slider container(s)
 	 *	@return undefined
 	 */
-	setup: function(sliderContainerSelector) {
+	setupAll: function(sliderContainerSelector) {
 
 		var self = this,
 			sliderContainers = document.querySelectorAll(sliderContainerSelector);
@@ -700,6 +701,18 @@ Slider = {
 			self.addSlide(sliderContainer);
 		});
 	},	
+
+	/**
+	 *	Function to set up a targeted slider element on a page and return it 
+	 *	as a single instance of a SliderElement
+	 *
+	 *	@method setup
+	 *	@param {object} sliderContainerNode - the DOM node representing the slider container
+	 *	@return {object} sliderElement - the sliderElement object 
+	 */
+	setup: function(sliderContainerNode) {
+		return new SliderElement(sliderContainerNode);
+	},
 
 	/**
 	 *	Function to initialise a new SliderElement and add it to the Slider

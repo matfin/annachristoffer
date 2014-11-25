@@ -15,28 +15,25 @@
 	left: 0;
 	width: 100%;
 	height: @gridColumnWidth / 2;
-	
-	ul {
-		.display(flex);
-		.flex-direction(row);
+	.display(flex);
+	.flex-direction(row);
 
-		li {
-			display: block;
-			height: @gridColumnWidth / 2;
-			.flex(1);
+	button {
+		.flex(1);
+		display: block;
+		height: @gridColumnWidth / 2;
+		.transition-duration(@transitionDuration);
+		.transition-property('background-color');
+		background-color: fade(@sliderPrimaryColour, 40%);
 
-			background-color: blue;
+		&:nth-child(odd) {
+			background-color: fade(@sliderPrimaryColour, 30%);
+		}
 
-			&:nth-child(even) {
-				background-color: red;
-			}
-
-			&.active {
-				background-color: green;
-			}
+		&.active {
+			background-color: fade(@sliderPrimaryColour, 80%);
 		}
 	}
-
 }
 
 .debug {

@@ -18,12 +18,13 @@ Template['components_slider'].rendered = function() {
 	/**
 	 *	Set up the slider to render and handle events
 	 */
-	Slider.setup('.sliderContainer');
+
+	this.slider = Slider.setup(this.$('.sliderContainer').get(0));
 
 	/**
 	 *	Set the currently active slide
 	 */
-	this.$('li', '.sliderIndicator').eq(0).addClass('active');
+	this.$('button', '.sliderIndicator').eq(0).addClass('active');
 
 };
 
@@ -34,6 +35,7 @@ Template['components_slider'].rendered = function() {
 *	@return undefined
 */
 Template['components_slider'].destroyed = function() {
+	delete this.slider;
 };
 
 /**
@@ -68,8 +70,24 @@ Template['components_slider'].helpers({
  *	Events
  */
 Template['components_slider'].events = {
+
+	'click .sliderIndicator button': function(e, template) {
+		
+		/**
+		 *	Grab the button and its index
+		 */		
+		var button = $(e.currentTarget),
+			index = button.index();
+
+		/**
+		 *	Then go to the slide based on the index
+		 */
+		template.slider.goToSlide(index);
+
+	},
+
 	'sliderboundsreached .sliderContainer': function(e) {
-		console.log('Slide bounds reached: ', e);
+		
 	},
 	'slidecomplete .sliderContainer': function(e, template) {
 		/**
@@ -80,12 +98,12 @@ Template['components_slider'].events = {
 		/**
 		 *	Remove active state from all indicators
 		 */
-		template.$('li', '.sliderIndicator').removeClass('active');
+		template.$('button', '.sliderIndicator').removeClass('active');
 
 		/**
 		 *	Then apply to the correctly indexed element
 		 */
-		template.$('li', '.sliderIndicator').eq(slideNumber).addClass('active');
+		template.$('button', '.sliderIndicator').eq(slideNumber).addClass('active');
 
 	}
 }
