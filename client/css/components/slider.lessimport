@@ -3,11 +3,40 @@
 	.flex-direction(row);
 	.align-items(flex-start);
 	position: relative;
-	//pointer-events: none;
 
 	.transform(translate3d(0px, 0px, 0px));
 	.transform-style(preserve-3d);
 	.backface-visibility(hidden);
+}
+
+.sliderIndicator {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: @gridColumnWidth / 2;
+	
+	ul {
+		.display(flex);
+		.flex-direction(row);
+
+		li {
+			display: block;
+			height: @gridColumnWidth / 2;
+			.flex(1);
+
+			background-color: blue;
+
+			&:nth-child(even) {
+				background-color: red;
+			}
+
+			&.active {
+				background-color: green;
+			}
+		}
+	}
+
 }
 
 .debug {

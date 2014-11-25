@@ -15,7 +15,15 @@ Template['components_slider'].created = function() {
 */
 Template['components_slider'].rendered = function() {
 
+	/**
+	 *	Set up the slider to render and handle events
+	 */
 	Slider.setup('.sliderContainer');
+
+	/**
+	 *	Set the currently active slide
+	 */
+	this.$('li', '.sliderIndicator').eq(0).addClass('active');
 
 };
 
@@ -60,5 +68,24 @@ Template['components_slider'].helpers({
  *	Events
  */
 Template['components_slider'].events = {
-	
+	'sliderboundsreached .sliderContainer': function(e) {
+		console.log('Slide bounds reached: ', e);
+	},
+	'slidecomplete .sliderContainer': function(e, template) {
+		/**
+		 *	Grab the newly active slide number
+		 */
+		var slideNumber = e.originalEvent.data.currentSlide;
+
+		/**
+		 *	Remove active state from all indicators
+		 */
+		template.$('li', '.sliderIndicator').removeClass('active');
+
+		/**
+		 *	Then apply to the correctly indexed element
+		 */
+		template.$('li', '.sliderIndicator').eq(slideNumber).addClass('active');
+
+	}
 }

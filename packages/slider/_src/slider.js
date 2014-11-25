@@ -166,7 +166,8 @@ SliderElement.prototype.init = function() {
 	 */
 	this.customEvents = {
 		sliderdrop: new CustomEvent('sliderdrop', {}),
-		boundsreached: new CustomEvent('sliderboundsreached', {})
+		boundsreached: new CustomEvent('sliderboundsreached', {}),
+		slidecomplete: new CustomEvent('slidecomplete', {})
 	};
 
 	/**
@@ -528,6 +529,15 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
 				this.customEvents.boundsreached.data = sliderBounds;
 				this.container.dispatchEvent(this.customEvents.boundsreached);
 			}
+
+			/**
+			 *	Fire of the slidecomplete custom event 
+			 */
+			this.customEvents.slidecomplete.data = {
+				currentSlide: this.currentSlide 
+			};
+
+			this.container.dispatchEvent(this.customEvents.slidecomplete);
 
 		}.bind(this));
 	}.bind(this));
