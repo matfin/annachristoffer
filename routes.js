@@ -69,6 +69,32 @@ Router.map(function() {
 			App.currentView.id = page.id;
 			return page;
 		},
+		onAfterAction: function() {
+
+			if(!this.ready()) {
+				return;
+			}
+
+			/**
+			 *	Populating meta tags for SEO. In this case, we will use content from 
+			 *	the static content collection.
+			 */
+			var data = this.data();
+				titleObject = App.models.staticContent.findOne({slug: 'title'});
+
+			/**
+			 *	Populate SEO tags using the ms-seo module only when the data has fully loaded
+			 */
+			if(typeof data !== 'undefined' && typeof titleObject !== 'undefined') {
+
+				SEO.set({
+					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(titleObject.content),
+					meta: {
+						'description': Helpers.loadMessageCode(data.title)
+					}
+				});
+			}
+		},
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
@@ -226,6 +252,33 @@ Router.map(function() {
 				return;
 			}
 			return App.models.projects.findOne({});
+		},
+		onAfterAction: function() {
+
+			if(!this.ready()) {
+				return;
+			}
+
+			/**
+			 *	Populating meta tags for SEO. In this case, we will use content from 
+			 *	the static content collection.
+			 */
+			var data = this.data(),
+				titleObject = App.models.staticContent.findOne({slug: 'title'});
+
+			/**
+			 *	Checking project data has loaded before attempting to access its properties
+			 */
+			if(typeof titleObject !== 'undefined' && typeof data !== 'undefined') {
+
+				SEO.set({
+					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(titleObject.content),
+					meta: {
+						'description': Helpers.loadMessageCode(data.description)
+					}
+				});
+			}
+
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
