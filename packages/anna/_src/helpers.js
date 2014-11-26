@@ -123,7 +123,32 @@ Helpers = {
 	},
 
 	/**
+	 *	Method to load content by given language
+	 *
+	 *	@method loadMessageCode	
+	 *	@param {Object} message - the message object containing the mesages in different languages
+	 *	@return {String} - The string message fetched by index from the message object
+	 */
+	loadMessageCode: function(message) {
+
+		if(typeof message === 'undefined') {
+			return 'Content not found. This is undefined';
+		}
+		else if(typeof message === 'string') {
+			return message;
+		}
+		else if(typeof message[App.language] !== 'undefined') {
+			return message[App.language];
+		}
+		else {
+			console.log('Content not found for: ', message);
+			return 'Content not found';
+		}
+	},
+
+	/**
 	 *	Helper to implement cross-browser fullscreen video
+	 *
 	 *	@method videoRequestFullscreen
 	 *	@param {DomElement} the dom element for the video
 	 *	@return undefined

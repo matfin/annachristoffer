@@ -16,9 +16,7 @@ Router.onBeforeAction(function() {
 	this.next();
 });
 
-Router.onAfterAction(function() {
-	//TODO
-});
+
 
 Router.map(function() {
 
@@ -154,6 +152,7 @@ Router.map(function() {
 				 */
 				App.currentView.id = category.id;
 				data.category_id = category.id;
+				data.category = category;
 			}
 			else {
 				/**
@@ -163,6 +162,38 @@ Router.map(function() {
 			}
 
 			return data;
+		},
+		onAfterAction: function() {
+			
+			if(!this.ready()) {
+				return;
+			}
+
+			/**
+			 *	Populating meta tags for SEO. In this case, we will use content from 
+			 *	the static content collection.
+			 */
+			var data = this.data();
+				titleObject = App.models.staticContent.findOne({slug: 'title'}),
+				subtitleObject = App.models.staticContent.findOne({slug: 'subtitle'}),
+				categoryDescription = '';
+
+			/**
+			 *	Populate SEO tags using the ms-seo module only when the data has fully loaded
+			 */
+			if(typeof titleObject !== 'undefined' && typeof subtitleObject !== 'undefined') {
+
+				if(typeof data.category !== 'undefined') {
+					categoryDescription = Helpers.loadMessageCode(data.category.description) + ' - ';
+				}
+
+				SEO.set({
+					title: categoryDescription + Helpers.loadMessageCode(titleObject.content),
+					meta: {
+						'description': categoryDescription + Helpers.loadMessageCode(subtitleObject.content)
+					}
+				});
+			}
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
