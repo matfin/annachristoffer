@@ -19,7 +19,6 @@
 	max-width: @gridColumnWidth * 28.5;
 	width: 100%;
 	margin-bottom: @gridColumnWidth;
-	background-color: @background;
 
 	ul {
 		display: block;
@@ -27,6 +26,7 @@
 		li {
 			display: block;
 			padding: @gridColumnWidth 0;
+			background-color: @background;
 
 			&:first-child {
 				padding-top: @gridColumnWidth;
@@ -53,13 +53,86 @@
 	&.education {
 		float: left;
 		li {
-			&:nth-child(even) {
+			.background-clip(padding-box);
+			&:nth-child(odd) {
 				background-color: rgba(
 	 				red(@pageBackground),
 	 				green(@pageBackground),
 	 				blue(@pageBackground),
-	 				0.03
+	 				0.07
  				);
+			}
+
+			&:nth-child(even) {
+				background-color: rgba(
+	 				red(@colourWhite),
+	 				green(@colourWhite),
+	 				blue(@colourWhite),
+	 				0.6
+ 				);
+			}
+
+			&:first-child {
+				background-color: rgba(
+	 				red(@colourWhite),
+	 				green(@colourWhite),
+	 				blue(@colourWhite),
+	 				0.6
+ 				);
+			}
+		}
+	}
+
+	&.education {
+		li {
+
+			&:nth-child(even) {
+				border-left: @gridColumnWidth / 2 solid rgba(
+					red(@pageBorderColour),
+					green(@pageBorderColour),
+					blue(@pageBorderColour),
+					0.4
+				);
+			}
+
+			&:nth-child(odd) {
+				border-left: @gridColumnWidth / 2 solid rgba(
+					red(@pageBorderColour),
+					green(@pageBorderColour),
+					blue(@pageBorderColour),
+					0.6
+				);
+			}
+
+			&:first-child {
+				border-left: 8px solid transparent;
+			}
+		}
+	}
+
+	&.experience {
+		li {
+			
+			&:nth-child(even) {
+				border-right: @gridColumnWidth / 2 solid rgba(
+					red(@pageBorderColour),
+					green(@pageBorderColour),
+					blue(@pageBorderColour),
+					0.7
+				);
+			}
+
+			&:nth-child(odd) {
+				border-right: @gridColumnWidth / 2 solid rgba(
+					red(@pageBorderColour),
+					green(@pageBorderColour),
+					blue(@pageBorderColour),
+					0.9
+				);
+			}
+
+			&:first-child {
+				border-right: 8px solid transparent;
 			}
 		}
 	}

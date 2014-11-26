@@ -38,7 +38,9 @@
 @mobilePrimary: #dd79de;
 @mobileSecondary: #f3c5f3;
 @pageBackground: #de79df;
+@pageBorderColour: #fda8d7;
 
 // Transitions and animations
 @transitionDuration: 400ms;
 @scaleFactor: 0.975;
+
