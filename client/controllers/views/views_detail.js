@@ -17,7 +17,12 @@ Template['views_detail'].created = function() {
 Template['views_detail'].rendered = function() {
 	$('body').addClass('detail');
 
-	Helpers.lazyLoadImages(this.$('img', '.mobileMediaContainer'));
+	/**
+	 *	Lazy load images, then remove the loader present above them.
+	 */
+	Helpers.lazyLoadImages(this.$('img', '.mobileMediaContainer'), function(img) {
+		img.prev().remove();
+	}.bind(this));
 };
 
 /**

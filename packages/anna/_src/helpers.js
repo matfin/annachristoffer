@@ -75,9 +75,10 @@ Helpers = {
 	 *
 	 *	@method lazyLoadImages
 	 *	@param {object} imageElements - image objects coming from a selector
+	 *	@param {function} callback - an optional callback with the image element as a parameter
 	 *	@return undefined - returns nothing
 	 */
-	lazyLoadImages: function(imageElements) {
+	lazyLoadImages: function(imageElements, callback) {
 		$.each(imageElements, function(index, img) {
 			/**
 			 *	Grab the data we need
@@ -108,6 +109,10 @@ Helpers = {
 
 				img.removeAttr('style');
 				img.addClass('loaded');
+
+				if(typeof callback !== 'undefined') {
+					callback(img);
+				}
 			}
 
 		});
