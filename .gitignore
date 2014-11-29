@@ -6,3 +6,4 @@ packages/normalize.css
 video/
 .meteor/cordova-plugins
 .meteor/platforms
+*.tar.gz
