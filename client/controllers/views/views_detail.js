@@ -16,6 +16,8 @@ Template['views_detail'].created = function() {
 */
 Template['views_detail'].rendered = function() {
 	$('body').addClass('detail');
+
+	Helpers.lazyLoadImages(this.$('img', '.mobileMediaContainer'));
 };
 
 /**

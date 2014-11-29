@@ -104,6 +104,9 @@ Template['components_mobile_header'].events = {
 		if(App.currentView.type === 'project' || App.currentView.type === 'page') {
 			Router.go('list');
 		}
+
+		console.log(App.currentView.type);
+
 		e.preventDefault();
 		return false;
 	}

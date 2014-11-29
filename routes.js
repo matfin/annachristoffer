@@ -279,6 +279,8 @@ Router.map(function() {
 				});
 			}
 
+			App.currentView.type = 'project';
+
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {

@@ -12,6 +12,16 @@
 		width: 100%;
 		height: auto;
 		z-index: @primaryLayer;
+		
+		.transition-property(opacity);
+		.transition-duration(@transitionDuration * 3);
+
+		.opacity(0);
+
+		&.loaded {
+			.opacity(1.0);
+		}
+
 	}	
 }
 
@@ -25,5 +35,14 @@
 	> img {
 		width: 100%;
 		height: auto;
+
+		.transition-property(opacity);
+		.transition-duration(@transitionDuration);
+
+		.opacity(0);
+
+		&.loaded {
+			.opacity(1.0);
+		}
 	}
 }

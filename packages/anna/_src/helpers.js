@@ -71,6 +71,49 @@ Helpers = {
 	},
 
 	/**
+	 *	Function to load images when the template has been rendered
+	 *
+	 *	@method lazyLoadImages
+	 *	@param {object} imageElements - image objects coming from a selector
+	 *	@return undefined - returns nothing
+	 */
+	lazyLoadImages: function(imageElements) {
+		$.each(imageElements, function(index, img) {
+			/**
+			 *	Grab the data we need
+			 */
+			var img = $(img),
+				src = img.data('src'),
+				width = img.width();
+				height = width * 0.75;
+				image = new Image();
+
+			/**
+			 *	Set a temporary height given the width
+			 */
+			img.height(height);
+
+			/**
+			 *	Set the source, which kicks off loading...
+			 */
+			image.src = src;
+
+			/**
+			 *	Then listen for when it has loaded, setting the correct
+			 *	src and height attributes.
+			 */
+			image.onload = function() {
+				img.prop('src', src);
+				img.prop('height', image.height);
+
+				img.removeAttr('style');
+				img.addClass('loaded');
+			}
+
+		});
+	},
+
+	/**
 	 *	Given various device parameters, such as screen pixel density and resolution,
 	 *	this helper function will determine the correct image to load given a path.
 	 *	
