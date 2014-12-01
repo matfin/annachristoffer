@@ -1,5 +1,5 @@
 // Fonts family
-// @standardFontFamily: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@fallbackFontFamily: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @standardFontFamily: "jaf-facitweb";
 
 // Font sizes
@@ -21,6 +21,7 @@
 @minWidth: @gridColumnWidth * 64;
 
 // Layers
+@menuLayer: 4;
 @primaryLayer: 3;
 @secondaryLayer: 2;
 @tertiaryLayer: 1;

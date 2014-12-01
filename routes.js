@@ -16,7 +16,9 @@ Router.onBeforeAction(function() {
 	this.next();
 });
 
-
+Router.configure({
+	loadingTemplate: 'views_loading'
+});
 
 Router.map(function() {
 

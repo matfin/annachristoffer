@@ -5,11 +5,17 @@ html {
 }
 
 body {
-	font-family: @standardFontFamily;
+	font-family: @fallbackFontFamily;
 	font-size: @baseFontSize;
 	text-align: center;
 	width: 100%;
 	height: 100%;
+}
+
+.wf-active {
+	body {
+		font-family: @standardFontFamily;
+	}
 }
 
 .wrapper {
