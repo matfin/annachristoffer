@@ -135,7 +135,15 @@ Helpers = {
 				img.addClass('loaded');
 
 				if(typeof callback !== 'undefined') {
-					callback(img);
+					callback({
+						img: img,
+						loaded: loaded,
+						visible: visible,
+						src: src,
+						width: width,
+						height: height,
+						image: image
+					});
 				}
 			}
 		}

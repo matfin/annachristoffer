@@ -52,8 +52,9 @@ Device = {
 			}
 
 			timer = setTimeout(function(){
+				Dependencies.viewportScrollDependency.changed();
 				body.classList.remove('scrolling');
-			}, App.throttleTimeout)
+			}, App.throttleTimeout / 5)
 		}, false);
 	}
 };
@@ -64,8 +65,4 @@ Device = {
 $(window).on('resize', _.throttle(function() {
 	Device.reset();
 	Dependencies.viewportResizeDependency.changed();
-}, App.throttleTimeout));
-
-$(window).on('scroll', _.throttle(function() {
-	Dependencies.viewportScrollDependency.changed();
 }, App.throttleTimeout));

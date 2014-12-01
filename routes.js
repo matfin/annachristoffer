@@ -247,17 +247,23 @@ Router.map(function() {
 			}
 		},
 		waitOn: function() {
-			return Meteor.subscribe('projects', this.params._project_slug, App.language)
+			return Meteor.subscribe('projects');
 		},
 		data: function() {
 			if(!this.ready()) {
 				return;
 			}
-			return App.models.projects.findOne({});
+
+			/**
+			 *	Given a query built from the slug and language, 
+			 *	return the project
+			 */
+			var query = {};
+			query['slug.' + App.language] = this.params._project_slug; 
+			return App.models.projects.findOne(query);
 		},
 		onAfterAction: function() {
-
-			if(!this.ready()) {
+			if(!this.ready()) {	
 				return;
 			}
 

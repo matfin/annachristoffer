@@ -14,6 +14,29 @@ Template['cards_mobile_figcaption'].created = function() {
  *	@return undefined
  */
 Template['cards_mobile_figcaption'].rendered = function() {
+
+	var self = this;
+
+	/** 
+	 *	Check on scroll for elements that are in the viewport,
+	 *	then lazy load their contents 
+	 */
+	this.checkAndLoadImages = this.autorun(function() {
+
+		/**
+		 *	Make this dependent on viewport scroll being changed
+		 *	so it autoruns on scroll.
+		 */
+		Dependencies.viewportScrollDependency.depend();
+
+		var images = self.$('img', '.mobileMediaContainer');
+		$.each(images, function(index, image) {
+			Helpers.lazyLoadImage(image, function() {
+				$(image).prev().remove();
+			});
+		});
+	});
+
 };
 
 /**
@@ -23,6 +46,8 @@ Template['cards_mobile_figcaption'].rendered = function() {
  *	@return undefined
  */
 Template['cards_mobile_figcaption'].destroyed = function() {
+	this.checkAndLoadImages.stop();
+	delete this.checkAndLoadImages;
 };
 
 /**

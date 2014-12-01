@@ -5,6 +5,7 @@
  *	@return undefined
  */
 Template['cards_figcaption'].created = function() {
+	this.data = Template.currentData();
 };
 
 /**
@@ -14,7 +15,8 @@ Template['cards_figcaption'].created = function() {
  *	@return undefined
  */
 Template['cards_figcaption'].rendered = function() {
-	var template = this;
+
+	var self = this;
 
 	if(typeof this.data.video_id !== 'undefined') {
 		this.autorun(function() {
@@ -22,11 +24,25 @@ Template['cards_figcaption'].rendered = function() {
 		});
 	}
 
-	Meteor.setTimeout(function() {	
-		if(typeof $('figure.cards_figcaption') !== 'undefined' && $('figure.cards_figcaption').length > 0) {
-			$('figure.cards_figcaption').addClass('rendered');
-		}
-	}, 300);
+	/** 
+	 *	Check on scroll for elements that are in the viewport,
+	 *	then lazy load their contents 
+	 */
+	this.autorun(function() {
+
+		/**
+		 *	Make this dependent on viewport scroll being changed
+		 *	so it autoruns on scroll.
+		 */
+		Dependencies.viewportScrollDependency.depend();
+
+		var images = self.$('img', '.mobileMediaContainer');
+		$.each(images, function(index, image) {
+			Helpers.lazyLoadImage(image, function() {
+				$(image).prev().remove();
+			});
+		});
+	});
 };
 
 /**
