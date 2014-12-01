@@ -41,11 +41,7 @@ Template['components_video_player'].rendered = function() {
 		}
 	];
 
-	Video.setup(this.$('video'), events).then(function() {
-		console.log('Video player reports all is good.');
-	}).fail(function() {
-		console.log('No luck setting this video up.');
-	});
+	Video.setup(this.$('video'), events);
 
 	/**
 	 *	Set the video height according to the width - fix for iOS Safari.

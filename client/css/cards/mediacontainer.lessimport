@@ -47,7 +47,10 @@
 			.opacity(1.0);
 		}
 	}
+}
 
+.mediaContainer,
+.mobileMediaContainer {
 	> div.loading {
 		z-index: @primaryLayer;
 		position: absolute;
