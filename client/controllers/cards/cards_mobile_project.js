@@ -15,7 +15,47 @@ Template['cards_mobile_project'].created = function() {
 */
 Template['cards_mobile_project'].rendered = function() {
 
-	console.log(this.data)
+	var self = this;
+
+	/**
+	 *	Lazy loading background images for the project 
+	 *	cards
+	 */
+	this.autorun(function() {
+
+		/**
+		 *	Run this on scroll end
+		 */
+		Dependencies.viewportScrollDependency.depend();
+
+		/**
+		 *	Grab the data we need
+		 */
+		var thumbnail = self.$('div.thumbnail').get(0),
+			src = $(thumbnail).data('src');
+
+		/**
+		 *	Then lazy load the background image, resetting
+		 *	the styles on callback after the image has been
+		 *	loaded
+		 */
+		Helpers.lazyLoadImage(thumbnail, function() {
+
+			/**
+			 *	Remove the loading icon
+			 */
+			$('i', thumbnail).remove();
+
+			/**
+			 *	Then set the background image
+			 */
+			$(thumbnail).css({
+				'background-image': 'url("' + src + '")'
+			}).removeAttr('data-src').addClass('loaded');
+
+		});
+
+	});
 
 };
 

@@ -92,18 +92,18 @@ Helpers = {
 	 *	Function to load images when the template has been rendered
 	 *
 	 *	@method lazyLoadImage
-	 *	@param {object} imageElements - image objects coming from a selector
-	 *	@param {function} callback - an optional callback with the image element as a parameter
+	 *	@param {object} element - element object coming from a selector
+	 *	@param {function} callback - an optional callback
 	 *	@return undefined - returns nothing
 	 */
-	lazyLoadImage: function(imageElement, callback) {
+	lazyLoadImage: function(element, callback) {
 		
 		/**
 		 *	Grab the data we need
 		 */
-		var img = $(imageElement),
+		var img = $(element),
 			loaded = img.hasClass('loaded'),
-			visible = this.isInView(imageElement),
+			visible = this.isInView(element),
 			src = img.data('src'),
 			width = img.width();
 			height = width * 0.75;
