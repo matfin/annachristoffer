@@ -71,29 +71,53 @@ Helpers = {
 	},
 
 	/**
+	 *	Function to determine if an element is in the viewport,
+	 *	used in conjunction with lazy loading of images.
+	 *
+	 *	@method isInView
+	 *	@param {object} element - the element being checked
+	 *	@return {boolean} true if the element is in the viewport or false if not.
+	 */
+	isInView: function(element) {
+
+		var viewportHeight = $(window).height(),
+			element = $(element),
+			scrollTop = $(window).scrollTop();
+			top = $(element).offset().top;
+
+		return (top - scrollTop) <= viewportHeight;
+	},
+
+	/**
 	 *	Function to load images when the template has been rendered
 	 *
-	 *	@method lazyLoadImages
+	 *	@method lazyLoadImage
 	 *	@param {object} imageElements - image objects coming from a selector
 	 *	@param {function} callback - an optional callback with the image element as a parameter
 	 *	@return undefined - returns nothing
 	 */
-	lazyLoadImages: function(imageElements, callback) {
-		$.each(imageElements, function(index, img) {
-			/**
-			 *	Grab the data we need
-			 */
-			var img = $(img),
-				src = img.data('src'),
-				width = img.width();
-				height = width * 0.75;
-				image = new Image();
+	lazyLoadImage: function(imageElement, callback) {
+		
+		/**
+		 *	Grab the data we need
+		 */
+		var img = $(imageElement),
+			loaded = img.hasClass('loaded'),
+			visible = this.isInView(imageElement),
+			src = img.data('src'),
+			width = img.width();
+			height = width * 0.75;
+			image = new Image();
 
+		if(!loaded) {
 			/**
 			 *	Set a temporary height given the width
 			 */
 			img.height(height);
+		}
 
+		if(!loaded && visible) {
+			
 			/**
 			 *	Set the source, which kicks off loading...
 			 */
@@ -114,8 +138,7 @@ Helpers = {
 					callback(img);
 				}
 			}
-
-		});
+		}
 	},
 
 	/**

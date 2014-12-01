@@ -17,12 +17,27 @@ Template['views_detail'].created = function() {
 Template['views_detail'].rendered = function() {
 	$('body').addClass('detail');
 
-	/**
-	 *	Lazy load images, then remove the loader present above them.
+	/** 
+	 *	Check on scroll for elements that are in the viewport,
+	 *	then lazy load their contents 
 	 */
-	Helpers.lazyLoadImages(this.$('img', '.mobileMediaContainer'), function(img) {
-		img.prev().remove();
+	var checkAndLoadImages = Tracker.autorun(function() {
+
+		/**
+		 *	Make this dependent on viewport scroll being changed
+		 *	so it autoruns on scroll.
+		 */
+		Dependencies.viewportScrollDependency.depend();
+
+		var images = this.$('img', '.mobileMediaContainer');
+		$.each(images, function(index, image) {
+			Helpers.lazyLoadImage(image, function() {
+				$(image).prev().remove();
+			});
+		}.bind(this));
+
 	}.bind(this));
+
 };
 
 /**
