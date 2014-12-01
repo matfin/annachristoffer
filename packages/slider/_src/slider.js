@@ -574,12 +574,12 @@ SliderElement.prototype.goToSlide = function(slideNumber) {
 SliderElement.prototype.toggleSmoothAnimation = function(on) {
 
 	if(on) {
-		this.slider.style.transitionDuration = this.transitionDuration + 'ms';
-		this.slider.style.transitionProperty = 'transform';
+		this.slider.style.transitionDuration = this.slider.style.WebkitTransitionDuration = this.transitionDuration + 'ms';
+		this.slider.style.transitionProperty = this.slider.style.WebkitTransitionProperty = 'transform';
 	}
 	else {
-		this.slider.style.transitionDuration = 'initial';
-		this.slider.style.transitionProperty = 'initial';
+		this.slider.style.transitionDuration = this.slider.style.WebkitTransitionDuration = 'initial';
+		this.slider.style.transitionProperty = this.slider.style.WebkitTransitionProperty = 'initial';
 	}
 }
 

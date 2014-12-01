@@ -30,6 +30,7 @@ Device = {
 		this.isTablet = this.windowWidth <= 1024 && this.windowWidth > 640;
 		this.isMobile = this.windowWidth <= 640;
 		this.isTouchCapable = 'ontouchstart' in document.documentElement;
+		this.hasFlexBox = $('html').hasClass('flexbox');
 	},
 
 	/**
