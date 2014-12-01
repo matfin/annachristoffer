@@ -13,7 +13,10 @@ Template['cards_mobile_project'].created = function() {
 *	@method rendered
 *	@return undefined
 */
-Template['cards_mobile_project'].rendered = function() {	
+Template['cards_mobile_project'].rendered = function() {
+
+	console.log(this.data)
+
 };
 
 /**

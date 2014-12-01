@@ -32,7 +32,18 @@ Template['cards_mobile_figcaption'].rendered = function() {
 		var images = self.$('img', '.mobileMediaContainer');
 		$.each(images, function(index, image) {
 			Helpers.lazyLoadImage(image, function() {
+				/**
+				 *	Remove the loading indicator
+				 */
 				$(image).prev().remove();
+				/**
+				 *	Then reset the image properties
+				 */
+				$(image).prop('src', $(image).data('src'));
+				$(image).prop('height', 'auto');
+				$(image).removeAttr('style');
+				$(image).removeAttr('data-src');
+				$(image).addClass('loaded');
 			});
 		});
 	});

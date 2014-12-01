@@ -124,26 +124,12 @@ Helpers = {
 			image.src = src;
 
 			/**
-			 *	Then listen for when it has loaded, setting the correct
-			 *	src and height attributes.
+			 *	Then listen for when it has loaded, runing the callback
+			 *	when loading has finished.
 			 */
 			image.onload = function() {
-				img.prop('src', src);
-				img.prop('height', image.height);
-
-				img.removeAttr('style');
-				img.addClass('loaded');
-
 				if(typeof callback !== 'undefined') {
-					callback({
-						img: img,
-						loaded: loaded,
-						visible: visible,
-						src: src,
-						width: width,
-						height: height,
-						image: image
-					});
+					callback();
 				}
 			}
 		}
