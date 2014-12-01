@@ -6,6 +6,11 @@ Meteor.startup(function() {
 		 */
 		Device.reset();
 
+		/**
+		 *	Set up smooth scrolling
+		 */
+		Device.initSmoothScroll();
+
 	}
 
 	if(Meteor.isServer) {

@@ -150,7 +150,7 @@
 
 	nav {
 		z-index: -1;
-		position: fixed;
+		position: absolute;
 		top: @gridColumnWidth * 3;
 		left: 0;
 		width: 100%;

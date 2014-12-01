@@ -10,6 +10,13 @@ body {
 	text-align: center;
 	width: 100%;
 	height: 100%;
+
+	&.scrolling {
+		pointer-events: none !important;
+		* {
+			pointer-events: none !important;
+		}
+	}
 }
 
 .wf-active {

@@ -18,7 +18,7 @@ Device = {
 	 *	Function to set various device parameters called when the app is first run.
 	 *	
 	 *	@method reset
-	 *	@return undefined
+	 *	@return undefined - returns nothing
 	 */
 	reset: function() {
 
@@ -30,6 +30,30 @@ Device = {
 		this.isTablet = this.windowWidth <= 1024 && this.windowWidth > 640;
 		this.isMobile = this.windowWidth <= 640;
 		this.isTouchCapable = 'ontouchstart' in document.documentElement;
+	},
+
+	/**
+	 *	Function to enable smooth scrolling by disabling 
+	 *	pointer events on all elements while scrolling.
+	 *
+	 *	@method initSmoothScroll
+	 *	@return undefined - returns nothing
+	 */
+	initSmoothScroll: function() {
+		var body = document.body,
+			timer;
+
+		window.addEventListener('scroll', function() {
+
+			clearTimeout(timer);
+			if(!body.classList.contains('scrolling')) {
+				body.classList.add('scrolling');
+			}
+
+			timer = setTimeout(function(){
+				body.classList.remove('scrolling');
+			}, App.throttleTimeout)
+		}, false);
 	}
 };
 

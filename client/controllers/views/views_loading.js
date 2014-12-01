@@ -5,7 +5,6 @@
 *	@return undefined
 */
 Template['views_loading'].created = function() {
-	console.log('Created views_loading');
 };
 
 /**
@@ -15,7 +14,6 @@ Template['views_loading'].created = function() {
 *	@return undefined
 */
 Template['views_loading'].rendered = function() {
-	console.log('Rendered views_loading');
 };
 
 /**
