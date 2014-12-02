@@ -3,6 +3,7 @@
 		<div class="slider" style="width: {{sliderWidth}}%">
 			{{#each slides}}
 				<div class="slide">
+					{{> components_loading}}
 					<img data-src="/images/projects/{{imgSource img}}">
 				</div>
 			{{/each}}
