@@ -24,14 +24,14 @@ Server = {
 	dataSources: {	
 		staticContent: {
 			collection: new Mongo.Collection('staticContent'),
-			url: 'content/staticContent.json',
+			url: '/content/staticContent.json',
 			publishBy: function() {
 				return Server.dataSources.staticContent.collection.find();
 			} 
 		},
 		pages: {
 			collection: new Mongo.Collection('pages'),
-			url: 'content/pages.json',
+			url: '/content/pages.json',
 			publishBy: function(slug, lang) {
 
 				var query = {};
@@ -49,7 +49,7 @@ Server = {
 		},
 		projects: {
 			collection: new Mongo.Collection('projects'),
-			url: 'content/projects.json',
+			url: '/content/projects.json',
 			publishBy: function(slug, lang) {
 
 				var query = {};
@@ -66,7 +66,7 @@ Server = {
 		},
 		categories: {
 			collection: new Mongo.Collection('categories'),
-			url: 'content/categories.json',
+			url: '/content/categories.json',
 			publishBy: function(slug, lang) {
 
 				var query = {};
@@ -83,7 +83,7 @@ Server = {
 		},
 		formations: {
 			collection: new Mongo.Collection('formations'),
-			url: 'content/formations.json',
+			url: '/content/formations.json',
 			publishBy: function() {
 				return Server.dataSources.formations.collection.find({});
 			} 
