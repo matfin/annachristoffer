@@ -93,10 +93,10 @@ Helpers = {
 	 *
 	 *	@method lazyLoadImage
 	 *	@param {object} element - element object coming from a selector
-	 *	@param {function} callback - an optional callback
+	 *	@param {options} callback - optional parameters, including callback and aspect ratio
 	 *	@return undefined - returns nothing
 	 */
-	lazyLoadImage: function(element, callback) {
+	lazyLoadImage: function(element, options) {
 		
 		/**
 		 *	Grab the data we need
@@ -106,7 +106,7 @@ Helpers = {
 			visible = this.isInView(element),
 			src = img.data('src'),
 			width = img.width();
-			height = width * 0.75;
+			height = (options.height || width * 0.75);
 			image = new Image();
 
 		if(!loaded) {
@@ -128,8 +128,8 @@ Helpers = {
 			 *	when loading has finished.
 			 */
 			image.onload = function() {
-				if(typeof callback !== 'undefined') {
-					callback();
+				if(typeof options !== 'undefined' && options.callback !== 'undefined') {
+					options.callback();
 				}
 			}
 		}

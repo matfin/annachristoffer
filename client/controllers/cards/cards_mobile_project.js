@@ -34,13 +34,11 @@ Template['cards_mobile_project'].rendered = function() {
 		var thumbnail = self.$('div.thumbnail').get(0),
 			src = $(thumbnail).data('src');
 
-		/**
-		 *	Then lazy load the background image, resetting
-		 *	the styles on callback after the image has been
-		 *	loaded
-		 */
-		Helpers.lazyLoadImage(thumbnail, function() {
 
+		/**
+		 *	Callback to run when lazy loading image is complete.
+		 */
+		var lazyLoadCallback = function() {
 			/**
 			 *	Remove the loading icon
 			 */
@@ -52,8 +50,14 @@ Template['cards_mobile_project'].rendered = function() {
 			$(thumbnail).css({
 				'background-image': 'url("' + src + '")'
 			}).removeAttr('data-src').addClass('loaded');
+		};
 
-		});
+		/**
+		 *	Lazy load the background image, resetting
+		 *	the styles on callback after the image has been
+		 *	loaded
+		 */
+		Helpers.lazyLoadImage(thumbnail, {callback: lazyLoadCallback, height: 160});
 
 	});
 
