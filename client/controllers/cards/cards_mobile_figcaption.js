@@ -37,9 +37,6 @@ Template['cards_mobile_figcaption'].rendered = function() {
 			Helpers.lazyLoadImage(image, 
 				{
 					callback: function() {
-
-						console.log(index);
-
 						/**
 						 *	Remove the loading indicator
 						 */
