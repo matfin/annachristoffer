@@ -15,7 +15,7 @@
 				{{#if isVideo}}
 					{{> video_player}}
 				{{else}}
-					<div class="loading"><i class="icon-progress"></i></div>
+					{{> components_loading }}
 					<img data-src="/images/projects/{{imgSource}}" alt="">
 				{{/if}}
 			{{/if}}
@@ -46,7 +46,7 @@
 				{{#if isVideo}}
 					{{> components_video_player}}
 				{{else}}
-					<div class="loading"><i class="icon-progress"></i></div>
+					{{> components_loading}}
 					<img data-src="/images/projects/{{imgSource}}" alt="">
 				{{/if}}
 			{{/if}}

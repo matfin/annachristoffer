@@ -6,6 +6,7 @@
  */
 Template['cards_figcaption'].created = function() {
 	this.data = Template.currentData();
+	this.data.loadingTemplate = 'image';
 };
 
 /**

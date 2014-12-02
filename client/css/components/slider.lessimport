@@ -42,14 +42,14 @@ button.go {
 		height: @gridColumnWidth / 2;
 		.transition-duration(@transitionDuration);
 		.transition-property('background-color');
-		background-color: fade(@sliderPrimaryColour, 40%);
+		background-color: fade(@sliderPrimaryColour, 42.5%);
 
 		&:nth-child(odd) {
-			background-color: fade(@sliderPrimaryColour, 30%);
+			background-color: fade(@sliderPrimaryColour, 35%);
 		}
 
 		&.active {
-			background-color: fade(@sliderPrimaryColour, 80%);
+			background-color: fade(@sliderPrimaryColour, 60%);
 		}
 	}
 }
