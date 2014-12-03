@@ -1,4 +1,14 @@
 .header {
+
+
+	position: relative;
+	.flex(1.5);
+	width: @gridColumnWidth * 15;
+	max-width: @gridColumnWidth * 15;
+	min-width: @gridColumnWidth * 12;
+	padding: 0 @gridColumnWidth / 2;
+	.box-sizing(border-box);
+
 	top: @gridColumnWidth * 4;
 
 	.transition-property(top);
@@ -44,8 +54,6 @@
 
 	@media @tablet {
 		top: @gridColumnWidth * 2;
-		padding-left: @gridColumnWidth / 2;
-		padding-right: @gridColumnWidth / 2;
 	}
 
 	header {

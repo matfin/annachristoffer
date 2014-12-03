@@ -51,19 +51,6 @@ body {
 	}
 }
 
-.header {
-	position: relative;
-	.flex(1.5);
-	width: @gridColumnWidth * 15;
-	max-width: @gridColumnWidth * 15;
-	min-width: @gridColumnWidth * 12;
-	padding: 0 @gridColumnWidth;
-	.box-sizing(border-box);
-	@media @mobile {
-		height: @gridColumnWidth * 3;
-	}
-}
-
 .content {
 	.flex(8.5);
 }
