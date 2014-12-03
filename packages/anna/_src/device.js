@@ -54,7 +54,7 @@ Device = {
 			timer = setTimeout(function(){
 				Dependencies.viewportScrollDependency.changed();
 				body.classList.remove('scrolling');
-			}, App.throttleTimeout / 5)
+			}, 100)
 		}, false);
 	}
 };

@@ -7,6 +7,10 @@ body.page {
 				> section {
 					padding: @gridColumnWidth * 4 0;
 					.display(flex);
+
+					@media @tablet {
+						padding: @gridColumnWidth * 2 0;
+					}
 				}
 			}
 			.content-mobile {

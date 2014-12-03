@@ -4,6 +4,10 @@ body.list {
 			.content {
 				> section {
 					padding: @gridColumnWidth * 4 0;
+
+					@media @tablet {
+						padding: @gridColumnWidth 0;
+					}
 				}
 			}
 			.content-mobile {

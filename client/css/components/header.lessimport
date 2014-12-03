@@ -1,5 +1,6 @@
 .header {
 	top: @gridColumnWidth * 4;
+
 	.transition-property(top);
 	.transition-duration(@transitionDuration);
 
@@ -39,6 +40,12 @@
 				}
 			}
 		}
+	}
+
+	@media @tablet {
+		top: @gridColumnWidth * 2;
+		padding-left: @gridColumnWidth / 2;
+		padding-right: @gridColumnWidth / 2;
 	}
 
 	header {

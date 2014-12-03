@@ -6,6 +6,10 @@ body.detail {
 			.content {
 				section {
 					padding: @gridColumnWidth * 4 0;
+
+					@media @tablet {
+						padding: @gridColumnWidth * 2 0;
+					}
 				}
 			}
 			.content-mobile {

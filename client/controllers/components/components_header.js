@@ -101,10 +101,11 @@ var primeHeader = Tracker.autorun(function() {
 	 */
 	if(App.currentView.type === 'project' || App.currentView.type === 'page') {
 		
-		var top = ($(window).scrollTop()) + 64;
+		var topPos = Device.isTablet ? 32:64,
+			top = ($(window).scrollTop()) + topPos;
 
 		$('.header').css({
-			'top': (top < 64 ? 64:top) + 'px'
+			'top': (top < topPos ? topPos:top) + 'px'
 		});
 
 	}
