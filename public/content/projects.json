@@ -877,8 +877,8 @@
 							"de": "Kartografische Maßeinheiten"
 						},
 						"description": {
-							"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
-							"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
+							"en": "Cartographical Scale",
+							"de": "Kartografische Maßeinheiten"
 						}
 					},
 					"captions": [
@@ -979,7 +979,7 @@
 							},
 							"content": {
 								"en": "During studies, the brief &ldquo;Let&#39;s Talk Type&rdquo; was set by the English agency &ldquo;The Chase&rdquo;.",
-								"de": "&ldquo;Let&#39;s Talk Type&rdquo; werde im Rahmen eines Semesterprojekts erabreitet in Zusammenarbeit mit der englischen Agentur &ldquo;The Chase&rdquo;."
+								"de": "&ldquo;Let&#39;s Talk Type&rdquo; wurde im Rahmen eines Semesterprojekts erabreitet in Zusammenarbeit mit der englischen Agentur &ldquo;The Chase&rdquo;."
 							}
 						}
 					]
