@@ -14,6 +14,14 @@
 	baseUrl: 'http://localhost:3000',
 
 	/**
+	 *	Base url used for fetching endpoint data.
+	 *
+	 *	@property baseUrl
+	 *	@type {String}
+	 */
+	mediaUrl: 'http://media.annachristoffer.com/',
+
+	/**
 	 *	Languages for content this app has
 	 *
 	 *	@property 	languages

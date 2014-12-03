@@ -33,7 +33,7 @@ body {
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
-	.backgroundImage('/images/backgrounds/wonderworld');
+	.backgroundImage('http://media.annachristoffer.com/images/backgrounds/wonderworld');
 }
 
 .container {

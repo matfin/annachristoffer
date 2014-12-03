@@ -8,7 +8,7 @@
 
 <template name="components_mobile_video_player">
 	<div class="mobileVideoContainer">
-		<video width="100%" height="{{renderedVideoSize.height}}" poster="/images/projects/{{imgSource}}" preload="metadata">
+		<video width="100%" height="{{renderedVideoSize.height}}" poster="{{mediaUrl}}/images/projects/{{imgSource}}" preload="metadata">
 			<source src="{{videoSource}}.mp4">
 			<source src="{{videoSource}}.webm">
 			<source src="{{videoSource}}.ogv">	
@@ -22,7 +22,7 @@
 			<i class="icon-large-play"></i>
 		</button>
 
-		<video width="100%" height="{{renderedVideoSize.height}}" poster="/images/projects/{{imgSource}}" preload="metadata">
+		<video width="100%" height="{{renderedVideoSize.height}}" poster="{{mediaUrl}}/images/projects/{{imgSource}}" preload="metadata">
 			<source src="{{videoSource}}.mp4">
 			<source src="{{videoSource}}.webm">
 			<source src="{{videoSource}}.ogv">	

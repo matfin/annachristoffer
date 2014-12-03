@@ -124,7 +124,7 @@ Server = {
 					 */
 					deferred.reject({
 						status: 'error',
-						message: 'Error fetching content for url base: ' + this.baseURL + ', Source: ' + dataSource.url,
+						message: 'Error fetching content for url: ' + dataSource.url,
 						data: err
 					});
 				}

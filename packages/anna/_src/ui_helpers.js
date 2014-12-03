@@ -92,6 +92,16 @@ UI.registerHelper('deviceParameters', function() {
 });
 
 /**
+ *	Method to return the base url for accessing media assets
+ *
+ *	@method mediaUrl
+ *	@return {String} the base url for accessing media ie: http://media.annachristoffer.com/
+ */
+UI.registerHelper('mediaUrl', function() {
+	return App.mediaUrl;
+});
+
+/**
  *	Method to return the correctly sized image given a path
  *	This works according to the device parameters ie: Screen size and density
  *
