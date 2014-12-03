@@ -5,7 +5,11 @@
  *	@return undefined
  */
 Template['components_social'].created = function() {
-	this.data.opened = false;
+
+	if(this.data) {
+		this.data.opened = false;
+	}
+	
 };
 
 /**
