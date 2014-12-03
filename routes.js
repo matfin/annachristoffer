@@ -93,6 +93,9 @@ Router.map(function() {
 					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(titleObject.content),
 					meta: {
 						'description': Helpers.loadMessageCode(data.title)
+					},
+					og: {
+						'type': 'website'
 					}
 				});
 			}
@@ -219,6 +222,9 @@ Router.map(function() {
 					title: categoryDescription + Helpers.loadMessageCode(titleObject.content),
 					meta: {
 						'description': categoryDescription + Helpers.loadMessageCode(subtitleObject.content)
+					},
+					og: {
+						'type': 'website'
 					}
 				});
 			}
@@ -283,6 +289,9 @@ Router.map(function() {
 					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(titleObject.content),
 					meta: {
 						'description': Helpers.loadMessageCode(data.description)
+					},
+					og: {
+						'type': 'article'
 					}
 				});
 			}
