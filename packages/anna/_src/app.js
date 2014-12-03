@@ -5,18 +5,11 @@
  * @static
  */
  App = {
- 	/**
-	 *	Base url used for fetching endpoint data.
-	 *
-	 *	@property baseUrl
-	 *	@type {String}
-	 */
-	baseUrl: 'http://localhost:3000',
-
+ 	
 	/**
 	 *	Base url used for fetching endpoint data.
 	 *
-	 *	@property baseUrl
+	 *	@property mediaUrl
 	 *	@type {String}
 	 */
 	mediaUrl: 'http://media.annachristoffer.com/',
