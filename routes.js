@@ -252,7 +252,8 @@ Router.map(function() {
 		waitOn: function() {
 			return [
 				Meteor.subscribe('projects'), 
-				Meteor.subscribe('staticContent')
+				Meteor.subscribe('staticContent'),
+				Meteor.subscribe('meta')
 			];
 		},
 		data: function() {
@@ -278,20 +279,24 @@ Router.map(function() {
 			 *	the static content collection.
 			 */
 			var data = this.data(),
-				titleObject = App.models.staticContent.findOne({slug: 'title'});
+				seoData = App.models.meta.findOne({page: 'project'});
 
 			/**
 			 *	Checking project data has loaded before attempting to access its properties
 			 */
-			if(typeof titleObject !== 'undefined' && typeof data !== 'undefined') {
+			if(typeof seoData !== 'undefined') {
 
 				SEO.set({
-					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(titleObject.content),
+					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(seoData.title),
 					meta: {
 						'description': Helpers.loadMessageCode(data.description)
 					},
 					og: {
-						'type': 'article'
+						'title': Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(seoData.title),
+						'site_name': seoData.site_name,
+						'url': window.location.href,
+						'type': seoData.type,
+						'image': data.og_img
 					}
 				});
 			}
