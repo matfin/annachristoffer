@@ -6,7 +6,6 @@
  */
 Template['cards_figcaption'].created = function() {
 	this.data = Template.currentData();
-	this.data.loadingTemplate = 'image';
 };
 
 /**
@@ -37,7 +36,7 @@ Template['cards_figcaption'].rendered = function() {
 		 */
 		Dependencies.viewportScrollDependency.depend();
 
-		var images = self.$('img', '.mobileMediaContainer');
+		var images = self.$('img', '.mediaContainer');
 		$.each(images, function(index, image) {
 			Helpers.lazyLoadImage(image, 
 				{

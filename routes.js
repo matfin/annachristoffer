@@ -17,7 +17,7 @@ Router.onBeforeAction(function() {
 });
 
 Router.configure({
-	loadingTemplate: 'views_loading'
+	loadingTemplate: 'components_loading'
 });
 
 Router.map(function() {
@@ -129,7 +129,8 @@ Router.map(function() {
 			return [
 				Meteor.subscribe('projects'), 
 				Meteor.subscribe('formations'),
-				Meteor.subscribe('categories')
+				Meteor.subscribe('categories'),
+				Meteor.subscribe('staticContent')
 			];
 		},
 		data: function() {

@@ -23,5 +23,4 @@ Template['components_loading'].rendered = function() {
  *	@return undefined
  */
 Template['components_loading'].destroyed = function() {
-
 };

@@ -8,13 +8,12 @@
 
 <template name="cards_mobile_project">
 	<div class="mobileProjectCard">
-		
 		<a data-index="{{index}}" href="{{pathFor 'detail' _project_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 			<h2>
 				{{loadMessageCode title}}
 			</h2>
 			<div class="thumbnail" data-src="{{mediaUrl}}{{thumbnail}}">
-				<i class="icon-progress"></i>
+				{{> components_loading}}
 			</div>
 		</a>
 		

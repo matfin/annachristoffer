@@ -1,6 +1,5 @@
 .header {
 
-
 	position: relative;
 	.flex(1.5);
 	width: @gridColumnWidth * 15;
@@ -65,9 +64,6 @@
 
 		h1, h2, h3 {
 			font-size: @baseFontSize - 2;
-		}
-
-		h1, h3 {
 			font-weight: @fontWeightLight;
 		}
 
@@ -227,5 +223,4 @@
 			}
 		}
 	}
-
 }

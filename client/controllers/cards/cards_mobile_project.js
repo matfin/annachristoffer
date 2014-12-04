@@ -42,7 +42,7 @@ Template['cards_mobile_project'].rendered = function() {
 			/**
 			 *	Remove the loading icon
 			 */
-			$('i', thumbnail).remove();
+			$('div.loading', thumbnail).remove();
 
 			/**
 			 *	Then set the background image

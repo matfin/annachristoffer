@@ -114,6 +114,7 @@
 }
 
 .mobileProjectCard {
+	position: relative;
 	display: block;
 	width: 100%;
 	background-color: @colourWhite;
@@ -142,37 +143,41 @@
 		}
 	}
 
-	div {
-		margin: 0 @gridColumnWidth / 2;
-		height: @gridColumnWidth * 10;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-
-		.display(flex);
-		.align-items(center);
-		.justify-content(center);
-
-		background-color: rgba(
-			red(@sliderPrimaryColour),
-			green(@sliderPrimaryColour),
-			blue(@sliderPrimaryColour),
-			0.05
-		);
-
-		i {
-			.flex(1);
-			font-size: @largeFont * 2;
-			color: rgba(
-				red(@sliderPrimaryColour),
-				green(@sliderPrimaryColour),
-				blue(@sliderPrimaryColour),
-				0.5
-			);
-			width: @gridColumnWidth * 4;
-			text-align: center;
-			.animation(progress @transitionDuration * 3 linear infinite);
-		}
-
+	div.thumbnail {
+		position: relative;
 	}
+
+	// div {
+	// 	margin: 0 @gridColumnWidth / 2;
+	// 	height: @gridColumnWidth * 10;
+	// 	background-size: cover;
+	// 	background-repeat: no-repeat;
+	// 	background-position: center;
+
+	// 	.display(flex);
+	// 	.align-items(center);
+	// 	.justify-content(center);
+
+	// 	background-color: rgba(
+	// 		red(@sliderPrimaryColour),
+	// 		green(@sliderPrimaryColour),
+	// 		blue(@sliderPrimaryColour),
+	// 		0.05
+	// 	);
+
+	// 	i {
+	// 		.flex(1);
+	// 		font-size: @largeFont * 2;
+	// 		color: rgba(
+	// 			red(@sliderPrimaryColour),
+	// 			green(@sliderPrimaryColour),
+	// 			blue(@sliderPrimaryColour),
+	// 			0.5
+	// 		);
+	// 		width: @gridColumnWidth * 4;
+	// 		text-align: center;
+	// 		.animation(progress @transitionDuration * 3 linear infinite);
+	// 	}
+
+	// }
 }
