@@ -102,6 +102,14 @@
 		 *	@property formations
 		 *	@type {Mongo.Collection}
 		 */
-		formations: new Mongo.Collection('formations')
+		formations: new Mongo.Collection('formations'),
+
+		/**
+		 *	Mongo Collection that we populate from the seo json
+		 *	
+		 *	@property meta
+		 *	@type {Mongo.Collection}
+		 */
+		meta: new Mongo.Collection('meta')
 	}
 };

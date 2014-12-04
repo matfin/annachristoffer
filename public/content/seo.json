@@ -1,0 +1,35 @@
+{
+	"name": "Seo",
+	"items": [
+		{
+			"id": 1,
+			"page": "overview",
+			"type": "website",
+			"site_name": "Anna Claire Christoffer",
+			"title": {
+				"en": "Anna Claire Christoffer",
+				"de": "Anna Claire Christoffer"
+			},
+			"description": {
+				"en": "Conceptual Design from Anna Claire Christoffer",
+				"de": "Konzeptionelle Gestaltung von Anna Claire Christoffer"
+			},
+			"image": "http://http://media.annachristoffer.com/images/projects/thumbnails/carnival@2x.jpg"
+		},
+		{
+			"id": 2,
+			"page": "about",
+			"type": "website",
+			"site_name": "Anna Claire Christoffer",
+			"title": {
+				"en": "About - Anna Claire Christoffer",
+				"de": "Über mich - Anna Claire Christoffer"
+			},
+			"description": {
+				"en": "Developed by Matt Finucane and designed by Anna Christoffer.",
+				"de": "Die Programmierung wurde von Matt Finucane umgesetzt und das Design bei Anna Christoffer entwickelt."
+			},
+			"image": "http://http://media.annachristoffer.com/images/projects/thumbnails/carnival@2x.jpg"
+		}
+	]
+}

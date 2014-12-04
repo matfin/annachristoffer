@@ -27,7 +27,7 @@ Server = {
 			url: '/content/staticContent.json',
 			publishBy: function() {
 				return Server.dataSources.staticContent.collection.find();
-			} 
+			}
 		},
 		pages: {
 			collection: new Mongo.Collection('pages'),
@@ -86,6 +86,13 @@ Server = {
 			url: '/content/formations.json',
 			publishBy: function() {
 				return Server.dataSources.formations.collection.find({});
+			} 
+		},
+		meta: {
+			collection: new Mongo.Collection('meta'),
+			url: '/content/seo.json',
+			publishBy: function() {
+				return Server.dataSources.meta.collection.find({});
 			} 
 		}
 	},

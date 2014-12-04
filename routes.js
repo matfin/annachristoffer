@@ -13,6 +13,7 @@ Router.onBeforeAction(function() {
 	Meteor.subscribe('categories');
 	Meteor.subscribe('staticContent');
 	Meteor.subscribe('pages');
+	Meteor.subscribe('meta');
 	this.next();
 });
 
@@ -32,7 +33,8 @@ Router.map(function() {
 		waitOn: function() {
 			return [
 				Meteor.subscribe('pages', this.params._page_slug, App.language),
-				Meteor.subscribe('staticContent')
+				Meteor.subscribe('staticContent'),
+				Meteor.subscribe('meta')
 			];
 		},
 		action: function() {
@@ -81,24 +83,21 @@ Router.map(function() {
 			}
 
 			/**
-			 *	Populating meta tags for SEO. In this case, we will use content from 
-			 *	the static content collection.
+			 *	When ready, load and set the SEO/OG data for this view
 			 */
-			var data = this.data();
-				titleObject = App.models.staticContent.findOne({slug: 'title'});
+			var seoData = App.models.meta.findOne({page: 'about'});
 
-			/**
-			 *	Populate SEO tags using the ms-seo module only when the data has fully loaded
-			 */
-			if(typeof data !== 'undefined' && typeof titleObject !== 'undefined') {
-
+			if(typeof seoData !== 'undefined') {
 				SEO.set({
-					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(titleObject.content),
+					title: Helpers.loadMessageCode(seoData.title),
 					meta: {
-						'description': Helpers.loadMessageCode(data.title)
+						'description': Helpers.loadMessageCode(seoData.description)
 					},
 					og: {
-						'type': 'website'
+						'title': Helpers.loadMessageCode(seoData.title),
+						'site_name': seoData.site_name,
+						'url': window.location.href,
+						'type': seoData.type
 					}
 				});
 			}
@@ -133,7 +132,8 @@ Router.map(function() {
 				Meteor.subscribe('projects'), 
 				Meteor.subscribe('formations'),
 				Meteor.subscribe('categories'),
-				Meteor.subscribe('staticContent')
+				Meteor.subscribe('staticContent'),
+				Meteor.subscribe('meta')
 			];
 		},
 		data: function() {
@@ -205,30 +205,23 @@ Router.map(function() {
 			}
 
 			/**
-			 *	Populating meta tags for SEO. In this case, we will use content from 
-			 *	the static content collection.
+			 *	When ready, load and set the SEO/OG data for this view
 			 */
-			var data = this.data();
-				titleObject = App.models.staticContent.findOne({slug: 'title'}),
-				subtitleObject = App.models.staticContent.findOne({slug: 'subtitle'}),
-				categoryDescription = '';
+			var seoData = App.models.meta.findOne({page: 'overview'}),
+				category = this.data().category;
 
-			/**
-			 *	Populate SEO tags using the ms-seo module only when the data has fully loaded
-			 */
-			if(typeof titleObject !== 'undefined' && typeof subtitleObject !== 'undefined') {
-
-				if(typeof data.category !== 'undefined') {
-					categoryDescription = Helpers.loadMessageCode(data.category.description) + ' - ';
-				}
-
+			if(typeof seoData !== 'undefined') {
 				SEO.set({
-					title: categoryDescription + Helpers.loadMessageCode(titleObject.content),
+					title: (typeof category !== 'undefined') ? Helpers.loadMessageCode(category.title) + ' - ' + Helpers.loadMessageCode(seoData.title) : Helpers.loadMessageCode(seoData.title),
 					meta: {
-						'description': categoryDescription + Helpers.loadMessageCode(subtitleObject.content)
+						'description': (typeof category !== 'undefined') ? Helpers.loadMessageCode(category.description) : Helpers.loadMessageCode(seoData.description)
 					},
 					og: {
-						'type': 'website'
+						'title': (typeof category !== 'undefined') ? Helpers.loadMessageCode(category.title) + ' - ' + Helpers.loadMessageCode(seoData.title) : Helpers.loadMessageCode(seoData.title),
+						'site_name': seoData.site_name,
+						'url': window.location.href,
+						'type': seoData.type,
+						'image': seoData.image
 					}
 				});
 			}
