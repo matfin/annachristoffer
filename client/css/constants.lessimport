@@ -21,6 +21,7 @@
 @minWidth: @gridColumnWidth * 64;
 
 // Layers
+@mobileHeaderLayer: 6;
 @menuLayer: 4;
 @primaryLayer: 3;
 @secondaryLayer: 2;

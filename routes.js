@@ -30,7 +30,10 @@ Router.map(function() {
 	this.route('content', {
 		path: '/content/:_page_slug?',
 		waitOn: function() {
-			return Meteor.subscribe('pages', this.params._page_slug, App.language);
+			return [
+				Meteor.subscribe('pages', this.params._page_slug, App.language),
+				Meteor.subscribe('staticContent')
+			];
 		},
 		action: function() {
 
@@ -254,7 +257,10 @@ Router.map(function() {
 			}
 		},
 		waitOn: function() {
-			return Meteor.subscribe('projects');
+			return [
+				Meteor.subscribe('projects'), 
+				Meteor.subscribe('staticContent')
+			];
 		},
 		data: function() {
 			if(!this.ready()) {
