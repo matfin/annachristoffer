@@ -32,7 +32,8 @@ Package.onUse(function(api) {
 		'_src/dependencies.js',
 		'_src/device.js',
 		'_src/helpers.js',
-		'_src/ui_helpers.js'
+		'_src/ui_helpers.js',
+		'_src/social.js'
 	], 'client');
 
 	/**
@@ -50,6 +51,7 @@ Package.onUse(function(api) {
 	api.export('Dependencies');
 	api.export('Device');
 	api.export('Helpers');
+	api.export('Social');
 	api.export('Server');
 
 });

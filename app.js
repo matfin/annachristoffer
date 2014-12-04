@@ -11,6 +11,11 @@ Meteor.startup(function() {
 		 */
 		Device.initSmoothScroll();
 
+		/**
+		 *	Init social plugins
+		 */
+		Social.Facebook.initFacebookSDK();
+
 	}
 
 	if(Meteor.isServer) {

@@ -51,6 +51,30 @@ Template['components_social'].events = {
 			});
 			this.opened = true;
 		}
-	}	
+	},
 
+	'click button.social-share': function(e, template) {
+		var button = $(e.currentTarget),
+			network = button.data('share');
+
+		switch(network) {
+			case 'facebook': {
+				FB.ui({
+					method: 'share',
+				 	href: window.location.href,
+				}, function(response){});
+				break;
+			}
+			case 'twitter': {
+				break;
+			}
+			case 'pinterest': {
+				break;
+			}
+			default: {
+				//TODO
+				break;
+			}
+		}
+	}
 };
