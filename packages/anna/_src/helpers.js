@@ -161,6 +161,14 @@ Helpers = {
 			options.isThumbnail = false;
 		}
 
+		/**
+		 *	When we want to force-load an image and bypass 
+		 *	device parameters like screen size and pixel density.
+		 */
+		if(typeof options.forcedSelection !== 'undefined') {
+			return img + options.forcedSelection + '.' + options.extension;
+		}
+
 		var imgSource = '';
 
 		if(img && typeof img !== 'undefined') {

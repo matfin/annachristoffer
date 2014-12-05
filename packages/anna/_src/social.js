@@ -21,7 +21,7 @@ Social = {
 		 *	@method initFacebookSDK
 		 *	@return undefined
 		 */
-		initFacebookSDK: function() {
+		initSDK: function() {
 
 			window.fbAsyncInit = function() {
 			    FB.init({
@@ -39,6 +39,25 @@ Social = {
 				js.src = "//connect.facebook.net/en_US/sdk.js";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+		}
+	},
+
+	Pinterest: {
+
+		/**
+		 *	Function to initialise the Pinterest Javascript SDK
+		 *	
+		 *	@method initPinterestSDK
+		 *	@return undefined
+		 */
+		initSDK: function() {
+			(function(d) {
+				var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+				p.type = 'text/javascript';
+				p.async = true;
+				p.src = '//assets.pinterest.com/js/pinit.js';
+				f.parentNode.insertBefore(p, f);
+			}(document));
 		}
 	}
 

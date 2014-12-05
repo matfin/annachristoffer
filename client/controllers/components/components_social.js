@@ -66,6 +66,11 @@ Template['components_social'].events = {
 				break;
 			}
 			case 'twitter': {
+				/**
+				 *	Window open.
+				 */
+				window.open('https://twitter.com/share?url=' + window.location.href + '&text=Anna%20Christoffer&', 'Tweet', 'height=450, width=550, toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+
 				break;
 			}
 			case 'pinterest': {

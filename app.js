@@ -14,8 +14,8 @@ Meteor.startup(function() {
 		/**
 		 *	Init social plugins
 		 */
-		Social.Facebook.initFacebookSDK();
-
+		Social.Facebook.initSDK();
+		Social.Pinterest.initSDK();
 	}
 
 	if(Meteor.isServer) {

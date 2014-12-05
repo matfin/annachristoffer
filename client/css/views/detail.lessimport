@@ -6,7 +6,7 @@ body.detail {
 			.content {
 				section {
 					padding: @gridColumnWidth * 4 0;
-					padding-right: @gridColumnWidth / 2;
+					margin-right: @gridColumnWidth / 2;
 
 					@media @tablet {
 						padding: @gridColumnWidth * 2 0;

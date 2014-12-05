@@ -48,6 +48,16 @@ UI.registerHelper('isLandingPage', function() {
 });
 
 /**
+ *	Helper function to return the current language
+ *
+ *	@function currentLanguage
+ *	@return {String} - the current language
+ */
+UI.registerHelper('currentLanguage', function() {
+	return App.language;
+});
+
+/**
  *	Helper function to determine if the given language is active
  *
  *	@function isCurrentLanguage

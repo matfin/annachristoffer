@@ -87,6 +87,20 @@ Template['cards_figcaption'].events = {
 Template['cards_figcaption'].helpers({
 
 	/**
+	 *	Helper function to generate a Pinterest URL
+	 */
+	pinterestUrl: function(parentContext) {
+		var pinterest   = '//www.pinterest.com/pin/create/button/',
+			url 		= escape(window.location.href),
+			mediaUrl	= escape(App.mediaUrl + 'images/projects/' + Helpers.loadImageSource(this.img, {forcedSelection: '-hd@2x'})),
+			description = escape('Anna Claire Christoffer - ' + Helpers.loadMessageCode(parentContext.title));
+
+		// console.log(mediaUrl);
+
+		return pinterest + '?url=' + url + '&media=' + mediaUrl + '&description=' + description;
+	},
+
+	/**
 	 *	Helper function to determine if a video is present
 	 */
 	isVideo: function() {

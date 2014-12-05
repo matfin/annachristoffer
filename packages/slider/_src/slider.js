@@ -147,6 +147,13 @@ function SliderElement(domNode) {
 	this.isAnimating = false;
 
 	/**
+	 *	Slider image DOM nodes
+	 *
+	 *	@property {object} images
+	 */
+	this.images;
+
+	/**
 	 *	Finally, initialise the slider.
 	 */
 	this.init();
@@ -160,6 +167,11 @@ SliderElement.prototype.init = function() {
 	this.slider = this.container.getElementsByClassName('slider')[0];
 	this.slides = this.container.getElementsByClassName('slide');
 	this.sliderWidth = this.container.offsetWidth;
+
+	/**
+	 *	Slider image DOM elements
+	 */
+	this.images = this.container.querySelectorAll('img');
 	
 	/**
 	 *	Adding custom events
@@ -177,6 +189,18 @@ SliderElement.prototype.init = function() {
 		snapToNearest: true,
 		snapSpeedMillis: 400
 	};
+
+	/**
+	 *	Listen for image loading events. Every time an image loads,
+	 *	we may need to rerun the slider width calculation to ensure 
+	 *	that it is correct and that the slides move into the correct
+	 *	position.
+	 */
+	[].forEach.call(this.images, function(imageObject) {
+		imageObject.addEventListener('load', function() {
+			this.sliderWidth = this.container.offsetWidth;	
+		}.bind(this));
+	}.bind(this));
 
 	/** 
 	 *	The events added now which need to be set up later
@@ -288,7 +312,6 @@ SliderElement.prototype.setupEvents = function() {
 	 *	Loop through each event and set it up
 	 */
 	[].forEach.call(this.events, function(eventObject) {
-
 		/** 
 		 *	Attach mouse events if this is not a touch device,
 		 *	or add touch events. Note that we bind the current
