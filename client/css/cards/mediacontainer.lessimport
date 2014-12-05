@@ -21,8 +21,27 @@
 		&.loaded {
 			.opacity(1.0);
 		}
-
 	}	
+
+	a.pinterest {
+		z-index: @menuLayer;
+		position: absolute;
+		top: @gridColumnWidth / 2;
+		left: @gridColumnWidth / 2;
+		
+		width: @gridColumnWidth * 1.5;
+		height: @gridColumnWidth * 1.5;
+		font-size: @mediumFont;
+		color: @sliderPrimaryColour;
+
+		.opacity(0);
+		.transition-property(opacity);
+		.transition-duration(@transitionDuration);
+
+		&.revealed {
+			.opacity(0.8)
+		}
+	}
 }
 
 .mobileMediaContainer {

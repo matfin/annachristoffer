@@ -24,6 +24,11 @@ Template['cards_figcaption'].rendered = function() {
 		});
 	}
 
+	/**
+	 *	Pinterest links should open in a new tab/window
+	 */
+	this.$('a.pinterest').prop('target', '_blank');
+
 	/** 
 	 *	Check on scroll for elements that are in the viewport,
 	 *	then lazy load their contents 
@@ -75,8 +80,11 @@ Template['cards_figcaption'].destroyed = function() {
  */
 Template['cards_figcaption'].events = {
 
-	'mouseout .mediacontainer': function(e, template) {
-		$('.scrub').data('canDrag', false);
+	'mouseover .mediaContainer': function(e, template) {
+		template.$('a.pinterest').addClass('revealed');
+	},
+	'mouseout .mediaContainer': function(e, template) {
+		template.$('a.pinterest').removeClass('revealed');
 	}
 }
 
@@ -92,7 +100,7 @@ Template['cards_figcaption'].helpers({
 	pinterestUrl: function(parentContext) {
 		var pinterest   = '//www.pinterest.com/pin/create/button/',
 			url 		= escape(window.location.href),
-			mediaUrl	= escape(App.mediaUrl + 'images/projects/' + Helpers.loadImageSource(this.img, {forcedSelection: '-hd@2x'})),
+			mediaUrl	= escape(App.mediaUrl + 'images/projects/' + Helpers.loadImageSource(this.img, {forcedSelection: '-hd'})),
 			description = escape('Anna Claire Christoffer - ' + Helpers.loadMessageCode(parentContext.title));
 
 		// console.log(mediaUrl);
