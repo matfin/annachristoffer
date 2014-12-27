@@ -2,7 +2,7 @@
  *	Template - header
  *	Server side controller for the header template
  */
-SSR.compileTemplate('header', Assets.getText('header.html'));
+SSR.compileTemplate('header', Assets.getText('views/header.html'));
 
 /**
  *	Template - header

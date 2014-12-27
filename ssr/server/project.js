@@ -2,7 +2,7 @@
  *	Template - project
  *	Server side controller for the project detail template
  */
-SSR.compileTemplate('project', Assets.getText('project.html'));
+SSR.compileTemplate('project', Assets.getText('views/project.html'));
 
 /**
  *	Template - project

@@ -3,7 +3,7 @@
  *	Server side controller for the home template which 
  *	gives a list of all the projects.
  */
-SSR.compileTemplate('home', Assets.getText('home.html'));
+SSR.compileTemplate('home', Assets.getText('views/home.html'));
 
 /**
  *	Template - home

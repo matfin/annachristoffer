@@ -18,6 +18,7 @@ seoPicker.route('/', function(params, request, result) {
 	var html = SSR.render('layout', {
 		template: 'home',
 		data: {
+			seopage: 'overview',
 			projects: projects
 		}
 	});
@@ -47,6 +48,7 @@ seoPicker.route('/project/:_slug', function(params, request, result) {
 	var html = SSR.render('layout', {
 		template: 'project',
 		data: {
+			seopage: 'project',
 			project: project
 		}
 	});
