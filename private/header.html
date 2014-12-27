@@ -1,0 +1,24 @@
+<header>
+	<h1>
+		{{loadMessageCode staticContent.title.content}}
+	</h1>
+	<h2>
+		{{loadMessageCode staticContent.subtitle.content}}
+	</h2>
+	<nav>
+		<ul>
+			<li>
+				<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+					{{loadMessageCode staticContent.projects.content}}
+				</a>
+			</li>
+			{{#each pages}}
+				<li>
+					<a href="/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
+						{{{loadMessageCode title}}}
+					</a>
+				</li>
+			{{/each}}
+		</ul>
+	</nav>
+</header>

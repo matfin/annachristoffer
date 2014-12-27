@@ -1,14 +1,10 @@
 {{{getDocType}}}
 <html>
 	<head>
+		<meta charset="UTF-8" />
 	</head>
 	<body>
-		<header>
-		</header>
-		<section id="content">
-			{{> Template.dynamic template=template data=data}}
-		</section>
-		<footer>
-		</footer>
+		{{> header}}
+		{{> Template.dynamic template=template data=data}}
 	</body>
 </html>

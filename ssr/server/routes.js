@@ -2,23 +2,59 @@ var seoPicker = Picker.filter(function(request, result) {
 	return /_escaped_fragment_/.test(request.url);
 });
 
+/**
+ *	Setting up the server side route for the landing page
+ */
 seoPicker.route('/', function(params, request, result) {
 
-	var projects = Server.dataSources.projects.collection.find({}).fetch(),
-		content = {
-			title: Server.dataSources.staticContent.collection.findOne({slug: 'title'}),
-			subTitle: Server.dataSources.staticContent.collection.findOne({slug: 'subtitle'}),
-			projects: Server.dataSources.staticContent.collection.findOne({slug: 'projects'})
-		}
+	/**
+	 *	Loading all projects
+	 */
+	var projects = Server.dataSources.projects.collection.find({}).fetch();
 
+	/**
+	 *	Creating the template
+	 */
 	var html = SSR.render('layout', {
 		template: 'home',
 		data: {
-			projects: projects,
-			content: content
+			projects: projects
 		}
 	});
 
+	/**
+	 *	Returning the html
+	 */
 	result.end(html);
+
+});
+
+/**
+ *	Setting up the server side route for the project details page
+ */
+seoPicker.route('/project/:_slug', function(params, request, result) {
+
+	/**
+	 *	Loading the details for the selected project.
+	 */
+	var query = {};
+	query['slug.' + Server.language] = params._slug;
+	var project = Server.dataSources.projects.collection.findOne(query);
+
+	/**
+	 *	Creating the template to render the html for the project
+	 */
+	var html = SSR.render('layout', {
+		template: 'project',
+		data: {
+			project: project
+		}
+	});
+
+	/**
+	 *	Return the rendered html
+	 */
+	result.end(html);
+
 
 });

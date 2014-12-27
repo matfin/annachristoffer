@@ -1,0 +1,21 @@
+<div id="content">
+
+	<h3>
+		{{{loadMessageCode project.title}}}
+	</h3>
+
+	<h4>
+		{{{loadMessageCode project.description}}}
+	</h4>
+
+	{{#each contents}}
+		{{#if hasImage img}}
+			<img src="{{baseMediaUrl}}images/projects/{{img}}-d.jpg" title="{{../title}}" />
+		{{/if}}
+		{{#each captions}}
+			<p>
+				{{{loadMessageCode content}}}
+			</p>
+		{{/each}}
+	{{/each}}
+</div>
