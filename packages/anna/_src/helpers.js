@@ -196,6 +196,21 @@ Helpers = {
 	},
 
 	/**
+	 *	Helper function to return the current language
+	 *	
+	 *	@method currentLanguage
+	 *	@return {String} - the current language - ie: 'en' or 'de'
+	 */
+	currentLanguage: function() {
+		if(typeof Server !== 'undefined' && typeof Server.language !== 'undefined') {
+			return Server.language;
+		}
+		else {
+			return App.language;
+		}
+	},
+
+	/**
 	 *	Method to load content by given language
 	 *
 	 *	@method loadMessageCode	
@@ -210,13 +225,27 @@ Helpers = {
 		else if(typeof message === 'string') {
 			return message;
 		}
-		else if(typeof message[App.language] !== 'undefined') {
-			return message[App.language];
+		else if(typeof message[this.currentLanguage()] !== 'undefined') {
+			return message[this.currentLanguage()];
 		}
 		else {
 			console.log('Content not found for: ', message);
 			return 'Content not found';
 		}
+	},
+
+	/**
+	 *	Helper to return a nicely formatted date using moment.js
+	 *	
+	 *	@method formattedDate
+	 *	@param {String}	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
+	 *	@param {String} The formatting for the date to be displayed.
+	 *	@return {String} The formatted date
+	 */
+	formattedDate: function(dateString, dateFormat) {
+		moment.locale(App.language);
+		var m = moment(dateString);
+		return m.isValid() ? m.format(dateFormat):dateString; 
 	},
 
 	/**

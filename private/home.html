@@ -1,0 +1,18 @@
+<h1>
+	{{loadMessageCode content.title.content}}
+</h1>
+<h2>
+	{{loadMessageCode content.subTitle.content}}
+</h2>
+<ul>
+	{{#each projects}}
+		<li>
+			<a href="/project/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
+				<h3>
+					{{loadMessageCode title}}
+				</h3>
+				<img src="{{baseMediaUrl}}{{thumbnail}}" alt="{{loadMessageCode title}}" />
+			</a>
+		</li>
+	{{/each}}
+</ul>

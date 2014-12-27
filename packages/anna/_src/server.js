@@ -8,6 +8,22 @@
 Server = {
 
 	/**
+	 *	Default server side language
+	 *	
+	 *	@property 	language
+	 *	@type 		{String}
+	 */
+	language: 'en',
+
+	/**
+	 *	Base url used for fetching endpoint data.
+	 *
+	 *	@property mediaUrl
+	 *	@type {String}
+	 */
+	mediaUrl: 'http://media.annachristoffer.com/',
+
+	/**
 	 *	Server side base url for making HTTP calls
 	 *	
 	 *	@property 	baseURL

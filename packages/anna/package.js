@@ -40,7 +40,8 @@ Package.onUse(function(api) {
 	 *	Adding source files for this package (server)
 	 */
 	api.addFiles([
-		'_src/server.js'
+		'_src/server.js',
+		'_src/helpers.js'	
 	], 'server');
 
 	/**

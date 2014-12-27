@@ -54,7 +54,7 @@ UI.registerHelper('isLandingPage', function() {
  *	@return {String} - the current language
  */
 UI.registerHelper('currentLanguage', function() {
-	return App.language;
+	return App.currentLanguage();
 });
 
 /**
@@ -79,9 +79,7 @@ UI.registerHelper('isCurrentLanguage', function(languageCode) {
  */
 UI.registerHelper('formattedDate', function(dateString, dateFormat) {
 	Dependencies.languageChangedDependency.depend();
-	moment.locale(App.language);
-	var m = moment(dateString);
-	return m.isValid() ? m.format(dateFormat):dateString; 
+	return Helpers.formattedDate(dateString, dateFormat);
 });
 
 /**
