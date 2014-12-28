@@ -16,5 +16,13 @@ Template.layout.helpers({
 	 */
 	getDocType: function() {
 		return '<!DOCTYPE html>';
+	},
+
+	/**
+	 *	@method getDocumentLanguage
+	 *	@return {String} - 2 digit language code
+	 */
+	getDocumentLanguage: function() {
+		return Server.language;
 	}
 });

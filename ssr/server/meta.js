@@ -35,10 +35,21 @@ Template.meta.helpers({
 			return {
 				title: Helpers.loadMessageCode(seoData.title) + ' - ' + Helpers.loadMessageCode(this.project.title),
 				url: 'http://annachristoffer.com/project/' + Helpers.loadMessageCode(this.project.slug),
-				description: Helpers.loadMessageCode(this.project.description),
+				description: new Spacebars.SafeString(Helpers.loadMessageCode(this.project.description)),
 				site_name: seoData.site_name,
 				type: seoData.type,
 				image: this.project.og_img,
+				twitterCard: "summary_large_image"
+			}
+		}
+		else if(this.seopage === 'about') {
+			return {
+				title: Helpers.loadMessageCode(seoData.title) + ' - ' + Helpers.loadMessageCode(this.page.title),
+				url: 'http://annachristoffer.com/content/' + Helpers.loadMessageCode(this.page.slug),
+				description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description)),
+				site_name: seoData.site_name,
+				type: seoData.type,
+				image: seoData.image,
 				twitterCard: "summary_large_image"
 			}
 		}
@@ -48,7 +59,7 @@ Template.meta.helpers({
 		return {
 			title: Helpers.loadMessageCode(seoData.title),
 			url: 'http://annachristoffer.com/',
-			description: Helpers.loadMessageCode(seoData.description),
+			description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description)),
 			site_name: seoData.site_name,
 			type: seoData.type,
 			image: seoData.image,

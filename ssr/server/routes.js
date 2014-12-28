@@ -61,7 +61,7 @@ seoPicker.route('/project/:_slug', function(params, request, result) {
 	/**
 	 *	Checking user agent strings
 	 */
-	console.log('UA:' + request.headers['user-agent']);
+	console.log('UA: ' + request.headers['user-agent']);
 
 	/**
 	 *	Loading the details for the selected project.
@@ -85,6 +85,36 @@ seoPicker.route('/project/:_slug', function(params, request, result) {
 	 *	Return the rendered html
 	 */
 	result.end(html);
+});
 
+/**
+ *	Setting up the server side route for other pages
+ */
+seoPicker.route('/content/:_page', function(params, request, result) {
+
+	/**
+	 *	Checking user agent strings
+	 */
+	console.log('UA: ' + request.headers['user-agent']);
+
+	var query = {};
+	query['slug.' + Server.language] = params._page;
+	var page = Server.dataSources.pages.collection.findOne(query);
+
+	/**
+	 *	Creating the template to render the html for the page
+	 */
+	var html = SSR.render('layout', {
+		template: 'page',
+		data: {
+			seopage: 'about',
+			page: page
+		}
+	});
+
+	/**
+	 *	Return the rendered html
+	 */
+	result.end(html);
 
 });
