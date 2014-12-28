@@ -19,6 +19,11 @@ var seoPicker = Picker.filter(function(request, result) {
 seoPicker.route('/', function(params, request, result) {
 
 	/**
+	 *	Checking user agent strings
+	 */
+	console.log('UA: ' + request.headers['user-agent']);
+
+	/**
 	 *	Grabbing about page data
  	 */
  	var query = {};
@@ -52,6 +57,11 @@ seoPicker.route('/', function(params, request, result) {
  *	Setting up the server side route for the project details page
  */
 seoPicker.route('/project/:_slug', function(params, request, result) {
+
+	/**
+	 *	Checking user agent strings
+	 */
+	console.log('UA:' + request.headers['user-agent']);
 
 	/**
 	 *	Loading the details for the selected project.
