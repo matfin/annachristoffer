@@ -56,4 +56,23 @@ Template.home.helpers({
 		}
 	},
 
+	/**
+	 *	Further helpers to load content into the correct tags
+	 */
+	isHeadingOne: function(tag) {
+		return tag === 'h1';
+	},
+	isHeadingTwo: function(tag) {
+		return tag === 'h2';
+	},
+	isHeadingThree: function(tag) {
+		return tag === 'h3';
+	},
+	isParagraph: function(tag) {
+		return tag === 'p';
+	},
+	isDate: function(tag) {
+		return tag === 'date';
+	}
+
 });

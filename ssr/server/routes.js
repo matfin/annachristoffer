@@ -8,6 +8,13 @@ var seoPicker = Picker.filter(function(request, result) {
 seoPicker.route('/', function(params, request, result) {
 
 	/**
+	 *	Grabbing about page data
+ 	 */
+ 	var query = {};
+	query['slug.' + Server.language] = 'about';
+	var pageContent = Server.dataSources.pages.collection.findOne(query);
+
+	/**
 	 *	Loading all projects
 	 */
 	var projects = Server.dataSources.projects.collection.find({}).fetch();
@@ -19,7 +26,8 @@ seoPicker.route('/', function(params, request, result) {
 		template: 'home',
 		data: {
 			seopage: 'overview',
-			projects: projects
+			projects: projects,
+			pageContent: pageContent
 		}
 	});
 
@@ -27,7 +35,6 @@ seoPicker.route('/', function(params, request, result) {
 	 *	Returning the html
 	 */
 	result.end(html);
-
 });
 
 /**

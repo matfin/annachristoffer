@@ -1,14 +1,58 @@
 <div id="content">
-	<ul>
-		{{#each projects}}
-			<li>
-				<a href="/project/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
-					<h3>
-						{{loadMessageCode title}}
-					</h3>
-					<img src="{{baseMediaUrl}}{{thumbnail}}" alt="{{loadMessageCode title}}" />
-				</a>
-			</li>
-		{{/each}}
-	</ul>
+
+	{{#each pageContent.sections}}
+		<section>
+			{{#each groups}}
+				{{#each items}}
+					{{#if isHeadingOne type}}
+						<h1>
+							{{{loadMessageCode content}}}
+						</h1>
+					{{/if}}
+					
+					{{#if isHeadingTwo type}}
+						<h2>
+							{{{loadMessageCode content}}}
+						</h2>
+					{{/if}}
+					
+					{{#if isHeadingThree type}}
+						<h3>
+							{{{loadMessageCode content}}}
+						</h3>
+					{{/if}}
+					
+					{{#if isParagraph type}}
+						<p>
+							{{{loadMessageCode content}}}
+						</p>
+					{{/if}}
+
+					{{#if isDate type}}
+						<date>{{content.from}}</date>
+						-
+						<date>{{content.to}}</date>
+					{{/if}}
+				{{/each}}
+			{{/each}}
+		</section>
+	{{/each}}
+
+	<section>
+		<h1>
+			Portfolio
+		</h1>
+		<ul>
+			{{#each projects}}
+				<li>
+					<a href="/project/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
+						<h3>
+							{{loadMessageCode title}}
+						</h3>
+						<img src="{{baseMediaUrl}}{{thumbnail}}" alt="{{loadMessageCode title}}" />
+					</a>
+				</li>
+			{{/each}}
+		</ul>
+	</section>
 </div>

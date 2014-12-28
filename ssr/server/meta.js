@@ -42,19 +42,6 @@ Template.meta.helpers({
 			}
 		}
 		/**
-		 *	Likewise, if we are on the about page.
-		 */
-		else if(this.seopage === 'about') {
-			return {
-				title: Helpers.loadMessageCode(seoData.title),
-				url: 'http://annachristoffer.com/about',
-				description: Helpers.loadMessageCode(seoData.description),
-				site_name: seoData.site_name,
-				type: seoData.type,
-				image: seoData.image
-			}
-		}
-		/**
 		 *	Or we return the default SEO data
 		 */
 		return {

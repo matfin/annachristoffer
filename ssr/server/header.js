@@ -28,13 +28,6 @@ Template.header.helpers({
 			subtitle: Server.dataSources.staticContent.collection.findOne({slug: 'subtitle'}),
 			projects: Server.dataSources.staticContent.collection.findOne({slug: 'projects'})
 		};
-	},
-
-	/**
-	 *	Populate pages from the pages collection.
-	 */
-	pages: function() {
-		return Server.dataSources.pages.collection.find({}).fetch();
-	},
-
+	}
+	
 });
