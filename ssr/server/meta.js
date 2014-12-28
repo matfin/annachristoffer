@@ -38,7 +38,8 @@ Template.meta.helpers({
 				description: Helpers.loadMessageCode(this.project.description),
 				site_name: seoData.site_name,
 				type: seoData.type,
-				image: this.project.og_img
+				image: this.project.og_img,
+				twitterCard: "summary_large_image"
 			}
 		}
 		/**
@@ -50,7 +51,8 @@ Template.meta.helpers({
 			description: Helpers.loadMessageCode(seoData.description),
 			site_name: seoData.site_name,
 			type: seoData.type,
-			image: seoData.image
+			image: seoData.image,
+			twitterCard: "summary_large_image"
 		}
 	}
 	
