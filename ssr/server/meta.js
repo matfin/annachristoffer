@@ -34,7 +34,7 @@ Template.meta.helpers({
 		if(this.seopage === 'project') {
 			return {
 				title: Helpers.loadMessageCode(seoData.title) + ' - ' + Helpers.loadMessageCode(this.project.title),
-				url: 'http://annachristoffer.com/' + Helpers.loadMessageCode(this.project.slug),
+				url: 'http://annachristoffer.com/project/' + Helpers.loadMessageCode(this.project.slug),
 				description: Helpers.loadMessageCode(this.project.description),
 				site_name: seoData.site_name,
 				type: seoData.type,
