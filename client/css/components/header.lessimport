@@ -114,7 +114,7 @@
 }
 
 .mobile_header {
-	z-index: @menuLayer;
+	z-index: @mobileHeaderLayer;
 	position: fixed;
 	width: 100%;
 	height: @gridColumnWidth * 3;
