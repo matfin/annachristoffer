@@ -28,20 +28,75 @@ Helpers = {
 	 *	@return undefined
 	 */
 	switchLanguage: function(languageCode) {
+
 		/**
-		 *	Set the app language code
-		 *	
-		 *	Fire off the changed event for this dependency,
-		 *	which will then call the UI Helper function named
-		 *	loadMessageCode(). This will re-render all text 
-		 *	content on the site in the chosen language.
-		 *	
-		 *	We also persist the language selection by storing
-		 *	it in our local storage using amplify.
+		 *	Switching to the new language first
 		 */
 		App.language = languageCode;
-		amplify.store('language', languageCode);
-		Dependencies.languageChangedDependency.changed();
+
+		var route = '/' + App.language;
+
+		/**
+		 *	On swithcing language, we need to take note
+		 *	of three things:
+		 *	1) 	The current view (list, project, page)
+		 *	2)	The ID of the view 
+		 *	3)	The language
+		 *
+		 *	With these three parameters, we construct a 
+		 *	new url and call IronRouter to go there.
+		 */
+		switch(App.currentView.type) {
+
+			/**
+			 *	The landing view (with or without category)
+			 */
+			case 'list': {
+				/**
+				 *	Are we looking at a category. If so, include the category slug
+				 */
+				if(App.currentView.id) {
+					/**
+					 *	Grab the current category so we can fetch the slug
+					 */
+					var category = App.models.categories.findOne({id: App.currentView.id}),
+						slug = Helpers.loadMessageCode(category.slug);
+					route += '/' + slug;
+				}
+				break;
+			}
+			/**
+			 *	The project view
+			 */
+			case 'project': {
+				/**
+				 *	Grab the current project so we can fetch the slug
+				 */
+				var project = App.models.projects.findOne({id: App.currentView.id}),
+					slug = Helpers.loadMessageCode(project.slug);
+				route += '/project/' +  slug;
+
+				break;
+			}
+			case 'page': {
+				/**
+				 *	Grab the current page so we can fetch the slug
+				 */
+				var page = App.models.pages.findOne({id: App.currentView.id}),
+					slug = Helpers.loadMessageCode(page.slug);
+				route += '/content/' + slug;
+
+				break;
+			}
+
+			default: {
+				//TODO
+				break;
+			}
+		}
+
+		Router.go(route);
+
 	},
 
 	/**

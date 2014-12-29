@@ -29,12 +29,22 @@ Router.map(function() {
 	 *	load the main list page of unfiltered projects.
 	 */
 	this.route('content', {
-		path: '/content/:_page_slug?',
+		path: ':_lang/content/:_page_slug?',
+		onBeforeAction: function() {
+			/**
+			 *	Set the language given the url param
+			 */
+			App.language = this.params._lang;
+			/**
+			 *	Set the current view parameters
+			 */
+			App.currentView.type = 'page';
+			this.next();
+		},
 		waitOn: function() {
 			return [
-				Meteor.subscribe('pages', this.params._page_slug, App.language),
-				Meteor.subscribe('staticContent'),
-				Meteor.subscribe('meta')
+				Meteor.subscribe('pages'),
+				Meteor.subscribe('staticContent')
 			];
 		},
 		action: function() {
@@ -51,56 +61,20 @@ Router.map(function() {
 				return;
 			}
 
-			var page = App.models.pages.findOne({}),
-				alternateLanguages = _.filter(App.languages, function(language) {
-					return language !== App.language;
-				});
+			/**
+			 *	Grab the page given the current language and page slug
+			 */
+			var query = {};
+			query['slug.' + App.language] = this.params._page_slug;
+			var page = App.models.pages.findOne(query);
 
 			/**
-			 *	If we cannot find the page based on the current slug, then run another
-			 *	query to fetch the page in a different language. 
-			 *
-			 *	This fixes a bug that arises when the user changes the language and 
-			 *	refreshes the page. We check the slugs of the page in different languages
-			 *	and load it.
-			 */
-			if(typeof page === 'undefined') {
-				_.each(alternateLanguages, function(language) {
-					var query = {};
-					query['slug.' + language] = this.params._page_slug; 
-					return page = App.models.pages.findOne(query) !== 'undefined';
-				}.bind(this));
-			}
-			
-			App.currentView.type = 'page';
+			 *	Set the current view id to the page id being shown.
+			 *	We need this later to reload the content when the 
+			 *	user changes the language
+			 */			
 			App.currentView.id = page.id;
 			return page;
-		},
-		onAfterAction: function() {
-
-			if(!this.ready()) {
-				return;
-			}
-
-			/**
-			 *	When ready, load and set the SEO/OG data for this view
-			 */
-			var seoData = App.models.meta.findOne({page: 'about'});
-
-			if(typeof seoData !== 'undefined') {
-				SEO.set({
-					title: Helpers.loadMessageCode(seoData.title),
-					meta: {
-						'description': Helpers.loadMessageCode(seoData.description)
-					},
-					og: {
-						'title': Helpers.loadMessageCode(seoData.title),
-						'site_name': seoData.site_name,
-						'url': window.location.href,
-						'type': seoData.type
-					}
-				});
-			}
 		},
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
@@ -117,8 +91,16 @@ Router.map(function() {
 	 *	their category name.
 	 */ 
 	this.route('list', {
-		path: '/:_category_slug?',
+		path: '/:_lang/:_category_slug?',
 		template: 'template_main',
+		onBeforeAction: function() {
+			/**
+			 *	Set the language given the url param
+			 */
+			App.language = this.params._lang;
+			App.currentView.type = 'list';
+			this.next();
+		},
 		action: function() {
 			if(this.ready()) {
 				this.render();
@@ -132,8 +114,7 @@ Router.map(function() {
 				Meteor.subscribe('projects'), 
 				Meteor.subscribe('formations'),
 				Meteor.subscribe('categories'),
-				Meteor.subscribe('staticContent'),
-				Meteor.subscribe('meta')
+				Meteor.subscribe('staticContent')
 			];
 		},
 		data: function() {
@@ -145,18 +126,13 @@ Router.map(function() {
 			var data = {
 				projects: App.models.projects.find({}, {sort: {id: 1}}).fetch()
 			};
-						
-			App.currentView.type = 'list';
 
 			if(this.params._category_slug) {
 				/**
 				 * Building up the query given the category slug and the language
 				 */
 				var query = {},
-					category,
-					alternateLanguages = _.filter(App.languages, function(language) {
-						return language !== App.language;
-					});
+					category;
 
 				query['slug.' + App.language] = this.params._category_slug;
 				
@@ -164,23 +140,6 @@ Router.map(function() {
 				 *	Grab the category given the query
 				 */
 				category = App.models.categories.findOne(query);
-
-				/**
-				 *	If we cannot find the category based on the current slug, then run another
-				 *	query to fetch the category in a different language. 
-				 *
-				 *	This fixes a bug that arises when the user changes the language and 
-				 *	refreshes the page. We check the slugs of the page in different languages
-				 *	and load it.
-				 */
-				if(typeof category === 'undefined') {
-					_.each(alternateLanguages, function(language) {
-						var query = {};
-						query['slug.' + language] = this.params._category_slug; 
-						category = App.models.categories.findOne(query);
-						if(typeof category !== 'undefined') return category;
-					}.bind(this));
-				}
 
 				/**
 				 *	Set the App level currentCategoryId
@@ -198,34 +157,6 @@ Router.map(function() {
 
 			return data;
 		},
-		onAfterAction: function() {
-			
-			if(!this.ready()) {
-				return;
-			}
-
-			/**
-			 *	When ready, load and set the SEO/OG data for this view
-			 */
-			var seoData = App.models.meta.findOne({page: 'overview'}),
-				category = this.data().category;
-
-			if(typeof seoData !== 'undefined') {
-				SEO.set({
-					title: (typeof category !== 'undefined') ? Helpers.loadMessageCode(category.title) + ' - ' + Helpers.loadMessageCode(seoData.title) : Helpers.loadMessageCode(seoData.title),
-					meta: {
-						'description': (typeof category !== 'undefined') ? Helpers.loadMessageCode(category.description) : Helpers.loadMessageCode(seoData.description)
-					},
-					og: {
-						'title': (typeof category !== 'undefined') ? Helpers.loadMessageCode(category.title) + ' - ' + Helpers.loadMessageCode(seoData.title) : Helpers.loadMessageCode(seoData.title),
-						'site_name': seoData.site_name,
-						'url': window.location.href,
-						'type': seoData.type,
-						'image': seoData.image
-					}
-				});
-			}
-		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
 			'header': {to: 'header'},
@@ -239,8 +170,16 @@ Router.map(function() {
 	 *	slug name.
 	 */ 
 	this.route('detail', {
-		path: '/project/:_project_slug',
+		path: ':_lang/project/:_project_slug',
 		template: 'template_main',
+		onBeforeAction: function() {
+			/**
+			 *	Set the language given the url param
+			 */
+			App.language = this.params._lang;
+			App.currentView.type = 'project';
+			this.next();
+		},
 		action: function() {
 			if(this.ready()) {
 				this.render();
@@ -252,8 +191,7 @@ Router.map(function() {
 		waitOn: function() {
 			return [
 				Meteor.subscribe('projects'), 
-				Meteor.subscribe('staticContent'),
-				Meteor.subscribe('meta')
+				Meteor.subscribe('staticContent')
 			];
 		},
 		data: function() {
@@ -265,44 +203,13 @@ Router.map(function() {
 			 *	Given a query built from the slug and language, 
 			 *	return the project
 			 */
-			var query = {};
+			var query = {},
+				project;
 			query['slug.' + App.language] = this.params._project_slug; 
-			return App.models.projects.findOne(query);
-		},
-		onAfterAction: function() {
-			if(!this.ready()) {	
-				return;
-			}
+			project = App.models.projects.findOne(query);
 
-			/**
-			 *	Populating meta tags for SEO. In this case, we will use content from 
-			 *	the static content collection.
-			 */
-			var data = this.data(),
-				seoData = App.models.meta.findOne({page: 'project'});
-
-			/**
-			 *	Checking project data has loaded before attempting to access its properties
-			 */
-			if(typeof seoData !== 'undefined') {
-
-				SEO.set({
-					title: Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(seoData.title),
-					meta: {
-						'description': Helpers.loadMessageCode(data.description)
-					},
-					og: {
-						'title': Helpers.loadMessageCode(data.title) + ' - ' + Helpers.loadMessageCode(seoData.title),
-						'site_name': seoData.site_name,
-						'url': window.location.href,
-						'type': seoData.type,
-						'image': data.og_img
-					}
-				});
-			}
-
-			App.currentView.type = 'project';
-
+			App.currentView.id = project.id;
+			return project;
 		},
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {

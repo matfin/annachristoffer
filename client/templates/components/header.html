@@ -23,13 +23,13 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+					<a href="{{pathFor 'list' _lang=currentLanguage}}" title="{{loadMessageCode staticContent.projects.content}}">
 						{{{loadMessageCode staticContent.projects.content}}}
 					</a>
 				</li>
 				{{#each pages}}
 					<li>
-						<a href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+						<a href="{{pathFor 'content' _lang=currentLanguage _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 							{{{loadMessageCode title}}}
 						</a>
 					</li>
@@ -60,13 +60,13 @@
 			<nav>
 				<ul>
 					<li class="contentLink">
-						<a data-is-landing-page="{{isLandingPage}}" href="/" title="{{loadMessageCode staticContent.projects.content}}">
+						<a data-is-landing-page="{{isLandingPage}}" href="{{pathFor 'list' _lang=currentLanguage}}" title="{{loadMessageCode staticContent.projects.content}}">
 							{{{loadMessageCode staticContent.projects.content}}}
 						</a>
 					</li>
 					{{#each navCategories}}
 						<li class="categoryLink">
-							<a data-is-current-category="{{isCurrentCategory id}}" href="{{pathFor 'list' _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+							<a data-is-current-category="{{isCurrentCategory id}}" href="{{pathFor 'list' _lang=currentLanguage _category_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 								{{loadMessageCode title}}
 							</a>
 						</li>
@@ -74,7 +74,7 @@
 
 					{{#each pages}}
 						<li class="contentLink">
-							<a data-is-current-page="{{isCurrentPage id}}" href="{{pathFor 'content' _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
+							<a data-is-current-page="{{isCurrentPage id}}" href="{{pathFor 'content' _lang=currentLanguage _page_slug=translatedSlug}}" title="{{loadMessageCode title}}">
 								{{{loadMessageCode title}}}
 							</a>
 						</li>

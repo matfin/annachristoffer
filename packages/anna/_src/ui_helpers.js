@@ -9,9 +9,6 @@
  *	@return {String} - The string message fetched by index from the message object
  */
 UI.registerHelper('loadMessageCode', function(message) {
-
-	Dependencies.languageChangedDependency.depend();
-
 	return Helpers.loadMessageCode(message);
 });
 
@@ -54,7 +51,7 @@ UI.registerHelper('isLandingPage', function() {
  *	@return {String} - the current language
  */
 UI.registerHelper('currentLanguage', function() {
-	return App.currentLanguage();
+	return App.language;
 });
 
 /**
@@ -65,7 +62,6 @@ UI.registerHelper('currentLanguage', function() {
  *	@return {Boolean} - true if the language code matches or false
  */
 UI.registerHelper('isCurrentLanguage', function(languageCode) {
-	Dependencies.languageChangedDependency.depend();
 	return App.language === languageCode;
 });
 
@@ -78,7 +74,6 @@ UI.registerHelper('isCurrentLanguage', function(languageCode) {
  *	@return {String} The formatted date
  */
 UI.registerHelper('formattedDate', function(dateString, dateFormat) {
-	Dependencies.languageChangedDependency.depend();
 	return Helpers.formattedDate(dateString, dateFormat);
 });
 

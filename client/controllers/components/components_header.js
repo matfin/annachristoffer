@@ -63,8 +63,6 @@ Template['components_header'].helpers({
 	 */
 	translatedSlug: function() {
 
-		Dependencies.languageChangedDependency.depend();
-
 		var data = Template.currentData(),
 			slug = data.slug;
 

@@ -13,6 +13,4 @@ Dependencies = {
 	videoTimeDependency: new Tracker.Dependency,
 	videoLoadedDependency: new Tracker.Dependency,
 	videoProgressDependency: new Tracker.Dependency,
-
-	languageChangedDependency: new Tracker.Dependency
 };
