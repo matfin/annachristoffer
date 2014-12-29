@@ -32,8 +32,30 @@
 								{
 									"type": "p",
 									"content": {
-										"en": "Through the development of technology communication design evolved to a versatile discipline. Nowadays, classical print products existing next to digital platforms. Being aware of the new and challenging possibilites in the digital age I focused my interest on conceptual design with the ambition to create exceptional experiences in digital environments.",
-										"de": "Kommunikationsdesign entwickelte sich im letzten Jahrhundert zur einer vielseitigen Disziplin, insbesondere die Computertechnologie f&ouml;rderte diese enorme Weiterentwicklung unserer Kommunikation. Auf dem medialen Markt existieren klassische Printproduktionen neben digitalen Plattformen. Die vielen neuen und komplexen M&ouml;glichkeiten im digitalen Zeitalter bewegte meinen Fokus auf die konzeptionelle Gestaltung von digitalen Räumen mit dem Ziel kommunikationsstarke sowie außergw&ouml;hnliche Erfahrungen zu kreieren."
+										"en": "Through the development of technology communication design has evolved to a versatile discipline. Nowadays, classical print products exist next to digital platforms. Being aware of the new and challenging possibilites in the digital age, my main interest has been focusing on conceptual design with the ambition to create exceptional experiences in digital environments.",
+										"de": "Kommunikationsdesign entwickelte sich zur einer vielseitigen Disziplin, wobei die Computertechnologie diese enorme Weiterentwicklung unserer Kommunikation f&ouml;rderte. Die vielen neuen und komplexen M&ouml;glichkeiten im digitalen Zeitalter bewegten meinen Fokus auf die konzeptionelle Gestaltung von digitalen Räumen mit dem Ziel kommunikationsstarke sowie außergew&ouml;hnliche Erfahrungen zu kreieren."
+									}
+								}
+							]
+						},
+						{
+							"items": [
+								{
+									"type": "h1",
+									"content": {
+										"en": "Skills",
+										"de": "Kompetenzen"
+									}
+								}
+							]
+						},
+						{
+							"items": [
+								{
+									"type": "p",
+									"content": {
+										"en": "Adobe Creative Suite, Adobe After Effects, Conceptual Design, Storyboarding and Wireframing.",
+										"de": "Adobe Creative Suite, Adobe After Effects, Konzeptionelle Gestaltung, Storyboarding und Wireframing."
 									}
 								}
 							]

@@ -35,6 +35,8 @@
 			&:last-child {
 				padding-bottom: @gridColumnWidth;
 			}
+
+			padding-top: @gridColumnWidth / 2;
 		}
 	}
 
@@ -45,6 +47,10 @@
 			&:nth-child(odd) {
 				padding-top: @gridColumnWidth;
 				padding-bottom: 0;
+			}
+
+			&:last-child {
+				padding-top: @gridColumnWidth / 2;
 			}
 		}
 	}

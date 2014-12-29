@@ -89,7 +89,6 @@
 						padding-top: @gridColumnWidth * 1.25;
 						padding-bottom: @gridColumnWidth / 4;
 						line-height: @gridColumnWidth;
-						text-transform: lowercase;
 						font-weight: @fontWeightLight;
 						.transition-property(color);
 						.transition-duration(@transitionDuration / 2);
