@@ -16,7 +16,12 @@ var seoPicker = Picker.filter(function(request, result) {
 /**
  *	Setting up the server side route for the landing page
  */
-seoPicker.route('/', function(params, request, result) {
+seoPicker.route('/:_category_slug?', function(params, request, result) {
+
+	/**
+	 *	Optional category slug
+	 */
+	var category_slug = params._category_slug;
 
 	/**
 	 *	Checking user agent strings
@@ -43,7 +48,8 @@ seoPicker.route('/', function(params, request, result) {
 		data: {
 			seopage: 'overview',
 			projects: projects,
-			pageContent: pageContent
+			pageContent: pageContent,
+			categorySlug: category_slug
 		}
 	});
 

@@ -58,7 +58,7 @@ Template.meta.helpers({
 		 */
 		return {
 			title: Helpers.loadMessageCode(seoData.title),
-			url: 'http://annachristoffer.com/',
+			url: 'http://annachristoffer.com/' + (typeof this.categorySlug !== 'undefined' ? this.categorySlug:''),
 			description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description)),
 			site_name: seoData.site_name,
 			type: seoData.type,
