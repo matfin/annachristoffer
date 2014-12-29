@@ -16,7 +16,12 @@ var seoPicker = Picker.filter(function(request, result) {
 /**
  *	Setting up the server side route for the landing page
  */
-seoPicker.route('/:_category_slug?', function(params, request, result) {
+seoPicker.route('/:_lang/:_category_slug?', function(params, request, result) {
+
+	/**
+	 *	Set the current language attribute for the server
+	 */
+	Server.language = params._lang;
 
 	/**
 	 *	Optional category slug
@@ -56,34 +61,24 @@ seoPicker.route('/:_category_slug?', function(params, request, result) {
 /**
  *	Setting up the server side route for the project details page
  */
-seoPicker.route('/project/:_slug', function(params, request, result) {
+seoPicker.route('/:_lang/project/:_slug', function(params, request, result) {
+
+	/**
+	 *	Set the current language attribute for the server
+	 */
+	Server.language = params._lang;
 
 	/**
 	 *	Checking user agent strings
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
 
-	/**
-	 *	Loading the details for the selected project.
-	 */
-	var projectResult,
+	
+	var query = {},
 		project;
+	query['slug.' + Server.language] = params._slug;
+	project = Server.dataSources.projects.collection.findOne(query);
 
-	/**
-	 *	Given a slug for a project, we try to find the project.
-	 *	When the language is different and we cannot find the 
-	 *	slug given the language, we attempt to search using other
-	 *	languages. When we have found the project given the language,
-	 *	we need to reset the server language to load the correct content.
-	 */
-	_.each(Server.languages, function(language) {
-		var query = {};
-		query['slug.' + language] = params._slug;
-		if(typeof (projectResult = Server.dataSources.projects.collection.findOne(query)) !== 'undefined') {
-			project = projectResult;
-			Server.language = language;
-		}
-	});
 
 	/**
 	 *	Creating the template to render the html for the project
@@ -105,32 +100,25 @@ seoPicker.route('/project/:_slug', function(params, request, result) {
 /**
  *	Setting up the server side route for other pages
  */
-seoPicker.route('/content/:_page', function(params, request, result) {
+seoPicker.route('/:_lang/content/:_page', function(params, request, result) {
+
+	/**
+	 *	Set the current language attribute for the server
+	 */
+	Server.language = params._lang;
 
 	/**
 	 *	Checking user agent strings
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
 
-	// var query = {};
-	// query['slug.' + Server.language] = params._page;
-	// var page = Server.dataSources.pages.collection.findOne(query);
 
-	/**
-	 *	Fetching the page data from the slug
-	 */
-	var pageResult,
+	
+	var query = {},
 		page;
+	query['slug.' + Server.language] = params._page;
 
-	_.each(Server.languages, function(language) {
-		var query = {};
-		query['slug.' + language] = params._page;
-
-		if(typeof (pageResult = Server.dataSources.pages.collection.findOne(query)) !== 'undefined') {
-			page = pageResult;
-			Server.language = language;
-		}
-	});
+	page = Server.dataSources.pages.collection.findOne(query);
 
 	/**
 	 *	Creating the template to render the html for the page

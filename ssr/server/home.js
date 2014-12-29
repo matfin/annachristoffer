@@ -12,6 +12,14 @@ SSR.compileTemplate('home', Assets.getText('views/home.html'));
 Template.home.helpers({
 	
 	/**
+	 *	@method currentLanguage
+	 *	@return {String} - grab the current Server language variable
+	 */
+	currentLanguage: function() {
+		return Helpers.currentLanguage();
+	},
+	
+	/**
 	 *	@method loadMessageCode
 	 *	@param 	{Object} message - the message object containing string messages by language
 	 *	@return {String} - the message as indexed by the language

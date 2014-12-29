@@ -8,13 +8,13 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/" title="{{loadMessageCode staticContent.projects.content}}">
+				<a href="/{{currentLanguage}}" title="{{loadMessageCode staticContent.projects.content}}">
 					{{{loadMessageCode staticContent.projects.content}}}
 				</a>
 			</li>
 			{{#each data.pages}}
 				<li>
-					<a href="/content/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
+					<a href="/{{currentLanguage}}/content/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
 						{{{loadMessageCode title}}}
 					</a>
 				</li>

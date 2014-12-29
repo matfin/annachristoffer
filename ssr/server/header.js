@@ -20,6 +20,14 @@ Template.header.helpers({
 	},
 
 	/**
+	 *	@method currentLanguage
+	 *	@return {String} - grab the current Server language variable
+	 */
+	currentLanguage: function() {
+		return Helpers.currentLanguage();
+	},
+
+	/**
 	 *	Populate page content items from the content collection.
 	 */
 	staticContent: function() {
