@@ -29,16 +29,10 @@ seoPicker.route('/:_category_slug?', function(params, request, result) {
 	console.log('UA: ' + request.headers['user-agent']);
 
 	/**
-	 *	Grabbing about page data
- 	 */
- 	var query = {};
-	query['slug.' + Server.language] = 'about';
-	var pageContent = Server.dataSources.pages.collection.findOne(query);
-
-	/**
 	 *	Loading all projects
 	 */
-	var projects = Server.dataSources.projects.collection.find({}).fetch();
+	var projects = Server.dataSources.projects.collection.find({}).fetch(),
+		pages = Server.dataSources.pages.collection.find({}).fetch();
 
 	/**
 	 *	Creating the template
@@ -48,7 +42,7 @@ seoPicker.route('/:_category_slug?', function(params, request, result) {
 		data: {
 			seopage: 'overview',
 			projects: projects,
-			pageContent: pageContent,
+			pages: pages,
 			categorySlug: category_slug
 		}
 	});
@@ -72,9 +66,24 @@ seoPicker.route('/project/:_slug', function(params, request, result) {
 	/**
 	 *	Loading the details for the selected project.
 	 */
-	var query = {};
-	query['slug.' + Server.language] = params._slug;
-	var project = Server.dataSources.projects.collection.findOne(query);
+	var projectResult,
+		project;
+
+	/**
+	 *	Given a slug for a project, we try to find the project.
+	 *	When the language is different and we cannot find the 
+	 *	slug given the language, we attempt to search using other
+	 *	languages. When we have found the project given the language,
+	 *	we need to reset the server language to load the correct content.
+	 */
+	_.each(Server.languages, function(language) {
+		var query = {};
+		query['slug.' + language] = params._slug;
+		if(typeof (projectResult = Server.dataSources.projects.collection.findOne(query)) !== 'undefined') {
+			project = projectResult;
+			Server.language = language;
+		}
+	});
 
 	/**
 	 *	Creating the template to render the html for the project
@@ -103,9 +112,25 @@ seoPicker.route('/content/:_page', function(params, request, result) {
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
 
-	var query = {};
-	query['slug.' + Server.language] = params._page;
-	var page = Server.dataSources.pages.collection.findOne(query);
+	// var query = {};
+	// query['slug.' + Server.language] = params._page;
+	// var page = Server.dataSources.pages.collection.findOne(query);
+
+	/**
+	 *	Fetching the page data from the slug
+	 */
+	var pageResult,
+		page;
+
+	_.each(Server.languages, function(language) {
+		var query = {};
+		query['slug.' + language] = params._page;
+
+		if(typeof (pageResult = Server.dataSources.pages.collection.findOne(query)) !== 'undefined') {
+			page = pageResult;
+			Server.language = language;
+		}
+	});
 
 	/**
 	 *	Creating the template to render the html for the page

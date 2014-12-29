@@ -16,6 +16,14 @@ Server = {
 	language: 'en',
 
 	/**
+	 *	Languages for content this app has
+	 *
+	 *	@property 	languages
+	 *	@type 		{Array}
+	 */
+	languages: ['en', 'de'],
+
+	/**
 	 *	Base url used for fetching endpoint data.
 	 *
 	 *	@property mediaUrl
