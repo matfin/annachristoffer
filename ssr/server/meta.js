@@ -34,7 +34,7 @@ Template.meta.helpers({
 		if(this.seopage === 'project') {
 			return {
 				title: Helpers.loadMessageCode(seoData.title, this.language) + ' - ' + Helpers.loadMessageCode(this.project.title, this.language),
-				url: 'http://annachristoffer.com/project/' + Helpers.loadMessageCode(this.project.slug, this.language),
+				url: 'http://annachristoffer.com/' + this.language + '/project/' + Helpers.loadMessageCode(this.project.slug, this.language),
 				description: new Spacebars.SafeString(Helpers.loadMessageCode(this.project.description, this.language)),
 				site_name: seoData.site_name,
 				type: seoData.type,
@@ -45,7 +45,7 @@ Template.meta.helpers({
 		else if(this.seopage === 'about') {
 			return {
 				title: Helpers.loadMessageCode(seoData.title, this.language) + ' - ' + Helpers.loadMessageCode(this.page.title, this.language),
-				url: 'http://annachristoffer.com/content/' + Helpers.loadMessageCode(this.page.slug, this.language),
+				url: 'http://annachristoffer.com/' + this.language + '/content/' + Helpers.loadMessageCode(this.page.slug, this.language),
 				description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description, this.language)),
 				site_name: seoData.site_name,
 				type: seoData.type,
@@ -58,7 +58,7 @@ Template.meta.helpers({
 		 */
 		return {
 			title: Helpers.loadMessageCode(seoData.title, this.language),
-			url: 'http://annachristoffer.com/' + (typeof this.categorySlug !== 'undefined' ? this.categorySlug:''),
+			url: 'http://annachristoffer.com/' + this.language + '/' + (typeof this.categorySlug !== 'undefined' ? this.categorySlug:''),
 			description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description, this.language)),
 			site_name: seoData.site_name,
 			type: seoData.type,

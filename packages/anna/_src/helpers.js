@@ -296,12 +296,14 @@ Helpers = {
 	 *	Helper to return a nicely formatted date using moment.js
 	 *	
 	 *	@method formattedDate
-	 *	@param {String}	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
-	 *	@param {String} The formatting for the date to be displayed.
+	 *	@param {String} dateString -	The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
+	 *	@param {String} dateFormat -	The formatting for the date to be displayed.
+	 *	@param {String} language   -	Optional language parameter.
 	 *	@return {String} The formatted date
 	 */
-	formattedDate: function(dateString, dateFormat) {
-		moment.locale(App.language);
+	formattedDate: function(dateString, dateFormat, language) {
+		var language = (typeof App !== 'undefined' && App.language !== 'undefined') ? App.language:language;
+		moment.locale(language);
 		var m = moment(dateString);
 		return m.isValid() ? m.format(dateFormat):dateString; 
 	},

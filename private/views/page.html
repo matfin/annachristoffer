@@ -28,9 +28,9 @@
 					{{/if}}
 
 					{{#if isDate type}}
-						<date>{{content.from}}</date>
+						<date>{{formattedDate content.from "MMMM YYYY" ../../../language}}</date>
 						-
-						<date>{{content.to}}</date>
+						<date>{{formattedDate content.to "MMMM YYYY" ../../../language}}</date>
 					{{/if}}
 				{{/each}}
 			{{/each}}

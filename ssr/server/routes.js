@@ -28,6 +28,8 @@ seoPicker.route('/:_lang/:_category_slug?', function(params, request, result) {
 	 *	Checking user agent strings
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
+	console.log('Lang: ', language);
+	console.log('URL: ', request.url, '\n');
 
 	/**
 	 *	Loading all projects
@@ -69,6 +71,8 @@ seoPicker.route('/:_lang/project/:_slug', function(params, request, result) {
 	 *	Checking user agent strings
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
+	console.log('Lang: ', language);
+	console.log('URL: ', request.url, '\n');
 
 	
 	var query = {},
@@ -111,6 +115,8 @@ seoPicker.route('/:_lang/content/:_page', function(params, request, result) {
 	 *	Checking user agent strings
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
+	console.log('Lang: ', language);
+	console.log('URL: ', request.url, '\n');
 	
 	var query = {},
 		page;

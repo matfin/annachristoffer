@@ -32,10 +32,20 @@ Template.page.helpers({
 	 *	@method formattedDate
 	 *	@param 	{String} dateString - The date string, which should be in the format "YYYY-MM-DD" ie: "2013-04-26".
 	 *	@param 	{String} dateFormat - The formatting for the date to be displayed.
+	 *	@param  {String} language   -	Optional language parameter.
 	 *	@return {String} - The formatted date
 	 */
-	formattedDate: function(dateString, dateFormat) {
-		return Helpers.formattedDate(dateString, dateFormat);
+	formattedDate: function(dateString, dateFormat, language) {
+
+		if(typeof dateString === 'undefined' || dateString === '') {
+			var presentTime = {
+				en: 'Present',
+				de: 'Gegenwart'
+			};
+
+			return presentTime[language];
+		}
+		return Helpers.formattedDate(dateString, dateFormat, language);
 	},
 
 	/**
