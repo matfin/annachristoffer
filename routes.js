@@ -85,6 +85,16 @@ Router.map(function() {
 		}
 	});
 
+	/**
+	 *	If no language is set, default to 'de' and reroute
+	 */
+	this.route('default', {
+		path: '/',
+		action: function() {
+			Router.go('/de');
+		}
+	});
+
 	/** 
 	 *	Project list view (all projects) with optional 
 	 *	filter parameter for showing projects only by 
