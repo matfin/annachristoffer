@@ -15,8 +15,8 @@ Template.header.helpers({
 	 *	@param 	{Object} message - the message object containing string messages by language
 	 *	@return {String} - the message as indexed by the language
 	 */
-	loadMessageCode: function(message) {
-		return Helpers.loadMessageCode(message);
+	loadMessageCode: function(message, language) {
+		return Helpers.loadMessageCode(message, (this.language || language));
 	},
 
 	/**
@@ -24,7 +24,7 @@ Template.header.helpers({
 	 *	@return {String} - grab the current Server language variable
 	 */
 	currentLanguage: function() {
-		return Helpers.currentLanguage();
+		return this.language
 	},
 
 	/**

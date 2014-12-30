@@ -23,6 +23,6 @@ Template.layout.helpers({
 	 *	@return {String} - 2 digit language code
 	 */
 	getDocumentLanguage: function() {
-		return Server.language;
+		return this.language;
 	}
 });

@@ -12,12 +12,20 @@ SSR.compileTemplate('page', Assets.getText('views/page.html'));
 Template.page.helpers({
 	
 	/**
+	 *	@method currentLanguage
+	 *	@return {String} - grab the current Server language variable
+	 */
+	currentLanguage: function() {
+		return this.language
+	},
+
+	/**
 	 *	@method loadMessageCode
 	 *	@param 	{Object} message - the message object containing string messages by language
 	 *	@return {String} - the message as indexed by the language
 	 */
-	loadMessageCode: function(message) {
-		return Helpers.loadMessageCode(message);
+	loadMessageCode: function(message, language) {
+		return Helpers.loadMessageCode(message, (this.language || language));
 	},
 
 	/**

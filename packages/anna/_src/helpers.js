@@ -257,12 +257,11 @@ Helpers = {
 	 *	@return {String} - the current language - ie: 'en' or 'de'
 	 */
 	currentLanguage: function() {
-		if(typeof Server !== 'undefined' && typeof Server.language !== 'undefined') {
-			return Server.language;
+
+		if(typeof App === 'undefined') {
+			return 'de';
 		}
-		else {
-			return App.language;
-		}
+		return App.language;
 	},
 
 	/**
@@ -270,15 +269,19 @@ Helpers = {
 	 *
 	 *	@method loadMessageCode	
 	 *	@param {Object} message - the message object containing the mesages in different languages
+	 *	@param {String} language - optional language parameter for server side congtent fetching
 	 *	@return {String} - The string message fetched by index from the message object
+	 *
 	 */
-	loadMessageCode: function(message) {
-
+	loadMessageCode: function(message, language) {
 		if(typeof message === 'undefined') {
 			return 'Content not found. This is undefined';
 		}
 		else if(typeof message === 'string') {
 			return message;
+		}
+		else if(typeof message[language] !== 'undefined') {
+			return message[language];
 		}
 		else if(typeof message[this.currentLanguage()] !== 'undefined') {
 			return message[this.currentLanguage()];

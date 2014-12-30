@@ -15,7 +15,7 @@ Template.meta.helpers({
 	 *	@return {String} - the message as indexed by the language
 	 */
 	loadMessageCode: function(message) {
-		return Helpers.loadMessageCode(message);
+		return Helpers.loadMessageCode(message, this.language);
 	},
 
 	/**
@@ -33,9 +33,9 @@ Template.meta.helpers({
 		 */
 		if(this.seopage === 'project') {
 			return {
-				title: Helpers.loadMessageCode(seoData.title) + ' - ' + Helpers.loadMessageCode(this.project.title),
-				url: 'http://annachristoffer.com/project/' + Helpers.loadMessageCode(this.project.slug),
-				description: new Spacebars.SafeString(Helpers.loadMessageCode(this.project.description)),
+				title: Helpers.loadMessageCode(seoData.title, this.language) + ' - ' + Helpers.loadMessageCode(this.project.title, this.language),
+				url: 'http://annachristoffer.com/project/' + Helpers.loadMessageCode(this.project.slug, this.language),
+				description: new Spacebars.SafeString(Helpers.loadMessageCode(this.project.description, this.language)),
 				site_name: seoData.site_name,
 				type: seoData.type,
 				image: this.project.og_img,
@@ -44,9 +44,9 @@ Template.meta.helpers({
 		}
 		else if(this.seopage === 'about') {
 			return {
-				title: Helpers.loadMessageCode(seoData.title) + ' - ' + Helpers.loadMessageCode(this.page.title),
-				url: 'http://annachristoffer.com/content/' + Helpers.loadMessageCode(this.page.slug),
-				description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description)),
+				title: Helpers.loadMessageCode(seoData.title, this.language) + ' - ' + Helpers.loadMessageCode(this.page.title, this.language),
+				url: 'http://annachristoffer.com/content/' + Helpers.loadMessageCode(this.page.slug, this.language),
+				description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description, this.language)),
 				site_name: seoData.site_name,
 				type: seoData.type,
 				image: seoData.image,
@@ -57,9 +57,9 @@ Template.meta.helpers({
 		 *	Or we return the default SEO data
 		 */
 		return {
-			title: Helpers.loadMessageCode(seoData.title),
+			title: Helpers.loadMessageCode(seoData.title, this.language),
 			url: 'http://annachristoffer.com/' + (typeof this.categorySlug !== 'undefined' ? this.categorySlug:''),
-			description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description)),
+			description: new Spacebars.SafeString(Helpers.loadMessageCode(seoData.description, this.language)),
 			site_name: seoData.site_name,
 			type: seoData.type,
 			image: seoData.image,

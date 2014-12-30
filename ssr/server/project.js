@@ -11,6 +11,14 @@ SSR.compileTemplate('project', Assets.getText('views/project.html'));
 Template.project.helpers({
 
 	/**
+	 *	@method currentLanguage
+	 *	@return {String} - grab the current Server language variable
+	 */
+	currentLanguage: function() {
+		return this.language
+	},
+
+	/**
 	 *	Return project content relevant for SEO indexing. 
 	 */
 	contents: function() {
@@ -43,8 +51,8 @@ Template.project.helpers({
 	 *	@param 	{Object} message - the message object containing string messages by language
 	 *	@return {String} - the message as indexed by the language
 	 */
-	loadMessageCode: function(message) {
-		return Helpers.loadMessageCode(message);
+	loadMessageCode: function(message, language) {
+		return Helpers.loadMessageCode(message, (this.language || language));
 	}
 
 });

@@ -19,14 +19,10 @@ var seoPicker = Picker.filter(function(request, result) {
 seoPicker.route('/:_lang/:_category_slug?', function(params, request, result) {
 
 	/**
-	 *	Set the current language attribute for the server
+	 *	Optional category slug and setting up the language
 	 */
-	Server.language = params._lang;
-
-	/**
-	 *	Optional category slug
-	 */
-	var category_slug = params._category_slug;
+	var category_slug = params._category_slug,
+		language = params._lang;
 
 	/**
 	 *	Checking user agent strings
@@ -48,7 +44,8 @@ seoPicker.route('/:_lang/:_category_slug?', function(params, request, result) {
 			seopage: 'overview',
 			projects: projects,
 			pages: pages,
-			categorySlug: category_slug
+			categorySlug: category_slug,
+			language: language
 		}
 	});
 
@@ -64,9 +61,9 @@ seoPicker.route('/:_lang/:_category_slug?', function(params, request, result) {
 seoPicker.route('/:_lang/project/:_slug', function(params, request, result) {
 
 	/**
-	 *	Set the current language attribute for the server
+	 *	Setting up the language
 	 */
-	Server.language = params._lang;
+	var language = params._lang;
 
 	/**
 	 *	Checking user agent strings
@@ -76,8 +73,9 @@ seoPicker.route('/:_lang/project/:_slug', function(params, request, result) {
 	
 	var query = {},
 		project;
-	query['slug.' + Server.language] = params._slug;
+	query['slug.' + language] = params._slug;
 	project = Server.dataSources.projects.collection.findOne(query);
+	pages = Server.dataSources.pages.collection.find({}).fetch();
 
 
 	/**
@@ -87,7 +85,9 @@ seoPicker.route('/:_lang/project/:_slug', function(params, request, result) {
 		template: 'project',
 		data: {
 			seopage: 'project',
-			project: project
+			project: project,
+			pages: pages,
+			language: language
 		}
 	});
 
@@ -103,22 +103,21 @@ seoPicker.route('/:_lang/project/:_slug', function(params, request, result) {
 seoPicker.route('/:_lang/content/:_page', function(params, request, result) {
 
 	/**
-	 *	Set the current language attribute for the server
+	 *	Setting up the language
 	 */
-	Server.language = params._lang;
+	var language = params._lang;
 
 	/**
 	 *	Checking user agent strings
 	 */
 	console.log('UA: ' + request.headers['user-agent']);
-
-
 	
 	var query = {},
 		page;
-	query['slug.' + Server.language] = params._page;
+	query['slug.' + language] = params._page;
 
-	page = Server.dataSources.pages.collection.findOne(query);
+	page = Server.dataSources.pages.collection.findOne(query),
+	pages = Server.dataSources.pages.collection.find({}).fetch();
 
 	/**
 	 *	Creating the template to render the html for the page
@@ -127,7 +126,9 @@ seoPicker.route('/:_lang/content/:_page', function(params, request, result) {
 		template: 'page',
 		data: {
 			seopage: 'about',
-			page: page
+			page: page,
+			pages: pages,
+			language: language
 		}
 	});
 

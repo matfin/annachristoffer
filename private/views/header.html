@@ -12,10 +12,10 @@
 					{{{loadMessageCode staticContent.projects.content}}}
 				</a>
 			</li>
-			{{#each data.pages}}
+			{{#each pages}}
 				<li>
-					<a href="/{{currentLanguage}}/content/{{loadMessageCode slug}}" title="{{loadMessageCode title}}">
-						{{{loadMessageCode title}}}
+					<a href="/{{../language}}/content/{{loadMessageCode slug ../language}}" title="{{loadMessageCode title}}">
+						{{{loadMessageCode title ../language}}}
 					</a>
 				</li>
 			{{/each}}
