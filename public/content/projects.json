@@ -761,238 +761,6 @@
 		{
 			"id": 8,
 			"slug": {
-				"en": "perfume-cover-design",
-				"de": "perfume-cover-design"
-			},
-			"title": {
-				"en": "Cover Design",
-				"de": "Cover Design"
-			},
-			"description": {
-				"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
-				"de": "&bdquo;Das Parf&uuml;m&ldquo; von Patrick S&uuml;skind"
-			},
-			"og_img": "http://media.annachristoffer.com/images/projects/perfume/4-perfume/4-perfume-bookdesign-hd.jpg",
-			"date_created": "2009-08-01",
-			"category_ids": [
-				{
-					"id": 2
-				},
-				{
-					"id": 3
-				},
-				{
-					"id": 4
-				}
-			],
-			"contents": [
-				{
-					"type": "thumbnail",
-					"img": "thumbnails/perfume-bookdesign"
-				},
-				{
-					"type": "figcaption",
-					"img": "perfume/0-perfume/0-perfume-bookdesign",
-					"intro": {
-						"title": {
-							"en": "Cover Design",
-							"de": "Cover Design"
-						},
-						"description": {
-							"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
-							"de": "&bdquo;Das Parf&uuml;m&ldquo; von Patrick S&uuml;skind"
-						} 
-					},
-					"captions": [
-						{
-							"content": {
-								"en": "The main theme for the book cover is the ambiguity of Jean-Baptiste Grenouille&#39;s gift. He is able to create the most beautiful perfume of the world, but his dream costs human blood and death. The ambiguity is visualised by a colourful field of flowers which hides the terrible truth:the shape of a dead woman&#39;s body.",
-								"de": "Der wesentliche Kontext des Buchumschlages ist die Ambiguität von Jean-Baptiste Grenouilles Gabe. Der sonderbare junge Mann ist fähig das atemberaubendste Perf&uuml;m der Welt zu kreieren, aber f&uuml;r seinen Lebenstraum muss er unzählige Morde an blutjungen Frauen begehen. Diese Zweideutigkeit ist visualisiert in der Darstellung eines farbenprächtigen Blumenfeldes, welches jedoch die grausame Wahrheit verbirgt: den Umriss eines toten Frauenkörpers."
-							}
-						}
-					]	
-				},
-				{
-					"type": "figcaption",
-					"img": "perfume/1-perfume/1-perfume-bookdesign"
-				},
-				{
-					"type": "figcaption",
-					"img": "perfume/2-perfume/2-perfume-bookdesign"
-				},
-				{
-					"type": "figcaption",
-					"img": "perfume/3-perfume/3-perfume-bookdesign"
-				},
-				{
-					"type": "figcaption",
-					"img": "perfume/4-perfume/4-perfume-bookdesign"
-				},
-				{
-					"type": "figcaption",
-					"img": "perfume/5-perfume/5-perfume-bookdesign",
-					"captions": [
-						{
-							"content": {
-								"en": "The book concept was created for a Penguin book design competition.",
-								"de": "Konzept und Gestaltung wurde im Rahmen eines Design-Wettbewerbs vom englischen Verlaghaus &ldquo;Penguin Books&rdquo; erarbeitet."
-							}
-						}
-					]
-				}
-			]
-		},
-		{
-			"id": 9,
-			"slug": {
-				"en": "cartographical-scale",
-				"de": "kartografische-masseinheiten"
-			},
-			"title": {
-				"en": "Cartographical Scale",
-				"de": "Kartografische Maßeinheiten"
-			},
-			"description": {
-				"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
-				"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von seiner Maßeinheit."
-			},
-			"og_img": "http://media.annachristoffer.com/images/projects/cartographical-scale/04-cartographic-round/04-cartographic-round-hd.jpg",
-			"date_created": "2009-11-01",
-			"category_ids": [
-				{
-					"id": 1
-				}
-			],
-			"contents": [
-				{
-					"type": "thumbnail",
-					"img": "thumbnails/cartographic-yellow"
-				},
-				{
-					"type": "figcaption",
-					"img": "cartographical-scale/01-cartographic-yellow/01-cartographic-yellow",
-					"intro": {
-						"title": {
-							"en": "Cartographical Scale",
-							"de": "Kartografische Maßeinheiten"
-						},
-						"description": {
-							"en": "Cartographical Scale",
-							"de": "Kartografische Maßeinheiten"
-						}
-					},
-					"captions": [
-						{
-							"content": {
-								"en": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale.",
-								"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
-							}
-						}
-					]
-				},
-				{
-					"type": "figcaption",
-					"img": "cartographical-scale/02-cartographic-yellow/02-cartographic-yellow",
-					"captions": [
-						{
-							"content": {
-								"en": "The piece contains three main elements; the map in a perforated format, a demonstrative scale to illustrate how much the information in question is condensed, and instructions detailing the assembly of the funnel.",
-								"de": "Das Informationsblatt beinhaltet drei wesentliche Elemente: eine Straßenkarte mit perforierten Umriss, der Maßstab der Karte und eine Gebrauchsanleitung für die Zusammensetzung der Straßenkarte zu einem Papierfilter."
-							}
-						}
-					]
-				},
-				{
-					"type": "figcaption",
-					"img": "cartographical-scale/03-cartographic-maps/03-cartographic-maps",
-					"captions": [
-						{
-							"content": {
-								"en": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales. The street card is produced in an A5 format, the world map in an A3 format and the celestial chart in an A0 format.",
-								"de": "Die drei unterschiedlichen kartografischen Beispiele – Straßenkarte, Weltkarte und Sternkarte – veranschaulichen deutlich in Breite und Größe die voneinander abweichenden Maßstäbe der spezifischen Dokumente. Die Straßenkarte ist im A5-Format, die Weltkarte im A3-Format und die Sternkarte in A0-Format angelegt."
-							}
-						}
-					]
-				},
-				{
-					"type": "figcaption",
-					"img": "cartographical-scale/04-cartographic-round/04-cartographic-round"
-				},
-				{
-					"type": "figcaption",
-					"img": "cartographical-scale/05-cartographic-blue/05-cartographic-blue",
-					"captions": [
-						{
-							"content": {
-								"en": "The paper funnel is an informational design piece, demonstrating the function and purpose of map scale. A map functions like a funnel, concentrating information into a smaller, more managable area depending on scale.",
-								"de": "Das Filtermodell aus Papier ist ein informatives und lehrendes Medium. Es demonstriert Funktion und Zweck der Maßeinheiten von Landkarten. Die Bildentwicklung in der Kartografie unterliegt einem Abstraktionsprozess. Es konzentriert Informationen in eine &uuml;berschaubare reduzierte Form, abhängig von einem Maßstab."
-							}
-						}
-					]
-				}
-			]
-		},
-		{
-			"id": 11,
-			"slug": {
-				"en": "typographical-visualisation",
-				"de": "typografische-visualisierung"
-			},
-			"title": {
-				"en": "Typographical Visualisation",
-				"de": "Typografische Visualisierung"
-			},
-			"description": {
-				"en": "Expression of the feelings of an old woman.",
-				"de": "Eine expressive Visualisierung der Worte einer alten Frau."
-			},
-			"og_img": "http://media.annachristoffer.com/images/projects/typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation-hd.jpg",
-			"date_created": "2010-04-01",
-			"category_ids": [
-				{
-					"id": 5
-				}
-			],
-			"contents": [
-				{
-					"type": "thumbnail",
-					"img": "thumbnails/typographical-visualisation"
-				},
-				{
-					"type": "figcaption",
-					"img": "typographical-visualisation/01-typographical-visualisation/01-typographical-visualisation",
-					"intro": {
-						"title": {
-							"en": "Typographical Visualisation",
-							"de": "Typografische Visualisierung"
-						},
-						"description": {
-							"en": "Expression of the feelings of an old woman.",
-							"de": "Eine expressive Visualisierung der Worte einer alten Frau."
-						}
-					},
-					"captions": [
-						{
-							"content": {
-								"en": "&ldquo;Fading Memories&rdquo; is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society.",
-								"de": "&ldquo;Fading Memories&rdquo; ist ein typografisches Projekt, welches inspiriert wurde von einer Konversation zwischen einer alten Frau und einem jungen Mann an der Bushaltestelle. Die Typografie demonstriert die wahren Gef&uuml;hle hinter dem eigentlich gesagten. Eine alte und senile Dame vernachlässigt von den Menschen. Als solche, bekommt sie ihr soziales Defizit in ihrem alltäglichen Leben zu spüren und ist sich darüber bewusst, dass sie nur noch eine verblassende Figur der Gesellschaft ist."
-							},
-							"content": {
-								"en": "During studies, the brief &ldquo;Let&#39;s Talk Type&rdquo; was set by the English agency &ldquo;The Chase&rdquo;.",
-								"de": "&ldquo;Let&#39;s Talk Type&rdquo; wurde im Rahmen eines Semesterprojekts erabreitet in Zusammenarbeit mit der englischen Agentur &ldquo;The Chase&rdquo;."
-							}
-						}
-					]
-				},
-				{
-					"type": "figcaption",
-					"img": "typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation"
-				}
-			]
-		},
-		{
-			"id": 12,
-			"slug": {
 				"en": "responsive-design",
 				"de": "responsive-design"
 			},
@@ -1017,7 +785,7 @@
 			"contents": [
 				{
 					"type": "thumbnail",
-					"img": "thumbnails/"
+					"img": "thumbnails/responsive-design"
 				},
 				{
 					"type": "figcaption",
@@ -1199,6 +967,238 @@
 						},
 						{
 							"img": "responsive-design/9_2_mobile/9_2_Responsive_Mobile"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 9,
+			"slug": {
+				"en": "cartographical-scale",
+				"de": "kartografische-masseinheiten"
+			},
+			"title": {
+				"en": "Cartographical Scale",
+				"de": "Kartografische Maßeinheiten"
+			},
+			"description": {
+				"en": "A map functions like a funnel, concentrating information into a smaller area depending on scale.",
+				"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von seiner Maßeinheit."
+			},
+			"og_img": "http://media.annachristoffer.com/images/projects/cartographical-scale/04-cartographic-round/04-cartographic-round-hd.jpg",
+			"date_created": "2009-11-01",
+			"category_ids": [
+				{
+					"id": 1
+				}
+			],
+			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/cartographic-yellow"
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/01-cartographic-yellow/01-cartographic-yellow",
+					"intro": {
+						"title": {
+							"en": "Cartographical Scale",
+							"de": "Kartografische Maßeinheiten"
+						},
+						"description": {
+							"en": "Cartographical Scale",
+							"de": "Kartografische Maßeinheiten"
+						}
+					},
+					"captions": [
+						{
+							"content": {
+								"en": "A map functions like a funnel, concentrating information into a smaller manageable area depending on scale.",
+								"de": "Eine Landkarte funktioniert wie ein Filter, abhängig von der Maßeinheit konzentriert es Informationen auf eine kleinere Fläche."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/02-cartographic-yellow/02-cartographic-yellow",
+					"captions": [
+						{
+							"content": {
+								"en": "The piece contains three main elements; the map in a perforated format, a demonstrative scale to illustrate how much the information in question is condensed, and instructions detailing the assembly of the funnel.",
+								"de": "Das Informationsblatt beinhaltet drei wesentliche Elemente: eine Straßenkarte mit perforierten Umriss, der Maßstab der Karte und eine Gebrauchsanleitung für die Zusammensetzung der Straßenkarte zu einem Papierfilter."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/03-cartographic-maps/03-cartographic-maps",
+					"captions": [
+						{
+							"content": {
+								"en": "The three different maps – the street map, the world map and the star chart – clearly shows these different scales. The street card is produced in an A5 format, the world map in an A3 format and the celestial chart in an A0 format.",
+								"de": "Die drei unterschiedlichen kartografischen Beispiele – Straßenkarte, Weltkarte und Sternkarte – veranschaulichen deutlich in Breite und Größe die voneinander abweichenden Maßstäbe der spezifischen Dokumente. Die Straßenkarte ist im A5-Format, die Weltkarte im A3-Format und die Sternkarte in A0-Format angelegt."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/04-cartographic-round/04-cartographic-round"
+				},
+				{
+					"type": "figcaption",
+					"img": "cartographical-scale/05-cartographic-blue/05-cartographic-blue",
+					"captions": [
+						{
+							"content": {
+								"en": "The paper funnel is an informational design piece, demonstrating the function and purpose of map scale. A map functions like a funnel, concentrating information into a smaller, more managable area depending on scale.",
+								"de": "Das Filtermodell aus Papier ist ein informatives und lehrendes Medium. Es demonstriert Funktion und Zweck der Maßeinheiten von Landkarten. Die Bildentwicklung in der Kartografie unterliegt einem Abstraktionsprozess. Es konzentriert Informationen in eine &uuml;berschaubare reduzierte Form, abhängig von einem Maßstab."
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 11,
+			"slug": {
+				"en": "typographical-visualisation",
+				"de": "typografische-visualisierung"
+			},
+			"title": {
+				"en": "Typographical Visualisation",
+				"de": "Typografische Visualisierung"
+			},
+			"description": {
+				"en": "Expression of the feelings of an old woman.",
+				"de": "Eine expressive Visualisierung der Worte einer alten Frau."
+			},
+			"og_img": "http://media.annachristoffer.com/images/projects/typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation-hd.jpg",
+			"date_created": "2010-04-01",
+			"category_ids": [
+				{
+					"id": 5
+				}
+			],
+			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/typographical-visualisation"
+				},
+				{
+					"type": "figcaption",
+					"img": "typographical-visualisation/01-typographical-visualisation/01-typographical-visualisation",
+					"intro": {
+						"title": {
+							"en": "Typographical Visualisation",
+							"de": "Typografische Visualisierung"
+						},
+						"description": {
+							"en": "Expression of the feelings of an old woman.",
+							"de": "Eine expressive Visualisierung der Worte einer alten Frau."
+						}
+					},
+					"captions": [
+						{
+							"content": {
+								"en": "&ldquo;Fading Memories&rdquo; is a typographic project inspired by a conversation between an old woman and a young man at the bus station. The typography demonstrates the true feelings hidden behind her actual words, of an old and feeble woman neglected by the people. As such, she feels her social shortcomings and knows she is only a fading figure in our society.",
+								"de": "&ldquo;Fading Memories&rdquo; ist ein typografisches Projekt, welches inspiriert wurde von einer Konversation zwischen einer alten Frau und einem jungen Mann an der Bushaltestelle. Die Typografie demonstriert die wahren Gef&uuml;hle hinter dem eigentlich gesagten. Eine alte und senile Dame vernachlässigt von den Menschen. Als solche, bekommt sie ihr soziales Defizit in ihrem alltäglichen Leben zu spüren und ist sich darüber bewusst, dass sie nur noch eine verblassende Figur der Gesellschaft ist."
+							},
+							"content": {
+								"en": "During studies, the brief &ldquo;Let&#39;s Talk Type&rdquo; was set by the English agency &ldquo;The Chase&rdquo;.",
+								"de": "&ldquo;Let&#39;s Talk Type&rdquo; wurde im Rahmen eines Semesterprojekts erabreitet in Zusammenarbeit mit der englischen Agentur &ldquo;The Chase&rdquo;."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation"
+				}
+			]
+		},
+		{
+			"id": 12,
+			"slug": {
+				"en": "perfume-cover-design",
+				"de": "perfume-cover-design"
+			},
+			"title": {
+				"en": "Cover Design",
+				"de": "Cover Design"
+			},
+			"description": {
+				"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
+				"de": "&bdquo;Das Parf&uuml;m&ldquo; von Patrick S&uuml;skind"
+			},
+			"og_img": "http://media.annachristoffer.com/images/projects/perfume/4-perfume/4-perfume-bookdesign-hd.jpg",
+			"date_created": "2009-08-01",
+			"category_ids": [
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				},
+				{
+					"id": 4
+				}
+			],
+			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/perfume-bookdesign"
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/0-perfume/0-perfume-bookdesign",
+					"intro": {
+						"title": {
+							"en": "Cover Design",
+							"de": "Cover Design"
+						},
+						"description": {
+							"en": "Novel &ldquo;Perfume&rdquo; from Patrick S&uuml;skind",
+							"de": "&bdquo;Das Parf&uuml;m&ldquo; von Patrick S&uuml;skind"
+						} 
+					},
+					"captions": [
+						{
+							"content": {
+								"en": "The main theme for the book cover is the ambiguity of Jean-Baptiste Grenouille&#39;s gift. He is able to create the most beautiful perfume of the world, but his dream costs human blood and death. The ambiguity is visualised by a colourful field of flowers which hides the terrible truth:the shape of a dead woman&#39;s body.",
+								"de": "Der wesentliche Kontext des Buchumschlages ist die Ambiguität von Jean-Baptiste Grenouilles Gabe. Der sonderbare junge Mann ist fähig das atemberaubendste Perf&uuml;m der Welt zu kreieren, aber f&uuml;r seinen Lebenstraum muss er unzählige Morde an blutjungen Frauen begehen. Diese Zweideutigkeit ist visualisiert in der Darstellung eines farbenprächtigen Blumenfeldes, welches jedoch die grausame Wahrheit verbirgt: den Umriss eines toten Frauenkörpers."
+							}
+						}
+					]	
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/1-perfume/1-perfume-bookdesign"
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/2-perfume/2-perfume-bookdesign"
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/3-perfume/3-perfume-bookdesign"
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/4-perfume/4-perfume-bookdesign"
+				},
+				{
+					"type": "figcaption",
+					"img": "perfume/5-perfume/5-perfume-bookdesign",
+					"captions": [
+						{
+							"content": {
+								"en": "The book concept was created for a Penguin book design competition.",
+								"de": "Konzept und Gestaltung wurde im Rahmen eines Design-Wettbewerbs vom englischen Verlaghaus &ldquo;Penguin Books&rdquo; erarbeitet."
+							}
 						}
 					]
 				}
