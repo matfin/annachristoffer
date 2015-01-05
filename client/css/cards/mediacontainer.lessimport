@@ -21,7 +21,7 @@
 		&.loaded {
 			.opacity(1.0);
 		}
-	}	
+	}
 
 	a.pinterest {
 		z-index: @menuLayer;
@@ -40,6 +40,12 @@
 
 		&.revealed {
 			.opacity(0.8)
+		}
+	}
+
+	&:hover {
+		button.go {
+			.opacity(1.0);
 		}
 	}
 }

@@ -989,6 +989,220 @@
 					"img": "typographical-visualisation/02-typographical-visualisation/02-typographical-visualisation"
 				}
 			]
+		},
+		{
+			"id": 12,
+			"slug": {
+				"en": "responsive-design",
+				"de": "responsive-design"
+			},
+			"title": {
+				"en": "Responsive Design",
+				"de": "Responsive Design"
+			},
+			"description": {
+				"en": "The design process for this website",
+				"de": "Gestaltungprozess f&uuml;r diese Website"
+			},
+			"og_img": "http://media.annachristoffer.com/images/projects/responsive-design/7_mobile/7_Responsive_Mobile-d.jpg",
+			"date_created": "2015-01-05",
+			"category_ids": [
+				{
+					"id": 1
+				},
+				{
+					"id": 3
+				}
+			],
+			"contents": [
+				{
+					"type": "thumbnail",
+					"img": "thumbnails/"
+				},
+				{
+					"type": "figcaption",
+					"intro": {
+						"title": {
+							"en": "Responsive Design",
+							"de": "Responsive Design"
+						},
+						"description": {
+							"en": "The design process for this website",
+							"de": "Gestaltungprozess f&uuml;r diese Website"
+						}
+					},
+					"captions": [
+						{
+							"content": {
+								"en": "Two main intentions been followed to create my digital portfolio. Firstly, the viewer should quickly see an overview of my work. Secondly, I wanted to overcome the design challenges involved in creating a responsive layout, so the site performs well on all devices.",
+								"de": "Zwei wesentliche Ziele wurden bei der Konzeption meines digitalen Portfolios verfolgt: Zum einen soll der Betrachter eine schnelle &Uuml;bersicht von meiner Arbeit bekommen. Zum anderen soll es ein dynamisches Designkonzept geben welches die Website auf allen Endgeräten optimal pr&auml;sentiert."
+							}
+						}
+					],
+					"slides": [
+						{
+							"img": "responsive-design/0_1_ResponsiveDesign/0_1_ResponsiveDesign"
+						},
+						{
+							"img": "responsive-design/0_2_ResponsiveDesign/0_2_ResponsiveDesign"
+						},
+						{
+							"img": "responsive-design/0_3_ResponsiveDesign/0_3_ResponsiveDesign"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "responsive-design/1_Desktop/1_Responsive_Desk",
+					"captions": [
+						{
+							"content": {
+								"en": "Instead of showing an overview of pictures, each project is simple represented by a card with a title and a short description. As the result the focus is first on the text information. When the user hovers the mouse over the card, it flips to reveal the thumbnail image.",
+								"de": "Ein bildlicher Überblick der unterschiedlichen Projekte wird zu Anfang gemieden, wodurch der Fokus erst auf den Text liegt. Jede Karte repr&auml;sentiert ein Projekt mit Titel und kurzer Beschreibung. Beim Mouse-Over wendet sich die Karte und ein Bild des jeweiligen Projekts wird sichtbar."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "responsive-design/2_Desktop/2_Responsive_Desk",
+					"captions": [
+						{
+							"content": {
+								"en": "This scribble presents one of the options for how the project list page could have looked. The idea was to integrate a representative slider module for key projects which is surrounded by the other projects.",
+								"de": "Die Skizze zeigt eine weitere Option wie das Layout aufbereitet werden könnte. Die Idee war es einen repr&auml;sentativen Slider zu integrieren, welches von den einzelnen Projekten umschlossen ist."
+							}
+						},
+						{
+							"content": {
+								"en": "One of the advantages of this was that it could deliver immediate first impressions of important project - however, the decision was made not to use a slide show because the module would have taken up too much space and wouldn’t fulfil the aim of a simple and clear overview of the projects.",
+								"de": "Eines der Vorteil dieser Slide-Show ist, dass der Betrachter unmittelbar erste Eindr&uuml;cke von wichtigen Projekten bekommt. Nichtsdestotrotz wurde zunächst gegen den Slider entschieden, weil das großformatige Modul viel Platz einnimmt und das Grundziel erschwert einen simplen und klaren Gesamt&uuml;berblick der Projekte zu erm&ouml;glichen."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "responsive-design/3_Desktop/3_Responsive_Desk",
+					"captions": [
+						{
+							"content": {
+								"en": "For navigation, a menu appears on the right hand side of the screen and is always visible on tablets and desktop computers, even by scrolling down the page it sticks to it’s position.  The user has easy access to the overview page, the about page and any project category filters.",
+								"de": "Auf Großbildschirmen und Tablet-Ger&auml;ten befindet sich die Navigation immer in der rechten Ecke der grafischen Benutzeroberfl&auml;che; auch beim Scrollen von Seiten steht sie dem Nutzer konstant zur Verf&uuml;gung.  Dementsprechend hat der Benutzer immer leichten Zugriff zu den Oberseiten &ldquo;&Uuml;bersicht&rdquo; und &ldquo;&Uuml;ber mich&rdquo;."
+							}
+						},
+						{
+							"content": {
+								"en": "Further to this, there is also two buttons present to allow the user to quickly and easily switch languages, along with a series of buttons allowing the user to share the site on social media networks.",
+								"de": "Hinzukommend bietet die Navi ein Filtersystem mit verschiedenen Kategorien an. Am unteren Ende der Navigation ist ein Sprachenwechsler vorzufinden. Zus&auml;tzlich werden Share-Funktionen angeboten, um Projekte in sozialen Netzwerken zu teilen."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "responsive-design/4_Desktop/4_Responsive_Desk",
+					"captions": [
+						{
+							"content": {
+								"en": "This wireframe depicts the layout for the project detail page. Project images are presented as figures with captions - images on the left and their captions on the right. When the descriptive caption text is absence, project images will act dynamically by occupying the full width of its parent container.",
+								"de": "Das Wireframe veranschaulicht den Aufbau der Projektdetailseite. Die Projektbilder befinden sich immer auf der linken Seite und die schriftliche Erl&auml;uterung rechts dazu. Wenn keine schriftliche Erl&auml;uterung ben&ouml;tigt wird, passt sich das Bild entsprechend der freien Fl&auml;che an. Projektbilder ohne Begleittext agieren dynamisch und nutzen die Gesamtbreite des Layouts."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"captions": [
+						{
+							"content": {
+								"en": "For smaller devices with limited screen space, the text accompanying an image flows beneath the image instead of beside it.",
+								"de": "Bei kleineren Endgeräten mit begrenzter Bildfläche erfolgt ein fließender Umbruch des Layouts, wodurch die Textpassagen sich unter die Projektbilder positionieren."
+							}
+						}
+					],
+					"slides": [
+						{
+							"img": "responsive-design/5_1_ipad/5_1_Responsive_ipad"
+						},
+						{
+							"img": "responsive-design/5_2_ipad/5_2_Responsive_Mobile"
+						},
+						{
+							"img": "responsive-design/5_3_ipad/5_3_Responsive_Mobile"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"captions": [
+						{
+							"content": {
+								"en": "The structure and design of the information being presented adapts itself to different devices with necessary changes in typography, button sizes and positioning being carried out to ensure ease of use.",
+								"de": "Um eine gute Interaktion und Lesbarkeit zu gew&auml;hrleisten, m&uuml;ssen sich Informationsstruktur und Design entsprechend der Bildschirmgr&ouml;ße anpassen. Gr&ouml;ßenanpassungen von Schrift und Interaktionselementen erleichtern die Interaktion des Nutzers."
+							}
+						},
+						{
+							"content": {
+								"en": "For mobile devices, the navigation menu is fixed to the top of the window and the project filtering buttons arenit shown. With more projects being added in the future, the layout architecture for the filtering system is an ongoing discussion. The illustrations in the slide-show on the left touches on some ideas that could be used to implement filtering for small screen devices.",
+								"de": "Bei mobilen Endger&auml;ten befindet sich die Navi im oberen Bereich des Fensters. Das Filtersystem wird noch nicht zur Verf&uuml;gung gestellt bis der Umfang der Projekte sich steigert und eine Filterung auf Mobiletelefonen sinnvoll erscheint. Die Illustrationen im Slider zeigen weitere M&ouml;glichkeiten wie das Filtersystem implementiert werden k&ouml;nnte."
+							}
+						}
+					],
+					"slides": [
+						{
+							"img": "responsive-design/6_1_mobile/6_1_Responsive_Mobile"
+						},
+						{
+							"img": "responsive-design/6_2_mobile/6_2_Responsive_Mobile"
+						},
+						{
+							"img": "responsive-design/6_3_mobile/6_3_Responsive_Mobile"
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "responsive-design/7_mobile/7_Responsive_Mobile",
+					"captions": [
+						{
+							"content": {
+								"en": "The picture shows other ideas for the layout of the overview page on mobile devices. The design challenge was to figure out how to present as many projects as possible on small screens to ensure a detailed overview of the projects.",
+								"de": "Die Abbildung zeigt weitere Ideen f&uuml;r das Layout der mobilen Ansicht von der &Uuml;bersichtsseite. Die Designaufgabe war es auszuloten wie viele Projekte auf dem Bildschirm im besten Sinne pr&auml;sentiert werden k&ouml;nne."
+							}
+						},
+						{
+							"content": {
+								"en": "If more project cards are presented on the screen (Option 2 and 3), then there is less room to include details on each of them. So finally the desicon was made to go for the first option, cause the title gives a crucial insight of the project.",
+								"de": "Je kleiner die einzelnen Projekte abgebildet werden desto weniger Raum gibt es f&uuml;r schriftliche Zusatzinformationen. Da man nicht auf die Betitelung der einzelnen Projekte verzichten wollte, entschied man sich f&uuml;r die erste Option."
+							}
+						}
+					]
+				},
+				{
+					"type": "figcaption",
+					"img": "responsive-design/8_mobile/8_Responsive_Mobile"
+				},
+				{
+					"type": "figcaption",
+					"captions": [
+						{
+							"content": {
+								"en": "These wireframes outlines new improvements for the about page on the site, because a new portrait picture needs to be included.",
+								"de": "Diese Wireframes veranschaulicht die Optimierung der &Uuml;ber mich-Seite, da ein Profilbild integriert werden soll."
+							}
+						}
+					],
+					"slides": [
+						{
+							"img": "responsive-design/9_1_desktop/9_1_Responsive_Desk_Profile"
+						},
+						{
+							"img": "responsive-design/9_2_mobile/9_2_Responsive_Mobile"
+						}
+					]
+				}
+			]
 		}
 	]
 }
