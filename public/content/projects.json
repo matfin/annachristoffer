@@ -912,7 +912,7 @@
 						},
 						{
 							"content": {
-								"en": "For mobile devices, the navigation menu is fixed to the top of the window and the project filtering buttons are not shown. With more projects being added in the future, the layout architecture for the filtering system is an ongoing discussion. The illustrations in the slide-show touches on some ideas that could be used to implement filtering for small screen devices.",
+								"en": "For mobile devices, the navigation menu is fixed to the top of the window and the project filtering buttons are not shown. With more projects being added in the future, the layout architecture for the filtering system is an ongoing discussion. The illustrations in the slide-show touch on some ideas that could be used to implement filtering for small screen devices.",
 								"de": "Bei mobilen Endger&auml;ten befindet sich die Navi im oberen Bereich des Fensters. Das Filtersystem wird solange nicht zur Verf&uuml;gung gestellt, bis der Umfang der Projekte sich steigert und eine Filterung auf diverse Mobiltelefone sinnvoll erscheint. Die Illustrationen im Slider zeigen weitere M&ouml;glichkeiten, wie das Filtersystem implementiert werden k&ouml;nnte."
 							}
 						}
