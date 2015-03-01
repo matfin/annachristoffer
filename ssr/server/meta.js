@@ -5,7 +5,7 @@
 SSR.compileTemplate('meta', Assets.getText('meta.html'));
 
 /**
- *	Template - header
+ *	Template - meta
  *	Helpers
  */
 Template.meta.helpers({
