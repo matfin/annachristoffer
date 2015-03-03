@@ -701,15 +701,39 @@
 				}, 
 				{
 					"type": "figcaption",
-					"img": "digital-atlas/sitemap/sitemap"
+					"img": "digital-atlas/sitemap/sitemap",
+					"captions": [
+						{
+							"content": {
+								"en": "A sitemap helped to visualise the main structure of the app during its development.",
+								"de": "Ein Seitenbaum half die wesentliche Struktur der Applikation auszuloten."
+							}
+						}
+					]
 				},
 				{
 					"type": "figcaption",
-					"img": "digital-atlas/colour_pattern/colours"
+					"img": "digital-atlas/colour_pattern/colours",
+					"captions": [
+						{
+							"content": {
+								"en": "A colour and form system helps the user to differentiate between the main navigation section and content area.",
+								"de": "Ein differenziertes Farb- und Formsystem veranschaulicht dem Benutzer zwischen Navigation und inhaltlichen Bereichen problemlos zu navigieren."
+							}
+						}
+					]
 				},
 				{
 					"type": "figcaption",
-					"img": "digital-atlas/icons/icons"
+					"img": "digital-atlas/icons/icons",
+					"captions": [
+						{
+							"content": {
+								"en": "The icons are influenced by the shape and characters of the font &ldquo;Adobe Caslon Pro&rdquo;. The main content of the app is presented by this font, because of its classical look and good readability.",
+								"de": "Die Icons sind von ihrer visuellen Form beeinflusst bei der Schrift &ldquo;Adobe Caslon Pro&rdquo;. Der Großteil der Inhalte auf der Applikation präsentiert sich in dieser Schrift. Der Grund dafür war sein traditionelle Gestalt und gute Lesbarkeit."
+							}
+						}
+					]
 				}
 			]
 		},
