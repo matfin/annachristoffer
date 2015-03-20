@@ -63,6 +63,7 @@ Template['components_social'].events = {
 					method: 'share',
 				 	href: window.location.href,
 				}, function(response){});
+				ga('send', 'event', 'button', 'tapped', 'Share', 'Facebook');
 				break;
 			}
 			case 'twitter': {
@@ -70,10 +71,7 @@ Template['components_social'].events = {
 				 *	Window open.
 				 */
 				window.open('https://twitter.com/share?url=' + window.location.href + '&text=Anna%20Christoffer&', 'Tweet', 'height=450, width=550, toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-
-				break;
-			}
-			case 'pinterest': {
+				ga('send', 'event', 'button', 'tapped', 'Share', 'Twitter');
 				break;
 			}
 			default: {

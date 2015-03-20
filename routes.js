@@ -30,6 +30,8 @@ Router.map(function() {
 	 */
 	this.route('content', {
 		path: ':_lang/content/:_page_slug?',
+		trackPageView: true,
+		template: 'template_main',
 		onBeforeAction: function() {
 			/**
 			 *	Set the language given the url param
@@ -76,7 +78,6 @@ Router.map(function() {
 			App.currentView.id = page.id;
 			return page;
 		},
-		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
 			'header': {to: 'header'},
@@ -90,6 +91,7 @@ Router.map(function() {
 	 */
 	this.route('default', {
 		path: '/',
+		trackPageView: false,
 		action: function() {
 			Router.go('/de');
 		}
@@ -102,6 +104,7 @@ Router.map(function() {
 	 */ 
 	this.route('list', {
 		path: '/:_lang/:_category_slug?',
+		trackPageView: true,
 		template: 'template_main',
 		onBeforeAction: function() {
 			/**
@@ -181,6 +184,7 @@ Router.map(function() {
 	 */ 
 	this.route('detail', {
 		path: ':_lang/project/:_project_slug',
+		trackPageView: true,
 		template: 'template_main',
 		onBeforeAction: function() {
 			/**
