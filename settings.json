@@ -1,0 +1,7 @@
+{ 
+	"public": {
+		"ga": {
+			"id": "YOUR-GOOGLE-ANALYTICS-ID"
+		}
+	}
+}
