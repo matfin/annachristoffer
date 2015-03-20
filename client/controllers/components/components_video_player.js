@@ -170,10 +170,12 @@ Template['components_video_player'].events = {
 		if(Video.paused()) {
 			Video.play();
 			$('i', template.findAll('.playcontrol')).removeClass('icon-play').addClass('icon-pause');
+			ga('send', 'event', 'button', 'tapped', 'Video', 'Play');
 		}
 		else {
 			Video.pause();
 			$('i', template.findAll('.playcontrol')).removeClass('icon-pause').addClass('icon-play');
+			ga('send', 'event', 'button', 'tapped', 'Video', 'Paused');
 		}
 	},
 
@@ -182,10 +184,12 @@ Template['components_video_player'].events = {
 		if(Video.muted()) {
 			Video.unmute();
 			$(e.target).removeClass('icon-unmute').addClass('icon-mute');
+			ga('send', 'event', 'button', 'tapped', 'Video', 'Unmute');
 		}
 		else {
 			Video.mute();
 			$(e.target).removeClass('icon-mute').addClass('icon-unmute');
+			ga('send', 'event', 'button', 'tapped', 'Video', 'Mute');
 		}
 	},
 
@@ -204,6 +208,7 @@ Template['components_video_player'].events = {
 
 	'click .fullscreen-toggle': function(e, template) {
 		Video.goFullScreen();
+		ga('send', 'event', 'button', 'tapped', 'Video', 'Go Fullscreen');
 	}	
 }
 

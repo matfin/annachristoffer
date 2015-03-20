@@ -78,6 +78,8 @@ Template['components_header'].helpers({
 Template['components_header'].events = {
 	'click .language-select button': function(e, template) {
 		Helpers.switchLanguage($(e.currentTarget).data('language'));
+
+		ga('send', 'event', 'button', 'tapped', 'Language Select', $(e.currentTarget).data('language'));
 	}
 };
 
