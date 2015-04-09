@@ -20,6 +20,14 @@ Template['components_mobile_header'].rendered = function() {
 	else {
 		this.$('#back').removeClass();
 	}
+
+	/**
+	 *	Notify the webview that the header template has loaded
+	 */
+	var message = {
+		templateRendered: 'components_mobile_header'
+	};
+	Bridge.notifyWebview(encodeURIComponent(JSON.stringify(message)));
 };
 
 /**
@@ -102,7 +110,7 @@ var hideOnScroll = Tracker.autorun(function() {
  *	events
  */
 Template['components_mobile_header'].events = {
-	'click #menu_reveal': function(e, template) {
+	'touchstart #menu_reveal': function(e, template) {
 		template.$('nav').toggleClass('revealed');
 	},
 	'touchstart .switch-language':  function(e, template) {
@@ -114,5 +122,14 @@ Template['components_mobile_header'].events = {
 		}
 		e.preventDefault();
 		return false;
+	},
+	'click .exit': function(e, template) {
+		/**
+		 *	Notify the webview that we need to exit
+		 */
+		var message = {
+			action: 'exit'
+		};
+		Bridge.notifyWebview(encodeURIComponent(JSON.stringify(message)));
 	}
 };
