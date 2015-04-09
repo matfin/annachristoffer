@@ -51,7 +51,8 @@ Template['components_mobile_header'].helpers({
 		var content = {
 			mainHeading: App.models.staticContent.findOne({slug: 'title'}),
 			subtitle: App.models.staticContent.findOne({slug: 'subtitle'}),
-			projects: App.models.staticContent.findOne({slug: 'projects'})
+			projects: App.models.staticContent.findOne({slug: 'projects'}),
+			nativeapp: App.models.staticContent.findOne({slug: 'nativeapp'})
 		};
 		return content;
 	},
@@ -72,8 +73,15 @@ Template['components_mobile_header'].helpers({
 			slug = data.slug;
 
 		return UI._globalHelpers.loadMessageCode(slug);
-	}
+	},
 
+	/**
+	 *	Function returning Device webview status.
+	 */
+	isInsideWebView: function() {
+		Dependencies.loadedInWebViewDependency.depend();
+		return Device.isInsideWebView;
+	}
 });
 
 /**
@@ -94,7 +102,7 @@ var hideOnScroll = Tracker.autorun(function() {
  *	events
  */
 Template['components_mobile_header'].events = {
-	'touchstart #menu_reveal': function(e, template) {
+	'click #menu_reveal': function(e, template) {
 		template.$('nav').toggleClass('revealed');
 	},
 	'touchstart .switch-language':  function(e, template) {
