@@ -9,6 +9,7 @@ Dependencies = {
 	viewportScrollDependency: new Tracker.Dependency,
 	projectLoadedDependency: new Tracker.Dependency,
 	sliderLoadedDependency: new Tracker.Dependency,
+	loadedInWebViewDependency: new Tracker.Dependency,
 
 	videoTimeDependency: new Tracker.Dependency,
 	videoLoadedDependency: new Tracker.Dependency,

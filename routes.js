@@ -93,7 +93,16 @@ Router.map(function() {
 		path: '/',
 		trackPageView: false,
 		action: function() {
-			Router.go('/de');
+
+			var languageCode = amplify.store('language');
+
+			if(typeof languageCode != 'undefined') {
+				Router.go('/' + languageCode);
+			}
+			else {
+				Router.go('/en');
+			}
+			
 		}
 	});
 

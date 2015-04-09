@@ -37,6 +37,11 @@ Helpers = {
 		var route = '/' + App.language;
 
 		/**
+		 *	Persist this value between sessions using localstorage
+		 */
+		amplify.store('language', languageCode);
+
+		/**
 		 *	On swithcing language, we need to take note
 		 *	of three things:
 		 *	1) 	The current view (list, project, page)

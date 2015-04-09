@@ -1,6 +1,6 @@
 Package.describe({
 	summary: 'App, device and dendencies that will assist in setting up the app.',
-	version: '1.0.0',
+	version: '1.1.0',
 	name: 'anna'
 });
 
@@ -29,6 +29,7 @@ Package.onUse(function(api) {
 	 */
 	api.addFiles([
 		'_src/app.js',
+		'_src/bridge.js',
 		'_src/dependencies.js',
 		'_src/device.js',
 		'_src/helpers.js',
@@ -48,6 +49,7 @@ Package.onUse(function(api) {
 	 *	Exporting package classes so they can be access from anywhere within the app.
 	 */
 	api.export('App');
+	api.export('Bridge');
 	api.export('Api');
 	api.export('Dependencies');
 	api.export('Device');
