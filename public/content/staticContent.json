@@ -24,6 +24,14 @@
 				"en": "Overview",
 				"de": "&Uuml;bersicht"
 			}
+		}, 
+		{
+			"id": 4,
+			"slug": "nativeapp",
+			"content": {
+				"en": "Native App",
+				"de": "Native App"
+			}
 		}
 	]
 }

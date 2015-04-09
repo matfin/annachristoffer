@@ -34,6 +34,13 @@
 						</a>
 					</li>
 				{{/each}}
+				{{#if isInsideWebView}}
+					<li>
+						<a href="#" class="exit" title="{{loadMessageCode staticContent.nativeapp.content}}">
+							{{loadMessageCode staticContent.nativeapp.content}}
+						</a>
+					</li>
+				{{/if}}
 				<li>
 					<button class="switch-language" data-language="en" data-selected="{{isCurrentLanguage 'en'}}">
 						EN
