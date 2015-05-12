@@ -7,9 +7,9 @@ Meteor.startup(function() {
 		Device.reset();
 
 		/**
-		 *	Set up smooth scrolling
+		 *	Set up scrolling for lazy loading
 		 */
-		Device.initSmoothScroll();
+		Device.initScroll();
 
 		/**
 		 *	Init social plugins

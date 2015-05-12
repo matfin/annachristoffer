@@ -52,24 +52,17 @@ Device = {
 	 *	Function to enable smooth scrolling by disabling 
 	 *	pointer events on all elements while scrolling.
 	 *
-	 *	@method initSmoothScroll
+	 *	@method initScroll
 	 *	@return undefined - returns nothing
 	 */
-	initSmoothScroll: function() {
+	initScroll: function() {
 		var body = document.body,
 			timer;
 
 		window.addEventListener('scroll', function() {
-
-			clearTimeout(timer);
-			if(!body.classList.contains('scrolling')) {
-				body.classList.add('scrolling');
-			}
-
 			timer = setTimeout(function(){
 				Dependencies.viewportScrollDependency.changed();
-				body.classList.remove('scrolling');
-			}, 100)
+			}, 100);
 		}, false);
 	}
 };
