@@ -1,6 +1,6 @@
 Package.describe({
 	summary: 'App, device and dendencies that will assist in setting up the app.',
-	version: '1.1.0',
+	version: '1.1.1',
 	name: 'anna'
 });
 
