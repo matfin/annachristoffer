@@ -13,7 +13,6 @@ Device = {
 	isTablet: false,
 	isMobile: false,
 	isTouchCapable: false,
-	isInsideWebView: false,
 
 	/**
 	 *	Function to set various device parameters called when the app is first run.
@@ -32,20 +31,6 @@ Device = {
 		this.isMobile = this.windowWidth <= 640;
 		this.isTouchCapable = 'ontouchstart' in document.documentElement;
 		this.hasFlexBox = $('html').hasClass('flexbox');
-	},
-
-	/**
-	 *	Function to call when the app was loaded inside a 
-	 *	devices webview. This will be called from the parent
-	 *	webview being run inside the native application that
-	 *	contains this web application
-	 *
-	 *	@method wasLoadedInsideWebView;
-	 *	@return undefined - returns nothing
-	 */
-	wasLoadedInsideWebView: function() {
-		this.isInsideWebView = true;
-		Dependencies.loadedInWebViewDependency.changed();
 	},
 
 	/**

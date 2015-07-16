@@ -18,7 +18,5 @@ mrt:modernizr-meteor
 amplify
 jeeeyul:moment-with-langs
 
-meteorhacks:ssr
-meteorhacks:picker
 reywood:iron-router-ga
 matfin:slider

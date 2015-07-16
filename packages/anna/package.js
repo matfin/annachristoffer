@@ -29,7 +29,6 @@ Package.onUse(function(api) {
 	 */
 	api.addFiles([
 		'_src/app.js',
-		'_src/bridge.js',
 		'_src/dependencies.js',
 		'_src/device.js',
 		'_src/helpers.js',
