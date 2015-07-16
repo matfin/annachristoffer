@@ -27,7 +27,6 @@ Template['components_mobile_header'].rendered = function() {
 	var message = {
 		templateRendered: 'components_mobile_header'
 	};
-	Bridge.notifyWebview(encodeURIComponent(JSON.stringify(message)));
 };
 
 /**
@@ -81,14 +80,6 @@ Template['components_mobile_header'].helpers({
 			slug = data.slug;
 
 		return UI._globalHelpers.loadMessageCode(slug);
-	},
-
-	/**
-	 *	Function returning Device webview status.
-	 */
-	isInsideWebView: function() {
-		Dependencies.loadedInWebViewDependency.depend();
-		return Device.isInsideWebView;
 	}
 });
 
@@ -122,14 +113,5 @@ Template['components_mobile_header'].events = {
 		}
 		e.preventDefault();
 		return false;
-	},
-	'click .exit': function(e, template) {
-		/**
-		 *	Notify the webview that we need to exit
-		 */
-		var message = {
-			action: 'exit'
-		};
-		Bridge.notifyWebview(encodeURIComponent(JSON.stringify(message)));
 	}
 };
