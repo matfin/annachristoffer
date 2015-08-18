@@ -7,8 +7,9 @@ Package.describe({
 Package.onUse(function(api) {
 
 	/**
-	 *	Meteor version this package is compatible from
+	 *	Minimum version of Meteor required
 	 */
+	api.versionsFrom('1.1.0.2');
 
 	/**
 	 *	Including other Meteor packages

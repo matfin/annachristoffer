@@ -5,18 +5,9 @@
 
 standard-app-packages
 underscore
-mrt:q
 iron:router
 less
-anna
 html5-video-player
-jquery
-http
-ejson
-mrt:normalize.css
-mrt:modernizr-meteor
-amplify
-jeeeyul:moment-with-langs
 
 reywood:iron-router-ga
 matfin:slider

@@ -17,7 +17,7 @@ Package.onUse(function(api) {
 	api.use('mrt:moment', 'client');
 	api.use('mrt:q', 'client');
 	api.use('underscore', 'client');
-	api.use('anna', 'client');
+	api.use('core', 'client');
 
 
 	/**
