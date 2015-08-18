@@ -12,6 +12,11 @@ Package.onUse(function(api) {
 	api.versionsFrom('1.1.0.2');
 
 	/**
+	 *	Dependencies
+	 */
+	api.use('mongo', 'client');
+
+	/**
 	 *	Adding source files for this package (client)
 	 */
 	api.addFiles([

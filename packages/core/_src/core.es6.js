@@ -6,7 +6,7 @@
  * @class Core
  * @static
  */
-let Core = {
+Core = {
 	/**
 	 *	Object containing a list of all Mongo Collections the app uses.
 	 *

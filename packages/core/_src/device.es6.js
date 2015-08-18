@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  * Used to determine device specifications and parameters.
  *
  * @class Device
  * @static
  */
-let Device = {
+Device = {
 	windowWidth: false,
 	pixelRatio: false,
 	isHD: false,

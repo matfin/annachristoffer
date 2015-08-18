@@ -1,11 +1,10 @@
 <head>
-	<!-- Meta tags go in here --> 
 	<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta charset="UTF-8" /> 
-    <script type="text/javascript" src="//use.typekit.net/tnk5zxe.js"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="//use.typekit.net/tnk5zxe.js"></script>
 	<script type="text/javascript">
 		onload = function() {
 			try {
@@ -39,25 +38,8 @@
 <template name="template_main">
 	<div class="wrapper">
 		<div class="container">
-			<!-- Begin: Header -->
 			{{> yield region="header"}}
-			<!-- End: Header -->
-
-			<!-- Begin: Content -->
-			{{#if deviceParameters.isMobile}}
-				<div class="content-mobile">
-					<section>
-						{{> yield region="content"}}
-					</section>
-				</div>
-			{{else}}
-				<div class="content">
-					<section>
-						{{> yield region="content"}}
-					</section>
-				</div>
-			{{/if}}
-			<!-- End: Content -->
+			{{> yield region="content"}}
 		</div>
 	</div>
 </template>
