@@ -4,33 +4,18 @@ Meteor.startup(function() {
 		/**
 		 *	Setting the device parameters
 		 */
-		Device.reset();
+		// Device.reset();
 
 		/**
 		 *	Set up scrolling for lazy loading
 		 */
-		Device.initScroll();
+		// Device.initScroll();
 
 		/**
 		 *	Init social plugins
 		 */
-		Social.Facebook.initSDK();
-		Social.Pinterest.initSDK();
-		
-		Core = {
-			app: {
-				collections: {
-					entries: new Mongo.Collection('entries'),
-					images: new Mongo.Collection('images'),
-					contentTypes: new Mongo.Collection('contentTypes')
-				}
-			}
-		};
-
-		Meteor.subscribe('entries');
-		Meteor.subscribe('images');
-		Meteor.subscribe('contentTypes');
-
+		// Social.Facebook.initSDK();
+		// Social.Pinterest.initSDK();
 	}
 
 	if(Meteor.isServer) {
