@@ -6,10 +6,15 @@
 standard-app-packages
 underscore
 iron:router
-less
 html5-video-player
 
 reywood:iron-router-ga
 matfin:slider
 dfischer:prerenderio
 matfin:meteor-contentful
+fourseven:scss
+markdown
+momentjs:moment
+sanjo:jasmine
+velocity:console-reporter
+velocity:html-reporter

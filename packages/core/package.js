@@ -1,7 +1,7 @@
 Package.describe({
 	summary: 'App, device and dendencies that will assist in setting up the app.',
 	version: '1.5.0',
-	name: 'core'
+	name: 'com.annachristoffer:core'
 });
 
 Package.onUse(function(api) {

@@ -17,7 +17,7 @@ Package.onUse(function(api) {
 	api.use('mrt:moment', 'client');
 	api.use('mrt:q', 'client');
 	api.use('underscore', 'client');
-	api.use('core', 'client');
+	api.use('com.annachristoffer:core', 'client');
 
 
 	/**
