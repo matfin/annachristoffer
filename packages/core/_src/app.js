@@ -41,7 +41,7 @@ App = {
 	 *	@property models
 	 *	@type {Object}
 	 */
-	models: {
+	collections: {
 		/**
 		 *	Entries from Contentful
 		 *
