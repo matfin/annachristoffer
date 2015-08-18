@@ -1,34 +1,12 @@
+'use strict';
+
 /**
  * App class contains globally accessible config options and data.
  *
  * @class App
  * @static
  */
- App = {
- 	
-	/**
-	 *	Base url used for fetching endpoint data.
-	 *
-	 *	@property mediaUrl
-	 *	@type {String}
-	 */
-	mediaUrl: 'http://media.annachristoffer.com/',
-
-	/**
-	 *	Languages for content this app has
-	 *
-	 *	@property 	languages
-	 *	@type 		{Array}
-	 */
-	languages: ['en', 'de'],
-
-	/**
-	 *	Determining the browser language using moment.js and setting it.
-	 *
-	 *	@property language
-	 *	@type {String}
-	 */
-	language: (typeof amplify.store('language') !== 'undefined') ? amplify.store('language'):moment.locale(),
+App = {
 
 	/**
 	 *	The current view the app is on. This will get set within the 
@@ -65,51 +43,19 @@
 	 */
 	models: {
 		/**
-		 *	Mongo Collection that we populate from the content json
+		 *	Entries from Contentful
 		 *
-		 *	@property staticContent
+		 *	@property entries
 		 *	@type {Mongo.Collection}
 		 */
-		staticContent: new Mongo.Collection('staticContent'),
+		entries: new Mongo.Collection('entries'),
 
 		/**
-		 *	Mongo Collection that we populate from the pages json
+		 *	Mongo Collection for processed images
 		 *
-		 *	@property pages
+		 *	@property images
 		 *	@type {Mongo.Collection}
 		 */
-		pages: new Mongo.Collection('pages'),
-		
-		/**
-		 *	Mongo Collection that we populate from the projects json
-		 *
-		 *	@property projects
-		 *	@type {Mongo.Collection}
-		 */
-		projects: new Mongo.Collection('projects'),
-		
-		/**
-		 *	Mongo Collection that we populate from the categories json
-		 *
-		 *	@property categories
-		 *	@type {Mongo.Collection}
-		 */
-		categories: new Mongo.Collection('categories'),
-
-		/**
-		 *	Mongo Collection that we populate from the cardformations json
-		 *
-		 *	@property formations
-		 *	@type {Mongo.Collection}
-		 */
-		formations: new Mongo.Collection('formations'),
-
-		/**
-		 *	Mongo Collection that we populate from the seo json
-		 *	
-		 *	@property meta
-		 *	@type {Mongo.Collection}
-		 */
-		meta: new Mongo.Collection('meta')
+		images: new Mongo.Collection('images')
 	}
 };

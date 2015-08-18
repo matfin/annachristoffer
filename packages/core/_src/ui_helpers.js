@@ -45,27 +45,6 @@ UI.registerHelper('isLandingPage', function() {
 });
 
 /**
- *	Helper function to return the current language
- *
- *	@function currentLanguage
- *	@return {String} - the current language
- */
-UI.registerHelper('currentLanguage', function() {
-	return App.language;
-});
-
-/**
- *	Helper function to determine if the given language is active
- *
- *	@function isCurrentLanguage
- *	@param {String} languageCode - the 2 digit language code
- *	@return {Boolean} - true if the language code matches or false
- */
-UI.registerHelper('isCurrentLanguage', function(languageCode) {
-	return App.language === languageCode;
-});
-
-/**
  *	Helper to return a nicely formatted date using moment.js
  *	
  *	@method formattedDate
@@ -102,18 +81,4 @@ UI.registerHelper('deviceParameters', function() {
  */
 UI.registerHelper('mediaUrl', function() {
 	return App.mediaUrl;
-});
-
-/**
- *	Method to return the correctly sized image given a path
- *	This works according to the device parameters ie: Screen size and density
- *
- *	@method imageSource
- *	@param  {String} 
- *	@return {String} imagePath - the given image path
- */
-UI.registerHelper('imageSource', function() {
-	/**
-	 *	TODO: Flesh this out when we can pass objects into templates.
-	 */
 });
