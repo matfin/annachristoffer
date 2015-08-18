@@ -15,13 +15,13 @@ Package.onUse(function(api) {
 	 *	Adding source files for this package (client)
 	 */
 	api.addFiles([
-		'_src/app.js',
-		'_src/device.js',
+		'_src/core.es6.js',
+		'_src/device.es6.js',
 	], 'client');
 
 	/**
 	 *	Exporting package classes so they can be access from anywhere within the app.
 	 */
-	api.export('App');
+	api.export('Core');
 	api.export('Device');
 });
