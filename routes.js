@@ -9,11 +9,10 @@ Router.map(function() {
 	this.route('content', {
 		path: '/content/:_page_slug?',
 		template: 'template_main',
-		// yieldTemplates: {
-		// 	'header': {to: 'header'},
-		// 	'page': {to: 'content'},
-		// 	'footer': {to: 'footer'}
-		// }
+		yieldTemplates: {
+			'partials_navigation': {to: 'header'},
+			'views_content': {to: 'content'}
+		}
 	}, {where: 'client'});
 
 	/**
@@ -23,11 +22,10 @@ Router.map(function() {
 		path: '/:_category_slug?',
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
-		// yieldTemplates: {
-		// 	'header': {to: 'header'},
-		// 	'list': {to: 'content'},
-		// 	'footer': {to: 'footer'}
-		// }
+		yieldTemplates: {
+			'partials_navigation': {to: 'header'},
+			'views_list': {to: 'content'}
+		}
 	}, {where: 'client'});
 
 	/**
@@ -37,10 +35,9 @@ Router.map(function() {
 		path: '/project/:_project_slug',
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
-		// yieldTemplates: {
-		// 	'header': {to: 'header'},
-		// 	'views_detail': {to: 'content'},
-		// 	'footer': {to: 'footer'}
-		// }
+		yieldTemplates: {
+			'partials_navigation': {to: 'header'},
+			'views_detail': {to: 'content'}
+		}
 	}, {where: 'client'});
 });
