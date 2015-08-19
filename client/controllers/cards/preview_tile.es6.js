@@ -43,7 +43,6 @@ Template.cards_preview_tile.helpers({
 			'device': Device.name,
 			'density.multiplier': 1
 		};
-		console.log(selector);
 		return Core.collections.images.findOne(selector);
 	}
 });
