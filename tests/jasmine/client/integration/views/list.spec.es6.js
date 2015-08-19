@@ -45,9 +45,7 @@ describe('views_list', () => {
 			 *	Spies
 			 */
 			spyOn(Core.collections.entries, 'find').and.returnValue({
-				fetch: () => {
-					return true;
-				}
+				fetch: () => true
 			});
 
 			/**

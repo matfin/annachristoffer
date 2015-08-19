@@ -1,7 +1,9 @@
 <template name="views_list">
 	{{#if Template.subscriptionsReady}}
 		<section class="list">
-			List
+			{{#each projects}}
+				{{>cards_preview_tile}}
+			{{/each}}
 		</section>
 	{{else}}
 		{{> views_loading}}

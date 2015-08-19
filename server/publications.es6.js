@@ -36,3 +36,5 @@ Meteor.publish('entries', function(...contentTypeNames) {
 	this.ready();
 
 });
+
+Meteor.publish('images', (...imageIds) => Collections.images.find({'asset_id': {$in: imageIds}})); 
