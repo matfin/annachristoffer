@@ -1,43 +1,57 @@
+'use strict';
+
+/**
+ *	Common for all routes
+ */
 Router.configure({
+	layoutTemplate: 'template_main',
 	loadingTemplate: 'components_loading'
 });
 
-Router.map(function() {
-	/**
-	 *	Generic content pages
-	 */
-	this.route('content', {
-		path: '/content/:_page_slug?',
-		template: 'template_main',
-		yieldTemplates: {
-			'partials_header': {to: 'header'},
-			'views_content': {to: 'content'}
+/**
+ *	Main route for landing page with an optional 
+ *	category slug.
+ */
+Router.route('/:_slug?', function() {
+	this.render('views_list', {
+		to: 'content',
+		data: {
+			slug: this.params._slug 
 		}
-	}, {where: 'client'});
+	});
+	this.render('partials_header', {
+		to: 'header'
+	});
+}, {name: 'category.show'});
 
-	/**
-	 *	The landing view listing projects with an optional category slug
-	 */
-	this.route('list', {
-		path: '/:_category_slug?',
-		template: 'template_main',
-		notFoundTemplate: 'template_notfound',
-		yieldTemplates: {
-			'partials_header': {to: 'header'},
-			'views_list': {to: 'content'}
+/**
+ *	Project detail view route
+ */
+Router.route('/project/:_slug', function() {
+	this.render('views_detail', {
+		to: 'content',
+		data: {
+			slug: this.params._slug 
 		}
-	}, {where: 'client'});
+	});
+	this.render('partials_header', {
+		to: 'header'
+	});
+}, {name: 'project.show'});
 
-	/**
-	 *	Project detail view
-	 */
-	this.route('detail', {
-		path: '/project/:_project_slug',
-		template: 'template_main',
-		notFoundTemplate: 'template_notfound',
-		yieldTemplates: {
-			'partials_header': {to: 'header'},
-			'views_detail': {to: 'content'}
+/**
+ *	Generic content detail view
+ */
+Router.route('/content/:_slug', function() {
+	this.render('views_content', {
+		to: 'content',
+		data: {
+			slug: this.params._slug 
 		}
-	}, {where: 'client'});
-});
+	});
+	this.render('partials_header', {
+		to: 'header'
+	});
+}, {name: 'content.show'});
+
+

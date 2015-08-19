@@ -2,17 +2,12 @@
 
 /**
  *	Call on Meteor to publish entries, remembering to attach the content type names to them
- *	so they can be properly filtered inside the templates.
+ *	so they can be properly filtered inside the templates. An optional filter can also be 
+ *	applied.
  */
-Meteor.publish('entries', function(...contentTypeNames) {	
+Meteor.publish('entries', function(contentTypeName, filter = {}) {	
 	
-	let contentTypes 		= 	Collections.contentTypes.find({name: {$in: contentTypeNames}}).fetch(),
-			contentTypeIds 	= 	contentTypes.map((contentType) => contentType.sys.id),
-			entries 				= 	Collections.entries.find({'sys.contentType.sys.id': {$in: contentTypeIds}}),
-			attach,
-			handle;
-
-	attach = (entry, attachment) => {
+	let attach = (entry, attachment) => {
 		for(let key in attachment) {
 			if(attachment.hasOwnProperty(key)) {
 				entry[key] = attachment[key];
@@ -20,6 +15,12 @@ Meteor.publish('entries', function(...contentTypeNames) {
 		}
 		return entry;
 	};
+
+	let contentTypes 		= Collections.contentTypes.find({name: contentTypeName}).fetch(),
+			contentTypeIds 	= contentTypes.map((contentType) => contentType.sys.id),
+			selector 				= attach({'sys.contentType.sys.id': {$in: contentTypeIds}}, filter),
+			entries					=	Collections.entries.find(selector),
+			handle;
 
 	handle = entries.observeChanges({
 		added: (id, entry) => {

@@ -16,4 +16,5 @@ Meteor.startup(() => {
 	if(Meteor.isClient) {
 		Device.reset();
 	}
+	
 });
