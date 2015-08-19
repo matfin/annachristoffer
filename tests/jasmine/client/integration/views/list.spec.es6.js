@@ -14,13 +14,13 @@ describe('views_list', () => {
 			testParent = document.createElement('div');
 		});
 
-		it('should call the Meteor subscribe function with the correct parameters', (done) => {
+		it('should subscribe to the entries collection with the correct parameters', (done) => {
 			/**
 			 *	Spies
 			 */
 			spyOn(Meteor, 'subscribe').and.returnValue({
 				subscriptionId: 1,
-				ready: () => { return true; }
+				ready: () => true
 			});
 
 			/**
