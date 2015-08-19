@@ -1,8 +1,8 @@
 'use strict';
 
-describe('Template', () => {
+describe('views_list', () => {
 
-	describe('views_list', () => {
+	describe('template', () => {
 		
 		let parent = document.createElement('div');
 
@@ -33,6 +33,33 @@ describe('Template', () => {
 
 			/**
 			 *	Finish
+			 */
+			done();
+		});
+
+	});
+
+	describe('helpers', () => {
+
+		it('should call find on the entries collection with the correct parameters', (done) => {
+
+			/**
+			 *	Spies
+			 */
+			spyOn(Core.collections.entries, 'find').and.returnValue({
+				fetch: () => {
+					return true;
+				}
+			});
+
+			/**
+			 *	Call the helper function and run the test
+			 */
+			Template.views_list.__helpers[' projects']();
+			expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project'});
+
+			/**
+			 *	Finished
 			 */
 			done();
 		});
