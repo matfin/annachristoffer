@@ -2,18 +2,16 @@
 
 describe('views_list', () => {
 
+	let testParent;
+
 	describe('template', () => {
 		
-		let parent = document.createElement('div');
-
 		beforeEach(() => {
-			parent = document.createElement('div');
+			testParent = document.createElement('div');
 		});
 
 		afterEach(() => {
-			while(parent.firstChild) {
-				parent.removeChild(parent.firstChild);
-			}
+			testParent = document.createElement('div');
 		});
 
 		it('should call the Meteor subscribe function with the correct parameters', (done) => {
@@ -28,7 +26,7 @@ describe('views_list', () => {
 			/**
 			 *	Call render and then run the tests
 			 */
-			Blaze.render(Template.views_list, parent);
+			Blaze.render(Template.views_list, testParent);
 			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project');
 
 			/**
