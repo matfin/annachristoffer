@@ -10,7 +10,7 @@ Router.map(function() {
 		path: '/content/:_page_slug?',
 		template: 'template_main',
 		yieldTemplates: {
-			'partials_navigation': {to: 'header'},
+			'partials_header': {to: 'header'},
 			'views_content': {to: 'content'}
 		}
 	}, {where: 'client'});
@@ -23,7 +23,7 @@ Router.map(function() {
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
-			'partials_navigation': {to: 'header'},
+			'partials_header': {to: 'header'},
 			'views_list': {to: 'content'}
 		}
 	}, {where: 'client'});
@@ -36,7 +36,7 @@ Router.map(function() {
 		template: 'template_main',
 		notFoundTemplate: 'template_notfound',
 		yieldTemplates: {
-			'partials_navigation': {to: 'header'},
+			'partials_header': {to: 'header'},
 			'views_detail': {to: 'content'}
 		}
 	}, {where: 'client'});

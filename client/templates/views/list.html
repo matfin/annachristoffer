@@ -1,7 +1,9 @@
 <template name="views_list">
 	{{#if Template.subscriptionsReady}}
-		{{#each projects}}
-			<p>{{fields.description}}</p>
-		{{/each}}
+		<section class="list">
+			List
+		</section>
+	{{else}}
+		{{> views_loading}}
 	{{/if}}
 </template>
