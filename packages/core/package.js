@@ -1,3 +1,5 @@
+'use strict';
+
 Package.describe({
 	summary: 'App, device and dendencies that will assist in setting up the app.',
 	version: '1.5.0',

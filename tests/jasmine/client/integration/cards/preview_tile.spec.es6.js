@@ -73,11 +73,17 @@ describe('cards_preview_tile', () => {
 				}
 			};
 
+			let selector = {
+				'asset_id': 'preview-12345',
+				'device': 'mobile',
+				'density.multiplier': 1
+			};
+
 			/**
 			 *	Call the function and run the test
 			 */
-			Template.cards_preview_tile.__helpers[' thumbnails'].call(data);
-			expect(Core.collections.images.findOne).toHaveBeenCalledWith({asset_id: 'preview-12345'});
+			Template.cards_preview_tile.__helpers[' thumbnail'].call(data);
+			expect(Core.collections.images.findOne).toHaveBeenCalledWith(selector);
 
 			/**
 			 *	Finished

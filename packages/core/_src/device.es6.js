@@ -9,11 +9,26 @@
 Device = {
 	windowWidth: false,
 	pixelRatio: false,
+	name: '',
 	isHD: false,
 	isDesktop: false,
 	isTablet: false,
 	isMobile: false,
 	isTouchCapable: false,
+
+	/**
+	 *	Function to get the device name
+	 *
+	 *	@method getName
+	 *	@return {String} - either hd, desktop, tablet or mobile
+	 */
+	getName: function() {
+		if(this.isHD) return 'hd';
+		if(this.isDesktop) return 'desktop';
+		if(this.isTablet) return 'tablet';
+		if(this.isMobile) return 'mobile';
+		return 'undetermined';
+	},
 
 	/**
 	 *	Function to set various device parameters called when the app is first run.
@@ -28,6 +43,7 @@ Device = {
 		this.isDesktop = this.windowWidth > 1280 && this.windowWidth <= 1600;
 		this.isTablet = this.windowWidth <= 1024 && this.windowWidth > 640;
 		this.isMobile = this.windowWidth <= 640;
+		this.name = this.getName();
 		this.isTouchCapable = 'ontouchstart' in document.documentElement;
 	}
 };

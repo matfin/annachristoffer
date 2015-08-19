@@ -1,4 +1,7 @@
-Meteor.startup(function() {
+'use strict';
+
+Meteor.startup(() => {
+
 	if(Meteor.isServer) {
 		if(Meteor.settings && Meteor.settings.app && Meteor.settings.app.contentful) {
 			console.log('Booting server with Contentful enabled.');
@@ -8,5 +11,9 @@ Meteor.startup(function() {
 		else {
 			console.log('Booting server with Contentful disabled.');
 		}	
+	}
+
+	if(Meteor.isClient) {
+		Device.reset();
 	}
 });

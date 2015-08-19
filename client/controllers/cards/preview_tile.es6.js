@@ -33,7 +33,17 @@ Template.cards_preview_tile.onDestroyed(function() {
  *	Helper functions
  */
 Template.cards_preview_tile.helpers({
-	thumbnails () {
-		return Core.collections.images.findOne({asset_id: this.fields.previewImage.sys.id});
+
+	/**
+	 *	Function to grab the correct thumbnail given device parameters
+	 */
+	thumbnail () {
+		let selector = {
+			'asset_id': this.fields.previewImage.sys.id,
+			'device': Device.name,
+			'density.multiplier': 1
+		};
+		console.log(selector);
+		return Core.collections.images.findOne(selector);
 	}
 });
