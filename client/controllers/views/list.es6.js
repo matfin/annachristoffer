@@ -5,4 +5,5 @@
  *	@method created
  */
 Template.views_list.created = () => {
+	Meteor.subscribe('entries', 'Project');
 };

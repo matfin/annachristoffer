@@ -11,8 +11,8 @@ describe('Template', () => {
 		});
 
 		afterEach(() => {
-			while(testParent.firstChild) {
-				testParent.removeChild(testParent.firstChild);
+			while(parent.firstChild) {
+				parent.removeChild(parent.firstChild);
 			}
 		});
 
