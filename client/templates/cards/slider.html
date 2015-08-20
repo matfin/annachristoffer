@@ -1,2 +1,9 @@
 <template name="cards_slider">
+	<div class="slider">
+		{{#each this.fields.images}}
+			<div class="slide">
+				{{>cards_image}}
+			</div>
+		{{/each}}
+	</div>
 </template>

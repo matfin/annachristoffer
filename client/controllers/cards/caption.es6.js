@@ -37,5 +37,8 @@ Template.cards_caption.helpers({
 	}, 
 	useSlider: function() {
 		return this.fields.images.length > 1;
+	},
+	standaloneImage: function() {
+		return this.fields.images[0];
 	} 
 });

@@ -6,9 +6,15 @@
 			</figcaption>
 		{{/if}}
 		{{#if useSlider}}
-			{{>cards_slider}}
+			<div class="media__container media__container--slider">
+				{{>cards_slider}}
+			</div>
 		{{else}}
-			{{>cards_image}}
+			{{#with standaloneImage}}
+				<div class="media__container media__container--image">
+					{{>cards_image}}
+				</div>
+			{{/with}}
 		{{/if}}
 	</figure>
 </template>

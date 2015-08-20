@@ -86,7 +86,6 @@ describe('cards_caption', () => {
 				done();
 			});
 		});
-
 	});
 
 });

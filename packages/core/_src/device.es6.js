@@ -23,11 +23,9 @@ Device = {
 	 *	@return {String} - either hd, desktop, tablet or mobile
 	 */
 	getName: function() {
-		if(this.isHD) return 'hd';
-		if(this.isDesktop) return 'desktop';
 		if(this.isTablet) return 'tablet';
 		if(this.isMobile) return 'mobile';
-		return 'undetermined';
+		return 'desktop';
 	},
 
 	/**
