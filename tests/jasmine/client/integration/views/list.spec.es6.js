@@ -39,27 +39,28 @@ describe('views_list', () => {
 
 	describe('helpers', () => {
 
-		it('should call find on the entries collection with the correct parameters', (done) => {
+		describe('projects', () => {
+			it('should call find on the entries collection with the correct parameters', (done) => {
 
-			/**
-			 *	Spies
-			 */
-			spyOn(Core.collections.entries, 'find').and.returnValue({
-				fetch: () => true
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.entries, 'find').and.returnValue({
+					fetch: () => true
+				});
+
+				/**
+				 *	Call the helper function and run the test
+				 */
+				Template.views_list.__helpers[' projects']();
+				expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project'});
+
+				/**
+				 *	Finished
+				 */
+				done();
 			});
-
-			/**
-			 *	Call the helper function and run the test
-			 */
-			Template.views_list.__helpers[' projects']();
-			expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project'});
-
-			/**
-			 *	Finished
-			 */
-			done();
 		});
-
 	});
 
 });

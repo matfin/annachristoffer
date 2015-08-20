@@ -1,2 +1,14 @@
 <template name="cards_caption">
+	<figure>
+		{{#if hasText}}
+			<figcaption>
+				{{#markdown}}{{fields.paragraphs}}{{/markdown}}
+			</figcaption>
+		{{/if}}
+		{{#if useSlider}}
+			{{>cards_slider}}
+		{{else}}
+			{{>cards_image}}
+		{{/if}}
+	</figure>
 </template>

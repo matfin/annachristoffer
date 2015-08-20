@@ -26,3 +26,16 @@ Template.cards_caption.onRendered(function() {
  */
 Template.cards_caption.onDestroyed(function() {
 });
+
+/**
+ *	Template.cards_caption
+ *	Helper functions
+ */
+Template.cards_caption.helpers({
+	hasText: function() {
+		return typeof this.fields.paragraphs !== 'undefined';
+	}, 
+	useSlider: function() {
+		return this.fields.images.length > 1;
+	} 
+});

@@ -53,42 +53,43 @@ describe('cards_preview_tile', () => {
 
 	describe('helpers', () => {
 
-		it('should call find on the images collection with the correct parameters', (done) => {
+		describe('thumbnail', () => {
+			it('should call find on the images collection with the correct parameters', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.images, 'findOne').and.returnValue({});
 
-			/**
-			 *	Spies
-			 */
-			spyOn(Core.collections.images, 'findOne').and.returnValue({});
-
-			/**
-			 *	Dummy data 
-			 */
-			let data = {
-				fields: {
-					previewImage: {
-						sys: {
-							id: 'preview-12345'
+				/**
+				 *	Dummy data 
+				 */
+				let data = {
+					fields: {
+						previewImage: {
+							sys: {
+								id: 'preview-12345'
+							}
 						}
 					}
-				}
-			};
+				};
 
-			let selector = {
-				'asset_id': 'preview-12345',
-				'device': 'mobile',
-				'density.multiplier': 1
-			};
+				let selector = {
+					'asset_id': 'preview-12345',
+					'device': 'mobile',
+					'density.multiplier': 1
+				};
 
-			/**
-			 *	Call the function and run the test
-			 */
-			Template.cards_preview_tile.__helpers[' thumbnail'].call(data);
-			expect(Core.collections.images.findOne).toHaveBeenCalledWith(selector);
+				/**
+				 *	Call the function and run the test
+				 */
+				Template.cards_preview_tile.__helpers[' thumbnail'].call(data);
+				expect(Core.collections.images.findOne).toHaveBeenCalledWith(selector);
 
-			/**
-			 *	Finished
-			 */
-			done();
+				/**
+				 *	Finished
+				 */
+				done();
+			});
 		});
 
 	});
