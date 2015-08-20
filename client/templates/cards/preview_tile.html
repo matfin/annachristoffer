@@ -1,13 +1,13 @@
 <template name="cards_preview_tile">	
 	{{#if Template.subscriptionsReady}}
-		<div class="preview__tile">
+		<a href="{{pathFor 'project.show' _slug=fields.slug}}" class="preview__tile">
 			<div class="preview__tile__content">	
-				<h2>{{fields.title}}</h2>
-				<h3>{{fields.description}}</h3>
-				<time datetime="{{formattedDate fields.createdAt 'x'}}">{{formattedDate fields.createdAt 'MM / YYYY'}}</time>
+				<time class="preview__tile__content__date" datetime="{{formattedDate fields.createdAt 'x'}}">{{formattedDate fields.createdAt 'MM / YYYY'}}</time>
+				<h2 class="preview__tile__content__title">{{fields.title}}</h2>
+				<h3 class="preview__tile__content__description">{{fields.description}}</h3>
 			</div>
 			<div class="preview__tile__thumbnail" style="background-image: url({{mediaUrl}}/{{thumbnail.filename}});">
 			</div>
-		</div>
+		</a>
 	{{/if}}
 </template>

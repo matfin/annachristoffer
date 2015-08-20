@@ -1,0 +1,31 @@
+.preview__tile 
+	+display(flex)
+	padding: 0.5rem
+	+break(min, $break-0)
+		width: 100%
+	+break(min, $break-2)
+		width: 50%
+	+break(min, $break-3)
+		width: 33%
+	+break(min, $break-4)
+		width: 25%
+
+.preview__tile__content
+	width: 100%
+	background-color: rgba($white, 0.6)
+	padding: 0.5rem
+
+.preview__tile__content__date
+	font-size: $standard-font-size
+	letter-spacing: rem(1)
+
+.preview__tile__content__title
+	font-size: $medium-font-size
+	font-weight: $light-weight
+	font-style: italic
+	line-height: $line-height
+	letter-spacing: rem(-0.5)
+
+.preview__tile__content__description
+	font-size: $standard-font-size
+	margin-top: 1rem
