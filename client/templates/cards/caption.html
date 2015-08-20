@@ -1,17 +1,17 @@
 <template name="cards_caption">
-	<figure>
+	<figure class="detail__caption">
 		{{#if hasText}}
-			<figcaption>
+			<figcaption class="detail__caption__text">
 				{{#markdown}}{{fields.paragraphs}}{{/markdown}}
 			</figcaption>
 		{{/if}}
 		{{#if useSlider}}
-			<div class="media__container media__container--slider">
+			<div class="detail__caption__media detail__caption__media--slider">
 				{{>cards_slider}}
 			</div>
 		{{else}}
 			{{#with standaloneImage}}
-				<div class="media__container media__container--image">
+				<div class="detail__caption__media detail__caption__media--image">
 					{{>cards_image}}
 				</div>
 			{{/with}}

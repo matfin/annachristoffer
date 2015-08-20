@@ -1,9 +1,11 @@
 <template name="cards_slider">
-	<div class="slider">
-		{{#each this.fields.images}}
-			<div class="slide">
-				{{>cards_image}}
-			</div>
-		{{/each}}
+	<div class="slider__container">
+		<div class="slider" style="width: {{sliderWidth}}%">
+			{{#each this.fields.images}}
+				<div class="slide">
+					{{>cards_image}}
+				</div>
+			{{/each}}
+		</div>
 	</div>
 </template>

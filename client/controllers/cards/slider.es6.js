@@ -16,6 +16,8 @@ Template.cards_slider.onCreated(function() {
  *	@method rendered
  */
 Template.cards_slider.onRendered(function() {
+	let slider_container = this.$('.slider__container').get(0);
+	this.slider = Slider.setup(slider_container);
 });
 
 /**
@@ -32,5 +34,7 @@ Template.cards_slider.onDestroyed(function() {
  *	Helper functions
  */
 Template.cards_slider.helpers({
-	
+	sliderWidth: function() {
+		return this.fields.images.length * 100;
+	}
 });

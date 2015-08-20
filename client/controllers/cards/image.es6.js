@@ -39,7 +39,6 @@ Template.cards_image.helpers({
 			'device': Device.name,
 			'density.multiplier': Device.pixelRatio
 		};
-		console.log(selector);
 		return Core.collections.images.findOne(selector);
 	}
 });
