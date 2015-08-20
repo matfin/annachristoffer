@@ -35,13 +35,13 @@ Template.cards_caption.onDestroyed(function() {
  *	Helper functions
  */
 Template.cards_caption.helpers({
-	hasText: function() {
+	hasText () {
 		return typeof this.fields.paragraphs !== 'undefined';
 	}, 
-	useSlider: function() {
+	useSlider () {
 		return this.fields.images.length > 1;
 	},
-	standaloneImage: function() {
+	standaloneImage () {
 		return this.fields.images[0];
 	} 
 });

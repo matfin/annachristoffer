@@ -33,7 +33,7 @@ Template.cards_image.onDestroyed(function() {
  *	Helper functions
  */
 Template.cards_image.helpers({
-	image: function() {
+	image () {
 		let selector = {
 			'asset_id': this.sys.id,
 			'device': Device.name,

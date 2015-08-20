@@ -33,7 +33,7 @@ Template.views_detail.onDestroyed(function() {
  *	Helper functions
  */
 Template.views_detail.helpers({
-	project: function() {
+	project () {
 		return Core.collections.entries.findOne({'fields.slug': this.slug});
 	}
 });

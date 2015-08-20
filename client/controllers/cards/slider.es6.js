@@ -34,7 +34,7 @@ Template.cards_slider.onDestroyed(function() {
  *	Helper functions
  */
 Template.cards_slider.helpers({
-	sliderWidth: function() {
+	sliderWidth () {
 		return this.fields.images.length * 100;
 	}
 });
