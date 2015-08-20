@@ -13,6 +13,7 @@ body
 
 h1, h2, h3, h4, p
 	+resetPaddingMargin
+	font-weight: $standard-weight
 
 a 	
 	color: $black
@@ -25,6 +26,11 @@ figure
 	+resetPaddingMargin
 
 p 
-	font-size: rem(14)
-	line-height: rem(20)
-	letter-spacing: rem(0.3)
+	font-size: $standard-font-size
+	line-height: $line-height
+	letter-spacing: $letter-spacing
+
+ul, ol
+	list-style: none
+	font-size: $standard-font-size
+	+resetPaddingMargin

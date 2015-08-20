@@ -1,0 +1,28 @@
+.header 
+	margin-left: 1rem
+	padding: 0.5rem
+	background-color: rgba($white, 0.6)
+	text-align: center
+
+.header__title,
+.header__subtitle 
+	font-size: $standard-font-size
+	line-height: $line-height
+	letter-spacing: $letter-spacing
+
+.header__navigation 
+	margin: 1rem 0
+
+.header__navigation__list__item__link
+	display: block
+	padding-top: 1.25rem
+	padding-bottom: 0.25rem
+	margin: 0 1rem
+	border-bottom: 1px solid $black
+	+transitionWithProperties(border-color)
+
+	&:hover,
+	&:active,
+	&.highlighted
+		border-bottom: 1px solid $highlighted
+	

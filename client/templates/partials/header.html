@@ -1,5 +1,29 @@
 <template name="partials_header">
-	<header>
-		Header
+	<header class="header">
+		<h1 class="header__title">Anna Claire Christoffer</h1>
+		<h2 class="header__subtitle">Conceptual Design</h2>
+		{{#if Template.subscriptionsReady}}
+			<nav class="header__navigation">
+				<ol class="header__navigation__list">
+					<li class="header__navigation__list__item">
+						<a href="{{pathFor 'category.show'}}" class="header__navigation__list__item__link" title="Overview">
+							Overview
+						</a>
+					</li>
+					{{#each categories}}
+						<li class="header__navigation__list__item">
+							<a href="{{pathFor 'category.show' _slug=fields.slug}}" class="header__navigation__list__item__link" title="{{fields.title}}">
+								{{fields.title}}
+							</a>
+						</li>
+					{{/each}}
+					<li class="header__navigation__list__item">
+						<a href="{{pathFor 'content.show' _slug='about'}}" class="header__navigation__list__item__link" title="About">
+							About
+						</a>
+					</li>
+				</ol>
+			</nav>
+		{{/if}}
 	</header>
 </template>
