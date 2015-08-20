@@ -1,2 +1,5 @@
 <template name="cards_image">
+	{{#if Template.subscriptionsReady}}
+		<img src="{{mediaUrl}}/{{image.filename}}" width="100%" height="auto" alt="" />
+	{{/if}}
 </template>

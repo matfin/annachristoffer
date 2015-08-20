@@ -76,7 +76,7 @@ describe('cards_image', () => {
 				Device.pixelRatio = 1;
 				Device.name = 'desktop';
 				Template.cards_image.__helpers[' image'].call(data);
-				expect(Core.collections.images.findOne).toHaveBeenCalledWith({'asset_id': 'dummy-5678', 'name': 'desktop', 'density.multiplier': 1});
+				expect(Core.collections.images.findOne).toHaveBeenCalledWith({'asset_id': 'dummy-5678', 'device': 'desktop', 'density.multiplier': 1});
 
 				/**
 				 *	Finished

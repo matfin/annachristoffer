@@ -36,10 +36,10 @@ Template.cards_image.helpers({
 	image: function() {
 		let selector = {
 			'asset_id': this.sys.id,
-			'name': Device.name,
+			'device': Device.name,
 			'density.multiplier': Device.pixelRatio
 		};
-		console.log(Core.collections.images.findOne(selector), selector);
+		console.log(selector);
 		return Core.collections.images.findOne(selector);
 	}
 });
