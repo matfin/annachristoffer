@@ -58,4 +58,68 @@ describe('partials_header', () => {
 
 	});
 
+	describe('active', () => {
+
+		it('should return the correct classname string if the project category matches that in the router slug', (done) => {
+			/**
+			 *	Spies
+			 */
+			spyOn(Router, 'current').and.returnValue({
+				params: {
+					_slug: 'a-category-slug'
+				}
+			});
+
+			/**
+			 *	Dummy data
+			 */
+			let data = {
+				fields: {
+					slug: 'a-category-slug'
+				}
+			};
+
+			/**
+			 *	Run the function and the test
+			 */
+			expect(Template.partials_header.__helpers[' active'].call(data)).toEqual('header__navigation__list__item__link--active');
+
+			/**
+			 *	Finished
+			 */
+			done();
+		});
+
+		it('should return an empty string if the project category does not match that in the router slug', (done) => {
+			/**
+			 *	Spies
+			 */
+			spyOn(Router, 'current').and.returnValue({
+				params: {
+					_slug: 'another-category-slug'
+				}
+			});
+
+			/**
+			 *	Dummy data
+			 */
+			let data = {
+				fields: {
+					slug: 'a-category-slug'
+				}
+			};
+
+			/**
+			 *	Run the function and the test
+			 */
+			expect(Template.partials_header.__helpers[' active'].call(data)).toEqual('');
+
+			/**
+			 *	Finished
+			 */
+			done();
+		});
+
+	});
+
 });

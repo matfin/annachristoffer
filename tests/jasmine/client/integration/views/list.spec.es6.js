@@ -53,7 +53,7 @@ describe('views_list', () => {
 				 *	Call the helper function and run the test
 				 */
 				Template.views_list.__helpers[' projects']();
-				expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project'});
+				expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project'}, {sort: {'fields.createdAt': - 1}});
 
 				/**
 				 *	Finished

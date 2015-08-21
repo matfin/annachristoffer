@@ -17,7 +17,6 @@ Template.partials_header.onCreated(function() {
  *	@method rendered
  */
 Template.partials_header.onRendered(function() {
-
 });
 
 /**
@@ -34,6 +33,7 @@ Template.partials_header.onDestroyed(function() {
  *	Helper functions
  */
 Template.partials_header.helpers({
+
 	categories: () => Core.collections.entries.find({contentTypeName: 'Project Category'}),
 
 	active () {
@@ -41,4 +41,5 @@ Template.partials_header.helpers({
 				found = this.fields.slug === current_category;
 		return found ? 'header__navigation__list__item__link--active':'';
 	}
+
 });
