@@ -22,7 +22,7 @@ Device = {
 	 *	@method getName
 	 *	@return {String} - either hd, desktop, tablet or mobile
 	 */
-	getName: function() {
+	getName() {
 		if(this.isTablet) return 'tablet';
 		if(this.isMobile) return 'mobile';
 		return 'desktop';
@@ -34,7 +34,7 @@ Device = {
 	 *	@method reset
 	 *	@return undefined - returns nothing
 	 */
-	reset: function() {
+	reset() {
 		this.windowWidth = window.innerWidth;
 		this.pixelRatio = Math.floor(window.devicePixelRatio);
 		this.isHD = this.windowWidth > 1600;

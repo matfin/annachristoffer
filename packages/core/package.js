@@ -16,7 +16,11 @@ Package.onUse(function(api) {
 	/**
 	 *	Dependencies
 	 */
-	api.use('mongo', 'client');
+	api.use([
+		'mongo', 
+		'grigio:babel',
+		'deps'
+	], 'client');
 
 	/**
 	 *	Adding source files for this package (client)
@@ -24,6 +28,7 @@ Package.onUse(function(api) {
 	api.addFiles([
 		'_src/core.es6.js',
 		'_src/device.es6.js',
+		'_src/dependencies.es6.js'
 	], 'client');
 
 	/**
@@ -31,4 +36,5 @@ Package.onUse(function(api) {
 	 */
 	api.export('Core');
 	api.export('Device');
+	api.export('Dependencies');
 });

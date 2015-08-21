@@ -34,6 +34,7 @@ Template.cards_image.onDestroyed(function() {
  */
 Template.cards_image.helpers({
 	image () {
+		Dependencies.resized.depend();
 		let selector = {
 			'asset_id': this.sys.id,
 			'device': Device.name,

@@ -38,6 +38,7 @@ Template.cards_preview_tile.helpers({
 	 *	Function to grab the correct thumbnail given device parameters
 	 */
 	thumbnail () {
+		Dependencies.resized.depend();
 		let selector = {
 			'asset_id': this.fields.previewImage.sys.id,
 			'device': Device.name,

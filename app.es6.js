@@ -15,6 +15,7 @@ Meteor.startup(() => {
 
 	if(Meteor.isClient) {
 		Device.reset();
+		Dependencies.start();
 	}
 	
 });
