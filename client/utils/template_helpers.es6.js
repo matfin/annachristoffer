@@ -20,3 +20,13 @@ UI.registerHelper('formattedDate', (date, format) => {
 UI.registerHelper('mediaUrl', () => {
 	return Meteor.settings.public.mediaUrl;
 });
+
+/**
+ *	Helper function to access the device parameters inside templates
+ *
+ *	@method device
+ *	@return {Object} - the device class with calculated device parameters
+ */
+UI.registerHelper('device', () => {
+	return Device;
+});

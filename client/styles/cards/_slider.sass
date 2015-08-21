@@ -1,3 +1,34 @@
+.slider__container 
+	position: relative
+	cursor: -webkit-grab
+	&:hover 
+		.slider__container__paddle__icon
+			color: rgba($highlighted, 1.0)
+
+.slider__container__paddle
+	z-index: $z-over
+	position: absolute
+	top: 0
+	width: 4rem
+	height: 100%
+	line-height: 100%
+	cursor: pointer
+	+transitionWithProperties(opacity)
+
+.slider__container__paddle--previous
+	left: 0
+
+.slider__container__paddle--next
+	right: 0
+
+.slider__container__paddle--hidden
+	opacity: 0.0
+
+.slider__container__paddle__icon
+	font-size: 3rem
+	color: rgba($highlighted, 0.2)
+	+transitionWithProperties(color)
+
 .detail__caption__media--slider
 	overflow: hidden
 
@@ -6,3 +37,20 @@
 
 .slide 
 	+flex(1)
+
+.slider__indicator
+	+display(flex)
+
+.slider__indicator__button 
+	+flex(1)
+	height: 0.5rem
+	+transitionWithProperties(background-color)
+
+	&:nth-child(odd)
+		background-color: rgba($highlighted, 0.35)
+	&:nth-child(even)
+		background-color: rgba($highlighted, 0.425)
+
+.slider__indicator__button.active
+	background-color: rgba($highlighted, 0.6)
+
