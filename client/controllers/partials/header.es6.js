@@ -40,6 +40,11 @@ Template.partials_header.helpers({
 		let current_category = Router.current().params._slug,
 				found = this.fields.slug === current_category;
 		return found ? 'header__navigation__list__item__link--active':'';
+	},
+
+	top () {
+		Dependencies.scrolled.depend();
+		return window.pageYOffset || document.documentElement.scrollTop; 
 	}
 
 });

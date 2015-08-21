@@ -1,9 +1,10 @@
 .preview__tile
 	+flex(1)
 	+display(flex)
+	+perspective(700px)
 	&:hover
 		.preview__tile__flip__front
-			+transform(rotateY(180deg))
+			+transform(rotateY(-180deg))
 		.preview__tile__flip__rear
 			+transform(rotateY(0deg))
 
@@ -34,6 +35,7 @@
 	+transform(rotateY(180deg))
 
 .preview__tile__content__date
+	display: block
 	font-size: $standard-font-size
 	letter-spacing: rem(1)
 
@@ -41,7 +43,7 @@
 	font-size: $medium-font-size
 	font-weight: $light-weight
 	font-style: italic
-	line-height: $line-height
+	line-height: $line-height * 1.5
 	letter-spacing: rem(-0.5)
 
 .preview__tile__content__description
