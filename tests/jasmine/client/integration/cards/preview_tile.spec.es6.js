@@ -90,6 +90,39 @@ describe('cards_preview_tile', () => {
 				 */
 				done();
 			});
+
+			it('should call depend on the resized tracker dependency', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Dependencies.resized, 'depend').and.returnValue({});
+				spyOn(Core.collections.images, 'findOne').and.returnValue({});
+
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					fields: {
+						previewImage: {
+							sys: {
+								id: 1
+							}
+						}
+					}
+				};
+
+				/**
+				 *	Run the function and then the tests
+				 */
+				Template.cards_preview_tile.__helpers[' thumbnail'].call(data);
+				expect(Dependencies.resized.depend).toHaveBeenCalled();
+
+				/**
+				 *	Finished
+				 */
+				done();
+			});
+
 		});
 
 		describe('highlighted', () => {

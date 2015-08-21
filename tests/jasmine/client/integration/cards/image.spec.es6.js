@@ -83,6 +83,35 @@ describe('cards_image', () => {
 				 */
 				done();
 			});
+
+			it('should call depend on the resized tracker dependency', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Dependencies.resized, 'depend').and.returnValue({});
+				spyOn(Core.collections.images, 'findOne').and.returnValue({});
+
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					sys: {
+						id: 1
+					}
+				};
+
+				/**
+				 *	Run the function and then the tests
+				 */
+				Template.cards_image.__helpers[' image'].call(data);
+				expect(Dependencies.resized.depend).toHaveBeenCalled();
+
+				/**
+				 *	Finished
+				 */
+				done();
+			});
+
 		});
 	});
 
