@@ -33,6 +33,6 @@ Template.views_list.onDestroyed(function() {
  *	Helper functions
  */
 Template.views_list.helpers({
-	projects: () => Core.collections.entries.find({contentTypeName: 'Project'}).fetch()
+	projects: () => Core.collections.entries.find({contentTypeName: 'Project'}, {sort: {'fields.createdAt': -1}}).fetch()
 });
 
