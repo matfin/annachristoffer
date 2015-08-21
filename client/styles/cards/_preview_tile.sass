@@ -16,7 +16,7 @@
 	position: absolute
 	width: 100%
 	height: 100%
-	+transitionWithProperties(transform)
+	+transitionWithProperties(transform background)
 	+transform-style(preserve-3d)
 	+backface-visibility(hidden)
 
@@ -24,6 +24,9 @@
 	z-index: $z-over
 	background-color: rgba($white, 0.6)
 	padding: 0.5rem
+
+.preview__tile__flip__front--highlighted
+	background-color: rgba($tile-highlighted, 0.75)
 
 .preview__tile__flip__rear
 	background-size: cover

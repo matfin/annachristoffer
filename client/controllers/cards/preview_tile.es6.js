@@ -44,5 +44,15 @@ Template.cards_preview_tile.helpers({
 			'density.multiplier': 1
 		};
 		return Core.collections.images.findOne(selector);
+	},
+
+	/**
+	 *	Determines the current highlight state of the tile
+	 */
+	highlighted () {
+		let current_category = Router.current().params._slug,
+				found = typeof this.fields.categories.find((category) => category.fields.slug === current_category) !== 'undefined'; 
+
+		return found ? 'preview__tile__flip__front--highlighted':'';
 	}
 });
