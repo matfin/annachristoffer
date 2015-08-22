@@ -1,5 +1,7 @@
 <template name="cards_image">
 	{{#if Template.subscriptionsReady}}
-		<img class="detail__caption__media__image" src="{{mediaUrl}}/{{image.filename}}" width="100%" height="auto" alt="" />
+		<img class="detail__caption__media__image" data-src="{{mediaUrl}}/{{image.filename}}" width="100%" height="auto" alt="" />
+	{{else}}
+		<p>Wait!</p>
 	{{/if}}
 </template>

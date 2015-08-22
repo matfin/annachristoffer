@@ -20,8 +20,8 @@
 	padding-top: 1.25rem
 	padding-bottom: 0.25rem
 	margin: 0 1rem
-	border-bottom: 1px solid $black
-	+transitionWithProperties(border-color)
+	border-bottom: 1px solid currentColor
+	+transitionWithProperties(border-color color)
 
 	&:hover,
 	&:active
@@ -29,5 +29,5 @@
 
 .header__navigation__list__item__link--active
 	color: $highlighted
-	border-bottom: 1px solid $highlighted
+	border-bottom: 1px solid currentColor
 	
