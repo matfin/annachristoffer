@@ -1,0 +1,23 @@
+.views__loading 
+	z-index: $z-over
+	position: fixed
+	top: 0 
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba($white, 0.9)
+
+.loading__icon 
+	position: absolute;
+	width: 100%
+	height: 100%
+	background-size: 40%
+	background-repeat: no-repeat
+	background-position: center
+
+.loading__icon--still 
+	background-image: url('/svg/loading_animate.svg')
+	+animation(rotate 15s linear infinite)
+
+.loading__icon--animated
+	background-image: url('/svg/loading_still.svg')
