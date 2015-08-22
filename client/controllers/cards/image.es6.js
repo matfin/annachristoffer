@@ -7,9 +7,10 @@
  *	@method created
  */
 Template.cards_image.onCreated(function() {
-	setTimeout(() => {
-		Meteor.subscribe('images', this.data.sys.id);
-	}, 120000);
+	this.dependency = new Tracker.Dependency;
+	this.handle = this.subscribe('images', this.data.sys.id, () => {
+		this.dependency.changed();
+	});
 });
 
 /**
@@ -19,12 +20,13 @@ Template.cards_image.onCreated(function() {
  *	@method rendered
  */
 Template.cards_image.onRendered(function() {
-	let target = this.$('img').get(0);
-
 	this.autorun(() => {
-		console.log(this.subscriptionsReady() ? 'YES':'NO');
+		this.dependency.depend();
 		Dependencies.scrolled.depend();
-		Core.helpers.lazyLoad(target);
+		if(this.handle.ready()) {
+			let target = this.$('img').get(0);
+			Core.helpers.lazyLoad(target);
+		}
 	});
 });
 
@@ -35,6 +37,7 @@ Template.cards_image.onRendered(function() {
  *	@method destroyed
  */
 Template.cards_image.onDestroyed(function() {
+	this.handle.stop();
 });
 
 /**

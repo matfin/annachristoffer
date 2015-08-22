@@ -16,9 +16,6 @@ Template.cards_caption.onCreated(function() {
  *	@method rendered
  */
 Template.cards_caption.onRendered(function() {
-	if(this.data.fields.images.length > 1) {
-		
-	}
 });
 
 /**

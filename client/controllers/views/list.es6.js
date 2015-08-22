@@ -7,7 +7,7 @@
  *	@method created
  */
 Template.views_list.onCreated(function() {
-	Meteor.subscribe('entries', 'Project');
+	this.subscribe('entries', 'Project');
 });
 
 /**

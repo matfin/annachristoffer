@@ -33,9 +33,11 @@ Meteor.publish('entries', function(contentTypeName, filter = {}) {
 		}
 	});
 	
-	this.onStop(handle.stop);
-	this.ready();
+	this.onStop(() => {
+		handle.stop();
+	});
 
+	this.ready();
 });
 
-Meteor.publish('images', (...imageIds) => Collections.images.find({'asset_id': {$in: imageIds}})); 
+Meteor.publish('images', (...imageIds) => Collections.images.find({'asset_id': {$in: imageIds}}));

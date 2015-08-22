@@ -1,6 +1,6 @@
 <template name="views_list">
-	{{#if Template.subscriptionsReady}}
-		<section class="list">
+	<section class="list">
+		{{#if Template.subscriptionsReady}}
 			<ul class="list__projects">
 				{{#each projects}}
 					<li class="list__projects__item">
@@ -8,8 +8,8 @@
 					</li>
 				{{/each}}
 			</ul>
-		</section>
-	{{else}}
-		{{> views_loading}}
-	{{/if}}
+		{{else}}
+			{{> partials_loading}}
+		{{/if}}
+	</section>
 </template>

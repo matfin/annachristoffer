@@ -1,11 +1,13 @@
 <template name="views_detail">
-	{{#if Template.subscriptionsReady}}
-		<section class="detail">
+	<section class="detail">
+		{{#if Template.subscriptionsReady}}
 			{{#with project}}
 				{{#each fields.items}}
 					{{>cards_caption}}
 				{{/each}}
 			{{/with}}
-		</section>
-	{{/if}}
+		{{else}}
+			{{>partials_loading}}
+		{{/if}}
+	</section>
 </template>

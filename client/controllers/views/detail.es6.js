@@ -7,7 +7,7 @@
  *	@method created
  */
 Template.views_detail.onCreated(function() {
-	Meteor.subscribe('entries', 'Project', {'fields.slug': this.data.slug});
+	this.subscribe('entries', 'Project', {'fields.slug': this.data.slug});
 });
 
 /**

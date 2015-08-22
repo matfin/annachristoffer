@@ -7,7 +7,7 @@
  *	@method created
  */
 Template.partials_header.onCreated(function() {
-	Meteor.subscribe('entries', 'Project Category');
+	this.subscribe('entries', 'Project Category');
 });
 
 /**

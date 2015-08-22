@@ -29,18 +29,29 @@ Core.helpers = class Helpers {
 	 *	@param 	{Object} - the dom node for the image
 	 */
 	static lazyLoad (imgnode) {
-
 		let image 		= new Image(),
 				data_src	= imgnode.getAttribute('data-src'),
 				loaded		= typeof imgnode.attributes.src !== 'undefined',
 				visible 	= this.isVisible(imgnode);
-
+				
 		if(!loaded && visible) {
 			image.src = data_src;
 			image.onload = () => {
 				imgnode.setAttribute('src', data_src);
 			}
 		}
+	}
+
+	/**
+	 *	Function to observe a mutation on a dom element
+	 *
+	 *	@method observeMutation
+	 */
+	static observeMutation (target) {
+		let observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {console.log(mutation)});
+		});	
+		observer.observe(target, {attributes: true});
 	}
 
 };
