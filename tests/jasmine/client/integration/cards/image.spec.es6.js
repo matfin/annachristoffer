@@ -37,14 +37,13 @@ describe('cards_image', () => {
 			 *	Call the function and run the tests
 			 */
 			Blaze.renderWithData(Template.cards_image, data, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('images', 'dummy-6789');
+			expect(Meteor.subscribe).toHaveBeenCalledWith('images', 'dummy-6789', {onReady: jasmine.any(Function), onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finished
 			 */
 			done();
 		});
-
 	});
 
 	describe('helpers', () => {

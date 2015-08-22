@@ -34,7 +34,7 @@ describe('views_detail', () => {
 			 *	Run the function and then run the tests
 			 */
 			Blaze.renderWithData(Template.views_detail, data, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project', {'fields.slug': 'a-test-project'});
+			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project', {'fields.slug': 'a-test-project'}, {onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finished

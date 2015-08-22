@@ -25,9 +25,13 @@ describe('partials_header', () => {
 
 			/**
 			 *	Call the render function and run the test
+			 *	Note: When a template calls subscribe, it will call
+			 *				a stop on the handle when it is destroyed, so the
+			 *				onStop function is called even though it is not 
+			 *				in as an argument in the template controller
 			 */
 			Blaze.render(Template.partials_header, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project Category');
+			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project Category', {onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finished
