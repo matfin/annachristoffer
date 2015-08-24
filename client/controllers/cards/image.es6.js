@@ -20,12 +20,15 @@ Template.cards_image.onCreated(function() {
  *	@method rendered
  */
 Template.cards_image.onRendered(function() {
-	this.autorun(() => {
+	this.lazyloader = this.autorun(() => {
 		this.dependency.depend();
 		Dependencies.scrolled.depend();
 		if(this.handle.ready()) {
 			let target = this.$('img').get(0);
-			Core.helpers.lazyLoad(target);
+			Core.helpers.lazyLoad(target).then(() => {
+				this.$('.partials__loading').remove();
+				target.classList.add('detail__caption__media__image--loaded')
+			});
 		}
 	});
 });

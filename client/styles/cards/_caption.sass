@@ -20,3 +20,8 @@
 
 .detail__caption__media__image
 	display: block
+	opacity: 0
+	+transitionWithProperties(opacity)
+
+.detail__caption__media__image--loaded
+	opacity: 1

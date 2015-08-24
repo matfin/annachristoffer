@@ -32,13 +32,19 @@ Core.helpers = class Helpers {
 		let image 		= new Image(),
 				data_src	= imgnode.getAttribute('data-src'),
 				loaded		= typeof imgnode.attributes.src !== 'undefined',
-				visible 	= this.isVisible(imgnode);
+				visible 	= this.isVisible(imgnode),
+				callback;
 				
 		if(!loaded && visible) {
 			image.src = data_src;
 			image.onload = () => {
 				imgnode.setAttribute('src', data_src);
+				callback();
 			}
+		}
+
+		return {
+			then: (cb) => { callback = cb; }
 		}
 	}
 
