@@ -40,5 +40,8 @@ Template.cards_caption.helpers({
 	},
 	standaloneImage () {
 		return this.fields.images[0];
-	} 
+	},
+	video () {
+		return typeof this.fields.videoSource !== 'undefined' ? this.fields.videoSource : false;
+	}	
 });

@@ -1,2 +1,7 @@
 <template name="cards_video">
+	{{#if Template.subscriptionsReady}}
+		<video width="100%" height="auto" poster="{{poster}}">
+			<source src="{{videoUrl}}" />
+		</video>
+	{{/if}}
 </template>

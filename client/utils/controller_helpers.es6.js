@@ -60,4 +60,14 @@ Core.helpers = class Helpers {
 		observer.observe(target, {attributes: true});
 	}
 
+	/**
+	 *	Function to get the base media url for images from the app settings
+	 *
+	 *	@method mediaUrl
+	 *	@return {String} - the media url from settings
+	 */
+	static mediaUrl () {
+		return Meteor.settings.public.mediaUrl
+	}
+
 };
