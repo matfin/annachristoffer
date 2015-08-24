@@ -51,3 +51,15 @@ Template.partials_header.helpers({
 	}
 
 });
+
+/**
+ *	Template.partials_header
+ *	Events
+ */
+Template.partials_header.events({
+
+	'touchstart .header__button': (e, template) => {
+		template.$('.header').toggleClass('header--revealed');
+	}
+
+});

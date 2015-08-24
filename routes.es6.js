@@ -8,6 +8,14 @@ Router.configure({
 	loadingTemplate: 'components_loading'
 });
 
+Router.onBeforeAction(function() {
+	let header = $('header');
+	if(header.hasClass('header--revealed')) {
+		header.removeClass('header--revealed');
+	}
+	this.next();
+});
+
 /**
  *	Main route for landing page with an optional 
  *	category slug.

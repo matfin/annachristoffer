@@ -2,6 +2,11 @@
 	<header class="header" style="top: {{top}}px;">
 		<h1 class="header__title">Anna Claire Christoffer</h1>
 		<h2 class="header__subtitle">Conceptual Design</h2>
+		{{#if device.isMobile}}
+			<button class="header__button">
+				<i class="icon-menu"></i>
+			</button>
+		{{/if}}
 		{{#if Template.subscriptionsReady}}
 			<nav class="header__navigation">
 				<ol class="header__navigation__list">
