@@ -13,15 +13,20 @@
 	width: 100%
 	+display(flex)
 	+justify-content(center)
-	padding: 4rem 0
+	+break(min, $break-2)
+		padding: 4rem 0
 
 .wrapper 
 	overflow: hidden
 	width: 100%
 	max-width: $max-width
 	+display(flex)
-	+flex-direction(row-reverse)
-	+align-items(flex-start)
+	+break(min-max, $break-0, $break-2)
+		+flex-direction(column)
+		+align-items(initial)
+	+break(min, $break-2)
+		+flex-direction(row-reverse)
+		+align-items(flex-start)
 
 section,
 header 

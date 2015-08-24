@@ -2,11 +2,12 @@
 	+flex(1)
 	+display(flex)
 	+perspective(700px)
-	&:hover
-		.preview__tile__flip__front
-			+transform(rotateY(-180deg))
-		.preview__tile__flip__rear
-			+transform(rotateY(0deg))
+	+break(min, $break-2)
+		&:hover
+			.preview__tile__flip__front
+				+transform(rotateY(-180deg))
+			.preview__tile__flip__rear
+				+transform(rotateY(0deg))
 
 .preview__tile__flip
 	position: relative
@@ -24,6 +25,8 @@
 .preview__tile__flip__front
 	z-index: $z-over
 	background-color: rgba($white, 0.6)
+	+break(min-max, $break-0, $break-2)
+		padding: 1rem
 	padding: 0.5rem
 
 .preview__tile__flip__front--highlighted
