@@ -40,4 +40,5 @@ Meteor.publish('entries', function(contentTypeName, filter = {}) {
 	this.ready();
 });
 
+Meteor.publish('videos', (...hashedIds) => Wistia.collection.find({'hashed_id': {$in: hashedIds}}));
 Meteor.publish('images', (...imageIds) => Collections.images.find({'asset_id': {$in: imageIds}}));

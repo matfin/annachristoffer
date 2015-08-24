@@ -51,7 +51,7 @@ Wistia = {
 		let promise = new Promise(this.fetch.bind(this));
 		promise.then(Meteor.bindEnvironment((result) => {
 			result.map((item) => {
-				this.collection.update({'item.id': item.id}, {item}, {upsert: true});
+				this.collection.update({'hashed_id': item.hashed_id}, item, {upsert: true});
 			});
 		})).catch((error) => {
 			console.log(`Error updating videos: ${error}`);

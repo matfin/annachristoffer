@@ -28,6 +28,14 @@ Core = {
 		 *	@property images
 		 *	@type {Mongo.Collection}
 		 */
-		images: new Mongo.Collection('images')
+		images: new Mongo.Collection('images'),
+
+		/**
+		 *	Videos from Wistia
+		 *
+		 *	@property videos
+		 *	@type {Mongo.Collection}
+		 */
+		videos: new Mongo.Collection('videos')
 	}
 };
