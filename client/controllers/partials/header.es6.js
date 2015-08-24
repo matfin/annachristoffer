@@ -34,7 +34,10 @@ Template.partials_header.onDestroyed(function() {
  */
 Template.partials_header.helpers({
 
-	categories: () => Core.collections.entries.find({contentTypeName: 'Project Category'}),
+	categories () { 
+		Dependencies.resized.depend();
+		return Device.isMobile ? [] : Core.collections.entries.find({contentTypeName: 'Project Category'});
+	},
 
 	active () {
 		let current_category = Router.current().params._slug,
@@ -44,7 +47,7 @@ Template.partials_header.helpers({
 
 	top () {
 		Dependencies.scrolled.depend();
-		return window.pageYOffset || document.documentElement.scrollTop; 
+		return Device.isMobile ? 0 : window.pageYOffset || document.documentElement.scrollTop; 
 	}
 
 });

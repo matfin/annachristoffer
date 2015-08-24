@@ -11,7 +11,7 @@
 						</a>
 					</li>
 					{{#each categories}}
-						<li class="header__navigation__list__item">
+						<li class="header__navigation__list__item header__navigation__list__item--category">
 							<a href="{{pathFor 'category.show' _slug=fields.slug}}" class="header__navigation__list__item__link {{active}}" title="{{fields.title}}">
 								{{fields.title}}
 							</a>

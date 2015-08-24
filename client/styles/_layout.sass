@@ -13,7 +13,9 @@
 	width: 100%
 	+display(flex)
 	+justify-content(center)
-	+break(min, $break-2)
+	+break(min-max, $break-0, $break-1)
+		padding-top: 3rem
+	+break(min, $break-1)
 		padding: 4rem 0
 
 .wrapper 
@@ -31,6 +33,4 @@
 section,
 header 
 	+flex(1)
-
-header
-	max-width: 12rem
+	
