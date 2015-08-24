@@ -54,8 +54,7 @@ Template.cards_image.helpers({
 			'asset_id': this.sys.id,
 			'device': Device.name,
 			'density.multiplier': Device.pixelRatio
-		},
-		image = Core.collections.images.findOne(selector);
-		return `${Core.helpers.mediaUrl()}/${image.filename}`;
+		};
+		return Core.collections.images.findOne(selector);
 	}
 });

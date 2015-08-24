@@ -49,6 +49,14 @@ Template.cards_video.helpers({
 		return `${Core.helpers.mediaUrl()}/${image.filename}`;
 	},
 	video () {
-		return 'http://embed-0.wistia.com/deliveries/d477c44f81adf4507aa43e7aee117c8e9fc55354.bin';
+		Dependencies.resized.depend();
+		let selector = {
+			'hashed_id': this.fields.videoSource
+		},
+		video 			= Core.collections.videos.findOne(selector),
+		type 				= Core.helpers.wistiaVideoType(Device.name),
+		contentType = 'video/mp4';
+		
+		return video.assets.find((asset) => asset.contentType === contentType && asset.type === type);
 	}
 });

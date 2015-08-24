@@ -70,4 +70,18 @@ Core.helpers = class Helpers {
 		return Meteor.settings.public.mediaUrl
 	}
 
+	/**
+	 *	Helper function for wistia video selector given device parameters
+	 */
+	static wistiaVideoType () {
+		switch(Device.name) {
+			case 'desktop': 
+				return 'HdMp4VideoFile';
+			case 'tablet':
+				return 'Mp4VideoFile';
+			default:
+				return 'IphoneVideoFile'
+		}
+	}
+
 };
