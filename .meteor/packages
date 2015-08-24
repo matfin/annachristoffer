@@ -17,3 +17,4 @@ velocity:console-reporter
 velocity:html-reporter
 grigio:babel
 com.annachristoffer:core
+matfin:meteor-wistia

@@ -11,6 +11,8 @@ Meteor.startup(() => {
 		else {
 			console.log('Booting server with Contentful disabled.');
 		}	
+
+		Wistia.refresh();
 	}
 
 	if(Meteor.isClient) {
