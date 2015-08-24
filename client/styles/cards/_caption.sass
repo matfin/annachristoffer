@@ -1,22 +1,27 @@
 .detail__caption 
 	+display(flex)
-	+flex-direction(row-reverse)
+	+break(min-max, $break-0, $break-3)
+		+flex-direction(column-reverse)
+	+break(min, $break-3)
+		+flex-direction(row-reverse)
+		&:before 
+			content: ""
+			display: block
+			padding-top: 50%
 	background-color: rgba($white, 0.6)
 	margin-bottom: 1rem
-	&:before 
-		content: ""
-		display: block
-		padding-top: 50%
 
 .detail__caption__text
 	+flex(1)
 	margin: 1rem
-	margin-left: 0
+	+break(min, $break-3)
+		margin-left: 0
 
 .detail__caption__media
 	position: relative
 	+flex(2)
-	margin: 1rem
+	+break(min, $break-2)
+		margin: 1rem
 
 .detail__caption__media__image
 	display: block

@@ -28,5 +28,6 @@ UI.registerHelper('mediaUrl', () => {
  *	@return {Object} - the device class with calculated device parameters
  */
 UI.registerHelper('device', () => {
+	Dependencies.resized.depend();
 	return Device;
 });
