@@ -8,9 +8,7 @@
  */
 Template.cards_image.onCreated(function() {
 	this.dependency = new Tracker.Dependency;
-	this.handle = this.subscribe('images', this.data.sys.id, () => {
-		this.dependency.changed();
-	});
+	this.handle = this.subscribe('images', this.data.sys.id, () => {this.dependency.changed()});
 });
 
 /**
@@ -24,11 +22,13 @@ Template.cards_image.onRendered(function() {
 		this.dependency.depend();
 		Dependencies.scrolled.depend();
 		if(this.handle.ready()) {
-			let target = this.$('img').get(0);
-			Core.helpers.lazyLoad(target).then(() => {
-				this.$('.partials__loading').remove();
-				target.classList.add('detail__caption__media__image--loaded')
-			});
+			setTimeout(() => {
+				let image = this.$('img').get(0);
+				Core.helpers.lazyLoad(image).then(() => {
+					this.$('.partials__loading').remove();
+					image.classList.add('detail__caption__media__image--loaded');
+				});
+			}, 50);
 		}
 	});
 });
@@ -54,7 +54,8 @@ Template.cards_image.helpers({
 			'asset_id': this.sys.id,
 			'device': Device.name,
 			'density.multiplier': Device.pixelRatio
-		};
-		return Core.collections.images.findOne(selector);
+		},
+		image = Core.collections.images.findOne(selector);
+		return `${Core.helpers.mediaUrl()}/${image.filename}`;
 	}
 });

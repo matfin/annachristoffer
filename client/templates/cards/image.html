@@ -1,4 +1,6 @@
 <template name="cards_image">
-	<img class="detail__caption__media__image" data-src="{{mediaUrl}}/{{image.filename}}" width="100%" height="auto" alt="" />
+	{{#if Template.subscriptionsReady}}
+		<img class="detail__caption__media__image" data-src="{{image}}" width="100%" height="auto" alt="" />
+	{{/if}}
 	{{>partials_loading}}
 </template>
