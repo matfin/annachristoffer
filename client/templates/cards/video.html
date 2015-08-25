@@ -1,7 +1,23 @@
 <template name="cards_video">
 	{{#if Template.subscriptionsReady}}
-		<video width="100%" height="auto" poster="{{poster}}">
+		<video class="video" width="100%" height="auto" poster="{{poster}}">
 			<source src="{{video.url}}" />
 		</video>
+		<div class="video__hud">
+			<button class="video__hud__button video__hud__button--play">
+				<i class="icon-play"></i>
+			</button>
+			<div class="video__hud__timeline">
+				<i class="video__hud__timeline__indicator">
+				</i>
+				<div class="video__hud__progress__container">
+					<div class="video__hud__progress__container__loaded">
+					</div>
+				</div>
+			</div>
+			<button class="video__hud__button video__hud__button--fullscreen">
+				<i class="icon-fullscreen"></i>
+			</button>
+		</div>
 	{{/if}}
 </template>
