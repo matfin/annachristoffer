@@ -23,11 +23,9 @@ Core.video = class Video {
 	play () {
 		this.video.play();
 	}
-
 	pause() {
 		this.video.pause();
 	}
-
 	toggleMute () {
 		if(this.video.muted) {
 			this.video.muted = false;
@@ -35,6 +33,12 @@ Core.video = class Video {
 		else {
 			this.video.muted = true;
 		}
+	}
+
+	/** 
+	 *	Seek to a part of the video given a percentage
+	 */
+	seekTo (percent) {
 	}
 
 	/**
@@ -56,6 +60,14 @@ Core.video = class Video {
 	 *	Function to update the UI on progress
 	 */
 	progressed (progress) {
+		let timeranges 			= this.video.buffered,
+				buffered_start 	= timeranges.start(0),
+				buffered_end 		= timeranges.end(timeranges.length - 1),
+				buffered_diff		= buffered_end - buffered_start,
+				duration 				= this.video.duration,
+				percentage			= Math.ceil((buffered_diff / duration) * 100);
+
+		this.loaded_progress_bar.style.width = `${percentage}%`;
 	}
 
 	/**
