@@ -86,6 +86,35 @@ describe('cards_caption', () => {
 				done();
 			});
 		});
+
+		describe('video', () => {
+			it('should return a video if one is present or return false', (done) => {
+				/**
+				 *	Dummy data
+				 */
+				let with_video = {
+					fields: {
+						videoSource: 'abcdefg'
+					}
+				},
+
+				no_video = {
+					fields: {
+						something: 'else'
+					}
+				};
+				/**
+				 *	Run the function and the tests
+				 */
+				expect(Template.cards_caption.__helpers[' video'].call(with_video)).toEqual('abcdefg');
+				expect(Template.cards_caption.__helpers[' video'].call(no_video)).toEqual(false);
+				/**
+				 *	Done
+				 */
+				done();
+			});
+		});
+
 	});
 
 });

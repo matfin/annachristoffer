@@ -88,8 +88,7 @@ describe('cards_image', () => {
 				 *	Spies
 				 */
 				spyOn(Dependencies.resized, 'depend').and.returnValue({});
-				spyOn(Core.collections.images, 'findOne').and.returnValue({});
-
+				spyOn(Core.collections.images, 'findOne').and.returnValue({filename: 'file-123.jpg'});
 				/**
 				 *	Dummy data
 				 */
@@ -98,18 +97,64 @@ describe('cards_image', () => {
 						id: 1
 					}
 				};
-
 				/**
 				 *	Run the function and then the tests
 				 */
 				Template.cards_image.__helpers[' image'].call(data);
 				expect(Dependencies.resized.depend).toHaveBeenCalled();
-
 				/**
 				 *	Finished
 				 */
 				done();
 			});
+
+			it('should return the correct image url', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.images, 'findOne').and.returnValue({filename: 'file-123.jpg'});
+				spyOn(Core.helpers, 'mediaUrl').and.callFake(() => 'http://www.somewhere.tld');
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					sys: {
+						id: 1
+					}
+				};
+				/**
+				 *	Run the function and then the tests
+				 */
+				expect(Template.cards_image.__helpers[' image'].call(data)).toEqual('http://www.somewhere.tld/file-123.jpg');
+				/**
+				 *	Finished
+				 */
+				done();
+			});	
+
+			it('should return immediately if image is undefined', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.images, 'findOne').and.callFake(() => undefined);
+				spyOn(Core.helpers, 'mediaUrl').and.callFake(() => 'http://www.somewhere.tld');
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					sys: {
+						id: 1
+					}
+				};
+				/**
+				 *	Run the function and then the tests
+				 */
+				expect(Template.cards_image.__helpers[' image'].call(data)).toBeUndefined();
+				/**
+				 *	Finished
+				 */
+				done();
+			});				
 
 		});
 	});
