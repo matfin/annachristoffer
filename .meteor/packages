@@ -18,3 +18,4 @@ velocity:html-reporter
 grigio:babel
 com.annachristoffer:core
 matfin:meteor-wistia
+matfin:video

@@ -38,6 +38,7 @@ Template.cards_video.onDestroyed(function() {
  *	Helper functions
  */
 Template.cards_video.helpers({
+
 	poster () {
 		Dependencies.resized.depend();
 		let selector = {
@@ -48,6 +49,7 @@ Template.cards_video.helpers({
 		image = Core.collections.images.findOne(selector);
 		return `${Core.helpers.mediaUrl()}/${image.filename}`;
 	},
+
 	video () {
 		Dependencies.resized.depend();
 		let selector = {
@@ -56,7 +58,7 @@ Template.cards_video.helpers({
 		video 			= Core.collections.videos.findOne(selector),
 		type 				= Core.helpers.wistiaVideoType(Device.name),
 		contentType = 'video/mp4';
-		
+
 		return video.assets.find((asset) => asset.contentType === contentType && asset.type === type);
 	}
 });
