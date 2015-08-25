@@ -41,16 +41,13 @@
 
 .slider__indicator
 	+display(flex)
+	border-top: rem(3) solid $highlighted
 
 .slider__indicator__button 
 	+flex(1)
-	height: 0.5rem
+	height: rem(6)
+	margin-top: rem(2)
 	+transitionWithProperties(background-color)
-
-	&:nth-child(odd)
-		background-color: rgba($highlighted, 0.35)
-	&:nth-child(even)
-		background-color: rgba($highlighted, 0.425)
 
 .slider__indicator__button.active
 	background-color: rgba($highlighted, 0.6)
