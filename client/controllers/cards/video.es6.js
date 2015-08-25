@@ -9,7 +9,7 @@
 Template.cards_video.onCreated(function() {
 	this.dependency = new Tracker.Dependency;
 	this.data.image = this.data.fields.images.find((image) => typeof image.sys.id !== 'undefined');
-	this.video_handle = this.subscribe('videos', this.data.fields.videoSource);
+	this.video_handle = this.subscribe('videos', this.data.fields.videoSource, () => {this.dependency.changed();});
 	this.image_handle = this.subscribe('images', this.data.image.sys.id);
 });
 
@@ -20,6 +20,16 @@ Template.cards_video.onCreated(function() {
  *	@method rendered
  */
 Template.cards_video.onRendered(function() {
+	this.autorun(() => {
+		if(this.video_handle.ready()) {
+			setTimeout(() => {
+				let video = this.$('.video').get(0),
+						hud 	= this.$('.video__hud').get(0);
+
+				this.player = new Core.video(video, hud);
+			}, 50);
+		}
+	});
 });
 
 /**
@@ -61,4 +71,20 @@ Template.cards_video.helpers({
 
 		return video.assets.find((asset) => asset.contentType === contentType && asset.type === type);
 	}
+});
+
+/**
+ *	Template.cards_video
+ *	Events
+ */
+Template.cards_video.events({
+
+	'click .video__hud__button--play': (e, template) => {
+		template.player.play();
+	},
+
+	'click .video__hud__button--mute': (e, template) => {
+		template.player.toggleMute();
+	}
+
 });
