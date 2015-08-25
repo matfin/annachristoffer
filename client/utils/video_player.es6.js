@@ -3,15 +3,16 @@
 /**
  *	Client side class for the HTML5 video player - deals with events and updating the UI
  *
- *	@class Video
+ *	@class Player
  */
-Core.video = class Video {
+Core.player = class Player {
 
 	/**
 	 *	Constructor which accepts a DOM node
 	 */
 	constructor(video, hud) {
 		this.video = video;
+		this.isPlaying = false;
 		this.loaded_progress_bar = hud.getElementsByClassName('video__hud__progress__container__loaded')[0];
 		this.timeline_indicator = hud.getElementsByClassName('video__hud__timeline__indicator')[0];
 		this.attachEvents();
@@ -22,9 +23,11 @@ Core.video = class Video {
 	 */
 	play () {
 		this.video.play();
+		this.isPlaying = true;
 	}
 	pause() {
 		this.video.pause();
+		this.isPlaying = false;
 	}
 	toggleMute () {
 		if(this.video.muted) {
@@ -39,6 +42,27 @@ Core.video = class Video {
 	 *	Seek to a part of the video given a percentage
 	 */
 	seekTo (percent) {
+		let seek = Math.floor(this.video.duration * (percent / 100));
+		this.video.currentTime = seek;
+	}
+
+	/**
+	 *	Function to request full screen video
+	 */
+	goFullscreen () {
+		let fullscreens = [
+			'requestFullScreen',
+			'webkitRequestFullScreen',
+			'mozRequestFullScreen',
+			'msRequestFullScreen'
+		];
+
+		fullscreens.forEach((fullscreen) => {
+			if(typeof this.video[fullscreen] === 'function') {
+				this.video[fullscreen]();
+			}
+		});
+
 	}
 
 	/**
@@ -82,6 +106,8 @@ Core.video = class Video {
 	 *	Function to update the UI when the video has ended
 	 */
 	ended () {
+		this.seekTo(0);
+		this.isPlaying = false;
 	}
 
 };

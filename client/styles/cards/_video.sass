@@ -3,22 +3,30 @@
 	+display(flex)
 	position: absolute
 	width: 100%
-	height: 1.25rem
+	height: 2rem
 	bottom: 0
 	left: 0
 	background-color: $video-hud-color
+	+transitionWithProperties(opacity);
+
+.video__hud--hidden
+	opacity: 0
 
 .video__hud__button
 	+flex(1)
 	max-width: 2rem
 	color: $highlighted
-	pointer: cursor
+	cursor: pointer
+
+.video__hud__button--hidden
+	display: none
 
 .video__hud__timeline
 	position: relative
 	+display(flex)
 	+flex(1)
 	+align-items(center)
+	cursor: pointer
 
 .video__hud__timeline__indicator
 	position: absolute

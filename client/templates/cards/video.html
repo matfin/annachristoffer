@@ -3,12 +3,13 @@
 		<video class="video" width="100%" height="auto" poster="{{poster}}">
 			<source src="{{video.url}}" />
 		</video>
+	{{#unless device.isMobile}}
 		<div class="video__hud">
 			<button class="video__hud__button video__hud__button--play">
 				<i class="icon-play"></i>
 			</button>
-			<button class="video__hud__button video__hud__button--mute">
-				<i class="icon-dots"></i>
+			<button class="video__hud__button video__hud__button--pause video__hud__button--hidden">
+				<i class="icon-pause"></i>
 			</button>
 			<div class="video__hud__timeline">
 				<i class="video__hud__timeline__indicator">
@@ -22,5 +23,6 @@
 				<i class="icon-fullscreen"></i>
 			</button>
 		</div>
+	{{/unless}}
 	{{/if}}
 </template>

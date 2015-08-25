@@ -26,7 +26,7 @@ Template.cards_video.onRendered(function() {
 				let video = this.$('.video').get(0),
 						hud 	= this.$('.video__hud').get(0);
 
-				this.player = new Core.video(video, hud);
+				this.player = new Core.player(video, hud);
 			}, 50);
 		}
 	});
@@ -80,11 +80,44 @@ Template.cards_video.helpers({
 Template.cards_video.events({
 
 	'click .video__hud__button--play': (e, template) => {
+		clearTimeout(template.hudTimeout);
 		template.player.play();
+		template.$('.video__hud__button--play').addClass('video__hud__button--hidden');
+		template.$('.video__hud__button--pause').removeClass('video__hud__button--hidden');
+		template.hudTimeout = setTimeout(() => {
+			template.$('.video__hud').addClass('video__hud--hidden');
+		}, 750);
 	},
 
-	'click .video__hud__button--mute': (e, template) => {
-		template.player.toggleMute();
-	}
+	'click .video__hud__button--fullscreen': (e, template) => {
+		template.player.goFullscreen();
+	},
+
+	'mousemove .video, mousemove .video__hud': (e, template) => {
+		if(template.player.isPlaying) {
+			clearTimeout(template.hudTimeout);
+			if(template.$('.video__hud').hasClass('video__hud--hidden')) {
+				template.$('.video__hud').removeClass('video__hud--hidden');	
+			}
+			template.hudTimeout = setTimeout(() => {
+				template.$('.video__hud').addClass('video__hud--hidden');
+			}, 750);
+		}
+	},
+
+	'click .video__hud__button--pause': (e, template) => {
+		clearTimeout(template.hudTimeout);
+		template.player.pause();
+		template.$('.video__hud__button--play').removeClass('video__hud__button--hidden');
+		template.$('.video__hud__button--pause').addClass('video__hud__button--hidden');
+		template.$('.video__hud').removeClass('video__hud--hidden');
+	},
+
+	'click .video__hud__timeline': (e, template) => {
+		let offset 	= e.offsetX,
+				width  	= $(e.currentTarget).width(),
+				percent	= Math.ceil((offset / width) * 100);
+		template.player.seekTo(percent);
+	},
 
 });
