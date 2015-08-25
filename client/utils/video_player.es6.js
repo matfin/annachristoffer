@@ -5,14 +5,8 @@
  *
  *	@class Video
  */
-Video = {
+Core.video = class Video {
 
-	/**
-	 *	Function to set up the video player
-	 */
-	setup () {
-		
-	}
-
+	
 
 };
