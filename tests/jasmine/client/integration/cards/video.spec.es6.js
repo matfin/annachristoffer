@@ -166,14 +166,109 @@ describe('cards_video', () => {
 				/**
 				 *	Spies
 				 */
-				
+				spyOn(Dependencies.resized, 'depend').and.returnValue({});
+				spyOn(Core.collections.videos, 'findOne').and.returnValue({
+					assets: [
+						{
+							contentType: 'TestVideoType',
+							type: 'video/mp4'
+						}
+					]
+				});
+				spyOn(Core.helpers, 'wistiaVideoType').and.returnValue('TestVideoType');
+				spyOn(Device, 'reset').and.callFake(() => {
+					Device.name = 'desktop',
+					Device.pixelRatio = 1
+				});
 
+				Device.reset();
+
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					fields: {
+						videoSource: 'abcdefg'
+					}
+				};
+
+				/**
+				 *	Call the function and run the tests
+				 */
+				Template.cards_video.__helpers[' video'].call(data);
+				expect(Dependencies.resized.depend).toHaveBeenCalled();
+				expect(Core.collections.videos.findOne).toHaveBeenCalledWith({'hashed_id': 'abcdefg'});
+				expect(Core.helpers.wistiaVideoType).toHaveBeenCalledWith('desktop');
 
 				/**
 				 *	Done
 				 */
 				done();
 			});
+		
+			it('should return the correct video asset given device parameters', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.videos, 'findOne').and.returnValue({
+					assets: [
+						{contentType: 'video/mp4', type: 'HdMp4VideoFile', url: 'http://video.src/item-hd.bin'},
+						{contentType: 'video/mp4', type: 'IphoneVideoFile', url: 'http://video.src/item-sd.bin'}
+					]
+				});	
+				spyOn(Core.helpers, 'wistiaVideoType').and.returnValue('HdMp4VideoFile');
+
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					fields: {
+						videoSource: 'abcdefg'
+					}
+				};
+
+				/**
+				 *	Call the function and then run the tests
+				 */
+				expect(Template.cards_video.__helpers[' video'].call(data)).toEqual({contentType: 'video/mp4', type: 'HdMp4VideoFile' , url: 'http://video.src/item-hd.bin'});
+
+				/**
+				 *	Done
+				 */
+				done();
+			});
+
+			it('should return immediately if no matching videos were found', (done) => {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.videos, 'findOne').and.returnValue({
+					assets: [
+						{contentType: 'video/mp4', type: 'IphoneVideoFile', url: 'http://video.src/item-sd.bin'}
+					]
+				});	
+				spyOn(Core.helpers, 'wistiaVideoType').and.returnValue('HdMp4VideoFile');
+
+				/**
+				 *	Dummy data
+				 */
+				let data = {
+					fields: {
+						videoSource: 'abcdef'
+					}
+				};
+
+				/**
+				 *	Call the function and then run the tests
+				 */
+				expect(Template.cards_video.__helpers[' video'].call(data)).toBeUndefined();
+
+				/**
+				 *	Done
+				 */
+				done();
+			});
+	
 		});
 
 	});
