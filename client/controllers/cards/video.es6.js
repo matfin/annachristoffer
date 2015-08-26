@@ -57,6 +57,7 @@ Template.cards_video.helpers({
 			'density.multiplier': Device.pixelRatio
 		},
 		image = Core.collections.images.findOne(selector);
+		if(typeof image === 'undefined') return;
 		return `${Core.helpers.mediaUrl()}/${image.filename}`;
 	},
 
