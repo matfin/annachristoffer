@@ -4,15 +4,15 @@
 		margin: 0 1rem
 
 .content__column
-	+display(flex)
-	+flex-direction(column)
-	+justify-content(center)
 	&:nth-child(even)
 		padding-left: 0.5rem
+		+display(flex)
+		// +align-items(center)
 	&:nth-child(odd)
 		padding-right: 0.5rem
 
 .content__pane
-	margin-bottom: 1rem
+	overflow: hidden
+	+flex(1)
 	background-color: rgba($white, 0.6)
 

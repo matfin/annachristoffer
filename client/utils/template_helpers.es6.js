@@ -31,3 +31,14 @@ UI.registerHelper('device', () => {
 	Dependencies.resized.depend();
 	return Device;
 });
+
+/**
+ *	Function to turn a string of text into a lower case classname friendly string
+ *
+ *	@method 	asClassName
+ *	@param 		{String} sourceString - the source string
+ *	@return 	{String} - the classname friendly string
+ */
+UI.registerHelper('asClassName', (sourceString) => {
+	return sourceString.replace(/\s/g, '-').toLowerCase();
+});
