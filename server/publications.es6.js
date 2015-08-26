@@ -6,7 +6,7 @@
  *	applied.
  */
 Meteor.publish('entries', function(contentTypeName, filter = {}) {	
-	
+
 	let attach = (entry, attachment) => {
 		for(let key in attachment) {
 			if(attachment.hasOwnProperty(key)) {
