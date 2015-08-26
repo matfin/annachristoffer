@@ -44,6 +44,7 @@ describe('cards_image', () => {
 			 */
 			done();
 		});
+
 	});
 
 	describe('helpers', () => {

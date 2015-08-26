@@ -7,7 +7,7 @@
  *	@method created
  */
 Template.views_content.onCreated(function() {
-	this.subscribe('entries', 'Content Item');
+	this.subscribe('entries', 'Content Item', {'fields.page': this.data.slug});
 	this.subscribe('entries', 'Experience');
 });
 
@@ -27,4 +27,22 @@ Template.views_content.onRendered(function() {
  *	@method destroyed
  */
 Template.views_content.onDestroyed(function() {
+});
+
+/**
+ *	Template.views_content
+ *	Helper functions
+ */
+Template.views_content.helpers({
+	
+	items () {
+		return Core.collections.entries.find({contentTypeName: 'Content Item', 'fields.page': this.slug});
+	},
+
+	experience (type) {
+		return {
+			title: type,
+			items: Core.collections.entries.find({contentTypeName: 'Experience', 'fields.type': type})
+		}
+	}
 });

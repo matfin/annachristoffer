@@ -69,7 +69,7 @@ Template.cards_video.helpers({
 		video 			= Core.collections.videos.findOne(selector),
 		type 				= Core.helpers.wistiaVideoType(Device.name),
 		contentType = 'video/mp4';
-		if(typeof video === 'undefined') return;
+		if(typeof video === 'undefined' || typeof type === 'undefined') return;
 		return video.assets.find((asset) => asset.contentType === contentType && asset.type === type);
 	}
 });
