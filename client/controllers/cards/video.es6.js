@@ -57,6 +57,7 @@ Template.cards_video.helpers({
 			'density.multiplier': Device.pixelRatio
 		},
 		image = Core.collections.images.findOne(selector);
+		if(typeof image === 'undefined') return;
 		return `${Core.helpers.mediaUrl()}/${image.filename}`;
 	},
 
@@ -68,7 +69,7 @@ Template.cards_video.helpers({
 		video 			= Core.collections.videos.findOne(selector),
 		type 				= Core.helpers.wistiaVideoType(Device.name),
 		contentType = 'video/mp4';
-
+		if(typeof video === 'undefined') return;
 		return video.assets.find((asset) => asset.contentType === contentType && asset.type === type);
 	}
 });

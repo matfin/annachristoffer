@@ -1,30 +1,28 @@
 'use strict';
 
 /**
- *	Template.views_content
+ *	Template.cards_text
  *	Callback function called automatically when the template has been created
  *
  *	@method created
  */
-Template.views_content.onCreated(function() {
-	this.subscribe('entries', 'Content Item');
-	this.subscribe('entries', 'Experience');
+Template.cards_text.onCreated(function() {
 });
 
 /**
- *	Template.views_content
+ *	Template.cards_text
  *	Callback function called automatically when the template has been rendered
  *
  *	@method rendered
  */
-Template.views_content.onRendered(function() {
+Template.cards_text.onRendered(function() {
 });
 
 /**
- *	Template.views_content
+ *	Template.cards_text
  *	Callback function called automatically when the template has been destroyed
  *
  *	@method destroyed
  */
-Template.views_content.onDestroyed(function() {
+Template.cards_text.onDestroyed(function() {
 });

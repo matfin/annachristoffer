@@ -11,6 +11,7 @@ Core.player = class Player {
 	 *	Constructor which accepts a DOM node
 	 */
 	constructor(video, hud) {
+		if(typeof hud === 'undefined' || typeof video === 'undefined') return;
 		this.video = video;
 		this.isPlaying = false;
 		this.loaded_progress_bar = hud.getElementsByClassName('video__hud__progress__container__loaded')[0];
