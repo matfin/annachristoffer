@@ -36,13 +36,13 @@ Template.views_content.onDestroyed(function() {
 Template.views_content.helpers({
 	
 	items () {
-		return Core.collections.entries.find({contentTypeName: 'Content Item', 'fields.page': this.slug});
+		return Core.collections.entries.find({contentTypeName: 'Content Item', 'fields.page': this.slug}, {sort: {'fields.order': -1}}).fetch();
 	},
 
 	experience (type) {
 		return {
 			title: type,
-			items: Core.collections.entries.find({contentTypeName: 'Experience', 'fields.type': type})
+			items: Core.collections.entries.find({contentTypeName: 'Experience', 'fields.type': type}, {sort: {'fields.startDate': -1}}).fetch()
 		}
 	}
 });

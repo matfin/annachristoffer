@@ -1,2 +1,34 @@
 <template name="cards_experience">
+	<div class="content__pane content__pane--experience">
+		<h2>
+			{{title}}
+		</h2>
+		<ol>
+			{{#each items}}
+				<li>
+					<h4>
+						{{#if fields.endDate}}
+							<time class="" datetime="{{formattedDate fields.startDate 'x'}}">
+								{{formattedDate fields.startDate 'MMMM YYYY'}} 
+							</time>
+							&ndash;
+							<time class="" datetime="{{formattedDate fields.endDate 'x'}}">
+								{{formattedDate fields.endDate 'MMMM YYYY'}}
+							</time>
+						{{else}}
+							<time class="" datetime="{{formattedDate fields.startDate 'x'}}">
+								{{formattedDate fields.startDate 'MMMM YYYY'}} 
+							</time>
+						{{/if}}
+					</h4>
+					<h2>
+						{{fields.role}}
+					</h2>
+					<h3>
+						{{fields.location}}
+					</h3>
+				</li>
+			{{/each}}
+		</ol>
+	</div>
 </template>

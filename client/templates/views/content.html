@@ -1,3 +1,17 @@
 <template name="views_content">
-	{{items}}
+	<section class="content">
+		{{#if Template.subscriptionsReady}}
+			{{#each items}}
+				{{>cards_text}}
+			{{/each}}
+			{{#with experience 'Education'}}
+				{{>cards_experience}}
+			{{/with}}
+			{{#with experience 'Work Experience'}}
+				{{>cards_experience}}
+			{{/with}}
+		{{else}}
+			{{>views_loading}}
+		{{/if}}
+	</section>
 </template>
