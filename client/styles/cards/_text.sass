@@ -1,0 +1,29 @@
+.content__pane--text
+	padding: 1rem
+	h2, h3
+		font-size: $heading-font-size
+		font-weight: $heavy-weight
+	p 
+		margin: 1.25rem 0
+		line-height: $line-height
+	a
+		border-bottom: 1px solid currentColor
+	ul
+		li
+			display: inline
+			margin-right: 1rem
+
+a[href*='xing.com'],
+a[href*='linkedin.com'],
+a[href*='dots.co.uk']
+	border-bottom: none
+	font-size: 1.5rem
+	&:before
+		font-family: 'anna'
+
+a[href*='xing.com']:before
+	content: '\e610'
+a[href*='linkedin.com']:before
+	content: '\e60c'
+a[href*='dots.co.uk']:before
+	content: '\e605'

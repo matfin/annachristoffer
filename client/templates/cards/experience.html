@@ -1,30 +1,30 @@
 <template name="cards_experience">
 	<div class="content__pane content__pane--experience">
-		<h2>
+		<h2 class="experience__title">
 			{{title}}
 		</h2>
-		<ol>
+		<ol class="experience__list">
 			{{#each items}}
-				<li>
-					<h4>
+				<li class="experience__list__item">
+					<h4 class="experience__list__item__date">
 						{{#if fields.endDate}}
-							<time class="" datetime="{{formattedDate fields.startDate 'x'}}">
+							<time datetime="{{formattedDate fields.startDate 'x'}}">
 								{{formattedDate fields.startDate 'MMMM YYYY'}} 
 							</time>
 							&ndash;
-							<time class="" datetime="{{formattedDate fields.endDate 'x'}}">
+							<time datetime="{{formattedDate fields.endDate 'x'}}">
 								{{formattedDate fields.endDate 'MMMM YYYY'}}
 							</time>
 						{{else}}
-							<time class="" datetime="{{formattedDate fields.startDate 'x'}}">
+							<time datetime="{{formattedDate fields.startDate 'x'}}">
 								{{formattedDate fields.startDate 'MMMM YYYY'}} 
 							</time>
 						{{/if}}
 					</h4>
-					<h2>
+					<h2 class="experience__list__item__role">
 						{{fields.role}}
 					</h2>
-					<h3>
+					<h3 class="experience__list__item__location">
 						{{fields.location}}
 					</h3>
 				</li>

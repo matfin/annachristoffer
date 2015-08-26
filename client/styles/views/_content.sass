@@ -1,0 +1,18 @@
+.content 
+	+break(min, $break-2)
+		+display(flex)
+		margin: 0 1rem
+
+.content__column
+	+display(flex)
+	+flex-direction(column)
+	+justify-content(center)
+	&:nth-child(even)
+		padding-left: 0.5rem
+	&:nth-child(odd)
+		padding-right: 0.5rem
+
+.content__pane
+	margin-bottom: 1rem
+	background-color: rgba($white, 0.6)
+
