@@ -7,7 +7,7 @@
  *	@method created
  */
 Template.views_content.onCreated(function() {
-	this.subscribe('entries', 'Content Item', {'fields.page': this.data.slug});
+	this.subscribe('entries', 'Page', {'fields.slug': this.data.slug});
 	this.subscribe('entries', 'Experience');
 });
 
@@ -35,8 +35,8 @@ Template.views_content.onDestroyed(function() {
  */
 Template.views_content.helpers({
 	
-	items () {
-		return Core.collections.entries.find({contentTypeName: 'Content Item', 'fields.page': this.slug}, {sort: {'fields.order': -1}}).fetch();
+	page () {
+		return Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': this.slug});
 	},
 
 	experience (type) {

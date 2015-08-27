@@ -23,6 +23,14 @@ Core = {
 		entries: new Mongo.Collection('entries'),
 
 		/**
+		 *	Contentful assets
+		 *
+		 *	@property assets
+		 *	@type {Mongo.Collection}
+		 */
+		assets: new Mongo.Collection('assets'),
+
+		/**
 		 *	Mongo Collection for processed images
 		 *
 		 *	@property images

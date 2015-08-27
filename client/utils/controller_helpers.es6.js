@@ -43,7 +43,9 @@ Core.helpers = class Helpers {
 			}
 		}
 		else {
-			return;
+			return {
+				then: () => {}
+			}
 		}
 
 		return {

@@ -2,9 +2,11 @@
 	<section class="content">
 		{{#if Template.subscriptionsReady}}
 			<section class="content__column">
-				{{#each items}}
-					{{>cards_text}}
-				{{/each}}
+				{{#with page}}
+					{{#each fields.contentItems}}
+						{{>cards_text}}
+					{{/each}}
+				{{/with}}
 				{{#with experience 'Education'}}
 					{{>cards_experience}}
 				{{/with}}
