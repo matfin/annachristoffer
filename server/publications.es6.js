@@ -45,6 +45,8 @@ Meteor.publish('entries', function(contentTypeName, filter = {}) {
 		handle.stop();
 	});
 
+
+
 	this.ready();
 });
 

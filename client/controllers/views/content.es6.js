@@ -39,6 +39,12 @@ Template.views_content.helpers({
 		return Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': this.slug});
 	},
 
+	image () {
+		let page = Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': this.slug});
+		if(typeof page.fields.images === 'undefined' || page.fields.images.length === 0) return;
+		return page.fields.images[0];
+	},
+
 	experience (type) {
 		return {
 			title: type,

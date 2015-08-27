@@ -1,18 +1,30 @@
 .content 
+	position: relative
 	+break(min, $break-2)
 		+display(flex)
 		margin: 0 1rem
+		padding-top: 6rem
+
+.content__image
+	z-index: $z-under
+	position: absolute
+	top: 0
+	right: 0
+	width: 50%
 
 .content__column
+	z-index: $z-over
+	position: relative
 	max-width: 30rem
-	&:nth-child(even)
-		padding-left: 0.5rem
-		+display(flex)
+	+display(flex)
+	+flex-direction(column)
 	&:nth-child(odd)
+		padding-left: 0.5rem
+		+justify-content(flex-end)
+	&:nth-child(even)
 		padding-right: 0.5rem
 
 .content__pane
 	overflow: hidden
-	+flex(1)
 	background-color: rgba($white, 0.6)
 

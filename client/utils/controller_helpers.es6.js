@@ -76,6 +76,26 @@ Core.helpers = class Helpers {
 	}
 
 	/**
+	 *	Function to return the source for an image from an asset id give
+	 *	current device parameters. This is a reactive function.
+	 *
+	 *	@method imgSource
+	 *	@param 	{String} assetId - the asset ID
+	 *	@return {Mixed} - the source url for the image if found or undefined if not
+	 */
+	static imgSource (assetId) {
+		Dependencies.resized.depend();
+		let selector = {
+			'asset_id': assetId,
+			'device': Device.name,
+			'density.multiplier': Device.pixelRatio
+		},
+		image = Core.collections.images.findOne(selector);
+		if(typeof image === 'undefined') return;
+		return `${this.mediaUrl()}/${image.filename}`;
+	}
+
+	/**
 	 *	Helper function for wistia video selector given device parameters
 	 */
 	static wistiaVideoType () {

@@ -26,7 +26,7 @@ Template.cards_image.onRendered(function() {
 				let image = this.$('img').get(0);
 				Core.helpers.lazyLoad(image).then(() => {
 					this.$('.partials__loading').remove();
-					image.classList.add('detail__caption__media__image--loaded');
+					image.classList.add('media__image--loaded');
 				});
 			}, 50);
 		}
@@ -49,14 +49,6 @@ Template.cards_image.onDestroyed(function() {
  */
 Template.cards_image.helpers({
 	image () {
-		Dependencies.resized.depend();
-		let selector = {
-			'asset_id': this.sys.id,
-			'device': Device.name,
-			'density.multiplier': Device.pixelRatio
-		},
-		image = Core.collections.images.findOne(selector);
-		if(typeof image === 'undefined') return;
-		return `${Core.helpers.mediaUrl()}/${image.filename}`;
+		return Core.helpers.imgSource(this.sys.id);
 	}
 });

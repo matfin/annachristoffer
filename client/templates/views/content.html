@@ -1,6 +1,11 @@
 <template name="views_content">
-	<section class="content">
-		{{#if Template.subscriptionsReady}}
+	{{#if Template.subscriptionsReady}}
+		<section class="content">
+			<div class="content__image">
+				{{#with image}}
+					{{>cards_image}}
+				{{/with}}
+			</div>
 			<section class="content__column">
 				{{#with page}}
 					{{#each fields.contentItems}}
@@ -16,8 +21,8 @@
 					{{>cards_experience}}
 				{{/with}}
 			</section>
-		{{else}}
-			{{>views_loading}}
-		{{/if}}
-	</section>
+		</section>
+	{{else}}
+		{{>views_loading}}
+	{{/if}}
 </template>
