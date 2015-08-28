@@ -21,6 +21,11 @@ let attach = (entry, attachment) => {
  *	Call on Meteor to publish entries, remembering to attach the content type names to them
  *	so they can be properly filtered inside the templates. An optional filter can also be 
  *	applied.
+ *	
+ *	@param {String} 	- the name of the collection being subscribed to
+ *	@param {Function} - callback function when publishing
+ *	@param {String} contentTypeName	- the content type name to be applied as a filter
+ *	@param {Object} filtert - an optional Mongo selector to apply  
  */
 Meteor.publish('entries', function(contentTypeName, filter = {}) {	
 
@@ -45,14 +50,16 @@ Meteor.publish('entries', function(contentTypeName, filter = {}) {
 		handle.stop();
 	});
 
-
-
 	this.ready();
 });
 
 /**
  *	Call on Meteor to publish entries, remembering to attach some properties from
  *	its associated asset.
+ *
+ *	@param {String} 	- the name of the collection being subscribed to
+ *	@param {Function} - callback function when publishing
+ *	@param {Array} 		- spread parameter containing one or more matching IDs to act as a selector
  */
 Meteor.publish('images', function(...imageIds) {
 
@@ -78,5 +85,11 @@ Meteor.publish('images', function(...imageIds) {
 	this.ready();
 });
 
-
+/** 
+ *	Call on Meteor to publish videos from the Wistia video collection
+ *	
+ *	@param {String} 	- the name of the collection being subscribed to
+ *	@param {Array} 		- spead parameter cntaining one or more hashed IDs to act as a selector 
+ */
 Meteor.publish('videos', (...hashedIds) => Wistia.collection.find({'hashed_id': {$in: hashedIds}}));
+

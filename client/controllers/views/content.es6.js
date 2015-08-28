@@ -7,8 +7,17 @@
  *	@method created
  */
 Template.views_content.onCreated(function() {
-	this.subscribe('entries', 'Page', {'fields.slug': this.data.slug});
+	this.pageDependency 	= new Tracker.Dependency;
+	this.pageHandle 			= this.subscribe('entries', 'Page', {'fields.slug': this.data.slug}, () => this.pageDependency.changed());
 	this.subscribe('entries', 'Experience');
+
+	this.autorun(() => {
+		this.pageDependency.depend();
+		if(this.pageHandle.ready()) {
+			Core.seo.refreshFromPage(this.data.slug);
+		}
+	});
+
 });
 
 /**

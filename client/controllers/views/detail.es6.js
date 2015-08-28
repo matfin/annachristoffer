@@ -7,7 +7,15 @@
  *	@method created
  */
 Template.views_detail.onCreated(function() {
-	this.subscribe('entries', 'Project', {'fields.slug': this.data.slug});
+	this.projectDependency = new Tracker.Dependency;
+	this.projectHandle = this.subscribe('entries', 'Project', {'fields.slug': this.data.slug}, () => this.projectDependency.changed());
+	
+	this.autorun(() => {
+		this.projectDependency.depend();
+		if(this.projectHandle.ready()) {
+			Core.seo.refreshFromProject(this.data.slug);
+		}
+	});
 });
 
 /**

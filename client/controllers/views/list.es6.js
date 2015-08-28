@@ -13,35 +13,8 @@ Template.views_list.onCreated(function() {
 
 	this.autorun(() => {
 		this.pageDependency.depend();
-
 		if(this.pageHandle.ready()) {
-			let page 	= Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': 'overview'}),
-					asset,
-					image;
-
-			if(typeof page === 'undefined') return;
-			asset = page.fields.images.find((image) => image.fields.description === 'seo');
-
-			if(typeof asset !== 'undefined') {
-				this.imagesHandle = this.subscribe('images', asset.sys.id, () => {
-					Core.seo.refresh({
-						title: page.fields.title,
-						description: page.fields.description,
-						image: Core.helpers.imgSource(asset.sys.id),
-						url: window.location.href,
-						type: 'website'
-					});
-				});
-			}	
-			else {
-				Core.seo.refresh({
-					title: page.fields.title,
-					description: page.fields.description,
-					image: '',
-					url: window.location.href,
-					type: 'website'
-				});
-			}
+			Core.seo.refreshFromPage('overview');
 		}
 	});
 });
