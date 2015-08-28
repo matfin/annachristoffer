@@ -1,8 +1,9 @@
 .content 
 	position: relative
-	+display(flex)
+	display: block
 	+break(min, $break-2)
 		margin: 0 1rem
+		+display(flex)
 	+break(min-max, $break-0, $break-3)
 		+flex-direction(column)
 	+break(min, $break-3)
@@ -21,10 +22,12 @@
 
 .content__column
 	position: relative
-	+display(flex)
-	+flex-direction(column)
+	+break(min-max, $break-0, $break-3)
+		+flex(initial)
 	+break(min, $break-3)
 		z-index: $z-over
+		+display(flex)
+		+flex-direction(column)
 		max-width: 30rem
 		&:nth-child(odd)
 			padding-left: 0.5rem
