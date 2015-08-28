@@ -23,6 +23,13 @@ Package.onUse(function(api) {
 	], 'client');
 
 	/**
+	 *	Node dependencies
+	 */
+	Npm.depends({
+		'prerender-node': '2.0.2'
+	});
+
+	/**
 	 *	Adding source files for this package (client)
 	 */
 	api.addFiles([
@@ -32,9 +39,17 @@ Package.onUse(function(api) {
 	], 'client');
 
 	/**
+	 *	Adding source files for this package (server)
+ 	 */
+ 	api.addFiles([
+ 		'_src/services.es6.js'
+ 	], 'server');
+ 
+	/**
 	 *	Exporting package classes so they can be access from anywhere within the app.
 	 */
 	api.export('Core');
 	api.export('Device');
 	api.export('Dependencies');
+	api.export('Services');
 });

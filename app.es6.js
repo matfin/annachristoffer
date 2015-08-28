@@ -13,6 +13,7 @@ Meteor.startup(() => {
 		}	
 
 		Wistia.refresh();
+		Services.prerender.start();
 	}
 
 	if(Meteor.isClient) {
