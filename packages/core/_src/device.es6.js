@@ -39,8 +39,8 @@ Device = {
 		this.pixelRatio = Math.floor(window.devicePixelRatio);
 		this.isHD = this.windowWidth > 1280;
 		this.isDesktop = this.windowWidth > 1024 && this.windowWidth <= 1280;
-		this.isTablet = this.windowWidth > 768 && this.windowWidth <= 1024;
-		this.isMobile = this.windowWidth <= 768;
+		this.isTablet = this.windowWidth >= 768 && this.windowWidth <= 1024;
+		this.isMobile = this.windowWidth < 768;
 		this.name = this.getName();
 		this.isTouchCapable = 'ontouchstart' in document.documentElement;
 	}
