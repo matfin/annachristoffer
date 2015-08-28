@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  *	Helper function to format time using moment.js
  *	
