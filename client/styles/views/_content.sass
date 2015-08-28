@@ -1,28 +1,36 @@
 .content 
 	position: relative
+	+display(flex)
 	+break(min, $break-2)
-		+display(flex)
 		margin: 0 1rem
+	+break(min-max, $break-0, $break-3)
+		+flex-direction(column)
+	+break(min, $break-3)
+		+flex-direction(row)
 		padding-top: 6rem
 
 .content__image
-	z-index: $z-under
-	position: absolute
-	top: 0
-	right: 0
-	width: 50%
+	+break(min-max, $break-0, $break-3)
+		width: 100%
+	+break(min, $break-3)
+		z-index: $z-under
+		position: absolute
+		top: 0
+		right: 0
+		width: 50%
 
 .content__column
-	z-index: $z-over
 	position: relative
-	max-width: 30rem
 	+display(flex)
 	+flex-direction(column)
-	&:nth-child(odd)
-		padding-left: 0.5rem
-		+justify-content(flex-end)
-	&:nth-child(even)
-		padding-right: 0.5rem
+	+break(min, $break-3)
+		z-index: $z-over
+		max-width: 30rem
+		&:nth-child(odd)
+			padding-left: 0.5rem
+			+justify-content(flex-end)
+		&:nth-child(even)
+			padding-right: 0.5rem
 
 .content__pane
 	overflow: hidden
