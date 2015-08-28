@@ -19,9 +19,6 @@ Core.helpers = class Helpers {
 		let node_top 				= domnode.getBoundingClientRect().top,	
 				viewport_height	= window.innerHeight,
 				scrolled 				= window.scrollY || window.pageYOffset;
-
-		console.log(node_top, viewport_height, scrolled);
-
 		return (node_top - scrolled) <= viewport_height;
 	}
 
