@@ -29,5 +29,8 @@
 				</ol>
 			</nav>
 		{{/if}}
+		{{#unless device.isMobile}}
+			{{>partials_social}}
+		{{/unless}}
 	</header>
 </template>
