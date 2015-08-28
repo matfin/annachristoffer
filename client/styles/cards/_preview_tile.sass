@@ -1,6 +1,7 @@
 .preview__tile
-	+flex(1)
-	+display(flex)
+	position: relative
+	display: block
+	width: 100%
 	+perspective(700px)
 	+break(min, $break-2)
 		&:hover
@@ -10,8 +11,7 @@
 				+transform(rotateY(0deg))
 
 .preview__tile__flip
-	position: relative
-	+flex(1)
+	display: block
 
 .preview__tile__flip__front,
 .preview__tile__flip__rear
