@@ -18,7 +18,10 @@ Core.helpers = class Helpers {
 	static isVisible (domnode) {
 		let node_top 				= domnode.getBoundingClientRect().top,	
 				viewport_height	= window.innerHeight,
-				scrolled 				= window.scrollY;
+				scrolled 				= window.scrollY || window.pageYOffset;
+
+		console.log(node_top, viewport_height, scrolled);
+
 		return (node_top - scrolled) <= viewport_height;
 	}
 
@@ -29,6 +32,7 @@ Core.helpers = class Helpers {
 	 *	@param 	{Object} - the dom node for the image
 	 */
 	static lazyLoad (imgnode) {
+		if(typeof imgnode === 'undefined') return;
 		let image 		= new Image(),
 				data_src	= imgnode.getAttribute('data-src'),
 				loaded		= typeof imgnode.attributes.src !== 'undefined',
