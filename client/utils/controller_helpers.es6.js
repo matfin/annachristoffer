@@ -43,12 +43,7 @@ Core.helpers = class Helpers {
 				callback();
 			}
 		}
-		else {
-			return {
-				then: () => {}
-			}
-		}
-
+		
 		return {
 			then: (cb) => { callback = cb; }
 		}
