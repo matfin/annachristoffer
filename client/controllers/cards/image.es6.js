@@ -65,7 +65,7 @@ Template.cards_image.events({
 					note 	= template.data.fields.title,
 					url		= window.location.href;
 			PDK.pin(image, note, url, () => {
-				
+				ga('send', 'event', 'share', 'pinterest', url);
 			});
 		}
 	}

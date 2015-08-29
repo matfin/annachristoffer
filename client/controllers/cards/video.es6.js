@@ -89,10 +89,13 @@ Template.cards_video.events({
 		template.hudTimeout = setTimeout(() => {
 			template.$('.video__hud').addClass('video__hud--hidden');
 		}, 750);
+
+		ga('send', 'event', 'video', 'play');
 	},
 
 	'click .video__hud__button--fullscreen': (e, template) => {
 		template.player.goFullscreen();
+		ga('send', 'event', 'video', 'fullscreen');
 	},
 
 	'mousemove .video, mousemove .video__hud': (e, template) => {
@@ -113,6 +116,7 @@ Template.cards_video.events({
 		template.$('.video__hud__button--play').removeClass('video__hud__button--hidden');
 		template.$('.video__hud__button--pause').addClass('video__hud__button--hidden');
 		template.$('.video__hud').removeClass('video__hud--hidden');
+		ga('send', 'event', 'video', 'pause');
 	},
 
 	'click .video__hud__timeline': (e, template) => {
@@ -120,6 +124,7 @@ Template.cards_video.events({
 				width  	= $(e.currentTarget).width(),
 				percent	= Math.ceil((offset / width) * 100);
 		template.player.seekTo(percent);
+		ga('send', 'event', 'video', 'seek');
 	},
 
 });

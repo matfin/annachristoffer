@@ -49,6 +49,7 @@ Template.cards_slider.events({
 	'click .slider__container__paddle': (e, template) => {
 		let direction = e.currentTarget.dataset.go;
 		template.slider.go(direction);
+		ga('send', 'event', 'slider', 'move');
 	},
 
 	'slidecomplete .slider__container': (e, template) => {
