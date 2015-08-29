@@ -19,7 +19,8 @@ Meteor.startup(() => {
 	if(Meteor.isClient) {
 		Device.reset();
 		Dependencies.start();
-		Core.social.facebook.init()
+		Core.social.facebook.init();
+		Core.social.pinterest.init();
 		window.prerender = false;
 	}
 	

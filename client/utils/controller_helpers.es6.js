@@ -82,13 +82,14 @@ Core.helpers = class Helpers {
 	 *
 	 *	@method imgSource
 	 *	@param 	{String} assetId - the asset ID
+	 *	@param 	{String} device  - optional forced device name defaulting to false
 	 *	@return {Mixed} - the source url for the image if found or undefined if not
 	 */
-	static imgSource (assetId) {
+	static imgSource (assetId, device = false) {
 		Dependencies.resized.depend();
 		let selector = {
 			'asset_id': assetId,
-			'device': Device.name,
+			'device': device ? device : Device.name,
 			'density.multiplier': Device.pixelRatio
 		},
 		image = Core.collections.images.findOne(selector);

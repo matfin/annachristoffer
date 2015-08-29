@@ -33,6 +33,33 @@ Core.social = {
 				fjs.parentNode.insertBefore(js, fjs); 
 			})(document, 'script', 'facebook-jssdk');
 		}
+	},
+
+	pinterest: class Pinterest {
+		/**
+		 *	Function to initialise the Pinterest SDK
+		 *	
+		 *	@method init
+		 */
+		static init() {
+			window.pAsyncInit = () => {
+				PDK.init({
+					appId: Meteor.settings.public.pinterest.appId,
+					cookie: true
+				});
+			};
+
+			((d, s, id) => {
+				let js, pjs = document.getElementsByTagName(s)[0];
+				if(d.getElementById(id)) return;
+				js 			= d.createElement(s);
+				js.id 	= id;
+				js.src 	= '//assets.pinterest.com/sdk/sdk.js';
+				pjs.parentNode.insertBefore(js, pjs);  
+			})(document, 'script', 'pinterest-jssdk');
+
+		}
+
 	}
 
 }

@@ -52,3 +52,22 @@ Template.cards_image.helpers({
 		return Core.helpers.imgSource(this.sys.id);
 	}
 });
+
+/**
+ *	Template.cards_image
+ *	Events
+ */
+Template.cards_image.events({
+
+	'click .media__pinterest': (e, template) => {
+		if(PDK) {
+			let image = Core.helpers.imgSource(template.data.sys.id, 'desktop'),
+					note 	= template.data.fields.title,
+					url		= window.location.href;
+			PDK.pin(image, note, url, () => {
+				
+			});
+		}
+	}
+
+});
