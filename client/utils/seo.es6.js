@@ -50,7 +50,7 @@ Core.seo = class Seo {
 		asset = project.fields.previewImage;
 
 		if(typeof asset !== 'undefined') {
-			handle = Meteor.subscribe('images', asset.sys.id, () => {
+			Meteor.subscribe('images', asset.sys.id, () => {
 				this.run({
 					title: `Anna Claire Christoffer - ${project.fields.title}`,
 					description: project.fields.description,
@@ -58,7 +58,6 @@ Core.seo = class Seo {
 					url: window.location.href,
 					type: 'article'
 				});
-				handle.stop();
 			});
 		}
 		else {
