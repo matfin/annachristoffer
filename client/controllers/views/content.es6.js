@@ -50,7 +50,7 @@ Template.views_content.helpers({
 
 	image () {
 		let page = Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': this.slug});
-		if(typeof page.fields.images === 'undefined' || page.fields.images.length === 0) return;
+		if(typeof page.fields === 'undefined' || typeof page.fields.images === 'undefined' || page.fields.images.length === 0) return;
 		return page.fields.images[0];
 	},
 
