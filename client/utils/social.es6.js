@@ -22,6 +22,7 @@ Core.social = {
 					version: 	'v2.4',
 					status: 	true
 				});
+				this.ready = true;
 			};
 
 			((d, s, id) => {
@@ -32,6 +33,36 @@ Core.social = {
 				js.src 	= '//connect.facebook.net/en_US/sdk.js';
 				fjs.parentNode.insertBefore(js, fjs); 
 			})(document, 'script', 'facebook-jssdk');
+		}
+	},
+
+	google: class Google {
+		/**
+		 *	Function to initialise Google Analytics
+		 *	
+		 *	@method init
+		 */
+		static init() {
+			((i, s, o, g, r, a, m) => {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || () => {
+					(i[r].q = i[r].q || []).push(arguments)
+				},
+				i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a,m);
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			if(Meteor.settings.public.google) {
+				ga('create', Meteor.settings.public.google.ua, 'auto');
+				this.ready = true;
+			}
+			else {
+				this.ready = false;
+			}
 		}
 	},
 
@@ -47,6 +78,7 @@ Core.social = {
 					appId: Meteor.settings.public.pinterest.appId,
 					cookie: true
 				});
+				this.ready = true;
 			};
 
 			((d, s, id) => {
@@ -57,9 +89,6 @@ Core.social = {
 				js.src 	= '//assets.pinterest.com/sdk/sdk.js';
 				pjs.parentNode.insertBefore(js, pjs);  
 			})(document, 'script', 'pinterest-jssdk');
-
 		}
-
 	}
-
-}
+};
