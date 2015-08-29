@@ -14,6 +14,7 @@ Template.views_detail.onCreated(function() {
 		this.projectDependency.depend();
 		if(this.projectHandle.ready()) {
 			Core.seo.refreshFromProject(this.data.slug);
+			Core.social.google.trackProjectView(this.data.slug);
 		}
 	});
 });

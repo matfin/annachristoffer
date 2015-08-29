@@ -21,6 +21,7 @@ Meteor.startup(() => {
 		Dependencies.start();
 		Core.social.facebook.init();
 		Core.social.pinterest.init();
+		Core.social.google.init();
 		window.prerender = false;
 	}
 	

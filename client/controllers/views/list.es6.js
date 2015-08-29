@@ -15,6 +15,7 @@ Template.views_list.onCreated(function() {
 		this.pageDependency.depend();
 		if(this.pageHandle.ready()) {
 			Core.seo.refreshFromPage('overview');
+			Core.social.google.trackCategoryView(this.data.slug);
 		}
 	});
 });

@@ -64,6 +64,36 @@ Core.social = {
 				this.ready = false;
 			}
 		}
+
+		/**
+		 *	Function to fetch data and track a page view given a slug
+		 *
+		 *	@method trackContentView
+		 *	@param {String} slug - the slug for the 
+		 */
+		static trackContentView(slug) {
+			let page = Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': slug});
+			ga('send', 'pageview', {
+				page: `/content/${page.fields.slug}`,
+				title: page.fields.title
+			});
+		}
+
+		static trackProjectView(slug) {
+			let project = Core.collections.entries.findOne({contentTypeName: 'Project', 'fields.slug': slug});
+			ga('send', 'pageview', {
+				page: `/project/${project.fields.slug}`,
+				title: project.fields.title
+			});
+		}
+
+		static trackCategoryView(slug) {
+			let category = Core.collections.entries.findOne({contentTypeName: 'Project Category', 'fields.slug': slug});
+			ga('send', 'pageview', {
+				page: 	typeof category !== 'undefined' ? `/${category.fields.slug}` : '/',
+				title: 	typeof category !== 'undefined' ? category.fields.title : 'All Projects'
+			});
+		}
 	},
 
 	pinterest: class Pinterest {
