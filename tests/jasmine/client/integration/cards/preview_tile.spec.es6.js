@@ -54,11 +54,11 @@ describe('cards_preview_tile', () => {
 	describe('helpers', () => {
 
 		describe('thumbnail', () => {
-			it('should call find on the images collection with the correct parameters', (done) => {
+			it('should call imgSource on core helpers with the correct parameters', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.images, 'findOne').and.returnValue({});
+				spyOn(Core.helpers, 'imgSource').and.returnValue({});
 
 				/**
 				 *	Dummy data 
@@ -73,56 +73,17 @@ describe('cards_preview_tile', () => {
 					}
 				};
 
-				let selector = {
-					'asset_id': 'preview-12345',
-					'device': 'mobile',
-					'density.multiplier': 1
-				};
-
 				/**
 				 *	Call the function and run the test
 				 */
 				Template.cards_preview_tile.__helpers[' thumbnail'].call(data);
-				expect(Core.collections.images.findOne).toHaveBeenCalledWith(selector);
+				expect(Core.helpers.imgSource).toHaveBeenCalledWith('preview-12345');
 
 				/**
 				 *	Finished
 				 */
 				done();
 			});
-
-			it('should call depend on the resized tracker dependency', (done) => {
-				/**
-				 *	Spies
-				 */
-				spyOn(Dependencies.resized, 'depend').and.returnValue({});
-				spyOn(Core.collections.images, 'findOne').and.returnValue({});
-
-				/**
-				 *	Dummy data
-				 */
-				let data = {
-					fields: {
-						previewImage: {
-							sys: {
-								id: 1
-							}
-						}
-					}
-				};
-
-				/**
-				 *	Run the function and then the tests
-				 */
-				Template.cards_preview_tile.__helpers[' thumbnail'].call(data);
-				expect(Dependencies.resized.depend).toHaveBeenCalled();
-
-				/**
-				 *	Finished
-				 */
-				done();
-			});
-
 		});
 
 		describe('highlighted', () => {

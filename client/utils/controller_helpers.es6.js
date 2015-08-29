@@ -94,6 +94,9 @@ Core.helpers = class Helpers {
 
 	/**
 	 *	Helper function for wistia video selector given device parameters
+	 *
+	 *	@method wistiaVideoType
+	 *	@return {String} - the video type given device parameters
 	 */
 	static wistiaVideoType () {
 		switch(Device.name) {

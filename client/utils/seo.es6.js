@@ -161,7 +161,12 @@ Core.seo = class Seo {
 				description 	= this.head.querySelectorAll('meta[name="description"]')[0],
 				canonical			= this.head.querySelectorAll('link[rel="canonical"]')[0];
 
-		title.appendChild(document.createTextNode(this.title));
+		if(!title.firstChild) {
+			title.appendChild(document.createTextNode(this.title));
+		}
+		else {
+			title.firstChild.nodeValue = this.title;
+		}
 		description.content = this.description;
 		canonical.content 	= this.url;
 		
