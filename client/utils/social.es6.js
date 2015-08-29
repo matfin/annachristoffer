@@ -1,4 +1,4 @@
-'use stricr';
+'use strict';
 
 /**
  *	Client side class to handle sharing of content on social media networks

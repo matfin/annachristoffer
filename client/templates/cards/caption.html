@@ -2,6 +2,9 @@
 	<figure class="detail__caption">
 		{{#if hasText}}
 			<figcaption class="detail__caption__text">
+				{{#if isFirst}}
+					<h3 class="detail__caption__description">{{../fields.description}}</h3>
+				{{/if}}
 				{{#markdown}}{{fields.paragraphs}}{{/markdown}}
 			</figcaption>
 		{{/if}}

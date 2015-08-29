@@ -4,11 +4,13 @@
 		+flex-direction(column-reverse)
 	+break(min, $break-3)
 		+flex-direction(row-reverse)
-		&:before 
-			content: ""
-			display: block
-			padding-top: 50%
+		min-height: 25rem
 	background-color: rgba($white, 0.6)
+	margin-bottom: 1rem
+
+.detail__caption__description
+	font-size: $base-size
+	font-weight: $heavy-weight
 	margin-bottom: 1rem
 
 .detail__caption__text
@@ -16,6 +18,10 @@
 	margin: 1rem
 	+break(min, $break-3)
 		margin-left: 0
+
+.detail__caption__text 
+	p
+		margin-bottom: 1rem
 
 .detail__caption__media
 	position: relative

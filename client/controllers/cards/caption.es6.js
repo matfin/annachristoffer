@@ -43,5 +43,8 @@ Template.cards_caption.helpers({
 	},
 	video () {
 		return typeof this.fields.videoSource !== 'undefined' ? this.fields.videoSource : false;
+	},
+	isFirst () {
+		return this.index === 0;
 	}	
 });

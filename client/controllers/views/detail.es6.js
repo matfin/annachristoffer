@@ -43,6 +43,9 @@ Template.views_detail.onDestroyed(function() {
  */
 Template.views_detail.helpers({
 	project () {
-		return Core.collections.entries.findOne({'fields.slug': this.slug});
+		let project = Core.collections.entries.findOne({'fields.slug': this.slug});
+		if(typeof project === 'undefined') return;
+		project.fields.items.map((item, index) => {item.index = index});
+		return project;
 	}
 });
