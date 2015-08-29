@@ -129,11 +129,10 @@ describe('Core', function() {
 				done();
 			});
 
-			it('should call the run function when the project is not undefined but the asset is undefined becuase there is no preview image', function(done) {
+			it('should call the run function when the project is not undefined but the asset is undefined because there is no preview image', function(done) {
 				/**
 				 *	Spies
 				 */
-
 				spyOn(Core.collections.entries, 'findOne').and.returnValue({
 					fields: {
 						title: 'Dummy Title',
@@ -152,6 +151,109 @@ describe('Core', function() {
 					description: 'Dummy description',
 					url: jasmine.any(String),
 					type: 'article'
+				});
+
+				/**
+				 *	Done
+				 */
+				setTimeout(done, 50);
+			});
+
+		});
+
+		describe('refreshFromPage', function() {
+
+			it('Call find on the entries collection with the correct parameters and then return immediately when the page is undefined', function(done) {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.collections.entries, 'findOne').and.returnValue(undefined);
+				/**
+				 *	Run the function and then the tests
+				 */
+				expect(Core.seo.refreshFromPage('dummy-slug')).toBeUndefined();
+				expect(Core.collections.entries.findOne).toHaveBeenCalledWith({contentTypeName: 'Page', 'fields.slug': 'dummy-slug'});
+				/**
+				 *	Done
+				 */
+				done();
+			});
+
+			it('should call subscribe on the images collection with the correct parameters and then call the run function when the page is not undefined', function(done) {
+				/**
+				 *	Spies
+				 */
+				spyOn(Core.helpers, 'imgSource').and.returnValue('http://image.jpg');
+
+				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+					fields: {
+						title: 'Dummy Title',
+						description: 'Dummy description',
+						slug: 'dummy-slug',
+						images: [
+							{
+								fields: {
+									description: 'seo',
+									title: 'A dummy title'
+								},
+								sys: {
+									id: 'dummy-asset-id-1'
+								}
+							}
+						]
+					}
+				});
+				spyOn(Meteor, 'subscribe').and.callFake(function(collection, selector, callback) {
+					callback();
+					return {
+						stop: function() {},
+						ready: function() {}
+					};
+				});
+				spyOn(Core.seo, 'run').and.returnValue({});
+	
+				/**
+				 *	Run the function and then the tests
+				 */
+				Core.seo.refreshFromPage('dummy-slug');
+				expect(Meteor.subscribe).toHaveBeenCalledWith('images', 'dummy-asset-id-1', jasmine.any(Function));
+				expect(Core.seo.run).toHaveBeenCalledWith({
+					title: 'Dummy Title',
+					description: 'Dummy description',
+					image: 'http://image.jpg',
+					url: jasmine.any(String),
+					type: 'website'
+				});
+
+				/**
+				 *	Done
+				 */
+				done();
+			});
+
+			it('should call the run function when the project is not undefined but the asset is undefined becuase there is no preview image', function(done) {
+				/**
+				 *	Spies
+				 */
+
+				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+					fields: {
+						title: 'Dummy Title',
+						description: 'Dummy description',
+						slug: 'dummy-slug'
+					}
+				});
+				spyOn(Core.seo, 'run').and.returnValue({});
+	
+				/**
+				 *	Run the function and then the tests
+				 */
+				Core.seo.refreshFromPage('dummy-slug');
+				expect(Core.seo.run).toHaveBeenCalledWith({
+					title: 'Dummy Title',
+					description: 'Dummy description',
+					url: jasmine.any(String),
+					type: 'website'
 				});
 
 				/**

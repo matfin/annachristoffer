@@ -62,7 +62,7 @@ Core.seo = class Seo {
 		}
 		else {
 			this.run({
-				title: project.fields.title,
+				title: `Anna Claire Christoffer - ${project.fields.title}`,
 				description: project.fields.description,
 				url: window.location.href,
 				type: 'article'
@@ -83,10 +83,12 @@ Core.seo = class Seo {
 				handle;
 
 		if(typeof page === 'undefined') return;
-		asset = page.fields.images.find((image) => image.fields.description === 'seo');
+		if(typeof page.fields.images !== 'undefined') {
+			asset = page.fields.images.find((image) => image.fields.description === 'seo');
+		}
 
 		if(typeof asset !== 'undefined') {
-			handle = Meteor.subscribe('images', asset.sys.id, () => {
+			Meteor.subscribe('images', asset.sys.id, () => {
 				this.run({
 					title: page.fields.title,
 					description: page.fields.description,
@@ -94,14 +96,12 @@ Core.seo = class Seo {
 					url: window.location.href,
 					type: 'website'
 				});
-				handle.stop();
 			});
 		}	
 		else {
 			this.run({
 				title: page.fields.title,
 				description: page.fields.description,
-				image: '',
 				url: window.location.href,
 				type: 'website'
 			});
