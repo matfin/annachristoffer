@@ -39,6 +39,7 @@ Services = {
 				throw new Meteor.Error('Prerender token undefined. Quitting');
 				return;
 			}
+			console.log('Starting prerender.io service with token: ', this.settings.token);
 			this.handler = Npm.require('prerender-node').set('prerenderToken', this.settings.token);
 			WebApp.connectHandlers.use(this.handler);
 		}
