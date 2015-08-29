@@ -34,7 +34,7 @@ describe('views_detail', () => {
 			 *	Run the function and then run the tests
 			 */
 			Blaze.renderWithData(Template.views_detail, data, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project', {'fields.slug': 'a-test-project'}, {onStop: jasmine.any(Function)});
+			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project', {'fields.slug': 'a-test-project'}, {onReady: jasmine.any(Function), onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finished
@@ -47,7 +47,7 @@ describe('views_detail', () => {
 	describe('helpers', () => {
 
 		describe('project', () => {
-			it('should call find on the entries collection with the correct parameters', (done) => {
+			it('should call findOne on the entries collection with the correct parameters', (done) => {
 				/**
 				 *	Spies
 				 */

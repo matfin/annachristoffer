@@ -51,6 +51,7 @@ Template.cards_video.helpers({
 
 	poster () {
 		Dependencies.resized.depend();
+		if(typeof this.image === 'undefined') return;
 		let selector = {
 			'asset_id': this.image.sys.id,
 			'device': Device.name,
