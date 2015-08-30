@@ -28,10 +28,12 @@ let attach = (entry, attachment) => {
 let entriesOfType = function(type, filter = {}) {
 
 	let mappedNames = [
-		{collection: 'projects', contentTypeName: 'Project'},
-		{collection: 'categories', contentTypeName: 'Project Category'},
-		{collection: 'pages', contentTypeName: 'Page'},
-		{collection: 'experiences', contentTypeName: 'Experience'}
+		{collection: 'projects', 			contentTypeName: 'Project'},
+		{collection: 'projectitems', 	contentTypeName: 'Project Item'},
+		{collection: 'categories', 		contentTypeName: 'Project Category'},
+		{collection: 'pages', 				contentTypeName: 'Page'},
+		{collection: 'contentitems', 	contentTypeName: 'Content Item'},
+		{collection: 'experiences', 	contentTypeName: 'Experience'}
 	],
 	mappedName 				= mappedNames.find((mappedName) => mappedName.collection === type),
 	contentType 			= Collections.contentTypes.findOne({name: mappedName.contentTypeName}),
@@ -82,6 +84,14 @@ Meteor.publish('pages', function(filter) {
 
 Meteor.publish('experiences', function(filter) {
 	entriesOfType.call(this, 'experiences', filter);
+});
+
+Meteor.publish('projectitems', function(filter) {
+	entriesOfType.call(this, 'projectitems', filter);
+});
+
+Meteor.publish('contentitems', function(filter) {
+	entriesOfType.call(this, 'contentitems', filter);
 });
 
 /**

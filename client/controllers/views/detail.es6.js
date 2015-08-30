@@ -13,6 +13,9 @@ Template.views_detail.onCreated(function() {
 	this.autorun(() => {
 		this.projectDependency.depend();
 		if(this.projectHandle.ready()) {
+			let project 	= Core.collections.projects.findOne({'fields.slug': this.data.slug}),
+					itemIds 	= project.fields.items.map((item) => item.sys.id);
+			this.subscribe('projectitems', {'sys.id': {$in: itemIds}});
 			Core.seo.refreshFromProject(this.data.slug);
 			Core.social.google.trackProjectView(this.data.slug);
 		}
@@ -49,5 +52,9 @@ Template.views_detail.helpers({
 			project.fields.items.map((item, index) => {item.index = index});
 		}
 		return project;
+	},
+
+	projectItems () {
+		return Core.collections.projectitems.find({}).fetch();
 	}
 });

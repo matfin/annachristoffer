@@ -1,11 +1,9 @@
 <template name="views_detail">
 	{{#if Template.subscriptionsReady}}
 		<section class="detail">
-			{{#with project}}
-				{{#each fields.items}}
-					{{>cards_caption}}
-				{{/each}}
-			{{/with}}
+			{{#each projectItems}}
+				{{>cards_caption}}
+			{{/each}}
 		</section>
 	{{else}}
 		{{>views_loading}}

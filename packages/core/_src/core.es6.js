@@ -23,6 +23,14 @@ Core = {
 		projects: new Mongo.Collection('projects'),
 
 		/**
+		 *	Entries with the content type of 'Project Item'
+		 *	
+		 *	@property project_items
+		 *	@type {Mongo.Collection}
+		 */
+		projectitems: new Mongo.Collection('projectitems'),
+
+		/**
 		 *	Entries with the content type of 'Project Category'
 		 *
 		 *	@property categories
@@ -37,6 +45,14 @@ Core = {
 		 *	@type {Mongo.Collection}
 		 */
 		pages: new Mongo.Collection('pages'),
+
+		/**
+		 *	Entries with the content type of 'Project Item'
+		 *	
+		 *	@property project_items
+		 *	@type {Mongo.Collection}
+		 */
+		contentitems: new Mongo.Collection('contentitems'),
 
 		/**
 		 *	Entries with the content type of 'Experience'

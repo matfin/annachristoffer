@@ -8,6 +8,7 @@
  */
 Template.cards_preview_tile.onCreated(function() {
 	Meteor.subscribe('images', this.data.fields.previewImage.sys.id);
+	Meteor.subscribe('categories');
 });
 
 /**
@@ -45,9 +46,11 @@ Template.cards_preview_tile.helpers({
 	 *	Determines the current highlight state of the tile
 	 */
 	highlighted () {
-		if(typeof this.fields.categories === 'undefined') return;
-		let current_category = Router.current().params._slug,
-				found = typeof this.fields.categories.find((category) => category.fields.slug === current_category) !== 'undefined'; 
+		let category_ids 	= this.fields.categories.map((category) => category.sys.id),
+				categories 		= Core.collections.categories.find({'sys.id': {$in: category_ids}}).fetch(),
+				current 			= Router.current().params._slug,
+				found 				= categories.find((category) => category.fields.slug === current);
+
 		return found ? 'preview__tile__flip__front--highlighted':'';
 	}
 });
