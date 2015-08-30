@@ -72,7 +72,7 @@ Core.social = {
 		 *	@param {String} slug - the slug for the 
 		 */
 		static trackContentView(slug) {
-			let page = Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': slug});
+			let page = Core.collections.pages.findOne({'fields.slug': slug});
 			ga('set', 'pageview', {
 				page: `/content/${page.fields.slug}`,
 				title: page.fields.title
@@ -80,7 +80,7 @@ Core.social = {
 		}
 
 		static trackProjectView(slug) {
-			let project = Core.collections.entries.findOne({contentTypeName: 'Project', 'fields.slug': slug});
+			let project = Core.collections.projects.findOne({'fields.slug': slug});
 			ga('set', 'pageview', {
 				page: `/project/${project.fields.slug}`,
 				title: project.fields.title
@@ -88,7 +88,7 @@ Core.social = {
 		}
 
 		static trackCategoryView(slug) {
-			let category = Core.collections.entries.findOne({contentTypeName: 'Project Category', 'fields.slug': slug});
+			let category = Core.collections.categories.findOne({'fields.slug': slug});
 			ga('set', 'pageview', {
 				page: 	typeof category !== 'undefined' ? `/${category.fields.slug}` : '/',
 				title: 	typeof category !== 'undefined' ? category.fields.title : 'All Projects'

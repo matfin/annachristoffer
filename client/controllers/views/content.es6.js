@@ -8,8 +8,8 @@
  */
 Template.views_content.onCreated(function() {
 	this.pageDependency 	= new Tracker.Dependency;
-	this.pageHandle 			= this.subscribe('entries', 'Page', {'fields.slug': this.data.slug}, () => this.pageDependency.changed());
-	this.subscribe('entries', 'Experience');
+	this.pageHandle 			= this.subscribe('pages', {'fields.slug': this.data.slug}, () => this.pageDependency.changed());
+	this.subscribe('experiences');
 
 	this.autorun(() => {
 		this.pageDependency.depend();
@@ -45,11 +45,11 @@ Template.views_content.onDestroyed(function() {
 Template.views_content.helpers({
 	
 	page () {
-		return Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': this.slug});
+		return Core.collections.pages.findOne({'fields.slug': this.slug});
 	},
 
 	image () {
-		let page = Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': this.slug});
+		let page = Core.collections.pages.findOne({'fields.slug': this.slug});
 		if(typeof page.fields === 'undefined' || typeof page.fields.images === 'undefined' || page.fields.images.length === 0) return;
 		return page.fields.images[0];
 	},
@@ -57,7 +57,7 @@ Template.views_content.helpers({
 	experience (type) {
 		return {
 			title: type,
-			items: Core.collections.entries.find({contentTypeName: 'Experience', 'fields.type': type}, {sort: {'fields.startDate': -1}}).fetch()
+			items: Core.collections.experiences.find({'fields.type': type}, {sort: {'fields.startDate': -1}}).fetch()
 		}
 	}
 });

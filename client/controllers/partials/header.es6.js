@@ -7,7 +7,7 @@
  *	@method created
  */
 Template.partials_header.onCreated(function() {
-	this.subscribe('entries', 'Project Category');
+	this.subscribe('categories');
 });
 
 /**
@@ -36,7 +36,7 @@ Template.partials_header.helpers({
 
 	categories () { 
 		Dependencies.resized.depend();
-		return Device.isMobile ? [] : Core.collections.entries.find({contentTypeName: 'Project Category'});
+		return Device.isMobile ? [] : Core.collections.categories.find();
 	},
 
 	active () {

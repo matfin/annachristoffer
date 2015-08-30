@@ -8,8 +8,8 @@
  */
 Template.views_list.onCreated(function() {
 	this.pageDependency 	= new Tracker.Dependency;
-	this.pageHandle 			= this.subscribe('entries', 'Page', {'fields.slug': 'overview'}, () => this.pageDependency.changed());
-	this.subscribe('entries', 'Project');
+	this.pageHandle 			= this.subscribe('pages', {'fields.slug': 'overview'}, () => this.pageDependency.changed());
+	this.subscribe('projects');
 
 	this.autorun(() => {
 		this.pageDependency.depend();
@@ -43,6 +43,6 @@ Template.views_list.onDestroyed(function() {
  *	Helper functions
  */
 Template.views_list.helpers({
-	projects: () => Core.collections.entries.find({contentTypeName: 'Project'}, {sort: {'fields.createdAt': -1}}).fetch()
+	projects: () => Core.collections.projects.find({}, {sort: {'fields.createdAt': -1}}).fetch()
 });
 

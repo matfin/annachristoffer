@@ -2,3 +2,4 @@
 .meteor/platforms
 settings.json
 *.tar.gz
+packages/meteor-contentful

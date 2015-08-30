@@ -8,7 +8,6 @@ iron:router
 
 matfin:slider
 dfischer:prerenderio
-matfin:meteor-contentful
 fourseven:scss
 markdown
 momentjs:moment
@@ -18,3 +17,4 @@ velocity:html-reporter
 grigio:babel
 com.annachristoffer:core
 matfin:meteor-wistia
+matfin:meteor-contentful

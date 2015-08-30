@@ -8,7 +8,7 @@
  */
 Template.views_detail.onCreated(function() {
 	this.projectDependency = new Tracker.Dependency;
-	this.projectHandle = this.subscribe('entries', 'Project', {'fields.slug': this.data.slug}, () => this.projectDependency.changed());
+	this.projectHandle = this.subscribe('projects', {'fields.slug': this.data.slug}, () => this.projectDependency.changed());
 	
 	this.autorun(() => {
 		this.projectDependency.depend();
@@ -43,7 +43,7 @@ Template.views_detail.onDestroyed(function() {
  */
 Template.views_detail.helpers({
 	project () {
-		let project = Core.collections.entries.findOne({'fields.slug': this.slug});
+		let project = Core.collections.projects.findOne({'fields.slug': this.slug});
 		if(typeof project === 'undefined') return;
 		project.fields.items.map((item, index) => {item.index = index});
 		return project;

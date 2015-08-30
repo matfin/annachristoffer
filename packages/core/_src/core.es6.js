@@ -15,20 +15,36 @@ Core = {
 	 */
 	collections: {
 		/**
-		 *	Entries from Contentful
+		 *	Entries with the content type of 'Project'
 		 *
-		 *	@property entries
+		 *	@property projects
 		 *	@type {Mongo.Collection}
 		 */
-		entries: new Mongo.Collection('entries'),
+		projects: new Mongo.Collection('projects'),
 
 		/**
-		 *	Contentful assets
+		 *	Entries with the content type of 'Project Category'
 		 *
-		 *	@property assets
+		 *	@property categories
 		 *	@type {Mongo.Collection}
 		 */
-		assets: new Mongo.Collection('assets'),
+		categories: new Mongo.Collection('categories'),
+
+		/**
+		 *	Entries with the content type of 'Page'
+		 *
+		 *	@property pages
+		 *	@type {Mongo.Collection}
+		 */
+		pages: new Mongo.Collection('pages'),
+
+		/**
+		 *	Entries with the content type of 'Experience'
+		 *
+		 *	@property experiences
+		 *	@type {Mongo.Collection}
+		 */
+		experiences: new Mongo.Collection('experiences'),
 
 		/**
 		 *	Mongo Collection for processed images

@@ -41,7 +41,7 @@ Core.seo = class Seo {
 	 *	@param 	{String} slug - the project slug
 	 */
 	static refreshFromProject(slug) {
-		let project = Core.collections.entries.findOne({contentTypeName: 'Project', 'fields.slug': slug}),
+		let project = Core.collections.projects.findOne({'fields.slug': slug}),
 				asset,
 				image,
 				handle;
@@ -77,7 +77,7 @@ Core.seo = class Seo {
 	 *	@param 	{String} slug - the page slug to be used as a selector
 	 */
 	static refreshFromPage(slug) {
-		let page 	= Core.collections.entries.findOne({contentTypeName: 'Page', 'fields.slug': slug}),
+		let page 	= Core.collections.pages.findOne({'fields.slug': slug}),
 				asset,
 				image,
 				handle;
