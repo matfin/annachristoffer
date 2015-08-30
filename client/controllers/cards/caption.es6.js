@@ -46,5 +46,5 @@ Template.cards_caption.helpers({
 	},
 	isFirst () {
 		return this.index === 0;
-	}	
+	}
 });

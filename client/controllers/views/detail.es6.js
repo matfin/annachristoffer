@@ -45,7 +45,14 @@ Template.views_detail.onDestroyed(function() {
  *	Helper functions
  */
 Template.views_detail.helpers({
+
+	project () {
+		return Core.collections.projects.findOne({'fields.slug': this.slug});
+	},
+
 	projectItems () {
-		return Core.collections.projectitems.find({}, {sort: {'sys.createdAt': 1}}).fetch();
+		let items 	= Core.collections.projectitems.find({}, {sort: {'sys.createdAt': 1}}).fetch();
+		items.map((item, index) => {item.index = index});
+		return items;
 	}
 });
