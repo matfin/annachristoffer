@@ -52,7 +52,7 @@ Template.views_content.helpers({
 	},
 
 	image () {
-		let page = Core.collections.pages.findOne({'fields.slug': this.slug});
+		let page = Core.collections.pages.findOne();
 		if(typeof page.fields === 'undefined' || typeof page.fields.images === 'undefined' || page.fields.images.length === 0) return;
 		return page.fields.images[0];
 	},

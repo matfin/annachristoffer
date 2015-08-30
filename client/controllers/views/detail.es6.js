@@ -45,16 +45,7 @@ Template.views_detail.onDestroyed(function() {
  *	Helper functions
  */
 Template.views_detail.helpers({
-	project () {
-		let project = Core.collections.projects.findOne({'fields.slug': this.slug});
-		if(typeof project === 'undefined') return;
-		if(typeof project.fields.items !== 'undefined') {
-			project.fields.items.map((item, index) => {item.index = index});
-		}
-		return project;
-	},
-
 	projectItems () {
-		return Core.collections.projectitems.find({}).fetch();
+		return Core.collections.projectitems.find({}, {sort: {'sys.createdAt': 1}}).fetch();
 	}
 });
