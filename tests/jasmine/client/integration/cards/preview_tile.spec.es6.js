@@ -96,6 +96,15 @@ describe('cards_preview_tile', () => {
 						_slug: 'dummy-category'
 					}
 				});
+				spyOn(Core.collections.categories, 'find').and.returnValue({
+					fetch: () => [
+						{
+							fields: {
+								slug: 'dummy-category'
+							}
+						}
+					]
+				});
 
 				/**
 				 *	Dummy data
@@ -106,11 +115,17 @@ describe('cards_preview_tile', () => {
 							{
 								fields: {
 									slug: 'dummy-category'
+								},
+								sys: {
+									id: 'dummy-id-1'
 								}
 							},
 							{
 								fields: {
 									slug: 'another-dummy-category'
+								},
+								sys: {
+									id: 'dummy-id-1'
 								}
 							}
 						]
@@ -139,6 +154,22 @@ describe('cards_preview_tile', () => {
 						_slug: 'another-category'
 					}
 				});
+				spyOn(Core.collections.categories, 'find').and.returnValue({
+					fetch: () => {
+						return [
+							{
+								fields: {
+									slug: 'no'
+								}
+							},
+							{
+								fields: {
+									slug: 'no'
+								}
+							}
+						];
+					}
+				});
 
 				/**
 				 *	Dummy data
@@ -149,11 +180,17 @@ describe('cards_preview_tile', () => {
 							{
 								fields: {
 									slug: 'dummy-category'
+								},
+								sys: {
+									id: 'dummy-id-1'
 								}
 							},
 							{
 								fields: {
 									slug: 'another-dummy-category'
+								},
+								sys: {
+									id: 'dummy-id-2'
 								}
 							}
 						]

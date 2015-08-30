@@ -46,6 +46,7 @@ Template.cards_preview_tile.helpers({
 	 *	Determines the current highlight state of the tile
 	 */
 	highlighted () {
+		if(typeof this.fields.categories === 'undefined') return;
 		let category_ids 	= this.fields.categories.map((category) => category.sys.id),
 				categories 		= Core.collections.categories.find({'sys.id': {$in: category_ids}}).fetch(),
 				current 			= Router.current().params._slug,

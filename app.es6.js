@@ -7,7 +7,7 @@ Meteor.startup(() => {
 			console.log('Booting server with Contentful enabled.');
 			MeteorContentful.start().fetch('contentTypes').fetch('entries').fetch('assets');    
     	ImageProcessor.observe();
-    	MeteorContentful.listen();
+    	//MeteorContentful.listen();
 		}
 		else {
 			console.log('Booting server with Contentful disabled.');

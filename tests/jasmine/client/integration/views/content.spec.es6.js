@@ -18,7 +18,20 @@ describe('views_content', () => {
 			});
 			spyOn(Core.collections.pages, 'findOne').and.returnValue({
 				slug: 'sample-slug',
-				fields: {},
+				fields: {
+					contentItems: [
+						{
+							sys: {
+								id: 'dummy-id-10'
+							}
+						},
+						{
+							sys: {
+								id: 'dummy-id-11'
+							}
+						}
+					]
+				},
 				sys: {}
 			});
 
@@ -73,36 +86,33 @@ describe('views_content', () => {
 
 	describe('helpers', () => {
 
-		describe('page', () => {
-			it('should call findOne on the pages collection with the correct parameters', (done) => {
+		describe('contentItems', () => {
+
+			it('should call find on the contentitems collection', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.pages, 'findOne').and.returnValue({});
+				spyOn(Core.collections.contentitems, 'find').and.returnValue({
+					fetch: () => true
+				});
 
 				/**
-				 *	Dummy data
+				 *	Call the function and then run the tests
 				 */
-				let data = {
-					slug: 'dummy-page'
-				};
+				Template.views_content.__helpers[' contentItems']();
+				expect(Core.collections.contentitems.find).toHaveBeenCalled();
 
 				/**
-				 *	Call the function and run the test
-				 */
-				Template.views_content.__helpers[' page'].call(data);
-				expect(Core.collections.pages.findOne).toHaveBeenCalledWith({'fields.slug': 'dummy-page'});
-
-				/**
-				 *	Done
+				 *	Finished
 				 */
 				done();
 			});
+
 		});
 
 		describe('image', () => {
 
-			it('should call findOne on the pages collection with the correct parameters and return an image if present', (done) => {
+			it('should call findOne on the pages collection with no parameters and return an image if present', (done) => {
 				/**
 				 *	Spies
 				 */
@@ -126,7 +136,7 @@ describe('views_content', () => {
 				 *	Call the function and run the test
 				 */
 				expect(Template.views_content.__helpers[' image'].call(data)).toEqual({fields: {}, sys: {}});
-				expect(Core.collections.pages.findOne).toHaveBeenCalledWith({'fields.slug': 'dummy-slug'});
+				expect(Core.collections.pages.findOne).toHaveBeenCalled();
 
 				/** 
 				 *	Done

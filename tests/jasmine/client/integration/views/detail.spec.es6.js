@@ -24,7 +24,19 @@ describe('views_detail', () => {
 			});
 			spyOn(Core.collections.projects, 'findOne').and.returnValue({
 				fields: {
-					slug: 'a-test-project'
+					slug: 'a-test-project',
+					items: [
+						{
+							sys: {
+								id: '1'
+							}
+						},
+						{
+							sys: {
+								id: '1'
+							}
+						}
+					]
 				}
 			});
 
@@ -51,30 +63,20 @@ describe('views_detail', () => {
 
 	describe('helpers', () => {
 
-		describe('project', () => {
-			it('should call findOne on the projects collection with the correct parameters', (done) => {
+		describe('projectItems', () => {
+			it('should call find on the projectitems collection with the correct parameters', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.projects, 'findOne').and.returnValue({
-					fields: {
-						items: [{},{},{}]
-					},
-					sys: {}
+				spyOn(Core.collections.projectitems, 'find').and.returnValue({
+					fetch: () => true
 				});
-
-				/**
-				 *	Dummy data
-				 */
-				let data = {
-					slug: 'a-test-project'
-				};
 
 				/**
 				 *	Run the function and then the tests
 				 */
-				Template.views_detail.__helpers[' project'].call(data);
-				expect(Core.collections.projects.findOne).toHaveBeenCalledWith({'fields.slug': 'a-test-project'});
+				Template.views_detail.__helpers[' projectItems']();
+				expect(Core.collections.projectitems.find).toHaveBeenCalledWith({}, {sort: {'sys.createdAt': 1}});
 
 				/**
 				 *	Finished
