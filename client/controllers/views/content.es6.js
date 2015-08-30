@@ -14,6 +14,9 @@ Template.views_content.onCreated(function() {
 	this.autorun(() => {
 		this.pageDependency.depend();
 		if(this.pageHandle.ready()) {
+			let page 		= Core.collections.pages.findOne({'fields.slug': this.data.slug}),
+					itemIds = page.fields.contentItems.map((item) => item.sys.id);
+			this.subscribe('contentitems', {'sys.id': {$in: itemIds}});
 			Core.seo.refreshFromPage(this.data.slug);
 			Core.social.google.trackContentView(this.data.slug);
 		}
@@ -44,8 +47,8 @@ Template.views_content.onDestroyed(function() {
  */
 Template.views_content.helpers({
 	
-	page () {
-		return Core.collections.pages.findOne({'fields.slug': this.slug});
+	contentItems () {
+		return Core.collections.contentitems.find({}).fetch();
 	},
 
 	image () {

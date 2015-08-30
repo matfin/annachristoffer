@@ -7,11 +7,9 @@
 				{{/with}}
 			</div>
 			<section class="content__column">
-				{{#with page}}
-					{{#each fields.contentItems}}
-						{{>cards_text}}
-					{{/each}}
-				{{/with}}
+				{{#each contentItems}}
+					{{>cards_text}}
+				{{/each}}
 				{{#with experience 'Education'}}
 					{{>cards_experience}}
 				{{/with}}
