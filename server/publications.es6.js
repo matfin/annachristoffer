@@ -35,8 +35,8 @@ let entriesOfType = function(type, filter = {}) {
 		{collection: 'contentitems', 	contentTypeName: 'Content Item'},
 		{collection: 'experiences', 	contentTypeName: 'Experience'}
 	],
-	mappedName 				= mappedNames.find((mappedName) => mappedName.collection === type),
-	contentType 			= Collections.contentTypes.findOne({name: mappedName.contentTypeName}),
+	mappedName 			= mappedNames.find((mappedName) => mappedName.collection === type),
+	contentType 		= Collections.contentTypes.findOne({name: mappedName.contentTypeName}),
 	entries,
 	handle;
 
@@ -95,42 +95,19 @@ Meteor.publish('contentitems', function(filter) {
 });
 
 /**
- *	Call on Meteor to publish entries, remembering to attach some properties from
- *	its associated asset.
+ *	Call on Meteor to publish images
  *
- *	@param {String} 	- the name of the collection being subscribed to
- *	@param {Function} - callback function when publishing
  *	@param {Array} 		- spread parameter containing one or more matching IDs to act as a selector
+ *	@return {Object} 	- MongoDB cursor
  */
-Meteor.publish('images', function(...imageIds) {
-
-	let assets 			= Collections.assets.find({'sys.id': {$in: imageIds}}).fetch(),
-			images 			= Collections.images.find({'asset_id': {$in: imageIds}}),
-			handle;
-	
-	handle = images.observeChanges({
-		added: (id, image) => {
-			let asset = assets.find( (asset) => asset.sys.id === image.asset_id );
-			this.added('images', id, attach(image, {title: asset.fields.title, description: asset.fields.description}));
-		},
-		changed: (id, image) => {
-			let asset = assets.find( (asset) => asset.sys.id === image.asset_id );
-			this.added('images', id, attach(image, {title: asset.fields.title, description: asset.fields.description}));
-		}
-	});
-
-	this.onStop(() => {
-		handle.stop();
-	}); 
-
-	this.ready();
-});
+Meteor.publish('images', (...imageIds) => Collections.images.find({'asset_id': {$in: imageIds}}));
 
 /** 
  *	Call on Meteor to publish videos from the Wistia video collection
  *	
  *	@param {String} 	- the name of the collection being subscribed to
  *	@param {Array} 		- spead parameter cntaining one or more hashed IDs to act as a selector 
+ *	@return {Object} 	- MongoDB cursor
  */
 Meteor.publish('videos', (...hashedIds) => Wistia.collection.find({'hashed_id': {$in: hashedIds}}));
 
