@@ -65,16 +65,16 @@ describe('Core', function() {
 	
 		describe('refreshFromProject', function() {
 
-			it('Call find on the entries collection with the correct parameters and then return immediately when the project is undefined', function(done) {
+			it('Call find on the projects collection with the correct parameters and then return immediately when the project is undefined', function(done) {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue(undefined);
+				spyOn(Core.collections.projects, 'findOne').and.returnValue(undefined);
 				/**
 				 *	Run the function and then the tests
 				 */
 				expect(Core.seo.refreshFromProject('dummy-slug')).toBeUndefined();
-				expect(Core.collections.entries.findOne).toHaveBeenCalledWith({contentTypeName: 'Project', 'fields.slug': 'dummy-slug'});
+				expect(Core.collections.projects.findOne).toHaveBeenCalledWith({'fields.slug': 'dummy-slug'});
 				/**
 				 *	Done
 				 */
@@ -87,7 +87,7 @@ describe('Core', function() {
 				 */
 				spyOn(Core.helpers, 'imgSource').and.returnValue('http://image.jpg');
 
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+				spyOn(Core.collections.projects, 'findOne').and.returnValue({
 					fields: {
 						title: 'Dummy Title',
 						description: 'Dummy description',
@@ -133,7 +133,7 @@ describe('Core', function() {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+				spyOn(Core.collections.projects, 'findOne').and.returnValue({
 					fields: {
 						title: 'Dummy Title',
 						description: 'Dummy description',
@@ -163,16 +163,16 @@ describe('Core', function() {
 
 		describe('refreshFromPage', function() {
 
-			it('Call find on the entries collection with the correct parameters and then return immediately when the page is undefined', function(done) {
+			it('Call find on the pages collection with the correct parameters and then return immediately when the page is undefined', function(done) {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue(undefined);
+				spyOn(Core.collections.pages, 'findOne').and.returnValue(undefined);
 				/**
 				 *	Run the function and then the tests
 				 */
 				expect(Core.seo.refreshFromPage('dummy-slug')).toBeUndefined();
-				expect(Core.collections.entries.findOne).toHaveBeenCalledWith({contentTypeName: 'Page', 'fields.slug': 'dummy-slug'});
+				expect(Core.collections.pages.findOne).toHaveBeenCalledWith({'fields.slug': 'dummy-slug'});
 				/**
 				 *	Done
 				 */
@@ -185,7 +185,7 @@ describe('Core', function() {
 				 */
 				spyOn(Core.helpers, 'imgSource').and.returnValue('http://image.jpg');
 
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+				spyOn(Core.collections.pages, 'findOne').and.returnValue({
 					fields: {
 						title: 'Dummy Title',
 						description: 'Dummy description',
@@ -236,7 +236,7 @@ describe('Core', function() {
 				 *	Spies
 				 */
 
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+				spyOn(Core.collections.pages, 'findOne').and.returnValue({
 					fields: {
 						title: 'Dummy Title',
 						description: 'Dummy description',

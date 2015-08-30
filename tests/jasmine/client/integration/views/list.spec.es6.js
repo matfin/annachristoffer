@@ -14,7 +14,7 @@ describe('views_list', () => {
 			testParent = document.createElement('div');
 		});
 
-		it('should subscribe to the entries collection with the correct parameters', (done) => {
+		it('should subscribe to the projects collection with the correct parameters', (done) => {
 			/**
 			 *	Spies
 			 */
@@ -24,10 +24,17 @@ describe('views_list', () => {
 			});
 
 			/**
+			 *	Dummy data
+			 */
+			let data = {
+				slug: 'test-slug'
+			};
+
+			/**
 			 *	Call render and then run the tests
 			 */
-			Blaze.render(Template.views_list, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project', {onStop: jasmine.any(Function)});
+			Blaze.renderWithData(Template.views_list, data, testParent);
+			expect(Meteor.subscribe).toHaveBeenCalledWith('projects', {onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finish
@@ -40,20 +47,25 @@ describe('views_list', () => {
 	describe('helpers', () => {
 
 		describe('projects', () => {
-			it('should call find on the entries collection with the correct parameters', (done) => {
+			it('should call find on the projects collection with the correct parameters', (done) => {
 
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'find').and.returnValue({
+				spyOn(Core.collections.projects, 'find').and.returnValue({
 					fetch: () => true
+				});
+				spyOn(Core.collections.projects, 'findOne').and.returnValue({
+					fields: {
+						items: [{},{},{}]
+					}
 				});
 
 				/**
 				 *	Call the helper function and run the test
 				 */
 				Template.views_list.__helpers[' projects']();
-				expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project'}, {sort: {'fields.createdAt': - 1}});
+				expect(Core.collections.projects.find).toHaveBeenCalledWith({}, {sort: {'fields.createdAt': - 1}});
 
 				/**
 				 *	Finished

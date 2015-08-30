@@ -14,7 +14,7 @@ describe('partials_header', () => {
 			testParent = document.createElement('div');
 		});
 
-		it('should call subscribe on the entries collection with the correct parameters', (done) => {
+		it('should call subscribe on the categories collection with the correct parameters', (done) => {
 			/**
 			 *	Spies
 			 */
@@ -31,7 +31,7 @@ describe('partials_header', () => {
 			 *				in as an argument in the template controller
 			 */
 			Blaze.render(Template.partials_header, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project Category', {onStop: jasmine.any(Function)});
+			expect(Meteor.subscribe).toHaveBeenCalledWith('categories', {onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finished
@@ -47,7 +47,7 @@ describe('partials_header', () => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'find').and.returnValue({});
+				spyOn(Core.collections.categories, 'find').and.returnValue({});
 				spyOn(Device, 'reset').and.callFake(() => {
 					Device.isMobile = false;
 				});
@@ -60,7 +60,7 @@ describe('partials_header', () => {
 				 *	Run the function and then test
 				 */
 				Template.partials_header.__helpers[' categories']();
-				expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Project Category'});
+				expect(Core.collections.categories.find).toHaveBeenCalled();
 
 				/**
 				 *	Done
@@ -68,11 +68,11 @@ describe('partials_header', () => {
 				done();
 			});
 	
-			it('should not call find on the entries collection if the device is a mobile device', (done) => {
+			it('should not call find on the categories collection if the device is a mobile device', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'find').and.returnValue({});
+				spyOn(Core.collections.categories, 'find').and.returnValue({});
 				spyOn(Device, 'reset').and.callFake(() => {
 					Device.isMobile = true;
 				});
@@ -85,7 +85,7 @@ describe('partials_header', () => {
 				 *	Run the function and then test
 				 */
 				Template.partials_header.__helpers[' categories']();
-				expect(Core.collections.entries.find).not.toHaveBeenCalled();
+				expect(Core.collections.categories.find).not.toHaveBeenCalled();
 				/**
 				 *	Done
 				 */

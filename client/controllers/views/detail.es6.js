@@ -45,7 +45,9 @@ Template.views_detail.helpers({
 	project () {
 		let project = Core.collections.projects.findOne({'fields.slug': this.slug});
 		if(typeof project === 'undefined') return;
-		project.fields.items.map((item, index) => {item.index = index});
+		if(typeof project.fields.items !== 'undefined') {
+			project.fields.items.map((item, index) => {item.index = index});
+		}
 		return project;
 	}
 });

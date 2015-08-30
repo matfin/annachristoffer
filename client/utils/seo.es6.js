@@ -82,7 +82,7 @@ Core.seo = class Seo {
 				image,
 				handle;
 
-		if(typeof page === 'undefined') return;
+		if(typeof page === 'undefined' || typeof page.fields === 'undefined') return;
 		if(typeof page.fields.images !== 'undefined') {
 			asset = page.fields.images.find((image) => image.fields.description === 'seo');
 		}

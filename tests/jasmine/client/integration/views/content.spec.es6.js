@@ -9,12 +9,17 @@ describe('views_content', () => {
 			testParent = document.createElement('div');
 		});
 
-		it('should call subscribe on the entries collection with the correct parameters', (done) => {
+		it('should call subscribe on the pages collection with the correct parameters', (done) => {
 			/**
 			 *	Spies
 			 */
 			spyOn(Meteor, 'subscribe').and.returnValue({
 				ready: () => true
+			});
+			spyOn(Core.collections.pages, 'findOne').and.returnValue({
+				slug: 'sample-slug',
+				fields: {},
+				sys: {}
 			});
 
 			/**
@@ -28,8 +33,8 @@ describe('views_content', () => {
 			 *	Render the template and then run the tests
 			 */
 			Blaze.renderWithData(Template.views_content, data, testParent);
-			expect(Meteor.subscribe.calls.argsFor(0)).toEqual(['entries', 'Page', {'fields.slug': 'sample-slug'}, {onReady: jasmine.any(Function), onStop: jasmine.any(Function)}]);
-			expect(Meteor.subscribe.calls.argsFor(1)).toEqual(['entries', 'Experience', {onStop: jasmine.any(Function)}]);
+			expect(Meteor.subscribe.calls.argsFor(0)).toEqual(['pages', {'fields.slug': 'sample-slug'}, {onReady: jasmine.any(Function), onStop: jasmine.any(Function)}]);
+			expect(Meteor.subscribe.calls.argsFor(1)).toEqual(['experiences', {onStop: jasmine.any(Function)}]);
 
 			/**
 			 *	Done
@@ -69,11 +74,11 @@ describe('views_content', () => {
 	describe('helpers', () => {
 
 		describe('page', () => {
-			it('should call findOne on the entries collection with the correct parameters', (done) => {
+			it('should call findOne on the pages collection with the correct parameters', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({});
+				spyOn(Core.collections.pages, 'findOne').and.returnValue({});
 
 				/**
 				 *	Dummy data
@@ -86,7 +91,7 @@ describe('views_content', () => {
 				 *	Call the function and run the test
 				 */
 				Template.views_content.__helpers[' page'].call(data);
-				expect(Core.collections.entries.findOne).toHaveBeenCalledWith({contentTypeName: 'Page', 'fields.slug': 'dummy-page'});
+				expect(Core.collections.pages.findOne).toHaveBeenCalledWith({'fields.slug': 'dummy-page'});
 
 				/**
 				 *	Done
@@ -97,11 +102,11 @@ describe('views_content', () => {
 
 		describe('image', () => {
 
-			it('should call findOne on the entries collection with the correct parameters and return an image if present', (done) => {
+			it('should call findOne on the pages collection with the correct parameters and return an image if present', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+				spyOn(Core.collections.pages, 'findOne').and.returnValue({
 					fields: {
 						images: [{
 							fields: {},
@@ -121,7 +126,7 @@ describe('views_content', () => {
 				 *	Call the function and run the test
 				 */
 				expect(Template.views_content.__helpers[' image'].call(data)).toEqual({fields: {}, sys: {}});
-				expect(Core.collections.entries.findOne).toHaveBeenCalledWith({contentTypeName: 'Page', 'fields.slug': 'dummy-slug'});
+				expect(Core.collections.pages.findOne).toHaveBeenCalledWith({'fields.slug': 'dummy-slug'});
 
 				/** 
 				 *	Done
@@ -133,7 +138,7 @@ describe('views_content', () => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
+				spyOn(Core.collections.pages, 'findOne').and.returnValue({
 					fields: {}
 				});
 				/**
@@ -155,11 +160,11 @@ describe('views_content', () => {
 		});
 
 		describe('experience', () => {
-			it('should call find on the entries collection with the correct parameters', (done) => {
+			it('should call find on the experiences collection with the correct parameters', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'find').and.returnValue({
+				spyOn(Core.collections.experiences, 'find').and.returnValue({
 					fetch: () => true
 				});
 
@@ -167,7 +172,7 @@ describe('views_content', () => {
 				 *	Call the function and run the test
 				 */
 				Template.views_content.__helpers[' experience']('dummy-type');
-				expect(Core.collections.entries.find).toHaveBeenCalledWith({contentTypeName: 'Experience', 'fields.type': 'dummy-type'}, {sort: {'fields.startDate': -1}});
+				expect(Core.collections.experiences.find).toHaveBeenCalledWith({'fields.type': 'dummy-type'}, {sort: {'fields.startDate': -1}});
 
 				/**
 				 *	Done

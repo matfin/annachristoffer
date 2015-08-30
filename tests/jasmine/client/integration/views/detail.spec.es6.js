@@ -14,13 +14,18 @@ describe('views_detail', () => {
 			testParent = document.createElement('div');
 		});
 
-		it('should subscribe to the entries collection with the correct parameters', (done) => {
+		it('should subscribe to the projects collection with the correct parameters', (done) => {
 			/**
 			 *	Spies
 			 */
 			spyOn(Meteor, 'subscribe').and.returnValue({
 				subscriptionId: 3,
 				ready: () => true	
+			});
+			spyOn(Core.collections.projects, 'findOne').and.returnValue({
+				fields: {
+					slug: 'a-test-project'
+				}
 			});
 
 			/**
@@ -34,7 +39,7 @@ describe('views_detail', () => {
 			 *	Run the function and then run the tests
 			 */
 			Blaze.renderWithData(Template.views_detail, data, testParent);
-			expect(Meteor.subscribe).toHaveBeenCalledWith('entries', 'Project', {'fields.slug': 'a-test-project'}, {onReady: jasmine.any(Function), onStop: jasmine.any(Function)});
+			expect(Meteor.subscribe).toHaveBeenCalledWith('projects', {'fields.slug': 'a-test-project'}, {onReady: jasmine.any(Function), onStop: jasmine.any(Function)});
 
 			/**
 			 *	Finished
@@ -47,12 +52,15 @@ describe('views_detail', () => {
 	describe('helpers', () => {
 
 		describe('project', () => {
-			it('should call findOne on the entries collection with the correct parameters', (done) => {
+			it('should call findOne on the projects collection with the correct parameters', (done) => {
 				/**
 				 *	Spies
 				 */
-				spyOn(Core.collections.entries, 'findOne').and.returnValue({
-					fetch: () => true
+				spyOn(Core.collections.projects, 'findOne').and.returnValue({
+					fields: {
+						items: [{},{},{}]
+					},
+					sys: {}
 				});
 
 				/**
@@ -66,7 +74,7 @@ describe('views_detail', () => {
 				 *	Run the function and then the tests
 				 */
 				Template.views_detail.__helpers[' project'].call(data);
-				expect(Core.collections.entries.findOne).toHaveBeenCalledWith({'fields.slug': 'a-test-project'});
+				expect(Core.collections.projects.findOne).toHaveBeenCalledWith({'fields.slug': 'a-test-project'});
 
 				/**
 				 *	Finished
