@@ -41,7 +41,12 @@ Services = {
 			}
 			console.log('Starting prerender.io service with token: ', this.settings.token);
 			this.handler = Npm.require('prerender-node').set('prerenderToken', this.settings.token);
-			WebApp.connectHandlers.use(this.handler);
+			try {
+				WebApp.connectHandlers.use(this.handler);
+			}
+			catch(e) {
+				console.log('Could not start prerender.io service: ', e);
+			}
 		}
 	}
 
