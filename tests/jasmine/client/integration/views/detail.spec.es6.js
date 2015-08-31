@@ -69,7 +69,27 @@ describe('views_detail', () => {
 				 *	Spies
 				 */
 				spyOn(Core.collections.projectitems, 'find').and.returnValue({
-					fetch: () => true
+					fetch: () => [{},{},{}]
+				});
+				spyOn(Core.collections.projects, 'findOne').and.returnValue({
+					fields: {
+						items: [
+						{
+							sys: {
+								id: '1'
+							}
+						},
+						{
+							sys: {
+								id: '2'
+							}
+						},
+						{
+							sys: {
+								id: '3'
+							}
+						}]
+					}
 				});
 
 				/**
