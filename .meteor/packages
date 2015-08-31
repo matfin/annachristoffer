@@ -4,21 +4,17 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-underscore
-mrt:q
 iron:router
-less
-anna
-html5-video-player
-jquery
-http
-ejson
-mrt:normalize.css
-mrt:modernizr-meteor
-amplify
-jeeeyul:moment-with-langs
 
-meteorhacks:ssr
-meteorhacks:picker
-reywood:iron-router-ga
 matfin:slider
+dfischer:prerenderio
+fourseven:scss
+markdown
+momentjs:moment
+sanjo:jasmine
+velocity:console-reporter
+velocity:html-reporter
+grigio:babel
+com.annachristoffer:core
+matfin:meteor-wistia
+matfin:meteor-contentful

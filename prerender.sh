@@ -1,0 +1,1 @@
+VELOCITY=0 meteor run --production --port 4000 --settings settings.json

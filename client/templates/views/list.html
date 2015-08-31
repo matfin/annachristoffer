@@ -1,25 +1,15 @@
-<template name="list">
-	{{#if deviceParameters.isMobile}}
-		{{> views_mobile_list}}
-	{{else}}
-		{{> views_list}}
-	{{/if}}
-</template>
-
-<template name="views_mobile_list">
-	{{#each projects}}
-		{{> project}}
-	{{/each}}
-</template>
-
 <template name="views_list">
-	{{#each groupedProjectCards}}
-		<ul class="projectGroup" style="width: {{groupWidth}}%; padding-top: {{paddingTop}}px">
-			{{#each projects}}
-				<li>
-					{{> project}}
-				</li>
-			{{/each}}
-		</ul>
-	{{/each}}	
+	{{#if Template.subscriptionsReady}}
+		<section class="list">
+			<ul class="list__projects">
+				{{#each projects}}
+					<li class="list__projects__item">
+						{{>cards_preview_tile}}
+					</li>
+				{{/each}}
+			</ul>
+		</section>
+	{{else}}
+		{{> views_loading}}
+	{{/if}}
 </template>

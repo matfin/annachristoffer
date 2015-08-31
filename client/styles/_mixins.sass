@@ -1,0 +1,28 @@
+=resetPaddingMargin 
+	padding: 0
+	margin: 0
+
+=transitionWithProperties($props, $ms: 350ms)
+	+transition-property($props)
+	+transition-duration($ms)
+
+=break($type, $param-break-1, $param-break-2: '')
+	@if $type == min
+		@media screen and (min-width: $param-break-1)
+			@content
+	@else if $type == max
+		@media screen and (max-width: $param-break-1)
+			@content
+	@else if $type == min-max
+		@media screen and (min-width: $param-break-1) and (max-width: $param-break-2 - em(0.5))
+			@content
+
+=background($name, $extension: 'jpg')
+	background-repeat: no-repeat
+	background-size: cover
+	+break(min, $break-0)
+		+retina-image($name + '-m', 'cover', $extension);
+	+break(min, $break-2)
+		+retina-image($name + '-t', 'cover', $extension);
+	+break(min, $break-3)
+		+retina-image($name + '-d', 'cover', $extension);

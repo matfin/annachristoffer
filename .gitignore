@@ -1,10 +1,5 @@
-packages/blaze-layout
-packages/iron-router
-packages/lesshat
-packages/modernizr-meteor
-packages/normalize.css
-video/
-.meteor/cordova-plugins
+.DS_Store
 .meteor/platforms
 settings.json
 *.tar.gz
+packages/meteor-contentful

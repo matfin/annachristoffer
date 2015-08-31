@@ -1,0 +1,30 @@
+.detail__caption 
+	+display(flex)
+	+break(min-max, $break-0, $break-3)
+		+flex-direction(column-reverse)
+	+break(min, $break-3)
+		+flex-direction(row-reverse)
+		min-height: 25rem
+	background-color: rgba($white, 0.6)
+	margin-bottom: 1rem
+
+.detail__caption__description
+	font-size: $base-size
+	font-weight: $heavy-weight
+	margin-bottom: 1rem
+
+.detail__caption__text
+	+flex(1)
+	margin: 1rem
+	+break(min, $break-3)
+		margin-left: 0
+
+.detail__caption__text 
+	p
+		margin-bottom: 1rem
+
+.detail__caption__media
+	position: relative
+	+flex(2)
+	+break(min, $break-2)
+		margin: 1rem

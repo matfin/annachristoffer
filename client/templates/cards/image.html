@@ -1,0 +1,12 @@
+<template name="cards_image">
+	{{#if Template.subscriptionsReady}}
+		<img class="media__image" data-src="{{image}}" width="100%" height="auto" alt="" />
+		{{#unless device.isMobile}}
+			<button class="media__pinterest">
+				<i class="icon-pinterest">
+				</i>
+			</button>
+		{{/unless}}
+	{{/if}}
+	{{>partials_loading}}
+</template>

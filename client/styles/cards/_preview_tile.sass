@@ -1,0 +1,54 @@
+.preview__tile
+	position: relative
+	display: block
+	width: 100%
+	+perspective(700px)
+	+break(min, $break-2)
+		&:hover
+			.preview__tile__flip__front
+				+transform(rotateY(-180deg))
+			.preview__tile__flip__rear
+				+transform(rotateY(0deg))
+
+.preview__tile__flip
+	display: block
+
+.preview__tile__flip__front,
+.preview__tile__flip__rear
+	position: absolute
+	width: 100%
+	height: 100%
+	+transitionWithProperties(transform background)
+	+transform-style(preserve-3d)
+	+backface-visibility(hidden)
+
+.preview__tile__flip__front
+	z-index: $z-over
+	background-color: rgba($white, 0.6)
+	+break(min-max, $break-0, $break-2)
+		padding: 1rem
+	padding: 0.5rem
+
+.preview__tile__flip__front--highlighted
+	background-color: rgba($tile-highlighted, 0.75)
+
+.preview__tile__flip__rear
+	background-size: cover
+	background-position: center
+	+transform(rotateY(180deg))
+
+.preview__tile__content__date
+	display: block
+	font-size: $standard-font-size
+	letter-spacing: rem(1)
+
+.preview__tile__content__title
+	font-size: $medium-font-size
+	font-weight: $light-weight
+	font-style: italic
+	line-height: $line-height * 1.5
+	letter-spacing: rem(-0.5)
+
+.preview__tile__content__description
+	font-size: $standard-font-size
+	margin-top: 1rem

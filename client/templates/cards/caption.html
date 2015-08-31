@@ -1,0 +1,29 @@
+<template name="cards_caption">
+	<figure class="detail__caption">
+		{{#if hasText}}
+			<figcaption class="detail__caption__text">
+				{{#if isFirst}}
+					<h3 class="detail__caption__description">{{../fields.description}}</h3>
+				{{/if}}
+				{{#markdown}}{{fields.paragraphs}}{{/markdown}}
+			</figcaption>
+		{{/if}}
+		{{#if video}}
+			<div class="detail__caption__media">
+				{{>cards_video}}
+			</div>
+		{{else}}
+			{{#if useSlider}}
+				<div class="detail__caption__media detail__caption__media--slider">
+					{{>cards_slider}}
+				</div>
+			{{else}}
+				{{#with standaloneImage}}
+					<div class="detail__caption__media detail__caption__media--image">
+						{{>cards_image}}
+					</div>
+				{{/with}}
+			{{/if}}
+		{{/if}}		
+	</figure>
+</template>

@@ -1,0 +1,25 @@
+.content__pane--experience
+	margin-bottom: 1rem
+
+.experience__title
+	font-size: $heading-font-size
+	font-weight: $heavy-weight
+	margin: 1rem
+
+.experience__list__item	
+	padding: 1rem
+	&:nth-child(odd)
+		background-color: rgba($highlighted, 0.025)
+
+.experience__list__item__role
+	font-style: italic
+	font-weight: $light-weight
+	margin: 0.5rem 0
+
+.experience__list__item__location
+	font-weight: $light-weight 
+
+.work-experience 
+	+flex(initial)
+	+break(min, $break-3)
+		margin-bottom: 8rem

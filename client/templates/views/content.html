@@ -1,0 +1,26 @@
+<template name="views_content">
+	{{#if Template.subscriptionsReady}}
+		<section class="content">
+			<div class="content__image">
+				{{#with image}}
+					{{>cards_image}}
+				{{/with}}
+			</div>
+			<section class="content__column">
+				{{#each contentItems}}
+					{{>cards_text}}
+				{{/each}}
+				{{#with experience 'Education'}}
+					{{>cards_experience}}
+				{{/with}}
+			</section>
+			<section class="content__column">
+				{{#with experience 'Work Experience'}}
+					{{>cards_experience}}
+				{{/with}}
+			</section>
+		</section>
+	{{else}}
+		{{>views_loading}}
+	{{/if}}
+</template>

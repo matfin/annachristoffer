@@ -1,11 +1,32 @@
 <head>
-	<!-- Meta tags go in here --> 
 	<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta charset="UTF-8" /> 
-    <script type="text/javascript" src="//use.typekit.net/tnk5zxe.js"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta charset="UTF-8" /> 
+  <meta name="fragment" content="!"> 
+  <title></title>
+  <!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@AnnaChristoffer" />
+	<meta name="twitter:creator" content="@AnnaChristoffer" />
+	<meta name="twitter:image:src" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:description" content="" />
+	<!-- Open Graph -->
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Anna Claire Christoffer" />
+	<meta property="og:type" content="" />
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="" />
+	<!-- General -->
+	<meta name="description" content="" />
+	<meta name="author" content="Anna Christoffer" />
+	<link rel="canonical" content="" />
+  <!-- Third party scripts -->
+  <script type="text/javascript" src="//use.typekit.net/tnk5zxe.js"></script>
 	<script type="text/javascript">
 		onload = function() {
 			try {
@@ -14,8 +35,8 @@
 			catch(e){}
 		}
 	</script>
-    <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
@@ -32,32 +53,16 @@
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
 </head>
 <body>
+	<div class="background"></div>
 	<div id="fb-root">
 	</div>
 </body>
 
 <template name="template_main">
-	<div class="wrapper">
-		<div class="container">
-			<!-- Begin: Header -->
+	<div class="container">
+		<div class="wrapper">
 			{{> yield region="header"}}
-			<!-- End: Header -->
-
-			<!-- Begin: Content -->
-			{{#if deviceParameters.isMobile}}
-				<div class="content-mobile">
-					<section>
-						{{> yield region="content"}}
-					</section>
-				</div>
-			{{else}}
-				<div class="content">
-					<section>
-						{{> yield region="content"}}
-					</section>
-				</div>
-			{{/if}}
-			<!-- End: Content -->
+			{{> yield region="content"}}
 		</div>
 	</div>
 </template>
