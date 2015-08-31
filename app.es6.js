@@ -23,7 +23,7 @@ Meteor.startup(() => {
 		Core.social.facebook.init();
 		Core.social.pinterest.init();
 		Core.social.google.init();
-		window.prerender = false;
+		window.prerenderReady = false;
 	}
 	
 });
