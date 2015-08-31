@@ -30,6 +30,7 @@ Template.views_content.onCreated(function() {
  *	@method rendered
  */
 Template.views_content.onRendered(function() {
+	window.prerenderReady = true;
 });
 
 /**

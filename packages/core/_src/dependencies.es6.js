@@ -18,6 +18,7 @@ Dependencies = {
 	 */
 	resized: 	new Tracker.Dependency,
 	scrolled: new Tracker.Dependency, 
+	rendered: 	new Tracker.Dependency,
 
 	/**
 	 *	Function to attach event listeners which will fire changed on the dependencies

@@ -27,6 +27,7 @@ Template.views_list.onCreated(function() {
  *	@method rendered
  */
 Template.views_list.onRendered(function() {
+	window.prerenderReady = true;
 });
 
 /**

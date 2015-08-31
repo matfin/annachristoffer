@@ -20,18 +20,7 @@ Core.seo = class Seo {
 			this[key] = seo_data[key];
 		});
 
-		this.refreshTwitter().refreshOG().refreshMeta().ready();
-	}
-
-	/** 
-	 *	Function to set the prerender status to ready when all SEO tags have been populated
-	 *	
-	 *	@method ready
-	 */
-	static ready() {
-		setTimeout(() => {
-			window.prerenderReady = true;
-		}, 50);
+		this.refreshTwitter().refreshOG().refreshMeta();
 	}
 
 	/** 

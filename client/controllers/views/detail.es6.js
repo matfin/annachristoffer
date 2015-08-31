@@ -29,6 +29,7 @@ Template.views_detail.onCreated(function() {
  *	@method rendered
  */
 Template.views_detail.onRendered(function() {
+	window.prerenderReady = true;
 });
 
 /**
