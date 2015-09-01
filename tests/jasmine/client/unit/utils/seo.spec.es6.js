@@ -44,7 +44,6 @@ describe('Core', function() {
 				spyOn(Core.seo, 'refreshTwitter').and.returnValue(Core.seo);
 				spyOn(Core.seo, 'refreshOG').and.returnValue(Core.seo);
 				spyOn(Core.seo, 'refreshMeta').and.returnValue(Core.seo);
-				spyOn(Core.seo, 'ready').and.returnValue(Core.seo);
 
 				/**
 				 *	Call the function and run the tests
@@ -53,7 +52,6 @@ describe('Core', function() {
 				expect(Core.seo.refreshTwitter).toHaveBeenCalled();
 				expect(Core.seo.refreshOG).toHaveBeenCalled();
 				expect(Core.seo.refreshMeta).toHaveBeenCalled();
-				expect(Core.seo.ready).toHaveBeenCalled();
 
 				/**
 				 *	Finished
