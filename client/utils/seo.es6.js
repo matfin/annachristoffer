@@ -36,7 +36,7 @@ Core.seo = class Seo {
 				handle;
 
 		if(typeof project === 'undefined') return;
-		asset = project.fields.previewImage;
+		asset = project.fields.shareImage || project.fields.previewImage;
 
 		if(typeof asset !== 'undefined') {
 			Meteor.subscribe('images', asset.sys.id, () => {
