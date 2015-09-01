@@ -7,7 +7,6 @@ standard-app-packages
 iron:router
 
 matfin:slider
-dfischer:prerenderio
 fourseven:scss
 markdown
 momentjs:moment
