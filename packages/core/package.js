@@ -2,7 +2,7 @@
 
 Package.describe({
 	summary: 'App, device and dendencies that will assist in setting up the app.',
-	version: '1.5.3',
+	version: '1.5.4',
 	name: 'com.annachristoffer:core'
 });
 
@@ -21,6 +21,10 @@ Package.onUse(function(api) {
 		'grigio:babel',
 		'deps'
 	], 'client');
+
+	api.use([
+		'grigio:babel'
+	], 'server');
 
 	/**
 	 *	Node dependencies
