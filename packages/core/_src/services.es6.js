@@ -34,22 +34,16 @@ Services = {
 		 *
 		 *	@method start
 		 */
-		start () {
+		start: function () {
 			if(typeof this.settings.token === 'undefined') {
 				throw new Meteor.Error('Prerender token undefined. Quitting');
 				return;
 			}
 			console.log(`Starting prerender.io service with token: ${this.settings.token}`);
 
-			this.handler = Npm.require('prerender-node').set('prerenderToken', this.settings.token).set('host', this.settings.host);
-			let originalBuild = this.handler.buildApiUrl;
-
-			this.handler.buildApiUrl = (req) => {
-				req.headers['host'] = this.settings.host;
-				let fullApiUrl = originalBuild.call(this, req);
-				console.log(`Calling prerender.io with: ${fullApiUrl}`);
-				return fullApiUrl;
-			}
+			this.handler = Npm.require('prerender-node');
+			this.handler.set('prerenderToken', this.settings.token);
+			this.handler.set('host', this.settings.host);
 
 			try {
 				WebApp.connectHandlers.use(this.handler);
