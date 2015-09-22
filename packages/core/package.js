@@ -2,7 +2,7 @@
 
 Package.describe({
 	summary: 'App, device and dendencies that will assist in setting up the app.',
-	version: '1.5.5',
+	version: '1.5.6',
 	name: 'com.annachristoffer:core'
 });
 
