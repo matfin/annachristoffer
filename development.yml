@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  site:
+    container_name: 'site'
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    volumes:
+      - ./:/opt
+
+volumes:
+  data:
+    driver: 'local'
