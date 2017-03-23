@@ -1,15 +1,26 @@
 version: '2'
 
 services:
-  site:
-    container_name: 'ac_site'
+  ac-site:
+    container_name: 'gohugo'
     build:
       context: .
       dockerfile: .docker/Dockerfile
     volumes:
       - ./:/opt
     ports: 
-      - 1313:1313
+      - "1313:1313"
+    command: hugo server -ws /opt/annachristoffer --bind "0.0.0.0"
+
+  ac-nginx:
+    container_name: 'nginx'
+    build:
+      context: .docker/nginx
+      dockerfile: Dockerfile
+    links: 
+      - ac-site
+    ports:
+      - "80:80"
 
 volumes:
   data:
