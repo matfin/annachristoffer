@@ -10,7 +10,7 @@ services:
       - ./:/opt
     ports: 
       - "1313:1313"
-    command: hugo server -ws /opt/annachristoffer --bind "0.0.0.0"
+    command: hugo server -ws /opt/annachristoffer --theme=portfolio --bind "0.0.0.0"
 
   ac-nginx:
     container_name: 'nginx'
