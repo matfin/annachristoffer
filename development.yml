@@ -3,13 +3,13 @@ version: '2'
 services:
   site:
     container_name: 'ac_site'
-    environment: 
-      - VERSION=0.19
     build:
       context: .
       dockerfile: .docker/Dockerfile
     volumes:
       - ./:/opt
+    ports: 
+      - 1313:1313
 
 volumes:
   data:
