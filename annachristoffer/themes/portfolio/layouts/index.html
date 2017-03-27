@@ -1,10 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ end }}">
 	<head>
-		<title>AAAA</title>
+		{{ partial "head" . }}
 	</head>
 	<body>
-		<h1>
-			Test
-		</h1>
+		{{ partial "header"}}
+		{{ partial "footer"}}
 	</body>
 </html>

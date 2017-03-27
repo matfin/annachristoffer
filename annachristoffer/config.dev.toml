@@ -1,0 +1,10 @@
+languageCode 		= "en-ie"
+baseURL 			= "http://annachristoffer.dev"
+themesDir 			= "themes"
+theme 				= "portfolio"
+disableLiveReload	= true
+watch				= true
+
+[params]
+	description = "Description for Anna Claire Christoffer"
+	author = "Anna Claire Christoffer"

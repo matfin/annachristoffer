@@ -3,6 +3,8 @@ version: '2'
 services:
   ac-site:
     container_name: 'gohugo'
+    environment: 
+      - HUGO_TITLE=Anna Claire Christoffer
     build:
       context: .
       dockerfile: .docker/Dockerfile
@@ -10,7 +12,7 @@ services:
       - ./:/opt
     ports: 
       - "1313:1313"
-    command: hugo server -ws /opt/annachristoffer --theme=portfolio --bind "0.0.0.0"
+    command: hugo server -s /opt/annachristoffer --config=/opt/annachristoffer/config.dev.toml --bind "0.0.0.0"
 
   ac-nginx:
     container_name: 'nginx'
