@@ -4,6 +4,11 @@
 		{{ partial "head" . }}
 	</head>
 	<body>
+		<div>
+			{{ range .Data.Pages }}
+				{{ .Render "summary" }}
+			{{ end }}
+		</div>
 		{{ partial "header"}}
 		{{ partial "footer"}}
 	</body>

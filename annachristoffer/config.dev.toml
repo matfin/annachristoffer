@@ -2,6 +2,7 @@ languageCode 		= "en-ie"
 baseURL 			= "http://annachristoffer.dev"
 themesDir 			= "themes"
 theme 				= "portfolio"
+MetaDataFormat		= "yaml"
 disableLiveReload	= true
 watch				= true
 
