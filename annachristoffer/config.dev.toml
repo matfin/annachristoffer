@@ -1,7 +1,5 @@
 languageCode 		= "en-ie"
-baseURL 			= "http://annachristoffer.dev"
-themesDir 			= "themes"
-theme 				= "portfolio"
+baseURL 			= "http://annachristoffer.dev/"
 MetaDataFormat		= "yaml"
 disableLiveReload	= true
 watch				= true
