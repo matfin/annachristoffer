@@ -1,4 +1,6 @@
+{{ $pageBase := .Site.Params.PageBase }}
+
 <h1> I am a card named {{ .Title }}</h1>
-<a href="{{ .Permalink }}">
+<a href="{{ $pageBase }}project/{{ .Title | urlize }}">
 	See me
 </a>

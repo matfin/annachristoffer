@@ -12,7 +12,7 @@ services:
       - ./:/opt
     ports: 
       - "1313:1313"
-    command: hugo server -s /opt/annachristoffer --config=/opt/annachristoffer/config.dev.toml --bind "0.0.0.0"
+    command: hugo server -s /opt/annachristoffer -b http://annachristoffer.dev/ --config=/opt/annachristoffer/config.dev.toml --bind "0.0.0.0"
 
   ac-nginx:
     container_name: 'nginx'
