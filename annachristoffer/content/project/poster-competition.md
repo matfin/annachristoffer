@@ -8,3 +8,19 @@ categories:
 - "posters"
 ---
 
+## Poster competition 
+
+This is a poster competition
+
+- lovely
+- list
+- of 
+- items
+
+```
+some: () => {
+	code = goes('in', here).then(() => {
+		renders('beautifully');
+	});
+};
+```
