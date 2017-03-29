@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   ac-site:
@@ -19,6 +19,8 @@ services:
     build:
       context: .docker/nginx
       dockerfile: Dockerfile
+    volumes: 
+      - ./media:/opt/media
     links: 
       - ac-site
     ports:
