@@ -1,0 +1,10 @@
+{{ $mediaBase := .Site.Params.MediaBase}}
+
+<figure>
+	<img src="{{ $mediaBase }}{{ .Get "path" }}" alt="{{ .Get "title" }}" />
+	{{ with .Inner }}
+		<figcaption>
+			{{ . }}
+		</figcaption>
+	{{ end }}
+</figure>

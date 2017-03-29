@@ -8,3 +8,4 @@ watch				= true
 	description 	= "Description for Anna Claire Christoffer"
 	author 			= "Anna Claire Christoffer"
 	pageBase		= "http://annachristoffer.dev/"
+	mediaBase		= "http://media.annachristoffer.dev/"
