@@ -1,14 +1,24 @@
 {{ $mediaBase := .Site.Params.MediaBase}}
 
 <figure>
-	<img
-		src="{{ $mediaBase }}{{ .Get "path" }}_d@1x.jpg"
-		srcset="{{ $mediaBase }}{{ .Get "path" }}_d@1x.jpg 1440w,
-			    {{ $mediaBase }}{{ .Get "path"}}_t@1x.jpg 1024w,
-			    {{ $mediaBase }}{{ .Get "path"}}_m@1x.jpg 640w"
-		sizes="100vw"
-		alt="{{ .Get "title" }}"
-	/>
+	<picture>
+		<source
+			media="(min-width: 1024px)"
+			srcset="{{ $mediaBase }}{{ .Get "path" }}_d@1x.jpg,
+			    	{{ $mediaBase }}{{ .Get "path" }}_d@2x.jpg 2x"
+		>
+		<source
+			media="(min-width: 768px)"
+			srcset="{{ $mediaBase }}{{ .Get "path" }}_t@1x.jpg,
+			    	{{ $mediaBase }}{{ .Get "path" }}_t@2x.jpg 2x"
+		>
+		<source
+			media="(min-width: 320px)"
+			srcset="{{ $mediaBase }}{{ .Get "path" }}_m@1x.jpg,
+			    	{{ $mediaBase }}{{ .Get "path" }}_m@2x.jpg 2x"
+		>
+		<img src="{{ $mediaBase }}{{ .Get "path" }}_d@1x.jpg">
+	</picture>
 	{{ with .Inner }}
 		<figcaption>
 			{{ . }}
