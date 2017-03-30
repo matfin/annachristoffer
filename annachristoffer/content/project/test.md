@@ -7,14 +7,8 @@ categories:
 - "test"
 ---
 
-{{% figure path="test/test_1_m@1x.jpg" title="Test image one" %}}
+{{% figure path="test/test_1" title="Test image one" %}}
 	
-This has some inner content rendered in markdown.
-
-Testing this with a list
-
-- one
-- two
-- three
+This is a caption for image one.
 
 {{% /figure %}}
