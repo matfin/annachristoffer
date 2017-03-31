@@ -1,11 +1,13 @@
-<div>
-	<h1>
-		{{ .Title }}
-	</h1>
-	<p>
-		{{ .Description }}
-	</p>
-</div>
-<div>
-	{{ .Content }}
-</div>
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ end }}">
+	<head>
+		{{ partial "head" . }}
+	</head>
+	<body>
+		{{ partial "header"}}
+		<div class="project">
+			{{ .Content }}
+		</div>
+		{{ partial "footer"}}
+	</body>
+</html>

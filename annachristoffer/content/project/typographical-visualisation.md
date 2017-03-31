@@ -7,3 +7,4 @@ categories:
 - "posters"
 ---
 
+This is some data for the project Typographical Visualisation.
