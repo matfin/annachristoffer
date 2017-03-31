@@ -7,14 +7,8 @@ categories:
 - "test"
 ---
 
-{{% figure path="test/test_1" title="Test image one" %}}
+{{% figure path="test/test" title="Test image one" %}}
 	
 This is a caption for image one.
-
-{{% /figure %}}
-
-{{% figure path="test/test_2" title="Test image two" %}}
-	
-This is a caption for image two.
 
 {{% /figure %}}
