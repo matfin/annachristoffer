@@ -5,10 +5,8 @@
 	</head>
 	<body>
 		{{ partial "header"}}
-		<div>
-			{{ range where .Data.Pages "Section" "project" }}
-				{{ .Render "card" }}
-			{{ end }}
+		<div class="page">
+			{{ .Content }}
 		</div>
 		{{ partial "footer"}}
 	</body>
