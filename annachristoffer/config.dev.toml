@@ -9,3 +9,19 @@ watch				= true
 	author 			= "Anna Claire Christoffer"
 	pageBase		= "http://annachristoffer.dev/"
 	mediaBase		= "http://media.annachristoffer.dev/"
+
+[[menu.main]]
+	name 		= "projects"
+	identifier 	= "projects"
+	url 		= "/"
+	weight 		= 1
+[[menu.main]]
+	name 		= "about"
+	identifier 	= "about"
+	url 		= "/about"
+	weight		= 2
+[[menu.main]]
+	name 		= "cv"
+	identifier 	= "cv"
+	url 		= "/cv"
+	weight 		= 3

@@ -4,12 +4,14 @@
 		{{ partial "head" . }}
 	</head>
 	<body>
-		{{ partial "header"}}
-		<div>
+		{{ partial "header" . }}
+		<div class="home">
 			{{ range where .Data.Pages "Section" "project" }}
 				{{ .Render "card" }}
 			{{ end }}
 		</div>
-		{{ partial "footer"}}
+		{{ partial "footer" . }}
+		<script src="/js/main.js">
+		</script>
 	</body>
 </html>

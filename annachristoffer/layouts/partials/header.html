@@ -1,3 +1,16 @@
 <header>
-	Partial header
+	<h1>
+		{{ .Site.Title }}
+	</h1>
+	<nav>
+		<ul class="menu">
+			{{ range .Site.Menus.main }}
+				<li>
+					<a href="{{ .URL }}" title="{{ .Name }}">
+						{{ .Name }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+	</nav>
 </header>

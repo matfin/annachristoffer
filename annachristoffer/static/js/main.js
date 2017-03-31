@@ -10,7 +10,7 @@
 		});
 	};
 
-	window.onload(() => {
+	window.onload = (() => {
 		f().then((message) => {
 			console.log({
 				message: message
