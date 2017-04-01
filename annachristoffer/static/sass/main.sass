@@ -1,16 +1,13 @@
-*
-	padding: 0
-	margin: 0
+@import "constants"
+@import "setup"
 
+@import "_default/single"
+@import "partials/footer"
+@import "partials/header"
 
-html
-	width: 100%
+@import "project/card"
+@import "project/single"
 
-h1 
-	color: red
-	width: 10em
-	font-size: 3em
-
-source,
-img
-	width: 100vw
+@import "shortcodes/figure"
+@import "shortcodes/slider"
+@import "shortcodes/video"

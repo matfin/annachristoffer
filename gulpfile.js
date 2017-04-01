@@ -12,5 +12,5 @@ gulp.task('sassdev', () =>
 );
 
 gulp.task('watch', () => {
-	gulp.watch('./annachristoffer/static/sass/*.sass', ['sassdev']);
+	gulp.watch('./annachristoffer/static/sass/**/*.{sass}', ['sassdev']);
 });
