@@ -7,12 +7,19 @@ body
 	width: 100vw
 	height: 100vh
 	font-size: 1em
+	display: flex
+	align-items: center
+	flex-direction: column
+	font-family: $font-family
 	color: $black
 
 header,
 section,
 footer
 	width: 100vw
+	padding: 0 2em;
+	+break(min, $break-4)
+		width: 80vw
 
 a
 	text-decoration: none
@@ -20,3 +27,4 @@ a
 	+transitionWithProperties(color)
 	&:hover
 		color: $link-hover
+

@@ -5,10 +5,15 @@
 	</head>
 	<body>
 		{{ partial "header" . }}
-		<section class="home">
-			{{ range where .Data.Pages "Section" "project" }}
-				{{ .Render "card" }}
-			{{ end }}
+		<section class="index">
+			<h1>
+				{{ .Site.Params.Teaser }}
+			</h1>
+			<div class="projects">
+				{{ range where .Data.Pages "Section" "project" }}
+					{{ .Render "card" }}
+				{{ end }}
+			</div>
 		</section>
 		{{ partial "footer" . }}
 		<script type="text/javacript" src="/js/main.js"></script>

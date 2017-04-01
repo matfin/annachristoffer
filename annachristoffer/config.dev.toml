@@ -6,6 +6,7 @@ watch				= true
 
 [params]
 	description 	= "Description for Anna Claire Christoffer"
+	teaser			= "Hi. I am Anna and I am an Art Director based in Berlin, Germany."
 	author 			= "Anna Claire Christoffer"
 	pageBase		= "http://annachristoffer.dev/"
 	mediaBase		= "http://media.annachristoffer.dev/"
