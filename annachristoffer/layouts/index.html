@@ -5,13 +5,12 @@
 	</head>
 	<body>
 		{{ partial "header" . }}
-		<div class="home">
+		<section class="home">
 			{{ range where .Data.Pages "Section" "project" }}
 				{{ .Render "card" }}
 			{{ end }}
-		</div>
+		</section>
 		{{ partial "footer" . }}
-		<script src="/js/main.js">
-		</script>
+		<script type="text/javacript" src="/js/main.js"></script>
 	</body>
 </html>

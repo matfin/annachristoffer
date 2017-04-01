@@ -3,14 +3,14 @@
 let gulp = require('gulp'),
 	sass = require('gulp-sass');
 
-gulp.task('sassdev', () => 
-	gulp
+gulp.task('sassdev', () => {
+	return gulp
 	.src('./annachristoffer/static/sass/main.sass')
 	.pipe(sass())
 	.on('error', sass.logError)
 	.pipe(gulp.dest('./annachristoffer/static/css'))
-);
+});
 
 gulp.task('watch', () => {
-	gulp.watch('./annachristoffer/static/sass/**/*.{sass}', ['sassdev']);
+	gulp.watch('./annachristoffer/static/sass/**/*.sass', ['sassdev']);
 });

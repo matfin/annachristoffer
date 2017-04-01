@@ -4,5 +4,19 @@
 	box-sizing: border-box
 
 body
+	width: 100vw
+	height: 100vh
 	font-size: 1em
 	color: $black
+
+header,
+section,
+footer
+	width: 100vw
+
+a
+	text-decoration: none
+	color: $link
+	+transitionWithProperties(color)
+	&:hover
+		color: $link-hover
