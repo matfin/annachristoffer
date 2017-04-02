@@ -17,7 +17,7 @@ header,
 section,
 footer
 	width: 100vw
-	padding: 0 2em;
+	padding: 0 $units * 2;
 	+break(min, $break-4)
 		width: 80vw
 
@@ -27,4 +27,8 @@ a
 	+transitionWithProperties(color)
 	&:hover
 		color: $link-hover
+
+ol,
+ul
+	list-style: none
 

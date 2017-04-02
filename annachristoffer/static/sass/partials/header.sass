@@ -1,0 +1,22 @@
+header
+	display: flex
+	flex-direction: row
+	padding: $units * 2
+
+	+break(max, $break-1)
+		flex-direction: column
+
+h1,
+nav
+	flex: 1
+	line-height: $line-height
+
+nav 
+	ul
+		display: flex
+		flex-direction: row
+
+		li 
+			display: flex
+			flex: 1
+			justify-content: center
