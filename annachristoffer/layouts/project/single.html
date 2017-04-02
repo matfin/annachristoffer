@@ -5,9 +5,10 @@
 	</head>
 	<body>
 		{{ partial "header" . }}
-		<div class="project">
+		{{ partial "teaser" . }}
+		<section class="project">
 			{{ .Content }}
-		</div>
+		</section>
 		{{ partial "footer" . }}
 	</body>
 </html>
