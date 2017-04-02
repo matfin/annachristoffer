@@ -1,15 +1,17 @@
 header
 	display: flex
 	flex-direction: row
-	padding: $units * 2
+	align-items: center
+	padding: $units * 4 $units * 2
 
 	+break(max, $break-1)
 		flex-direction: column
 
-h1,
+	& > a
+		flex: 1
+
 nav
 	flex: 1
-	line-height: $line-height
 
 nav 
 	ul
