@@ -1,23 +1,5 @@
-{{ $mediaBase := .Site.Params.MediaBase}}
-{{ $thumbnail := .Params.Thumbnail }}
-
+{{ $mediaBase := .Site.Params.MediaBase }}
+{{ $teaser := .Params.Teaser }}
 <section class="teaser">
-	<picture>
-		<source
-			media="(min-width: 1280px)"
-			srcset="{{ $mediaBase }}{{ $thumbnail }}_large@1x.jpg,
-			    	{{ $mediaBase }}{{ $thumbnail }}_large@2x.jpg 2x"
-		>
-		<source
-			media="(min-width: 640px) and (max-width: 1280px)"
-			srcset="{{ $mediaBase }}{{ $thumbnail }}_medium@1x.jpg,
-			    	{{ $mediaBase }}{{ $thumbnail }}_medium@2x.jpg 2x"
-		>
-		<source
-			media="(max-width: 640px)"
-			srcset="{{ $mediaBase }}{{ $thumbnail }}_small@1x.jpg,
-			    	{{ $mediaBase }}{{ $thumbnail }}_small@2x.jpg 2x"
-		>
-		<img src="{{ $mediaBase }}{{ $thumbnail }}_medium@1x.jpg">
-	</picture>
+	{{ partial "picture" (dict "base" $mediaBase "path" $teaser) }}
 </section>
