@@ -1,5 +1,7 @@
-{{ with .Inner }}
-	<div class="slider">
-		{{ . }}
-	</div>
-{{ end }}
+{{ $mediaBase := .Site.Params.MediaBase }}
+{{ $paths := (split .Params.paths ",") }}
+<div class="slider">
+	{{ range $paths }}
+		{{ partial "picture" (dict "base" $mediaBase "path" .) }}
+	{{ end }}
+</div>

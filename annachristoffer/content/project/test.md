@@ -7,5 +7,5 @@ description: "This is a test project."
 categories: 
 - "test"
 ---
-
-{{% figure path="test/test" %}}
+{{% figure path="test/test" %}}{{% /figure %}}
+{{% slider paths="test/test,test/test,test/test" %}}
