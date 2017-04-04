@@ -10,10 +10,8 @@ header
 	& > a
 		flex: 1
 
-nav
-	flex: 1
-
 nav 
+	flex: 1
 	ul
 		display: flex
 		flex-direction: row
@@ -23,3 +21,18 @@ nav
 			justify-content: center
 			a
 				text-transform: capitalize
+
+	+break(max, $break-2)
+		z-index: $over
+		position: absolute
+		top: 0
+		right: 0
+		padding: $units * 2
+		background-color: #ccc
+		width: 50vw
+		ul 
+			flex-direction: column
+			li
+				justify-content: flex-end
+				a
+					padding: $units * 2 0
