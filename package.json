@@ -3,7 +3,9 @@
   "version": "2.0.0",
   "description": "Static site generated with GoHugo",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  },
   "devDependencies": {
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0"
