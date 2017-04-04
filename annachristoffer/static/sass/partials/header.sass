@@ -4,9 +4,6 @@ header
 	align-items: center
 	padding: $units * 4 $units * 2
 
-	+break(max, $break-1)
-		flex-direction: column
-
 	& > a
 		flex: 1
 
@@ -30,6 +27,13 @@ nav
 		padding: $units * 2
 		background-color: #ccc
 		width: 50vw
+		transform: translate3d(100%, 0, 0)
+		transition-property: transform
+		transition-duration: $transition-duration
+
+		&.revealed
+			transform: translate3d(0, 0, 0);
+
 		ul 
 			flex-direction: column
 			li
