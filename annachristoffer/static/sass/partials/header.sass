@@ -6,6 +6,12 @@ header
 
 	& > a
 		flex: 1
+		+break(max, $break-2)
+			text-align: center
+	button
+		display: none
+		+break(max, $break-2)
+			display: block
 
 nav 
 	flex: 1
@@ -22,11 +28,14 @@ nav
 	+break(max, $break-2)
 		z-index: $over
 		position: absolute
-		top: 0
-		right: 0
-		padding: $units * 2
-		background-color: #ccc
-		width: 50vw
+		top: $units * 8
+		left: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: #fff
+		width: 100vw
+		height: calc(100vh - #{$units * 8})
 		transform: translate3d(100%, 0, 0)
 		transition-property: transform
 		transition-duration: $transition-duration
@@ -34,9 +43,8 @@ nav
 		&.revealed
 			transform: translate3d(0, 0, 0);
 
-		ul 
+		ul
 			flex-direction: column
 			li
-				justify-content: flex-end
-				a
-					padding: $units * 2 0
+				font-size: $medium-font-size
+				padding: $units * 2 0
