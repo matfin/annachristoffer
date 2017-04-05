@@ -10,15 +10,10 @@ gulp.task('copy-fa-fonts', () => {
 	.pipe(gulp.dest('./annachristoffer/static/fonts'));
 });
 
-gulp.task('copy-fa-css', () => {
-	return gulp
-	.src(['./node_modules/font-awesome/css/font-awesome.min.css'])
-	.pipe(gulp.dest('./annachristoffer/static/sass/thirdparty'));
-});
-
 gulp.task('copy-fa-scss', () => {
 	return gulp
-	.src('./node_modules/font-awesome/')
+	.src(['./node_modules/font-awesome/scss/**/*'])
+	.pipe(gulp.dest('./annachristoffer/static/sass/thirdparty/font-awesome'));
 });
 
 gulp.task('sass-dev', () => {
@@ -49,7 +44,7 @@ gulp.task('watch', () => {
 
 gulp.task('default', [
 	'copy-fa-fonts',
-	'copy-fa-css',
+	'copy-fa-scss',
 	'sass-dev',
 	'scripts-dev',
 	'watch'
