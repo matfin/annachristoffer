@@ -1,8 +1,9 @@
 'use strict';
 
-const 	gulp 	= require('gulp'),
-		sass 	= require('gulp-sass'),
-		concat	= require('gulp-concat');
+const 	gulp 		= require('gulp'),
+		sass 		= require('gulp-sass'),
+		concat		= require('gulp-concat'),
+		cleancss	= require('gulp-clean-css');
 
 gulp.task('copy-fa-fonts', () => {
 	return gulp
@@ -48,4 +49,22 @@ gulp.task('default', [
 	'sass-dev',
 	'scripts-dev',
 	'watch'
+]);
+
+gulp.task('sass-build', () => {
+	return gulp
+	.src('./annachristoffer/static/sass/main.sass')
+	.pipe(sass())
+	.on('error', sass.logError)
+	.pipe(cleancss())
+	.pipe(gulp.dest('./annachristoffer/static/css'))
+});
+
+gulp.task('scripts-build', () => {
+
+});
+
+gulp.task('build', [
+	'copy-fa-fonts',
+	'copy-fa-scss'
 ]);

@@ -3,7 +3,7 @@ version: '3'
 services:
 
   ac-site:
-    container_name: gohugo-dev
+    container_name: gohugo-staging
     environment: 
       - HUGO_TITLE=Anna Claire Christoffer
     build:
@@ -11,12 +11,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/opt
-    ports: 
-      - "1313:1313"
-    command: hugo server -s /opt/annachristoffer -b https://annachristoffer.dev/ --config=/opt/annachristoffer/config.dev.toml --bind "0.0.0.0"
+    command: hugo -s ./annachristoffer -b https://annachristoffer.staging --config=./annachristoffer/config.staging.toml -d ../public
 
   ac-nginx:
-    container_name: nginx-dev
+    container_name: nginx-staging
     build:
       context: .docker/nginx
       dockerfile: Dockerfile
@@ -33,7 +31,7 @@ services:
 
   ac-assets:
     image: node:7.7.4
-    container_name: assetbuild-dev
+    container_name: assetbuild-staging
     volumes: 
       - ./:/opt
     links:
