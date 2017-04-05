@@ -1,0 +1,19 @@
+section.content
+	+break(max, $break-2)
+		padding: 0
+	+break(min-max, $break-2, $break-3)
+		padding: $units $units * 2
+	+break(min, $break-3)
+		padding: $units * 2 $units * 2
+	p,
+	ul,
+	ol
+		margin: $units * 2 0
+		+break(max, $break-2)
+			margin: $units * 2 $units
+	picture
+		display: block
+		source,
+		img
+			width: 100%
+			height: auto

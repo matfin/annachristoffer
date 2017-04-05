@@ -1,0 +1,41 @@
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+
+html,
+body
+	width: 100vw
+	height: 100vh
+
+body
+	font-size: 1em
+	display: flex
+	align-items: center
+	flex-direction: column
+	font-family: $font-family
+	color: $black
+
+header,
+section,
+footer
+	width: 100vw
+	padding: 0 $units * 2;
+	+break(min, $break-4)
+		width: 80vw
+
+a
+	text-decoration: none
+	color: $link
+	+transitionWithProperties(color)
+	&:hover
+		color: $link-hover
+
+ol,
+ul
+	list-style: none
+
+button
+	border: 0
+	background: none
+	outline: none

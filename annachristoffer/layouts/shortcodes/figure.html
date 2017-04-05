@@ -1,0 +1,10 @@
+{{ $mediaBase := .Site.Params.MediaBase }}
+{{ $path := .Get "path" }}
+<figure>
+	{{ partial "picture" (dict "base" $mediaBase "path" $path) }}
+	{{ with .Inner }}
+		<figcaption>
+			{{ . }}
+		</figcaption>
+	{{ end }}
+</figure>

@@ -1,1 +1,0 @@
-JASMINE_SERVER_UNIT=0 JASMINE_SERVER_INTEGRATION=0 meteor --settings settings.json

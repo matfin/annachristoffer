@@ -1,0 +1,3 @@
+{{ $mediaBase := .Site.Params.MediaBase }}
+{{ $path := .Get "path" }}
+{{ partial "picture" (dict "base" $mediaBase "path" $path) }}

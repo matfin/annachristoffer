@@ -1,5 +1,8 @@
-.DS_Store
-.meteor/platforms
-settings.json
-*.tar.gz
-packages/meteor-contentful
+**/.DS_Store
+node_modules
+bower_components
+public
+annachristoffer/static/css
+annachristoffer/static/fonts
+annachristoffer/static/sass/thirdparty
+annachristoffer/static/js/dist/

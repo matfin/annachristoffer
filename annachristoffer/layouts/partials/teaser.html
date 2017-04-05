@@ -1,0 +1,8 @@
+{{ $mediaBase := .Site.Params.MediaBase }}
+{{ $teaser := .Params.Teaser }}
+
+{{ with $teaser }}
+	<section class="teaser">
+		{{ partial "picture" (dict "base" $mediaBase "path" $teaser) }}
+	</section>
+{{ end }}

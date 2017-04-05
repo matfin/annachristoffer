@@ -1,0 +1,21 @@
+.project-card
+	
+	width: 50%
+	box-shadow: $light-box-shadow
+
+	+break(min-max, $break-0, $break-2)
+		width: 100%
+		padding: $units * 6 0
+	
+	+break(min, $break-1)
+		width: 50%
+		padding: $units * 4 0
+
+	+break(min, $break-2)
+		padding: $units * 6 0
+
+	+break(min, $break-3)
+		padding: $units * 10 0
+
+	h2
+		text-align: center

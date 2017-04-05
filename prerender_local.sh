@@ -1,1 +1,0 @@
-VELOCITY=0 PRERENDER_SERVICE_URL=http://localhost:3000 meteor run --production --port 4000 --settings settings.json
