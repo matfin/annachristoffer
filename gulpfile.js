@@ -14,12 +14,12 @@ gulp.task('copy-fa-fonts', () => {
 gulp.task('copy-fa-scss', () => {
 	return gulp
 	.src(['./node_modules/font-awesome/scss/**/*'])
-	.pipe(gulp.dest('./annachristoffer/static/sass/thirdparty/font-awesome'));
+	.pipe(gulp.dest('./assets/sass/thirdparty/font-awesome'));
 });
 
 gulp.task('sass-dev', () => {
 	return gulp
-	.src('./annachristoffer/static/sass/main.sass')
+	.src('./assets/sass/main.sass')
 	.pipe(sass())
 	.on('error', sass.logError)
 	.pipe(gulp.dest('./annachristoffer/static/css'))
@@ -29,18 +29,16 @@ gulp.task('scripts-dev', () => {
 	return gulp
 	.src([
 		'./bower_components/matfin-slider/_src/slider.js',
-		'./annachristoffer/static/js/*.js'
+		'./assets/scripts/*.js'
 	])
-	.pipe(concat('all.js'))
-	.pipe(gulp.dest('./annachristoffer/static/js/dist'));
+	.pipe(concat('main.js'))
+	.pipe(gulp.dest('./annachristoffer/static/js'));
 
 });
 
 gulp.task('watch', () => {
-	gulp.watch('./annachristoffer/static/sass/**/*.sass', ['sass-dev']);
-	gulp.watch([
-		'./annachristoffer/static/js/main.js'
-	], ['scripts-dev']);
+	gulp.watch('./assets/sass/**/*.sass', ['sass-dev']);
+	gulp.watch('./assets/js/**/*.js', ['scripts-dev']);
 });
 
 gulp.task('default', [

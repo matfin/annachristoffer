@@ -2,7 +2,5 @@
 node_modules
 bower_components
 public
-annachristoffer/static/css
-annachristoffer/static/fonts
-annachristoffer/static/sass/thirdparty
-annachristoffer/static/js/dist/
+assets/sass/thirdparty
+annachristoffer/static
