@@ -5,22 +5,20 @@ const setupSliders = () => {
 	});
 };
 
-const toggleMenu = (which) => {
+const toggleMenu = () => {
 	const 	nav 	= document.querySelector('nav'),
 			icon 	= document.querySelector('i');
 
 	if(nav.classList.toggle('revealed')) {
 		icon.classList.remove('fa-bars');
 		icon.classList.add('fa-times');
+		document.body.classList.add('scroll-disabled');
 	}
 	else {
 		icon.classList.remove('fa-times');
 		icon.classList.add('fa-bars');
+		document.body.classList.remove('scroll-disabled');
 	}
-
-	console.log({
-		interaction: which
-	});
 };
 
 const menuButton = () => {
