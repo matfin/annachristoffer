@@ -5,7 +5,7 @@ const setupSliders = () => {
 	});
 };
 
-const toggleMenu = () => {
+const toggleMenu = (which) => {
 	const 	nav 	= document.querySelector('nav'),
 			icon 	= document.querySelector('i');
 
@@ -17,12 +17,23 @@ const toggleMenu = () => {
 		icon.classList.remove('fa-times');
 		icon.classList.add('fa-bars');
 	}
+
+	console.log({
+		interaction: which
+	});
 };
 
 const menuButton = () => {
 	const button = document.querySelector('button');
-	button.addEventListener('touchstart', toggleMenu);
-	button.addEventListener('click', toggleMenu);
+	if('onpointerdown' in window) {
+		button.addEventListener('pointerdown', toggleMenu);
+	}
+	else if('ontouchstart' in window) {
+		button.addEventListener('touchstart', toggleMenu);
+	}
+	else {
+		button.addEventListener('click', toggleMenu);
+	}
 };
 
 onload = () => {

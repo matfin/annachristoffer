@@ -47,7 +47,7 @@ gulp.task('scripts', () => {
 
 gulp.task('watch', () => {
 	gulp.watch('./assets/sass/**/*.sass', ['sass-dev']);
-	gulp.watch('./assets/js/**/*.js', ['scripts']);
+	gulp.watch('./assets/scripts/**/*.js', ['scripts']);
 });
 
 gulp.task('default', [
