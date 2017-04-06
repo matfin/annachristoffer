@@ -25,11 +25,20 @@ gulp.task('sass-dev', () => {
 	.pipe(gulp.dest('./annachristoffer/static/css'))
 });
 
-gulp.task('scripts-dev', () => {
+gulp.task('sass-build', () => {
+	return gulp
+	.src('./assets/sass/main.sass')
+	.pipe(sass())
+	.on('error', sass.logError)
+	.pipe(cleancss())
+	.pipe(gulp.dest('./annachristoffer/static/css'))
+});
+
+gulp.task('scripts', () => {
 	return gulp
 	.src([
 		'./bower_components/matfin-slider/_src/slider.js',
-		'./assets/scripts/*.js'
+		'./assets/scripts/**/*'
 	])
 	.pipe(concat('main.js'))
 	.pipe(gulp.dest('./annachristoffer/static/js'));
@@ -38,31 +47,20 @@ gulp.task('scripts-dev', () => {
 
 gulp.task('watch', () => {
 	gulp.watch('./assets/sass/**/*.sass', ['sass-dev']);
-	gulp.watch('./assets/js/**/*.js', ['scripts-dev']);
+	gulp.watch('./assets/js/**/*.js', ['scripts']);
 });
 
 gulp.task('default', [
 	'copy-fa-fonts',
 	'copy-fa-scss',
 	'sass-dev',
-	'scripts-dev',
+	'scripts',
 	'watch'
 ]);
 
-gulp.task('sass-build', () => {
-	return gulp
-	.src('./annachristoffer/static/sass/main.sass')
-	.pipe(sass())
-	.on('error', sass.logError)
-	.pipe(cleancss())
-	.pipe(gulp.dest('./annachristoffer/static/css'))
-});
-
-gulp.task('scripts-build', () => {
-
-});
-
 gulp.task('build', [
 	'copy-fa-fonts',
-	'copy-fa-scss'
+	'copy-fa-scss',
+	'sass-build',
+	'scripts'
 ]);

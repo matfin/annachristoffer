@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  ac-site:
+  ac-site-development:
     container_name: gohugo-dev
     environment: 
       - HUGO_TITLE=Anna Claire Christoffer
@@ -15,31 +15,33 @@ services:
       - "1313:1313"
     command: hugo server -s /opt/annachristoffer -b https://annachristoffer.dev/ --config=/opt/annachristoffer/config.dev.toml --bind "0.0.0.0"
 
-  ac-nginx:
+  ac-nginx-development:
     container_name: nginx-dev
     build:
       context: .docker/nginx
       dockerfile: Dockerfile
-      args: 
+      args:
+        nginx_conf: nginx.development.conf
+        ssl_o: Dev
         ssl_cn: annachristoffer.dev
     volumes: 
       - ./media:/opt/media
     links: 
-      - ac-site
+      - ac-site-development
     ports:
       - "80:80"
       - "443:443"
     command: nginx -g "daemon off;"
 
-  ac-assets:
+  ac-assets-development:
     image: node:7.7.4
     container_name: assetbuild-dev
     volumes: 
       - ./:/opt
     links:
-      - ac-site
+      - ac-site-development
     depends_on:
-      - ac-site
+      - ac-site-development
     command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && gulp"
 
 volumes:

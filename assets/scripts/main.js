@@ -28,5 +28,5 @@ const menuButton = () => {
 onload = () => {
 	setupSliders();
 	menuButton();
-	console.log('Loaded!')
+	console.log('Loaded again!');
 };
