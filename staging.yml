@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+
+  ac-assets-staging:
+    image: node:7.7.4
+    container_name: assetbuild-staging
+    volumes: 
+      - ./:/opt
+    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && gulp build"
+
+  ac-site-staging:
+    container_name: gohugo-staging
+    environment: 
+      - HUGO_TITLE=Anna Claire Christoffer
+    build:
+      context: .docker/site
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/opt
+    links:
+      - ac-assets-staging
+    depends_on:
+      - ac-assets-staging
+    command: hugo -s ./annachristoffer -b https://annachristoffer.staging --config=./annachristoffer/config.staging.toml -d ../public
+
+  ac-nginx-staging:
+    container_name: nginx-staging
+    build:
+      context: .docker/nginx
+      dockerfile: Dockerfile
+      args:
+        nginx_conf: nginx.staging.conf
+        ssl_o: Staging
+        ssl_cn: annachristoffer.dev
+    volumes: 
+      - ./media:/opt/media
+      - ./public:/opt/public
+    links: 
+      - ac-site-staging
+    ports:
+      - "80:80"
+      - "443:443"
+    command: nginx -g "daemon off;"
+
+volumes:
+  data:
+    driver: 'local'

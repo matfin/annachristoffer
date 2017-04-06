@@ -1,6 +1,10 @@
 FROM nginx:alpine
 MAINTAINER matfin@gmail.com
 
+ARG nginx_conf
+ARG ssl_o
+ARG ssl_cn
+
 RUN apk add --no-cache openssl && \
 	openssl req \ 
 	-x509 \
@@ -9,9 +13,9 @@ RUN apk add --no-cache openssl && \
 	-newkey rsa:2048 \
 	-keyout /etc/ssl/private/nginx-selfsigned.key \
 	-out /etc/ssl/certs/nginx-selfsigned.crt \
-	-subj "/C=DE/ST=Berlin/L=Berlin/O=Dev/CN=annachristoffer.dev"
+	-subj "/C=DE/ST=Berlin/L=Berlin/O=$ssl_o/CN=$ssl_cn"
 
 RUN openssl dhparam \
 	-out /etc/ssl/certs/dhparam.pem 2048
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY $nginx_conf /etc/nginx/nginx.conf
