@@ -1,5 +1,4 @@
 languageCode 		= "en-ie"
-baseURL 			= "https://annachristoffer.dev/"
 MetaDataFormat		= "yaml"
 disableLiveReload	= true
 watch				= true
