@@ -20,4 +20,3 @@ services:
       - ac-assets
     depends_on:
       - ac-assets
-    command: hugo -s ./annachristoffer -b http://annachristoffer.build --config=./annachristoffer/config.build.toml -d ../public
