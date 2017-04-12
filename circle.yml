@@ -22,5 +22,7 @@ deployment:
     branch: develop
     commands: 
       - gulp build
-      - hugo -s ./annachristoffer -b http://annachristoffer.build --config=./annachristoffer/config.build.toml -d ../public
+      - hugo -s ./annachristoffer -b $HUGO_STAGING_HOST --config=./annachristoffer/config.staging.toml -d ../public
+      - tar -zcvf public.tar.gz public/
+      - scp public.tar.gz $DEPLOY_USER@$DEPLOY_STAGING_HOST:$DEPLOY_PATH
 
