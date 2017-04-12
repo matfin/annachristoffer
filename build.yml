@@ -11,7 +11,7 @@ services:
       - ac-site
     depends_on:
       - ac-site
-    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && gulp"
+    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && gulp build"
 
   ac-nginx:
     container_name: nginx
