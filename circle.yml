@@ -11,6 +11,11 @@ dependencies:
     - npm install -g gulp
     - npm install -g bower
     - npm install
+    - bower install
+
+test:
+  override:
+    - echo "Tests are coming soon."
 
 deployment:
   staging: 
