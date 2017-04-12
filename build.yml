@@ -7,16 +7,35 @@ services:
     container_name: assetbuild
     volumes: 
       - ./:/opt:rw
-    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && gulp build"
+    links:
+      - ac-site
+    depends_on:
+      - ac-site
+    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && gulp"
+
+  ac-nginx:
+    container_name: nginx
+    build:
+      context: .docker/nginx
+      dockerfile: Dockerfile
+      args:
+        nginx_conf: nginx.build.conf
+    volumes: 
+      - ./media:/opt/media:ro
+      - ./public:/opt/public:ro
+    links: 
+      - ac-site
+    ports:
+      - "80:80"
+    command: nginx -g "daemon off;"
 
   ac-site:
-    container_name: gohugo
+    container_name: site
     build:
       context: .docker/site
       dockerfile: Dockerfile
+    ports:
+      - "1313:1313"
     volumes:
       - ./:/opt:rw
-    links:
-      - ac-assets
-    depends_on:
-      - ac-assets
+    command: hugo -s ./annachristoffer -b http://annachristoffer.build --config=./annachristoffer/config.build.toml -d ../public

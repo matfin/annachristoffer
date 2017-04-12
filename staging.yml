@@ -1,6 +1,0 @@
-version: '3'
-
-services:
-  ac-site:
-    container_name: gohugo
-    command: hugo -s ./annachristoffer -b https://staging.annachristoffer.com --config=./annachristoffer/config.staging.toml -d ../public
