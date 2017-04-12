@@ -37,5 +37,5 @@ const menuButton = () => {
 onload = () => {
 	setupSliders();
 	menuButton();
-	console.log('Loaded again!');
+	console.log('Loaded with an edit in mind.');
 };
