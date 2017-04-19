@@ -7,12 +7,9 @@ dependencies:
     - cd /tmp
     - wget https://github.com/spf13/hugo/releases/download/v0.19/hugo_0.19-64bit.deb
     - sudo dpkg -i hugo*.deb
-  override:
     - npm install -g gulp
     - npm install -g bower
     - npm link gulp
-    - npm install
-    - bower install
 
 test:
   override:
@@ -21,7 +18,9 @@ test:
 deployment:
   staging: 
     branch: develop
-    commands: 
+    commands:
+      - npm install
+      - bower install
       - gulp build
       - hugo -s ./annachristoffer -b $HUGO_STAGING_HOST --config=./annachristoffer/config.staging.toml -d ../public
       - tar -zcvf public.tar.gz public/
@@ -30,11 +29,12 @@ deployment:
             cd $DEPLOY_STAGING_PATH &&
             rm -r public/ &&
             tar -xvzf public.tar.gz &&
-            mkdir public/.well-known
-            "
+            mkdir public/.well-known"
   production:
     tag: /v[0-9]+(\.[0-9]+)*/
     commands:
+      - npm install
+      - bower install
       - gulp build
       - hugo -s ./annachristoffer -b $HUGO_PRODUCTION_HOST --config=./annachristoffer/config.production.toml -d ../public
       - tar -zcvf public-$CIRCLE_TAG.tar.gz public/
