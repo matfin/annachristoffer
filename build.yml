@@ -11,7 +11,7 @@ services:
       - ac-site
     depends_on:
       - ac-site
-    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && bower install --allow-root && gulp build"
+    command: sh -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && bower install --allow-root && gulp build"
 
   ac-nginx:
     container_name: nginx
@@ -38,4 +38,4 @@ services:
       - "1313:1313"
     volumes:
       - ./:/opt:rw
-    command: hugo -s ./annachristoffer -b http://annachristoffer.build --config=./annachristoffer/config.build.toml -d ../public
+    command: hugo -s /opt/annachristoffer -b http://annachristoffer.build --config=./annachristoffer/config.build.toml -d ../public
