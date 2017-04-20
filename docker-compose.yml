@@ -29,7 +29,7 @@ services:
     command: nginx -g "daemon off;"
 
   ac-assets:
-    image: node:7.7.4
+    image: node:7.9.0-alpine
     container_name: assetbuild
     volumes: 
       - ./:/opt:rw

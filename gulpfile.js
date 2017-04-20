@@ -17,7 +17,7 @@ gulp.task('copy-fa-scss', () => {
 	.pipe(gulp.dest('./assets/sass/thirdparty/font-awesome'));
 });
 
-gulp.task('sass-dev', () => {
+gulp.task('sass-dev', ['copy-fa-fonts', 'copy-fa-scss'], () => {
 	return gulp
 	.src('./assets/sass/main.sass')
 	.pipe(sass())
@@ -25,7 +25,7 @@ gulp.task('sass-dev', () => {
 	.pipe(gulp.dest('./annachristoffer/static/css'))
 });
 
-gulp.task('sass-build', () => {
+gulp.task('sass-build', ['copy-fa-fonts', 'copy-fa-scss'], () => {
 	return gulp
 	.src('./assets/sass/main.sass')
 	.pipe(sass())
@@ -51,16 +51,12 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', [
-	'copy-fa-fonts',
-	'copy-fa-scss',
 	'sass-dev',
 	'scripts',
 	'watch'
 ]);
 
 gulp.task('build', [
-	'copy-fa-fonts',
-	'copy-fa-scss',
 	'sass-build',
 	'scripts'
 ]);
