@@ -2,7 +2,9 @@ languageCode 		= "en-ie"
 MetaDataFormat		= "yaml"
 disableLiveReload	= true
 watch				= true
+baseURL				= "http://annachristoffer.dev/"
 title				= "Anna Claire Christoffer"
+
 
 [params]
 	description 	= "Description for Anna Claire Christoffer"

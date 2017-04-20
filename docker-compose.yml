@@ -11,7 +11,7 @@ services:
       - "1313:1313"
     volumes:
       - ./:/opt:ro
-    command: hugo server -s /opt/annachristoffer -b http://annachristoffer.dev/ --appendPort=false --config=/opt/annachristoffer/config.dev.toml --bind "0.0.0.0"
+    command: hugo server -s /opt/annachristoffer --config /opt/annachristoffer/config.dev.toml --baseURL http://annachristoffer.dev/ --bind "0.0.0.0" --appendPort=false --verbose
 
   ac-nginx:
     container_name: nginx
@@ -29,7 +29,7 @@ services:
     command: nginx -g "daemon off;"
 
   ac-assets:
-    image: node:7.9.0-alpine
+    image: node:7.9.0
     container_name: assetbuild
     volumes: 
       - ./:/opt:rw
@@ -37,4 +37,4 @@ services:
       - ac-site
     depends_on:
       - ac-site
-    command: bash -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && bower install --allow-root && gulp"
+    command: sh -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && bower install --allow-root && gulp"
