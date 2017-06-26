@@ -2,3 +2,10 @@ machine:
   node:
     version: 8.0.0
 
+dependencies:
+  override:
+    - echo "Ignoring this for now"
+
+test:
+  override:
+    - npm test
