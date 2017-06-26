@@ -43,7 +43,7 @@ services:
       - ac-site-build
     depends_on:
       - ac-site-build
-    command: sh -c "npm install -g gulp bower && cd /opt && npm install && bower install --allow-root && npm start"
+    command: sh -c "cd /opt && npm install && ./node_modules/.bin/bower install --allow-root && npm start"
 
   ac-sass-build:
     container_name: ac_sass_build
