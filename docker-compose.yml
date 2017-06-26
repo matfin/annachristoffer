@@ -14,7 +14,7 @@ services:
       - "1313:1313"
     volumes:
       - ./:/opt:ro
-    command: hugo server -s /opt/site --config /opt/site/config.dev.toml --baseURL http://annachristoffer.dev/ --bind "0.0.0.0" --appendPort=false --verbose
+    command: hugo server -s /opt/site --config /opt/site/config.yml --baseURL http://annachristoffer.dev/ --bind "0.0.0.0" --appendPort=false --verbose
 
   ac-nginx-dev:
     container_name: ac_nginx_dev
@@ -44,7 +44,7 @@ services:
       - ac-site-dev
     depends_on:
       - ac-site-dev
-    command: sh -c "npm install -g gulp bower && && cd /opt && npm install && npm start"
+    command: sh -c "cd /opt && npm install && ./node_modules/.bin/bower install --allow-root && npm start"
 
   ac-sass-dev:
     container_name: ac_sass_dev

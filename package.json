@@ -4,7 +4,10 @@
   "description": "Static site generated with GoHugo",
   "main": "gulpfile.js",
   "devDependencies": {
-    "gulp-concat": "^2.6.1"
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "bower": "^1.8.0",
+    "jshint": "^2.9.4"
   },
   "scripts": {
     "test": "echo \"Tests are coming soon!\" && exit 0",
