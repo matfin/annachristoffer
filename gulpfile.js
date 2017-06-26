@@ -33,7 +33,10 @@ gulp.task('debug', () => {
 
 gulp.task('scripts', () => {
 	return gulp
-	.src('./assets/scripts/**/*')
+	.src([
+		'./node_modules/matfin-slider/_src/slider.js',
+		'./assets/scripts/**/*'
+	])
 	.pipe(concat('main.js'))
 	.pipe(gulp.dest(dest.scripts));
 });

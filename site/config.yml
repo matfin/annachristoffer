@@ -1,6 +1,6 @@
 ---
 languageCode:       "en-ie"
-disableLiveReload:  false
+disableLiveReload:  true
 watch:              true
 title:              "[DEV] Anna Claire Christoffer"
 
