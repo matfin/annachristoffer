@@ -1,41 +1,59 @@
 version: '3'
 
 services:
+  
+  ac-site-build:
+    container_name: ac_site_build
+    restart: on-failure
+    build:
+      context: .docker/site
+      dockerfile: Dockerfile
+      args:
+        hugo_version: "0.24"
+    ports:
+      - "1313:1313"
+    volumes:
+      - ./:/opt:ro
+    command: hugo -s /opt/site -b http://annachristoffer.build --config=./site/build.yml -d ../public
 
-  ac-assets:
-    image: node:7.7.4
-    container_name: assetbuild
-    volumes: 
-      - ./:/opt:rw
-    links:
-      - ac-site
-    depends_on:
-      - ac-site
-    command: sh -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && bower install --allow-root && gulp build"
-
-  ac-nginx:
-    container_name: nginx
+  ac-nginx-build:
+    container_name: ac_nginx_build
     build:
       context: .docker/nginx
       dockerfile: Dockerfile
       args:
         nginx_conf: nginx.build.conf
-    volumes: 
-      - ./media:/opt/media:ro
-      - ./public:/opt/public:ro
     links: 
-      - ac-site
+      - ac-site-build
     ports:
       - "80:80"
     command: nginx -g "daemon off;"
 
-  ac-site:
-    container_name: site
-    build:
-      context: .docker/site
-      dockerfile: Dockerfile
-    ports:
-      - "1313:1313"
+  ac-js-build:
+    container_name: ac_js_build
+    restart: on-failure
+    image: node:7.9.0
+    environment:
+      - SCRIPTS_DEST=./public/js
+      - SVG_DEST=./public/svg
+      - FAVICONS_DEST=./public/favicons
+    volumes: 
+      - ./:/opt:rw
+    links:
+      - ac-site-build
+    depends_on:
+      - ac-site-build
+    command: sh -c "npm install -g gulp bower && && cd /opt && npm install && npm start"
+
+  ac-sass-build:
+    container_name: ac_sass_build
+    image: ruby:2.1-alpine
+    restart: on-failure
     volumes:
       - ./:/opt:rw
-    command: hugo -s /opt/annachristoffer -b http://annachristoffer.build --config=./annachristoffer/config.build.toml -d ../public
+    links: 
+      - ac-site-build
+    depends_on:
+      - ac-site-build
+    command: sh -c "gem install sass && sass --watch /opt/assets/sass/main.sass:/opt/site/static/css/main.css"
+  

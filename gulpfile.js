@@ -1,62 +1,59 @@
 'use strict';
 
-const 	gulp 		= require('gulp'),
-		sass 		= require('gulp-sass'),
-		concat		= require('gulp-concat'),
-		cleancss	= require('gulp-clean-css');
+const	gulp 		= require('gulp'),
+		concat 		= require('gulp-concat');
 
-gulp.task('copy-fa-fonts', () => {
-	return gulp
-	.src(['./node_modules/font-awesome/fonts/**/*'])
-	.pipe(gulp.dest('./annachristoffer/static/fonts'));
-});
+const dest = {
+	scripts:	process.env['SCRIPTS_DEST'],
+	svg:		process.env['SVG_DEST'],
+	favicons:	process.env['FAVICONS_DEST'],
+	watch:		process.env['WATCH'] != null
+};
 
-gulp.task('copy-fa-scss', () => {
-	return gulp
-	.src(['./node_modules/font-awesome/scss/**/*'])
-	.pipe(gulp.dest('./assets/sass/thirdparty/font-awesome'));
-});
+const tasks = () => {
+	let items = [
+		'debug',
+		'scripts',
+		'svg',
+		'favicons'
+	];
 
-gulp.task('sass-dev', ['copy-fa-fonts', 'copy-fa-scss'], () => {
-	return gulp
-	.src('./assets/sass/main.sass')
-	.pipe(sass())
-	.on('error', sass.logError)
-	.pipe(gulp.dest('./annachristoffer/static/css'))
-});
+	if(dest.watch) {
+		items.push('watch')
+	}
 
-gulp.task('sass-build', ['copy-fa-fonts', 'copy-fa-scss'], () => {
-	return gulp
-	.src('./assets/sass/main.sass')
-	.pipe(sass())
-	.on('error', sass.logError)
-	.pipe(cleancss())
-	.pipe(gulp.dest('./annachristoffer/static/css'))
+	return items;
+};
+
+gulp.task('debug', () => {
+	console.log({
+		destinations: dest
+	});
 });
 
 gulp.task('scripts', () => {
 	return gulp
-	.src([
-		'./bower_components/matfin-slider/_src/slider.js',
-		'./assets/scripts/**/*'
-	])
+	.src('./assets/scripts/**/*')
 	.pipe(concat('main.js'))
-	.pipe(gulp.dest('./annachristoffer/static/js'));
+	.pipe(gulp.dest(dest.scripts));
+});
 
+gulp.task('favicons', () => {
+	return gulp
+	.src('./assets/favicons/**/*')
+	.pipe(gulp.dest(dest.favicons));
+});
+
+gulp.task('svg', () => {
+	return gulp
+	.src('./assets/svg/**/*')
+	.pipe(gulp.dest(dest.svg));
 });
 
 gulp.task('watch', () => {
-	gulp.watch('./assets/sass/**/*.sass', ['sass-dev']);
-	gulp.watch('./assets/scripts/**/*.js', ['scripts']);
+	gulp.watch('./assets/scripts/**/*', ['scripts']);
+	gulp.watch('./assets/svg/**/*', ['svg']);
+	gulp.watch('./assets/favicons/**/*', ['favicons']);
 });
 
-gulp.task('default', [
-	'sass-dev',
-	'scripts',
-	'watch'
-]);
-
-gulp.task('build', [
-	'sass-build',
-	'scripts'
-]);
+gulp.task('default', tasks());
