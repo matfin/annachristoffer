@@ -32,7 +32,9 @@ services:
   ac-js-dev:
     container_name: ac_js_dev
     restart: on-failure
-    image: node:7.9.0
+    build:
+      context: .docker/yarn
+      dockerfile: Dockerfile
     environment:
       - WATCH=true
       - SCRIPTS_DEST=./site/static/js
@@ -44,7 +46,7 @@ services:
       - ac-site-dev
     depends_on:
       - ac-site-dev
-    command: sh -c "cd /opt && npm install && ./node_modules/.bin/bower install --allow-root && npm start"
+    command: sh -c "cd /opt && yarn install && yarn run build"
 
   ac-sass-dev:
     container_name: ac_sass_dev
