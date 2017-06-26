@@ -1,30 +1,19 @@
 {
-  "name": "anna-claire-christoffer",
+  "name": "annachristoffer",
   "version": "2.0.0",
-  "description": "Static site generated with GoHugo",
+  "description": "Static site generated using the GoHugo static site framework.",
   "main": "gulpfile.js",
-  "dependencies": {
-    "font-awesome": "^4.7.0"
+  "repository": "https://github.com/matfin/annachristoffer.git",
+  "author": "Matt Finucane <matfin@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://annachristoffer.com",
+  "scripts": {
+    "build": "gulp"
   },
   "devDependencies": {
-    "gulp-clean-css": "^3.0.4",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matfin/annachristoffer.git"
-  },
-  "keywords": [
-    "gohugo"
-  ],
-  "author": "Anna Claire Christoffer",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matfin/annachristoffer/issues"
-  },
-  "homepage": "https://github.com/matfin/annachristoffer#readme"
+    "jshint": "^2.9.5",
+    "matfin-slider": "^2.0.1"
+  }
 }

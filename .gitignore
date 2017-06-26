@@ -1,9 +1,5 @@
 **/.DS_Store
+**/.map
 node_modules
-bower_components
 public/
-media/
-assets/sass/thirdparty/*
-!assets/sass/thirdparty/.gitkeep
-annachristoffer/static/*
-!annachristoffer/.gitkeep
+site/static/*

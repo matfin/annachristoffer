@@ -2,39 +2,60 @@ version: '3'
 
 services:
 
-  ac-site:
-    container_name: site
+  ac-site-dev:
+    container_name: ac_site_dev
+    restart: on-failure
     build:
       context: .docker/site
       dockerfile: Dockerfile
+      args:
+        hugo_version: "0.24"
     ports:
       - "1313:1313"
     volumes:
       - ./:/opt:ro
-    command: hugo server -s /opt/annachristoffer --config /opt/annachristoffer/config.dev.toml --baseURL http://annachristoffer.dev/ --bind "0.0.0.0" --appendPort=false --verbose
+    command: hugo server -s /opt/site --config /opt/site/config.yml --baseURL http://annachristoffer.dev/ --bind "0.0.0.0" --appendPort=false --verbose
 
-  ac-nginx:
-    container_name: nginx
+  ac-nginx-dev:
+    container_name: ac_nginx_dev
     build:
       context: .docker/nginx
       dockerfile: Dockerfile
       args:
         nginx_conf: nginx.development.conf
-    volumes: 
-      - ./media:/opt/media:ro
     links: 
-      - ac-site
+      - ac-site-dev
     ports:
       - "80:80"
     command: nginx -g "daemon off;"
 
-  ac-assets:
-    image: node:7.9.0
-    container_name: assetbuild
+  ac-js-dev:
+    container_name: ac_js_dev
+    restart: on-failure
+    build:
+      context: .docker/yarn
+      dockerfile: Dockerfile
+    environment:
+      - WATCH=true
+      - SCRIPTS_DEST=./site/static/js
+      - SVG_DEST=./site/static/svg
+      - FAVICONS_DEST=./site/static/favicons
     volumes: 
       - ./:/opt:rw
     links:
-      - ac-site
+      - ac-site-dev
     depends_on:
-      - ac-site
-    command: sh -c "cd /opt && npm install -g gulp && npm install -g bower && npm link gulp && npm install && bower install --allow-root && gulp"
+      - ac-site-dev
+    command: sh -c "cd /opt && yarn install && yarn run build"
+
+  ac-sass-dev:
+    container_name: ac_sass_dev
+    image: ruby:2.1-alpine
+    restart: on-failure
+    volumes:
+      - ./:/opt:rw
+    links: 
+      - ac-site-dev
+    depends_on:
+      - ac-site-dev
+    command: sh -c "gem install sass && sass --watch /opt/assets/sass/main.sass:/opt/site/static/css/main.css"

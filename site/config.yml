@@ -1,0 +1,30 @@
+---
+languageCode:       "en-ie"
+disableLiveReload:  true
+watch:              true
+title:              "[DEV] Anna Claire Christoffer"
+
+params:
+  description:  "Description for Anna Claire Christoffer"
+  teaser:       "Hi. I am Anna and I am an Art Director based in Berlin, Germany."
+  author:       "Anna Claire Christoffer"
+  mediaBase:    ""
+  noindex:      true
+
+menu:
+  main:
+    - name:       "projects"
+    - identifier: "projects"
+    - url:        "/"
+    - weight:     1
+
+    - name:       "about"
+    - identifier: "about"
+    - url:        "/about"
+    - weight:     2
+  
+    - name:       "cv"
+    - identifier: "cv"
+    - url:        "/cv"
+    - weight:     3
+...

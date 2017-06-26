@@ -2,38 +2,3 @@
 	padding: 0
 	margin: 0
 	box-sizing: border-box
-
-body
-	display: flex
-	align-items: center
-	flex-direction: column
-	font-size: 1em
-	font-family: $font-family
-	color: $black
-	&.scroll-disabled
-		position: fixed
-		overflow: hidden
-
-header,
-section,
-footer
-	width: 100vw
-	padding: 0 $units * 2;
-	+break(min, $break-4)
-		width: 80vw
-
-a
-	text-decoration: none
-	color: $link
-	+transitionWithProperties(color)
-	&:hover
-		color: $link-hover
-
-ol,
-ul
-	list-style: none
-
-button
-	border: 0
-	background: none
-	outline: none
