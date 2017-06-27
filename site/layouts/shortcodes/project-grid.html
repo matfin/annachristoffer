@@ -1,0 +1,6 @@
+{{ $projects := where .Site.Pages "Section" "project" }}
+<section class="project-grid">
+	{{ range $projects }}
+		{{ .Render "card" }}
+	{{ end }}
+</section>

@@ -1,10 +1,11 @@
 ---
-title: "Master of Art / Project"
-thumbnail: ""
-teaser: ""
-date: "2017-03-27T11:02:24Z"
-description: "Carnival of the animals – A digital music book for children."
-categories: 
+title:			"Master of Art / Project"
+thumbnail:		""
+teaser:			""
+date:			"2013-02-01"
+description:	"Carnival of the animals &ndash; A digital music book for children."
+prominence:		"normal"
+categories:
 - "illustration"
 - "interaction"
 ---

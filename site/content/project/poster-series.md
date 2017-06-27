@@ -1,10 +1,11 @@
 ---
-title: "Poster Series"
-thumbnail: ""
-teaser: ""
-date: "2017-03-27T11:01:26Z"
-description: "Probational lectures at the University of Bielefeld."
-categories: 
+title:			"Poster Series"
+thumbnail:		""
+teaser:			""
+date:			"2012-07-01"
+description:	"Probational lectures at the University of Bielefeld."
+prominence:		"normal"
+categories:
 - "illustration"
 - "posters"
 ---

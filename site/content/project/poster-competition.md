@@ -1,10 +1,11 @@
 ---
-title: "Poster Competition"
-thumbnail: ""
-teaser: ""
-date: "2017-03-27T11:02:07Z"
-description: "Promotion for Don't Panic - Resistance."
-categories: 
+title:			"Poster Competition"
+thumbnail:		""
+teaser:			""
+date:			"2010-05-01"
+description:	"Promotion for Don&apos;t Panic - Resistance."
+prominence:		"normal"
+categories:
 - "illustration" 
 - "posters"
 ---

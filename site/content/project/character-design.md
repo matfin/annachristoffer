@@ -1,10 +1,11 @@
 ---
-title: "Character Design"
-thumbnail: ""
-teaser: ""
-date: "2017-03-27T11:01:41Z"
-description: "Carnival of the animals - A digital music book for children."
-categories: 
+title:			"Character Design"
+thumbnail:		""
+teaser:			""
+date:			"2013-02-01"
+description:	"Carnival of the animals - A digital music book for children."
+prominence:		"normal"
+categories:
 - "illustration"
 ---
 

@@ -1,10 +1,11 @@
 ---
-title: "Book Design"
-thumbnail: ""
-teaser: ""
-date: "2017-03-27T11:01:34Z"
-description: "The story of \"Alices Adventures in Wonderland\" written by Lewis Carrol."
-categories: 
+title:			"Book Design"
+thumbnail:		""
+teaser:			""
+date:			"2009-09-01"
+description:	"The story of &ldquo;Alices Adventures in Wonderland\&raquo; written by Lewis Carrol."
+prominence:		"normal"
+categories:
 - "illustration"
 - "books"
 - "icons"

@@ -9,3 +9,5 @@ description: "I&#39;m an interdisciplinary designer from Germany and currently w
 	"Explore projects"
 	"/projects" 
 >}}
+
+{{< project-grid >}}
