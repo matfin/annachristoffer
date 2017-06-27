@@ -1,6 +1,6 @@
-{{ $projects := where .Site.Pages "Section" "project" }}
+{{ $projects := where .Site.RegularPages "Section" "project" }}
 <section class="project-grid">
-	{{ range $projects }}
+	{{ range sort $projects ".Params.prominence" "desc" }}
 		{{ .Render "card" }}
 	{{ end }}
 </section>

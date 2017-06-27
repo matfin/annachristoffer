@@ -1,5 +1,12 @@
-<a class="project-card" href="{{ .Permalink }}">
-	<h2>
-		{{ .Title }}
-	</h2>
+{{ $prominence := (dict "1" "normal" "2" "medium" "3" "high" ) }}
+
+<a class="project-card prominence-{{ index $prominence (string .Params.prominence) }}" href="{{ .Permalink }}">
+	<figure>
+		<picture>
+
+		</picture>
+		<figcaption>
+			{{ .Params.title }}
+		</figcaption>
+	</figure>
 </a>

@@ -4,7 +4,7 @@ thumbnail:		""
 teaser:			""
 date:			"2010-04-01"
 description:	"Expressions of the feelings of an old woman."
-prominence:		"normal"
+prominence:		1
 categories:
 - "posters"
 ---
