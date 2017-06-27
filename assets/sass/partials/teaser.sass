@@ -1,2 +1,38 @@
-.teaser
+.standard-teaser
+	grid-area: teaser
+	
+	display: grid
+
+	// grid-template-columns: ($units * 10) 2fr ($units * 6) 1fr ($units * 10)
+	// grid-template-rows: minmax(auto, $units * 12.5) minmax(auto, $units * 12.5) minmax(auto, $units * 4) auto
+	// grid-template-areas: '. . . . .' '. text . image .' '. link . image .' '. . . . .'
+	// grid-row-gap: $units * 6.25
+
+	grid-template-columns: 10rem 2fr 5.75rem 30rem 10rem
+	grid-template-rows: 12.5rem 22rem 3.75rem
+	grid-template-areas: '. . . . .' '. text . figure .' '. link . figure .'
+
 	background-color: $blue
+
+	h2
+		grid-area: text
+		color: $white
+
+	a 
+		grid-area: link
+		
+		display: grid
+		align-items: center
+		justify-content: center
+		width: 50%
+		color: $white
+		border: 1px solid currentColor
+		// +buttonLink('large')
+
+	figure
+		grid-area: figure
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover

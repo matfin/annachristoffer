@@ -2,12 +2,14 @@
 {{ $teaserimage	:= .Get 1 }}
 {{ $linktext	:= .Get 2 }}
 {{ $linkurl		:= .Get 3 }}
-<section class="teaser">
+<section class="standard-teaser">
 	<h2>
 		{{ htmlUnescape $teasertext }}
 	</h2>
 	<a href="{{ $linkurl }}">
 		{{ $linktext }}
 	</a>
-	<img src="{{ $teaserimage }}" alt="Image">
+	<figure>
+		<img src="{{ $teaserimage }}" alt="Image">
+	</figure>
 </section>

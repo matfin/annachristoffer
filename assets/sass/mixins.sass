@@ -12,3 +12,10 @@
 =transitionWithProperties($props, $ms: $transition-duration)
 	transition-property: $props
 	transition-duration: $ms
+
+=buttonLink($size: 'standard')
+	border: 1px solid currentColor
+	@if $size == standard
+		padding: $units
+	@else if $size == large
+		padding: $units ($units * 4)
