@@ -6,12 +6,17 @@
 	grid-template-rows: 1fr
 	grid-template-columns: 1fr
 
+	&:nth-child(even)
+		background-color: #ccc
+	&:nth-child(odd)
+		background-color: #999
+
 	figure
 		display: grid
 		grid-template-rows: 1fr
 		grid-template-columns: ($units * 4.375) 1fr ($units * 4.375)
 		grid-template-rows: minmax(4rem, auto) 1fr
-		grid-template-areas: 'picture picture picture' '. caption .' 
+		grid-template-areas: 'picture picture picture' '. caption .'
 
 	picture
 		grid-column: picture-start / picture-end
@@ -19,6 +24,7 @@
 
 	figcaption
 		grid-area: caption
+		color: $white
 
 	&.prominence-medium
 		grid-column: span 2
