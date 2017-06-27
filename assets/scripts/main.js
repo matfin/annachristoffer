@@ -35,7 +35,6 @@ const menuButton = () => {
 };
 
 onload = () => {
-	setupSliders();
 	menuButton();
 	console.log('This proved that Docker compose is working.');
 };

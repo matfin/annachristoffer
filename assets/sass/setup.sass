@@ -2,3 +2,24 @@
 	padding: 0
 	margin: 0
 	box-sizing: border-box
+
+body
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: ($units * 8) auto
+	grid-template-areas: 'header' 'main'
+
+header
+	z-index: $z-over
+	grid-area: header
+
+main
+	grid-area: header / main
+	grid-row-start: header
+	grid-row-end: main
+
+a
+	text-decoration: none
+
+ul
+	list-style: none

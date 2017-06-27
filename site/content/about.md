@@ -1,7 +1,7 @@
-+++
-title 		= "About"
-description	= "About Anna"
-+++
+---
+title: 			"About"
+description:	"About Anna"
+---
 
 # About
 

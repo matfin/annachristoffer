@@ -1,7 +1,7 @@
-+++
-title 		= "CV"
-description	= "Anna's CV"
-+++
+---
+title:			"CV"
+description:	"Anna's CV"
+---
 
 # CV
 

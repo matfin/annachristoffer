@@ -1,9 +1,18 @@
-p
-	font-size: $base-font-size
-	line-height: $base-line-height
-	+break(min, $break-2)
+body
+	font-family: $font-family
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+header
+	h1
 		font-size: $medium-font-size
+		font-style: italic
+		font-weight: $font-weight-normal
 		line-height: $medium-line-height
-	+break(min, $break-3)
-		font-size: $large-font-size
-		line-height: $large-line-height
+		letter-spacing: $letter-spacing
+
+nav
+	font-size: $normal-font-size
+
+	a
+		font-weight: $font-weight-normal

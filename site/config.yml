@@ -2,7 +2,7 @@
 languageCode:       "en-ie"
 disableLiveReload:  true
 watch:              true
-title:              "[DEV] Anna Claire Christoffer"
+title:              "Anna Claire Christoffer"
 
 params:
   description:  "Description for Anna Claire Christoffer"
@@ -13,18 +13,13 @@ params:
 
 menu:
   main:
-    - name:       "projects"
-    - identifier: "projects"
-    - url:        "/"
-    - weight:     1
+    - name:       "Projects"
+      identifier: "projects"
+      url:        "/projects"
+      weight:     1
 
-    - name:       "about"
-    - identifier: "about"
-    - url:        "/about"
-    - weight:     2
-  
-    - name:       "cv"
-    - identifier: "cv"
-    - url:        "/cv"
-    - weight:     3
+    - name:       "About"
+      identifier: "about"
+      url:        "/about"
+      weight:     2
 ...

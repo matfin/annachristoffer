@@ -1,8 +1,8 @@
-+++
-title 		= ""
-description	= ""
-date		= ""
-thumbnail 	= ""
-teaser		= ""
-categories 	= []
-+++
+---
+title:			""
+description:	""
+date:			""
+thumbnail:		""
+teaser:			""
+categories:		[]
+---
