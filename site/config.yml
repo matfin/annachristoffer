@@ -8,7 +8,7 @@ params:
   description:    "Description for Anna Claire Christoffer"
   teaser:         "Hi. I am Anna and I am an Art Director based in Berlin, Germany."
   author:         "Anna Claire Christoffer"
-  cl_media_base:  "https://res.cloudinary.com/matt-finucane-portfolio/"
+  cl_media_base:  "https://res.cloudinary.com/anna-christoffer-portfolio/"
   noindex:      true
 
 menu:
