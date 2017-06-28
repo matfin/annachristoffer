@@ -9,3 +9,14 @@
 
 	aside 
 		grid-area: aside
+
+	article,
+	aside
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: auto
+		grid-row-gap: $units
+
+	ul
+		li
+			+listItemStyle
