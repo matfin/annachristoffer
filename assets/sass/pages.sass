@@ -3,3 +3,18 @@ main
 	grid-template-columns: 1fr
 	grid-template-rows: minmax($units * 50, 100vh) auto
 	grid-template-areas: 'teaser' 'content'
+
+.content
+	grid-area: content
+	display: grid
+	grid-template-columns: ($units * 10) 2fr 1fr ($units * 10)
+	grid-template-rows: ($units * 5) auto
+	grid-template-areas: '. . . .' '. article aside .'
+	grid-gap: $units * 5
+
+	article 
+		grid-area: article
+
+	aside
+		grid-area: aside
+

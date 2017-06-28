@@ -6,8 +6,10 @@
 	<body>
 		{{ partial "header" . }}
 		<main class="page">
+			{{ partial "standard-teaser" (dict "teasertext" .Params.description "linktext" "Explore projects" "linkurl" "/projects" "cl_media_base" .Site.Params.cl_media_base "cl_version" .Params.image_cl_version "cl_public_id" .Params.image_cl_public_id "size" 1) }}
 			{{ .Content }}
 		</main>
 		{{ partial "footer" }}
+		{{ partial "scripts" }}
 	</body>
 </html>

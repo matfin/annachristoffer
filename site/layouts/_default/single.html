@@ -5,9 +5,12 @@
 	</head>
 	<body>
 		{{ partial "header" . }}
-		<section class="page">
-			{{ .Content }}
-		</section>
+		<main class="page">
+			{{ partial "picture-teaser" (dict "cl_media_base" .Site.Params.cl_media_base "cl_version" .Params.image_cl_version "cl_public_id" .Params.image_cl_public_id) }}
+			<div class="content">
+				{{ .Content }}
+			</div>
+		</main>
 		{{ partial "footer" . }}
 		{{ partial "scripts" . }}
 	</body>

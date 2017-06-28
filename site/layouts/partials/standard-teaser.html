@@ -1,7 +1,6 @@
-{{ $teasertext	:= .Get 0 }}
-{{ $teaserimage	:= .Get 1 }}
-{{ $linktext	:= .Get 2 }}
-{{ $linkurl		:= .Get 3 }}
+{{ $teasertext		:= .teasertext }}
+{{ $linktext		:= .linktext }}
+{{ $linkurl			:= .linkurl }}
 <section class="standard-teaser">
 	<h2>
 		{{ htmlUnescape $teasertext }}
@@ -10,6 +9,6 @@
 		{{ $linktext }}
 	</a>
 	<figure>
-		<img src="{{ $teaserimage }}" alt="Image">
+		{{ partial "thumbnail" . }}
 	</figure>
 </section>

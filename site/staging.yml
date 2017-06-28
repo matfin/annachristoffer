@@ -5,10 +5,10 @@ watch:              true
 title:              "[STAGING] Anna Claire Christoffer"
 
 params:
-  description:  "Description for Anna Claire Christoffer"
-  teaser:       "Hi. I am Anna and I am an Art Director based in Berlin, Germany."
-  author:       "Anna Claire Christoffer"
-  mediaBase:    ""
+  description:    "Description for Anna Claire Christoffer"
+  teaser:         "Hi. I am Anna and I am an Art Director based in Berlin, Germany."
+  author:         "Anna Claire Christoffer"
+  cl_media_base:  "https://res.cloudinary.com/matt-finucane-portfolio/"
   noindex:      true
 
 menu:
