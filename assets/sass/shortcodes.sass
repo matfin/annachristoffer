@@ -1,0 +1,11 @@
+.article-aside
+	display: grid
+	grid-template-columns: ($units * 18.75) 2fr ($units * 4) 1fr ($units * 18.75)
+	grid-template-rows: 1fr
+	grid-template-areas: '. article . aside .'
+
+	article
+		grid-area: article
+
+	aside 
+		grid-area: aside

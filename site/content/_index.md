@@ -4,5 +4,3 @@ description: 		"I&#39;m an interdisciplinary designer from Germany and currently
 image_cl_version: 	"1497005335"
 image_cl_public_id:	"people/anna-portfolio-closeup"
 ---
-
-{{< project-grid >}}
