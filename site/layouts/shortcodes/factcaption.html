@@ -3,16 +3,14 @@
 {{ $content 		:= .Get 1 }}
 {{ $cl_public_id	:= .Get 2 }}
 {{ $cl_version		:= .Get 3 }}
-<figcaption>
-	<figure>
-		{{ partial "thumbnail" (dict "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id) }}
-	</figure>
-	<caption>
+<figure>
+	{{ partial "thumbnail" (dict "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id "size" 3) }}
+	<figcaption>
 		<h2>
 			{{ $title }}
 		</h2>
 		<p>
 			{{ $content }}
 		</p>
-	</caption>
-</figcaption>
+	</figcaption>
+</figure>

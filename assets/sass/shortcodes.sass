@@ -20,3 +20,37 @@
 	ul
 		li
 			+listItemStyle
+
+.facts
+	display: grid
+	grid-template-columns: 1fr
+	grid-auto-flow: row
+
+	color: $white
+
+	figure
+		display: grid
+		grid-template-columns: 1fr 2fr
+		grid-template-rows: repeat(2, minmax($units * 31.25, 1fr))
+		grid-template-areas: 'caption picture' '. picture'
+		background-color: $grey
+
+		picture
+			grid-area: picture
+			display: grid
+
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+
+		figcaption
+			grid-area: caption
+			background-color: $blue
+			padding: ($units * 6)
+
+			h2
+				margin-bottom: $units
+		
+
+
