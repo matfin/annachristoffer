@@ -73,4 +73,28 @@
 				align-self: center
 		
 
+.double
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-template-rows: 1fr
+
+	> div
+		display: grid
+		grid-template-columns: auto minmax(auto, $units * 30) auto
+		grid-row-gap: $units * 2.5
+		grid-auto-rows: min-content
+
+		&:first-of-type
+			background-color: $light-grey
+		&:last-of-type
+			background-color: $medium-grey
+
+		.snippet
+			grid-column: 2 / 3
+			grid-row: span 1
+			display: grid
+			grid-row-gap: $units * 1.5
+
+
+
 
