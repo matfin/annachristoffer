@@ -117,3 +117,15 @@ This describes the basic tasks I undertook in this position. This goes into furt
 {{% /content-section %}}
 
 {{< /content-section >}}
+
+{{% content-section "contact" %}}
+## Contact details
+Don't be shy. Get in touch. Let's work together. I am very good. I am reasonable. I am German. I am efficient. Efficiency is what it's all about!
+{{< social >}}
+## About this website
+This website was built by [Matt Finucane](https://mattfinucane.com) and designed by me to show off my rapidly expanding skillset in all things nice.
+{{< photo
+	"1498751347"
+	"content/about/anna-portrait"
+>}}
+{{% /content-section %}}

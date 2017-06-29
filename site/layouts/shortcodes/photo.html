@@ -1,0 +1,4 @@
+{{ $cl_media_base 	:= .Site.Params.cl_media_base }}
+{{ $cl_version 		:= .Get 0 }}
+{{ $cl_public_id 	:= .Get 1 }}
+{{ partial "picture" (dict "cl_media_base" $cl_media_base "cl_version" $cl_version "cl_public_id" $cl_public_id) }}
