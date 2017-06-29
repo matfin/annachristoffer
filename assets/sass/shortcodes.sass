@@ -81,8 +81,8 @@
 	> div
 		display: grid
 		grid-template-columns: auto minmax(auto, $units * 30) auto
-		grid-row-gap: $units * 2.5
-		grid-auto-rows: min-content
+		grid-template-rows: ($units * 4.5) auto ($units * 4.5)
+		grid-template-areas: '. . .' '. content .' '. . .'
 
 		&:first-of-type
 			background-color: $light-grey
@@ -90,10 +90,24 @@
 			background-color: $medium-grey
 
 		.snippet
-			grid-column: 2 / 3
-			grid-row: span 1
+			grid-area: content
 			display: grid
-			grid-row-gap: $units * 1.5
+			grid-auto-rows: min-content
+
+			h2
+				margin-bottom: $units * 2.5
+
+			h3
+				margin-bottom: $units * 1.25
+
+			h4 
+				margin-bottom: $units
+
+			p
+				margin-bottom: $units * 2.5
+
+				&:last-of-type
+					margin-bottom: 0
 
 
 

@@ -81,21 +81,15 @@ The following examples include an image of how the example should look in a supp
 #### Since 2017
 ### Art Director at Hi-ReS! Berlin
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
-{{% /snippet %}}
 
-{{% snippet %}}
 #### 2014 - 2016
 ### Jr. Art Director at Hi-ReS! Berlin
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
-{{% /snippet %}}
 
-{{% snippet %}}
 #### 2013 - 2014
 ### Design Trainee at Hi-ReS! Berlin
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
-{{% /snippet %}}
 
-{{% snippet %}}
 #### 2010 - 2012
 ### Freelance Designer / Medienfabrik
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
@@ -110,15 +104,11 @@ This describes the basic tasks I undertook in this position. This goes into furt
 #### 2011 - 2013
 ### Master of Art in Design
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
-{{% /snippet %}}
 
-{{% snippet %}}
 #### 2009 - 2010
 ### Bachelor of Art in Graphic Design
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
-{{% /snippet %}}
 
-{{% snippet %}}
 #### 2006 - 2009
 ### Graphic and Communication Design Diploma
 This describes the basic tasks I undertook in this position. This goes into further detail of the projects I was working on. This wraps up in the hope I explained myself a little better.
