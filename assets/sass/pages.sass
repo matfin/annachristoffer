@@ -4,16 +4,12 @@ main
 	grid-template-rows: minmax($units * 50, 100vh) auto
 	grid-template-areas: 'teaser' 'content'
 
-	&.about
-		grid-row-gap: ($units * 10)
-
 .content
 	grid-area: content
 	display: grid
 	grid-template-columns: 1fr
 	grid-template-rows: auto
 	grid-auto-flow: row
-	// grid-row-gap: ($units * 10)
 
 	> p
 		display: none
