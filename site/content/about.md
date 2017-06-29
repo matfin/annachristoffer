@@ -42,7 +42,28 @@ The following examples include an image of how the example should look in a supp
 	"English merriness and German genuinness"
 	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
 	"content/about/passport"
-	"1498660930"
+	"1498665900"
+>}}
+
+{{< factcaption 
+	"I like cycling"
+	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
+	"content/about/helmet"
+	"1498665900"
+>}}
+
+{{< factcaption 
+	"I take pictures"
+	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
+	"content/about/camera"
+	"1498665900"
+>}}
+
+{{< factcaption 
+	"I play music"
+	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
+	"content/about/record"
+	"1498665900"
 >}}
 
 {{< /content-section >}}

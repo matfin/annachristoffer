@@ -30,19 +30,28 @@
 
 	figure
 		display: grid
+		
 		grid-template-columns: 1fr 2fr
 		grid-template-rows: repeat(2, minmax($units * 31.25, 1fr))
 		grid-template-areas: 'caption picture' '. picture'
+
+		&:nth-child(even)
+			grid-template-columns: 2fr 1fr
+			grid-template-areas: 'picture caption' 'picture .'
+
 		background-color: $grey
 
 		picture
 			grid-area: picture
 			display: grid
+			grid-template-columns: 1fr
+			grid-template-rows: 1fr
+			grid-template-areas: 'image'
+			align-items: center
+			background-color: $white
 
 			img
-				width: 100%
-				height: 100%
-				object-fit: cover
+				grid-area: image
 
 		figcaption
 			grid-area: caption
