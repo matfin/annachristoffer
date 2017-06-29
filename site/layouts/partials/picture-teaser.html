@@ -1,8 +1,11 @@
-<div class="picture-teaser">
+{{ $class := .class }}
+<div class="picture-teaser {{ with .class }}{{ . }}{{ end }}">
 	<figure>
 		{{ partial "picture" . }}
 	</figure>
 	<a href="#">
-		Go
+		<svg width="48" height="48" role="img">
+			<use xlink:href="/svg/sprite.svg#down_arrow">
+		</svg>
 	</a>
 </div>

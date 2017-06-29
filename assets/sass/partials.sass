@@ -30,8 +30,8 @@ header
 .standard-teaser
 	grid-area: teaser
 	display: grid
-	grid-template-columns: 10rem 2fr 5.75rem 30rem 10rem
-	grid-template-rows: auto 22rem 3.75rem auto
+	grid-template-columns: ($units * 10) 2fr ($units * 5.75) ($units * 30) ($units * 10)
+	grid-template-rows: auto ($units * 21) ($units * 4.75) auto
 	grid-template-areas: '. . . . .' '. text . figure .' '. link . figure .' '. . . . .'
 	background-color: $blue
 
@@ -41,7 +41,6 @@ header
 
 	a 
 		grid-area: link
-		
 		display: grid
 		align-items: center
 		justify-content: center
@@ -61,7 +60,7 @@ header
 	grid-area: teaser
 	display: grid
 	grid-template-columns: ($units * 12.5) 1fr
-	grid-template-rows: 1fr ($units * 4.375)
+	grid-template-rows: 1fr ($units * 10)
 
 	figure
 		grid-column: 1 / 3
@@ -82,6 +81,10 @@ header
 		height: 100%
 		width: 100%
 		object-fit: cover
+
+	&.about-teaser
+		a
+			fill: $medium-grey
 
 footer
 	grid-area: footer
