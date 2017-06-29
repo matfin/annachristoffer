@@ -72,7 +72,6 @@
 				justify-self: center
 				align-self: center
 		
-
 .double
 	display: grid
 	grid-template-columns: repeat(2, 1fr)
@@ -110,5 +109,32 @@
 					margin-bottom: 0
 
 .contact
-	
+	display: grid
+	grid-template-columns: ($units * 6) ($units * 30) auto ($units * 43)
+	grid-template-rows: ($units * 6) auto
+	grid-template-areas: '. . . photo' '. snippet . photo'
+
+	grid-auto-rows: min-content
+
+	.snippet
+		grid-area: snippet
+
+	figure
+		grid-area: photo
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: 1fr
+
+		picture
+			grid-column: 1
+			grid-row: 1
+
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+
+
+
+
 
