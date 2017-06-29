@@ -111,13 +111,30 @@
 .contact
 	display: grid
 	grid-template-columns: ($units * 6) ($units * 30) auto ($units * 43)
-	grid-template-rows: ($units * 6) auto
-	grid-template-areas: '. . . photo' '. snippet . photo'
+	grid-template-rows: ($units * 6) auto ($units * 6)
+	grid-template-areas: '. . . photo' '. details . photo' '. . . photo'
 
-	grid-auto-rows: min-content
+	.details
+		grid-area: details
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: minmax(auto, $units * 6) ($units * 4) minmax(auto, $units * 5) auto auto
+		grid-template-areas: 'first' '.' 'social' '.' 'second'
 
 	.snippet
-		grid-area: snippet
+		&:nth-of-type(1)
+			grid-area: first
+		&:nth-of-type(2)
+			grid-area: second
+
+		h2
+			margin-bottom: $units
+
+	.social-links
+		grid-area: social
+		display: grid
+		grid-template-columns: repeat(5, minmax(auto, $units * 5))
+		grid-template-rows: 1fr
 
 	figure
 		grid-area: photo

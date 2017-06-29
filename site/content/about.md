@@ -119,18 +119,16 @@ This describes the basic tasks I undertook in this position. This goes into furt
 {{< /content-section >}}
 
 {{< content-section "contact" >}}
-
+{{< content-section "details" >}}
 {{% snippet %}}
 ## Contact details
 Don't be shy. Get in touch. Let's work together. I am very good. This is some more sample text. This is even more sample text.
-
+{{% /snippet %}}
 {{< social >}}
-
+{{% snippet %}}
 ## About this website
 This website was built by [Matt Finucane](https://mattfinucane.com) and designed by me to show off my rapidly expanding skillset in all things nice.
-
 {{% /snippet %}}
-
+{{< /content-section >}}
 {{< photo "1498751347" "content/about/anna-portrait" >}}
-
 {{< /content-section >}}
