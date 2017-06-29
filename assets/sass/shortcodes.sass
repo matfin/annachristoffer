@@ -55,11 +55,22 @@
 
 		figcaption
 			grid-area: caption
+			display: grid
+			grid-template-columns: ($units * 6) auto ($units * 6)
+			grid-template-rows: ($units * 6) (minmax(auto, $units * 2)) ($units) auto
+			grid-template-areas: '. . number' '. heading .' '. . .' '. text .'
 			background-color: $blue
-			padding: ($units * 6)
 
 			h2
-				margin-bottom: $units
+				grid-area: heading
+
+			p 
+				grid-area: text
+
+			span
+				grid-area: number
+				justify-self: center
+				align-self: center
 		
 
 

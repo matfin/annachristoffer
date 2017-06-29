@@ -3,6 +3,7 @@
 {{ $content 		:= .Get 1 }}
 {{ $cl_public_id	:= .Get 2 }}
 {{ $cl_version		:= .Get 3 }}
+{{ $number 			:= .Get 4 }}
 <figure>
 	{{ partial "thumbnail" (dict "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id "size" 3) }}
 	<figcaption>
@@ -12,5 +13,8 @@
 		<p>
 			{{ $content }}
 		</p>
+		<span>
+			{{ $number }}
+		</span>
 	</figcaption>
 </figure>
