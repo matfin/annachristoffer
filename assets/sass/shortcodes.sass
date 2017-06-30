@@ -29,6 +29,10 @@ figure.pictcaption
 	grid-template-areas: 'caption picture' '. picture'
 	color: $white
 
+	&.fullheight
+		grid-template-rows: 1fr
+		grid-template-areas: 'caption picture'
+
 	&.fact
 		background-color: $grey
 		figcaption
@@ -155,9 +159,12 @@ figure.pictcaption
 
 .full-photo
 	display: grid
-	grid-template-rows: 1fr
-	grid-template-columns: 1fr
-	grid-template-areas: 'figure'
+	grid-template-columns: ($units * 10) 1fr ($units * 19)
+	grid-template-rows: ($units * 6) 1fr ($units * 6)
+	grid-template-areas: '. . .' '. figure .' '. . .'
+
+	&.light-grey
+		background-color: $light-grey
 
 	figure
 		grid-area: figure

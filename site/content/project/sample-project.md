@@ -56,3 +56,12 @@ Junior Art Director: Salvador Dalí
 {{< content-section "full-photo" >}}
 {{< photo "1498825146" "projects/sample-project/project-sample-screenshot" >}}
 {{< /content-section >}}
+
+{{< piccaption 
+  "Typography"
+  "identity fullheight"
+  "This section and its accompanying picture details the typography we need here." 
+  ""
+  ""
+  ""
+>}}
