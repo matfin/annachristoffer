@@ -6,7 +6,7 @@
 	<body>
 		{{ partial "header" . }}
 		<main class="page {{ .Title | urlize }}">
-			{{ partial "picture-teaser" (dict "cl_media_base" .Site.Params.cl_media_base "cl_version" .Params.image_cl_version "cl_public_id" .Params.image_cl_public_id "class" "about-teaser") }}
+			{{ partial "picture-teaser" (dict "cl_media_base" .Site.Params.cl_media_base "cl_version" .Params.image_cl_version "cl_public_id" .Params.image_cl_public_id "class" "medium-grey-teaser") }}
 			<div class="content">
 				{{ .Content }}
 			</div>

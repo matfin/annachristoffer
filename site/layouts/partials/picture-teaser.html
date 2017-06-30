@@ -1,8 +1,16 @@
 {{ $class := .class }}
+{{ $title := .title }}
 <div class="picture-teaser {{ with .class }}{{ . }}{{ end }}">
 	<figure>
 		{{ partial "picture" . }}
 	</figure>
+	{{ with $title }}
+		<figcaption>
+			<h1>
+				{{ . }}
+			</h1>
+		</figcaption>
+	{{ end }}
 	<a href="#">
 		<svg width="48" height="48" role="img">
 			<use xlink:href="/svg/sprite.svg#down_arrow">

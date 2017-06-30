@@ -50,39 +50,45 @@ header
 
 	figure
 		grid-area: figure
-
 		img
 			width: 100%
 			height: 100%
 			object-fit: cover
 
+
+
 .picture-teaser
 	grid-area: teaser
 	display: grid
-	grid-template-columns: ($units * 12.5) 1fr
-	grid-template-rows: 1fr ($units * 10)
+
+	grid-template-columns: ($units * 10) 1fr ($units * 10)
+	grid-template-rows: repeat(2, 1fr) ($units * 10)
+	grid-template-areas: '. caption .' '. . .' '. link .'
+
+	&.lower
+		grid-template-areas: '. . .' '. caption .' '. link .'
 
 	figure
-		grid-column: 1 / 3
-		grid-row: 1 / 3
+		grid-row: 1 / 5
+		grid-column: 1 / 4
 		display: grid
-	a 
-		grid-row: 2 / 3
-		grid-column: 2 / 3
-		align-self: center
-		justify-self: start
-
-	picture
-		display: grid
-		align-items: center
-		background-color: $white
 
 	img
-		height: 100%
 		width: 100%
+		height: 100%
 		object-fit: cover
 
-	&.about-teaser
+	figcaption
+		grid-area: caption
+		align-self: center
+
+	a
+		grid-area: link
+		align-self: center
+
+	&.medium-grey-teaser
+		h1
+			color: $white
 		a
 			fill: $medium-grey
 
