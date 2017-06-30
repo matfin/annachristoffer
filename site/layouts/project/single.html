@@ -5,7 +5,17 @@
 	</head>
 	<body>
 		{{ partial "header" . }}
-		
+		<main class="page {{ .Title | urlize }}">
+			{{ $base 			:= .Site.Params.cl_media_base }}
+			{{ $title 			:= .Title}}
+			{{ $class 			:= .Params.teaser.class }}
+			{{ $cl_version 		:= .Params.teaser.cl_version }}
+			{{ $cl_public_id 	:= .Params.teaser.cl_public_id }}
+			{{ partial "picture-teaser" (dict "title" $title "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id "class" $class) }}
+			<div class="content">
+				{{ .Content }}
+			</div>
+		</main>
 		{{ partial "footer" . }}
 		{{ partial "scripts" . }}
 	</body>

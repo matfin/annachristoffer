@@ -1,6 +1,8 @@
 ---
-title:				""
-description: 		""
-image_cl_version:	""
-image_cl_public_id: ""
+title:				  ""
+description: 	  ""
+teaser:
+  cl_version:   ""
+  cl_public_id: ""
+  class:        ""
 ---

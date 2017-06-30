@@ -1,8 +1,10 @@
 ---
-title: 				"About"
-description:		"About Anna"
-image_cl_version:	"1498661108"
-image_cl_public_id:	"content/about/anna-portfolio-desk"
+title:          "About"
+description:    "About Anna"
+teaser:
+  cl_version:	  "1498661108"
+  cl_public_id: "content/about/anna-portfolio-desk"
+  class:        "medium-grey-teaser"
 ---
 
 {{< content-section "article-aside" >}}

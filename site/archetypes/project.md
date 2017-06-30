@@ -1,9 +1,14 @@
 ---
-title:			""
-description:	""
-date:			""
-thumbnail:		""
-teaser:			""
-prominence:		""
-categories:		[]
+title:            ""
+description:      ""
+date:             ""
+thumbnail:
+  cl_version:     ""
+  cl_public_id:   ""
+teaser:	
+  cl_version:     ""
+  cl_public_id:   ""
+  class:          ""
+prominence:       ""
+categories:       []
 ---

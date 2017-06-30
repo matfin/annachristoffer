@@ -9,7 +9,7 @@ services:
       context: .docker/site
       dockerfile: Dockerfile
       args:
-        hugo_version: "0.24"
+        hugo_version: "0.24.1"
     ports:
       - "1313:1313"
     volumes:
