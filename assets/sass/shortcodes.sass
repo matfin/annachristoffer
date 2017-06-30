@@ -10,12 +10,8 @@
 	aside 
 		grid-area: aside
 
-	article,
-	aside
-		display: grid
-		grid-template-columns: 1fr
-		grid-template-rows: auto
-		grid-row-gap: $units
+	h2
+		margin: $units 0
 
 	ul
 		li
@@ -32,7 +28,7 @@
 		display: grid
 		
 		grid-template-columns: 1fr 2fr
-		grid-template-rows: repeat(2, minmax($units * 31.25, 1fr))
+		grid-template-rows: repeat(2, minmax(50vh, 1fr))
 		grid-template-areas: 'caption picture' '. picture'
 
 		&:nth-child(even)
@@ -148,10 +144,8 @@
 
 			img
 				width: 100%
-				height: 100vh
+				height: 100%
 				object-fit: cover
-
-
 
 
 

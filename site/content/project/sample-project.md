@@ -13,3 +13,29 @@ prominence:       1
 categories:
 - "illustration"
 ---
+
+{{< content-section "article-aside" >}}
+{{% article %}}
+## Brief
+I am a freelance full stack web and mobile software engineer based based in Berlin, Germany. I have been building websites and applications since the early 2000s and I graduated from Dublin City University with a BSc. in Computer Science.
+
+I have worked with a wide variety of people both in-house and in agencies with clients all over Europe and the United States.
+{{% /article %}}
+{{% aside %}}
+## Client
+This is what the client looks like when I type it in.
+
+## Responsibilities
+
+- clean up
+- do the dishes
+- do something else
+- read and write
+- form a political party
+
+## Art Direction
+Creative Director: Anna Christoffer
+Senior Art Director: Pablo Picasso
+Junior Art Director: Salvador Dalí
+{{% /aside %}}
+{{< /content-section >}}
