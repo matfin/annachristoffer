@@ -24,20 +24,25 @@
 
 figure.pictcaption
 	display: grid
-	grid-template-columns: 1fr 2fr
+	grid-template-columns: 2fr 3fr
 	grid-template-rows: repeat(2, minmax(50vh, 1fr))
 	grid-template-areas: 'caption picture' '. picture'
 	color: $white
 
 	&.fact
+		background-color: $grey
 		figcaption
 			background-color: $blue
+
+	&.identity
+		background-color: $light-grey
+		figcaption
+			background-color: $navy-blue
+
 
 	&:nth-child(even)
 		grid-template-columns: 2fr 1fr
 		grid-template-areas: 'picture caption' 'picture .'
-
-	background-color: $grey
 
 	picture
 		grid-area: picture

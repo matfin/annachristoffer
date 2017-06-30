@@ -4,9 +4,11 @@
 {{ $content 		:= .Get 2 }}
 {{ $cl_public_id	:= .Get 3 }}
 {{ $cl_version		:= .Get 4 }}
-{{ $number 			:= .Get 5 }}
+{{ $number			:= .Get 5 }}
 <figure class="pictcaption {{ with $class }}{{ . }}{{ end }}">
-	{{ partial "thumbnail" (dict "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id "size" 3) }}
+	{{ if (not (eq $cl_public_id "")) }}
+		{{ partial "thumbnail" (dict "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id "size" 3) }}
+	{{ end }}
 	<figcaption>
 		<h2>
 			{{ $title }}
@@ -14,9 +16,9 @@
 		<p>
 			{{ $content }}
 		</p>
-		{{ with $number }}
+		{{ if (not (eq $number "")) }}
 			<span>
-				{{ . }}
+				{{ $number }}
 			</span>
 		{{ end }}
 	</figcaption>

@@ -58,16 +58,24 @@ nav
 		letter-spacing: $letter-spacing * 0.85
 		line-height: $p-line-height
 
-.facts
+.pictcaption
 	h2,
 	p
 		font-family: $font-family-light
 		font-weight: $font-weight-normal
 
-	h2
-		font-size: $medium-large-font-size
-		font-style: italic
-		letter-spacing: $letter-spacing * 0.93
+	&.fact
+		h2
+			font-size: $medium-large-font-size
+			font-style: italic
+			letter-spacing: $letter-spacing * 0.93
+
+	&.identity
+		h2
+			font-size: $base-font-size
+			font-weight: $font-weight-heavy
+			letter-spacing: $letter-spacing * 0.73
+			text-transform: uppercase
 
 	p
 		font-size: $base-font-size

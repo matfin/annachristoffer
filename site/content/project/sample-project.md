@@ -39,3 +39,16 @@ Senior Art Director: Pablo Picasso
 Junior Art Director: Salvador Dalí
 {{% /aside %}}
 {{< /content-section >}}
+
+{{< content-section >}}
+
+{{< piccaption 
+  "Identity"
+  "identity"
+  "I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
+  ""
+  ""
+  ""
+>}}
+
+{{< /content-section >}}
