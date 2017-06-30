@@ -65,3 +65,14 @@ Junior Art Director: Salvador Dalí
   ""
   ""
 >}}
+
+{{< content-section "heading-section" >}}
+{{% snippet %}}
+## Strong brands for a demanding food market
+### Products
+#### Your wishes fulfilled with our diverse product range
+Der Herunterladen wird sofort nach Klicken auf die Schaltfläche zum Herunterladen gestartet. Wenn Sie mit diesen Geschäftsbedingungen nicht einverstanden sind, sind sie nicht zur Nutzung und/oder zum Download der Software lizenziert oder berechtigt.​
+
+Dass Pressebank, Gästeränge und Plenum fast bis zum letzten Platz gefüllt sind, kommt im Bundestag äußerst selten vor – "zumal um diese Uhrzeit", stellt Norbert Lammert zufrieden fest, als er um Punkt acht Uhr die 224. und letzte Sitzung des Parlaments in dieser Legislaturperiode eröffnet. "Das hat sicher mit der Tagesordnung zu tun", sagt der Bundestagspräsident.
+{{% snippet %}}
+{{< /content-section >}}

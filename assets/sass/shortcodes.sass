@@ -22,14 +22,14 @@
 	grid-template-columns: 1fr
 	grid-auto-flow: row
 
-figure.pictcaption
+.pictcaption
 	display: grid
 	grid-template-columns: 2fr 3fr
 	grid-template-rows: repeat(2, minmax(50vh, 1fr))
 	grid-template-areas: 'caption picture' '. picture'
 	color: $white
 
-	&.fullheight
+	&.full-height
 		grid-template-rows: 1fr
 		grid-template-areas: 'caption picture'
 
@@ -174,3 +174,23 @@ figure.pictcaption
 			width: 100%
 			height: 100%
 			object-fit: cover
+
+.heading-section
+	display: grid
+	grid-template-columns: 1fr minmax(auto, ($units * 80)) 1fr
+	grid-template-areas: '. snippet .'
+	align-items: center
+
+	.snippet
+		grid-area: snippet
+		display: grid
+		grid-template-columns: 1fr
+		grid-auto-rows: min-content
+
+		h2,
+		h3,
+		h4,
+		p
+			grid-column: 1 / 2
+
+
