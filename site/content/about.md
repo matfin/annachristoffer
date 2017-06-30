@@ -36,32 +36,36 @@ The following examples include an image of how the example should look in a supp
 
 {{< content-section "facts" >}}
 
-{{< factcaption 
+{{< piccaption 
 	"English merriness and German genuinness"
+	"fact"
 	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
 	"content/about/passport"
 	"1498665900"
 	"1"
 >}}
 
-{{< factcaption 
+{{< piccaption 
 	"I like cycling"
+	"fact"
 	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
 	"content/about/helmet"
 	"1498665900"
 	"2"
 >}}
 
-{{< factcaption 
+{{< piccaption 
 	"I take pictures"
+	"fact"
 	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
 	"content/about/camera"
 	"1498665900"
 	"3"
 >}}
 
-{{< factcaption 
+{{< piccaption 
 	"I play music"
+	"fact"
 	"I like to see myself as an outcome of the European idea. I grew up in a house of English merriness and German genuinness. I like to see myself as an outcome of this." 
 	"content/about/record"
 	"1498665900"

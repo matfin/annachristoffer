@@ -1,10 +1,11 @@
 {{ $base 			:= .Site.Params.cl_media_base }}
 {{ $title			:= .Get 0 }}
-{{ $content 		:= .Get 1 }}
-{{ $cl_public_id	:= .Get 2 }}
-{{ $cl_version		:= .Get 3 }}
-{{ $number 			:= .Get 4 }}
-<figure>
+{{ $class			:= .Get 1 }}
+{{ $content 		:= .Get 2 }}
+{{ $cl_public_id	:= .Get 3 }}
+{{ $cl_version		:= .Get 4 }}
+{{ $number 			:= .Get 5 }}
+<figure class="pictcaption {{ with $class }}{{ . }}{{ end }}">
 	{{ partial "thumbnail" (dict "cl_media_base" $base "cl_version" $cl_version "cl_public_id" $cl_public_id "size" 3) }}
 	<figcaption>
 		<h2>
@@ -13,8 +14,10 @@
 		<p>
 			{{ $content }}
 		</p>
-		<span>
-			{{ $number }}
-		</span>
+		{{ with $number }}
+			<span>
+				{{ . }}
+			</span>
+		{{ end }}
 	</figcaption>
 </figure>
